@@ -1,401 +1,1064 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>English Grammar Quiz - Sentence Completion</title>
-    <style>
-        :root {
-            --primary-color: #4a90e2;
-            --success-color: #2ecc71;
-            --error-color: #e74c3c;
-            --background-color: #f4f7f6;
-            --card-background: #ffffff;
-            --text-color: #333333;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+<title>English Grammar Quiz - Sentence Completion</title>
 
-        body {
-            background-color: var(--background-color);
-            color: var(--text-color);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
-        }
+<style>
+:root {
+    --blue: #4facfe;
+    --purple: #8b5cf6;
+    --pink: #ec4899;
+    --green: #22c55e;
+    --red: #ef4444;
+    --white: #ffffff;
+    --text: #172033;
+}
 
-        .quiz-container {
-            background-color: var(--card-background);
-            border-radius: 12px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            max-width: 650px;
-            padding: 30px;
-            overflow: hidden;
-        }
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
 
-        .header {
-            text-align: center;
-            margin-bottom: 25px;
-        }
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
 
-        .header h1 {
-            font-size: 1.8rem;
-            color: var(--primary-color);
-            margin-bottom: 8px;
-        }
+    background:
+        radial-gradient(circle at 10% 20%, rgba(79,172,254,.45), transparent 35%),
+        radial-gradient(circle at 90% 80%, rgba(236,72,153,.4), transparent 35%),
+        linear-gradient(135deg, #111827, #312e81, #581c87);
 
-        .progress-bar-container {
-            width: 100%;
-            background-color: #e0e0e0;
-            height: 10px;
-            border-radius: 5px;
-            margin-bottom: 20px;
-            overflow: hidden;
-        }
+    background-size: 200% 200%;
+    animation: gradientMove 12s ease infinite;
+    overflow-x: hidden;
+}
 
-        .progress-bar {
-            height: 100%;
-            width: 0%;
-            background-color: var(--primary-color);
-            transition: width 0.3s ease;
-        }
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
 
-        .question-counter {
-            font-size: 0.9rem;
-            color: #666;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+/* Floating background circles */
 
-        .question-text {
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: 20px;
-        }
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(5px);
+    pointer-events: none;
+    z-index: -1;
+}
 
-        .options-list {
-            list-style: none;
-            margin-bottom: 20px;
-        }
+body::before {
+    width: 220px;
+    height: 220px;
+    background: rgba(79,172,254,.18);
+    top: 5%;
+    left: 5%;
+    animation: floatOne 7s ease-in-out infinite;
+}
 
-        .option-btn {
-            width: 100%;
-            background-color: #f8f9fa;
-            border: 2px solid #e9ecef;
-            border-radius: 8px;
-            padding: 14px;
-            margin-bottom: 10px;
-            text-align: left;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
+body::after {
+    width: 280px;
+    height: 280px;
+    background: rgba(236,72,153,.16);
+    bottom: 5%;
+    right: 5%;
+    animation: floatTwo 9s ease-in-out infinite;
+}
 
-        .option-btn:hover:not([disabled]) {
-            border-color: var(--primary-color);
-            background-color: #eef5fc;
-        }
+@keyframes floatOne {
+    0%,100% { transform: translate(0,0); }
+    50% { transform: translate(40px,30px); }
+}
 
-        .option-btn.correct {
-            background-color: #d4edda;
-            border-color: var(--success-color);
-            color: #155724;
-            font-weight: bold;
-        }
+@keyframes floatTwo {
+    0%,100% { transform: translate(0,0); }
+    50% { transform: translate(-40px,-30px); }
+}
 
-        .option-btn.incorrect {
-            background-color: #f8d7da;
-            border-color: var(--error-color);
-            color: #721c24;
-        }
+/* Main card */
 
-        .explanation-box {
-            background-color: #e8f4fd;
-            border-left: 4px solid var(--primary-color);
-            padding: 15px;
-            border-radius: 4px;
-            margin-bottom: 20px;
-            display: none;
-            font-size: 0.95rem;
-            line-height: 1.4;
-        }
+.quiz-container {
+    width: 100%;
+    max-width: 680px;
+    padding: 32px;
 
-        .action-btn {
-            width: 100%;
-            background-color: var(--primary-color);
-            color: white;
-            border: none;
-            padding: 14px;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background 0.2s ease;
-            display: none;
-        }
+    background: rgba(255,255,255,.92);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
 
-        .action-btn:hover {
-            background-color: #357abd;
-        }
+    border: 1px solid rgba(255,255,255,.55);
+    border-radius: 24px;
 
-        .result-screen {
-            text-align: center;
-            display: none;
-        }
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.35),
+        0 0 40px rgba(139,92,246,.15);
 
-        .result-screen h2 {
-            font-size: 2rem;
-            margin-bottom: 10px;
-        }
+    overflow: hidden;
 
-        .score-display {
-            font-size: 3rem;
-            font-weight: bold;
-            color: var(--primary-color);
-            margin: 20px 0;
-        }
+    animation: cardEnter .7s cubic-bezier(.2,.8,.2,1);
+}
 
-        .restart-btn {
-            background-color: var(--success-color);
-            color: white;
-            border: none;
-            padding: 14px 28px;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-weight: bold;
-            cursor: pointer;
-        }
+@keyframes cardEnter {
+    from {
+        opacity: 0;
+        transform: translateY(35px) scale(.96);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
 
-        .restart-btn:hover {
-            background-color: #27ae60;
-        }
-    </style>
+/* Header */
+
+.header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.header h1 {
+    font-size: 1.9rem;
+    font-weight: 800;
+
+    background: linear-gradient(
+        90deg,
+        #2563eb,
+        #7c3aed,
+        #db2777
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    animation: titleGlow 3s ease-in-out infinite;
+}
+
+@keyframes titleGlow {
+    0%,100% {
+        filter: drop-shadow(0 0 0 transparent);
+    }
+    50% {
+        filter: drop-shadow(0 0 10px rgba(124,58,237,.3));
+    }
+}
+
+/* Progress */
+
+.progress-bar-container {
+    width: 100%;
+    height: 11px;
+    background: #e5e7eb;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 22px;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0%;
+
+    background: linear-gradient(
+        90deg,
+        #3b82f6,
+        #8b5cf6,
+        #ec4899
+    );
+
+    border-radius: 20px;
+
+    transition:
+        width .6s cubic-bezier(.4,0,.2,1);
+
+    box-shadow: 0 0 12px rgba(139,92,246,.55);
+}
+
+/* Question */
+
+.question-counter {
+    font-size: .8rem;
+    font-weight: 800;
+    color: #6366f1;
+
+    letter-spacing: 1.5px;
+    margin-bottom: 12px;
+}
+
+.question-text {
+    font-size: 1.3rem;
+    font-weight: 700;
+    line-height: 1.5;
+    color: var(--text);
+
+    margin-bottom: 22px;
+}
+
+/* Question transition */
+
+.question-enter {
+    animation: questionEnter .55s cubic-bezier(.2,.8,.2,1);
+}
+
+@keyframes questionEnter {
+    from {
+        opacity: 0;
+        transform: translateX(35px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Options */
+
+.options-list {
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+.option-btn {
+    width: 100%;
+
+    background: rgba(248,250,252,.9);
+
+    border: 2px solid #e5e7eb;
+    border-radius: 13px;
+
+    padding: 15px 16px;
+    margin-bottom: 11px;
+
+    text-align: left;
+    font-size: 1rem;
+    font-weight: 600;
+
+    color: #374151;
+
+    cursor: pointer;
+
+    transition:
+        transform .2s ease,
+        border-color .2s ease,
+        background .2s ease,
+        box-shadow .2s ease;
+}
+
+.option-btn:hover:not(:disabled) {
+    transform: translateX(5px) scale(1.01);
+
+    border-color: #8b5cf6;
+
+    background: linear-gradient(
+        90deg,
+        #eef2ff,
+        #faf5ff
+    );
+
+    box-shadow: 0 7px 20px rgba(99,102,241,.15);
+}
+
+.option-btn:active:not(:disabled) {
+    transform: scale(.98);
+}
+
+/* Correct */
+
+.option-btn.correct {
+    background: linear-gradient(
+        100deg,
+        #dcfce7,
+        #bbf7d0
+    );
+
+    border-color: var(--green);
+    color: #166534;
+
+    animation: correctAnswer .65s cubic-bezier(.2,.8,.2,1);
+
+    box-shadow:
+        0 0 0 3px rgba(34,197,94,.12),
+        0 0 25px rgba(34,197,94,.35);
+}
+
+@keyframes correctAnswer {
+    0% {
+        transform: scale(1);
+    }
+
+    35% {
+        transform: scale(1.035);
+    }
+
+    60% {
+        transform: scale(.98);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Wrong */
+
+.option-btn.incorrect {
+    background: linear-gradient(
+        100deg,
+        #fee2e2,
+        #fecaca
+    );
+
+    border-color: var(--red);
+    color: #991b1b;
+
+    animation: wrongAnswer .55s ease;
+
+    box-shadow:
+        0 0 0 3px rgba(239,68,68,.12),
+        0 0 22px rgba(239,68,68,.3);
+}
+
+@keyframes wrongAnswer {
+    0%,100% {
+        transform: translateX(0);
+    }
+
+    20% {
+        transform: translateX(-9px);
+    }
+
+    40% {
+        transform: translateX(9px);
+    }
+
+    60% {
+        transform: translateX(-7px);
+    }
+
+    80% {
+        transform: translateX(7px);
+    }
+}
+
+/* Disabled */
+
+.option-btn:disabled {
+    cursor: default;
+}
+
+/* Explanation */
+
+.explanation-box {
+    display: none;
+
+    background: linear-gradient(
+        135deg,
+        #eff6ff,
+        #f5f3ff
+    );
+
+    border-left: 5px solid #6366f1;
+
+    padding: 16px;
+
+    border-radius: 12px;
+
+    margin-bottom: 20px;
+
+    font-size: .95rem;
+    line-height: 1.5;
+    color: #374151;
+
+    animation: explanationEnter .45s ease;
+}
+
+@keyframes explanationEnter {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Buttons */
+
+.action-btn {
+    width: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #3b82f6,
+            #7c3aed,
+            #db2777
+        );
+
+    color: white;
+
+    border: none;
+    padding: 15px;
+
+    border-radius: 13px;
+
+    font-size: 1rem;
+    font-weight: 800;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 20px rgba(99,102,241,.3);
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+
+    animation: buttonAppear .4s ease;
+}
+
+.action-btn:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 28px rgba(99,102,241,.4);
+}
+
+.action-btn:active {
+    transform: scale(.97);
+}
+
+@keyframes buttonAppear {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Result */
+
+.result-screen {
+    text-align: center;
+    display: none;
+
+    animation: resultEnter .7s cubic-bezier(.2,.8,.2,1);
+}
+
+@keyframes resultEnter {
+    from {
+        opacity: 0;
+        transform: scale(.85) translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.result-screen h2 {
+    font-size: 2.1rem;
+
+    background: linear-gradient(
+        90deg,
+        #2563eb,
+        #7c3aed,
+        #db2777
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    margin-bottom: 10px;
+}
+
+.score-display {
+    font-size: 4rem;
+    font-weight: 900;
+
+    margin: 20px 0;
+
+    background: linear-gradient(
+        90deg,
+        #2563eb,
+        #8b5cf6,
+        #ec4899
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    animation: scorePop .8s cubic-bezier(.2,1.4,.4,1);
+}
+
+@keyframes scorePop {
+    0% {
+        transform: scale(.4);
+        opacity: 0;
+    }
+
+    70% {
+        transform: scale(1.15);
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.restart-btn {
+    background: linear-gradient(
+        90deg,
+        #22c55e,
+        #16a34a
+    );
+
+    color: white;
+
+    border: none;
+
+    padding: 14px 30px;
+
+    border-radius: 12px;
+
+    font-size: 1rem;
+    font-weight: 800;
+
+    cursor: pointer;
+
+    box-shadow: 0 8px 20px rgba(34,197,94,.3);
+
+    transition: .2s ease;
+}
+
+.restart-btn:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 12px 25px rgba(34,197,94,.4);
+}
+
+.restart-btn:active {
+    transform: scale(.96);
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 12px;
+    }
+
+    .quiz-container {
+        padding: 23px 18px;
+        border-radius: 20px;
+    }
+
+    .header h1 {
+        font-size: 1.55rem;
+    }
+
+    .question-text {
+        font-size: 1.12rem;
+    }
+
+    .option-btn {
+        padding: 14px;
+        font-size: .95rem;
+    }
+
+    .score-display {
+        font-size: 3.3rem;
+    }
+}
+
+/* Reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+    }
+}
+</style>
 </head>
+
 <body>
 
-    <div class="quiz-container">
-        <!-- Quiz Content -->
-        <div id="quiz-box">
-            <div class="header">
-                <h1>Sentence Completion Quiz</h1>
-            </div>
+<div class="quiz-container">
 
-            <div class="progress-bar-container">
-                <div class="progress-bar" id="progress-bar"></div>
-            </div>
+    <!-- QUIZ -->
 
-            <div class="question-counter" id="question-counter">Question 1 of 15</div>
-            <div class="question-text" id="question-text">Loading question...</div>
+    <div id="quiz-box">
 
-            <ul class="options-list" id="options-list"></ul>
-
-            <div class="explanation-box" id="explanation-box"></div>
-
-            <button class="action-btn" id="next-btn" onclick="nextQuestion()">Next Question</button>
+        <div class="header">
+            <h1>Sentence Completion Quiz</h1>
         </div>
 
-        <!-- Result Screen -->
-        <div class="result-screen" id="result-screen">
-            <h2>Quiz Completed!</h2>
-            <p>Your final score is:</p>
-            <div class="score-display" id="final-score">0 / 15</div>
-            <p id="score-message" style="margin-bottom: 25px;"></p>
-            <button class="restart-btn" onclick="restartQuiz()">Try Again</button>
+        <div class="progress-bar-container">
+            <div class="progress-bar" id="progress-bar"></div>
         </div>
+
+        <div class="question-counter" id="question-counter">
+            Question 1 of 15
+        </div>
+
+        <div class="question-text" id="question-text">
+            Loading question...
+        </div>
+
+        <ul class="options-list" id="options-list"></ul>
+
+        <div class="explanation-box" id="explanation-box"></div>
+
+        <button
+            class="action-btn"
+            id="next-btn"
+            onclick="nextQuestion()">
+            Next Question →
+        </button>
+
     </div>
 
-    <script>
-        const questions = [
-            {
-                question: "It is high time we __________.",
-                options: ["change our bad habits", "changed our bad habits", "will change our bad habits", "have changed our bad habits"],
-                answer: 1,
-                explanation: "Rule: 'It is high time' requires a simple past verb (V2) when introducing an action that should have already been done."
-            },
-            {
-                question: "Walk fast lest __________.",
-                options: ["you will miss the train", "you should miss the train", "you might missed the train", "you do not miss the train"],
-                answer: 1,
-                explanation: "Rule: 'Lest' means 'for fear that' and requires the structure: Subject + should + base verb."
-            },
-            {
-                question: "He was so weak that __________.",
-                options: ["he could not walk", "he cannot walk", "he will not walk", "he is unable to walk"],
-                answer: 0,
-                explanation: "Rule: 'So... that' in a past context requires 'could not + base verb'."
-            },
-            {
-                question: "Had I known his address, I __________.",
-                options: ["will visit him", "would visit him", "would have visited him", "had visited him"],
-                answer: 2,
-                explanation: "Rule: Third conditional inversion ('Had + subject + V3') requires 'would have + V3' in the main clause."
-            },
-            {
-                question: "No sooner had the teacher entered the classroom than __________.",
-                options: ["the students stood up", "the students stand up", "the students had stood up", "the students will stand up"],
-                answer: 0,
-                explanation: "Rule: 'No sooner had... than' pairs a past perfect clause with a simple past clause."
-            },
-            {
-                question: "He speaks as if __________.",
-                options: ["he knows everything", "he knew everything", "he has known everything", "he will know everything"],
-                answer: 1,
-                explanation: "Rule: 'As if' preceded by a present simple verb requires simple past for unreal/hypothetical states."
-            },
-            {
-                question: "Scarcely had I reached the station when __________.",
-                options: ["the train left", "the train leaves", "the train had left", "the train would leave"],
-                answer: 0,
-                explanation: "Rule: 'Scarcely had... when' pairs a past perfect inverted clause with a simple past clause."
-            },
-            {
-                question: "You cannot succeed in life unless __________.",
-                options: ["you do not work hard", "you work hard", "you will work hard", "you worked hard"],
-                answer: 1,
-                explanation: "Rule: 'Unless' means 'if not' and already contains a negative meaning, requiring an affirmative verb."
-            },
-            {
-                question: "The box is too heavy for him __________.",
-                options: ["to carry it", "to carry", "carrying", "that he cannot carry"],
-                answer: 1,
-                explanation: "Rule: 'Too + adjective + for someone' is completed with an infinitive (to + base verb)."
-            },
-            {
-                question: "Five years have passed since __________.",
-                options: ["I last meet you", "I last met you", "I have last met you", "I had last met you"],
-                answer: 1,
-                explanation: "Rule: When 'since' follows a present perfect main clause, the secondary clause uses simple past."
-            },
-            {
-                question: "Strike the iron while __________.",
-                options: ["it was hot", "it is hot", "it will be hot", "it becomes hot"],
-                answer: 1,
-                explanation: "Rule: Completes the proverb: 'Strike the iron while it is hot.'"
-            },
-            {
-                question: "He worked hard so that __________.",
-                options: ["he can secure good marks", "he could secure good marks", "he will secure good marks", "he secures good marks"],
-                answer: 1,
-                explanation: "Rule: 'So that' used after past simple requires 'could / might + base verb'."
-            },
-            {
-                question: "I went to the bank with a view to __________.",
-                options: ["open a savings account", "opening a savings account", "opened a savings account", "to open a savings account"],
-                answer: 1,
-                explanation: "Rule: The prepositional phrase 'with a view to' must be followed by a gerund (verb + -ing)."
-            },
-            {
-                question: "If you had invited me, I __________.",
-                options: ["would attend the party", "will have attended the party", "would have attended the party", "had attended the party"],
-                answer: 2,
-                explanation: "Rule: Third conditional structure: 'If + past perfect' -> 'would have + past participle (V3)'."
-            },
-            {
-                question: "United we stand, __________.",
-                options: ["divided we fall", "divided we fail", "together we win", "separated we fall"],
-                answer: 0,
-                explanation: "Rule: Completes the proverb: 'United we stand, divided we fall.'"
-            }
-        ];
 
-        let currentQuestion = 0;
-        let score = 0;
+    <!-- RESULT -->
 
-        const questionCounterEl = document.getElementById("question-counter");
-        const questionTextEl = document.getElementById("question-text");
-        const optionsListEl = document.getElementById("options-list");
-        const explanationBoxEl = document.getElementById("explanation-box");
-        const progressBarEl = document.getElementById("progress-bar");
-        const nextBtn = document.getElementById("next-btn");
+    <div class="result-screen" id="result-screen">
 
-        function loadQuestion() {
-            const q = questions[currentQuestion];
-            questionCounterEl.textContent = `Question ${currentQuestion + 1} of ${questions.length}`;
-            questionTextEl.textContent = q.question;
-            progressBarEl.style.width = `${((currentQuestion) / questions.length) * 100}%`;
+        <h2>🎉 Quiz Completed!</h2>
 
-            optionsListEl.innerHTML = "";
-            explanationBoxEl.style.display = "none";
-            nextBtn.style.display = "none";
+        <p>Your final score is:</p>
 
-            q.options.forEach((option, index) => {
-                const button = document.createElement("button");
-                button.className = "option-btn";
-                button.textContent = option;
-                button.onclick = () => selectOption(index);
-                optionsListEl.appendChild(button);
-            });
+        <div class="score-display" id="final-score">
+            0 / 15
+        </div>
+
+        <p id="score-message" style="margin-bottom:25px;"></p>
+
+        <button
+            class="restart-btn"
+            onclick="restartQuiz()">
+            ↻ Try Again
+        </button>
+
+    </div>
+
+</div>
+
+
+<script>
+
+const questions = [
+
+{
+    question: "It is high time we __________.",
+    options: [
+        "change our bad habits",
+        "changed our bad habits",
+        "will change our bad habits",
+        "have changed our bad habits"
+    ],
+    answer: 1,
+    explanation:
+        "Rule: 'It is high time' requires a simple past verb (V2) when introducing an action that should have already been done."
+},
+
+{
+    question: "Walk fast lest __________.",
+    options: [
+        "you will miss the train",
+        "you should miss the train",
+        "you might missed the train",
+        "you do not miss the train"
+    ],
+    answer: 1,
+    explanation:
+        "Rule: 'Lest' means 'for fear that' and requires the structure: Subject + should + base verb."
+},
+
+{
+    question: "He was so weak that __________.",
+    options: [
+        "he could not walk",
+        "he cannot walk",
+        "he will not walk",
+        "he is unable to walk"
+    ],
+    answer: 0,
+    explanation:
+        "Rule: 'So... that' in a past context requires 'could not + base verb'."
+},
+
+{
+    question: "Had I known his address, I __________.",
+    options: [
+        "will visit him",
+        "would visit him",
+        "would have visited him",
+        "had visited him"
+    ],
+    answer: 2,
+    explanation:
+        "Rule: Third conditional inversion ('Had + subject + V3') requires 'would have + V3' in the main clause."
+},
+
+{
+    question: "No sooner had the teacher entered the classroom than __________.",
+    options: [
+        "the students stood up",
+        "the students stand up",
+        "the students had stood up",
+        "the students will stand up"
+    ],
+    answer: 0,
+    explanation:
+        "Rule: 'No sooner had... than' pairs a past perfect clause with a simple past clause."
+},
+
+{
+    question: "He speaks as if __________.",
+    options: [
+        "he knows everything",
+        "he knew everything",
+        "he has known everything",
+        "he will know everything"
+    ],
+    answer: 1,
+    explanation:
+        "Rule: 'As if' preceded by a present simple verb requires simple past for unreal/hypothetical states."
+},
+
+{
+    question: "Scarcely had I reached the station when __________.",
+    options: [
+        "the train left",
+        "the train leaves",
+        "the train had left",
+        "the train would leave"
+    ],
+    answer: 0,
+    explanation:
+        "Rule: 'Scarcely had... when' pairs a past perfect inverted clause with a simple past clause."
+},
+
+{
+    question: "You cannot succeed in life unless __________.",
+    options: [
+        "you do not work hard",
+        "you work hard",
+        "you will work hard",
+        "you worked hard"
+    ],
+    answer: 1,
+    explanation:
+        "Rule: 'Unless' means 'if not' and already contains a negative meaning, requiring an affirmative verb."
+},
+
+{
+    question: "The box is too heavy for him __________.",
+    options: [
+        "to carry it",
+        "to carry",
+        "carrying",
+        "that he cannot carry"
+    ],
+    answer: 1,
+    explanation:
+        "Rule: 'Too + adjective + for someone' is completed with an infinitive (to + base verb)."
+},
+
+{
+    question: "Five years have passed since __________.",
+    options: [
+        "I last meet you",
+        "I last met you",
+        "I have last met you",
+        "I had last met you"
+    ],
+    answer: 1,
+    explanation:
+        "Rule: When 'since' follows a present perfect main clause, the secondary clause uses simple past."
+},
+
+{
+    question: "Strike the iron while __________.",
+    options: [
+        "it was hot",
+        "it is hot",
+        "it will be hot",
+        "it becomes hot"
+    ],
+    answer: 1,
+    explanation:
+        "Rule: Completes the proverb: 'Strike the iron while it is hot.'"
+},
+
+{
+    question: "He worked hard so that __________.",
+    options: [
+        "he can secure good marks",
+        "he could secure good marks",
+        "he will secure good marks",
+        "he secures good marks"
+    ],
+    answer: 1,
+    explanation:
+        "Rule: 'So that' used after past simple requires 'could / might + base verb'."
+},
+
+{
+    question: "I went to the bank with a view to __________.",
+    options: [
+        "open a savings account",
+        "opening a savings account",
+        "opened a savings account",
+        "to open a savings account"
+    ],
+    answer: 1,
+    explanation:
+        "Rule: The prepositional phrase 'with a view to' must be followed by a gerund (verb + -ing)."
+},
+
+{
+    question: "If you had invited me, I __________.",
+    options: [
+        "would attend the party",
+        "will have attended the party",
+        "would have attended the party",
+        "had attended the party"
+    ],
+    answer: 2,
+    explanation:
+        "Rule: Third conditional structure: 'If + past perfect' → 'would have + past participle (V3)'."
+},
+
+{
+    question: "United we stand, __________.",
+    options: [
+        "divided we fall",
+        "divided we fail",
+        "together we win",
+        "separated we fall"
+    ],
+    answer: 0,
+    explanation:
+        "Rule: Completes the proverb: 'United we stand, divided we fall.'"
+}
+
+];
+
+
+let currentQuestion = 0;
+let score = 0;
+
+const questionCounterEl =
+    document.getElementById("question-counter");
+
+const questionTextEl =
+    document.getElementById("question-text");
+
+const optionsListEl =
+    document.getElementById("options-list");
+
+const explanationBoxEl =
+    document.getElementById("explanation-box");
+
+const progressBarEl =
+    document.getElementById("progress-bar");
+
+const nextBtn =
+    document.getElementById("next-btn");
+
+
+function loadQuestion() {
+
+    const q = questions[currentQuestion];
+
+    questionCounterEl.textContent =
+        `Question ${currentQuestion + 1} of ${questions.length}`;
+
+    questionTextEl.textContent = q.question;
+
+    progressBarEl.style.width =
+        `${((currentQuestion) / questions.length) * 100}%`;
+
+
+    /* Question animation */
+
+    questionTextEl.classList.remove("question-enter");
+
+    void questionTextEl.offsetWidth;
+
+    questionTextEl.classList.add("question-enter");
+
+
+    optionsListEl.innerHTML = "";
+
+    explanationBoxEl.style.display = "none";
+
+    nextBtn.style.display = "none";
+
+
+    q.options.forEach((option, index) => {
+
+        const button =
+            document.createElement("button");
+
+        button.className = "option-btn";
+
+        button.textContent = option;
+
+        button.onclick =
+            () => selectOption(index);
+
+        optionsListEl.appendChild(button);
+
+    });
+
+}
+
+
+function selectOption(selectedIndex) {
+
+    const q = questions[currentQuestion];
+
+    const buttons = optionsListEl.children;
+
+
+    for (let i = 0; i < buttons.length; i++) {
+
+        buttons[i].disabled = true;
+
+        if (i === q.answer) {
+            buttons[i].classList.add("correct");
         }
 
-        function selectOption(selectedIndex) {
-            const q = questions[currentQuestion];
-            const buttons = optionsListEl.children;
+    }
 
-            for (let i = 0; i < buttons.length; i++) {
-                buttons[i].disabled = true;
-                if (i === q.answer) {
-                    buttons[i].classList.add("correct");
-                }
-            }
 
-            if (selectedIndex === q.answer) {
-                score++;
-            } else {
-                buttons[selectedIndex].classList.add("incorrect");
-            }
+    if (selectedIndex === q.answer) {
 
-            explanationBoxEl.textContent = q.explanation;
-            explanationBoxEl.style.display = "block";
-            nextBtn.style.display = "block";
-        }
+        score++;
 
-        function nextQuestion() {
-            currentQuestion++;
-            if (currentQuestion < questions.length) {
-                loadQuestion();
-            } else {
-                showResults();
-            }
-        }
+    } else {
 
-        function showResults() {
-            document.getElementById("quiz-box").style.display = "none";
-            document.getElementById("result-screen").style.display = "block";
-            document.getElementById("final-score").textContent = `${score} / ${questions.length}`;
+        buttons[selectedIndex]
+            .classList.add("incorrect");
 
-            const percentage = (score / questions.length) * 100;
-            const messageEl = document.getElementById("score-message");
-            
-            if (percentage === 100) {
-                messageEl.textContent = "Perfect score! Outstanding grammar skills!";
-            } else if (percentage >= 70) {
-                messageEl.textContent = "Great job! You have a solid grasp of grammar rules.";
-            } else {
-                messageEl.textContent = "Good effort! Review the rules and try again.";
-            }
-        }
+    }
 
-        function restartQuiz() {
-            currentQuestion = 0;
-            score = 0;
-            document.getElementById("result-screen").style.display = "none";
-            document.getElementById("quiz-box").style.display = "block";
-            loadQuestion();
-        }
 
-        // Initialize quiz
+    explanationBoxEl.textContent =
+        q.explanation;
+
+    explanationBoxEl.style.display =
+        "block";
+
+    nextBtn.style.display =
+        "block";
+}
+
+
+function nextQuestion() {
+
+    currentQuestion++;
+
+    if (currentQuestion < questions.length) {
+
         loadQuestion();
-    </script>
+
+    } else {
+
+        showResults();
+
+    }
+
+}
+
+
+function showResults() {
+
+    document.getElementById("quiz-box")
+        .style.display = "none";
+
+    document.getElementById("result-screen")
+        .style.display = "block";
+
+
+    document.getElementById("final-score")
+        .textContent =
+        `${score} / ${questions.length}`;
+
+
+    const percentage =
+        (score / questions.length) * 100;
+
+    const messageEl =
+        document.getElementById("score-message");
+
+
+    if (percentage === 100) {
+
+        messageEl.textContent =
+            "Perfect score! Outstanding grammar skills! 🏆";
+
+    } else if (percentage >= 70) {
+
+        messageEl.textContent =
+            "Great job! You have a solid grasp of grammar rules. 🎯";
+
+    } else {
+
+        messageEl.textContent =
+            "Good effort! Review the rules and try again. 📚";
+
+    }
+
+}
+
+
+function restartQuiz() {
+
+    currentQuestion = 0;
+
+    score = 0;
+
+    document.getElementById("result-screen")
+        .style.display = "none";
+
+    document.getElementById("quiz-box")
+        .style.display = "block";
+
+    loadQuestion();
+
+}
+
+
+/* Start */
+
+loadQuestion();
+
+</script>
+
 </body>
 </html>
