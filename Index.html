@@ -1,0 +1,401 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Grammar Quiz - Sentence Completion</title>
+    <style>
+        :root {
+            --primary-color: #4a90e2;
+            --success-color: #2ecc71;
+            --error-color: #e74c3c;
+            --background-color: #f4f7f6;
+            --card-background: #ffffff;
+            --text-color: #333333;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .quiz-container {
+            background-color: var(--card-background);
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 650px;
+            padding: 30px;
+            overflow: hidden;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .header h1 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+        }
+
+        .progress-bar-container {
+            width: 100%;
+            background-color: #e0e0e0;
+            height: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            width: 0%;
+            background-color: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+
+        .question-counter {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .question-text {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .options-list {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        .option-btn {
+            width: 100%;
+            background-color: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            padding: 14px;
+            margin-bottom: 10px;
+            text-align: left;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .option-btn:hover:not([disabled]) {
+            border-color: var(--primary-color);
+            background-color: #eef5fc;
+        }
+
+        .option-btn.correct {
+            background-color: #d4edda;
+            border-color: var(--success-color);
+            color: #155724;
+            font-weight: bold;
+        }
+
+        .option-btn.incorrect {
+            background-color: #f8d7da;
+            border-color: var(--error-color);
+            color: #721c24;
+        }
+
+        .explanation-box {
+            background-color: #e8f4fd;
+            border-left: 4px solid var(--primary-color);
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            display: none;
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+
+        .action-btn {
+            width: 100%;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 14px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.2s ease;
+            display: none;
+        }
+
+        .action-btn:hover {
+            background-color: #357abd;
+        }
+
+        .result-screen {
+            text-align: center;
+            display: none;
+        }
+
+        .result-screen h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .score-display {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin: 20px 0;
+        }
+
+        .restart-btn {
+            background-color: var(--success-color);
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .restart-btn:hover {
+            background-color: #27ae60;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="quiz-container">
+        <!-- Quiz Content -->
+        <div id="quiz-box">
+            <div class="header">
+                <h1>Sentence Completion Quiz</h1>
+            </div>
+
+            <div class="progress-bar-container">
+                <div class="progress-bar" id="progress-bar"></div>
+            </div>
+
+            <div class="question-counter" id="question-counter">Question 1 of 15</div>
+            <div class="question-text" id="question-text">Loading question...</div>
+
+            <ul class="options-list" id="options-list"></ul>
+
+            <div class="explanation-box" id="explanation-box"></div>
+
+            <button class="action-btn" id="next-btn" onclick="nextQuestion()">Next Question</button>
+        </div>
+
+        <!-- Result Screen -->
+        <div class="result-screen" id="result-screen">
+            <h2>Quiz Completed!</h2>
+            <p>Your final score is:</p>
+            <div class="score-display" id="final-score">0 / 15</div>
+            <p id="score-message" style="margin-bottom: 25px;"></p>
+            <button class="restart-btn" onclick="restartQuiz()">Try Again</button>
+        </div>
+    </div>
+
+    <script>
+        const questions = [
+            {
+                question: "It is high time we __________.",
+                options: ["change our bad habits", "changed our bad habits", "will change our bad habits", "have changed our bad habits"],
+                answer: 1,
+                explanation: "Rule: 'It is high time' requires a simple past verb (V2) when introducing an action that should have already been done."
+            },
+            {
+                question: "Walk fast lest __________.",
+                options: ["you will miss the train", "you should miss the train", "you might missed the train", "you do not miss the train"],
+                answer: 1,
+                explanation: "Rule: 'Lest' means 'for fear that' and requires the structure: Subject + should + base verb."
+            },
+            {
+                question: "He was so weak that __________.",
+                options: ["he could not walk", "he cannot walk", "he will not walk", "he is unable to walk"],
+                answer: 0,
+                explanation: "Rule: 'So... that' in a past context requires 'could not + base verb'."
+            },
+            {
+                question: "Had I known his address, I __________.",
+                options: ["will visit him", "would visit him", "would have visited him", "had visited him"],
+                answer: 2,
+                explanation: "Rule: Third conditional inversion ('Had + subject + V3') requires 'would have + V3' in the main clause."
+            },
+            {
+                question: "No sooner had the teacher entered the classroom than __________.",
+                options: ["the students stood up", "the students stand up", "the students had stood up", "the students will stand up"],
+                answer: 0,
+                explanation: "Rule: 'No sooner had... than' pairs a past perfect clause with a simple past clause."
+            },
+            {
+                question: "He speaks as if __________.",
+                options: ["he knows everything", "he knew everything", "he has known everything", "he will know everything"],
+                answer: 1,
+                explanation: "Rule: 'As if' preceded by a present simple verb requires simple past for unreal/hypothetical states."
+            },
+            {
+                question: "Scarcely had I reached the station when __________.",
+                options: ["the train left", "the train leaves", "the train had left", "the train would leave"],
+                answer: 0,
+                explanation: "Rule: 'Scarcely had... when' pairs a past perfect inverted clause with a simple past clause."
+            },
+            {
+                question: "You cannot succeed in life unless __________.",
+                options: ["you do not work hard", "you work hard", "you will work hard", "you worked hard"],
+                answer: 1,
+                explanation: "Rule: 'Unless' means 'if not' and already contains a negative meaning, requiring an affirmative verb."
+            },
+            {
+                question: "The box is too heavy for him __________.",
+                options: ["to carry it", "to carry", "carrying", "that he cannot carry"],
+                answer: 1,
+                explanation: "Rule: 'Too + adjective + for someone' is completed with an infinitive (to + base verb)."
+            },
+            {
+                question: "Five years have passed since __________.",
+                options: ["I last meet you", "I last met you", "I have last met you", "I had last met you"],
+                answer: 1,
+                explanation: "Rule: When 'since' follows a present perfect main clause, the secondary clause uses simple past."
+            },
+            {
+                question: "Strike the iron while __________.",
+                options: ["it was hot", "it is hot", "it will be hot", "it becomes hot"],
+                answer: 1,
+                explanation: "Rule: Completes the proverb: 'Strike the iron while it is hot.'"
+            },
+            {
+                question: "He worked hard so that __________.",
+                options: ["he can secure good marks", "he could secure good marks", "he will secure good marks", "he secures good marks"],
+                answer: 1,
+                explanation: "Rule: 'So that' used after past simple requires 'could / might + base verb'."
+            },
+            {
+                question: "I went to the bank with a view to __________.",
+                options: ["open a savings account", "opening a savings account", "opened a savings account", "to open a savings account"],
+                answer: 1,
+                explanation: "Rule: The prepositional phrase 'with a view to' must be followed by a gerund (verb + -ing)."
+            },
+            {
+                question: "If you had invited me, I __________.",
+                options: ["would attend the party", "will have attended the party", "would have attended the party", "had attended the party"],
+                answer: 2,
+                explanation: "Rule: Third conditional structure: 'If + past perfect' -> 'would have + past participle (V3)'."
+            },
+            {
+                question: "United we stand, __________.",
+                options: ["divided we fall", "divided we fail", "together we win", "separated we fall"],
+                answer: 0,
+                explanation: "Rule: Completes the proverb: 'United we stand, divided we fall.'"
+            }
+        ];
+
+        let currentQuestion = 0;
+        let score = 0;
+
+        const questionCounterEl = document.getElementById("question-counter");
+        const questionTextEl = document.getElementById("question-text");
+        const optionsListEl = document.getElementById("options-list");
+        const explanationBoxEl = document.getElementById("explanation-box");
+        const progressBarEl = document.getElementById("progress-bar");
+        const nextBtn = document.getElementById("next-btn");
+
+        function loadQuestion() {
+            const q = questions[currentQuestion];
+            questionCounterEl.textContent = `Question ${currentQuestion + 1} of ${questions.length}`;
+            questionTextEl.textContent = q.question;
+            progressBarEl.style.width = `${((currentQuestion) / questions.length) * 100}%`;
+
+            optionsListEl.innerHTML = "";
+            explanationBoxEl.style.display = "none";
+            nextBtn.style.display = "none";
+
+            q.options.forEach((option, index) => {
+                const button = document.createElement("button");
+                button.className = "option-btn";
+                button.textContent = option;
+                button.onclick = () => selectOption(index);
+                optionsListEl.appendChild(button);
+            });
+        }
+
+        function selectOption(selectedIndex) {
+            const q = questions[currentQuestion];
+            const buttons = optionsListEl.children;
+
+            for (let i = 0; i < buttons.length; i++) {
+                buttons[i].disabled = true;
+                if (i === q.answer) {
+                    buttons[i].classList.add("correct");
+                }
+            }
+
+            if (selectedIndex === q.answer) {
+                score++;
+            } else {
+                buttons[selectedIndex].classList.add("incorrect");
+            }
+
+            explanationBoxEl.textContent = q.explanation;
+            explanationBoxEl.style.display = "block";
+            nextBtn.style.display = "block";
+        }
+
+        function nextQuestion() {
+            currentQuestion++;
+            if (currentQuestion < questions.length) {
+                loadQuestion();
+            } else {
+                showResults();
+            }
+        }
+
+        function showResults() {
+            document.getElementById("quiz-box").style.display = "none";
+            document.getElementById("result-screen").style.display = "block";
+            document.getElementById("final-score").textContent = `${score} / ${questions.length}`;
+
+            const percentage = (score / questions.length) * 100;
+            const messageEl = document.getElementById("score-message");
+            
+            if (percentage === 100) {
+                messageEl.textContent = "Perfect score! Outstanding grammar skills!";
+            } else if (percentage >= 70) {
+                messageEl.textContent = "Great job! You have a solid grasp of grammar rules.";
+            } else {
+                messageEl.textContent = "Good effort! Review the rules and try again.";
+            }
+        }
+
+        function restartQuiz() {
+            currentQuestion = 0;
+            score = 0;
+            document.getElementById("result-screen").style.display = "none";
+            document.getElementById("quiz-box").style.display = "block";
+            loadQuestion();
+        }
+
+        // Initialize quiz
+        loadQuestion();
+    </script>
+</body>
+</html>
