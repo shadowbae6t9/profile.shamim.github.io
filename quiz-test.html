@@ -7,121 +7,109 @@
 <title>English Grammar Quiz - Sentence Completion</title>
 
 <style>
+
 :root {
-    --blue: #4facfe;
-    --purple: #8b5cf6;
-    --pink: #ec4899;
-    --green: #22c55e;
-    --red: #ef4444;
-    --white: #ffffff;
-    --text: #172033;
+    --primary: #8b5cf6;
+    --secondary: #ec4899;
+    --success: #22c55e;
+    --error: #ef4444;
+    --bg: #080812;
+    --card: rgba(255,255,255,0.08);
+    --text: #ffffff;
 }
 
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Arial,
+        sans-serif;
 }
 
 body {
+
     min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at top left,
+            #3b0764,
+            transparent 40%
+        ),
+        radial-gradient(
+            circle at bottom right,
+            #831843,
+            transparent 40%
+        ),
+        linear-gradient(
+            135deg,
+            #050509,
+            #12051c,
+            #090b20
+        );
+
+    color: var(--text);
+
     display: flex;
     justify-content: center;
     align-items: center;
+
     padding: 20px;
 
-    background:
-        radial-gradient(circle at 10% 20%, rgba(79,172,254,.45), transparent 35%),
-        radial-gradient(circle at 90% 80%, rgba(236,72,153,.4), transparent 35%),
-        linear-gradient(135deg, #111827, #312e81, #581c87);
-
-    background-size: 200% 200%;
-    animation: gradientMove 12s ease infinite;
     overflow-x: hidden;
 }
 
-@keyframes gradientMove {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
 
-/* Floating background circles */
-
-body::before,
-body::after {
-    content: "";
-    position: fixed;
-    border-radius: 50%;
-    filter: blur(5px);
-    pointer-events: none;
-    z-index: -1;
-}
-
-body::before {
-    width: 220px;
-    height: 220px;
-    background: rgba(79,172,254,.18);
-    top: 5%;
-    left: 5%;
-    animation: floatOne 7s ease-in-out infinite;
-}
-
-body::after {
-    width: 280px;
-    height: 280px;
-    background: rgba(236,72,153,.16);
-    bottom: 5%;
-    right: 5%;
-    animation: floatTwo 9s ease-in-out infinite;
-}
-
-@keyframes floatOne {
-    0%,100% { transform: translate(0,0); }
-    50% { transform: translate(40px,30px); }
-}
-
-@keyframes floatTwo {
-    0%,100% { transform: translate(0,0); }
-    50% { transform: translate(-40px,-30px); }
-}
-
-/* Main card */
+/* MAIN CARD */
 
 .quiz-container {
+
     width: 100%;
     max-width: 680px;
-    padding: 32px;
 
-    background: rgba(255,255,255,.92);
+    padding: 28px;
+
+    background:
+        rgba(255,255,255,0.07);
+
+    border:
+        1px solid rgba(255,255,255,0.15);
+
+    border-radius: 24px;
+
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
 
-    border: 1px solid rgba(255,255,255,.55);
-    border-radius: 24px;
-
     box-shadow:
-        0 30px 80px rgba(0,0,0,.35),
-        0 0 40px rgba(139,92,246,.15);
+        0 25px 70px rgba(0,0,0,0.45),
+        0 0 40px rgba(139,92,246,0.12);
 
-    overflow: hidden;
-
-    animation: cardEnter .7s cubic-bezier(.2,.8,.2,1);
+    animation:
+        cardEnter 0.8s ease;
 }
 
+
 @keyframes cardEnter {
+
     from {
         opacity: 0;
-        transform: translateY(35px) scale(.96);
+        transform: translateY(30px) scale(.97);
     }
+
     to {
         opacity: 1;
         transform: translateY(0) scale(1);
     }
+
 }
 
-/* Header */
+
+/* HEADER */
 
 .header {
     text-align: center;
@@ -129,513 +117,762 @@ body::after {
 }
 
 .header h1 {
-    font-size: 1.9rem;
-    font-weight: 800;
 
-    background: linear-gradient(
-        90deg,
-        #2563eb,
-        #7c3aed,
-        #db2777
-    );
-
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-
-    animation: titleGlow 3s ease-in-out infinite;
-}
-
-@keyframes titleGlow {
-    0%,100% {
-        filter: drop-shadow(0 0 0 transparent);
-    }
-    50% {
-        filter: drop-shadow(0 0 10px rgba(124,58,237,.3));
-    }
-}
-
-/* Progress */
-
-.progress-bar-container {
-    width: 100%;
-    height: 11px;
-    background: #e5e7eb;
-    border-radius: 20px;
-    overflow: hidden;
-    margin-bottom: 22px;
-}
-
-.progress-bar {
-    height: 100%;
-    width: 0%;
-
-    background: linear-gradient(
-        90deg,
-        #3b82f6,
-        #8b5cf6,
-        #ec4899
-    );
-
-    border-radius: 20px;
-
-    transition:
-        width .6s cubic-bezier(.4,0,.2,1);
-
-    box-shadow: 0 0 12px rgba(139,92,246,.55);
-}
-
-/* Question */
-
-.question-counter {
-    font-size: .8rem;
-    font-weight: 800;
-    color: #6366f1;
-
-    letter-spacing: 1.5px;
-    margin-bottom: 12px;
-}
-
-.question-text {
-    font-size: 1.3rem;
-    font-weight: 700;
-    line-height: 1.5;
-    color: var(--text);
-
-    margin-bottom: 22px;
-}
-
-/* Question transition */
-
-.question-enter {
-    animation: questionEnter .55s cubic-bezier(.2,.8,.2,1);
-}
-
-@keyframes questionEnter {
-    from {
-        opacity: 0;
-        transform: translateX(35px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-/* Options */
-
-.options-list {
-    list-style: none;
-    margin-bottom: 20px;
-}
-
-.option-btn {
-    width: 100%;
-
-    background: rgba(248,250,252,.9);
-
-    border: 2px solid #e5e7eb;
-    border-radius: 13px;
-
-    padding: 15px 16px;
-    margin-bottom: 11px;
-
-    text-align: left;
-    font-size: 1rem;
-    font-weight: 600;
-
-    color: #374151;
-
-    cursor: pointer;
-
-    transition:
-        transform .2s ease,
-        border-color .2s ease,
-        background .2s ease,
-        box-shadow .2s ease;
-}
-
-.option-btn:hover:not(:disabled) {
-    transform: translateX(5px) scale(1.01);
-
-    border-color: #8b5cf6;
-
-    background: linear-gradient(
-        90deg,
-        #eef2ff,
-        #faf5ff
-    );
-
-    box-shadow: 0 7px 20px rgba(99,102,241,.15);
-}
-
-.option-btn:active:not(:disabled) {
-    transform: scale(.98);
-}
-
-/* Correct */
-
-.option-btn.correct {
-    background: linear-gradient(
-        100deg,
-        #dcfce7,
-        #bbf7d0
-    );
-
-    border-color: var(--green);
-    color: #166534;
-
-    animation: correctAnswer .65s cubic-bezier(.2,.8,.2,1);
-
-    box-shadow:
-        0 0 0 3px rgba(34,197,94,.12),
-        0 0 25px rgba(34,197,94,.35);
-}
-
-@keyframes correctAnswer {
-    0% {
-        transform: scale(1);
-    }
-
-    35% {
-        transform: scale(1.035);
-    }
-
-    60% {
-        transform: scale(.98);
-    }
-
-    100% {
-        transform: scale(1);
-    }
-}
-
-/* Wrong */
-
-.option-btn.incorrect {
-    background: linear-gradient(
-        100deg,
-        #fee2e2,
-        #fecaca
-    );
-
-    border-color: var(--red);
-    color: #991b1b;
-
-    animation: wrongAnswer .55s ease;
-
-    box-shadow:
-        0 0 0 3px rgba(239,68,68,.12),
-        0 0 22px rgba(239,68,68,.3);
-}
-
-@keyframes wrongAnswer {
-    0%,100% {
-        transform: translateX(0);
-    }
-
-    20% {
-        transform: translateX(-9px);
-    }
-
-    40% {
-        transform: translateX(9px);
-    }
-
-    60% {
-        transform: translateX(-7px);
-    }
-
-    80% {
-        transform: translateX(7px);
-    }
-}
-
-/* Disabled */
-
-.option-btn:disabled {
-    cursor: default;
-}
-
-/* Explanation */
-
-.explanation-box {
-    display: none;
-
-    background: linear-gradient(
-        135deg,
-        #eff6ff,
-        #f5f3ff
-    );
-
-    border-left: 5px solid #6366f1;
-
-    padding: 16px;
-
-    border-radius: 12px;
-
-    margin-bottom: 20px;
-
-    font-size: .95rem;
-    line-height: 1.5;
-    color: #374151;
-
-    animation: explanationEnter .45s ease;
-}
-
-@keyframes explanationEnter {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Buttons */
-
-.action-btn {
-    width: 100%;
+    font-size: 1.8rem;
 
     background:
         linear-gradient(
             90deg,
-            #3b82f6,
-            #7c3aed,
-            #db2777
+            #ffffff,
+            #d8b4fe,
+            #f9a8d4
+        );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    margin-bottom: 8px;
+}
+
+.header p {
+    color: rgba(255,255,255,.6);
+    font-size: .9rem;
+}
+
+
+/* PARTICIPANT SCREEN */
+
+.participant-screen {
+    text-align: center;
+}
+
+.participant-screen h2 {
+    margin-bottom: 10px;
+}
+
+.participant-screen p {
+    color: rgba(255,255,255,.65);
+    margin-bottom: 25px;
+}
+
+.name-input {
+
+    width: 100%;
+
+    padding: 15px;
+
+    border-radius: 12px;
+
+    border:
+        1px solid rgba(255,255,255,.18);
+
+    background:
+        rgba(0,0,0,.25);
+
+    color: white;
+
+    outline: none;
+
+    font-size: 1rem;
+
+    margin-bottom: 15px;
+
+    text-align: center;
+}
+
+.name-input:focus {
+
+    border-color: #c084fc;
+
+    box-shadow:
+        0 0 20px rgba(192,132,252,.2);
+}
+
+
+/* BUTTON */
+
+.start-quiz-btn {
+
+    width: 100%;
+
+    padding: 15px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #8b5cf6,
+            #ec4899
         );
 
     color: white;
 
-    border: none;
-    padding: 15px;
-
-    border-radius: 13px;
+    font-weight: 700;
 
     font-size: 1rem;
-    font-weight: 800;
 
     cursor: pointer;
-
-    box-shadow:
-        0 8px 20px rgba(99,102,241,.3);
 
     transition:
         transform .2s ease,
         box-shadow .2s ease;
+}
 
-    animation: buttonAppear .4s ease;
+.start-quiz-btn:hover {
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 10px 30px rgba(236,72,153,.3);
+}
+
+.start-quiz-btn:active {
+
+    transform:
+        scale(.96);
+}
+
+
+/* QUIZ */
+
+#quiz-box {
+    display: none;
+}
+
+
+/* PROGRESS */
+
+.progress-bar-container {
+
+    width: 100%;
+
+    height: 9px;
+
+    background:
+        rgba(255,255,255,.1);
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    margin-bottom: 18px;
+}
+
+.progress-bar {
+
+    height: 100%;
+
+    width: 0%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #8b5cf6,
+            #ec4899
+        );
+
+    border-radius: 10px;
+
+    transition:
+        width .4s ease;
+}
+
+
+/* INFO */
+
+.quiz-info {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 12px;
+
+    font-size: .85rem;
+
+    color:
+        rgba(255,255,255,.6);
+}
+
+
+/* QUESTION */
+
+.question-text {
+
+    font-size: 1.3rem;
+
+    font-weight: 700;
+
+    line-height: 1.5;
+
+    margin-bottom: 22px;
+
+}
+
+
+/* QUESTION ANIMATION */
+
+.question-enter {
+
+    animation:
+        questionEnter .45s
+        cubic-bezier(.2,.8,.2,1);
+}
+
+@keyframes questionEnter {
+
+    from {
+        opacity: 0;
+        transform:
+            translateX(35px)
+            scale(.98);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateX(0)
+            scale(1);
+    }
+
+}
+
+
+/* OPTIONS */
+
+.options-list {
+
+    list-style: none;
+
+    margin-bottom: 18px;
+}
+
+.option-btn {
+
+    width: 100%;
+
+    padding: 15px;
+
+    margin-bottom: 11px;
+
+    border-radius: 13px;
+
+    border:
+        1px solid rgba(255,255,255,.12);
+
+    background:
+        rgba(255,255,255,.055);
+
+    color: white;
+
+    text-align: left;
+
+    font-size: .98rem;
+
+    cursor: pointer;
+
+    transition:
+        transform .2s ease,
+        background .2s ease,
+        border .2s ease;
+
+}
+
+.option-btn:hover:not(:disabled) {
+
+    transform:
+        translateX(5px);
+
+    background:
+        rgba(255,255,255,.12);
+
+    border-color:
+        rgba(192,132,252,.7);
+}
+
+
+/* CORRECT */
+
+.option-btn.correct {
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(34,197,94,.28),
+            rgba(22,163,74,.18)
+        );
+
+    border-color:
+        #22c55e;
+
+    color:
+        #bbf7d0;
+
+    animation:
+        correctAnswer .65s
+        cubic-bezier(.2,.8,.2,1);
+}
+
+@keyframes correctAnswer {
+
+    0% {
+        transform:
+            scale(.92);
+    }
+
+    35% {
+        transform:
+            scale(1.04)
+            translateX(5px);
+    }
+
+    60% {
+        transform:
+            scale(.98);
+    }
+
+    100% {
+        transform:
+            scale(1);
+    }
+
+}
+
+
+/* WRONG */
+
+.option-btn.incorrect {
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(239,68,68,.30),
+            rgba(185,28,28,.18)
+        );
+
+    border-color:
+        #ef4444;
+
+    color:
+        #fecaca;
+
+    animation:
+        wrongAnswer .55s ease;
+}
+
+@keyframes wrongAnswer {
+
+    0%,100% {
+        transform:
+            translateX(0);
+    }
+
+    20% {
+        transform:
+            translateX(-10px);
+    }
+
+    40% {
+        transform:
+            translateX(10px);
+    }
+
+    60% {
+        transform:
+            translateX(-7px);
+    }
+
+    80% {
+        transform:
+            translateX(5px);
+    }
+
+}
+
+
+/* EXPLANATION */
+
+.explanation-box {
+
+    display: none;
+
+    padding: 15px;
+
+    margin-bottom: 18px;
+
+    border-left:
+        4px solid #a78bfa;
+
+    border-radius: 10px;
+
+    background:
+        rgba(139,92,246,.12);
+
+    color:
+        rgba(255,255,255,.8);
+
+    font-size: .9rem;
+
+    line-height: 1.5;
+
+    animation:
+        explanationIn .4s ease;
+}
+
+@keyframes explanationIn {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0);
+    }
+
+}
+
+
+/* NEXT */
+
+.action-btn {
+
+    display: none;
+
+    width: 100%;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #8b5cf6,
+            #ec4899
+        );
+
+    color: white;
+
+    font-size: 1rem;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        transform .2s ease;
 }
 
 .action-btn:hover {
-    transform: translateY(-2px);
 
-    box-shadow:
-        0 12px 28px rgba(99,102,241,.4);
+    transform:
+        translateY(-2px);
 }
 
 .action-btn:active {
-    transform: scale(.97);
+
+    transform:
+        scale(.96);
 }
 
-@keyframes buttonAppear {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Result */
+/* RESULT */
 
 .result-screen {
-    text-align: center;
+
     display: none;
 
-    animation: resultEnter .7s cubic-bezier(.2,.8,.2,1);
+    text-align: center;
+
+    animation:
+        resultEnter .7s ease;
 }
 
 @keyframes resultEnter {
+
     from {
         opacity: 0;
-        transform: scale(.85) translateY(25px);
+        transform:
+            scale(.85)
+            translateY(20px);
     }
 
     to {
         opacity: 1;
-        transform: scale(1) translateY(0);
+        transform:
+            scale(1)
+            translateY(0);
     }
+
 }
 
 .result-screen h2 {
-    font-size: 2.1rem;
 
-    background: linear-gradient(
-        90deg,
-        #2563eb,
-        #7c3aed,
-        #db2777
-    );
-
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    font-size: 2rem;
 
     margin-bottom: 10px;
 }
 
 .score-display {
+
     font-size: 4rem;
+
     font-weight: 900;
 
     margin: 20px 0;
 
-    background: linear-gradient(
-        90deg,
-        #2563eb,
-        #8b5cf6,
-        #ec4899
-    );
+    background:
+        linear-gradient(
+            90deg,
+            #c084fc,
+            #f472b6
+        );
 
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-
-    animation: scorePop .8s cubic-bezier(.2,1.4,.4,1);
 }
 
-@keyframes scorePop {
-    0% {
-        transform: scale(.4);
-        opacity: 0;
-    }
+.result-details {
 
-    70% {
-        transform: scale(1.15);
-    }
+    display: grid;
 
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 10px;
+
+    margin:
+        20px 0 25px;
 }
 
-.restart-btn {
-    background: linear-gradient(
-        90deg,
-        #22c55e,
-        #16a34a
-    );
+.result-item {
 
-    color: white;
-
-    border: none;
-
-    padding: 14px 30px;
+    padding: 14px;
 
     border-radius: 12px;
 
-    font-size: 1rem;
-    font-weight: 800;
+    background:
+        rgba(255,255,255,.06);
+
+    border:
+        1px solid rgba(255,255,255,.1);
+}
+
+.result-item strong {
+
+    display: block;
+
+    font-size: 1.2rem;
+
+    margin-bottom: 3px;
+}
+
+.result-item small {
+
+    color:
+        rgba(255,255,255,.55);
+}
+
+
+/* RESTART */
+
+.restart-btn {
+
+    border: none;
+
+    padding: 14px 28px;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #22c55e,
+            #16a34a
+        );
+
+    color: white;
+
+    font-weight: 700;
 
     cursor: pointer;
 
-    box-shadow: 0 8px 20px rgba(34,197,94,.3);
-
-    transition: .2s ease;
+    transition:
+        transform .2s ease;
 }
 
 .restart-btn:hover {
-    transform: translateY(-2px) scale(1.02);
-    box-shadow: 0 12px 25px rgba(34,197,94,.4);
+
+    transform:
+        translateY(-3px);
 }
 
-.restart-btn:active {
-    transform: scale(.96);
+
+/* SAVING */
+
+.saving {
+
+    margin-top: 15px;
+
+    font-size: .85rem;
+
+    color:
+        rgba(255,255,255,.55);
 }
 
-/* Mobile */
 
-@media (max-width: 600px) {
+/* MOBILE */
+
+@media(max-width:480px) {
 
     body {
         padding: 12px;
     }
 
     .quiz-container {
-        padding: 23px 18px;
+        padding: 20px;
         border-radius: 20px;
     }
 
     .header h1 {
-        font-size: 1.55rem;
+        font-size: 1.5rem;
     }
 
     .question-text {
         font-size: 1.12rem;
     }
 
-    .option-btn {
-        padding: 14px;
-        font-size: .95rem;
-    }
-
     .score-display {
         font-size: 3.3rem;
     }
+
 }
 
-/* Reduced motion */
-
-@media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-        animation-duration: .01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: .01ms !important;
-    }
-}
 </style>
 </head>
 
+
 <body>
 
+
 <div class="quiz-container">
+
+
+    <!-- HEADER -->
+
+    <div class="header">
+
+        <h1>
+            Sentence Completion Quiz
+        </h1>
+
+        <p>
+            Test Your English Grammar
+        </p>
+
+    </div>
+
+
+    <!-- PARTICIPANT -->
+
+    <div
+        class="participant-screen"
+        id="participant-screen"
+    >
+
+        <h2>
+            Before You Start
+        </h2>
+
+        <p>
+            Enter your name or nickname
+        </p>
+
+        <input
+            type="text"
+            id="participant-name"
+            class="name-input"
+            placeholder="Your name / nickname"
+            maxlength="40"
+            autocomplete="off"
+        >
+
+        <button
+            class="start-quiz-btn"
+            onclick="startQuiz()"
+        >
+            START QUIZ
+        </button>
+
+    </div>
+
 
     <!-- QUIZ -->
 
     <div id="quiz-box">
 
-        <div class="header">
-            <h1>Sentence Completion Quiz</h1>
-        </div>
 
         <div class="progress-bar-container">
-            <div class="progress-bar" id="progress-bar"></div>
+
+            <div
+                class="progress-bar"
+                id="progress-bar"
+            ></div>
+
         </div>
 
-        <div class="question-counter" id="question-counter">
-            Question 1 of 15
+
+        <div class="quiz-info">
+
+            <span id="question-counter">
+                Question 1 of 15
+            </span>
+
+            <span id="timer">
+                00:00
+            </span>
+
         </div>
 
-        <div class="question-text" id="question-text">
-            Loading question...
+
+        <div
+            class="question-text"
+            id="question-text"
+        >
+            Loading...
         </div>
 
-        <ul class="options-list" id="options-list"></ul>
 
-        <div class="explanation-box" id="explanation-box"></div>
+        <ul
+            class="options-list"
+            id="options-list"
+        ></ul>
+
+
+        <div
+            class="explanation-box"
+            id="explanation-box"
+        ></div>
+
 
         <button
             class="action-btn"
             id="next-btn"
-            onclick="nextQuestion()">
-            Next Question →
+            onclick="nextQuestion()"
+        >
+            Next Question
         </button>
 
     </div>
@@ -643,22 +880,99 @@ body::after {
 
     <!-- RESULT -->
 
-    <div class="result-screen" id="result-screen">
+    <div
+        class="result-screen"
+        id="result-screen"
+    >
 
-        <h2>🎉 Quiz Completed!</h2>
+        <h2>
+            Quiz Completed!
+        </h2>
 
-        <p>Your final score is:</p>
+        <p id="result-name"></p>
 
-        <div class="score-display" id="final-score">
+        <div
+            class="score-display"
+            id="final-score"
+        >
             0 / 15
         </div>
 
-        <p id="score-message" style="margin-bottom:25px;"></p>
+
+        <div class="result-details">
+
+            <div class="result-item">
+
+                <strong id="percentage">
+                    0%
+                </strong>
+
+                <small>
+                    Percentage
+                </small>
+
+            </div>
+
+
+            <div class="result-item">
+
+                <strong id="time-result">
+                    00:00
+                </strong>
+
+                <small>
+                    Time Taken
+                </small>
+
+            </div>
+
+
+            <div class="result-item">
+
+                <strong id="correct-result">
+                    0
+                </strong>
+
+                <small>
+                    Correct
+                </small>
+
+            </div>
+
+
+            <div class="result-item">
+
+                <strong id="wrong-result">
+                    0
+                </strong>
+
+                <small>
+                    Wrong
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <p id="score-message"></p>
+
+        <p
+            id="saving-message"
+            class="saving"
+        >
+            Saving your result...
+        </p>
+
+
+        <br>
+
 
         <button
             class="restart-btn"
-            onclick="restartQuiz()">
-            ↻ Try Again
+            onclick="restartQuiz()"
+        >
+            Try Again
         </button>
 
     </div>
@@ -668,322 +982,559 @@ body::after {
 
 <script>
 
+
+/* =========================================================
+   GOOGLE APPS SCRIPT URL
+   =========================================================
+
+   AFTER CREATING YOUR GOOGLE APPS SCRIPT:
+
+   Replace the URL below with your Web App URL.
+
+   Example:
+
+   const GOOGLE_SCRIPT_URL =
+   "https://script.google.com/macros/s/XXXXXXXX/exec";
+
+   ========================================================= */
+
+const GOOGLE_SCRIPT_URL =
+"https://script.google.com/macros/s/PASTE_YOUR_SCRIPT_URL_HERE/exec";
+
+
+/* =========================================================
+   QUESTIONS
+   ========================================================= */
+
 const questions = [
 
 {
-    question: "It is high time we __________.",
+    question:
+    "It is high time we __________.",
+
     options: [
         "change our bad habits",
         "changed our bad habits",
         "will change our bad habits",
         "have changed our bad habits"
     ],
+
     answer: 1,
+
     explanation:
-        "Rule: 'It is high time' requires a simple past verb (V2) when introducing an action that should have already been done."
+    "Rule: 'It is high time' is followed by the simple past (V2)."
 },
 
 {
-    question: "Walk fast lest __________.",
+    question:
+    "Walk fast lest __________.",
+
     options: [
         "you will miss the train",
         "you should miss the train",
         "you might missed the train",
         "you do not miss the train"
     ],
+
     answer: 1,
+
     explanation:
-        "Rule: 'Lest' means 'for fear that' and requires the structure: Subject + should + base verb."
+    "Rule: Lest is normally followed by subject + should + base verb."
 },
 
 {
-    question: "He was so weak that __________.",
+    question:
+    "He was so weak that __________.",
+
     options: [
         "he could not walk",
         "he cannot walk",
         "he will not walk",
         "he is unable to walk"
     ],
+
     answer: 0,
+
     explanation:
-        "Rule: 'So... that' in a past context requires 'could not + base verb'."
+    "Rule: In a past context, so...that commonly takes could/could not."
 },
 
 {
-    question: "Had I known his address, I __________.",
+    question:
+    "Had I known his address, I __________.",
+
     options: [
         "will visit him",
         "would visit him",
         "would have visited him",
         "had visited him"
     ],
+
     answer: 2,
+
     explanation:
-        "Rule: Third conditional inversion ('Had + subject + V3') requires 'would have + V3' in the main clause."
+    "Rule: Had + subject + V3 is a third conditional inversion and takes would have + V3."
 },
 
 {
-    question: "No sooner had the teacher entered the classroom than __________.",
+    question:
+    "No sooner had the teacher entered the classroom than __________.",
+
     options: [
         "the students stood up",
         "the students stand up",
         "the students had stood up",
         "the students will stand up"
     ],
+
     answer: 0,
+
     explanation:
-        "Rule: 'No sooner had... than' pairs a past perfect clause with a simple past clause."
+    "Rule: No sooner had...than is followed by a simple past clause."
 },
 
 {
-    question: "He speaks as if __________.",
+    question:
+    "He speaks as if __________.",
+
     options: [
         "he knows everything",
         "he knew everything",
         "he has known everything",
         "he will know everything"
     ],
+
     answer: 1,
+
     explanation:
-        "Rule: 'As if' preceded by a present simple verb requires simple past for unreal/hypothetical states."
+    "Rule: For an unreal present situation, as if is followed by simple past."
 },
 
 {
-    question: "Scarcely had I reached the station when __________.",
+    question:
+    "Scarcely had I reached the station when __________.",
+
     options: [
         "the train left",
         "the train leaves",
         "the train had left",
         "the train would leave"
     ],
+
     answer: 0,
+
     explanation:
-        "Rule: 'Scarcely had... when' pairs a past perfect inverted clause with a simple past clause."
+    "Rule: Scarcely had...when is followed by a simple past clause."
 },
 
 {
-    question: "You cannot succeed in life unless __________.",
+    question:
+    "You cannot succeed in life unless __________.",
+
     options: [
         "you do not work hard",
         "you work hard",
         "you will work hard",
         "you worked hard"
     ],
+
     answer: 1,
+
     explanation:
-        "Rule: 'Unless' means 'if not' and already contains a negative meaning, requiring an affirmative verb."
+    "Rule: Unless already means if not, so an affirmative clause is used."
 },
 
 {
-    question: "The box is too heavy for him __________.",
+    question:
+    "The box is too heavy for him __________.",
+
     options: [
         "to carry it",
         "to carry",
         "carrying",
         "that he cannot carry"
     ],
+
     answer: 1,
+
     explanation:
-        "Rule: 'Too + adjective + for someone' is completed with an infinitive (to + base verb)."
+    "Rule: Too + adjective + for someone is followed by to + base verb."
 },
 
 {
-    question: "Five years have passed since __________.",
+    question:
+    "Five years have passed since __________.",
+
     options: [
         "I last meet you",
         "I last met you",
         "I have last met you",
         "I had last met you"
     ],
+
     answer: 1,
+
     explanation:
-        "Rule: When 'since' follows a present perfect main clause, the secondary clause uses simple past."
+    "Rule: Since with a present perfect main clause normally takes simple past in the since-clause."
 },
 
 {
-    question: "Strike the iron while __________.",
+    question:
+    "Strike the iron while __________.",
+
     options: [
         "it was hot",
         "it is hot",
         "it will be hot",
         "it becomes hot"
     ],
+
     answer: 1,
+
     explanation:
-        "Rule: Completes the proverb: 'Strike the iron while it is hot.'"
+    "Rule: The correct proverb is 'Strike the iron while it is hot.'"
 },
 
 {
-    question: "He worked hard so that __________.",
+    question:
+    "He worked hard so that __________.",
+
     options: [
         "he can secure good marks",
         "he could secure good marks",
         "he will secure good marks",
         "he secures good marks"
     ],
+
     answer: 1,
+
     explanation:
-        "Rule: 'So that' used after past simple requires 'could / might + base verb'."
+    "Rule: In a past context, so that commonly takes could + base verb."
 },
 
 {
-    question: "I went to the bank with a view to __________.",
+    question:
+    "I went to the bank with a view to __________.",
+
     options: [
         "open a savings account",
         "opening a savings account",
         "opened a savings account",
         "to open a savings account"
     ],
+
     answer: 1,
+
     explanation:
-        "Rule: The prepositional phrase 'with a view to' must be followed by a gerund (verb + -ing)."
+    "Rule: With a view to is followed by a gerund (V-ing)."
 },
 
 {
-    question: "If you had invited me, I __________.",
+    question:
+    "If you had invited me, I __________.",
+
     options: [
         "would attend the party",
         "will have attended the party",
         "would have attended the party",
         "had attended the party"
     ],
+
     answer: 2,
+
     explanation:
-        "Rule: Third conditional structure: 'If + past perfect' → 'would have + past participle (V3)'."
+    "Rule: Third conditional: If + past perfect → would have + V3."
 },
 
 {
-    question: "United we stand, __________.",
+    question:
+    "United we stand, __________.",
+
     options: [
         "divided we fall",
         "divided we fail",
         "together we win",
         "separated we fall"
     ],
+
     answer: 0,
+
     explanation:
-        "Rule: Completes the proverb: 'United we stand, divided we fall.'"
+    "Rule: The proverb is 'United we stand, divided we fall.'"
 }
 
 ];
 
 
 let currentQuestion = 0;
+
 let score = 0;
 
-const questionCounterEl =
-    document.getElementById("question-counter");
+let participantName = "";
 
-const questionTextEl =
-    document.getElementById("question-text");
+let startTime = 0;
 
-const optionsListEl =
-    document.getElementById("options-list");
+let timerInterval = null;
 
-const explanationBoxEl =
-    document.getElementById("explanation-box");
+let selectedAnswers = [];
 
-const progressBarEl =
-    document.getElementById("progress-bar");
+
+/* =========================================================
+   ELEMENTS
+   ========================================================= */
+
+const participantScreen =
+document.getElementById("participant-screen");
+
+const quizBox =
+document.getElementById("quiz-box");
+
+const resultScreen =
+document.getElementById("result-screen");
+
+const questionCounter =
+document.getElementById("question-counter");
+
+const questionText =
+document.getElementById("question-text");
+
+const optionsList =
+document.getElementById("options-list");
+
+const explanationBox =
+document.getElementById("explanation-box");
 
 const nextBtn =
-    document.getElementById("next-btn");
+document.getElementById("next-btn");
+
+const progressBar =
+document.getElementById("progress-bar");
+
+const timer =
+document.getElementById("timer");
 
 
-function loadQuestion() {
+/* =========================================================
+   START QUIZ
+   ========================================================= */
 
-    const q = questions[currentQuestion];
+function startQuiz() {
 
-    questionCounterEl.textContent =
-        `Question ${currentQuestion + 1} of ${questions.length}`;
+    const input =
+    document.getElementById("participant-name");
 
-    questionTextEl.textContent = q.question;
+    participantName =
+    input.value.trim();
 
-    progressBarEl.style.width =
-        `${((currentQuestion) / questions.length) * 100}%`;
+    if (!participantName) {
 
+        input.focus();
 
-    /* Question animation */
+        input.style.borderColor =
+        "#ef4444";
 
-    questionTextEl.classList.remove("question-enter");
+        return;
+    }
 
-    void questionTextEl.offsetWidth;
+    input.style.borderColor =
+    "rgba(255,255,255,.18)";
 
-    questionTextEl.classList.add("question-enter");
+    participantScreen.style.display =
+    "none";
 
+    quizBox.style.display =
+    "block";
 
-    optionsListEl.innerHTML = "";
+    currentQuestion = 0;
 
-    explanationBoxEl.style.display = "none";
+    score = 0;
 
-    nextBtn.style.display = "none";
+    selectedAnswers = [];
 
+    startTime = Date.now();
 
-    q.options.forEach((option, index) => {
+    startTimer();
 
-        const button =
-            document.createElement("button");
-
-        button.className = "option-btn";
-
-        button.textContent = option;
-
-        button.onclick =
-            () => selectOption(index);
-
-        optionsListEl.appendChild(button);
-
-    });
-
+    loadQuestion();
 }
 
 
+/* =========================================================
+   TIMER
+   ========================================================= */
+
+function startTimer() {
+
+    clearInterval(timerInterval);
+
+    timerInterval =
+    setInterval(() => {
+
+        const elapsed =
+        Date.now() - startTime;
+
+        timer.textContent =
+        formatTime(elapsed);
+
+    }, 1000);
+}
+
+
+function formatTime(milliseconds) {
+
+    const totalSeconds =
+    Math.floor(milliseconds / 1000);
+
+    const minutes =
+    Math.floor(totalSeconds / 60);
+
+    const seconds =
+    totalSeconds % 60;
+
+    return (
+        String(minutes).padStart(2,"0")
+        + ":" +
+        String(seconds).padStart(2,"0")
+    );
+}
+
+
+/* =========================================================
+   LOAD QUESTION
+   ========================================================= */
+
+function loadQuestion() {
+
+    const q =
+    questions[currentQuestion];
+
+    questionCounter.textContent =
+    `Question ${currentQuestion + 1} of ${questions.length}`;
+
+    questionText.classList.remove(
+        "question-enter"
+    );
+
+    void questionText.offsetWidth;
+
+    questionText.classList.add(
+        "question-enter"
+    );
+
+    questionText.textContent =
+    q.question;
+
+    progressBar.style.width =
+    `${((currentQuestion) / questions.length) * 100}%`;
+
+    optionsList.innerHTML = "";
+
+    explanationBox.style.display =
+    "none";
+
+    nextBtn.style.display =
+    "none";
+
+
+    q.options.forEach(
+        (option,index) => {
+
+            const button =
+            document.createElement("button");
+
+            button.className =
+            "option-btn";
+
+            button.textContent =
+            option;
+
+            button.onclick =
+            () => selectOption(index);
+
+            optionsList.appendChild(
+                button
+            );
+
+        }
+    );
+}
+
+
+/* =========================================================
+   SELECT ANSWER
+   ========================================================= */
+
 function selectOption(selectedIndex) {
 
-    const q = questions[currentQuestion];
+    const q =
+    questions[currentQuestion];
 
-    const buttons = optionsListEl.children;
+    const buttons =
+    optionsList.children;
+
+    selectedAnswers[currentQuestion] =
+    selectedIndex;
 
 
-    for (let i = 0; i < buttons.length; i++) {
+    for (
+        let i = 0;
+        i < buttons.length;
+        i++
+    ) {
 
-        buttons[i].disabled = true;
+        buttons[i].disabled =
+        true;
 
         if (i === q.answer) {
-            buttons[i].classList.add("correct");
+
+            buttons[i].classList.add(
+                "correct"
+            );
+
         }
 
     }
 
 
-    if (selectedIndex === q.answer) {
+    if (
+        selectedIndex === q.answer
+    ) {
 
         score++;
 
     } else {
 
         buttons[selectedIndex]
-            .classList.add("incorrect");
+        .classList.add(
+            "incorrect"
+        );
 
     }
 
 
-    explanationBoxEl.textContent =
-        q.explanation;
+    explanationBox.textContent =
+    q.explanation;
 
-    explanationBoxEl.style.display =
-        "block";
+    explanationBox.style.display =
+    "block";
 
     nextBtn.style.display =
-        "block";
+    "block";
 }
 
+
+/* =========================================================
+   NEXT
+   ========================================================= */
 
 function nextQuestion() {
 
     currentQuestion++;
 
-    if (currentQuestion < questions.length) {
+    if (
+        currentQuestion <
+        questions.length
+    ) {
 
         loadQuestion();
 
@@ -992,50 +1543,202 @@ function nextQuestion() {
         showResults();
 
     }
-
 }
 
 
+/* =========================================================
+   RESULTS
+   ========================================================= */
+
 function showResults() {
 
-    document.getElementById("quiz-box")
-        .style.display = "none";
+    clearInterval(timerInterval);
 
-    document.getElementById("result-screen")
-        .style.display = "block";
-
-
-    document.getElementById("final-score")
-        .textContent =
-        `${score} / ${questions.length}`;
-
+    const totalTime =
+    Date.now() - startTime;
 
     const percentage =
-        (score / questions.length) * 100;
+    Math.round(
+        (score / questions.length) * 100
+    );
 
-    const messageEl =
-        document.getElementById("score-message");
+    const wrong =
+    questions.length - score;
+
+
+    quizBox.style.display =
+    "none";
+
+    resultScreen.style.display =
+    "block";
+
+
+    document.getElementById(
+        "result-name"
+    ).textContent =
+    participantName;
+
+
+    document.getElementById(
+        "final-score"
+    ).textContent =
+    `${score} / ${questions.length}`;
+
+
+    document.getElementById(
+        "percentage"
+    ).textContent =
+    `${percentage}%`;
+
+
+    document.getElementById(
+        "time-result"
+    ).textContent =
+    formatTime(totalTime);
+
+
+    document.getElementById(
+        "correct-result"
+    ).textContent =
+    score;
+
+
+    document.getElementById(
+        "wrong-result"
+    ).textContent =
+    wrong;
+
+
+    const message =
+    document.getElementById(
+        "score-message"
+    );
 
 
     if (percentage === 100) {
 
-        messageEl.textContent =
-            "Perfect score! Outstanding grammar skills! 🏆";
+        message.textContent =
+        "Perfect score! Outstanding grammar skills!";
 
     } else if (percentage >= 70) {
 
-        messageEl.textContent =
-            "Great job! You have a solid grasp of grammar rules. 🎯";
+        message.textContent =
+        "Great job! You have a solid grasp of grammar rules.";
 
     } else {
 
-        messageEl.textContent =
-            "Good effort! Review the rules and try again. 📚";
+        message.textContent =
+        "Good effort! Review the rules and try again.";
 
     }
 
+
+    saveResult(
+        totalTime,
+        percentage
+    );
 }
 
+
+/* =========================================================
+   SAVE RESULT TO GOOGLE SHEETS
+   ========================================================= */
+
+function saveResult(
+    totalTime,
+    percentage
+) {
+
+    const savingMessage =
+    document.getElementById(
+        "saving-message"
+    );
+
+
+    if (
+        GOOGLE_SCRIPT_URL.includes(
+            "PASTE_YOUR_SCRIPT_URL_HERE"
+        )
+    ) {
+
+        savingMessage.textContent =
+        "⚠️ Result display works, but Google Sheets is not connected yet.";
+
+        return;
+    }
+
+
+    savingMessage.textContent =
+    "Saving your result...";
+
+
+    const resultData = {
+
+        name:
+        participantName,
+
+        score:
+        score,
+
+        total:
+        questions.length,
+
+        percentage:
+        percentage,
+
+        time:
+        formatTime(totalTime),
+
+        answers:
+        JSON.stringify(
+            selectedAnswers
+        ),
+
+        timestamp:
+        new Date().toISOString()
+
+    };
+
+
+    fetch(
+        GOOGLE_SCRIPT_URL,
+        {
+
+            method: "POST",
+
+            mode: "no-cors",
+
+            headers: {
+                "Content-Type":
+                "application/json"
+            },
+
+            body:
+            JSON.stringify(
+                resultData
+            )
+
+        }
+    )
+    .then(() => {
+
+        savingMessage.textContent =
+        "✓ Result recorded successfully.";
+
+    })
+    .catch(() => {
+
+        savingMessage.textContent =
+        "Could not connect to the result server.";
+
+    });
+
+}
+
+
+/* =========================================================
+   RESTART
+   ========================================================= */
 
 function restartQuiz() {
 
@@ -1043,20 +1746,24 @@ function restartQuiz() {
 
     score = 0;
 
-    document.getElementById("result-screen")
-        .style.display = "none";
+    selectedAnswers = [];
 
-    document.getElementById("quiz-box")
-        .style.display = "block";
+    participantName = "";
 
-    loadQuestion();
+    resultScreen.style.display =
+    "none";
 
+    participantScreen.style.display =
+    "block";
+
+    document.getElementById(
+        "participant-name"
+    ).value = "";
+
+    timer.textContent =
+    "00:00";
 }
 
-
-/* Start */
-
-loadQuestion();
 
 </script>
 
