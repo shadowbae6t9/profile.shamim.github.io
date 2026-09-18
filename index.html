@@ -1,122 +1,914 @@
-<!DOCTYPE html>  
-<html lang="en">  
-<head>  
-    <meta charset="UTF-8">  
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    <title>Profiles of Shamim Alif</title>  
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>  
-        * { box-sizing: border-box; margin: 0; padding: 0; }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        body { 
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
-            background: linear-gradient(135deg, #FFFB00, #FF007A, #6C008A); 
+    <title>Profiles of Shamim Alif</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+            background: linear-gradient(
+                135deg,
+                #FFFB00,
+                #FF007A,
+                #6C008A
+            );
+
             background-attachment: fixed;
-            min-height: 100vh; color: #fff; display: flex; flex-direction: column;
-            justify-content: center; align-items: center; line-height: 1.5; overflow-x: hidden;
-        }  
+
+            min-height: 100vh;
+
+            color: #fff;
+
+            display: flex;
+            flex-direction: column;
+
+            justify-content: center;
+            align-items: center;
+
+            line-height: 1.5;
+
+            overflow-x: hidden;
+        }
+
 
         /* --- SPLASH SCREEN --- */
+
         .splash-screen {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
-            background: radial-gradient(circle at center, #141419 0%, #08080a 100%);
-            display: flex; flex-direction: column; justify-content: center; align-items: center;
-            z-index: 9999; transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.8s ease;
+            position: fixed;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 100vh;
+
+            background: radial-gradient(
+                circle at center,
+                #141419 0%,
+                #08080a 100%
+            );
+
+            display: flex;
+            flex-direction: column;
+
+            justify-content: center;
+            align-items: center;
+
+            z-index: 9999;
+
+            transition:
+                transform 0.8s cubic-bezier(0.77, 0, 0.175, 1),
+                opacity 0.8s ease;
         }
-        .splash-screen.hidden { transform: translateY(-100%); opacity: 0; pointer-events: none; }
-        .splash-subtitle { font-size: 1rem; letter-spacing: 6px; color: #8a8a93; margin-bottom: 8px; text-transform: uppercase; }
-        .splash-title { font-size: 2.5rem; font-weight: 900; letter-spacing: 2px; margin-bottom: 40px; text-align: center; background: linear-gradient(45deg, #ffffff, #a0a0aa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .start-btn { padding: 16px 40px; font-size: 1.1rem; font-weight: bold; letter-spacing: 3px; color: #00f0ff; text-decoration: none; text-transform: uppercase; border: 2px solid #00f0ff; background: transparent; border-radius: 4px; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 0 15px rgba(0, 240, 255, 0.1); }
-        .start-btn:hover { color: #08080a; background-color: #00f0ff; box-shadow: 0 0 30px rgba(0, 240, 255, 0.4); transform: scale(1.05); }
+
+        .splash-screen.hidden {
+            transform: translateY(-100%);
+
+            opacity: 0;
+
+            pointer-events: none;
+        }
+
+        .splash-subtitle {
+            font-size: 1rem;
+
+            letter-spacing: 6px;
+
+            color: #8a8a93;
+
+            margin-bottom: 8px;
+
+            text-transform: uppercase;
+        }
+
+        .splash-title {
+            font-size: 2.5rem;
+
+            font-weight: 900;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 40px;
+
+            text-align: center;
+
+            background: linear-gradient(
+                45deg,
+                #ffffff,
+                #a0a0aa
+            );
+
+            -webkit-background-clip: text;
+
+            -webkit-text-fill-color: transparent;
+        }
+
+        .start-btn {
+            padding: 16px 40px;
+
+            font-size: 1.1rem;
+
+            font-weight: bold;
+
+            letter-spacing: 3px;
+
+            color: #00f0ff;
+
+            text-decoration: none;
+
+            text-transform: uppercase;
+
+            border: 2px solid #00f0ff;
+
+            background: transparent;
+
+            border-radius: 4px;
+
+            cursor: pointer;
+
+            transition: all 0.3s ease;
+
+            box-shadow:
+                0 0 15px rgba(0, 240, 255, 0.1);
+        }
+
+        .start-btn:hover {
+            color: #08080a;
+
+            background-color: #00f0ff;
+
+            box-shadow:
+                0 0 30px rgba(0, 240, 255, 0.4);
+
+            transform: scale(1.05);
+        }
+
 
         /* --- MAIN CONTAINER --- */
-        .container { 
-            max-width: 480px; width: 100%; background: rgba(0, 0, 0, 0.3); border-radius: 24px; 
-            overflow: hidden; padding-bottom: 25px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-            backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1);
+
+        .container {
+            max-width: 480px;
+
+            width: 100%;
+
+            background: rgba(0, 0, 0, 0.3);
+
+            border-radius: 24px;
+
+            overflow: hidden;
+
+            padding-bottom: 25px;
+
+            box-shadow:
+                0 10px 30px rgba(0, 0, 0, 0.25);
+
+            backdrop-filter: blur(10px);
+
+            -webkit-backdrop-filter: blur(10px);
+
+            border:
+                1px solid rgba(255, 255, 255, 0.1);
+
             margin: 40px 20px 20px 20px;
-        }  
-        .cover-photo { width: 100%; height: 160px; object-fit: cover; }
-        .profile-section { text-align: center; margin-top: -75px; padding: 0 20px; margin-bottom: 25px; }  
-        .avatar { width: 140px; height: 140px; border-radius: 50%; object-fit: cover; border: 5px solid rgba(0, 0, 0, 0.3); margin-bottom: 12px; background: #222; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); }  
-        .profile-section h1 { font-size: 1.6rem; font-weight: 700; margin-bottom: 4px; text-shadow: 0 2px 4px rgba(0,0,0,0.2); }
-        .profile-section p { font-size: 0.95rem; opacity: 0.85; font-weight: 500; white-space: pre-line; }
+        }
+
+
+        .cover-photo {
+            width: 100%;
+
+            height: 160px;
+
+            object-fit: cover;
+        }
+
+
+        .profile-section {
+            text-align: center;
+
+            margin-top: -75px;
+
+            padding: 0 20px;
+
+            margin-bottom: 25px;
+        }
+
+
+        .avatar {
+            width: 140px;
+
+            height: 140px;
+
+            border-radius: 50%;
+
+            object-fit: cover;
+
+            border:
+                5px solid rgba(0, 0, 0, 0.3);
+
+            margin-bottom: 12px;
+
+            background: #222;
+
+            box-shadow:
+                0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+
+        .profile-section h1 {
+            font-size: 1.6rem;
+
+            font-weight: 700;
+
+            margin-bottom: 4px;
+
+            text-shadow:
+                0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+
+        .profile-section p {
+            font-size: 0.95rem;
+
+            opacity: 0.85;
+
+            font-weight: 500;
+
+            white-space: pre-line;
+        }
+
 
         /* --- LINKS --- */
-        .link-card { background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); margin: 0 20px 12px 20px; border-radius: 14px; transition: all 0.25s ease-in-out; }  
-        .link-card:hover { background: rgba(255, 255, 255, 0.18); transform: translateY(-2px); border-color: rgba(255, 255, 255, 0.3); }  
-        .link-card a { text-decoration: none; color: #fff; padding: 14px 20px; display: flex; align-items: center; width: 100%; }  
-        .link-icon { font-size: 1.4rem; width: 35px; text-align: left; opacity: 0.9; }
-        .link-text { display: flex; flex-direction: column; justify-content: center; }
-        .link-text span { font-weight: 600; font-size: 1rem; letter-spacing: 0.3px; }
-        .link-text small { color: rgba(255, 255, 255, 0.65); font-size: 0.8rem; margin-top: 1px; }  
+
+        .link-card {
+            background:
+                rgba(255, 255, 255, 0.08);
+
+            border:
+                1px solid rgba(255, 255, 255, 0.15);
+
+            margin:
+                0 20px 12px 20px;
+
+            border-radius: 14px;
+
+            transition:
+                all 0.25s ease-in-out;
+        }
+
+
+        .link-card:hover {
+            background:
+                rgba(255, 255, 255, 0.18);
+
+            transform:
+                translateY(-2px);
+
+            border-color:
+                rgba(255, 255, 255, 0.3);
+        }
+
+
+        .link-card a {
+            text-decoration: none;
+
+            color: #fff;
+
+            padding: 14px 20px;
+
+            display: flex;
+
+            align-items: center;
+
+            width: 100%;
+        }
+
+
+        .link-icon {
+            font-size: 1.4rem;
+
+            width: 35px;
+
+            text-align: left;
+
+            opacity: 0.9;
+        }
+
+
+        .link-text {
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+        }
+
+
+        .link-text span {
+            font-weight: 600;
+
+            font-size: 1rem;
+
+            letter-spacing: 0.3px;
+        }
+
+
+        .link-text small {
+            color:
+                rgba(255, 255, 255, 0.65);
+
+            font-size: 0.8rem;
+
+            margin-top: 1px;
+        }
+
+
+        /* --- QUIZ TEST BUTTON --- */
+
+        .quiz-test-card {
+            background:
+                rgba(255, 255, 255, 0.08);
+
+            border:
+                1px solid rgba(255, 255, 255, 0.15);
+
+            margin:
+                0 20px 12px 20px;
+
+            border-radius: 14px;
+
+            transition:
+                all 0.25s ease-in-out;
+        }
+
+
+        .quiz-test-card:hover {
+            background:
+                rgba(255, 255, 255, 0.18);
+
+            transform:
+                translateY(-2px);
+
+            border-color:
+                rgba(255, 255, 255, 0.3);
+        }
+
+
+        .quiz-test-card a {
+            text-decoration: none;
+
+            color: #fff;
+
+            padding: 14px 20px;
+
+            display: flex;
+
+            align-items: center;
+
+            width: 100%;
+        }
+
+
+        .quiz-icon {
+            font-size: 1.4rem;
+
+            width: 35px;
+
+            text-align: left;
+
+            opacity: 0.95;
+        }
+
+
+        .quiz-test-card .link-text span {
+            font-weight: 600;
+
+            font-size: 1rem;
+
+            letter-spacing: 0.3px;
+        }
+
+
+        .quiz-test-card .link-text small {
+            color:
+                rgba(255, 255, 255, 0.65);
+
+            font-size: 0.8rem;
+
+            margin-top: 1px;
+        }
+
 
         /* --- MAIL ME BUTTON --- */
-        .mail-btn-container { text-align: center; margin: 15px 0; }
-        .mail-btn {
-            display: inline-flex; align-items: center; padding: 8px 20px;
-            background: rgba(255, 255, 255, 0.1); border-radius: 50px;
-            text-decoration: none; color: #fff; border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.3s ease; font-size: 0.9rem;
+
+        .mail-btn-container {
+            text-align: center;
+
+            margin: 15px 0;
         }
-        .mail-btn:hover { background: rgba(255, 255, 255, 0.2); transform: scale(1.05); }
-        .mail-btn i { margin-right: 8px; }
+
+
+        .mail-btn {
+            display: inline-flex;
+
+            align-items: center;
+
+            padding: 8px 20px;
+
+            background:
+                rgba(255, 255, 255, 0.1);
+
+            border-radius: 50px;
+
+            text-decoration: none;
+
+            color: #fff;
+
+            border:
+                1px solid rgba(255, 255, 255, 0.2);
+
+            transition:
+                all 0.3s ease;
+
+            font-size: 0.9rem;
+        }
+
+
+        .mail-btn:hover {
+            background:
+                rgba(255, 255, 255, 0.2);
+
+            transform: scale(1.05);
+        }
+
+
+        .mail-btn i {
+            margin-right: 8px;
+        }
+
 
         /* --- FOOTER --- */
-        .footer { text-align: center; padding: 0 20px 30px 20px; color: rgba(255, 255, 255, 0.7); font-size: 0.85rem; letter-spacing: 0.5px; }
-        .footer p { margin: 5px 0; }
+
+        .footer {
+            text-align: center;
+
+            padding:
+                0 20px 30px 20px;
+
+            color:
+                rgba(255, 255, 255, 0.7);
+
+            font-size: 0.85rem;
+
+            letter-spacing: 0.5px;
+        }
+
+
+        .footer p {
+            margin: 5px 0;
+        }
+
+
+        /* --- MOBILE --- */
 
         @media (max-width: 480px) {
-            .splash-title { font-size: 2rem; }
-            .start-btn { padding: 14px 32px; font-size: 1rem; }
+
+            .splash-title {
+                font-size: 2rem;
+            }
+
+            .start-btn {
+                padding: 14px 32px;
+
+                font-size: 1rem;
+            }
+
         }
-    </style>  
-</head>  
-<body>  
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- SPLASH SCREEN -->
 
     <div id="splash" class="splash-screen">
-        <p class="splash-subtitle">Welcome</p>
-        <h1 class="splash-title">SHAMIM Alif</h1>
-        <button class="start-btn" onclick="revealContent()">Touch Here</button>
+
+        <p class="splash-subtitle">
+            Welcome
+        </p>
+
+        <h1 class="splash-title">
+            SHAMIM Alif
+        </h1>
+
+        <button
+            class="start-btn"
+            onclick="revealContent()"
+        >
+            Touch Here
+        </button>
+
     </div>
 
-    <div class="container">  
-        <img src="cover.jpg" alt="Cover" class="cover-photo">
-        <div class="profile-section">  
-            <img src="profile.jpg" alt="Profile" class="avatar">  
-            <h1>Shamim Alif</h1>  
-            <p>Editor<br>Rider<br>Tourist</p>  
-        </div>  
-        <div class="link-card">
-            <a href="sms: +8809658755846?body=Can%20we%20talk%3F" class="fas fa-comment-dots link-icon">
- Text Me
-            </a>
+
+    <!-- MAIN PROFILE CONTAINER -->
+
+    <div class="container">
+
+
+        <!-- COVER PHOTO -->
+
+        <img
+            src="cover.jpg"
+            alt="Cover"
+            class="cover-photo"
+        >
+
+
+        <!-- PROFILE -->
+
+        <div class="profile-section">
+
+            <img
+                src="profile.jpg"
+                alt="Profile"
+                class="avatar"
+            >
+
+            <h1>
+                Shamim Alif
+            </h1>
+
+            <p>
+                Editor<br>
+                Rider<br>
+                Tourist
+            </p>
+
         </div>
 
-        <div class="link-card"> <a href="https://m.facebook.com/Shamimbrat/" target="_blank"><i class="fab fa-facebook-f link-icon"></i><div class="link-text"><span>Facebook</span><small>Shamim Alif(Personal)</small></div></a> </div>  
-        <div class="link-card"> <a href="https://www.facebook.com/ownerofhersoull" target="_blank"><i class="fab fa-facebook-f link-icon"></i><div class="link-text"><span>Facebook</span><small>Shamim Alif</small></div></a> </div>  
-        <div class="link-card"> <a href="https://www.youtube.com/channel/UCTlLmy33UqCgkGuee7wOvMA" target="_blank"><i class="fab fa-youtube-play link-icon"></i><div class="link-text"><span>Youtube</span><small>Stellar Arc MT15</small></div></a> </div>  
-        <div class="link-card"> <a href="https://www.instagram.com/_stellar_x_arc_" target="_blank"><i class="fab fa-instagram link-icon"></i><div class="link-text"><span>Instagram</span><small>Stellar Arc</small></div></a> </div>  
-        <div class="link-card"> <a href="https://www.tiktok.com/@_stellar_arc_" target="_blank"><i class="fab fa-tiktok link-icon"></i><div class="link-text"><span>TikTok</span><small>Titan Stream</small></div></a> </div>  
-        <div class="link-card"> <a href="https://pin.it/4o6td7g3j" target="_blank"><i class="fab fa-pinterest-p link-icon"></i><div class="link-text"><span>Pinterest</span><small>GOKU</small></div></a> </div>  
-        <div class="link-card"> <a href="https://threads.net/@_soulless_brat_" target="_blank"><i class="bi bi-threads link-icon"></i><div class="link-text"><span>Threads</span><small>@_soulless_brat_</small></div></a> </div>  
-        <div class="link-card"> <a href="https://github.com/shadowbae6t9" target="_blank"><i class="fab fa-github link-icon"></i><div class="link-text"><span>GitHub</span><small>shadowbae6t9</small></div></a> </div>  
-        <div class="link-card"> <a href="https://wa.me/qr/GQWWEFCEQUOYH1" target="_blank"><i class="fab fa-whatsapp link-icon"></i><div class="link-text"><span>WhatsApp</span><small>Message Me</small></div></a> </div>  
+
+        <!-- TEXT ME -->
+
+        <div class="link-card">
+
+            <a
+                href="sms:+8809658755846?body=Can%20we%20talk%3F"
+                class="fas fa-comment-dots link-icon"
+            >
+                Text Me
+            </a>
+
+        </div>
+
+
+        <!-- FACEBOOK -->
+
+        <div class="link-card">
+
+            <a
+                href="https://m.facebook.com/Shamimbrat/"
+                target="_blank"
+            >
+
+                <i class="fab fa-facebook-f link-icon"></i>
+
+                <div class="link-text">
+
+                    <span>
+                        Facebook
+                    </span>
+
+                    <small>
+                        Shamim Alif(Personal)
+                    </small>
+
+                </div>
+
+            </a>
+
+        </div>
+
+
+        <!-- FACEBOOK 2 -->
+
+        <div class="link-card">
+
+            <a
+                href="https://www.facebook.com/ownerofhersoull"
+                target="_blank"
+            >
+
+                <i class="fab fa-facebook-f link-icon"></i>
+
+                <div class="link-text">
+
+                    <span>
+                        Facebook
+                    </span>
+
+                    <small>
+                        Shamim Alif
+                    </small>
+
+                </div>
+
+            </a>
+
+        </div>
+
+
+        <!-- YOUTUBE -->
+
+        <div class="link-card">
+
+            <a
+                href="https://www.youtube.com/channel/UCTlLmy33UqCgkGuee7wOvMA"
+                target="_blank"
+            >
+
+                <i class="fab fa-youtube-play link-icon"></i>
+
+                <div class="link-text">
+
+                    <span>
+                        Youtube
+                    </span>
+
+                    <small>
+                        Stellar Arc MT15
+                    </small>
+
+                </div>
+
+            </a>
+
+        </div>
+
+
+        <!-- INSTAGRAM -->
+
+        <div class="link-card">
+
+            <a
+                href="https://www.instagram.com/_stellar_x_arc_"
+                target="_blank"
+            >
+
+                <i class="fab fa-instagram link-icon"></i>
+
+                <div class="link-text">
+
+                    <span>
+                        Instagram
+                    </span>
+
+                    <small>
+                        Stellar Arc
+                    </small>
+
+                </div>
+
+            </a>
+
+        </div>
+
+
+        <!-- TIKTOK -->
+
+        <div class="link-card">
+
+            <a
+                href="https://www.tiktok.com/@_stellar_arc_"
+                target="_blank"
+            >
+
+                <i class="fab fa-tiktok link-icon"></i>
+
+                <div class="link-text">
+
+                    <span>
+                        TikTok
+                    </span>
+
+                    <small>
+                        Titan Stream
+                    </small>
+
+                </div>
+
+            </a>
+
+        </div>
+
+
+        <!-- PINTEREST -->
+
+        <div class="link-card">
+
+            <a
+                href="https://pin.it/4o6td7g3j"
+                target="_blank"
+            >
+
+                <i class="fab fa-pinterest-p link-icon"></i>
+
+                <div class="link-text">
+
+                    <span>
+                        Pinterest
+                    </span>
+
+                    <small>
+                        GOKU
+                    </small>
+
+                </div>
+
+            </a>
+
+        </div>
+
+
+        <!-- THREADS -->
+
+        <div class="link-card">
+
+            <a
+                href="https://threads.net/@_soulless_brat_"
+                target="_blank"
+            >
+
+                <i class="bi bi-threads link-icon"></i>
+
+                <div class="link-text">
+
+                    <span>
+                        Threads
+                    </span>
+
+                    <small>
+                        @_soulless_brat_
+                    </small>
+
+                </div>
+
+            </a>
+
+        </div>
+
+
+        <!-- GITHUB -->
+
+        <div class="link-card">
+
+            <a
+                href="https://github.com/shadowbae6t9"
+                target="_blank"
+            >
+
+                <i class="fab fa-github link-icon"></i>
+
+                <div class="link-text">
+
+                    <span>
+                        GitHub
+                    </span>
+
+                    <small>
+                        shadowbae6t9
+                    </small>
+
+                </div>
+
+            </a>
+
+        </div>
+
+
+        <!-- WHATSAPP -->
+
+        <div class="link-card">
+
+            <a
+                href="https://wa.me/qr/GQWWEFCEQUOYH1"
+                target="_blank"
+            >
+
+                <i class="fab fa-whatsapp link-icon"></i>
+
+                <div class="link-text">
+
+                    <span>
+                        WhatsApp
+                    </span>
+
+                    <small>
+                        Message Me
+                    </small>
+
+                </div>
+
+            </a>
+
+        </div>
+
+
+        <!-- ================================================= -->
+        <!-- QUIZ TEST BUTTON - ADDED                         -->
+        <!-- ================================================= -->
+
+        <div class="quiz-test-card">
+
+            <a
+                href="quiz-test.html"
+            >
+
+                <i class="fas fa-circle-question quiz-icon"></i>
+
+                <div class="link-text">
+
+                    <span>
+                        QUIZ TEST
+                    </span>
+
+                    <small>
+                        Test Your Knowledge
+                    </small>
+
+                </div>
+
+            </a>
+
+        </div>
+
+
+        <!-- MAIL ME -->
 
         <div class="mail-btn-container">
-            <a href="mailto:shamimalip99@gmail.com" class="mail-btn">
-                <i class="fas fa-envelope"></i> Mail Me
+
+            <a
+                href="mailto:shamimalip99@gmail.com"
+                class="mail-btn"
+            >
+
+                <i class="fas fa-envelope"></i>
+
+                Mail Me
+
             </a>
+
         </div>
-    </div>  
-    
-    <div class="footer">
-        <p>&copy; 2026 Stellar Arc. All Rights Reserved.</p>
-        <p>Created with hope and code.</p>
+
     </div>
 
+
+    <!-- FOOTER -->
+
+    <div class="footer">
+
+        <p>
+            &copy; 2026 Stellar Arc. All Rights Reserved.
+        </p>
+
+        <p>
+            Created with hope and code.
+        </p>
+
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+
     <script>
-        function revealContent() { document.getElementById('splash').classList.add('hidden'); }
+
+        function revealContent() {
+
+            document
+                .getElementById('splash')
+                .classList
+                .add('hidden');
+
+        }
+
     </script>
-</body>  
+
+
+</body>
 </html>
