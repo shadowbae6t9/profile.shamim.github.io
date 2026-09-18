@@ -335,79 +335,314 @@
         }
 
 
-        /* --- QUIZ TEST BUTTON --- */
+        /* ========================================================= */
+        /*                    QUIZ TEST BUTTON                       */
+        /* ========================================================= */
 
         .quiz-test-card {
+
+            position: relative;
+
             background:
-                rgba(255, 255, 255, 0.08);
+                linear-gradient(
+                    135deg,
+                    rgba(255, 255, 255, 0.16),
+                    rgba(255, 0, 140, 0.30),
+                    rgba(110, 0, 255, 0.26)
+                );
 
             border:
-                1px solid rgba(255, 255, 255, 0.15);
+                1px solid rgba(255, 255, 255, 0.42);
+
+            /* Extra gap after WhatsApp */
 
             margin:
-                0 20px 12px 20px;
+                25px 20px 12px 20px;
 
-            border-radius: 14px;
+            border-radius: 16px;
+
+            overflow: hidden;
 
             transition:
-                all 0.25s ease-in-out;
+                transform 0.25s cubic-bezier(.2,.8,.2,1),
+                box-shadow 0.25s ease,
+                border-color 0.25s ease;
+
+            box-shadow:
+                0 0 18px rgba(255, 0, 170, 0.30),
+                0 8px 25px rgba(0, 0, 0, 0.18);
+
+            /* Gentle floating animation */
+
+            animation:
+                quizFloat 3s ease-in-out infinite;
         }
 
 
-        .quiz-test-card:hover {
+        /* Floating */
+
+        @keyframes quizFloat {
+
+            0%, 100% {
+                transform:
+                    translateY(0);
+            }
+
+            50% {
+                transform:
+                    translateY(-3px);
+            }
+
+        }
+
+
+        /* Moving shine */
+
+        .quiz-test-card::before {
+
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+
+            left: -120%;
+
+            width: 75%;
+
+            height: 100%;
+
             background:
-                rgba(255, 255, 255, 0.18);
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    rgba(255,255,255,0.38),
+                    transparent
+                );
 
             transform:
-                translateY(-2px);
+                skewX(-20deg);
 
-            border-color:
-                rgba(255, 255, 255, 0.3);
+            animation:
+                quizShine 4s ease-in-out infinite;
+
+            pointer-events: none;
         }
 
 
+        @keyframes quizShine {
+
+            0% {
+                left: -120%;
+            }
+
+            45% {
+                left: 140%;
+            }
+
+            100% {
+                left: 140%;
+            }
+
+        }
+
+
+        /* Hover */
+
+        .quiz-test-card:hover {
+
+            animation-play-state: paused;
+
+            transform:
+                translateY(-5px)
+                scale(1.015);
+
+            border-color:
+                rgba(255, 255, 255, 0.75);
+
+            box-shadow:
+                0 0 28px rgba(255, 0, 170, 0.48),
+                0 14px 35px rgba(0, 0, 0, 0.28);
+        }
+
+
+        /* ========================================================= */
+        /*                     TOUCH ANIMATION                        */
+        /* ========================================================= */
+
+        .quiz-test-card:active {
+
+            animation: none;
+
+            transform:
+                translateY(-8px)
+                scale(0.96);
+
+            border-color:
+                rgba(255, 255, 255, 0.9);
+
+            box-shadow:
+                0 0 35px rgba(255, 0, 200, 0.75),
+                0 0 65px rgba(120, 0, 255, 0.45);
+
+            transition:
+                transform 0.08s ease;
+        }
+
+
+        /* Quiz link */
+
         .quiz-test-card a {
+
+            position: relative;
+
+            z-index: 2;
+
             text-decoration: none;
 
             color: #fff;
 
-            padding: 14px 20px;
+            padding:
+                16px 20px;
 
             display: flex;
 
             align-items: center;
 
             width: 100%;
+
+            -webkit-tap-highlight-color:
+                transparent;
         }
 
 
+        /* Quiz icon */
+
         .quiz-icon {
-            font-size: 1.4rem;
+
+            font-size: 1.5rem;
 
             width: 35px;
 
             text-align: left;
 
-            opacity: 0.95;
+            opacity: 1;
+
+            filter:
+                drop-shadow(
+                    0 0 7px
+                    rgba(255,255,255,0.8)
+                );
+
+            transition:
+                transform 0.25s ease;
         }
 
 
-        .quiz-test-card .link-text span {
-            font-weight: 600;
+        /* Icon hover */
 
-            font-size: 1rem;
+        .quiz-test-card:hover
+        .quiz-icon {
 
-            letter-spacing: 0.3px;
+            transform:
+                rotate(-8deg)
+                scale(1.12);
         }
 
 
-        .quiz-test-card .link-text small {
+        /* Icon touch */
+
+        .quiz-test-card:active
+        .quiz-icon {
+
+            transform:
+                translateY(-5px)
+                rotate(8deg)
+                scale(1.2);
+        }
+
+
+        /* Quiz title */
+
+        .quiz-test-card
+        .link-text span {
+
+            font-weight: 800;
+
+            font-size: 1.02rem;
+
+            letter-spacing: 1px;
+
+            text-shadow:
+                0 0 8px
+                rgba(255,255,255,0.3);
+        }
+
+
+        /* Quiz subtitle */
+
+        .quiz-test-card
+        .link-text small {
+
             color:
-                rgba(255, 255, 255, 0.65);
+                rgba(255, 255, 255, 0.80);
 
             font-size: 0.8rem;
 
-            margin-top: 1px;
+            margin-top: 2px;
+        }
+
+
+        /* Glowing indicator */
+
+        .quiz-test-card
+        .link-text::after {
+
+            content: "●";
+
+            position: absolute;
+
+            right: 17px;
+
+            top: 50%;
+
+            transform:
+                translateY(-50%);
+
+            font-size: 9px;
+
+            color: #ffffff;
+
+            text-shadow:
+                0 0 6px #ffffff,
+                0 0 12px #ff00b7,
+                0 0 20px #8b00ff;
+
+            animation:
+                quizDotPulse 1.5s ease-in-out infinite;
+        }
+
+
+        @keyframes quizDotPulse {
+
+            0%, 100% {
+
+                opacity: .4;
+
+                transform:
+                    translateY(-50%)
+                    scale(.8);
+            }
+
+            50% {
+
+                opacity: 1;
+
+                transform:
+                    translateY(-50%)
+                    scale(1.35);
+            }
+
         }
 
 
@@ -831,14 +1066,12 @@
 
 
         <!-- ================================================= -->
-        <!-- QUIZ TEST BUTTON - ADDED                         -->
+        <!--                 QUIZ TEST BUTTON                  -->
         <!-- ================================================= -->
 
         <div class="quiz-test-card">
 
-            <a
-                href="quiz-test.html"
-            >
+            <a href="quiz-test.html">
 
                 <i class="fas fa-circle-question quiz-icon"></i>
 
