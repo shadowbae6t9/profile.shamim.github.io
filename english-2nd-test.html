@@ -1,0 +1,1807 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>HSC English 2nd Paper | Model Test</title>
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    >
+
+    <style>
+
+        /* =====================================================
+           RESET
+        ===================================================== */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Roboto,
+                Helvetica,
+                Arial,
+                sans-serif;
+
+            min-height: 100vh;
+
+            color: #fff;
+
+            background:
+                radial-gradient(
+                    circle at 10% 10%,
+                    rgba(0, 255, 204, 0.14),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 90% 20%,
+                    rgba(255, 0, 153, 0.15),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 50% 100%,
+                    rgba(100, 0, 255, 0.18),
+                    transparent 40%
+                ),
+                linear-gradient(
+                    145deg,
+                    #03030a,
+                    #09051a,
+                    #13051d,
+                    #05050b
+                );
+
+            background-attachment: fixed;
+
+            line-height: 1.6;
+
+            overflow-x: hidden;
+        }
+
+
+        /* =====================================================
+           MAIN CONTAINER
+        ===================================================== */
+
+        .page {
+
+            width: min(
+                850px,
+                calc(100% - 24px)
+            );
+
+            margin:
+                20px auto 50px;
+        }
+
+
+        /* =====================================================
+           TOP NAVIGATION
+        ===================================================== */
+
+        .top-nav {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            gap: 10px;
+
+            margin-bottom: 18px;
+        }
+
+
+        .nav-btn {
+
+            border:
+                1px solid
+                rgba(255,255,255,0.15);
+
+            background:
+                rgba(255,255,255,0.06);
+
+            color: #fff;
+
+            padding:
+                9px 14px;
+
+            border-radius: 50px;
+
+            cursor: pointer;
+
+            text-decoration: none;
+
+            font-size: 0.8rem;
+
+            backdrop-filter:
+                blur(12px);
+
+            transition:
+                0.25s ease;
+        }
+
+
+        .nav-btn:hover {
+
+            background:
+                rgba(255,255,255,0.12);
+
+            transform:
+                translateY(-2px);
+        }
+
+
+        /* =====================================================
+           HEADER
+        ===================================================== */
+
+        .header {
+
+            text-align: center;
+
+            padding:
+                30px 20px;
+
+            border-radius: 24px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(0,255,204,0.10),
+                    rgba(120,0,255,0.12),
+                    rgba(255,0,153,0.08)
+                );
+
+            border:
+                1px solid
+                rgba(255,255,255,0.14);
+
+            backdrop-filter:
+                blur(18px);
+
+            box-shadow:
+                0 20px 60px
+                rgba(0,0,0,0.25);
+
+            margin-bottom: 18px;
+        }
+
+
+        .badge {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            padding:
+                7px 13px;
+
+            border-radius: 50px;
+
+            background:
+                rgba(0,255,204,0.08);
+
+            border:
+                1px solid
+                rgba(0,255,204,0.25);
+
+            color:
+                #aaffee;
+
+            font-size:
+                0.72rem;
+
+            letter-spacing:
+                1.5px;
+
+            text-transform:
+                uppercase;
+
+            margin-bottom:
+                15px;
+        }
+
+
+        .header h1 {
+
+            font-size:
+                clamp(
+                    1.6rem,
+                    5vw,
+                    2.5rem
+                );
+
+            line-height:
+                1.2;
+
+            font-weight:
+                900;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #ffffff,
+                    #63ffe1,
+                    #bf72ff,
+                    #ff62c0
+                );
+
+            -webkit-background-clip:
+                text;
+
+            -webkit-text-fill-color:
+                transparent;
+        }
+
+
+        .header p {
+
+            margin-top:
+                10px;
+
+            color:
+                rgba(255,255,255,0.60);
+
+            font-size:
+                0.9rem;
+        }
+
+
+        /* =====================================================
+           PAPER INFORMATION
+        ===================================================== */
+
+        .info-grid {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                repeat(
+                    2,
+                    1fr
+                );
+
+            gap:
+                12px;
+
+            margin-bottom:
+                18px;
+        }
+
+
+        .info-card {
+
+            padding:
+                14px;
+
+            text-align:
+                center;
+
+            border-radius:
+                16px;
+
+            background:
+                rgba(255,255,255,0.055);
+
+            border:
+                1px solid
+                rgba(255,255,255,0.10);
+
+            backdrop-filter:
+                blur(12px);
+        }
+
+
+        .info-card strong {
+
+            display:
+                block;
+
+            font-size:
+                0.72rem;
+
+            color:
+                rgba(255,255,255,0.45);
+
+            text-transform:
+                uppercase;
+
+            letter-spacing:
+                1px;
+        }
+
+
+        .info-card span {
+
+            display:
+                block;
+
+            margin-top:
+                3px;
+
+            font-weight:
+                700;
+        }
+
+
+        /* =====================================================
+           SECTION
+        ===================================================== */
+
+        .section {
+
+            margin-bottom:
+                18px;
+
+            padding:
+                22px;
+
+            border-radius:
+                20px;
+
+            background:
+                rgba(255,255,255,0.045);
+
+            border:
+                1px solid
+                rgba(255,255,255,0.10);
+
+            backdrop-filter:
+                blur(15px);
+
+            box-shadow:
+                0 12px 35px
+                rgba(0,0,0,0.16);
+        }
+
+
+        .section-title {
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            gap:
+                10px;
+
+            margin-bottom:
+                18px;
+
+            padding-bottom:
+                12px;
+
+            border-bottom:
+                1px solid
+                rgba(255,255,255,0.10);
+
+            font-size:
+                1.15rem;
+
+            font-weight:
+                800;
+
+            color:
+                #fff;
+        }
+
+
+        .section-title i {
+
+            width:
+                34px;
+
+            height:
+                34px;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            border-radius:
+                10px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #00cfa7,
+                    #7355ff
+                );
+
+            font-size:
+                0.9rem;
+        }
+
+
+        /* =====================================================
+           QUESTION
+        ===================================================== */
+
+        .question {
+
+            margin-bottom:
+                22px;
+        }
+
+
+        .question:last-child {
+
+            margin-bottom:
+                0;
+        }
+
+
+        .question-title {
+
+            font-weight:
+                750;
+
+            margin-bottom:
+                10px;
+
+            color:
+                #fff;
+        }
+
+
+        .question-title .number {
+
+            color:
+                #63ffe1;
+        }
+
+
+        .instruction {
+
+            color:
+                rgba(255,255,255,0.60);
+
+            font-size:
+                0.85rem;
+
+            margin-bottom:
+                12px;
+        }
+
+
+        /* =====================================================
+           TEXT
+        ===================================================== */
+
+        .question p {
+
+            margin:
+                5px 0;
+
+            color:
+                rgba(255,255,255,0.86);
+        }
+
+
+        .passage {
+
+            padding:
+                15px;
+
+            border-radius:
+                14px;
+
+            background:
+                rgba(0,0,0,0.20);
+
+            border:
+                1px solid
+                rgba(255,255,255,0.08);
+
+            margin:
+                10px 0;
+        }
+
+
+        /* =====================================================
+           BLANKS
+        ===================================================== */
+
+        .blank {
+
+            display:
+                inline-block;
+
+            min-width:
+                65px;
+
+            border-bottom:
+                1px solid
+                rgba(255,255,255,0.65);
+
+            margin:
+                0 3px;
+
+            text-align:
+                center;
+        }
+
+
+        /* =====================================================
+           BOX
+        ===================================================== */
+
+        .word-box {
+
+            padding:
+                13px 15px;
+
+            margin:
+                12px 0;
+
+            border-radius:
+                13px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(0,255,204,0.07),
+                    rgba(130,0,255,0.09)
+                );
+
+            border:
+                1px solid
+                rgba(255,255,255,0.10);
+
+            color:
+                rgba(255,255,255,0.80);
+
+            font-size:
+                0.88rem;
+        }
+
+
+        .word-box strong {
+
+            color:
+                #63ffe1;
+        }
+
+
+        /* =====================================================
+           LIST
+        ===================================================== */
+
+        .items {
+
+            display:
+                flex;
+
+            flex-direction:
+                column;
+
+            gap:
+                8px;
+        }
+
+
+        .item {
+
+            padding:
+                8px 0;
+
+            color:
+                rgba(255,255,255,0.86);
+        }
+
+
+        /* =====================================================
+           ANSWER AREA
+        ===================================================== */
+
+        .answer-line {
+
+            display:
+                inline-block;
+
+            min-width:
+                130px;
+
+            border-bottom:
+                1px solid
+                rgba(255,255,255,0.45);
+
+            margin-left:
+                5px;
+        }
+
+
+        /* =====================================================
+           COMPOSITION
+        ===================================================== */
+
+        .composition {
+
+            padding:
+                17px;
+
+            border-radius:
+                15px;
+
+            background:
+                rgba(255,255,255,0.035);
+
+            border:
+                1px solid
+                rgba(255,255,255,0.08);
+
+            margin-bottom:
+                12px;
+        }
+
+
+        .composition:last-child {
+
+            margin-bottom:
+                0;
+        }
+
+
+        .composition strong {
+
+            display:
+                block;
+
+            margin-bottom:
+                6px;
+
+            color:
+                #63ffe1;
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        .footer {
+
+            text-align:
+                center;
+
+            color:
+                rgba(255,255,255,0.38);
+
+            font-size:
+                0.75rem;
+
+            padding:
+                10px;
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
+        @media (max-width: 600px) {
+
+            .page {
+
+                width:
+                    calc(100% - 16px);
+
+                margin-top:
+                    10px;
+            }
+
+
+            .section {
+
+                padding:
+                    17px;
+            }
+
+
+            .info-grid {
+
+                grid-template-columns:
+                    1fr;
+            }
+
+
+            .header {
+
+                padding:
+                    25px 15px;
+            }
+
+
+            .top-nav {
+
+                margin-bottom:
+                    12px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<div class="page">
+
+
+    <!-- =====================================================
+         NAVIGATION
+    ===================================================== -->
+
+    <div class="top-nav">
+
+        <a
+            href="index.html"
+            class="nav-btn"
+        >
+            <i class="fas fa-home"></i>
+            Home
+        </a>
+
+
+        <a
+            href="index.html"
+            class="nav-btn"
+            onclick="openEnglishPractice(event)"
+        >
+            <i class="fas fa-book-open"></i>
+            English Practice
+        </a>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         HEADER
+    ===================================================== -->
+
+    <header class="header">
+
+        <div class="badge">
+
+            <i class="fas fa-graduation-cap"></i>
+
+            HSC Model Test
+
+        </div>
+
+
+        <h1>
+            HSC English 2nd Paper
+        </h1>
+
+
+        <p>
+            Model Test Paper
+        </p>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         INFORMATION
+    ===================================================== -->
+
+    <div class="info-grid">
+
+        <div class="info-card">
+
+            <strong>
+                Full Marks
+            </strong>
+
+            <span>
+                100
+            </span>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <strong>
+                Time
+            </strong>
+
+            <span>
+                3 Hours
+            </span>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         NOTICE
+    ===================================================== -->
+
+    <div class="section">
+
+        <div class="instruction">
+
+            <strong>
+                N.B.
+            </strong>
+            — Answer all questions.
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         PART A
+    ===================================================== -->
+
+    <section class="section">
+
+
+        <div class="section-title">
+
+            <i class="fas fa-language"></i>
+
+            PART A: GRAMMAR
+
+            <span style="margin-left:auto;font-size:.75rem;color:#63ffe1;">
+                60 Marks
+            </span>
+
+        </div>
+
+
+
+        <!-- Q1 -->
+
+        <div class="question">
+
+            <div class="question-title">
+
+                <span class="number">
+                    1.
+                </span>
+
+                Fill in the blanks with appropriate articles.
+
+            </div>
+
+
+            <div class="instruction">
+
+                Put a cross (×) where no article is needed.
+
+            </div>
+
+
+            <div class="passage">
+
+                (a) <span class="blank"></span> reading of newspaper
+                is a good habit.
+
+                (b) <span class="blank"></span> newspaper is
+
+                (c) <span class="blank"></span> powerful medium of
+                mass communication.
+
+                It gives us
+
+                (d) <span class="blank"></span> idea about what is
+                happening around
+
+                (e) <span class="blank"></span> world.
+
+                (f) <span class="blank"></span> good reader can
+                widen his knowledge on
+
+                (g) <span class="blank"></span> different subjects.
+
+                (h) <span class="blank"></span> habit of reading
+                should be developed from
+
+                (i) <span class="blank"></span> early age.
+
+                It also helps a student prepare for
+
+                (j) <span class="blank"></span> job interview.
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Q2 -->
+
+        <div class="question">
+
+            <div class="question-title">
+
+                <span class="number">
+                    2.
+                </span>
+
+                Fill in the blanks with suitable prepositions.
+
+            </div>
+
+
+            <div class="passage">
+
+                Life
+
+                (a) <span class="blank"></span>
+
+                Bangladesh is closely linked
+
+                (b) <span class="blank"></span>
+
+                agriculture.
+
+                Most people here depend
+
+                (c) <span class="blank"></span>
+
+                farming
+
+                (d) <span class="blank"></span>
+
+                their livelihood.
+
+                Farmers work hard
+
+                (e) <span class="blank"></span>
+
+                the field from dawn
+
+                (f) <span class="blank"></span>
+
+                dusk.
+
+                (g) <span class="blank"></span>
+
+                the rainy season, rivers often overflow and result
+
+                (h) <span class="blank"></span>
+
+                flood.
+
+                Despite these hardships, farmers never give up
+
+                (i) <span class="blank"></span>
+
+                hope.
+
+                They believe
+
+                (j) <span class="blank"></span>
+
+                a better tomorrow.
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Q3 -->
+
+        <div class="question">
+
+            <div class="question-title">
+
+                <span class="number">
+                    3.
+                </span>
+
+                Fill in the blanks using the words/phrases from
+                the box below.
+
+            </div>
+
+
+            <div class="word-box">
+
+                <strong>
+                    Box:
+                </strong>
+
+                was born,
+                it,
+                had better,
+                as soon as,
+                would rather,
+                let alone,
+                have to,
+                there,
+                what does…look like,
+                what’s…like
+
+            </div>
+
+
+            <div class="items">
+
+                <div class="item">
+                    (a) Rabindranath Tagore
+                    <span class="answer-line"></span>
+                    in 1861.
+                </div>
+
+                <div class="item">
+                    (b)
+                    <span class="answer-line"></span>
+                    is not easy to become successful without hard work.
+                </div>
+
+                <div class="item">
+                    (c)
+                    <span class="answer-line"></span>
+                    is a library in every village that helps students.
+                </div>
+
+                <div class="item">
+                    (d) You
+                    <span class="answer-line"></span>
+                    study regularly if you want good results.
+                </div>
+
+                <div class="item">
+                    (e)
+                    <span class="answer-line"></span>
+                    you reach the station, call me.
+                </div>
+
+                <div class="item">
+                    (f) I
+                    <span class="answer-line"></span>
+                    read a book than watch TV.
+                </div>
+
+                <div class="item">
+                    (g) He can't even write his name,
+                    <span class="answer-line"></span>
+                    solve this problem.
+                </div>
+
+                <div class="item">
+                    (h)
+                    <span class="answer-line"></span>
+                    the weather
+                    <span class="answer-line"></span>
+                    today?
+                </div>
+
+                <div class="item">
+                    (i) You
+                    <span class="answer-line"></span>
+                    leave now to catch the bus.
+                </div>
+
+                <div class="item">
+                    (j)
+                    <span class="answer-line"></span>
+                    the new teacher
+                    <span class="answer-line"></span>?
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Q4 -->
+
+        <div class="question">
+
+            <div class="question-title">
+
+                <span class="number">
+                    4.
+                </span>
+
+                Complete the following sentences.
+
+            </div>
+
+
+            <div class="items">
+
+                <div class="item">
+                    (a) If you work hard,
+                    <span class="answer-line"></span>
+                </div>
+
+                <div class="item">
+                    (b) He was so tired that
+                    <span class="answer-line"></span>
+                </div>
+
+                <div class="item">
+                    (c) As the sun set,
+                    <span class="answer-line"></span>
+                </div>
+
+                <div class="item">
+                    (d) Unless you practice regularly,
+                    <span class="answer-line"></span>
+                </div>
+
+                <div class="item">
+                    (e) No sooner had the bell rung than
+                    <span class="answer-line"></span>
+                </div>
+
+                <div class="item">
+                    (f) Since he was ill,
+                    <span class="answer-line"></span>
+                </div>
+
+                <div class="item">
+                    (g) It is high time we
+                    <span class="answer-line"></span>
+                </div>
+
+                <div class="item">
+                    (h) Hardly had I reached the station when
+                    <span class="answer-line"></span>
+                </div>
+
+                <div class="item">
+                    (i) Had I known the truth earlier,
+                    <span class="answer-line"></span>
+                </div>
+
+                <div class="item">
+                    (j) The more you read,
+                    <span class="answer-line"></span>
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Q5 -->
+
+        <div class="question">
+
+            <div class="question-title">
+
+                <span class="number">
+                    5.
+                </span>
+
+                Use the right form of verbs given in the brackets.
+
+            </div>
+
+
+            <div class="items">
+
+                <div class="item">
+                    (a) She (go)
+                    <span class="answer-line"></span>
+                    to school every day.
+                </div>
+
+                <div class="item">
+                    (b) By the time we arrived, the movie
+                    (already/start)
+                    <span class="answer-line"></span>.
+                </div>
+
+                <div class="item">
+                    (c) If it (rain)
+                    <span class="answer-line"></span>
+                    tomorrow, we will stay home.
+                </div>
+
+                <div class="item">
+                    (d) He has (finish)
+                    <span class="answer-line"></span>
+                    his homework.
+                </div>
+
+                <div class="item">
+                    (e) The news (be)
+                    <span class="answer-line"></span>
+                    surprising.
+                </div>
+
+                <div class="item">
+                    (f) They (play)
+                    <span class="answer-line"></span>
+                    football when it started to rain.
+                </div>
+
+                <div class="item">
+                    (g) I wish I (know)
+                    <span class="answer-line"></span>
+                    the answer.
+                </div>
+
+                <div class="item">
+                    (h) Each of the students (have)
+                    <span class="answer-line"></span>
+                    a book.
+                </div>
+
+                <div class="item">
+                    (i) The police (be)
+                    <span class="answer-line"></span>
+                    searching for the thief.
+                </div>
+
+                <div class="item">
+                    (j) She (not/complete)
+                    <span class="answer-line"></span>
+                    the assignment yet.
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Q6 -->
+
+        <div class="question">
+
+            <div class="question-title">
+
+                <span class="number">
+                    6.
+                </span>
+
+                Change the sentences as directed.
+
+            </div>
+
+
+            <div class="items">
+
+                <div class="item">
+                    (a) He is too weak to walk.
+                    <strong>
+                        (Use “so…that”)
+                    </strong>
+                </div>
+
+                <div class="item">
+                    (b) No other boy in the class is as tall as Rakib.
+                    <strong>
+                        (Superlative)
+                    </strong>
+                </div>
+
+                <div class="item">
+                    (c) Truth cannot be denied.
+                    <strong>
+                        (Active)
+                    </strong>
+                </div>
+
+                <div class="item">
+                    (d) As soon as the teacher entered, the students
+                    stood up.
+                    <strong>
+                        (Use “No sooner…than”)
+                    </strong>
+                </div>
+
+                <div class="item">
+                    (e) Unless you work hard, you cannot succeed.
+                    <strong>
+                        (Affirmative)
+                    </strong>
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Q7 -->
+
+        <div class="question">
+
+            <div class="question-title">
+
+                <span class="number">
+                    7.
+                </span>
+
+                Change the narrative style of the following sentences.
+
+            </div>
+
+
+            <div class="items">
+
+                <div class="item">
+                    (a) The teacher said to the students,
+                    “Do your homework regularly.”
+                </div>
+
+                <div class="item">
+                    (b) She said,
+                    “What a beautiful flower it is!”
+                </div>
+
+                <div class="item">
+                    (c) He said to me,
+                    “Where do you live?”
+                </div>
+
+                <div class="item">
+                    (d) The boy said,
+                    “I am playing football now.”
+                </div>
+
+                <div class="item">
+                    (e) “Let’s go for a walk,” said Rima.
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Q8 -->
+
+        <div class="question">
+
+            <div class="question-title">
+
+                <span class="number">
+                    8.
+                </span>
+
+                Pronoun Reference
+
+            </div>
+
+
+            <div class="instruction">
+
+                The pronouns are in bold in the text below.
+                Write what each pronoun refers to.
+
+            </div>
+
+
+            <div class="passage">
+
+                Rafiq is a farmer.
+                <b>He</b> works hard in his field every day.
+                <b>His</b> wife helps <b>him</b> in the household chores.
+                <b>She</b> also takes care of <b>their</b> children,
+                and <b>they</b> go to school regularly.
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Q9 -->
+
+        <div class="question">
+
+            <div class="question-title">
+
+                <span class="number">
+                    9.
+                </span>
+
+                Choose the correct modifier from the brackets.
+
+            </div>
+
+
+            <div class="items">
+
+                <div class="item">
+                    (a) He runs ____.
+                    (fast / quickly)
+                </div>
+
+                <div class="item">
+                    (b) She sang ____.
+                    (beautiful / beautifully)
+                </div>
+
+                <div class="item">
+                    (c) The ____ fox jumped over the fence.
+                    (quick / quickly)
+                </div>
+
+                <div class="item">
+                    (d) He is ____ about his work.
+                    (careful / carefully)
+                </div>
+
+                <div class="item">
+                    (e) They arrived ____ for the meeting.
+                    (late / lately)
+                </div>
+
+                <div class="item">
+                    (f) It was a ____ exciting match.
+                    (real / really)
+                </div>
+
+                <div class="item">
+                    (g) She spoke ____ to the child.
+                    (soft / softly)
+                </div>
+
+                <div class="item">
+                    (h) He is ____ to solve this.
+                    (intelligent enough / enough intelligent)
+                </div>
+
+                <div class="item">
+                    (i) The train arrived ____ on time.
+                    (exact / exactly)
+                </div>
+
+                <div class="item">
+                    (j) He performed ____ in the exam.
+                    (good / well)
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Q10 -->
+
+        <div class="question">
+
+            <div class="question-title">
+
+                <span class="number">
+                    10.
+                </span>
+
+                Fill in the blanks with suitable connectors.
+
+            </div>
+
+
+            <div class="word-box">
+
+                <strong>
+                    Box:
+                </strong>
+
+                However,
+                Moreover,
+                Therefore,
+                Although,
+                As a result,
+                In addition,
+                On the other hand,
+                Meanwhile,
+                Nevertheless,
+                Consequently
+
+            </div>
+
+
+            <div class="items">
+
+                <div class="item">
+                    (a) He studied hard.
+                    <span class="answer-line"></span>,
+                    he failed the exam.
+                </div>
+
+                <div class="item">
+                    (b)
+                    <span class="answer-line"></span>
+                    he was tired, he kept working.
+                </div>
+
+                <div class="item">
+                    (c) The road was blocked.
+                    <span class="answer-line"></span>,
+                    we took a different route.
+                </div>
+
+                <div class="item">
+                    (d) She is intelligent.
+                    <span class="answer-line"></span>,
+                    she is hardworking.
+                </div>
+
+                <div class="item">
+                    (e) Prices are rising.
+                    <span class="answer-line"></span>,
+                    people are struggling to survive.
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Q11 -->
+
+        <div class="question">
+
+            <div class="question-title">
+
+                <span class="number">
+                    11.
+                </span>
+
+                Write the synonym or antonym as asked.
+
+            </div>
+
+
+            <div class="items">
+
+                <div class="item">
+                    (a) Synonym of “Huge” —
+                    <span class="answer-line"></span>
+                </div>
+
+                <div class="item">
+                    (b) Antonym of “Generous” —
+                    <span class="answer-line"></span>
+                </div>
+
+                <div class="item">
+                    (c) Synonym of “Ancient” —
+                    <span class="answer-line"></span>
+                </div>
+
+                <div class="item">
+                    (d) Antonym of “Optimistic” —
+                    <span class="answer-line"></span>
+                </div>
+
+                <div class="item">
+                    (e) Synonym of “Courage” —
+                    <span class="answer-line"></span>
+                </div>
+
+                <div class="item">
+                    (f) Antonym of “Scarce” —
+                    <span class="answer-line"></span>
+                </div>
+
+                <div class="item">
+                    (g) Synonym of “Swift” —
+                    <span class="answer-line"></span>
+                </div>
+
+                <div class="item">
+                    (h) Antonym of “Genuine” —
+                    <span class="answer-line"></span>
+                </div>
+
+                <div class="item">
+                    (i) Synonym of “Obstacle” —
+                    <span class="answer-line"></span>
+                </div>
+
+                <div class="item">
+                    (j) Antonym of “Permit” —
+                    <span class="answer-line"></span>
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Q12 -->
+
+        <div class="question">
+
+            <div class="question-title">
+
+                <span class="number">
+                    12.
+                </span>
+
+                Punctuate the following passage.
+
+            </div>
+
+
+            <div class="instruction">
+
+                Use capital letters where necessary.
+
+            </div>
+
+
+            <div class="passage">
+
+                rahim said to karim have you finished your homework
+                karim replied not yet i will do it after dinner
+                rahim then asked why are you so late
+                karim said i was helping my mother in the kitchen
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =====================================================
+         PART B
+    ===================================================== -->
+
+    <section class="section">
+
+
+        <div class="section-title">
+
+            <i class="fas fa-pen-fancy"></i>
+
+            PART B: COMPOSITION
+
+            <span style="margin-left:auto;font-size:.75rem;color:#ff72c5;">
+                40 Marks
+            </span>
+
+        </div>
+
+
+
+        <div class="composition">
+
+            <strong>
+                13.
+            </strong>
+
+            Write an application to the Principal of your college
+            requesting permission to organize a study tour.
+
+        </div>
+
+
+
+        <div class="composition">
+
+            <strong>
+                14.
+            </strong>
+
+            Write a paragraph on
+            <b>“Global Warming”</b>
+            in about 200 words.
+
+        </div>
+
+
+
+        <div class="composition">
+
+            <strong>
+                15.
+            </strong>
+
+            Suppose you are a reporter.
+            Write a report on a road accident you witnessed recently,
+            for publication in a daily newspaper.
+
+        </div>
+
+
+
+        <div class="composition">
+
+            <strong>
+                16.
+            </strong>
+
+            Write an essay on
+            <b>“The Importance of Tree Plantation”</b>
+            in about 300 words.
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ===================================================== -->
+
+    <div class="footer">
+
+        HSC English 2nd Paper • Model Test • 2026
+
+    </div>
+
+
+</div>
+
+
+
+<script>
+
+    function openEnglishPractice(event) {
+
+        /*
+         * If this file is inside the same directory as index.html,
+         * this simply returns to the main page.
+         *
+         * The English Practice page itself can then be opened
+         * from the main profile/home screen.
+         */
+
+    }
+
+</script>
+
+
+</body>
+
+</html>
