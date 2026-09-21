@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>HSC 2027 English Second Paper | Answer Key</title>
 
 <meta name="description"
-content="HSC 2027 English Second Paper Answer Key and Marking Guide">
+content="HSC 2027 English Second Paper Answer Key, Correct Answers, Wrong Answers and Explanations">
 
 <style>
+
+/* =========================================================
+   RESET
+========================================================= */
 
 * {
     margin: 0;
@@ -35,24 +40,25 @@ body {
     line-height: 1.65;
 }
 
-/* =========================
+
+/* =========================================================
    HEADER
-========================= */
+========================================================= */
 
 .header {
     background: #111827;
     color: white;
-    padding: 34px 18px;
+    padding: 38px 18px;
     text-align: center;
 }
 
-.header .badge {
+.badge {
     display: inline-block;
-    padding: 5px 12px;
+    padding: 6px 14px;
     border: 1px solid #4b5563;
     border-radius: 30px;
     font-size: 12px;
-    font-weight: 700;
+    font-weight: 800;
     letter-spacing: 1px;
     margin-bottom: 12px;
     color: #d1d5db;
@@ -76,18 +82,20 @@ body {
     font-size: 14px;
 }
 
-/* =========================
-   MAIN CONTAINER
-========================= */
+
+/* =========================================================
+   CONTAINER
+========================================================= */
 
 .container {
     width: min(100% - 28px, 1000px);
     margin: 25px auto 50px;
 }
 
-/* =========================
+
+/* =========================================================
    INFO CARD
-========================= */
+========================================================= */
 
 .info-card {
     background: white;
@@ -114,9 +122,63 @@ body {
     color: #111827;
 }
 
-/* =========================
-   NAVIGATION
-========================= */
+
+/* =========================================================
+   ANSWER LEGEND
+========================================================= */
+
+.legend {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 18px;
+    margin-bottom: 20px;
+}
+
+.legend h3 {
+    margin-bottom: 12px;
+    font-size: 16px;
+}
+
+.legend-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.legend-box {
+    width: 18px;
+    height: 18px;
+    border-radius: 5px;
+}
+
+.legend-correct {
+    background: #dcfce7;
+    border: 1px solid #86efac;
+}
+
+.legend-wrong {
+    background: #fee2e2;
+    border: 1px solid #fca5a5;
+}
+
+.legend-note {
+    background: #fef3c7;
+    border: 1px solid #fcd34d;
+}
+
+
+/* =========================================================
+   QUICK NAVIGATION
+========================================================= */
 
 .quick-nav {
     background: white;
@@ -146,15 +208,68 @@ body {
     border-radius: 8px;
     font-size: 13px;
     font-weight: 600;
+    transition: 0.2s;
 }
 
 .nav-buttons a:hover {
     background: #e5e7eb;
+    transform: translateY(-1px);
 }
 
-/* =========================
+
+/* =========================================================
+   ACTION BUTTONS
+========================================================= */
+
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 22px;
+}
+
+.action-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+
+    padding: 10px 16px;
+    border-radius: 9px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    border: 1px solid #d1d5db;
+
+    background: white;
+    color: #111827;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.action-button:hover {
+    background: #f3f4f6;
+    transform: translateY(-1px);
+}
+
+.action-primary {
+    background: #111827;
+    color: white;
+    border-color: #111827;
+}
+
+.action-primary:hover {
+    background: #1f2937;
+}
+
+
+/* =========================================================
    SECTION
-========================= */
+========================================================= */
 
 .section {
     background: white;
@@ -185,12 +300,13 @@ body {
     padding: 20px;
 }
 
-/* =========================
-   QUESTION BLOCK
-========================= */
+
+/* =========================================================
+   QUESTION
+========================================================= */
 
 .question {
-    padding: 18px 0;
+    padding: 20px 0;
     border-bottom: 1px solid #e5e7eb;
     scroll-margin-top: 20px;
 }
@@ -204,54 +320,207 @@ body {
 }
 
 .question h3 {
-    font-size: 17px;
-    margin-bottom: 12px;
+    font-size: 18px;
+    margin-bottom: 15px;
     color: #111827;
 }
 
-.answers {
-    display: grid;
-    gap: 8px;
+.question-topic {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    color: #6b7280;
+    background: #f3f4f6;
+    padding: 4px 8px;
+    border-radius: 5px;
+    margin-bottom: 9px;
 }
 
-.answer-line {
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    padding: 9px 11px;
+
+/* =========================================================
+   QUESTION TEXT
+========================================================= */
+
+.question-text {
     background: #f8fafc;
-    border-radius: 8px;
-}
-
-.answer-letter {
-    min-width: 25px;
-    font-weight: 700;
+    border: 1px solid #e5e7eb;
+    border-radius: 9px;
+    padding: 13px;
+    margin-bottom: 12px;
     color: #374151;
 }
 
-.answer-text {
-    color: #1f2937;
+.question-text strong {
+    color: #111827;
 }
 
-/* =========================
+
+/* =========================================================
+   CORRECT ANSWER
+========================================================= */
+
+.correct {
+    background: #f0fdf4;
+    border: 1px solid #86efac;
+    border-left: 5px solid #16a34a;
+    border-radius: 9px;
+    padding: 13px 15px;
+    margin-top: 10px;
+}
+
+.correct-label {
+    color: #15803d;
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    margin-bottom: 4px;
+}
+
+.correct strong {
+    color: #166534;
+}
+
+
+/* =========================================================
+   WRONG ANSWER
+========================================================= */
+
+.wrong {
+    background: #fef2f2;
+    border: 1px solid #fca5a5;
+    border-left: 5px solid #dc2626;
+    border-radius: 9px;
+    padding: 13px 15px;
+    margin-top: 10px;
+}
+
+.wrong-label {
+    color: #b91c1c;
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    margin-bottom: 4px;
+}
+
+.wrong strong {
+    color: #991b1b;
+}
+
+
+/* =========================================================
+   EXPLANATION
+========================================================= */
+
+.explanation {
+    background: #fffbeb;
+    border: 1px solid #fcd34d;
+    border-left: 5px solid #f59e0b;
+    border-radius: 9px;
+    padding: 13px 15px;
+    margin-top: 10px;
+}
+
+.explanation-label {
+    color: #92400e;
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    margin-bottom: 4px;
+}
+
+
+/* =========================================================
+   ANSWER GROUP
+========================================================= */
+
+.answer-group {
+    margin-bottom: 15px;
+}
+
+.answer-group:last-child {
+    margin-bottom: 0;
+}
+
+.answer-number {
+    font-weight: 800;
+    margin-bottom: 7px;
+    color: #111827;
+}
+
+
+/* =========================================================
    COMPLETED SENTENCES
-========================= */
+========================================================= */
 
 .completed {
     margin-top: 12px;
 }
 
-.completed p {
-    padding: 10px 12px;
-    margin-bottom: 7px;
-    background: #f8fafc;
-    border-left: 3px solid #374151;
-    border-radius: 5px;
+.completed-item {
+    margin-bottom: 13px;
 }
 
-/* =========================
+.completed-item:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   WRITING ANSWER
+========================================================= */
+
+.answer-paper {
+    background: #fafafa;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 18px;
+}
+
+.answer-paper p {
+    margin-bottom: 12px;
+}
+
+.answer-paper p:last-child {
+    margin-bottom: 0;
+}
+
+.composition-title {
+    text-align: center;
+    font-weight: 800;
+    font-size: 17px;
+    margin: 5px 0 18px;
+    letter-spacing: .3px;
+}
+
+
+/* =========================================================
+   APPLICATION
+========================================================= */
+
+.application {
+    background: #fafafa;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 18px;
+}
+
+.application p {
+    margin-bottom: 10px;
+}
+
+.application p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
    MARKING GUIDE
-========================= */
+========================================================= */
 
 .marking {
     margin-top: 16px;
@@ -274,74 +543,31 @@ body {
     margin: 3px 0;
 }
 
-/* =========================
-   COMPOSITION ANSWER
-========================= */
 
-.composition {
-    margin-bottom: 25px;
-    scroll-margin-top: 20px;
+/* =========================================================
+   WARNING / NOTE
+========================================================= */
+
+.note {
+    background: #fffbeb;
+    border: 1px solid #fcd34d;
+    border-radius: 9px;
+    padding: 13px 15px;
+    margin-top: 12px;
 }
 
-.composition:last-child {
-    margin-bottom: 0;
+.note strong {
+    color: #92400e;
 }
 
-.composition h3 {
-    font-size: 18px;
-    margin-bottom: 12px;
-}
 
-.composition-title {
-    text-align: center;
-    font-weight: 800;
-    font-size: 17px;
-    margin: 15px 0;
-    letter-spacing: .3px;
-}
-
-.answer-paper {
-    background: #fafafa;
-    border: 1px solid #e5e7eb;
-    border-radius: 10px;
-    padding: 18px;
-    white-space: pre-line;
-}
-
-.answer-paper p {
-    margin-bottom: 12px;
-}
-
-.answer-paper p:last-child {
-    margin-bottom: 0;
-}
-
-/* =========================
-   APPLICATION
-========================= */
-
-.application {
-    background: #fafafa;
-    border: 1px solid #e5e7eb;
-    border-radius: 10px;
-    padding: 18px;
-}
-
-.application p {
-    margin-bottom: 10px;
-}
-
-.application p:last-child {
-    margin-bottom: 0;
-}
-
-/* =========================
+/* =========================================================
    FOOTER
-========================= */
+========================================================= */
 
 .footer {
     text-align: center;
-    padding: 25px 15px 40px;
+    padding: 25px 15px 45px;
     color: #6b7280;
     font-size: 13px;
 }
@@ -350,17 +576,19 @@ body {
     color: #374151;
 }
 
-/* =========================
+
+/* =========================================================
    TOP BUTTON
-========================= */
+========================================================= */
 
 .top-button {
     position: fixed;
+
     right: 18px;
     bottom: 18px;
 
-    width: 44px;
-    height: 44px;
+    width: 46px;
+    height: 46px;
 
     border: none;
     border-radius: 50%;
@@ -369,6 +597,8 @@ body {
     color: white;
 
     font-size: 20px;
+    font-weight: 700;
+
     cursor: pointer;
 
     display: none;
@@ -384,9 +614,47 @@ body {
     display: flex;
 }
 
-/* =========================
+
+/* =========================================================
+   PRINT
+========================================================= */
+
+@media print {
+
+    body {
+        background: white;
+    }
+
+    .quick-nav,
+    .actions,
+    .top-button {
+        display: none !important;
+    }
+
+    .section {
+        box-shadow: none;
+        break-inside: avoid;
+    }
+
+    .header {
+        color: black;
+        background: white;
+        border-bottom: 2px solid #111827;
+    }
+
+    .header h1,
+    .header h2,
+    .header p,
+    .badge {
+        color: black;
+    }
+
+}
+
+
+/* =========================================================
    MOBILE
-========================= */
+========================================================= */
 
 @media (max-width: 600px) {
 
@@ -407,7 +675,9 @@ body {
         padding: 15px;
     }
 
-    .info-card {
+    .info-card,
+    .legend,
+    .quick-nav {
         padding: 15px;
     }
 
@@ -424,16 +694,39 @@ body {
         flex-direction: column;
         gap: 6px;
     }
+
+    .actions {
+        flex-direction: column;
+    }
+
+    .action-button {
+        width: 100%;
+    }
+
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+a:focus,
+button:focus {
+    outline: 3px solid #93c5fd;
+    outline-offset: 2px;
 }
 
 </style>
+
 </head>
+
 
 <body>
 
-<!-- =========================
+
+<!-- =========================================================
      HEADER
-========================= -->
+========================================================= -->
 
 <header class="header">
 
@@ -443,20 +736,22 @@ body {
 
     <h1>ENGLISH SECOND PAPER</h1>
 
-    <h2>Answer Key &amp; Marking Guide</h2>
+    <h2>Answer Key &amp; Explanations</h2>
 
     <p>
-        Complete suggested answers for the model test paper
+        Correct answers, common wrong answers and explanations
     </p>
 
 </header>
 
 
+
 <main class="container">
 
-<!-- =========================
+
+<!-- =========================================================
      INFO
-========================= -->
+========================================================= -->
 
 <div class="info-card">
 
@@ -479,9 +774,63 @@ body {
 </div>
 
 
-<!-- =========================
+
+<!-- =========================================================
+     LEGEND
+========================================================= -->
+
+<div class="legend">
+
+    <h3>How to Read the Answers</h3>
+
+    <div class="legend-items">
+
+        <div class="legend-item">
+            <span class="legend-box legend-correct"></span>
+            Correct Answer
+        </div>
+
+        <div class="legend-item">
+            <span class="legend-box legend-wrong"></span>
+            Wrong / Common Mistake
+        </div>
+
+        <div class="legend-item">
+            <span class="legend-box legend-note"></span>
+            Explanation / Important Note
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     ACTION BUTTONS
+========================================================= -->
+
+<div class="actions">
+
+    <a
+        href="quiz-test.html"
+        class="action-button action-primary">
+        ← Back to Question Paper
+    </a>
+
+    <button
+        class="action-button"
+        onclick="window.print()">
+        🖨 Print Answer Key
+    </button>
+
+</div>
+
+
+
+<!-- =========================================================
      QUICK NAVIGATION
-========================= -->
+========================================================= -->
 
 <div class="quick-nav">
 
@@ -511,488 +860,1983 @@ body {
 </div>
 
 
-<!-- =====================================================
+
+<!-- =========================================================
      PART A
-===================================================== -->
+========================================================= -->
 
 <section class="section">
 
     <div class="section-title">
+
         <h2>PART A — GRAMMAR</h2>
+
         <p>Marks: 60</p>
+
     </div>
+
 
     <div class="section-content">
 
 
-<!-- 1 ARTICLES -->
+
+<!-- =========================================================
+     1. ARTICLES
+========================================================= -->
 
 <div class="question" id="articles">
 
-<h3>1. ARTICLES — 5 Marks</h3>
+    <div class="question-topic">
+        Topic: Articles
+    </div>
 
-<div class="answers">
+    <h3>1. ARTICLES — 5 Marks</h3>
 
-<div class="answer-line">
-<span class="answer-letter">(a)</span>
-<span class="answer-text"><strong>an</strong></span>
+
+    <!-- A -->
+
+    <div class="answer-group">
+
+        <div class="answer-number">
+            (a) Bangladesh is ___ independent country.
+        </div>
+
+        <div class="correct">
+
+            <div class="correct-label">
+                ✓ Correct Answer
+            </div>
+
+            <strong>an</strong>
+
+        </div>
+
+        <div class="wrong">
+
+            <div class="wrong-label">
+                ✗ Common Wrong Answer
+            </div>
+
+            <strong>a independent</strong>
+
+        </div>
+
+        <div class="explanation">
+
+            <div class="explanation-label">
+                💡 Why?
+            </div>
+
+            “Independent” begins with a vowel sound, so we use
+            <strong>an</strong>, not <strong>a</strong>.
+
+        </div>
+
+    </div>
+
+
+    <!-- B -->
+
+    <div class="answer-group">
+
+        <div class="answer-number">
+            (b) He is ___ honest student.
+        </div>
+
+        <div class="correct">
+
+            <div class="correct-label">
+                ✓ Correct Answer
+            </div>
+
+            <strong>an</strong>
+
+        </div>
+
+        <div class="wrong">
+
+            <div class="wrong-label">
+                ✗ Common Wrong Answer
+            </div>
+
+            <strong>a honest</strong>
+
+        </div>
+
+        <div class="explanation">
+
+            <div class="explanation-label">
+                💡 Why?
+            </div>
+
+            The <strong>h</strong> in “honest” is silent.
+            The word begins with a vowel sound, so we use
+            <strong>an</strong>.
+
+        </div>
+
+    </div>
+
+
+    <!-- C -->
+
+    <div class="answer-group">
+
+        <div class="answer-number">
+            (c) ___ sun rises in the east.
+        </div>
+
+        <div class="correct">
+
+            <div class="correct-label">
+                ✓ Correct Answer
+            </div>
+
+            <strong>The</strong>
+
+        </div>
+
+        <div class="wrong">
+
+            <div class="wrong-label">
+                ✗ Common Wrong Answer
+            </div>
+
+            <strong>A sun</strong>
+
+        </div>
+
+        <div class="explanation">
+
+            <div class="explanation-label">
+                💡 Why?
+            </div>
+
+            “Sun” refers to the unique star of our solar system.
+            Unique objects normally take <strong>the</strong>.
+
+        </div>
+
+    </div>
+
+
+    <!-- D -->
+
+    <div class="answer-group">
+
+        <div class="answer-number">
+            (d) She bought ___ umbrella yesterday.
+        </div>
+
+        <div class="correct">
+
+            <div class="correct-label">
+                ✓ Correct Answer
+            </div>
+
+            <strong>an</strong>
+
+        </div>
+
+        <div class="wrong">
+
+            <div class="wrong-label">
+                ✗ Common Wrong Answer
+            </div>
+
+            <strong>a umbrella</strong>
+
+        </div>
+
+        <div class="explanation">
+
+            <div class="explanation-label">
+                💡 Why?
+            </div>
+
+            “Umbrella” begins with a vowel sound, so
+            <strong>an</strong> is used.
+
+        </div>
+
+    </div>
+
+
+    <!-- E -->
+
+    <div class="answer-group">
+
+        <div class="answer-number">
+            (e) He is ___ European.
+        </div>
+
+        <div class="correct">
+
+            <div class="correct-label">
+                ✓ Correct Answer
+            </div>
+
+            <strong>a</strong>
+
+        </div>
+
+        <div class="wrong">
+
+            <div class="wrong-label">
+                ✗ Common Wrong Answer
+            </div>
+
+            <strong>an European</strong>
+
+        </div>
+
+        <div class="explanation">
+
+            <div class="explanation-label">
+                💡 Why?
+            </div>
+
+            “European” begins with the consonant sound
+            <strong>/juː/</strong>, like “you”.
+            Therefore, we use <strong>a</strong>.
+
+        </div>
+
+    </div>
+
+
+    <div class="marking">
+
+        <strong>Marking:</strong>
+
+        1 mark each.
+
+    </div>
+
 </div>
 
-<div class="answer-line">
-<span class="answer-letter">(b)</span>
-<span class="answer-text"><strong>an</strong></span>
-</div>
-
-<div class="answer-line">
-<span class="answer-letter">(c)</span>
-<span class="answer-text"><strong>The</strong></span>
-</div>
-
-<div class="answer-line">
-<span class="answer-letter">(d)</span>
-<span class="answer-text"><strong>an</strong></span>
-</div>
-
-<div class="answer-line">
-<span class="answer-letter">(e)</span>
-<span class="answer-text"><strong>a</strong></span>
-</div>
-
-</div>
-
-<div class="marking">
-<strong>Marking:</strong>
-1 mark each.
-</div>
-
-</div>
 
 
-<!-- 2 PREPOSITIONS -->
+<!-- =========================================================
+     2. PREPOSITIONS
+========================================================= -->
 
 <div class="question" id="prepositions">
 
-<h3>2. PREPOSITIONS — 5 Marks</h3>
+    <div class="question-topic">
+        Topic: Prepositions
+    </div>
 
-<div class="answers">
+    <h3>2. PREPOSITIONS — 5 Marks</h3>
 
-<div class="answer-line">
-<span class="answer-letter">(a)</span>
-<span class="answer-text"><strong>at</strong></span>
+
+    <div class="answer-group">
+
+        <div class="answer-number">
+            (a) He is good ___ English.
+        </div>
+
+        <div class="correct">
+            <div class="correct-label">✓ Correct Answer</div>
+            <strong>at</strong>
+        </div>
+
+        <div class="wrong">
+            <div class="wrong-label">✗ Common Wrong Answer</div>
+            <strong>in</strong>
+        </div>
+
+        <div class="explanation">
+            <div class="explanation-label">💡 Why?</div>
+            The standard expression is <strong>good at</strong>
+            something.
+        </div>
+
+    </div>
+
+
+    <div class="answer-group">
+
+        <div class="answer-number">
+            (b) He is interested ___ learning English.
+        </div>
+
+        <div class="correct">
+            <div class="correct-label">✓ Correct Answer</div>
+            <strong>in</strong>
+        </div>
+
+        <div class="wrong">
+            <div class="wrong-label">✗ Common Wrong Answer</div>
+            <strong>at</strong>
+        </div>
+
+        <div class="explanation">
+            <div class="explanation-label">💡 Why?</div>
+            The correct expression is
+            <strong>interested in + noun/gerund</strong>.
+        </div>
+
+    </div>
+
+
+    <div class="answer-group">
+
+        <div class="answer-number">
+            (c) He has been absent ___ Monday.
+        </div>
+
+        <div class="correct">
+            <div class="correct-label">✓ Correct Answer</div>
+            <strong>since</strong>
+        </div>
+
+        <div class="wrong">
+            <div class="wrong-label">✗ Common Wrong Answer</div>
+            <strong>for</strong>
+        </div>
+
+        <div class="explanation">
+            <div class="explanation-label">💡 Why?</div>
+            <strong>Since</strong> is used with a specific starting
+            point in time, such as Monday.
+        </div>
+
+    </div>
+
+
+    <div class="answer-group">
+
+        <div class="answer-number">
+            (d) He was accused ___ theft.
+        </div>
+
+        <div class="correct">
+            <div class="correct-label">✓ Correct Answer</div>
+            <strong>of</strong>
+        </div>
+
+        <div class="wrong">
+            <div class="wrong-label">✗ Common Wrong Answer</div>
+            <strong>for</strong>
+        </div>
+
+        <div class="explanation">
+            <div class="explanation-label">💡 Why?</div>
+            The standard expression is
+            <strong>accused of</strong> something.
+        </div>
+
+    </div>
+
+
+    <div class="answer-group">
+
+        <div class="answer-number">
+            (e) He is indifferent ___ our duties.
+        </div>
+
+        <div class="correct">
+            <div class="correct-label">✓ Correct Answer</div>
+            <strong>to</strong>
+        </div>
+
+        <div class="wrong">
+            <div class="wrong-label">✗ Common Wrong Answer</div>
+            <strong>with</strong>
+        </div>
+
+        <div class="explanation">
+            <div class="explanation-label">💡 Why?</div>
+            The standard expression is
+            <strong>indifferent to</strong> something.
+        </div>
+
+    </div>
+
+
+    <div class="marking">
+        <strong>Marking:</strong>
+        1 mark each.
+    </div>
+
 </div>
 
-<div class="answer-line">
-<span class="answer-letter">(b)</span>
-<span class="answer-text"><strong>in</strong></span>
-</div>
-
-<div class="answer-line">
-<span class="answer-letter">(c)</span>
-<span class="answer-text"><strong>since</strong></span>
-</div>
-
-<div class="answer-line">
-<span class="answer-letter">(d)</span>
-<span class="answer-text"><strong>of</strong></span>
-</div>
-
-<div class="answer-line">
-<span class="answer-letter">(e)</span>
-<span class="answer-text"><strong>to</strong></span>
-</div>
-
-</div>
-
-<div class="marking">
-<strong>Marking:</strong>
-1 mark each.
-</div>
-
-</div>
 
 
-<!-- 3 SPECIAL USES -->
+<!-- =========================================================
+     3. SPECIAL USES
+========================================================= -->
 
 <div class="question" id="special">
 
-<h3>3. SPECIAL USES OF WORDS/PHRASES — 5 Marks</h3>
+    <div class="question-topic">
+        Topic: Special Uses of Words/Phrases
+    </div>
 
-<div class="answers">
+    <h3>3. SPECIAL USES OF WORDS/PHRASES — 5 Marks</h3>
 
-<div class="answer-line">
-<span class="answer-letter">(a)</span>
-<span class="answer-text"><strong>stay</strong></span>
+
+    <div class="answer-group">
+
+        <div class="answer-number">
+            (a) I would rather ___ at home than go outside.
+        </div>
+
+        <div class="correct">
+            <div class="correct-label">✓ Correct Answer</div>
+            <strong>stay</strong>
+        </div>
+
+        <div class="wrong">
+            <div class="wrong-label">✗ Common Wrong Answer</div>
+            <strong>staying</strong>
+        </div>
+
+        <div class="explanation">
+            <div class="explanation-label">💡 Why?</div>
+            The structure is
+            <strong>would rather + base verb + than + base verb</strong>.
+        </div>
+
+    </div>
+
+
+    <div class="answer-group">
+
+        <div class="answer-number">
+            (b) You had better ___ the truth.
+        </div>
+
+        <div class="correct">
+            <div class="correct-label">✓ Correct Answer</div>
+            <strong>tell</strong>
+        </div>
+
+        <div class="wrong">
+            <div class="wrong-label">✗ Common Wrong Answer</div>
+            <strong>to tell</strong>
+        </div>
+
+        <div class="explanation">
+            <div class="explanation-label">💡 Why?</div>
+            After <strong>had better</strong>, we use the base form
+            of the verb without “to”.
+        </div>
+
+    </div>
+
+
+    <div class="answer-group">
+
+        <div class="answer-number">
+            (c) He cannot ___ a pen, let alone buy a laptop.
+        </div>
+
+        <div class="correct">
+            <div class="correct-label">✓ Correct Answer</div>
+            <strong>buy</strong>
+        </div>
+
+        <div class="wrong">
+            <div class="wrong-label">✗ Common Wrong Answer</div>
+            <strong>buys</strong>
+        </div>
+
+        <div class="explanation">
+            <div class="explanation-label">💡 Why?</div>
+            After the modal auxiliary <strong>cannot</strong>,
+            the base form <strong>buy</strong> is required.
+        </div>
+
+    </div>
+
+
+    <div class="answer-group">
+
+        <div class="answer-number">
+            (d) Walk carefully lest you ___ fall.
+        </div>
+
+        <div class="correct">
+            <div class="correct-label">✓ Correct Answer</div>
+            <strong>should</strong>
+        </div>
+
+        <div class="wrong">
+            <div class="wrong-label">✗ Common Wrong Answer</div>
+            <strong>will</strong>
+        </div>
+
+        <div class="explanation">
+            <div class="explanation-label">💡 Why?</div>
+            A common examination structure is
+            <strong>lest + subject + should + base verb</strong>.
+        </div>
+
+    </div>
+
+
+    <div class="answer-group">
+
+        <div class="answer-number">
+            (e) No sooner had he reached home ___ it started raining.
+        </div>
+
+        <div class="correct">
+            <div class="correct-label">✓ Correct Answer</div>
+            <strong>than</strong>
+        </div>
+
+        <div class="wrong">
+            <div class="wrong-label">✗ Common Wrong Answer</div>
+            <strong>when</strong>
+        </div>
+
+        <div class="explanation">
+            <div class="explanation-label">💡 Why?</div>
+            The fixed correlative structure is
+            <strong>No sooner ... than ...</strong>.
+        </div>
+
+    </div>
+
+
+    <div class="marking">
+        <strong>Marking:</strong>
+        1 mark each.
+    </div>
+
 </div>
 
-<div class="answer-line">
-<span class="answer-letter">(b)</span>
-<span class="answer-text"><strong>tell</strong></span>
-</div>
-
-<div class="answer-line">
-<span class="answer-letter">(c)</span>
-<span class="answer-text"><strong>buy</strong></span>
-</div>
-
-<div class="answer-line">
-<span class="answer-letter">(d)</span>
-<span class="answer-text"><strong>should</strong></span>
-</div>
-
-<div class="answer-line">
-<span class="answer-letter">(e)</span>
-<span class="answer-text"><strong>than</strong></span>
-</div>
-
-</div>
-
-<div class="completed">
-
-<p>(a) I would rather <strong>stay</strong> at home than go outside.</p>
-
-<p>(b) You had better <strong>tell</strong> the truth.</p>
-
-<p>(c) He cannot <strong>buy</strong> a pen, let alone buy a laptop.</p>
-
-<p>(d) Walk carefully lest you <strong>should</strong> fall.</p>
-
-<p>(e) No sooner had he reached home <strong>than</strong> it started raining.</p>
-
-</div>
-
-<div class="marking">
-<strong>Marking:</strong>
-1 mark each.
-</div>
-
-</div>
 
 
-<!-- 4 COMPLETING -->
+<!-- =========================================================
+     4. COMPLETING SENTENCES
+========================================================= -->
 
 <div class="question" id="completing">
 
-<h3>4. COMPLETING SENTENCES — 5 Marks</h3>
+    <div class="question-topic">
+        Topic: Completing Sentences
+    </div>
 
-<div class="completed">
+    <h3>4. COMPLETING SENTENCES — 5 Marks</h3>
 
-<p>(a) It is high time we <strong>took action.</strong></p>
 
-<p>(b) I wish I <strong>were a bird.</strong></p>
+    <div class="answer-group">
 
-<p>(c) If I were a bird, I <strong>would fly in the sky.</strong></p>
+        <div class="answer-number">
+            (a) It is high time we ___.
+        </div>
 
-<p>(d) Unless you work hard, <strong>you will fail.</strong></p>
+        <div class="correct">
+            <div class="correct-label">✓ Correct Answer</div>
+            <strong>took action.</strong>
+        </div>
 
-<p>(e) He talks as if he <strong>knew everything.</strong></p>
+        <div class="wrong">
+            <div class="wrong-label">✗ Common Wrong Answer</div>
+            <strong>take action.</strong>
+        </div>
+
+        <div class="explanation">
+            <div class="explanation-label">💡 Why?</div>
+            After <strong>It is high time</strong>, the past form is
+            commonly used to express that something should already
+            have been done.
+        </div>
+
+    </div>
+
+
+    <div class="answer-group">
+
+        <div class="answer-number">
+            (b) I wish I ___.
+        </div>
+
+        <div class="correct">
+            <div class="correct-label">✓ Correct Answer</div>
+            <strong>were a bird.</strong>
+        </div>
+
+        <div class="wrong">
+            <div class="wrong-label">✗ Common Wrong Answer</div>
+            <strong>am a bird.</strong>
+        </div>
+
+        <div class="explanation">
+            <div class="explanation-label">💡 Why?</div>
+            For an unreal or hypothetical wish, the subjunctive
+            <strong>were</strong> is used.
+        </div>
+
+    </div>
+
+
+    <div class="answer-group">
+
+        <div class="answer-number">
+            (c) If I were a bird, I ___.
+        </div>
+
+        <div class="correct">
+            <div class="correct-label">✓ Correct Answer</div>
+            <strong>would fly in the sky.</strong>
+        </div>
+
+        <div class="wrong">
+            <div class="wrong-label">✗ Common Wrong Answer</div>
+            <strong>will fly in the sky.</strong>
+        </div>
+
+        <div class="explanation">
+            <div class="explanation-label">💡 Why?</div>
+            This is a second conditional sentence:
+            <strong>If + past form, ... would + base verb.</strong>
+        </div>
+
+    </div>
+
+
+    <div class="answer-group">
+
+        <div class="answer-number">
+            (d) Unless you work hard, ___.
+        </div>
+
+        <div class="correct">
+            <div class="correct-label">✓ Correct Answer</div>
+            <strong>you will fail.</strong>
+        </div>
+
+        <div class="wrong">
+            <div class="wrong-label">✗ Common Wrong Answer</div>
+            <strong>you would fail.</strong>
+        </div>
+
+        <div class="explanation">
+            <div class="explanation-label">💡 Why?</div>
+            <strong>Unless</strong> means “if ... not”.
+            A real future condition commonly takes
+            <strong>present simple + will</strong>.
+        </div>
+
+    </div>
+
+
+    <div class="answer-group">
+
+        <div class="answer-number">
+            (e) He talks as if he ___.
+        </div>
+
+        <div class="correct">
+            <div class="correct-label">✓ Correct Answer</div>
+            <strong>knew everything.</strong>
+        </div>
+
+        <div class="wrong">
+            <div class="wrong-label">✗ Common Wrong Answer</div>
+            <strong>knows everything.</strong>
+        </div>
+
+        <div class="explanation">
+            <div class="explanation-label">💡 Why?</div>
+            <strong>As if</strong> can be followed by a past form
+            when the comparison is unreal or contrary to fact.
+        </div>
+
+    </div>
+
+
+    <div class="note">
+
+        <strong>Important:</strong>
+        Other grammatically correct and meaningful completions
+        may also be accepted.
+
+    </div>
+
+
+    <div class="marking">
+        <strong>Marking:</strong>
+        1 mark each.
+    </div>
 
 </div>
 
-<div class="marking">
-
-<strong>Note:</strong>
-
-Other grammatically correct and meaningful answers may be accepted.
-
-<br><br>
-
-<strong>Marking:</strong>
-
-1 mark each.
-
-</div>
-
-</div>
 
 
-<!-- 5 VERBS -->
+<!-- =========================================================
+     5. RIGHT FORM OF VERBS
+========================================================= -->
 
 <div class="question" id="verbs">
 
-<h3>5. RIGHT FORM OF VERBS — 5 Marks</h3>
+    <div class="question-topic">
+        Topic: Right Form of Verbs
+    </div>
 
-<div class="answers">
+    <h3>5. RIGHT FORM OF VERBS — 5 Marks</h3>
 
-<div class="answer-line">
-<span class="answer-letter">(a)</span>
-<span class="answer-text"><strong>rises</strong></span>
+
+    <div class="answer-group">
+
+        <div class="answer-number">
+            (a) The sun ___ in the east.
+        </div>
+
+        <div class="correct">
+            <div class="correct-label">✓ Correct Answer</div>
+            <strong>rises</strong>
+        </div>
+
+        <div class="wrong">
+            <div class="wrong-label">✗ Common Wrong Answer</div>
+            <strong>is rising</strong>
+        </div>
+
+        <div class="explanation">
+            <div class="explanation-label">💡 Why?</div>
+            A universal or habitual truth takes the
+            <strong>simple present tense</strong>.
+        </div>
+
+    </div>
+
+
+    <div class="answer-group">
+
+        <div class="answer-number">
+            (b) He ___ a book now.
+        </div>
+
+        <div class="correct">
+            <div class="correct-label">✓ Correct Answer</div>
+            <strong>is reading</strong>
+        </div>
+
+        <div class="wrong">
+            <div class="wrong-label">✗ Common Wrong Answer</div>
+            <strong>reads</strong>
+        </div>
+
+        <div class="explanation">
+            <div class="explanation-label">💡 Why?</div>
+            “Now” indicates an action happening at the present
+            moment, so the present continuous is appropriate.
+        </div>
+
+    </div>
+
+
+    <div class="answer-group">
+
+        <div class="answer-number">
+            (c) He ___ here since 2020.
+        </div>
+
+        <div class="correct">
+            <div class="correct-label">✓ Correct Answer</div>
+            <strong>has been living</strong>
+        </div>
+
+        <div class="wrong">
+            <div class="wrong-label">✗ Common Wrong Answer</div>
+            <strong>lived</strong>
+        </div>
+
+        <div class="explanation">
+            <div class="explanation-label">💡 Why?</div>
+            “Since 2020” indicates an action that started in the
+            past and continues to the present.
+        </div>
+
+    </div>
+
+
+    <div class="answer-group">
+
+        <div class="answer-number">
+            (d) When I reached the station, the train ___.
+        </div>
+
+        <div class="correct">
+            <div class="correct-label">✓ Correct Answer</div>
+            <strong>had left</strong>
+        </div>
+
+        <div class="wrong">
+            <div class="wrong-label">✗ Common Wrong Answer</div>
+            <strong>left</strong>
+        </div>
+
+        <div class="explanation">
+            <div class="explanation-label">💡 Why?</div>
+            The train left before I reached the station, so the
+            earlier past action takes the <strong>past perfect</strong>.
+        </div>
+
+    </div>
+
+
+    <div class="answer-group">
+
+        <div class="answer-number">
+            (e) Had I known the matter, I ___ him.
+        </div>
+
+        <div class="correct">
+            <div class="correct-label">✓ Correct Answer</div>
+            <strong>would have helped</strong>
+        </div>
+
+        <div class="wrong">
+            <div class="wrong-label">✗ Common Wrong Answer</div>
+            <strong>would help</strong>
+        </div>
+
+        <div class="explanation">
+            <div class="explanation-label">💡 Why?</div>
+            This is a third conditional structure:
+            <strong>Had + past participle ... would have + past participle.</strong>
+        </div>
+
+    </div>
+
+
+    <div class="marking">
+        <strong>Marking:</strong>
+        1 mark each.
+    </div>
+
 </div>
 
-<div class="answer-line">
-<span class="answer-letter">(b)</span>
-<span class="answer-text"><strong>is reading</strong></span>
-</div>
-
-<div class="answer-line">
-<span class="answer-letter">(c)</span>
-<span class="answer-text"><strong>has been living</strong></span>
-</div>
-
-<div class="answer-line">
-<span class="answer-letter">(d)</span>
-<span class="answer-text"><strong>had left</strong></span>
-</div>
-
-<div class="answer-line">
-<span class="answer-letter">(e)</span>
-<span class="answer-text"><strong>would have helped</strong></span>
-</div>
-
-</div>
-
-<div class="marking">
-<strong>Marking:</strong>
-1 mark each.
-</div>
-
-</div>
 
 
-<!-- 6 TRANSFORMATION -->
+<!-- =========================================================
+     6. TRANSFORMATION
+========================================================= -->
 
 <div class="question" id="transformation">
 
-<h3>6. TRANSFORMATION OF SENTENCES — 5 Marks</h3>
+    <div class="question-topic">
+        Topic: Transformation of Sentences
+    </div>
 
-<div class="completed">
+    <h3>6. TRANSFORMATION OF SENTENCES — 5 Marks</h3>
 
-<p>
-(a) <strong>There is nobody who does not love flowers.</strong>
-</p>
 
-<p>
-(b) <strong>He is so weak that he cannot walk.</strong>
-</p>
+    <div class="answer-group">
 
-<p>
-(c) <strong>He is poor but he is honest.</strong>
-</p>
+        <div class="answer-number">
+            (a) Everybody loves flowers.
+        </div>
 
-<p>
-(d) <strong>Very few cities in Bangladesh are as large as Dhaka.</strong>
-</p>
+        <div class="correct">
+            <div class="correct-label">✓ Correct Transformation</div>
+            <strong>There is nobody who does not love flowers.</strong>
+        </div>
 
-<p>
-(e) <strong>A letter was written by him.</strong>
-</p>
+        <div class="wrong">
+            <div class="wrong-label">✗ Wrong Example</div>
+            <strong>There is nobody who loves flowers.</strong>
+        </div>
+
+        <div class="explanation">
+            <div class="explanation-label">💡 Why?</div>
+            “Everybody loves flowers” means there is no person who
+            does not love flowers. Removing <strong>does not</strong>
+            changes the meaning.
+        </div>
+
+    </div>
+
+
+    <div class="answer-group">
+
+        <div class="answer-number">
+            (b) He is too weak to walk.
+        </div>
+
+        <div class="correct">
+            <div class="correct-label">✓ Correct Transformation</div>
+            <strong>He is so weak that he cannot walk.</strong>
+        </div>
+
+        <div class="wrong">
+            <div class="wrong-label">✗ Wrong Example</div>
+            <strong>He is so weak that he can walk.</strong>
+        </div>
+
+        <div class="explanation">
+            <div class="explanation-label">💡 Why?</div>
+            “Too weak to walk” means he is unable to walk.
+            Therefore, <strong>cannot walk</strong> is required.
+        </div>
+
+    </div>
+
+
+    <div class="answer-group">
+
+        <div class="answer-number">
+            (c) Though he is poor, he is honest.
+        </div>
+
+        <div class="correct">
+            <div class="correct-label">✓ Correct Transformation</div>
+            <strong>He is poor but he is honest.</strong>
+        </div>
+
+        <div class="wrong">
+            <div class="wrong-label">✗ Wrong Example</div>
+            <strong>He is poor and he is honest.</strong>
+        </div>
+
+        <div class="explanation">
+            <div class="explanation-label">💡 Why?</div>
+            “Though” shows contrast, so the transformation should
+            preserve the contrast using <strong>but</strong>.
+        </div>
+
+    </div>
+
+
+    <div class="answer-group">
+
+        <div class="answer-number">
+            (d) Dhaka is one of the largest cities in Bangladesh.
+        </div>
+
+        <div class="correct">
+            <div class="correct-label">✓ Correct Transformation</div>
+            <strong>
+                Very few cities in Bangladesh are as large as Dhaka.
+            </strong>
+        </div>
+
+        <div class="wrong">
+            <div class="wrong-label">✗ Wrong Example</div>
+            <strong>
+                All cities in Bangladesh are as large as Dhaka.
+            </strong>
+        </div>
+
+        <div class="explanation">
+            <div class="explanation-label">💡 Why?</div>
+            “One of the largest” means only a small number of cities
+            are as large as Dhaka. “All cities” changes the meaning.
+        </div>
+
+    </div>
+
+
+    <div class="answer-group">
+
+        <div class="answer-number">
+            (e) He wrote a letter.
+        </div>
+
+        <div class="correct">
+            <div class="correct-label">✓ Correct Transformation</div>
+            <strong>A letter was written by him.</strong>
+        </div>
+
+        <div class="wrong">
+            <div class="wrong-label">✗ Wrong Example</div>
+            <strong>A letter is written by him.</strong>
+        </div>
+
+        <div class="explanation">
+            <div class="explanation-label">💡 Why?</div>
+            The original sentence is in the past simple tense,
+            so the passive form must also remain in the past:
+            <strong>was written</strong>.
+        </div>
+
+    </div>
+
+
+    <div class="marking">
+        <strong>Marking:</strong>
+        1 mark each.
+    </div>
 
 </div>
 
-<div class="marking">
-<strong>Marking:</strong>
-1 mark each.
-</div>
-
-</div>
 
 
-<!-- 7 NARRATION -->
+<!-- =========================================================
+     7. NARRATION
+========================================================= -->
 
 <div class="question" id="narration">
 
-<h3>7. NARRATION — 5 Marks</h3>
+    <div class="question-topic">
+        Topic: Narration
+    </div>
 
-<div class="completed">
+    <h3>7. NARRATION — 5 Marks</h3>
 
-<p>(a) <strong>He said that he was busy.</strong></p>
 
-<p>(b) <strong>He asked me if/whether I was happy.</strong></p>
+    <div class="answer-group">
 
-<p>(c) <strong>The teacher forbade the students to make a noise.</strong></p>
+        <div class="answer-number">
+            (a) He said, “I am busy.”
+        </div>
 
-<p>(d) <strong>Mother prayed that Allah might bless me.</strong></p>
+        <div class="correct">
+            <div class="correct-label">✓ Correct Narration</div>
+            <strong>He said that he was busy.</strong>
+        </div>
 
-<p>(e) <strong>He exclaimed with wonder that it was a very beautiful flower.</strong></p>
+        <div class="wrong">
+            <div class="wrong-label">✗ Common Wrong Answer</div>
+            <strong>He said that I am busy.</strong>
+        </div>
+
+        <div class="explanation">
+            <div class="explanation-label">💡 Why?</div>
+            “I” changes to “he”, and “am” normally changes to
+            <strong>was</strong> after the past reporting verb.
+        </div>
+
+    </div>
+
+
+    <div class="answer-group">
+
+        <div class="answer-number">
+            (b) He said to me, “Are you happy?”
+        </div>
+
+        <div class="correct">
+            <div class="correct-label">✓ Correct Narration</div>
+            <strong>He asked me if/whether I was happy.</strong>
+        </div>
+
+        <div class="wrong">
+            <div class="wrong-label">✗ Common Wrong Answer</div>
+            <strong>He told me that I was happy.</strong>
+        </div>
+
+        <div class="explanation">
+            <div class="explanation-label">💡 Why?</div>
+            The direct speech is an interrogative question.
+            Therefore, <strong>asked</strong> and
+            <strong>if/whether</strong> are appropriate.
+        </div>
+
+    </div>
+
+
+    <div class="answer-group">
+
+        <div class="answer-number">
+            (c) The teacher said to the students,
+            “Do not make a noise.”
+        </div>
+
+        <div class="correct">
+            <div class="correct-label">✓ Correct Narration</div>
+            <strong>
+                The teacher forbade the students to make a noise.
+            </strong>
+        </div>
+
+        <div class="wrong">
+            <div class="wrong-label">✗ Common Wrong Answer</div>
+            <strong>
+                The teacher told the students to not make a noise.
+            </strong>
+        </div>
+
+        <div class="explanation">
+            <div class="explanation-label">💡 Why?</div>
+            A negative command can be reported using
+            <strong>forbade + object + to + verb</strong>.
+        </div>
+
+    </div>
+
+
+    <div class="answer-group">
+
+        <div class="answer-number">
+            (d) Mother said to me, “May Allah bless you.”
+        </div>
+
+        <div class="correct">
+            <div class="correct-label">✓ Correct Narration</div>
+            <strong>
+                Mother prayed that Allah might bless me.
+            </strong>
+        </div>
+
+        <div class="wrong">
+            <div class="wrong-label">✗ Common Wrong Answer</div>
+            <strong>
+                Mother asked me that Allah might bless me.
+            </strong>
+        </div>
+
+        <div class="explanation">
+            <div class="explanation-label">💡 Why?</div>
+            The sentence expresses a prayer or wish, so
+            <strong>prayed</strong> is appropriate.
+        </div>
+
+    </div>
+
+
+    <div class="answer-group">
+
+        <div class="answer-number">
+            (e) He said, “What a beautiful flower it is!”
+        </div>
+
+        <div class="correct">
+            <div class="correct-label">✓ Correct Narration</div>
+            <strong>
+                He exclaimed with wonder that it was a very beautiful flower.
+            </strong>
+        </div>
+
+        <div class="wrong">
+            <div class="wrong-label">✗ Common Wrong Answer</div>
+            <strong>
+                He asked that it was a beautiful flower.
+            </strong>
+        </div>
+
+        <div class="explanation">
+            <div class="explanation-label">💡 Why?</div>
+            The direct speech is an exclamatory sentence expressing
+            wonder, so <strong>exclaimed with wonder</strong> is used.
+        </div>
+
+    </div>
+
+
+    <div class="marking">
+        <strong>Marking:</strong>
+        1 mark each.
+    </div>
 
 </div>
 
-<div class="marking">
-<strong>Marking:</strong>
-1 mark each.
-</div>
-
-</div>
 
 
-<!-- 8 PRONOUN -->
+<!-- =========================================================
+     8. PRONOUN REFERENCE
+========================================================= -->
 
 <div class="question" id="pronoun">
 
-<h3>8. PRONOUN REFERENCE — 5 Marks</h3>
+    <div class="question-topic">
+        Topic: Pronoun Reference
+    </div>
 
-<div class="completed">
+    <h3>8. PRONOUN REFERENCE — 5 Marks</h3>
 
-<p>(a) <strong>“They”</strong> refers to trees.</p>
 
-<p>(b) <strong>“Them”</strong> in the third sentence refers to trees.</p>
+    <div class="question-text">
 
-<p>(c) <strong>“We”</strong> refers to human beings/people.</p>
+        <strong>Passage:</strong><br><br>
 
-<p>(d) <strong>“Them”</strong> in the last sentence refers to trees.</p>
+        Trees are very useful to us. They give us oxygen and
+        protect the environment. Without them, human life would
+        be impossible. We should therefore plant more trees and
+        take care of them.
 
-<p>(e) <strong>“Therefore”</strong> indicates a result or consequence.</p>
+    </div>
+
+
+    <div class="answer-group">
+
+        <div class="answer-number">
+            (a) “They” refers to —
+        </div>
+
+        <div class="correct">
+            <div class="correct-label">✓ Correct Answer</div>
+            <strong>trees</strong>
+        </div>
+
+        <div class="wrong">
+            <div class="wrong-label">✗ Wrong Answer</div>
+            <strong>oxygen</strong>
+        </div>
+
+        <div class="explanation">
+            <div class="explanation-label">💡 Why?</div>
+            Trees are the subject that gives oxygen and protects
+            the environment. Therefore, “they” refers to trees.
+        </div>
+
+    </div>
+
+
+    <div class="answer-group">
+
+        <div class="answer-number">
+            (b) “Them” in “Without them” refers to —
+        </div>
+
+        <div class="correct">
+            <div class="correct-label">✓ Correct Answer</div>
+            <strong>trees</strong>
+        </div>
+
+        <div class="wrong">
+            <div class="wrong-label">✗ Wrong Answer</div>
+            <strong>people</strong>
+        </div>
+
+        <div class="explanation">
+            <div class="explanation-label">💡 Why?</div>
+            The previous sentence discusses trees as the main
+            subject. “Them” refers back to trees.
+        </div>
+
+    </div>
+
+
+    <div class="answer-group">
+
+        <div class="answer-number">
+            (c) “We” refers to —
+        </div>
+
+        <div class="correct">
+            <div class="correct-label">✓ Correct Answer</div>
+            <strong>human beings / people</strong>
+        </div>
+
+        <div class="wrong">
+            <div class="wrong-label">✗ Wrong Answer</div>
+            <strong>trees</strong>
+        </div>
+
+        <div class="explanation">
+            <div class="explanation-label">💡 Why?</div>
+            People are the ones who should plant and care for trees.
+        </div>
+
+    </div>
+
+
+    <div class="answer-group">
+
+        <div class="answer-number">
+            (d) “Them” in “take care of them” refers to —
+        </div>
+
+        <div class="correct">
+            <div class="correct-label">✓ Correct Answer</div>
+            <strong>trees</strong>
+        </div>
+
+        <div class="wrong">
+            <div class="wrong-label">✗ Wrong Answer</div>
+            <strong>people</strong>
+        </div>
+
+        <div class="explanation">
+            <div class="explanation-label">💡 Why?</div>
+            We take care of trees, so “them” refers to trees.
+        </div>
+
+    </div>
+
+
+    <div class="answer-group">
+
+        <div class="answer-number">
+            (e) “Therefore” indicates —
+        </div>
+
+        <div class="correct">
+            <div class="correct-label">✓ Correct Answer</div>
+            <strong>a result or consequence</strong>
+        </div>
+
+        <div class="wrong">
+            <div class="wrong-label">✗ Wrong Answer</div>
+            <strong>a question</strong>
+        </div>
+
+        <div class="explanation">
+            <div class="explanation-label">💡 Why?</div>
+            “Therefore” introduces a result or conclusion based
+            on what was stated before.
+        </div>
+
+    </div>
+
+
+    <div class="marking">
+        <strong>Marking:</strong>
+        1 mark each.
+    </div>
 
 </div>
 
-<div class="marking">
-<strong>Marking:</strong>
-1 mark each.
-</div>
-
-</div>
 
 
-<!-- 9 MODIFIERS -->
+<!-- =========================================================
+     9. MODIFIERS
+========================================================= -->
 
 <div class="question" id="modifiers">
 
-<h3>9. MODIFIERS — 5 Marks</h3>
+    <div class="question-topic">
+        Topic: Modifiers
+    </div>
 
-<div class="completed">
+    <h3>9. MODIFIERS — 5 Marks</h3>
 
-<p>(a) <strong>Being tired, he went to school.</strong></p>
 
-<p>(b) <strong>The man who lives next door is my uncle.</strong></p>
+    <div class="answer-group">
 
-<p>(c) <strong>To attend the meeting, he went to Dhaka.</strong></p>
+        <div class="answer-number">
+            (a) ___, he went to school.
+        </div>
 
-<p>(d) <strong>The girl wearing a blue dress is my sister.</strong></p>
+        <div class="correct">
+            <div class="correct-label">✓ Correct Answer</div>
+            <strong>Being tired, he went to school.</strong>
+        </div>
 
-<p>(e) <strong>With great care, he completed the work.</strong></p>
+        <div class="wrong">
+            <div class="wrong-label">✗ Common Wrong Answer</div>
+            <strong>Being tired, school went to him.</strong>
+        </div>
+
+        <div class="explanation">
+            <div class="explanation-label">💡 Why?</div>
+            The introductory participial phrase must logically
+            modify the subject <strong>he</strong>.
+        </div>
+
+    </div>
+
+
+    <div class="answer-group">
+
+        <div class="answer-number">
+            (b) The man ___ is my uncle.
+        </div>
+
+        <div class="correct">
+            <div class="correct-label">✓ Correct Answer</div>
+            <strong>The man who lives next door is my uncle.</strong>
+        </div>
+
+        <div class="wrong">
+            <div class="wrong-label">✗ Common Wrong Answer</div>
+            <strong>The man which lives next door is my uncle.</strong>
+        </div>
+
+        <div class="explanation">
+            <div class="explanation-label">💡 Why?</div>
+            For people, the relative pronoun
+            <strong>who</strong> is appropriate.
+        </div>
+
+    </div>
+
+
+    <div class="answer-group">
+
+        <div class="answer-number">
+            (c) ___, he went to Dhaka.
+        </div>
+
+        <div class="correct">
+            <div class="correct-label">✓ Correct Answer</div>
+            <strong>To attend the meeting, he went to Dhaka.</strong>
+        </div>
+
+        <div class="wrong">
+            <div class="wrong-label">✗ Common Wrong Answer</div>
+            <strong>To attended the meeting, he went to Dhaka.</strong>
+        </div>
+
+        <div class="explanation">
+            <div class="explanation-label">💡 Why?</div>
+            An infinitive of purpose uses
+            <strong>to + base verb</strong>, so “to attend” is correct.
+        </div>
+
+    </div>
+
+
+    <div class="answer-group">
+
+        <div class="answer-number">
+            (d) The girl ___ is my sister.
+        </div>
+
+        <div class="correct">
+            <div class="correct-label">✓ Correct Answer</div>
+            <strong>The girl wearing a blue dress is my sister.</strong>
+        </div>
+
+        <div class="wrong">
+            <div class="wrong-label">✗ Common Wrong Answer</div>
+            <strong>The girl wear a blue dress is my sister.</strong>
+        </div>
+
+        <div class="explanation">
+            <div class="explanation-label">💡 Why?</div>
+            The present participle <strong>wearing</strong> works
+            as a reduced relative modifier describing the girl.
+        </div>
+
+    </div>
+
+
+    <div class="answer-group">
+
+        <div class="answer-number">
+            (e) ___, he completed the work.
+        </div>
+
+        <div class="correct">
+            <div class="correct-label">✓ Correct Answer</div>
+            <strong>With great care, he completed the work.</strong>
+        </div>
+
+        <div class="wrong">
+            <div class="wrong-label">✗ Common Wrong Answer</div>
+            <strong>With great carefully, he completed the work.</strong>
+        </div>
+
+        <div class="explanation">
+            <div class="explanation-label">💡 Why?</div>
+            “Care” is a noun, so the phrase
+            <strong>with great care</strong> is grammatically correct.
+        </div>
+
+    </div>
+
+
+    <div class="note">
+
+        <strong>Important:</strong>
+        Other grammatically correct modifiers may also be accepted.
+
+    </div>
+
+
+    <div class="marking">
+        <strong>Marking:</strong>
+        1 mark each.
+    </div>
 
 </div>
 
-<div class="marking">
-
-<strong>Note:</strong>
-
-Other grammatically correct modifiers may be accepted.
-
-<br><br>
-
-<strong>Marking:</strong>
-
-1 mark each.
-
-</div>
-
-</div>
 
 
-<!-- 10 CONNECTORS -->
+<!-- =========================================================
+     10. CONNECTORS
+========================================================= -->
 
 <div class="question" id="connectors">
 
-<h3>10. SENTENCE CONNECTORS — 5 Marks</h3>
+    <div class="question-topic">
+        Topic: Sentence Connectors
+    </div>
 
-<div class="answers">
+    <h3>10. SENTENCE CONNECTORS — 5 Marks</h3>
 
-<div class="answer-line">
-<span class="answer-letter">(a)</span>
-<span class="answer-text"><strong>However</strong></span>
+
+    <div class="answer-group">
+
+        <div class="answer-number">
+            (a) He is poor. ___, he is honest.
+        </div>
+
+        <div class="correct">
+            <div class="correct-label">✓ Correct Answer</div>
+            <strong>However</strong>
+        </div>
+
+        <div class="wrong">
+            <div class="wrong-label">✗ Wrong Answer</div>
+            <strong>Therefore</strong>
+        </div>
+
+        <div class="explanation">
+            <div class="explanation-label">💡 Why?</div>
+            The two ideas contrast with each other:
+            he is poor, but he is honest.
+        </div>
+
+    </div>
+
+
+    <div class="answer-group">
+
+        <div class="answer-number">
+            (b) He worked hard. ___, he failed.
+        </div>
+
+        <div class="correct">
+            <div class="correct-label">✓ Correct Answer</div>
+            <strong>However / Nevertheless</strong>
+        </div>
+
+        <div class="wrong">
+            <div class="wrong-label">✗ Wrong Answer</div>
+            <strong>Therefore</strong>
+        </div>
+
+        <div class="explanation">
+            <div class="explanation-label">💡 Why?</div>
+            Working hard would normally suggest success, but the
+            second sentence presents a contrasting result.
+        </div>
+
+    </div>
+
+
+    <div class="answer-group">
+
+        <div class="answer-number">
+            (c) Study hard, ___ you will fail.
+        </div>
+
+        <div class="correct">
+            <div class="correct-label">✓ Correct Answer</div>
+            <strong>otherwise</strong>
+        </div>
+
+        <div class="wrong">
+            <div class="wrong-label">✗ Wrong Answer</div>
+            <strong>because</strong>
+        </div>
+
+        <div class="explanation">
+            <div class="explanation-label">💡 Why?</div>
+            “Otherwise” means “if you do not study hard”.
+        </div>
+
+    </div>
+
+
+    <div class="answer-group">
+
+        <div class="answer-number">
+            (d) ___ he is rich, he is unhappy.
+        </div>
+
+        <div class="correct">
+            <div class="correct-label">✓ Correct Answer</div>
+            <strong>Although / Though</strong>
+        </div>
+
+        <div class="wrong">
+            <div class="wrong-label">✗ Wrong Answer</div>
+            <strong>Because</strong>
+        </div>
+
+        <div class="explanation">
+            <div class="explanation-label">💡 Why?</div>
+            Being rich and being unhappy are presented as
+            contrasting ideas.
+        </div>
+
+    </div>
+
+
+    <div class="answer-group">
+
+        <div class="answer-number">
+            (e) He could not go out ___ it was raining.
+        </div>
+
+        <div class="correct">
+            <div class="correct-label">✓ Correct Answer</div>
+            <strong>because</strong>
+        </div>
+
+        <div class="wrong">
+            <div class="wrong-label">✗ Wrong Answer</div>
+            <strong>although</strong>
+        </div>
+
+        <div class="explanation">
+            <div class="explanation-label">💡 Why?</div>
+            The rain is the reason he could not go outside.
+            Therefore, <strong>because</strong> expresses the correct
+            cause-and-effect relationship.
+        </div>
+
+    </div>
+
+
+    <div class="marking">
+        <strong>Marking:</strong>
+        1 mark each.
+    </div>
+
 </div>
 
-<div class="answer-line">
-<span class="answer-letter">(b)</span>
-<span class="answer-text"><strong>However / Nevertheless</strong></span>
-</div>
-
-<div class="answer-line">
-<span class="answer-letter">(c)</span>
-<span class="answer-text"><strong>otherwise</strong></span>
-</div>
-
-<div class="answer-line">
-<span class="answer-letter">(d)</span>
-<span class="answer-text"><strong>Although / Though</strong></span>
-</div>
-
-<div class="answer-line">
-<span class="answer-letter">(e)</span>
-<span class="answer-text"><strong>because</strong></span>
-</div>
-
-</div>
-
-<div class="marking">
-<strong>Marking:</strong>
-1 mark each.
-</div>
-
-</div>
 
 
-<!-- 11 SYNONYMS -->
+<!-- =========================================================
+     11. SYNONYMS & ANTONYMS
+========================================================= -->
 
 <div class="question" id="synonyms">
 
-<h3>11. SYNONYMS AND ANTONYMS — 5 Marks</h3>
+    <div class="question-topic">
+        Topic: Synonyms and Antonyms
+    </div>
 
-<div class="completed">
+    <h3>11. SYNONYMS AND ANTONYMS — 5 Marks</h3>
 
-<p>(a) Brave — <strong>courageous</strong></p>
 
-<p>(b) Rapid — <strong>fast</strong></p>
+    <div class="answer-group">
 
-<p>(c) Ancient — <strong>old</strong></p>
+        <div class="answer-number">
+            (a) Brave — Synonym
+        </div>
 
-<p>(d) Honest — <strong>truthful</strong></p>
+        <div class="correct">
+            <div class="correct-label">✓ Correct Answer</div>
+            <strong>courageous</strong>
+        </div>
 
-<p>(e) Difficult — <strong>hard</strong></p>
+        <div class="wrong">
+            <div class="wrong-label">✗ Wrong Answer</div>
+            <strong>cowardly</strong>
+        </div>
 
-<p>(f) Success — <strong>failure</strong></p>
+        <div class="explanation">
+            <div class="explanation-label">💡 Why?</div>
+            “Courageous” means brave. “Cowardly” has the opposite meaning.
+        </div>
 
-<p>(g) Increase — <strong>decrease</strong></p>
+    </div>
 
-<p>(h) Strong — <strong>weak</strong></p>
 
-<p>(i) Accept — <strong>reject</strong></p>
+    <div class="answer-group">
 
-<p>(j) Beautiful — <strong>ugly</strong></p>
+        <div class="answer-number">
+            (b) Rapid — Synonym
+        </div>
+
+        <div class="correct">
+            <div class="correct-label">✓ Correct Answer</div>
+            <strong>fast</strong>
+        </div>
+
+        <div class="wrong">
+            <div class="wrong-label">✗ Wrong Answer</div>
+            <strong>slow</strong>
+        </div>
+
+        <div class="explanation">
+            <div class="explanation-label">💡 Why?</div>
+            “Rapid” means happening quickly or at high speed.
+        </div>
+
+    </div>
+
+
+    <div class="answer-group">
+
+        <div class="answer-number">
+            (c) Ancient — Synonym
+        </div>
+
+        <div class="correct">
+            <div class="correct-label">✓ Correct Answer</div>
+            <strong>old</strong>
+        </div>
+
+        <div class="wrong">
+            <div class="wrong-label">✗ Wrong Answer</div>
+            <strong>modern</strong>
+        </div>
+
+        <div class="explanation">
+            <div class="explanation-label">💡 Why?</div>
+            “Ancient” refers to something belonging to a very old time.
+        </div>
+
+    </div>
+
+
+    <div class="answer-group">
+
+        <div class="answer-number">
+            (d) Honest — Synonym
+        </div>
+
+        <div class="correct">
+            <div class="correct-label">✓ Correct Answer</div>
+            <strong>truthful</strong>
+        </div>
+
+        <div class="wrong">
+            <div class="wrong-label">✗ Wrong Answer</div>
+            <strong>dishonest</strong>
+        </div>
+
+        <div class="explanation">
+            <div class="explanation-label">💡 Why?</div>
+            “Truthful” means honest and not telling lies.
+        </div>
+
+    </div>
+
+
+    <div class="answer-group">
+
+        <div class="answer-number">
+            (e) Difficult — Synonym
+        </div>
+
+        <div class="correct">
+            <div class="correct-label">✓ Correct Answer</div>
+            <strong>hard</strong>
+        </div>
+
+        <div class="wrong">
+            <div class="wrong-label">✗ Wrong Answer</div>
+            <strong>easy</strong>
+        </div>
+
+        <div class="explanation">
+            <div class="explanation-label">💡 Why?</div>
+            “Hard” can mean difficult.
+        </div>
+
+    </div>
+
+
+    <div class="answer-group">
+
+        <div class="answer-number">
+            (f) Success — Antonym
+        </div>
+
+        <div class="correct">
+            <div class="correct-label">✓ Correct Answer</div>
+            <strong>failure</strong>
+        </div>
+
+        <div class="wrong">
+            <div class="wrong-label">✗ Wrong Answer</div>
+            <strong>achievement</strong>
+        </div>
+
+        <div class="explanation">
+            <div class="explanation-label">💡 Why?</div>
+            “Failure” is the opposite of success.
+        </div>
+
+    </div>
+
+
+    <div class="answer-group">
+
+        <div class="answer-number">
+            (g) Increase — Antonym
+        </div>
+
+        <div class="correct">
+            <div class="correct-label">✓ Correct Answer</div>
+            <strong>decrease</strong>
+        </div>
+
+        <div class="wrong">
+            <div class="wrong-label">✗ Wrong Answer</div>
+            <strong>grow</strong>
+        </div>
+
+        <div class="explanation">
+            <div class="explanation-label">💡 Why?</div>
+            “Decrease” means to become less, which is opposite
+            to increase.
+        </div>
+
+    </div>
+
+
+    <div class="answer-group">
+
+        <div class="answer-number">
+            (h) Strong — Antonym
+        </div>
+
+        <div class="correct">
+            <div class="correct-label">✓ Correct Answer</div>
+            <strong>weak</strong>
+        </div>
+
+        <div class="wrong">
+            <div class="wrong-label">✗ Wrong Answer</div>
+            <strong>powerful</strong>
+        </div>
+
+        <div class="explanation">
+            <div class="explanation-label">💡 Why?</div>
+            “Weak” is the opposite of strong.
+        </div>
+
+    </div>
+
+
+    <div class="answer-group">
+
+        <div class="answer-number">
+            (i) Accept — Antonym
+        </div>
+
+        <div class="correct">
+            <div class="correct-label">✓ Correct Answer</div>
+            <strong>reject</strong>
+        </div>
+
+        <div class="wrong">
+            <div class="wrong-label">✗ Wrong Answer</div>
+            <strong>receive</strong>
+        </div>
+
+        <div class="explanation">
+            <div class="explanation-label">💡 Why?</div>
+            “Reject” means to refuse or not accept.
+        </div>
+
+    </div>
+
+
+    <div class="answer-group">
+
+        <div class="answer-number">
+            (j) Beautiful — Antonym
+        </div>
+
+        <div class="correct">
+            <div class="correct-label">✓ Correct Answer</div>
+            <strong>ugly</strong>
+        </div>
+
+        <div class="wrong">
+            <div class="wrong-label">✗ Wrong Answer</div>
+            <strong>attractive</strong>
+        </div>
+
+        <div class="explanation">
+            <div class="explanation-label">💡 Why?</div>
+            “Ugly” has the opposite meaning of beautiful.
+        </div>
+
+    </div>
+
+
+    <div class="marking">
+        <strong>Marking:</strong>
+        0.5 mark × 10 = 5 marks.
+    </div>
 
 </div>
 
-<div class="marking">
-
-<strong>Marking:</strong>
-
-0.5 mark × 10 = 5 marks.
-
-</div>
-
-</div>
 
 
-<!-- 12 PUNCTUATION -->
+<!-- =========================================================
+     12. PUNCTUATION
+========================================================= -->
 
 <div class="question" id="punctuation">
 
-<h3>12. PUNCTUATION — 5 Marks</h3>
+    <div class="question-topic">
+        Topic: Punctuation
+    </div>
 
-<div class="answer-paper">
+    <h3>12. PUNCTUATION — 5 Marks</h3>
 
-<p>
-Rahim said to Karim,
-<strong>“Where are you going?”</strong>
-</p>
 
-<p>
-Karim replied,
-<strong>“I am going to the market. Do you need anything?”</strong>
-</p>
+    <div class="question-text">
+
+        <strong>Question:</strong><br><br>
+
+        rahim said to karim where are you going karim replied i am
+        going to the market do you need anything
+
+    </div>
+
+
+    <div class="correct">
+
+        <div class="correct-label">
+            ✓ Correct Answer
+        </div>
+
+        <div class="answer-paper">
+
+            <p>
+                Rahim said to Karim,
+                <strong>“Where are you going?”</strong>
+            </p>
+
+            <p>
+                Karim replied,
+                <strong>“I am going to the market. Do you need anything?”</strong>
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="wrong">
+
+        <div class="wrong-label">
+            ✗ Incorrect Example
+        </div>
+
+        <strong>
+            rahim said to karim “where are you going” karim replied
+            i am going to the market do you need anything
+        </strong>
+
+    </div>
+
+
+    <div class="explanation">
+
+        <div class="explanation-label">
+            💡 Why?
+        </div>
+
+        The corrected version needs proper capitalization,
+        quotation marks, commas, question marks and full stops.
+        Direct speech should also be clearly separated from the
+        reporting clauses.
+
+    </div>
+
+
+    <div class="marking">
+
+        <strong>Marking:</strong>
+
+        5 marks for correct capitalization, quotation marks,
+        commas, question marks and full stops.
+
+    </div>
 
 </div>
 
-<div class="marking">
-
-<strong>Marking:</strong>
-
-5 marks for correct capitalization, quotation marks, commas,
-question marks and full stops.
-
-</div>
-
-</div>
 
 
     </div>
@@ -1000,331 +2844,601 @@ question marks and full stops.
 </section>
 
 
-<!-- =====================================================
+
+<!-- =========================================================
      PART B
-===================================================== -->
+========================================================= -->
 
 <section class="section">
 
-<div class="section-title">
+    <div class="section-title">
 
-<h2>PART B — COMPOSITION</h2>
+        <h2>PART B — COMPOSITION</h2>
 
-<p>Marks: 40</p>
+        <p>Marks: 40</p>
 
-</div>
-
-
-<div class="section-content">
+    </div>
 
 
-<!-- 13 APPLICATION -->
-
-<div class="composition" id="application">
-
-<h3>13. FORMAL APPLICATION — 8 Marks</h3>
-
-<div class="application">
-
-<p>To</p>
-
-<p>
-The Principal<br>
-[Name of College]<br>
-[College Address]
-</p>
-
-<p>
-<strong>Subject: Prayer for increasing library facilities.</strong>
-</p>
-
-<p>Sir/Madam,</p>
-
-<p>
-I beg most respectfully to state that our college has a library,
-but its facilities are not sufficient for the students. There are
-not enough recent books, reference books, newspapers and other
-educational materials. The number of seats is also insufficient
-for the students.
-</p>
-
-<p>
-A well-equipped library is essential for developing students’
-knowledge and encouraging regular study. Therefore, I request
-you to take necessary steps to increase the number of books,
-reference materials, newspapers, journals and seating facilities
-in the library.
-</p>
-
-<p>
-I shall be highly obliged if you kindly consider our prayer and
-take the necessary measures.
-</p>
-
-<p>
-Yours obediently,
-</p>
-
-<p>
-[Name]<br>
-Class: XII<br>
-Roll: ______<br>
-Date: ______
-</p>
-
-</div>
+    <div class="section-content">
 
 
-<div class="marking">
 
-<strong>Marking Guide — 8 Marks</strong>
+<!-- =========================================================
+     13. APPLICATION
+========================================================= -->
 
-<ul>
-<li>Proper format — 2</li>
-<li>Clear subject/purpose — 1</li>
-<li>Relevant content — 2</li>
-<li>Organization/coherence — 1</li>
-<li>Grammar/sentence construction — 1</li>
-<li>Spelling/punctuation/language — 1</li>
-</ul>
+<div class="question" id="application">
 
-</div>
+    <div class="question-topic">
+        Topic: Formal Application
+    </div>
 
-</div>
+    <h3>13. FORMAL APPLICATION — 8 Marks</h3>
 
 
-<!-- 14 REPORT -->
+    <div class="correct">
 
-<div class="composition" id="report">
-
-<h3>14. REPORT WRITING — 8 Marks</h3>
-
-<div class="answer-paper">
-
-<div class="composition-title">
-ROAD ACCIDENT CAUSES INJURIES IN THE CITY
-</div>
-
-<p>
-<strong>Staff Reporter, Dhaka, 21 September 2026:</strong>
-</p>
-
-<p>
-A serious road accident occurred in our area yesterday afternoon
-when a speeding bus collided with a motorcycle near the main
-intersection. According to local people, the bus was travelling
-at excessive speed and the driver lost control of the vehicle.
-</p>
-
-<p>
-Several people were injured in the accident. The injured were
-immediately taken to a nearby hospital by local people and
-emergency responders. The accident caused severe traffic
-congestion in the area for nearly an hour.
-</p>
-
-<p>
-Police arrived at the scene and brought the situation under
-control. They also began an investigation into the incident.
-Local residents have demanded stricter enforcement of traffic
-rules and greater road-safety awareness to prevent such accidents
-in the future.
-</p>
-
-</div>
+        <div class="correct-label">
+            ✓ Model Answer
+        </div>
 
 
-<div class="marking">
+        <div class="application">
 
-<strong>Marking Guide — 8 Marks</strong>
+            <p>To</p>
 
-<ul>
-<li>Headline — 1</li>
-<li>Reporter/place/date — 1</li>
-<li>Relevant facts — 2</li>
-<li>Causes and consequences — 1</li>
-<li>Organization/coherence — 1</li>
-<li>Grammar/vocabulary — 1</li>
-<li>Spelling/punctuation — 1</li>
-</ul>
+            <p>
+                The Principal<br>
+                [Name of College]<br>
+                [College Address]
+            </p>
 
-</div>
+            <p>
+                <strong>
+                    Subject: Prayer for increasing library facilities.
+                </strong>
+            </p>
 
-</div>
+            <p>
+                Sir/Madam,
+            </p>
+
+            <p>
+                I beg most respectfully to state that our college has
+                a library, but its facilities are not sufficient for
+                the students. There are not enough recent books,
+                reference books, newspapers and other educational
+                materials. The number of seats is also insufficient
+                for the students.
+            </p>
+
+            <p>
+                A well-equipped library is essential for developing
+                students’ knowledge and encouraging regular study.
+                Therefore, I request you to take necessary steps to
+                increase the number of books, reference materials,
+                newspapers, journals and seating facilities in the
+                library.
+            </p>
+
+            <p>
+                I shall be highly obliged if you kindly consider our
+                prayer and take the necessary measures.
+            </p>
+
+            <p>
+                Yours obediently,
+            </p>
+
+            <p>
+                [Name]<br>
+                Class: XII<br>
+                Roll: ______<br>
+                Date: ______
+            </p>
+
+        </div>
+
+    </div>
 
 
-<!-- 15 PARAGRAPH -->
+    <div class="wrong">
 
-<div class="composition" id="paragraph">
+        <div class="wrong-label">
+            ✗ Common Weak/Wrong Answer
+        </div>
 
-<h3>15. PARAGRAPH WRITING — 10 Marks</h3>
+        <strong>
+            Dear Principal, please give us more books.
+            Our library is not good. Give us books quickly.
+        </strong>
 
-<div class="answer-paper">
+        <br><br>
 
-<div class="composition-title">
-THE USES AND ABUSES OF SOCIAL MEDIA
-</div>
+        This is not a complete formal application because it lacks
+        the proper application format, subject, formal language,
+        organized details and proper closing.
 
-<p>
-Social media has become an important part of modern life.
-Platforms such as Facebook, YouTube, Instagram and other online
-services help people communicate with friends and family and
-share information quickly. Students can also use social media
-for educational purposes by accessing lectures, tutorials, news
-and learning materials. Businesses use these platforms for
-communication, marketing and customer service.
-</p>
+    </div>
 
-<p>
-However, social media also has several negative aspects.
-Excessive use can waste valuable time and reduce concentration
-on study or work. False information, cyberbullying, online fraud
-and privacy problems are also serious concerns. Some people
-become dependent on social media and neglect their real-life
-responsibilities.
-</p>
 
-<p>
-Therefore, social media should be used carefully and responsibly.
-Proper awareness and self-control can help us enjoy its benefits
-while avoiding its harmful effects.
-</p>
+    <div class="explanation">
+
+        <div class="explanation-label">
+            💡 Why the model answer is correct
+        </div>
+
+        A formal application should normally include:
+
+        <br><br>
+
+        • Recipient<br>
+        • Institution/address<br>
+        • Subject<br>
+        • Formal salutation<br>
+        • Clear purpose<br>
+        • Relevant reasons/details<br>
+        • Polite request<br>
+        • Formal closing<br>
+        • Name/class/roll/date
+
+    </div>
+
+
+    <div class="marking">
+
+        <strong>Suggested Marking Guide — 8 Marks</strong>
+
+        <ul>
+            <li>Proper format — 2</li>
+            <li>Clear subject/purpose — 1</li>
+            <li>Relevant content — 2</li>
+            <li>Organization/coherence — 1</li>
+            <li>Grammar/sentence construction — 1</li>
+            <li>Spelling/punctuation/language — 1</li>
+        </ul>
+
+    </div>
 
 </div>
 
 
-<div class="marking">
 
-<strong>Marking Guide — 10 Marks</strong>
+<!-- =========================================================
+     14. REPORT
+========================================================= -->
 
-<ul>
-<li>Introduction — 1</li>
-<li>Relevant content — 4</li>
-<li>Organization/coherence — 2</li>
-<li>Grammar/sentence construction — 1</li>
-<li>Vocabulary — 1</li>
-<li>Spelling/punctuation — 1</li>
-</ul>
+<div class="question" id="report">
+
+    <div class="question-topic">
+        Topic: Report Writing
+    </div>
+
+    <h3>14. REPORT WRITING — 8 Marks</h3>
+
+
+    <div class="correct">
+
+        <div class="correct-label">
+            ✓ Model Answer
+        </div>
+
+
+        <div class="answer-paper">
+
+            <div class="composition-title">
+                ROAD ACCIDENT CAUSES INJURIES IN THE CITY
+            </div>
+
+            <p>
+                <strong>
+                    Staff Reporter, Dhaka, 21 September 2026:
+                </strong>
+            </p>
+
+            <p>
+                A serious road accident occurred in our area yesterday
+                afternoon when a speeding bus collided with a
+                motorcycle near the main intersection. According to
+                local people, the bus was travelling at excessive
+                speed and the driver lost control of the vehicle.
+            </p>
+
+            <p>
+                Several people were injured in the accident. The
+                injured were immediately taken to a nearby hospital
+                by local people and emergency responders. The accident
+                caused severe traffic congestion in the area for
+                nearly an hour.
+            </p>
+
+            <p>
+                Police arrived at the scene and brought the situation
+                under control. They also began an investigation into
+                the incident. Local residents have demanded stricter
+                enforcement of traffic rules and greater road-safety
+                awareness to prevent such accidents in the future.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="wrong">
+
+        <div class="wrong-label">
+            ✗ Common Weak/Wrong Answer
+        </div>
+
+        <strong>
+            A bus accident happened yesterday. Many people saw it.
+            It was very bad. Police came. That is all.
+        </strong>
+
+        <br><br>
+
+        This is too short and does not provide sufficient details
+        about the accident, injuries, response, consequences or
+        safety concerns.
+
+    </div>
+
+
+    <div class="note">
+
+        <strong>Important correction:</strong>
+
+        The headline should match the facts in the report.
+        Since the model report states that people were injured
+        but does not state that anyone died, “causes injuries” is
+        more consistent than “claims lives”.
+
+    </div>
+
+
+    <div class="explanation">
+
+        <div class="explanation-label">
+            💡 Why the model answer works
+        </div>
+
+        The report includes the main elements expected in a news
+        report: headline, reporter/date/place, incident details,
+        causes, consequences, police response and public reaction.
+
+    </div>
+
+
+    <div class="marking">
+
+        <strong>Marking Guide — 8 Marks</strong>
+
+        <ul>
+            <li>Headline — 1</li>
+            <li>Reporter/place/date — 1</li>
+            <li>Relevant facts — 2</li>
+            <li>Causes and consequences — 1</li>
+            <li>Organization/coherence — 1</li>
+            <li>Grammar/vocabulary — 1</li>
+            <li>Spelling/punctuation — 1</li>
+        </ul>
+
+    </div>
 
 </div>
 
+
+
+<!-- =========================================================
+     15. PARAGRAPH
+========================================================= -->
+
+<div class="question" id="paragraph">
+
+    <div class="question-topic">
+        Topic: Paragraph Writing
+    </div>
+
+    <h3>15. PARAGRAPH WRITING — 10 Marks</h3>
+
+
+    <div class="correct">
+
+        <div class="correct-label">
+            ✓ Model Answer
+        </div>
+
+
+        <div class="answer-paper">
+
+            <div class="composition-title">
+                THE USES AND ABUSES OF SOCIAL MEDIA
+            </div>
+
+            <p>
+                Social media has become an important part of modern
+                life. Platforms such as Facebook, YouTube, Instagram
+                and other online services help people communicate
+                with friends and family and share information quickly.
+                Students can also use social media for educational
+                purposes by accessing lectures, tutorials, news and
+                learning materials. Businesses use these platforms
+                for communication, marketing and customer service.
+            </p>
+
+            <p>
+                However, social media also has several negative
+                aspects. Excessive use can waste valuable time and
+                reduce concentration on study or work. False
+                information, cyberbullying, online fraud and privacy
+                problems are also serious concerns. Some people
+                become dependent on social media and neglect their
+                real-life responsibilities.
+            </p>
+
+            <p>
+                Therefore, social media should be used carefully and
+                responsibly. Proper awareness and self-control can
+                help us enjoy its benefits while avoiding its harmful
+                effects.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="wrong">
+
+        <div class="wrong-label">
+            ✗ Common Weak/Wrong Answer
+        </div>
+
+        <strong>
+            Social media is very good. We use Facebook and YouTube.
+            Sometimes it is bad. Students should use it. I like
+            social media very much.
+        </strong>
+
+        <br><br>
+
+        This answer is too short, lacks proper development and does
+        not sufficiently discuss both the uses and abuses of social
+        media.
+
+    </div>
+
+
+    <div class="explanation">
+
+        <div class="explanation-label">
+            💡 Why the model answer works
+        </div>
+
+        The paragraph discusses both sides of the topic:
+
+        <br><br>
+
+        • Communication<br>
+        • Education<br>
+        • Business<br>
+        • Time wasting<br>
+        • False information<br>
+        • Cyberbullying<br>
+        • Online fraud<br>
+        • Privacy problems<br>
+        • Responsible use
+
+    </div>
+
+
+    <div class="marking">
+
+        <strong>Marking Guide — 10 Marks</strong>
+
+        <ul>
+            <li>Introduction — 1</li>
+            <li>Relevant content — 4</li>
+            <li>Organization/coherence — 2</li>
+            <li>Grammar/sentence construction — 1</li>
+            <li>Vocabulary — 1</li>
+            <li>Spelling/punctuation — 1</li>
+        </ul>
+
+    </div>
+
 </div>
 
 
-<!-- 16 COMPOSITION -->
 
-<div class="composition" id="composition">
+<!-- =========================================================
+     16. COMPOSITION
+========================================================= -->
 
-<h3>16. COMPOSITION — 14 Marks</h3>
+<div class="question" id="composition">
 
-<div class="answer-paper">
+    <div class="question-topic">
+        Topic: Composition
+    </div>
 
-<div class="composition-title">
-THE ROLE OF STUDENTS IN BUILDING THE NATION
+    <h3>16. COMPOSITION — 14 Marks</h3>
+
+
+    <div class="correct">
+
+        <div class="correct-label">
+            ✓ Model Answer
+        </div>
+
+
+        <div class="answer-paper">
+
+            <div class="composition-title">
+                THE ROLE OF STUDENTS IN BUILDING THE NATION
+            </div>
+
+            <p>
+                Students are an important part of a nation because
+                they represent its future. The development of a
+                country depends greatly on the knowledge, skills,
+                values and responsibilities that young people develop
+                during their student life. Therefore, students should
+                prepare themselves properly so that they can contribute
+                positively to society.
+            </p>
+
+            <p>
+                The first duty of students is to study sincerely.
+                Education gives them knowledge and develops their
+                ability to think, solve problems and make responsible
+                decisions. Students should also develop discipline,
+                honesty, punctuality and respect for others. These
+                qualities help them become responsible citizens.
+            </p>
+
+            <p>
+                Students can contribute to society in many ways. They
+                can participate in voluntary activities, social-
+                awareness campaigns, tree-plantation programmes,
+                blood-donation campaigns and disaster-relief
+                activities. They can also help spread awareness about
+                education, health, environmental protection, road
+                safety and responsible use of technology.
+            </p>
+
+            <p>
+                In the modern world, students should develop
+                technological and communication skills. They should
+                use the internet and social media responsibly and
+                avoid spreading false information. They should also
+                respect the laws of the country and promote cooperation
+                and tolerance among people.
+            </p>
+
+            <p>
+                Students are not only learners; they are future
+                professionals, researchers, teachers, entrepreneurs,
+                administrators and leaders. If they receive proper
+                education and develop strong moral values, they can
+                play an important role in the progress of the country.
+            </p>
+
+            <p>
+                In conclusion, students should use their time
+                effectively, acquire knowledge, develop good character
+                and serve society whenever possible. A responsible
+                and educated student community can make a meaningful
+                contribution to the development of the nation.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="wrong">
+
+        <div class="wrong-label">
+            ✗ Common Weak/Wrong Answer
+        </div>
+
+        <strong>
+            Students are important. They study in schools and
+            colleges. They should help the country. They should
+            work hard and become good people. Students can build
+            the nation.
+        </strong>
+
+        <br><br>
+
+        The main problem is not necessarily that every sentence is
+        grammatically wrong. The answer is weak because the ideas
+        are not sufficiently developed for a long composition.
+        It lacks examples, organization, explanation and detailed
+        discussion of students’ responsibilities.
+
+    </div>
+
+
+    <div class="explanation">
+
+        <div class="explanation-label">
+            💡 Why the model answer works
+        </div>
+
+        The composition develops the topic through several clear
+        areas:
+
+        <br><br>
+
+        • Students as the future of the nation<br>
+        • Importance of education<br>
+        • Discipline and moral values<br>
+        • Social and voluntary activities<br>
+        • Technology and communication skills<br>
+        • Responsible citizenship<br>
+        • Future professional roles<br>
+        • Contribution to national development
+
+    </div>
+
+
+    <div class="marking">
+
+        <strong>Suggested Marking Guide — 14 Marks</strong>
+
+        <ul>
+            <li>Introduction and relevance — 2</li>
+            <li>Development of ideas — 5</li>
+            <li>Organization and coherence — 2</li>
+            <li>Grammar and sentence construction — 2</li>
+            <li>Vocabulary and expression — 1</li>
+            <li>Spelling and punctuation — 2</li>
+        </ul>
+
+    </div>
+
 </div>
 
-<p>
-Students are an important part of a nation because they represent
-its future. The development of a country depends greatly on the
-knowledge, skills, values and responsibilities that young people
-develop during their student life. Therefore, students should
-prepare themselves properly so that they can contribute positively
-to society.
-</p>
-
-<p>
-The first duty of students is to study sincerely. Education gives
-them knowledge and develops their ability to think, solve problems
-and make responsible decisions. Students should also develop
-discipline, honesty, punctuality and respect for others. These
-qualities help them become responsible citizens.
-</p>
-
-<p>
-Students can contribute to society in many ways. They can
-participate in voluntary activities, social-awareness campaigns,
-tree-plantation programmes, blood-donation campaigns and
-disaster-relief activities. They can also help spread awareness
-about education, health, environmental protection, road safety
-and responsible use of technology.
-</p>
-
-<p>
-In the modern world, students should develop technological and
-communication skills. They should use the internet and social
-media responsibly and avoid spreading false information. They
-should also respect the laws of the country and promote
-cooperation and tolerance among people.
-</p>
-
-<p>
-Students are not only learners; they are future professionals,
-researchers, teachers, entrepreneurs, administrators and leaders.
-If they receive proper education and develop strong moral values,
-they can play an important role in the progress of the country.
-</p>
-
-<p>
-In conclusion, students should use their time effectively,
-acquire knowledge, develop good character and serve society
-whenever possible. A responsible and educated student community
-can make a meaningful contribution to the development of the
-nation.
-</p>
-
-</div>
 
 
-<div class="marking">
-
-<strong>Suggested Marking Guide — 14 Marks</strong>
-
-<ul>
-<li>Introduction and relevance — 2</li>
-<li>Development of ideas — 5</li>
-<li>Organization and coherence — 2</li>
-<li>Grammar and sentence construction — 2</li>
-<li>Vocabulary and expression — 1</li>
-<li>Spelling and punctuation — 2</li>
-</ul>
-
-</div>
-
-</div>
-
-
-</div>
+    </div>
 
 </section>
+
 
 
 </main>
 
 
-<!-- =========================
+
+<!-- =========================================================
      FOOTER
-========================= -->
+========================================================= -->
 
 <footer class="footer">
 
-<p>
-<strong>HSC 2027 English Second Paper</strong>
-</p>
+    <p>
+        <strong>HSC 2027 English Second Paper</strong>
+    </p>
 
-<p>
-Answer Key &amp; Marking Guide
-</p>
+    <p>
+        Answer Key, Common Mistakes &amp; Explanations
+    </p>
 
-<p>
-For educational and practice purposes.
-</p>
+    <p>
+        For educational and practice purposes.
+    </p>
 
 </footer>
 
 
-<!-- =========================
+
+<!-- =========================================================
      BACK TO TOP
-========================= -->
+========================================================= -->
 
 <button
     class="top-button"
@@ -1332,23 +3446,40 @@ For educational and practice purposes.
     onclick="goTop()"
     aria-label="Back to top"
     title="Back to top">
+
     ↑
+
 </button>
 
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
 
 <script>
 
 const topButton = document.getElementById("topButton");
 
-window.addEventListener("scroll", function() {
+
+/* Show / hide Back to Top button */
+
+window.addEventListener("scroll", function () {
 
     if (window.scrollY > 400) {
+
         topButton.classList.add("show");
+
     } else {
+
         topButton.classList.remove("show");
+
     }
 
 });
+
+
+/* Smooth scroll to top */
 
 function goTop() {
 
@@ -1360,6 +3491,7 @@ function goTop() {
 }
 
 </script>
+
 
 </body>
 </html>
