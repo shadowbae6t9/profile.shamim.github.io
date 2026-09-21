@@ -1,760 +1,1116 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+<title>HSC English 2nd Paper | Quiz Exam</title>
 
-    <title>HSC English 2nd Paper | Model Test</title>
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+>
 
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    >
+<style>
 
-    <style>
+/* =========================================================
+   RESET
+========================================================= */
 
-        /* =====================================================
-           RESET
-        ===================================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+html {
+    scroll-behavior: smooth;
+}
 
+body {
 
-        html {
-            scroll-behavior: smooth;
-        }
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
 
+    min-height: 100vh;
 
-        body {
+    color: #fff;
 
-            font-family:
-                -apple-system,
-                BlinkMacSystemFont,
-                "Segoe UI",
-                Roboto,
-                Helvetica,
-                Arial,
-                sans-serif;
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(0,255,204,.15),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 90% 15%,
+            rgba(255,0,153,.15),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 50% 100%,
+            rgba(100,0,255,.20),
+            transparent 40%
+        ),
+        linear-gradient(
+            145deg,
+            #03030a,
+            #09051a,
+            #13051d,
+            #05050b
+        );
 
-            min-height: 100vh;
+    background-attachment: fixed;
 
-            color: #fff;
+    line-height: 1.6;
 
-            background:
-                radial-gradient(
-                    circle at 10% 10%,
-                    rgba(0, 255, 204, 0.14),
-                    transparent 30%
-                ),
-                radial-gradient(
-                    circle at 90% 20%,
-                    rgba(255, 0, 153, 0.15),
-                    transparent 30%
-                ),
-                radial-gradient(
-                    circle at 50% 100%,
-                    rgba(100, 0, 255, 0.18),
-                    transparent 40%
-                ),
-                linear-gradient(
-                    145deg,
-                    #03030a,
-                    #09051a,
-                    #13051d,
-                    #05050b
-                );
+    overflow-x: hidden;
+}
 
-            background-attachment: fixed;
 
-            line-height: 1.6;
+/* =========================================================
+   PAGE
+========================================================= */
 
-            overflow-x: hidden;
-        }
+.page {
 
+    width:
+        min(
+            900px,
+            calc(100% - 20px)
+        );
 
-        /* =====================================================
-           MAIN CONTAINER
-        ===================================================== */
+    margin:
+        15px auto 50px;
+}
 
-        .page {
 
-            width: min(
-                850px,
-                calc(100% - 24px)
-            );
+/* =========================================================
+   NAV
+========================================================= */
 
-            margin:
-                20px auto 50px;
-        }
+.top-nav {
 
+    display: flex;
 
-        /* =====================================================
-           TOP NAVIGATION
-        ===================================================== */
+    justify-content: space-between;
 
-        .top-nav {
+    gap: 10px;
 
-            display: flex;
+    margin-bottom: 15px;
+}
 
-            justify-content: space-between;
+.nav-btn {
 
-            align-items: center;
+    display: inline-flex;
 
-            gap: 10px;
+    align-items: center;
 
-            margin-bottom: 18px;
-        }
+    gap: 7px;
 
+    padding:
+        9px 14px;
 
-        .nav-btn {
+    border-radius: 50px;
 
-            border:
-                1px solid
-                rgba(255,255,255,0.15);
+    color: #fff;
 
-            background:
-                rgba(255,255,255,0.06);
+    text-decoration: none;
 
-            color: #fff;
+    font-size: .78rem;
 
-            padding:
-                9px 14px;
+    border:
+        1px solid
+        rgba(255,255,255,.15);
 
-            border-radius: 50px;
+    background:
+        rgba(255,255,255,.06);
 
-            cursor: pointer;
+    backdrop-filter:
+        blur(12px);
 
-            text-decoration: none;
+    transition: .25s ease;
+}
 
-            font-size: 0.8rem;
+.nav-btn:hover {
 
-            backdrop-filter:
-                blur(12px);
+    background:
+        rgba(255,255,255,.12);
 
-            transition:
-                0.25s ease;
-        }
+    transform:
+        translateY(-2px);
+}
 
 
-        .nav-btn:hover {
+/* =========================================================
+   HEADER
+========================================================= */
 
-            background:
-                rgba(255,255,255,0.12);
+.header {
 
-            transform:
-                translateY(-2px);
-        }
+    text-align: center;
 
+    padding:
+        28px 18px;
 
-        /* =====================================================
-           HEADER
-        ===================================================== */
+    border-radius: 24px;
 
-        .header {
+    border:
+        1px solid
+        rgba(255,255,255,.13);
 
-            text-align: center;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(0,255,204,.10),
+            rgba(100,0,255,.12),
+            rgba(255,0,153,.08)
+        );
 
-            padding:
-                30px 20px;
+    backdrop-filter:
+        blur(18px);
 
-            border-radius: 24px;
+    margin-bottom: 15px;
 
-            background:
-                linear-gradient(
-                    135deg,
-                    rgba(0,255,204,0.10),
-                    rgba(120,0,255,0.12),
-                    rgba(255,0,153,0.08)
-                );
+    box-shadow:
+        0 20px 60px
+        rgba(0,0,0,.25);
+}
 
-            border:
-                1px solid
-                rgba(255,255,255,0.14);
+.badge {
 
-            backdrop-filter:
-                blur(18px);
+    display: inline-flex;
 
-            box-shadow:
-                0 20px 60px
-                rgba(0,0,0,0.25);
+    align-items: center;
 
-            margin-bottom: 18px;
-        }
+    gap: 8px;
 
+    padding:
+        6px 12px;
 
-        .badge {
+    border-radius: 50px;
 
-            display: inline-flex;
+    color: #aaffee;
 
-            align-items: center;
+    background:
+        rgba(0,255,204,.08);
 
-            gap: 8px;
+    border:
+        1px solid
+        rgba(0,255,204,.25);
 
-            padding:
-                7px 13px;
+    font-size: .7rem;
 
-            border-radius: 50px;
+    letter-spacing: 1.4px;
 
-            background:
-                rgba(0,255,204,0.08);
+    text-transform: uppercase;
 
-            border:
-                1px solid
-                rgba(0,255,204,0.25);
+    margin-bottom: 12px;
+}
 
-            color:
-                #aaffee;
+.header h1 {
 
-            font-size:
-                0.72rem;
+    font-size:
+        clamp(
+            1.5rem,
+            5vw,
+            2.5rem
+        );
 
-            letter-spacing:
-                1.5px;
+    line-height: 1.2;
 
-            text-transform:
-                uppercase;
+    font-weight: 900;
 
-            margin-bottom:
-                15px;
-        }
+    background:
+        linear-gradient(
+            90deg,
+            #fff,
+            #63ffe1,
+            #bf72ff,
+            #ff62c0
+        );
 
+    -webkit-background-clip: text;
 
-        .header h1 {
+    -webkit-text-fill-color: transparent;
+}
 
-            font-size:
-                clamp(
-                    1.6rem,
-                    5vw,
-                    2.5rem
-                );
+.header p {
 
-            line-height:
-                1.2;
+    margin-top: 8px;
 
-            font-weight:
-                900;
+    color:
+        rgba(255,255,255,.58);
 
-            background:
-                linear-gradient(
-                    90deg,
-                    #ffffff,
-                    #63ffe1,
-                    #bf72ff,
-                    #ff62c0
-                );
+    font-size: .85rem;
+}
 
-            -webkit-background-clip:
-                text;
 
-            -webkit-text-fill-color:
-                transparent;
-        }
+/* =========================================================
+   EXAM BAR
+========================================================= */
 
+.exam-bar {
 
-        .header p {
+    display: grid;
 
-            margin-top:
-                10px;
+    grid-template-columns:
+        repeat(3,1fr);
 
-            color:
-                rgba(255,255,255,0.60);
+    gap: 10px;
 
-            font-size:
-                0.9rem;
-        }
+    margin-bottom: 15px;
+}
 
+.exam-card {
 
-        /* =====================================================
-           PAPER INFORMATION
-        ===================================================== */
+    padding: 12px;
 
-        .info-grid {
+    text-align: center;
 
-            display:
-                grid;
+    border-radius: 15px;
 
-            grid-template-columns:
-                repeat(
-                    2,
-                    1fr
-                );
+    border:
+        1px solid
+        rgba(255,255,255,.10);
 
-            gap:
-                12px;
+    background:
+        rgba(255,255,255,.055);
 
-            margin-bottom:
-                18px;
-        }
+    backdrop-filter:
+        blur(12px);
+}
 
+.exam-card small {
 
-        .info-card {
+    display: block;
 
-            padding:
-                14px;
+    color:
+        rgba(255,255,255,.42);
 
-            text-align:
-                center;
+    font-size: .65rem;
 
-            border-radius:
-                16px;
+    text-transform: uppercase;
 
-            background:
-                rgba(255,255,255,0.055);
+    letter-spacing: 1px;
+}
 
-            border:
-                1px solid
-                rgba(255,255,255,0.10);
+.exam-card strong {
 
-            backdrop-filter:
-                blur(12px);
-        }
+    display: block;
 
+    margin-top: 2px;
 
-        .info-card strong {
+    font-size: .95rem;
+}
 
-            display:
-                block;
 
-            font-size:
-                0.72rem;
+/* =========================================================
+   TIMER
+========================================================= */
 
-            color:
-                rgba(255,255,255,0.45);
+.timer {
 
-            text-transform:
-                uppercase;
+    position: sticky;
 
-            letter-spacing:
-                1px;
-        }
+    top: 10px;
 
+    z-index: 50;
 
-        .info-card span {
+    display: flex;
 
-            display:
-                block;
+    align-items: center;
 
-            margin-top:
-                3px;
+    justify-content: space-between;
 
-            font-weight:
-                700;
-        }
+    gap: 10px;
 
+    padding:
+        11px 15px;
 
-        /* =====================================================
-           SECTION
-        ===================================================== */
+    margin-bottom: 15px;
 
-        .section {
+    border-radius: 16px;
 
-            margin-bottom:
-                18px;
+    border:
+        1px solid
+        rgba(255,255,255,.12);
 
-            padding:
-                22px;
+    background:
+        rgba(10,8,20,.80);
 
-            border-radius:
-                20px;
+    backdrop-filter:
+        blur(18px);
 
-            background:
-                rgba(255,255,255,0.045);
+    box-shadow:
+        0 10px 35px
+        rgba(0,0,0,.25);
+}
 
-            border:
-                1px solid
-                rgba(255,255,255,0.10);
+.timer-label {
 
-            backdrop-filter:
-                blur(15px);
+    display: flex;
 
-            box-shadow:
-                0 12px 35px
-                rgba(0,0,0,0.16);
-        }
+    align-items: center;
 
+    gap: 8px;
 
-        .section-title {
+    font-size: .8rem;
 
-            display:
-                flex;
+    color:
+        rgba(255,255,255,.65);
+}
 
-            align-items:
-                center;
+.timer-label i {
 
-            gap:
-                10px;
+    color:
+        #63ffe1;
+}
 
-            margin-bottom:
-                18px;
+#timer {
 
-            padding-bottom:
-                12px;
+    font-size: 1rem;
 
-            border-bottom:
-                1px solid
-                rgba(255,255,255,0.10);
+    font-weight: 900;
 
-            font-size:
-                1.15rem;
+    letter-spacing: 1px;
 
-            font-weight:
-                800;
+    color: #63ffe1;
+}
 
-            color:
-                #fff;
-        }
+.timer.warning #timer {
 
+    color: #ffcc66;
+}
 
-        .section-title i {
+.timer.danger #timer {
 
-            width:
-                34px;
+    color: #ff557f;
+}
 
-            height:
-                34px;
 
-            display:
-                flex;
+/* =========================================================
+   PROGRESS
+========================================================= */
 
-            align-items:
-                center;
+.progress-wrap {
 
-            justify-content:
-                center;
+    margin-bottom: 15px;
+}
 
-            border-radius:
-                10px;
+.progress-info {
 
-            background:
-                linear-gradient(
-                    135deg,
-                    #00cfa7,
-                    #7355ff
-                );
+    display: flex;
 
-            font-size:
-                0.9rem;
-        }
+    justify-content: space-between;
 
+    color:
+        rgba(255,255,255,.5);
 
-        /* =====================================================
-           QUESTION
-        ===================================================== */
+    font-size: .72rem;
 
-        .question {
+    margin-bottom: 6px;
+}
 
-            margin-bottom:
-                22px;
-        }
+.progress {
 
+    height: 6px;
 
-        .question:last-child {
+    border-radius: 20px;
 
-            margin-bottom:
-                0;
-        }
+    background:
+        rgba(255,255,255,.08);
 
+    overflow: hidden;
+}
 
-        .question-title {
+.progress-bar {
 
-            font-weight:
-                750;
+    width: 0%;
 
-            margin-bottom:
-                10px;
+    height: 100%;
 
-            color:
-                #fff;
-        }
+    background:
+        linear-gradient(
+            90deg,
+            #00d9b0,
+            #7355ff,
+            #ff4fb3
+        );
 
+    transition: .3s ease;
+}
 
-        .question-title .number {
 
-            color:
-                #63ffe1;
-        }
+/* =========================================================
+   QUESTION CARD
+========================================================= */
 
+.question-card {
 
-        .instruction {
+    padding:
+        20px;
 
-            color:
-                rgba(255,255,255,0.60);
+    margin-bottom:
+        15px;
 
-            font-size:
-                0.85rem;
+    border-radius:
+        20px;
 
-            margin-bottom:
-                12px;
-        }
+    border:
+        1px solid
+        rgba(255,255,255,.10);
 
+    background:
+        rgba(255,255,255,.045);
 
-        /* =====================================================
-           TEXT
-        ===================================================== */
+    backdrop-filter:
+        blur(15px);
 
-        .question p {
+    box-shadow:
+        0 12px 35px
+        rgba(0,0,0,.14);
+}
 
-            margin:
-                5px 0;
+.question-number {
 
-            color:
-                rgba(255,255,255,0.86);
-        }
+    display: inline-flex;
 
+    align-items: center;
 
-        .passage {
+    justify-content: center;
 
-            padding:
-                15px;
+    min-width: 32px;
 
-            border-radius:
-                14px;
+    height: 32px;
 
-            background:
-                rgba(0,0,0,0.20);
+    margin-bottom: 9px;
 
-            border:
-                1px solid
-                rgba(255,255,255,0.08);
+    border-radius: 9px;
 
-            margin:
-                10px 0;
-        }
+    background:
+        linear-gradient(
+            135deg,
+            #00cfa7,
+            #7355ff
+        );
 
+    font-size: .78rem;
 
-        /* =====================================================
-           BLANKS
-        ===================================================== */
+    font-weight: 900;
+}
 
-        .blank {
+.question-title {
 
-            display:
-                inline-block;
+    font-size:
+        1rem;
 
-            min-width:
-                65px;
+    font-weight:
+        750;
 
-            border-bottom:
-                1px solid
-                rgba(255,255,255,0.65);
+    margin-bottom:
+        13px;
 
-            margin:
-                0 3px;
+    color: #fff;
+}
 
-            text-align:
-                center;
-        }
 
+/* =========================================================
+   OPTIONS
+========================================================= */
 
-        /* =====================================================
-           BOX
-        ===================================================== */
+.options {
 
-        .word-box {
+    display:
+        flex;
 
-            padding:
-                13px 15px;
+    flex-direction:
+        column;
 
-            margin:
-                12px 0;
+    gap: 9px;
+}
 
-            border-radius:
-                13px;
+.option {
 
-            background:
-                linear-gradient(
-                    135deg,
-                    rgba(0,255,204,0.07),
-                    rgba(130,0,255,0.09)
-                );
+    position: relative;
 
-            border:
-                1px solid
-                rgba(255,255,255,0.10);
+    display: flex;
 
-            color:
-                rgba(255,255,255,0.80);
+    align-items: flex-start;
 
-            font-size:
-                0.88rem;
-        }
+    gap: 10px;
 
+    padding:
+        12px 13px;
 
-        .word-box strong {
+    border-radius:
+        13px;
 
-            color:
-                #63ffe1;
-        }
+    border:
+        1px solid
+        rgba(255,255,255,.10);
 
+    background:
+        rgba(255,255,255,.035);
 
-        /* =====================================================
-           LIST
-        ===================================================== */
+    cursor: pointer;
 
-        .items {
+    transition:
+        .2s ease;
+}
 
-            display:
-                flex;
+.option:hover {
 
-            flex-direction:
-                column;
+    background:
+        rgba(255,255,255,.075);
 
-            gap:
-                8px;
-        }
+    transform:
+        translateX(2px);
+}
 
+.option input {
 
-        .item {
+    position: absolute;
 
-            padding:
-                8px 0;
+    opacity: 0;
 
-            color:
-                rgba(255,255,255,0.86);
-        }
+    pointer-events: none;
+}
 
+.option-letter {
 
-        /* =====================================================
-           ANSWER AREA
-        ===================================================== */
+    flex-shrink: 0;
 
-        .answer-line {
+    display: flex;
 
-            display:
-                inline-block;
+    align-items: center;
 
-            min-width:
-                130px;
+    justify-content: center;
 
-            border-bottom:
-                1px solid
-                rgba(255,255,255,0.45);
+    width: 27px;
 
-            margin-left:
-                5px;
-        }
+    height: 27px;
 
+    border-radius: 8px;
 
-        /* =====================================================
-           COMPOSITION
-        ===================================================== */
+    background:
+        rgba(255,255,255,.08);
 
-        .composition {
+    color:
+        rgba(255,255,255,.75);
 
-            padding:
-                17px;
+    font-size: .72rem;
 
-            border-radius:
-                15px;
+    font-weight: 800;
+}
 
-            background:
-                rgba(255,255,255,0.035);
+.option-text {
 
-            border:
-                1px solid
-                rgba(255,255,255,0.08);
+    padding-top: 2px;
 
-            margin-bottom:
-                12px;
-        }
+    color:
+        rgba(255,255,255,.88);
 
+    font-size: .86rem;
+}
 
-        .composition:last-child {
 
-            margin-bottom:
-                0;
-        }
+/* =========================================================
+   ANSWER STATES
+========================================================= */
 
+.option.correct {
 
-        .composition strong {
+    border-color:
+        rgba(0,255,180,.55);
 
-            display:
-                block;
+    background:
+        rgba(0,255,180,.10);
+}
 
-            margin-bottom:
-                6px;
+.option.correct .option-letter {
 
-            color:
-                #63ffe1;
-        }
+    background:
+        #00cfa7;
 
+    color:
+        #03110d;
+}
 
-        /* =====================================================
-           FOOTER
-        ===================================================== */
+.option.wrong {
 
-        .footer {
+    border-color:
+        rgba(255,70,110,.55);
 
-            text-align:
-                center;
+    background:
+        rgba(255,50,90,.10);
+}
 
-            color:
-                rgba(255,255,255,0.38);
+.option.wrong .option-letter {
 
-            font-size:
-                0.75rem;
+    background:
+        #ff496f;
 
-            padding:
-                10px;
-        }
+    color:
+        #fff;
+}
 
 
-        /* =====================================================
-           RESPONSIVE
-        ===================================================== */
+/* =========================================================
+   FEEDBACK
+========================================================= */
 
-        @media (max-width: 600px) {
+.feedback {
 
-            .page {
+    display: none;
 
-                width:
-                    calc(100% - 16px);
+    margin-top:
+        10px;
 
-                margin-top:
-                    10px;
-            }
+    padding:
+        12px 13px;
 
+    border-radius:
+        12px;
 
-            .section {
+    font-size:
+        .79rem;
 
-                padding:
-                    17px;
-            }
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+}
 
+.feedback.show {
 
-            .info-grid {
+    display: block;
+}
 
-                grid-template-columns:
-                    1fr;
-            }
+.feedback.correct-feedback {
 
+    background:
+        rgba(0,255,180,.07);
 
-            .header {
+    border-color:
+        rgba(0,255,180,.20);
 
-                padding:
-                    25px 15px;
-            }
+    color:
+        #b9ffe9;
+}
 
+.feedback.wrong-feedback {
 
-            .top-nav {
+    background:
+        rgba(255,70,110,.07);
 
-                margin-bottom:
-                    12px;
-            }
+    border-color:
+        rgba(255,70,110,.20);
 
-        }
+    color:
+        #ffd0da;
+}
 
-    </style>
+.feedback strong {
+
+    display: block;
+
+    margin-bottom: 3px;
+}
+
+
+/* =========================================================
+   SUBMIT
+========================================================= */
+
+.submit-area {
+
+    text-align: center;
+
+    padding:
+        20px 5px;
+}
+
+.submit-btn {
+
+    border: 0;
+
+    padding:
+        13px 25px;
+
+    border-radius:
+        50px;
+
+    color:
+        #fff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #00cfa7,
+            #7355ff,
+            #ff3cae
+        );
+
+    font-size:
+        .9rem;
+
+    font-weight:
+        800;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 30px
+        rgba(115,85,255,.25);
+
+    transition:
+        .25s ease;
+}
+
+.submit-btn:hover {
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 15px 35px
+        rgba(115,85,255,.35);
+}
+
+
+/* =========================================================
+   RESULT
+========================================================= */
+
+.result {
+
+    display: none;
+
+    text-align: center;
+
+    padding:
+        28px 20px;
+
+    margin-bottom:
+        18px;
+
+    border-radius:
+        22px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.13);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(0,255,204,.08),
+            rgba(110,0,255,.12),
+            rgba(255,0,153,.08)
+        );
+
+    backdrop-filter:
+        blur(18px);
+}
+
+.result.show {
+
+    display: block;
+}
+
+.result-icon {
+
+    width: 65px;
+
+    height: 65px;
+
+    margin: 0 auto 12px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #00cfa7,
+            #7355ff
+        );
+
+    font-size: 1.5rem;
+}
+
+.result h2 {
+
+    font-size: 1.5rem;
+
+    margin-bottom: 5px;
+}
+
+.score {
+
+    font-size: 2.4rem;
+
+    font-weight: 900;
+
+    background:
+        linear-gradient(
+            90deg,
+            #63ffe1,
+            #bf72ff,
+            #ff62c0
+        );
+
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+}
+
+.result p {
+
+    color:
+        rgba(255,255,255,.58);
+
+    font-size: .82rem;
+}
+
+.result-stats {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap: 8px;
+
+    margin-top: 17px;
+}
+
+.result-stat {
+
+    padding: 10px;
+
+    border-radius: 12px;
+
+    background:
+        rgba(255,255,255,.05);
+}
+
+.result-stat small {
+
+    display: block;
+
+    color:
+        rgba(255,255,255,.4);
+
+    font-size: .62rem;
+
+    text-transform: uppercase;
+}
+
+.result-stat strong {
+
+    display: block;
+
+    margin-top: 2px;
+}
+
+
+/* =========================================================
+   COMPOSITION
+========================================================= */
+
+.composition-section {
+
+    margin-top: 25px;
+
+    padding:
+        20px;
+
+    border-radius:
+        20px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.10);
+
+    background:
+        rgba(255,255,255,.04);
+}
+
+.composition-title {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    font-size: 1.1rem;
+
+    font-weight: 800;
+
+    margin-bottom: 15px;
+}
+
+.composition-title i {
+
+    width: 34px;
+
+    height: 34px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 9px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff3cae,
+            #7355ff
+        );
+}
+
+.composition-item {
+
+    padding:
+        14px;
+
+    margin-bottom:
+        9px;
+
+    border-radius:
+        13px;
+
+    background:
+        rgba(255,255,255,.035);
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+
+    color:
+        rgba(255,255,255,.82);
+
+    font-size: .85rem;
+}
+
+.composition-item:last-child {
+
+    margin-bottom: 0;
+}
+
+.composition-item strong {
+
+    display: block;
+
+    color:
+        #ff72c5;
+
+    margin-bottom: 3px;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer {
+
+    text-align: center;
+
+    padding:
+        18px 5px;
+
+    color:
+        rgba(255,255,255,.32);
+
+    font-size: .7rem;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:600px) {
+
+    .page {
+
+        width:
+            calc(100% - 12px);
+
+        margin-top:
+            8px;
+    }
+
+    .top-nav {
+
+        gap: 6px;
+    }
+
+    .nav-btn {
+
+        padding:
+            8px 11px;
+
+        font-size: .7rem;
+    }
+
+    .exam-bar {
+
+        grid-template-columns:
+            repeat(3,1fr);
+
+        gap: 6px;
+    }
+
+    .exam-card {
+
+        padding:
+            9px 5px;
+    }
+
+    .exam-card strong {
+
+        font-size: .78rem;
+    }
+
+    .question-card {
+
+        padding:
+            15px;
+    }
+
+    .option-text {
+
+        font-size: .82rem;
+    }
+
+    .result-stats {
+
+        grid-template-columns:
+            1fr;
+    }
+
+}
+
+</style>
 
 </head>
 
@@ -765,1043 +1121,3877 @@
 <div class="page">
 
 
-    <!-- =====================================================
-         NAVIGATION
-    ===================================================== -->
+<!-- =========================================================
+     NAVIGATION
+========================================================= -->
 
-    <div class="top-nav">
+<div class="top-nav">
 
-        <a
-            href="index.html"
-            class="nav-btn"
-        >
-            <i class="fas fa-home"></i>
-            Home
-        </a>
+    <a
+        href="index.html"
+        class="nav-btn"
+    >
+        <i class="fas fa-home"></i>
+        Home
+    </a>
 
+    <a
+        href="index.html#english"
+        class="nav-btn"
+    >
+        <i class="fas fa-book-open"></i>
+        English Practice
+    </a>
 
-        <a
-            href="index.html"
-            class="nav-btn"
-            onclick="openEnglishPractice(event)"
-        >
-            <i class="fas fa-book-open"></i>
-            English Practice
-        </a>
-
-    </div>
+</div>
 
 
+<!-- =========================================================
+     HEADER
+========================================================= -->
 
-    <!-- =====================================================
-         HEADER
-    ===================================================== -->
+<header class="header">
 
-    <header class="header">
+    <div class="badge">
 
-        <div class="badge">
+        <i class="fas fa-graduation-cap"></i>
 
-            <i class="fas fa-graduation-cap"></i>
-
-            HSC Model Test
-
-        </div>
-
-
-        <h1>
-            HSC English 2nd Paper
-        </h1>
-
-
-        <p>
-            Model Test Paper
-        </p>
-
-    </header>
-
-
-
-    <!-- =====================================================
-         INFORMATION
-    ===================================================== -->
-
-    <div class="info-grid">
-
-        <div class="info-card">
-
-            <strong>
-                Full Marks
-            </strong>
-
-            <span>
-                100
-            </span>
-
-        </div>
-
-
-        <div class="info-card">
-
-            <strong>
-                Time
-            </strong>
-
-            <span>
-                3 Hours
-            </span>
-
-        </div>
+        HSC 2027 Practice Exam
 
     </div>
 
+    <h1>
+        English 2nd Paper
+    </h1>
+
+    <p>
+        Interactive Grammar Quiz Exam
+    </p>
+
+</header>
 
 
-    <!-- =====================================================
-         NOTICE
-    ===================================================== -->
+<!-- =========================================================
+     EXAM INFORMATION
+========================================================= -->
 
-    <div class="section">
+<div class="exam-bar">
 
-        <div class="instruction">
+    <div class="exam-card">
 
-            <strong>
-                N.B.
+        <small>
+            Grammar
+        </small>
+
+        <strong>
+            60 Marks
+        </strong>
+
+    </div>
+
+    <div class="exam-card">
+
+        <small>
+            Questions
+        </small>
+
+        <strong>
+            60
+        </strong>
+
+    </div>
+
+    <div class="exam-card">
+
+        <small>
+            Time
+        </small>
+
+        <strong>
+            3 Hours
+        </strong>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     TIMER
+========================================================= -->
+
+<div
+    class="timer"
+    id="timerBox"
+>
+
+    <div class="timer-label">
+
+        <i class="fas fa-clock"></i>
+
+        Time Remaining
+
+    </div>
+
+    <div id="timer">
+        03:00:00
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     PROGRESS
+========================================================= -->
+
+<div class="progress-wrap">
+
+    <div class="progress-info">
+
+        <span id="answeredText">
+            Answered: 0 / 60
+        </span>
+
+        <span id="progressPercent">
+            0%
+        </span>
+
+    </div>
+
+    <div class="progress">
+
+        <div
+            class="progress-bar"
+            id="progressBar"
+        ></div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     RESULT
+========================================================= -->
+
+<div
+    class="result"
+    id="result"
+>
+
+    <div class="result-icon">
+
+        <i class="fas fa-trophy"></i>
+
+    </div>
+
+    <h2>
+        Exam Completed
+    </h2>
+
+    <div
+        class="score"
+        id="score"
+    >
+        0 / 60
+    </div>
+
+    <p id="resultMessage">
+        Your result has been calculated.
+    </p>
+
+    <div class="result-stats">
+
+        <div class="result-stat">
+
+            <small>
+                Correct
+            </small>
+
+            <strong id="correctCount">
+                0
             </strong>
-            — Answer all questions.
+
+        </div>
+
+        <div class="result-stat">
+
+            <small>
+                Wrong
+            </small>
+
+            <strong id="wrongCount">
+                0
+            </strong>
+
+        </div>
+
+        <div class="result-stat">
+
+            <small>
+                Percentage
+            </small>
+
+            <strong id="percentage">
+                0%
+            </strong>
 
         </div>
 
     </div>
 
+</div>
 
 
-    <!-- =====================================================
-         PART A
-    ===================================================== -->
+<!-- =========================================================
+     QUIZ
+========================================================= -->
 
-    <section class="section">
+<form id="quizForm">
 
 
-        <div class="section-title">
+<!-- Q1 ARTICLES -->
 
-            <i class="fas fa-language"></i>
+<div class="question-card">
 
-            PART A: GRAMMAR
+<div class="question-number">1</div>
 
-            <span style="margin-left:auto;font-size:.75rem;color:#63ffe1;">
-                60 Marks
-            </span>
+<div class="question-title">
+Choose the correct article:
+“_____ reading of newspaper is a good habit.”
+</div>
 
-        </div>
+<div class="options">
 
+<label class="option">
+<input type="radio" name="q1" value="A">
+<span class="option-letter">A</span>
+<span class="option-text">A</span>
+</label>
 
+<label class="option">
+<input type="radio" name="q1" value="B">
+<span class="option-letter">B</span>
+<span class="option-text">An</span>
+</label>
 
-        <!-- Q1 -->
+<label class="option">
+<input type="radio" name="q1" value="C">
+<span class="option-letter">C</span>
+<span class="option-text">The</span>
+</label>
 
-        <div class="question">
+<label class="option">
+<input type="radio" name="q1" value="D">
+<span class="option-letter">D</span>
+<span class="option-text">No article</span>
+</label>
 
-            <div class="question-title">
+</div>
 
-                <span class="number">
-                    1.
-                </span>
+<div class="feedback" id="f1"></div>
 
-                Fill in the blanks with appropriate articles.
+</div>
 
-            </div>
 
+<!-- Q2 -->
 
-            <div class="instruction">
+<div class="question-card">
 
-                Put a cross (×) where no article is needed.
+<div class="question-number">2</div>
 
-            </div>
+<div class="question-title">
+“_____ newspaper is _____ powerful medium of mass communication.”
+</div>
 
+<div class="options">
 
-            <div class="passage">
+<label class="option">
+<input type="radio" name="q2" value="A">
+<span class="option-letter">A</span>
+<span class="option-text">A, a</span>
+</label>
 
-                (a) <span class="blank"></span> reading of newspaper
-                is a good habit.
+<label class="option">
+<input type="radio" name="q2" value="B">
+<span class="option-letter">B</span>
+<span class="option-text">The, a</span>
+</label>
 
-                (b) <span class="blank"></span> newspaper is
+<label class="option">
+<input type="radio" name="q2" value="C">
+<span class="option-letter">C</span>
+<span class="option-text">A, the</span>
+</label>
 
-                (c) <span class="blank"></span> powerful medium of
-                mass communication.
+<label class="option">
+<input type="radio" name="q2" value="D">
+<span class="option-letter">D</span>
+<span class="option-text">The, the</span>
+</label>
 
-                It gives us
+</div>
 
-                (d) <span class="blank"></span> idea about what is
-                happening around
+<div class="feedback" id="f2"></div>
 
-                (e) <span class="blank"></span> world.
+</div>
 
-                (f) <span class="blank"></span> good reader can
-                widen his knowledge on
 
-                (g) <span class="blank"></span> different subjects.
+<!-- Q3 -->
 
-                (h) <span class="blank"></span> habit of reading
-                should be developed from
+<div class="question-card">
 
-                (i) <span class="blank"></span> early age.
+<div class="question-number">3</div>
 
-                It also helps a student prepare for
+<div class="question-title">
+“It gives us _____ idea about what is happening around _____ world.”
+</div>
 
-                (j) <span class="blank"></span> job interview.
+<div class="options">
 
-            </div>
+<label class="option">
+<input type="radio" name="q3" value="A">
+<span class="option-letter">A</span>
+<span class="option-text">an, the</span>
+</label>
 
-        </div>
+<label class="option">
+<input type="radio" name="q3" value="B">
+<span class="option-letter">B</span>
+<span class="option-text">a, a</span>
+</label>
 
+<label class="option">
+<input type="radio" name="q3" value="C">
+<span class="option-letter">C</span>
+<span class="option-text">the, an</span>
+</label>
 
+<label class="option">
+<input type="radio" name="q3" value="D">
+<span class="option-letter">D</span>
+<span class="option-text">no article, the</span>
+</label>
 
-        <!-- Q2 -->
+</div>
 
-        <div class="question">
+<div class="feedback" id="f3"></div>
 
-            <div class="question-title">
+</div>
 
-                <span class="number">
-                    2.
-                </span>
 
-                Fill in the blanks with suitable prepositions.
+<!-- Q4 -->
 
-            </div>
+<div class="question-card">
 
+<div class="question-number">4</div>
 
-            <div class="passage">
+<div class="question-title">
+“_____ good reader can widen his knowledge on _____ different subjects.”
+</div>
 
-                Life
+<div class="options">
 
-                (a) <span class="blank"></span>
+<label class="option">
+<input type="radio" name="q4" value="A">
+<span class="option-letter">A</span>
+<span class="option-text">A, no article</span>
+</label>
 
-                Bangladesh is closely linked
+<label class="option">
+<input type="radio" name="q4" value="B">
+<span class="option-letter">B</span>
+<span class="option-text">The, the</span>
+</label>
 
-                (b) <span class="blank"></span>
+<label class="option">
+<input type="radio" name="q4" value="C">
+<span class="option-letter">C</span>
+<span class="option-text">An, a</span>
+</label>
 
-                agriculture.
+<label class="option">
+<input type="radio" name="q4" value="D">
+<span class="option-letter">D</span>
+<span class="option-text">The, a</span>
+</label>
 
-                Most people here depend
+</div>
 
-                (c) <span class="blank"></span>
+<div class="feedback" id="f4"></div>
 
-                farming
+</div>
 
-                (d) <span class="blank"></span>
 
-                their livelihood.
+<!-- Q5 -->
 
-                Farmers work hard
+<div class="question-card">
 
-                (e) <span class="blank"></span>
+<div class="question-number">5</div>
 
-                the field from dawn
+<div class="question-title">
+“The habit of reading should be developed from _____ early age.”
+</div>
 
-                (f) <span class="blank"></span>
+<div class="options">
 
-                dusk.
+<label class="option">
+<input type="radio" name="q5" value="A">
+<span class="option-letter">A</span>
+<span class="option-text">a</span>
+</label>
 
-                (g) <span class="blank"></span>
+<label class="option">
+<input type="radio" name="q5" value="B">
+<span class="option-letter">B</span>
+<span class="option-text">an</span>
+</label>
 
-                the rainy season, rivers often overflow and result
+<label class="option">
+<input type="radio" name="q5" value="C">
+<span class="option-letter">C</span>
+<span class="option-text">the</span>
+</label>
 
-                (h) <span class="blank"></span>
+<label class="option">
+<input type="radio" name="q5" value="D">
+<span class="option-letter">D</span>
+<span class="option-text">no article</span>
+</label>
 
-                flood.
+</div>
 
-                Despite these hardships, farmers never give up
+<div class="feedback" id="f5"></div>
 
-                (i) <span class="blank"></span>
+</div>
 
-                hope.
 
-                They believe
+<!-- Q6 PREPOSITION -->
 
-                (j) <span class="blank"></span>
+<div class="question-card">
 
-                a better tomorrow.
+<div class="question-number">6</div>
 
-            </div>
+<div class="question-title">
+“Life _____ Bangladesh is closely linked _____ agriculture.”
+</div>
 
-        </div>
+<div class="options">
 
+<label class="option">
+<input type="radio" name="q6" value="A">
+<span class="option-letter">A</span>
+<span class="option-text">in, to</span>
+</label>
 
+<label class="option">
+<input type="radio" name="q6" value="B">
+<span class="option-letter">B</span>
+<span class="option-text">of, with</span>
+</label>
 
-        <!-- Q3 -->
+<label class="option">
+<input type="radio" name="q6" value="C">
+<span class="option-letter">C</span>
+<span class="option-text">at, for</span>
+</label>
 
-        <div class="question">
+<label class="option">
+<input type="radio" name="q6" value="D">
+<span class="option-letter">D</span>
+<span class="option-text">on, by</span>
+</label>
 
-            <div class="question-title">
+</div>
 
-                <span class="number">
-                    3.
-                </span>
+<div class="feedback" id="f6"></div>
 
-                Fill in the blanks using the words/phrases from
-                the box below.
+</div>
 
-            </div>
 
+<!-- Q7 -->
 
-            <div class="word-box">
+<div class="question-card">
 
-                <strong>
-                    Box:
-                </strong>
+<div class="question-number">7</div>
 
-                was born,
-                it,
-                had better,
-                as soon as,
-                would rather,
-                let alone,
-                have to,
-                there,
-                what does…look like,
-                what’s…like
+<div class="question-title">
+“Most people here depend _____ farming _____ their livelihood.”
+</div>
 
-            </div>
+<div class="options">
 
+<label class="option">
+<input type="radio" name="q7" value="A">
+<span class="option-letter">A</span>
+<span class="option-text">on, for</span>
+</label>
 
-            <div class="items">
+<label class="option">
+<input type="radio" name="q7" value="B">
+<span class="option-letter">B</span>
+<span class="option-text">in, on</span>
+</label>
 
-                <div class="item">
-                    (a) Rabindranath Tagore
-                    <span class="answer-line"></span>
-                    in 1861.
-                </div>
+<label class="option">
+<input type="radio" name="q7" value="C">
+<span class="option-letter">C</span>
+<span class="option-text">at, of</span>
+</label>
 
-                <div class="item">
-                    (b)
-                    <span class="answer-line"></span>
-                    is not easy to become successful without hard work.
-                </div>
+<label class="option">
+<input type="radio" name="q7" value="D">
+<span class="option-letter">D</span>
+<span class="option-text">for, from</span>
+</label>
 
-                <div class="item">
-                    (c)
-                    <span class="answer-line"></span>
-                    is a library in every village that helps students.
-                </div>
+</div>
 
-                <div class="item">
-                    (d) You
-                    <span class="answer-line"></span>
-                    study regularly if you want good results.
-                </div>
+<div class="feedback" id="f7"></div>
 
-                <div class="item">
-                    (e)
-                    <span class="answer-line"></span>
-                    you reach the station, call me.
-                </div>
+</div>
 
-                <div class="item">
-                    (f) I
-                    <span class="answer-line"></span>
-                    read a book than watch TV.
-                </div>
 
-                <div class="item">
-                    (g) He can't even write his name,
-                    <span class="answer-line"></span>
-                    solve this problem.
-                </div>
+<!-- Q8 -->
 
-                <div class="item">
-                    (h)
-                    <span class="answer-line"></span>
-                    the weather
-                    <span class="answer-line"></span>
-                    today?
-                </div>
+<div class="question-card">
 
-                <div class="item">
-                    (i) You
-                    <span class="answer-line"></span>
-                    leave now to catch the bus.
-                </div>
+<div class="question-number">8</div>
 
-                <div class="item">
-                    (j)
-                    <span class="answer-line"></span>
-                    the new teacher
-                    <span class="answer-line"></span>?
-                </div>
+<div class="question-title">
+“Farmers work hard _____ the field from dawn _____ dusk.”
+</div>
 
-            </div>
+<div class="options">
 
-        </div>
+<label class="option">
+<input type="radio" name="q8" value="A">
+<span class="option-letter">A</span>
+<span class="option-text">in, to</span>
+</label>
 
+<label class="option">
+<input type="radio" name="q8" value="B">
+<span class="option-letter">B</span>
+<span class="option-text">on, at</span>
+</label>
 
+<label class="option">
+<input type="radio" name="q8" value="C">
+<span class="option-letter">C</span>
+<span class="option-text">at, from</span>
+</label>
 
-        <!-- Q4 -->
+<label class="option">
+<input type="radio" name="q8" value="D">
+<span class="option-letter">D</span>
+<span class="option-text">by, until</span>
+</label>
 
-        <div class="question">
+</div>
 
-            <div class="question-title">
+<div class="feedback" id="f8"></div>
 
-                <span class="number">
-                    4.
-                </span>
+</div>
 
-                Complete the following sentences.
 
-            </div>
+<!-- Q9 -->
 
+<div class="question-card">
 
-            <div class="items">
+<div class="question-number">9</div>
 
-                <div class="item">
-                    (a) If you work hard,
-                    <span class="answer-line"></span>
-                </div>
+<div class="question-title">
+“_____ the rainy season, rivers often overflow and result _____ flood.”
+</div>
 
-                <div class="item">
-                    (b) He was so tired that
-                    <span class="answer-line"></span>
-                </div>
+<div class="options">
 
-                <div class="item">
-                    (c) As the sun set,
-                    <span class="answer-line"></span>
-                </div>
+<label class="option">
+<input type="radio" name="q9" value="A">
+<span class="option-letter">A</span>
+<span class="option-text">During, in</span>
+</label>
 
-                <div class="item">
-                    (d) Unless you practice regularly,
-                    <span class="answer-line"></span>
-                </div>
+<label class="option">
+<input type="radio" name="q9" value="B">
+<span class="option-letter">B</span>
+<span class="option-text">At, on</span>
+</label>
 
-                <div class="item">
-                    (e) No sooner had the bell rung than
-                    <span class="answer-line"></span>
-                </div>
+<label class="option">
+<input type="radio" name="q9" value="C">
+<span class="option-letter">C</span>
+<span class="option-text">In, at</span>
+</label>
 
-                <div class="item">
-                    (f) Since he was ill,
-                    <span class="answer-line"></span>
-                </div>
+<label class="option">
+<input type="radio" name="q9" value="D">
+<span class="option-letter">D</span>
+<span class="option-text">On, from</span>
+</label>
 
-                <div class="item">
-                    (g) It is high time we
-                    <span class="answer-line"></span>
-                </div>
+</div>
 
-                <div class="item">
-                    (h) Hardly had I reached the station when
-                    <span class="answer-line"></span>
-                </div>
+<div class="feedback" id="f9"></div>
 
-                <div class="item">
-                    (i) Had I known the truth earlier,
-                    <span class="answer-line"></span>
-                </div>
+</div>
 
-                <div class="item">
-                    (j) The more you read,
-                    <span class="answer-line"></span>
-                </div>
 
-            </div>
+<!-- Q10 -->
 
-        </div>
+<div class="question-card">
 
+<div class="question-number">10</div>
 
+<div class="question-title">
+“They believe _____ a better tomorrow.”
+</div>
 
-        <!-- Q5 -->
+<div class="options">
 
-        <div class="question">
+<label class="option">
+<input type="radio" name="q10" value="A">
+<span class="option-letter">A</span>
+<span class="option-text">in</span>
+</label>
 
-            <div class="question-title">
+<label class="option">
+<input type="radio" name="q10" value="B">
+<span class="option-letter">B</span>
+<span class="option-text">on</span>
+</label>
 
-                <span class="number">
-                    5.
-                </span>
+<label class="option">
+<input type="radio" name="q10" value="C">
+<span class="option-letter">C</span>
+<span class="option-text">at</span>
+</label>
 
-                Use the right form of verbs given in the brackets.
+<label class="option">
+<input type="radio" name="q10" value="D">
+<span class="option-letter">D</span>
+<span class="option-text">for</span>
+</label>
 
-            </div>
+</div>
 
+<div class="feedback" id="f10"></div>
 
-            <div class="items">
+</div>
 
-                <div class="item">
-                    (a) She (go)
-                    <span class="answer-line"></span>
-                    to school every day.
-                </div>
 
-                <div class="item">
-                    (b) By the time we arrived, the movie
-                    (already/start)
-                    <span class="answer-line"></span>.
-                </div>
+<!-- Q11 WORD PHRASES -->
 
-                <div class="item">
-                    (c) If it (rain)
-                    <span class="answer-line"></span>
-                    tomorrow, we will stay home.
-                </div>
+<div class="question-card">
 
-                <div class="item">
-                    (d) He has (finish)
-                    <span class="answer-line"></span>
-                    his homework.
-                </div>
+<div class="question-number">11</div>
 
-                <div class="item">
-                    (e) The news (be)
-                    <span class="answer-line"></span>
-                    surprising.
-                </div>
+<div class="question-title">
+Rabindranath Tagore _____ in 1861.
+</div>
 
-                <div class="item">
-                    (f) They (play)
-                    <span class="answer-line"></span>
-                    football when it started to rain.
-                </div>
+<div class="options">
 
-                <div class="item">
-                    (g) I wish I (know)
-                    <span class="answer-line"></span>
-                    the answer.
-                </div>
+<label class="option">
+<input type="radio" name="q11" value="A">
+<span class="option-letter">A</span>
+<span class="option-text">was born</span>
+</label>
 
-                <div class="item">
-                    (h) Each of the students (have)
-                    <span class="answer-line"></span>
-                    a book.
-                </div>
+<label class="option">
+<input type="radio" name="q11" value="B">
+<span class="option-letter">B</span>
+<span class="option-text">had better</span>
+</label>
 
-                <div class="item">
-                    (i) The police (be)
-                    <span class="answer-line"></span>
-                    searching for the thief.
-                </div>
+<label class="option">
+<input type="radio" name="q11" value="C">
+<span class="option-letter">C</span>
+<span class="option-text">would rather</span>
+</label>
 
-                <div class="item">
-                    (j) She (not/complete)
-                    <span class="answer-line"></span>
-                    the assignment yet.
-                </div>
+<label class="option">
+<input type="radio" name="q11" value="D">
+<span class="option-letter">D</span>
+<span class="option-text">have to</span>
+</label>
 
-            </div>
+</div>
 
-        </div>
+<div class="feedback" id="f11"></div>
 
+</div>
 
 
-        <!-- Q6 -->
+<!-- Q12 -->
 
-        <div class="question">
+<div class="question-card">
 
-            <div class="question-title">
+<div class="question-number">12</div>
 
-                <span class="number">
-                    6.
-                </span>
+<div class="question-title">
+_____ is not easy to become successful without hard work.
+</div>
 
-                Change the sentences as directed.
+<div class="options">
 
-            </div>
+<label class="option">
+<input type="radio" name="q12" value="A">
+<span class="option-letter">A</span>
+<span class="option-text">There</span>
+</label>
 
+<label class="option">
+<input type="radio" name="q12" value="B">
+<span class="option-letter">B</span>
+<span class="option-text">It</span>
+</label>
 
-            <div class="items">
+<label class="option">
+<input type="radio" name="q12" value="C">
+<span class="option-letter">C</span>
+<span class="option-text">Let alone</span>
+</label>
 
-                <div class="item">
-                    (a) He is too weak to walk.
-                    <strong>
-                        (Use “so…that”)
-                    </strong>
-                </div>
+<label class="option">
+<input type="radio" name="q12" value="D">
+<span class="option-letter">D</span>
+<span class="option-text">As soon as</span>
+</label>
 
-                <div class="item">
-                    (b) No other boy in the class is as tall as Rakib.
-                    <strong>
-                        (Superlative)
-                    </strong>
-                </div>
+</div>
 
-                <div class="item">
-                    (c) Truth cannot be denied.
-                    <strong>
-                        (Active)
-                    </strong>
-                </div>
+<div class="feedback" id="f12"></div>
 
-                <div class="item">
-                    (d) As soon as the teacher entered, the students
-                    stood up.
-                    <strong>
-                        (Use “No sooner…than”)
-                    </strong>
-                </div>
+</div>
 
-                <div class="item">
-                    (e) Unless you work hard, you cannot succeed.
-                    <strong>
-                        (Affirmative)
-                    </strong>
-                </div>
 
-            </div>
+<!-- Q13 -->
 
-        </div>
+<div class="question-card">
 
+<div class="question-number">13</div>
 
+<div class="question-title">
+_____ is a library in every village that helps students.
+</div>
 
-        <!-- Q7 -->
+<div class="options">
 
-        <div class="question">
+<label class="option">
+<input type="radio" name="q13" value="A">
+<span class="option-letter">A</span>
+<span class="option-text">It</span>
+</label>
 
-            <div class="question-title">
+<label class="option">
+<input type="radio" name="q13" value="B">
+<span class="option-letter">B</span>
+<span class="option-text">There</span>
+</label>
 
-                <span class="number">
-                    7.
-                </span>
+<label class="option">
+<input type="radio" name="q13" value="C">
+<span class="option-letter">C</span>
+<span class="option-text">Had better</span>
+</label>
 
-                Change the narrative style of the following sentences.
+<label class="option">
+<input type="radio" name="q13" value="D">
+<span class="option-letter">D</span>
+<span class="option-text">Let alone</span>
+</label>
 
-            </div>
+</div>
 
+<div class="feedback" id="f13"></div>
 
-            <div class="items">
+</div>
 
-                <div class="item">
-                    (a) The teacher said to the students,
-                    “Do your homework regularly.”
-                </div>
 
-                <div class="item">
-                    (b) She said,
-                    “What a beautiful flower it is!”
-                </div>
+<!-- Q14 -->
 
-                <div class="item">
-                    (c) He said to me,
-                    “Where do you live?”
-                </div>
+<div class="question-card">
 
-                <div class="item">
-                    (d) The boy said,
-                    “I am playing football now.”
-                </div>
+<div class="question-number">14</div>
 
-                <div class="item">
-                    (e) “Let’s go for a walk,” said Rima.
-                </div>
+<div class="question-title">
+You _____ study regularly if you want good results.
+</div>
 
-            </div>
+<div class="options">
 
-        </div>
+<label class="option">
+<input type="radio" name="q14" value="A">
+<span class="option-letter">A</span>
+<span class="option-text">would rather</span>
+</label>
 
+<label class="option">
+<input type="radio" name="q14" value="B">
+<span class="option-letter">B</span>
+<span class="option-text">had better</span>
+</label>
 
+<label class="option">
+<input type="radio" name="q14" value="C">
+<span class="option-letter">C</span>
+<span class="option-text">let alone</span>
+</label>
 
-        <!-- Q8 -->
+<label class="option">
+<input type="radio" name="q14" value="D">
+<span class="option-letter">D</span>
+<span class="option-text">was born</span>
+</label>
 
-        <div class="question">
+</div>
 
-            <div class="question-title">
+<div class="feedback" id="f14"></div>
 
-                <span class="number">
-                    8.
-                </span>
+</div>
 
-                Pronoun Reference
 
-            </div>
+<!-- Q15 -->
 
+<div class="question-card">
 
-            <div class="instruction">
+<div class="question-number">15</div>
 
-                The pronouns are in bold in the text below.
-                Write what each pronoun refers to.
+<div class="question-title">
+_____ you reach the station, call me.
+</div>
 
-            </div>
+<div class="options">
 
+<label class="option">
+<input type="radio" name="q15" value="A">
+<span class="option-letter">A</span>
+<span class="option-text">As soon as</span>
+</label>
 
-            <div class="passage">
+<label class="option">
+<input type="radio" name="q15" value="B">
+<span class="option-letter">B</span>
+<span class="option-text">Would rather</span>
+</label>
 
-                Rafiq is a farmer.
-                <b>He</b> works hard in his field every day.
-                <b>His</b> wife helps <b>him</b> in the household chores.
-                <b>She</b> also takes care of <b>their</b> children,
-                and <b>they</b> go to school regularly.
+<label class="option">
+<input type="radio" name="q15" value="C">
+<span class="option-letter">C</span>
+<span class="option-text">There</span>
+</label>
 
-            </div>
+<label class="option">
+<input type="radio" name="q15" value="D">
+<span class="option-letter">D</span>
+<span class="option-text">Let alone</span>
+</label>
 
-        </div>
+</div>
 
+<div class="feedback" id="f15"></div>
 
+</div>
 
-        <!-- Q9 -->
 
-        <div class="question">
+<!-- Q16 -->
 
-            <div class="question-title">
+<div class="question-card">
 
-                <span class="number">
-                    9.
-                </span>
+<div class="question-number">16</div>
 
-                Choose the correct modifier from the brackets.
+<div class="question-title">
+I _____ read a book than watch TV.
+</div>
 
-            </div>
+<div class="options">
 
+<label class="option">
+<input type="radio" name="q16" value="A">
+<span class="option-letter">A</span>
+<span class="option-text">have to</span>
+</label>
 
-            <div class="items">
+<label class="option">
+<input type="radio" name="q16" value="B">
+<span class="option-letter">B</span>
+<span class="option-text">would rather</span>
+</label>
 
-                <div class="item">
-                    (a) He runs ____.
-                    (fast / quickly)
-                </div>
+<label class="option">
+<input type="radio" name="q16" value="C">
+<span class="option-letter">C</span>
+<span class="option-text">there</span>
+</label>
 
-                <div class="item">
-                    (b) She sang ____.
-                    (beautiful / beautifully)
-                </div>
+<label class="option">
+<input type="radio" name="q16" value="D">
+<span class="option-letter">D</span>
+<span class="option-text">had better</span>
+</label>
 
-                <div class="item">
-                    (c) The ____ fox jumped over the fence.
-                    (quick / quickly)
-                </div>
+</div>
 
-                <div class="item">
-                    (d) He is ____ about his work.
-                    (careful / carefully)
-                </div>
+<div class="feedback" id="f16"></div>
 
-                <div class="item">
-                    (e) They arrived ____ for the meeting.
-                    (late / lately)
-                </div>
+</div>
 
-                <div class="item">
-                    (f) It was a ____ exciting match.
-                    (real / really)
-                </div>
 
-                <div class="item">
-                    (g) She spoke ____ to the child.
-                    (soft / softly)
-                </div>
+<!-- Q17 -->
 
-                <div class="item">
-                    (h) He is ____ to solve this.
-                    (intelligent enough / enough intelligent)
-                </div>
+<div class="question-card">
 
-                <div class="item">
-                    (i) The train arrived ____ on time.
-                    (exact / exactly)
-                </div>
+<div class="question-number">17</div>
 
-                <div class="item">
-                    (j) He performed ____ in the exam.
-                    (good / well)
-                </div>
+<div class="question-title">
+He can't even write his name, _____ solve this problem.
+</div>
 
-            </div>
+<div class="options">
 
-        </div>
+<label class="option">
+<input type="radio" name="q17" value="A">
+<span class="option-letter">A</span>
+<span class="option-text">let alone</span>
+</label>
 
+<label class="option">
+<input type="radio" name="q17" value="B">
+<span class="option-letter">B</span>
+<span class="option-text">there</span>
+</label>
 
+<label class="option">
+<input type="radio" name="q17" value="C">
+<span class="option-letter">C</span>
+<span class="option-text">as soon as</span>
+</label>
 
-        <!-- Q10 -->
+<label class="option">
+<input type="radio" name="q17" value="D">
+<span class="option-letter">D</span>
+<span class="option-text">would rather</span>
+</label>
 
-        <div class="question">
+</div>
 
-            <div class="question-title">
+<div class="feedback" id="f17"></div>
 
-                <span class="number">
-                    10.
-                </span>
+</div>
 
-                Fill in the blanks with suitable connectors.
 
-            </div>
+<!-- Q18 -->
 
+<div class="question-card">
 
-            <div class="word-box">
+<div class="question-number">18</div>
 
-                <strong>
-                    Box:
-                </strong>
+<div class="question-title">
+_____ the weather _____ today?
+</div>
 
-                However,
-                Moreover,
-                Therefore,
-                Although,
-                As a result,
-                In addition,
-                On the other hand,
-                Meanwhile,
-                Nevertheless,
-                Consequently
+<div class="options">
 
-            </div>
+<label class="option">
+<input type="radio" name="q18" value="A">
+<span class="option-letter">A</span>
+<span class="option-text">What's, like</span>
+</label>
 
+<label class="option">
+<input type="radio" name="q18" value="B">
+<span class="option-letter">B</span>
+<span class="option-text">What does, look like</span>
+</label>
 
-            <div class="items">
+<label class="option">
+<input type="radio" name="q18" value="C">
+<span class="option-letter">C</span>
+<span class="option-text">What's, look like</span>
+</label>
 
-                <div class="item">
-                    (a) He studied hard.
-                    <span class="answer-line"></span>,
-                    he failed the exam.
-                </div>
+<label class="option">
+<input type="radio" name="q18" value="D">
+<span class="option-letter">D</span>
+<span class="option-text">What, does like</span>
+</label>
 
-                <div class="item">
-                    (b)
-                    <span class="answer-line"></span>
-                    he was tired, he kept working.
-                </div>
+</div>
 
-                <div class="item">
-                    (c) The road was blocked.
-                    <span class="answer-line"></span>,
-                    we took a different route.
-                </div>
+<div class="feedback" id="f18"></div>
 
-                <div class="item">
-                    (d) She is intelligent.
-                    <span class="answer-line"></span>,
-                    she is hardworking.
-                </div>
+</div>
 
-                <div class="item">
-                    (e) Prices are rising.
-                    <span class="answer-line"></span>,
-                    people are struggling to survive.
-                </div>
 
-            </div>
+<!-- Q19 -->
 
-        </div>
+<div class="question-card">
 
+<div class="question-number">19</div>
 
+<div class="question-title">
+You _____ leave now to catch the bus.
+</div>
 
-        <!-- Q11 -->
+<div class="options">
 
-        <div class="question">
+<label class="option">
+<input type="radio" name="q19" value="A">
+<span class="option-letter">A</span>
+<span class="option-text">have to</span>
+</label>
 
-            <div class="question-title">
+<label class="option">
+<input type="radio" name="q19" value="B">
+<span class="option-letter">B</span>
+<span class="option-text">would rather</span>
+</label>
 
-                <span class="number">
-                    11.
-                </span>
+<label class="option">
+<input type="radio" name="q19" value="C">
+<span class="option-letter">C</span>
+<span class="option-text">let alone</span>
+</label>
 
-                Write the synonym or antonym as asked.
+<label class="option">
+<input type="radio" name="q19" value="D">
+<span class="option-letter">D</span>
+<span class="option-text">was born</span>
+</label>
 
-            </div>
+</div>
 
+<div class="feedback" id="f19"></div>
 
-            <div class="items">
+</div>
 
-                <div class="item">
-                    (a) Synonym of “Huge” —
-                    <span class="answer-line"></span>
-                </div>
 
-                <div class="item">
-                    (b) Antonym of “Generous” —
-                    <span class="answer-line"></span>
-                </div>
+<!-- Q20 -->
 
-                <div class="item">
-                    (c) Synonym of “Ancient” —
-                    <span class="answer-line"></span>
-                </div>
+<div class="question-card">
 
-                <div class="item">
-                    (d) Antonym of “Optimistic” —
-                    <span class="answer-line"></span>
-                </div>
+<div class="question-number">20</div>
 
-                <div class="item">
-                    (e) Synonym of “Courage” —
-                    <span class="answer-line"></span>
-                </div>
+<div class="question-title">
+_____ the new teacher _____?
+</div>
 
-                <div class="item">
-                    (f) Antonym of “Scarce” —
-                    <span class="answer-line"></span>
-                </div>
+<div class="options">
 
-                <div class="item">
-                    (g) Synonym of “Swift” —
-                    <span class="answer-line"></span>
-                </div>
+<label class="option">
+<input type="radio" name="q20" value="A">
+<span class="option-letter">A</span>
+<span class="option-text">What's, like</span>
+</label>
 
-                <div class="item">
-                    (h) Antonym of “Genuine” —
-                    <span class="answer-line"></span>
-                </div>
+<label class="option">
+<input type="radio" name="q20" value="B">
+<span class="option-letter">B</span>
+<span class="option-text">What does, look like</span>
+</label>
 
-                <div class="item">
-                    (i) Synonym of “Obstacle” —
-                    <span class="answer-line"></span>
-                </div>
+<label class="option">
+<input type="radio" name="q20" value="C">
+<span class="option-letter">C</span>
+<span class="option-text">What, like</span>
+</label>
 
-                <div class="item">
-                    (j) Antonym of “Permit” —
-                    <span class="answer-line"></span>
-                </div>
+<label class="option">
+<input type="radio" name="q20" value="D">
+<span class="option-letter">D</span>
+<span class="option-text">There, look like</span>
+</label>
 
-            </div>
+</div>
 
-        </div>
+<div class="feedback" id="f20"></div>
 
+</div>
 
 
-        <!-- Q12 -->
+<!-- Q21 -->
 
-        <div class="question">
+<div class="question-card">
 
-            <div class="question-title">
+<div class="question-number">21</div>
 
-                <span class="number">
-                    12.
-                </span>
+<div class="question-title">
+If you work hard, _____.
+</div>
 
-                Punctuate the following passage.
+<div class="options">
 
-            </div>
+<label class="option">
+<input type="radio" name="q21" value="A">
+<span class="option-letter">A</span>
+<span class="option-text">you will succeed</span>
+</label>
 
+<label class="option">
+<input type="radio" name="q21" value="B">
+<span class="option-letter">B</span>
+<span class="option-text">you succeeded yesterday</span>
+</label>
 
-            <div class="instruction">
+<label class="option">
+<input type="radio" name="q21" value="C">
+<span class="option-letter">C</span>
+<span class="option-text">you had succeeded before</span>
+</label>
 
-                Use capital letters where necessary.
+<label class="option">
+<input type="radio" name="q21" value="D">
+<span class="option-letter">D</span>
+<span class="option-text">you were sleeping</span>
+</label>
 
-            </div>
+</div>
 
+<div class="feedback" id="f21"></div>
 
-            <div class="passage">
+</div>
 
-                rahim said to karim have you finished your homework
-                karim replied not yet i will do it after dinner
-                rahim then asked why are you so late
-                karim said i was helping my mother in the kitchen
 
-            </div>
+<!-- Q22 -->
 
-        </div>
+<div class="question-card">
 
+<div class="question-number">22</div>
 
-    </section>
+<div class="question-title">
+He was so tired that _____.
+</div>
 
+<div class="options">
 
+<label class="option">
+<input type="radio" name="q22" value="A">
+<span class="option-letter">A</span>
+<span class="option-text">he could not walk</span>
+</label>
 
-    <!-- =====================================================
-         PART B
-    ===================================================== -->
+<label class="option">
+<input type="radio" name="q22" value="B">
+<span class="option-letter">B</span>
+<span class="option-text">he will arrive tomorrow</span>
+</label>
 
-    <section class="section">
+<label class="option">
+<input type="radio" name="q22" value="C">
+<span class="option-letter">C</span>
+<span class="option-text">he is studying now</span>
+</label>
 
+<label class="option">
+<input type="radio" name="q22" value="D">
+<span class="option-letter">D</span>
+<span class="option-text">he goes to school</span>
+</label>
 
-        <div class="section-title">
+</div>
 
-            <i class="fas fa-pen-fancy"></i>
+<div class="feedback" id="f22"></div>
 
-            PART B: COMPOSITION
+</div>
 
-            <span style="margin-left:auto;font-size:.75rem;color:#ff72c5;">
-                40 Marks
-            </span>
 
-        </div>
+<!-- Q23 -->
 
+<div class="question-card">
 
+<div class="question-number">23</div>
 
-        <div class="composition">
+<div class="question-title">
+Unless you practice regularly, _____.
+</div>
 
-            <strong>
-                13.
-            </strong>
+<div class="options">
 
-            Write an application to the Principal of your college
-            requesting permission to organize a study tour.
+<label class="option">
+<input type="radio" name="q23" value="A">
+<span class="option-letter">A</span>
+<span class="option-text">you cannot improve</span>
+</label>
 
-        </div>
+<label class="option">
+<input type="radio" name="q23" value="B">
+<span class="option-letter">B</span>
+<span class="option-text">you improved yesterday</span>
+</label>
 
+<label class="option">
+<input type="radio" name="q23" value="C">
+<span class="option-letter">C</span>
+<span class="option-text">you had improved already</span>
+</label>
 
+<label class="option">
+<input type="radio" name="q23" value="D">
+<span class="option-letter">D</span>
+<span class="option-text">you are sleeping</span>
+</label>
 
-        <div class="composition">
+</div>
 
-            <strong>
-                14.
-            </strong>
+<div class="feedback" id="f23"></div>
 
-            Write a paragraph on
-            <b>“Global Warming”</b>
-            in about 200 words.
+</div>
 
-        </div>
 
+<!-- Q24 -->
 
+<div class="question-card">
 
-        <div class="composition">
+<div class="question-number">24</div>
 
-            <strong>
-                15.
-            </strong>
+<div class="question-title">
+No sooner had the bell rung than _____.
+</div>
 
-            Suppose you are a reporter.
-            Write a report on a road accident you witnessed recently,
-            for publication in a daily newspaper.
+<div class="options">
 
-        </div>
+<label class="option">
+<input type="radio" name="q24" value="A">
+<span class="option-letter">A</span>
+<span class="option-text">the students left the classroom</span>
+</label>
 
+<label class="option">
+<input type="radio" name="q24" value="B">
+<span class="option-letter">B</span>
+<span class="option-text">the students are sleeping</span>
+</label>
 
+<label class="option">
+<input type="radio" name="q24" value="C">
+<span class="option-letter">C</span>
+<span class="option-text">the teacher will arrive next week</span>
+</label>
 
-        <div class="composition">
+<label class="option">
+<input type="radio" name="q24" value="D">
+<span class="option-letter">D</span>
+<span class="option-text">the students study every day</span>
+</label>
 
-            <strong>
-                16.
-            </strong>
+</div>
 
-            Write an essay on
-            <b>“The Importance of Tree Plantation”</b>
-            in about 300 words.
+<div class="feedback" id="f24"></div>
 
-        </div>
+</div>
 
 
-    </section>
+<!-- Q25 -->
 
+<div class="question-card">
 
+<div class="question-number">25</div>
 
-    <!-- =====================================================
-         FOOTER
-    ===================================================== -->
+<div class="question-title">
+It is high time we _____.
+</div>
 
-    <div class="footer">
+<div class="options">
 
-        HSC English 2nd Paper • Model Test • 2026
+<label class="option">
+<input type="radio" name="q25" value="A">
+<span class="option-letter">A</span>
+<span class="option-text">went home</span>
+</label>
 
-    </div>
+<label class="option">
+<input type="radio" name="q25" value="B">
+<span class="option-letter">B</span>
+<span class="option-text">goes home</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q25" value="C">
+<span class="option-letter">C</span>
+<span class="option-text">will go home</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q25" value="D">
+<span class="option-letter">D</span>
+<span class="option-text">going home</span>
+</label>
+
+</div>
+
+<div class="feedback" id="f25"></div>
+
+</div>
+
+
+<!-- Q26 VERB -->
+
+<div class="question-card">
+
+<div class="question-number">26</div>
+
+<div class="question-title">
+She (go) _____ to school every day.
+</div>
+
+<div class="options">
+
+<label class="option">
+<input type="radio" name="q26" value="A">
+<span class="option-letter">A</span>
+<span class="option-text">go</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q26" value="B">
+<span class="option-letter">B</span>
+<span class="option-text">goes</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q26" value="C">
+<span class="option-letter">C</span>
+<span class="option-text">going</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q26" value="D">
+<span class="option-letter">D</span>
+<span class="option-text">gone</span>
+</label>
+
+</div>
+
+<div class="feedback" id="f26"></div>
+
+</div>
+
+
+<!-- Q27 -->
+
+<div class="question-card">
+
+<div class="question-number">27</div>
+
+<div class="question-title">
+By the time we arrived, the movie (already/start) _____.
+</div>
+
+<div class="options">
+
+<label class="option">
+<input type="radio" name="q27" value="A">
+<span class="option-letter">A</span>
+<span class="option-text">already starts</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q27" value="B">
+<span class="option-letter">B</span>
+<span class="option-text">had already started</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q27" value="C">
+<span class="option-letter">C</span>
+<span class="option-text">has already started</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q27" value="D">
+<span class="option-letter">D</span>
+<span class="option-text">already starting</span>
+</label>
+
+</div>
+
+<div class="feedback" id="f27"></div>
+
+</div>
+
+
+<!-- Q28 -->
+
+<div class="question-card">
+
+<div class="question-number">28</div>
+
+<div class="question-title">
+If it (rain) _____ tomorrow, we will stay home.
+</div>
+
+<div class="options">
+
+<label class="option">
+<input type="radio" name="q28" value="A">
+<span class="option-letter">A</span>
+<span class="option-text">rained</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q28" value="B">
+<span class="option-letter">B</span>
+<span class="option-text">rains</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q28" value="C">
+<span class="option-letter">C</span>
+<span class="option-text">will rain</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q28" value="D">
+<span class="option-letter">D</span>
+<span class="option-text">raining</span>
+</label>
+
+</div>
+
+<div class="feedback" id="f28"></div>
+
+</div>
+
+
+<!-- Q29 -->
+
+<div class="question-card">
+
+<div class="question-number">29</div>
+
+<div class="question-title">
+He has (finish) _____ his homework.
+</div>
+
+<div class="options">
+
+<label class="option">
+<input type="radio" name="q29" value="A">
+<span class="option-letter">A</span>
+<span class="option-text">finish</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q29" value="B">
+<span class="option-letter">B</span>
+<span class="option-text">finished</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q29" value="C">
+<span class="option-letter">C</span>
+<span class="option-text">finishing</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q29" value="D">
+<span class="option-letter">D</span>
+<span class="option-text">finishes</span>
+</label>
+
+</div>
+
+<div class="feedback" id="f29"></div>
+
+</div>
+
+
+<!-- Q30 -->
+
+<div class="question-card">
+
+<div class="question-number">30</div>
+
+<div class="question-title">
+The news (be) _____ surprising.
+</div>
+
+<div class="options">
+
+<label class="option">
+<input type="radio" name="q30" value="A">
+<span class="option-letter">A</span>
+<span class="option-text">are</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q30" value="B">
+<span class="option-letter">B</span>
+<span class="option-text">is</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q30" value="C">
+<span class="option-text">were</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q30" value="D">
+<span class="option-text">be</span>
+</label>
+
+</div>
+
+<div class="feedback" id="f30"></div>
+
+</div>
+
+
+<!-- Q31 -->
+
+<div class="question-card">
+
+<div class="question-number">31</div>
+
+<div class="question-title">
+They (play) _____ football when it started to rain.
+</div>
+
+<div class="options">
+
+<label class="option">
+<input type="radio" name="q31" value="A">
+<span class="option-letter">A</span>
+<span class="option-text">played</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q31" value="B">
+<span class="option-letter">B</span>
+<span class="option-text">were playing</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q31" value="C">
+<span class="option-letter">C</span>
+<span class="option-text">have played</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q31" value="D">
+<span class="option-letter">D</span>
+<span class="option-text">will play</span>
+</label>
+
+</div>
+
+<div class="feedback" id="f31"></div>
+
+</div>
+
+
+<!-- Q32 -->
+
+<div class="question-card">
+
+<div class="question-number">32</div>
+
+<div class="question-title">
+I wish I (know) _____ the answer.
+</div>
+
+<div class="options">
+
+<label class="option">
+<input type="radio" name="q32" value="A">
+<span class="option-letter">A</span>
+<span class="option-text">know</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q32" value="B">
+<span class="option-letter">B</span>
+<span class="option-text">knew</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q32" value="C">
+<span class="option-letter">C</span>
+<span class="option-text">knowing</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q32" value="D">
+<span class="option-letter">D</span>
+<span class="option-text">known</span>
+</label>
+
+</div>
+
+<div class="feedback" id="f32"></div>
+
+</div>
+
+
+<!-- Q33 -->
+
+<div class="question-card">
+
+<div class="question-number">33</div>
+
+<div class="question-title">
+Each of the students (have) _____ a book.
+</div>
+
+<div class="options">
+
+<label class="option">
+<input type="radio" name="q33" value="A">
+<span class="option-letter">A</span>
+<span class="option-text">have</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q33" value="B">
+<span class="option-letter">B</span>
+<span class="option-text">has</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q33" value="C">
+<span class="option-letter">C</span>
+<span class="option-text">having</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q33" value="D">
+<span class="option-text">had</span>
+</label>
+
+</div>
+
+<div class="feedback" id="f33"></div>
+
+</div>
+
+
+<!-- Q34 -->
+
+<div class="question-card">
+
+<div class="question-number">34</div>
+
+<div class="question-title">
+The police (be) _____ searching for the thief.
+</div>
+
+<div class="options">
+
+<label class="option">
+<input type="radio" name="q34" value="A">
+<span class="option-letter">A</span>
+<span class="option-text">is</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q34" value="B">
+<span class="option-letter">B</span>
+<span class="option-text">are</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q34" value="C">
+<span class="option-letter">C</span>
+<span class="option-text">was</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q34" value="D">
+<span class="option-letter">D</span>
+<span class="option-text">be</span>
+</label>
+
+</div>
+
+<div class="feedback" id="f34"></div>
+
+</div>
+
+
+<!-- Q35 -->
+
+<div class="question-card">
+
+<div class="question-number">35</div>
+
+<div class="question-title">
+She (not/complete) _____ the assignment yet.
+</div>
+
+<div class="options">
+
+<label class="option">
+<input type="radio" name="q35" value="A">
+<span class="option-letter">A</span>
+<span class="option-text">has not completed</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q35" value="B">
+<span class="option-letter">B</span>
+<span class="option-text">did not complete</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q35" value="C">
+<span class="option-letter">C</span>
+<span class="option-text">does not completed</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q35" value="D">
+<span class="option-letter">D</span>
+<span class="option-text">not completing</span>
+</label>
+
+</div>
+
+<div class="feedback" id="f35"></div>
+
+</div>
+
+
+<!-- Q36 TRANSFORMATION -->
+
+<div class="question-card">
+
+<div class="question-number">36</div>
+
+<div class="question-title">
+Change into “so…that”: “He is too weak to walk.”
+</div>
+
+<div class="options">
+
+<label class="option">
+<input type="radio" name="q36" value="A">
+<span class="option-letter">A</span>
+<span class="option-text">He is so weak that he cannot walk.</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q36" value="B">
+<span class="option-letter">B</span>
+<span class="option-text">He is so weak that he can walk.</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q36" value="C">
+<span class="option-letter">C</span>
+<span class="option-text">He was so weak that he walked.</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q36" value="D">
+<span class="option-letter">D</span>
+<span class="option-text">He is weak so that he walks.</span>
+</label>
+
+</div>
+
+<div class="feedback" id="f36"></div>
+
+</div>
+
+
+<!-- Q37 -->
+
+<div class="question-card">
+
+<div class="question-number">37</div>
+
+<div class="question-title">
+Choose the superlative form: “No other boy in the class is as tall as Rakib.”
+</div>
+
+<div class="options">
+
+<label class="option">
+<input type="radio" name="q37" value="A">
+<span class="option-letter">A</span>
+<span class="option-text">Rakib is the tallest boy in the class.</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q37" value="B">
+<span class="option-letter">B</span>
+<span class="option-text">Rakib is a taller boy than everyone.</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q37" value="C">
+<span class="option-letter">C</span>
+<span class="option-text">Rakib is tall than all boys.</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q37" value="D">
+<span class="option-letter">D</span>
+<span class="option-text">Rakib was the tallest yesterday.</span>
+</label>
+
+</div>
+
+<div class="feedback" id="f37"></div>
+
+</div>
+
+
+<!-- Q38 -->
+
+<div class="question-card">
+
+<div class="question-number">38</div>
+
+<div class="question-title">
+Change into active voice: “Truth cannot be denied.”
+</div>
+
+<div class="options">
+
+<label class="option">
+<input type="radio" name="q38" value="A">
+<span class="option-letter">A</span>
+<span class="option-text">Nobody can deny truth.</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q38" value="B">
+<span class="option-letter">B</span>
+<span class="option-text">Nobody denied truth yesterday.</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q38" value="C">
+<span class="option-letter">C</span>
+<span class="option-text">Truth denies nobody.</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q38" value="D">
+<span class="option-letter">D</span>
+<span class="option-text">Everyone denied truth.</span>
+</label>
+
+</div>
+
+<div class="feedback" id="f38"></div>
+
+</div>
+
+
+<!-- Q39 -->
+
+<div class="question-card">
+
+<div class="question-number">39</div>
+
+<div class="question-title">
+Use “No sooner…than”: “As soon as the teacher entered, the students stood up.”
+</div>
+
+<div class="options">
+
+<label class="option">
+<input type="radio" name="q39" value="A">
+<span class="option-letter">A</span>
+<span class="option-text">No sooner had the teacher entered than the students stood up.</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q39" value="B">
+<span class="option-letter">B</span>
+<span class="option-text">No sooner the teacher entered when students stood up.</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q39" value="C">
+<span class="option-letter">C</span>
+<span class="option-text">No sooner did the teacher entered than students stood.</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q39" value="D">
+<span class="option-letter">D</span>
+<span class="option-text">No sooner had teacher entering when students stood.</span>
+</label>
+
+</div>
+
+<div class="feedback" id="f39"></div>
+
+</div>
+
+
+<!-- Q40 -->
+
+<div class="question-card">
+
+<div class="question-number">40</div>
+
+<div class="question-title">
+Change into affirmative: “Unless you work hard, you cannot succeed.”
+</div>
+
+<div class="options">
+
+<label class="option">
+<input type="radio" name="q40" value="A">
+<span class="option-letter">A</span>
+<span class="option-text">You must work hard to succeed.</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q40" value="B">
+<span class="option-letter">B</span>
+<span class="option-text">You cannot work hard and succeed.</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q40" value="C">
+<span class="option-letter">C</span>
+<span class="option-text">You should not work hard.</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q40" value="D">
+<span class="option-letter">D</span>
+<span class="option-text">You failed because you worked hard.</span>
+</label>
+
+</div>
+
+<div class="feedback" id="f40"></div>
+
+</div>
+
+
+<!-- Q41 NARRATION -->
+
+<div class="question-card">
+
+<div class="question-number">41</div>
+
+<div class="question-title">
+Change into indirect speech: The teacher said to the students, “Do your homework regularly.”
+</div>
+
+<div class="options">
+
+<label class="option">
+<input type="radio" name="q41" value="A">
+<span class="option-letter">A</span>
+<span class="option-text">The teacher advised the students to do their homework regularly.</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q41" value="B">
+<span class="option-letter">B</span>
+<span class="option-text">The teacher said that the students do homework regularly.</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q41" value="C">
+<span class="option-letter">C</span>
+<span class="option-text">The teacher asked the students that do homework.</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q41" value="D">
+<span class="option-letter">D</span>
+<span class="option-text">The teacher told that students did their homework.</span>
+</label>
+
+</div>
+
+<div class="feedback" id="f41"></div>
+
+</div>
+
+
+<!-- Q42 -->
+
+<div class="question-card">
+
+<div class="question-number">42</div>
+
+<div class="question-title">
+Change into indirect speech: She said, “What a beautiful flower it is!”
+</div>
+
+<div class="options">
+
+<label class="option">
+<input type="radio" name="q42" value="A">
+<span class="option-letter">A</span>
+<span class="option-text">She exclaimed with admiration that it was a very beautiful flower.</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q42" value="B">
+<span class="option-letter">B</span>
+<span class="option-text">She asked whether the flower was beautiful.</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q42" value="C">
+<span class="option-letter">C</span>
+<span class="option-text">She said that the flower is ugly.</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q42" value="D">
+<span class="option-text">She exclaimed that it was not a flower.</span>
+</label>
+
+</div>
+
+<div class="feedback" id="f42"></div>
+
+</div>
+
+
+<!-- Q43 -->
+
+<div class="question-card">
+
+<div class="question-number">43</div>
+
+<div class="question-title">
+Change into indirect speech: He said to me, “Where do you live?”
+</div>
+
+<div class="options">
+
+<label class="option">
+<input type="radio" name="q43" value="A">
+<span class="option-letter">A</span>
+<span class="option-text">He asked me where I lived.</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q43" value="B">
+<span class="option-letter">B</span>
+<span class="option-text">He told me where did I live.</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q43" value="C">
+<span class="option-letter">C</span>
+<span class="option-text">He asked me where do I live.</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q43" value="D">
+<span class="option-letter">D</span>
+<span class="option-text">He said where I am living?</span>
+</label>
+
+</div>
+
+<div class="feedback" id="f43"></div>
+
+</div>
+
+
+<!-- Q44 -->
+
+<div class="question-card">
+
+<div class="question-number">44</div>
+
+<div class="question-title">
+Change into indirect speech: The boy said, “I am playing football now.”
+</div>
+
+<div class="options">
+
+<label class="option">
+<input type="radio" name="q44" value="A">
+<span class="option-letter">A</span>
+<span class="option-text">The boy said that he was playing football then.</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q44" value="B">
+<span class="option-letter">B</span>
+<span class="option-text">The boy said that I was playing football now.</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q44" value="C">
+<span class="option-letter">C</span>
+<span class="option-text">The boy said he is playing football then.</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q44" value="D">
+<span class="option-letter">D</span>
+<span class="option-text">The boy asked that he played football.</span>
+</label>
+
+</div>
+
+<div class="feedback" id="f44"></div>
+
+</div>
+
+
+<!-- Q45 -->
+
+<div class="question-card">
+
+<div class="question-number">45</div>
+
+<div class="question-title">
+Change into indirect speech: “Let's go for a walk,” said Rima.
+</div>
+
+<div class="options">
+
+<label class="option">
+<input type="radio" name="q45" value="A">
+<span class="option-letter">A</span>
+<span class="option-text">Rima suggested that we should go for a walk.</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q45" value="B">
+<span class="option-letter">B</span>
+<span class="option-text">Rima ordered us to go for a walk.</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q45" value="C">
+<span class="option-letter">C</span>
+<span class="option-text">Rima asked whether we walked.</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q45" value="D">
+<span class="option-letter">D</span>
+<span class="option-text">Rima said that she walks alone.</span>
+</label>
+
+</div>
+
+<div class="feedback" id="f45"></div>
+
+</div>
+
+
+<!-- Q46 PRONOUN -->
+
+<div class="question-card">
+
+<div class="question-number">46</div>
+
+<div class="question-title">
+In “Rafiq is a farmer. He works hard in his field,” who does “He” refer to?
+</div>
+
+<div class="options">
+
+<label class="option">
+<input type="radio" name="q46" value="A">
+<span class="option-letter">A</span>
+<span class="option-text">Rafiq</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q46" value="B">
+<span class="option-letter">B</span>
+<span class="option-text">Rafiq's wife</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q46" value="C">
+<span class="option-letter">C</span>
+<span class="option-text">The children</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q46" value="D">
+<span class="option-letter">D</span>
+<span class="option-text">The household</span>
+</label>
+
+</div>
+
+<div class="feedback" id="f46"></div>
+
+</div>
+
+
+<!-- Q47 -->
+
+<div class="question-card">
+
+<div class="question-number">47</div>
+
+<div class="question-title">
+Who does “His” refer to in “His wife helps him”?
+</div>
+
+<div class="options">
+
+<label class="option">
+<input type="radio" name="q47" value="A">
+<span class="option-letter">A</span>
+<span class="option-text">Rafiq</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q47" value="B">
+<span class="option-letter">B</span>
+<span class="option-text">The children</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q47" value="C">
+<span class="option-letter">C</span>
+<span class="option-text">The wife</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q47" value="D">
+<span class="option-letter">D</span>
+<span class="option-text">The farmer's mother</span>
+</label>
+
+</div>
+
+<div class="feedback" id="f47"></div>
+
+</div>
+
+
+<!-- Q48 -->
+
+<div class="question-card">
+
+<div class="question-number">48</div>
+
+<div class="question-title">
+Who does “him” refer to in “His wife helps him”?
+</div>
+
+<div class="options">
+
+<label class="option">
+<input type="radio" name="q48" value="A">
+<span class="option-letter">A</span>
+<span class="option-text">Rafiq</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q48" value="B">
+<span class="option-letter">B</span>
+<span class="option-text">The wife</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q48" value="C">
+<span class="option-letter">C</span>
+<span class="option-text">The children</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q48" value="D">
+<span class="option-letter">D</span>
+<span class="option-text">The teacher</span>
+</label>
+
+</div>
+
+<div class="feedback" id="f48"></div>
+
+</div>
+
+
+<!-- Q49 -->
+
+<div class="question-card">
+
+<div class="question-number">49</div>
+
+<div class="question-title">
+Who does “their” refer to in “She also takes care of their children”?
+</div>
+
+<div class="options">
+
+<label class="option">
+<input type="radio" name="q49" value="A">
+<span class="option-letter">A</span>
+<span class="option-text">Rafiq and his wife</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q49" value="B">
+<span class="option-letter">B</span>
+<span class="option-text">The children only</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q49" value="C">
+<span class="option-letter">C</span>
+<span class="option-text">Rafiq's neighbors</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q49" value="D">
+<span class="option-letter">D</span>
+<span class="option-text">The teacher and students</span>
+</label>
+
+</div>
+
+<div class="feedback" id="f49"></div>
+
+</div>
+
+
+<!-- Q50 -->
+
+<div class="question-card">
+
+<div class="question-number">50</div>
+
+<div class="question-title">
+Who does “they” refer to in “they go to school regularly”?
+</div>
+
+<div class="options">
+
+<label class="option">
+<input type="radio" name="q50" value="A">
+<span class="option-letter">A</span>
+<span class="option-text">Rafiq and his wife</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q50" value="B">
+<span class="option-letter">B</span>
+<span class="option-text">Their children</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q50" value="C">
+<span class="option-letter">C</span>
+<span class="option-text">The household chores</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q50" value="D">
+<span class="option-letter">D</span>
+<span class="option-text">The farmers</span>
+</label>
+
+</div>
+
+<div class="feedback" id="f50"></div>
+
+</div>
+
+
+<!-- Q51 MODIFIER -->
+
+<div class="question-card">
+
+<div class="question-number">51</div>
+
+<div class="question-title">
+Choose the correct modifier: “He runs _____.”
+</div>
+
+<div class="options">
+
+<label class="option">
+<input type="radio" name="q51" value="A">
+<span class="option-letter">A</span>
+<span class="option-text">fast</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q51" value="B">
+<span class="option-letter">B</span>
+<span class="option-text">beautiful</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q51" value="C">
+<span class="option-letter">C</span>
+<span class="option-text">careful</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q51" value="D">
+<span class="option-letter">D</span>
+<span class="option-text">good</span>
+</label>
+
+</div>
+
+<div class="feedback" id="f51"></div>
+
+</div>
+
+
+<!-- Q52 -->
+
+<div class="question-card">
+
+<div class="question-number">52</div>
+
+<div class="question-title">
+Choose the correct modifier: “She sang _____.”
+</div>
+
+<div class="options">
+
+<label class="option">
+<input type="radio" name="q52" value="A">
+<span class="option-letter">A</span>
+<span class="option-text">beautiful</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q52" value="B">
+<span class="option-letter">B</span>
+<span class="option-text">beautifully</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q52" value="C">
+<span class="option-letter">C</span>
+<span class="option-text">careful</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q52" value="D">
+<span class="option-letter">D</span>
+<span class="option-text">exact</span>
+</label>
+
+</div>
+
+<div class="feedback" id="f52"></div>
+
+</div>
+
+
+<!-- Q53 -->
+
+<div class="question-card">
+
+<div class="question-number">53</div>
+
+<div class="question-title">
+“The _____ fox jumped over the fence.”
+</div>
+
+<div class="options">
+
+<label class="option">
+<input type="radio" name="q53" value="A">
+<span class="option-letter">A</span>
+<span class="option-text">quick</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q53" value="B">
+<span class="option-letter">B</span>
+<span class="option-text">quickly</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q53" value="C">
+<span class="option-letter">C</span>
+<span class="option-text">quickness</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q53" value="D">
+<span class="option-letter">D</span>
+<span class="option-text">quicken</span>
+</label>
+
+</div>
+
+<div class="feedback" id="f53"></div>
+
+</div>
+
+
+<!-- Q54 -->
+
+<div class="question-card">
+
+<div class="question-number">54</div>
+
+<div class="question-title">
+“He is _____ about his work.”
+</div>
+
+<div class="options">
+
+<label class="option">
+<input type="radio" name="q54" value="A">
+<span class="option-letter">A</span>
+<span class="option-text">careful</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q54" value="B">
+<span class="option-letter">B</span>
+<span class="option-text">carefully</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q54" value="C">
+<span class="option-text">care</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q54" value="D">
+<span class="option-text">caringly</span>
+</label>
+
+</div>
+
+<div class="feedback" id="f54"></div>
+
+</div>
+
+
+<!-- Q55 -->
+
+<div class="question-card">
+
+<div class="question-number">55</div>
+
+<div class="question-title">
+“They arrived _____ for the meeting.”
+</div>
+
+<div class="options">
+
+<label class="option">
+<input type="radio" name="q55" value="A">
+<span class="option-letter">A</span>
+<span class="option-text">late</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q55" value="B">
+<span class="option-letter">B</span>
+<span class="option-text">lately</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q55" value="C">
+<span class="option-letter">C</span>
+<span class="option-text">latest</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q55" value="D">
+<span class="option-letter">D</span>
+<span class="option-text">laterly</span>
+</label>
+
+</div>
+
+<div class="feedback" id="f55"></div>
+
+</div>
+
+
+<!-- Q56 CONNECTOR -->
+
+<div class="question-card">
+
+<div class="question-number">56</div>
+
+<div class="question-title">
+“He studied hard. _____, he failed the exam.”
+</div>
+
+<div class="options">
+
+<label class="option">
+<input type="radio" name="q56" value="A">
+<span class="option-letter">A</span>
+<span class="option-text">However</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q56" value="B">
+<span class="option-letter">B</span>
+<span class="option-text">Therefore</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q56" value="C">
+<span class="option-text">Moreover</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q56" value="D">
+<span class="option-text">In addition</span>
+</label>
+
+</div>
+
+<div class="feedback" id="f56"></div>
+
+</div>
+
+
+<!-- Q57 -->
+
+<div class="question-card">
+
+<div class="question-number">57</div>
+
+<div class="question-title">
+“_____ he was tired, he kept working.”
+</div>
+
+<div class="options">
+
+<label class="option">
+<input type="radio" name="q57" value="A">
+<span class="option-letter">A</span>
+<span class="option-text">Although</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q57" value="B">
+<span class="option-letter">B</span>
+<span class="option-text">Therefore</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q57" value="C">
+<span class="option-text">Moreover</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q57" value="D">
+<span class="option-text">Consequently</span>
+</label>
+
+</div>
+
+<div class="feedback" id="f57"></div>
+
+</div>
+
+
+<!-- Q58 -->
+
+<div class="question-card">
+
+<div class="question-number">58</div>
+
+<div class="question-title">
+“The road was blocked. _____, we took a different route.”
+</div>
+
+<div class="options">
+
+<label class="option">
+<input type="radio" name="q58" value="A">
+<span class="option-letter">A</span>
+<span class="option-text">Therefore</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q58" value="B">
+<span class="option-letter">B</span>
+<span class="option-text">Although</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q58" value="C">
+<span class="option-text">Meanwhile</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q58" value="D">
+<span class="option-text">Moreover</span>
+</label>
+
+</div>
+
+<div class="feedback" id="f58"></div>
+
+</div>
+
+
+<!-- Q59 -->
+
+<div class="question-card">
+
+<div class="question-number">59</div>
+
+<div class="question-title">
+“She is intelligent. _____, she is hardworking.”
+</div>
+
+<div class="options">
+
+<label class="option">
+<input type="radio" name="q59" value="A">
+<span class="option-letter">A</span>
+<span class="option-text">Moreover</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q59" value="B">
+<span class="option-letter">B</span>
+<span class="option-text">However</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q59" value="C">
+<span class="option-text">Therefore</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q59" value="D">
+<span class="option-text">Nevertheless</span>
+</label>
+
+</div>
+
+<div class="feedback" id="f59"></div>
+
+</div>
+
+
+<!-- Q60 -->
+
+<div class="question-card">
+
+<div class="question-number">60</div>
+
+<div class="question-title">
+“Prices are rising. _____, people are struggling to survive.”
+</div>
+
+<div class="options">
+
+<label class="option">
+<input type="radio" name="q60" value="A">
+<span class="option-letter">A</span>
+<span class="option-text">As a result</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q60" value="B">
+<span class="option-letter">B</span>
+<span class="option-text">Although</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q60" value="C">
+<span class="option-text">Moreover</span>
+</label>
+
+<label class="option">
+<input type="radio" name="q60" value="D">
+<span class="option-text">Meanwhile</span>
+</label>
+
+</div>
+
+<div class="feedback" id="f60"></div>
+
+</div>
+
+
+<!-- =========================================================
+     SUBMIT
+========================================================= -->
+
+<div class="submit-area">
+
+<button
+    type="button"
+    class="submit-btn"
+    id="submitBtn"
+    onclick="submitExam()"
+>
+
+<i class="fas fa-check-circle"></i>
+
+&nbsp; Submit Exam
+
+</button>
+
+</div>
+
+</form>
+
+
+<!-- =========================================================
+     COMPOSITION
+========================================================= -->
+
+<section class="composition-section">
+
+<div class="composition-title">
+
+<i class="fas fa-pen-fancy"></i>
+
+PART B: COMPOSITION — 40 MARKS
+
+</div>
+
+<div class="composition-item">
+
+<strong>13. Application</strong>
+
+Write an application to the Principal of your college
+requesting permission to organize a study tour.
+
+</div>
+
+<div class="composition-item">
+
+<strong>14. Paragraph</strong>
+
+Write a paragraph on
+<b>“Global Warming”</b>
+in about 200 words.
+
+</div>
+
+<div class="composition-item">
+
+<strong>15. Report</strong>
+
+Suppose you are a reporter. Write a report on a road
+accident you witnessed recently, for publication in a daily newspaper.
+
+</div>
+
+<div class="composition-item">
+
+<strong>16. Essay</strong>
+
+Write an essay on
+<b>“The Importance of Tree Plantation”</b>
+in about 300 words.
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<div class="footer">
+
+HSC English 2nd Paper • Interactive Quiz Exam • 2026
+
+</div>
 
 
 </div>
 
 
-
 <script>
 
-    function openEnglishPractice(event) {
+/* =========================================================
+   ANSWER KEY
+========================================================= */
 
-        /*
-         * If this file is inside the same directory as index.html,
-         * this simply returns to the main page.
-         *
-         * The English Practice page itself can then be opened
-         * from the main profile/home screen.
-         */
+const answers = {
+
+    q1: "D",
+    q2: "B",
+    q3: "A",
+    q4: "A",
+    q5: "B",
+
+    q6: "A",
+    q7: "A",
+    q8: "A",
+    q9: "A",
+    q10: "A",
+
+    q11: "A",
+    q12: "B",
+    q13: "B",
+    q14: "B",
+    q15: "A",
+    q16: "B",
+    q17: "A",
+    q18: "A",
+    q19: "A",
+    q20: "B",
+
+    q21: "A",
+    q22: "A",
+    q23: "A",
+    q24: "A",
+    q25: "A",
+
+    q26: "B",
+    q27: "B",
+    q28: "B",
+    q29: "B",
+    q30: "B",
+    q31: "B",
+    q32: "B",
+    q33: "B",
+    q34: "B",
+    q35: "A",
+
+    q36: "A",
+    q37: "A",
+    q38: "A",
+    q39: "A",
+    q40: "A",
+
+    q41: "A",
+    q42: "A",
+    q43: "A",
+    q44: "A",
+    q45: "A",
+
+    q46: "A",
+    q47: "A",
+    q48: "A",
+    q49: "A",
+    q50: "B",
+
+    q51: "A",
+    q52: "B",
+    q53: "A",
+    q54: "A",
+    q55: "A",
+
+    q56: "A",
+    q57: "A",
+    q58: "A",
+    q59: "A",
+    q60: "A"
+
+};
+
+
+/* =========================================================
+   EXPLANATIONS
+========================================================= */
+
+const explanations = {
+
+q1: {
+A: "A is not appropriate because the sentence refers to reading in a specific general context.",
+B: "An cannot be used because reading begins with the consonant sound /r/ here.",
+C: "The is possible in some contexts, but this exercise's intended construction treats reading as a general activity.",
+D: "No article is used when referring to reading as a general activity."
+},
+
+q2: {
+A: "The first blank requires 'The' for the newspaper as a general medium, not 'A'.",
+B: "The refers to newspapers as a medium, while a means one powerful medium.",
+C: "The second blank cannot be 'the' because 'a powerful medium' is the intended singular countable construction.",
+D: "The second blank needs the indefinite article 'a'."
+},
+
+q3: {
+A: "An is used before 'idea' because idea begins with a vowel sound; 'the world' refers to the known world.",
+B: "A does not fit before idea in this sentence because the vowel sound requires 'an'.",
+C: "The is not the appropriate article before idea here.",
+D: "The article before idea is required."
+},
+
+q4: {
+A: "A good reader refers to any good reader, while 'different subjects' is used without an article.",
+B: "The is not needed before different subjects in this general statement.",
+C: "An is incorrect before the consonant sound in good.",
+D: "A is not used before different subjects in this general construction."
+},
+
+q5: {
+A: "A cannot be used before 'early' because early begins with a vowel sound.",
+B: "An is used before 'early' because it begins with the vowel sound /ɜː/.",
+C: "The is not required in the expression 'from an early age'.",
+D: "An article is required before 'early age'."
+},
+
+q6: {
+A: "The standard expressions are 'in Bangladesh' and 'linked to agriculture'.",
+B: "The prepositions do not form the required expressions.",
+C: "At Bangladesh is not the correct expression.",
+D: "On Bangladesh and linked by do not fit the sentence."
+},
+
+q7: {
+A: "The standard expressions are 'depend on' and 'for their livelihood'.",
+B: "Depend in is not the required verb-preposition combination.",
+C: "Depend at is incorrect in this context.",
+D: "Depend for does not fit the required construction."
+},
+
+q8: {
+A: "We say 'in the field' and use 'from dawn to dusk' for the time range.",
+B: "On the field does not fit the intended meaning, and 'at dusk' breaks the from-to structure.",
+C: "At the field is not the normal expression here.",
+D: "By the field is not appropriate."
+},
+
+q9: {
+A: "During the rainy season identifies the time, and 'result in' is the standard expression.",
+B: "At the rainy season is not the normal expression.",
+C: "Result at is incorrect.",
+D: "Neither preposition fits the required expressions."
+},
+
+q10: {
+A: "The verb 'believe' commonly takes the preposition 'in' when expressing faith or confidence in something.",
+B: "Believe on is not the intended construction here.",
+C: "Believe at is incorrect.",
+D: "Believe for does not fit the sentence."
+},
+
+q11: {
+A: "The fixed phrase 'was born' is used to state someone's birth.",
+B: "Had better expresses advice and cannot describe birth.",
+C: "Would rather expresses preference.",
+D: "Have to expresses necessity."
+},
+
+q12: {
+A: "There is normally used to introduce existence or presence, not this impersonal judgment.",
+B: "It works as the introductory subject in 'It is not easy to...'.",
+C: "Let alone means 'not to mention' and does not fit.",
+D: "As soon as expresses time."
+},
+
+q13: {
+A: "It is not used to introduce the existence of a library.",
+B: "There is used to introduce something that exists: 'There is a library...'.",
+C: "Had better expresses advice.",
+D: "Let alone does not introduce existence."
+},
+
+q14: {
+A: "Would rather expresses preference, not advice.",
+B: "Had better gives strong advice or recommendation.",
+C: "Let alone does not fit the sentence.",
+D: "Was born cannot express advice."
+},
+
+q15: {
+A: "As soon as means immediately after a particular event occurs.",
+B: "Would rather expresses preference.",
+C: "There does not fit before the subject and verb.",
+D: "Let alone means 'not to mention'."
+},
+
+q16: {
+A: "Have to expresses necessity.",
+B: "Would rather...than expresses preference between two alternatives.",
+C: "There does not fit the construction.",
+D: "Had better gives advice rather than preference."
+},
+
+q17: {
+A: "Let alone is used to emphasize that if someone cannot do the easier thing, they certainly cannot do the harder one.",
+B: "There cannot connect the two contrasting abilities here.",
+C: "As soon as expresses time.",
+D: "Would rather expresses preference."
+},
+
+q18: {
+A: "What's the weather like? asks about the condition or character of the weather.",
+B: "What does...look like is normally used to ask about someone's or something's appearance, not the standard construction for weather here.",
+C: "What's...look like is grammatically incorrect.",
+D: "The word order is incorrect."
+},
+
+q19: {
+A: "Have to expresses necessity: leaving now is necessary to catch the bus.",
+B: "Would rather expresses preference.",
+C: "Let alone does not fit.",
+D: "Was born is unrelated to the sentence."
+},
+
+q20: {
+A: "What's...like asks about general character or quality.",
+B: "What does...look like asks about physical appearance.",
+C: "The question structure is incomplete.",
+D: "There does not form the required question."
+},
+
+q21: {
+A: "The first conditional commonly uses present simple in the if-clause and will + base verb in the result clause.",
+B: "The time reference does not match the conditional structure.",
+C: "Past perfect is not required here.",
+D: "Sleeping does not logically complete the condition."
+},
+
+q22: {
+A: "So...that introduces a result: his tiredness was so great that he could not walk.",
+B: "The future tense does not match the past context.",
+C: "The present continuous does not complete the past result.",
+D: "The simple present does not express the intended result."
+},
+
+q23: {
+A: "Unless means 'if not', so regular practice is necessary for improvement.",
+B: "The past form does not complete the general condition.",
+C: "Past perfect is not required.",
+D: "Sleeping does not express the intended result."
+},
+
+q24: {
+A: "No sooner...than expresses two closely successive past events.",
+B: "The present continuous does not match the construction.",
+C: "The future is inconsistent with the past event.",
+D: "The simple present does not complete the past sequence."
+},
+
+q25: {
+A: "After 'It is high time', a past form such as 'went' is conventionally used to express an action that should happen now.",
+B: "Goes does not follow the standard high-time construction.",
+C: "Will go does not fit the conventional structure.",
+D: "A gerund alone cannot complete the clause."
+},
+
+q26: {
+A: "With the singular subject 'She', the simple present requires 'goes'.",
+B: "Goes agrees with the singular subject 'She'.",
+C: "Going would require an auxiliary.",
+D: "Gone is a past participle and needs an auxiliary."
+},
+
+q27: {
+A: "The simple present does not show that the movie started before our arrival.",
+B: "Past perfect correctly shows the earlier past action.",
+C: "Present perfect does not fit the past reference point.",
+D: "The participle alone cannot form the required verb phrase."
+},
+
+q28: {
+A: "In the first conditional, the if-clause normally uses present simple.",
+B: "Rains is the present-simple form required with 'it'.",
+C: "Will rain is not normally used in the if-clause of the first conditional.",
+D: "Raining needs an auxiliary."
+},
+
+q29: {
+A: "After 'has', the past participle is required.",
+B: "Finished is the past participle of finish.",
+C: "Finishing cannot follow 'has' in this perfect construction.",
+D: "Finishes is a simple-present form."
+},
+
+q30: {
+A: "News is treated as a singular uncountable noun.",
+B: "The correct singular form is 'is'.",
+C: "Were is plural/past and does not agree with the present construction.",
+D: "The bare form 'be' cannot follow the subject here."
+},
+
+q31: {
+A: "Played does not show an action that was in progress when the rain started.",
+B: "Were playing correctly expresses an ongoing past action interrupted by another past event.",
+C: "Present perfect does not fit the past-time clause.",
+D: "Future tense is inappropriate."
+},
+
+q32: {
+A: "After 'I wish' for an unreal present situation, the past form is used.",
+B: "Knew is the appropriate past form of know.",
+C: "Knowing cannot complete this clause.",
+D: "Known is a past participle and needs an auxiliary."
+},
+
+q33: {
+A: "Each is grammatically singular.",
+B: "Has agrees with the singular subject 'Each'.",
+C: "Having cannot function as the finite verb here.",
+D: "Had changes the intended present meaning."
+},
+
+q34: {
+A: "Police is treated as a plural noun in standard English.",
+B: "Are agrees with the plural noun 'police'.",
+C: "Was is singular.",
+D: "Be is not the required finite verb."
+},
+
+q35: {
+A: "Yet commonly accompanies the present perfect for an unfinished action: has not completed.",
+B: "Simple past does not fit the present-perfect meaning signaled by 'yet'.",
+C: "Does not completed is grammatically incorrect.",
+D: "Not completing lacks the required finite verb."
+},
+
+q36: {
+A: "Too weak to walk means he is so weak that he cannot walk.",
+B: "This reverses the meaning.",
+C: "The tense changes the original meaning.",
+D: "The structure is grammatically incorrect."
+},
+
+q37: {
+A: "The original sentence says no other boy is equally tall, so Rakib is the tallest.",
+B: "Taller is comparative, not the requested superlative form.",
+C: "The comparative structure is grammatically incorrect.",
+D: "The time reference is unnecessarily changed."
+},
+
+q38: {
+A: "The passive sentence means nobody can deny truth; this gives the corresponding active construction.",
+B: "The original is not specifically about yesterday.",
+C: "The subject-object relationship is incorrect.",
+D: "Everyone denied gives the opposite meaning."
+},
+
+q39: {
+A: "No sooner is followed by past perfect, and than introduces the second past event.",
+B: "The required inversion and conjunction are missing.",
+C: "After did, the base form should be used, not entered.",
+D: "The structure is grammatically incorrect."
+},
+
+q40: {
+A: "The sentence means that working hard is necessary for success, giving an affirmative form.",
+B: "This does not express the original meaning.",
+C: "This gives the opposite meaning.",
+D: "This changes the original meaning."
+},
+
+q41: {
+A: "An imperative expressing advice can be reported with 'advised ... to'.",
+B: "The reporting structure is incorrect.",
+C: "Asked that do is not the correct construction.",
+D: "Told requires an object and the structure is incomplete."
+},
+
+q42: {
+A: "The exclamatory sentence expresses admiration, so 'exclaimed with admiration' accurately reports it.",
+B: "The original is not a question.",
+C: "The meaning is reversed.",
+D: "The statement incorrectly denies the object."
+},
+
+q43: {
+A: "The reported question uses 'asked', changes you to I, and changes live to lived.",
+B: "Indirect questions do not use the direct-question word order.",
+C: "The tense and question structure are not properly changed.",
+D: "The reported form is grammatically incorrect."
+},
+
+q44: {
+A: "Present continuous changes to past continuous and 'now' changes to 'then'.",
+B: "The pronoun should change from I to he.",
+C: "The tense is not backshifted.",
+D: "The sentence is not a question."
+},
+
+q45: {
+A: "Let's expresses a suggestion, commonly reported with 'suggested that...should'.",
+B: "The original expresses a suggestion, not an order.",
+C: "The original is not a question.",
+D: "The meaning has changed."
+},
+
+q46: {
+A: "The pronoun 'He' immediately refers to the previously mentioned male person, Rafiq.",
+B: "Rafiq's wife is female and is later referred to as 'She'.",
+C: "The children are introduced later.",
+D: "Household is not a person."
+},
+
+q47: {
+A: "His is the possessive pronoun referring to Rafiq.",
+B: "The wife is the possessor's spouse, not the referent of His.",
+C: "The children are not the antecedent.",
+D: "No farmer's mother is mentioned."
+},
+
+q48: {
+A: "Him is the object pronoun referring to Rafiq.",
+B: "The wife is the subject performing the helping action.",
+C: "The children are mentioned later.",
+D: "A teacher is not mentioned."
+},
+
+q49: {
+A: "Their refers to Rafiq and his wife because the children belong to both of them.",
+B: "The children are the people being cared for, not the possessors.",
+C: "Neighbors are not mentioned.",
+D: "No teacher is involved."
+},
+
+q50: {
+A: "Rafiq and his wife do not go to school in the sentence.",
+B: "They refers to the children, who are the ones stated to go to school.",
+C: "Household chores cannot go to school.",
+D: "The sentence is about Rafiq's family."
+},
+
+q51: {
+A: "Fast can function as an adverb modifying the verb 'runs'.",
+B: "Beautiful is an adjective and does not modify 'runs' correctly here.",
+C: "Careful is an adjective.",
+D: "Good is normally an adjective rather than the required adverb."
+},
+
+q52: {
+A: "Beautiful is an adjective.",
+B: "Beautifully is the adverb modifying the verb 'sang'.",
+C: "Careful does not describe how she sang.",
+D: "Exact does not fit the meaning."
+},
+
+q53: {
+A: "Quick is an adjective modifying the noun 'fox'.",
+B: "Quickly is an adverb and does not directly modify the noun.",
+C: "Quickness is a noun.",
+D: "Quicken is a verb."
+},
+
+q54: {
+A: "Careful is an adjective used after the linking verb 'is'.",
+B: "Carefully is an adverb.",
+C: "Care is a noun or verb.",
+D: "Caringly does not fit the standard construction."
+},
+
+q55: {
+A: "Late means arriving after the expected time.",
+B: "Lately means recently, which changes the meaning.",
+C: "Latest is an adjective/superlative and does not fit here.",
+D: "Laterly is not the required standard form."
+},
+
+q56: {
+A: "However introduces a contrast between studying hard and failing.",
+B: "Therefore normally introduces a result, not this contrast.",
+C: "Moreover adds information rather than contrast.",
+D: "In addition adds another point."
+},
+
+q57: {
+A: "Although introduces a contrast between being tired and continuing to work.",
+B: "Therefore introduces a result.",
+C: "Moreover adds information.",
+D: "Consequently introduces a result."
+},
+
+q58: {
+A: "Therefore shows the result of the road being blocked.",
+B: "Although requires a contrasting clause.",
+C: "Meanwhile refers to simultaneous events.",
+D: "Moreover adds information rather than consequence."
+},
+
+q59: {
+A: "Moreover adds another positive quality to the first statement.",
+B: "However introduces contrast.",
+C: "Therefore introduces a result.",
+D: "Nevertheless introduces contrast."
+},
+
+q60: {
+A: "As a result introduces the consequence of rising prices.",
+B: "Although introduces contrast.",
+C: "Moreover adds information rather than consequence.",
+D: "Meanwhile indicates simultaneous timing."
+}
+
+};
+
+
+/* =========================================================
+   TIMER
+========================================================= */
+
+let totalSeconds = 3 * 60 * 60;
+
+let timerInterval;
+
+let submitted = false;
+
+
+function updateTimer() {
+
+    if (submitted) return;
+
+    let hours =
+        Math.floor(totalSeconds / 3600);
+
+    let minutes =
+        Math.floor(
+            (totalSeconds % 3600) / 60
+        );
+
+    let seconds =
+        totalSeconds % 60;
+
+    document.getElementById("timer").textContent =
+        String(hours).padStart(2,"0")
+        + ":"
+        + String(minutes).padStart(2,"0")
+        + ":"
+        + String(seconds).padStart(2,"0");
+
+    const timerBox =
+        document.getElementById("timerBox");
+
+    timerBox.classList.remove(
+        "warning",
+        "danger"
+    );
+
+    if (totalSeconds <= 600) {
+
+        timerBox.classList.add("danger");
+
+    } else if (totalSeconds <= 1800) {
+
+        timerBox.classList.add("warning");
 
     }
 
+    if (totalSeconds <= 0) {
+
+        clearInterval(timerInterval);
+
+        submitExam(true);
+
+        return;
+    }
+
+    totalSeconds--;
+
+}
+
+
+timerInterval =
+    setInterval(
+        updateTimer,
+        1000
+    );
+
+
+updateTimer();
+
+
+/* =========================================================
+   PROGRESS
+========================================================= */
+
+document
+    .querySelectorAll(
+        'input[type="radio"]'
+    )
+    .forEach(
+        radio => {
+
+            radio.addEventListener(
+                "change",
+                updateProgress
+            );
+
+        }
+    );
+
+
+function updateProgress() {
+
+    let answered = 0;
+
+    for (
+        let i = 1;
+        i <= 60;
+        i++
+    ) {
+
+        if (
+            document.querySelector(
+                `input[name="q${i}"]:checked`
+            )
+        ) {
+
+            answered++;
+
+        }
+
+    }
+
+    const percentage =
+        Math.round(
+            (answered / 60) * 100
+        );
+
+    document.getElementById(
+        "answeredText"
+    ).textContent =
+        `Answered: ${answered} / 60`;
+
+    document.getElementById(
+        "progressPercent"
+    ).textContent =
+        `${percentage}%`;
+
+    document.getElementById(
+        "progressBar"
+    ).style.width =
+        `${percentage}%`;
+
+}
+
+
+/* =========================================================
+   SUBMIT EXAM
+========================================================= */
+
+function submitExam(autoSubmit = false) {
+
+    if (submitted) return;
+
+    if (!autoSubmit) {
+
+        const unanswered = [];
+
+        for (
+            let i = 1;
+            i <= 60;
+            i++
+        ) {
+
+            if (
+                !document.querySelector(
+                    `input[name="q${i}"]:checked`
+                )
+            ) {
+
+                unanswered.push(i);
+
+            }
+
+        }
+
+        if (unanswered.length > 0) {
+
+            const proceed =
+                confirm(
+                    `You have ${unanswered.length} unanswered question(s).\n\n` +
+                    `Do you want to submit anyway?`
+                );
+
+            if (!proceed) {
+
+                return;
+
+            }
+
+        }
+
+    }
+
+    submitted = true;
+
+    clearInterval(timerInterval);
+
+    let score = 0;
+
+    let answered = 0;
+
+
+    for (
+        let i = 1;
+        i <= 60;
+        i++
+    ) {
+
+        const selected =
+            document.querySelector(
+                `input[name="q${i}"]:checked`
+            );
+
+        const card =
+            document
+                .querySelector(
+                    `input[name="q${i}"]`
+                )
+                .closest(
+                    ".question-card"
+                );
+
+        const options =
+            card.querySelectorAll(
+                ".option"
+            );
+
+        const correct =
+            answers[`q${i}`];
+
+        if (selected) {
+
+            answered++;
+
+        }
+
+
+        options.forEach(
+            option => {
+
+                const input =
+                    option.querySelector(
+                        "input"
+                    );
+
+                const letter =
+                    input.value;
+
+                option.classList.remove(
+                    "correct",
+                    "wrong"
+                );
+
+                if (
+                    letter === correct
+                ) {
+
+                    option.classList.add(
+                        "correct"
+                    );
+
+                }
+
+                if (
+                    selected &&
+                    letter === selected.value &&
+                    letter !== correct
+                ) {
+
+                    option.classList.add(
+                        "wrong"
+                    );
+
+                }
+
+            }
+        );
+
+
+        const feedback =
+            document.getElementById(
+                `f${i}`
+            );
+
+        const explanation =
+            explanations[`q${i}`];
+
+        feedback.className =
+            "feedback show";
+
+
+        if (
+            selected &&
+            selected.value === correct
+        ) {
+
+            score++;
+
+            feedback.classList.add(
+                "correct-feedback"
+            );
+
+            feedback.innerHTML =
+                `<strong>✓ Correct</strong>
+                 ${explanation[correct]}`;
+
+        } else {
+
+            feedback.classList.add(
+                "wrong-feedback"
+            );
+
+            let selectedText =
+                selected
+                    ? explanation[selected.value]
+                    : "No answer was selected.";
+
+            feedback.innerHTML =
+                `<strong>✗ ${
+                    selected
+                        ? "Wrong"
+                        : "Not Answered"
+                }</strong>
+                 ${selectedText}
+                 <br><br>
+                 <strong>Correct answer:</strong>
+                 ${explanation[correct]}`;
+
+        }
+
+    }
+
+
+    showResult(
+        score,
+        answered,
+        autoSubmit
+    );
+
+}
+
+
+/* =========================================================
+   RESULT
+========================================================= */
+
+function showResult(
+    score,
+    answered,
+    autoSubmit
+) {
+
+    const wrong =
+        answered - score;
+
+    const percentage =
+        Math.round(
+            (score / 60) * 100
+        );
+
+    document.getElementById(
+        "score"
+    ).textContent =
+        `${score} / 60`;
+
+    document.getElementById(
+        "correctCount"
+    ).textContent =
+        score;
+
+    document.getElementById(
+        "wrongCount"
+    ).textContent =
+        wrong;
+
+    document.getElementById(
+        "percentage"
+    ).textContent =
+        `${percentage}%`;
+
+
+    let message;
+
+
+    if (percentage >= 80) {
+
+        message =
+            "Excellent performance. Keep practising consistently.";
+
+    } else if (percentage >= 60) {
+
+        message =
+            "Good effort. Review the explanations and practise again.";
+
+    } else if (percentage >= 40) {
+
+        message =
+            "You have a foundation, but more grammar practice is needed.";
+
+    } else {
+
+        message =
+            "Review the lessons carefully and try the exam again.";
+
+    }
+
+
+    if (autoSubmit) {
+
+        message =
+            "Time is over. " + message;
+
+    }
+
+
+    document.getElementById(
+        "resultMessage"
+    ).textContent =
+        message;
+
+
+    document.getElementById(
+        "result"
+    ).classList.add(
+        "show"
+    );
+
+
+    document.getElementById(
+        "submitBtn"
+    ).disabled = true;
+
+
+    document.getElementById(
+        "submitBtn"
+    ).innerHTML =
+        `<i class="fas fa-check"></i>
+         Exam Submitted`;
+
+
+    document.getElementById(
+        "result"
+    ).scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+    });
+
+}
+
+
+/* =========================================================
+   PREVENT CHANGES AFTER SUBMISSION
+========================================================= */
+
+document
+    .querySelectorAll(
+        'input[type="radio"]'
+    )
+    .forEach(
+        radio => {
+
+            radio.addEventListener(
+                "click",
+                function() {
+
+                    if (submitted) {
+
+                        this.checked = false;
+
+                    }
+
+                }
+            );
+
+        }
+    );
+
+
 </script>
 
-
 </body>
-
 </html>
