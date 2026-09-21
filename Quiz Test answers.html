@@ -192,6 +192,7 @@ body {
 .question {
     padding: 18px 0;
     border-bottom: 1px solid #e5e7eb;
+    scroll-margin-top: 20px;
 }
 
 .question:first-child {
@@ -279,6 +280,7 @@ body {
 
 .composition {
     margin-bottom: 25px;
+    scroll-margin-top: 20px;
 }
 
 .composition:last-child {
@@ -310,6 +312,10 @@ body {
     margin-bottom: 12px;
 }
 
+.answer-paper p:last-child {
+    margin-bottom: 0;
+}
+
 /* =========================
    APPLICATION
 ========================= */
@@ -323,6 +329,10 @@ body {
 
 .application p {
     margin-bottom: 10px;
+}
+
+.application p:last-child {
+    margin-bottom: 0;
 }
 
 /* =========================
@@ -366,6 +376,8 @@ body {
     justify-content: center;
 
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+
+    z-index: 999;
 }
 
 .top-button.show {
@@ -407,6 +419,11 @@ body {
     .question h3 {
         font-size: 16px;
     }
+
+    .info-row {
+        flex-direction: column;
+        gap: 6px;
+    }
 }
 
 </style>
@@ -426,7 +443,7 @@ body {
 
     <h1>ENGLISH SECOND PAPER</h1>
 
-    <h2>Answer Key & Marking Guide</h2>
+    <h2>Answer Key &amp; Marking Guide</h2>
 
     <p>
         Complete suggested answers for the model test paper
@@ -501,13 +518,9 @@ body {
 <section class="section">
 
     <div class="section-title">
-
         <h2>PART A — GRAMMAR</h2>
-
         <p>Marks: 60</p>
-
     </div>
-
 
     <div class="section-content">
 
@@ -744,11 +757,7 @@ Other grammatically correct and meaningful answers may be accepted.
 <div class="completed">
 
 <p>
-(a) <strong>Everybody does not dislike flowers.</strong>
-<br>
-OR
-<br>
-<strong>There is nobody who does not love flowers.</strong>
+(a) <strong>There is nobody who does not love flowers.</strong>
 </p>
 
 <p>
@@ -1093,7 +1102,7 @@ Date: ______
 <div class="answer-paper">
 
 <div class="composition-title">
-ROAD ACCIDENT CLAIMS LIVES IN THE CITY
+ROAD ACCIDENT CAUSES INJURIES IN THE CITY
 </div>
 
 <p>
@@ -1303,7 +1312,7 @@ nation.
 </p>
 
 <p>
-Answer Key & Marking Guide
+Answer Key &amp; Marking Guide
 </p>
 
 <p>
@@ -1317,8 +1326,13 @@ For educational and practice purposes.
      BACK TO TOP
 ========================= -->
 
-<button class="top-button" id="topButton" onclick="goTop()">
-↑
+<button
+    class="top-button"
+    id="topButton"
+    onclick="goTop()"
+    aria-label="Back to top"
+    title="Back to top">
+    ↑
 </button>
 
 
