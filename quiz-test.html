@@ -93,7 +93,7 @@ body{
     position:sticky;
     top:10px;
     z-index:100;
-    background:#dc2626;
+    background:#6b7280;
     color:white;
     text-align:center;
     padding:10px;
@@ -102,6 +102,10 @@ body{
     font-weight:bold;
     margin-bottom:20px;
     box-shadow:0 3px 10px rgba(0,0,0,.15);
+}
+
+.timer.running{
+    background:#dc2626;
 }
 
 .timer.warning{
@@ -140,6 +144,14 @@ body{
 .question h3{
     font-size:16px;
     margin-bottom:12px;
+}
+
+.question-topic{
+    display:block;
+    font-size:13px;
+    color:#6b7280;
+    margin-bottom:8px;
+    font-weight:normal;
 }
 
 .option{
@@ -437,20 +449,19 @@ textarea:disabled{
     <div class="section">
 
         <div class="section-title">
-            PART B — COMPOSITION | 40 MARKS
+            PART B — WRITING | 40 MARKS
         </div>
 
 
         <div class="writing-question">
 
             <h3>
-                13. FORMAL LETTER / APPLICATION — 8 MARKS
+                13. APPLICATION
             </h3>
 
             <p>
                 Write an application to the Principal of your college
-                requesting him/her to increase the facilities in the
-                college library.
+                requesting an increase in library facilities.
             </p>
 
             <textarea
@@ -464,15 +475,13 @@ textarea:disabled{
         <div class="writing-question">
 
             <h3>
-                14. REPORT WRITING — 8 MARKS
+                14. REPORT WRITING
             </h3>
 
             <p>
-                Write a report for a national daily on
-                <strong>"A Road Accident in Your Area".</strong>
-                Give a suitable headline and mention the place, date,
-                cause of the accident, casualties and response of the
-                authorities.
+                Write a report for a national daily on the following topic:
+                <strong>"A Road Accident in Your Area"</strong>.
+                Give your report a suitable headline.
             </p>
 
             <textarea
@@ -486,12 +495,12 @@ textarea:disabled{
         <div class="writing-question">
 
             <h3>
-                15. PARAGRAPH WRITING — 10 MARKS
+                15. PARAGRAPH WRITING
             </h3>
 
             <p>
-                Write a paragraph on
-                <strong>"The Uses and Abuses of Social Media".</strong>
+                Write a paragraph on the following topic:
+                <strong>"The Uses and Abuses of Social Media"</strong>.
             </p>
 
             <textarea
@@ -505,14 +514,12 @@ textarea:disabled{
         <div class="writing-question">
 
             <h3>
-                16. COMPOSITION / FREE WRITING — 14 MARKS
+                16. COMPOSITION
             </h3>
 
             <p>
-                Write a composition on
-                <strong>
-                    "The Role of Students in Building the Nation".
-                </strong>
+                Write a composition on the following topic:
+                <strong>"The Role of Students in Building the Nation"</strong>.
             </p>
 
             <textarea
@@ -575,7 +582,7 @@ textarea:disabled{
 
                 <strong>Note:</strong>
 
-                The 40-mark composition section must be evaluated
+                The 40-mark writing section must be evaluated
                 manually. The final score should be calculated after
                 checking the application, report, paragraph and
                 composition.
@@ -583,20 +590,16 @@ textarea:disabled{
             </div>
 
 
-            <!-- IMPORTANT:
-                 Your actual file is answer.html
-            -->
-
             <div class="answer-key-box">
-<a
-    href="./answer.html"
-    target="_blank"
-    rel="noopener noreferrer"
-    class="answer-key-btn"
->
-    📖 View Answer Key
-</a>
 
+                <a
+                    href="./answer.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="answer-key-btn"
+                >
+                    📖 View Answer Key
+                </a>
 
                 <br>
 
@@ -629,158 +632,312 @@ textarea:disabled{
 
 const questions = [
 
+/* =====================================================
+   Q1 — ARTICLES
+===================================================== */
+
 {
     q:"1(a). Bangladesh is ___ independent country.",
-    options:["a) a","b) an","c) the","d) no article"],
+    options:[
+        "a) a",
+        "b) an",
+        "c) the",
+        "d) × (no article)"
+    ],
     answer:"b"
 },
 
 {
     q:"1(b). He is ___ honest student.",
-    options:["a) a","b) an","c) the","d) no article"],
+    options:[
+        "a) a",
+        "b) an",
+        "c) the",
+        "d) × (no article)"
+    ],
     answer:"b"
 },
 
 {
     q:"1(c). ___ sun rises in the east.",
-    options:["a) A","b) An","c) The","d) No article"],
+    options:[
+        "a) A",
+        "b) An",
+        "c) The",
+        "d) × (no article)"
+    ],
     answer:"c"
 },
 
 {
     q:"1(d). She bought ___ umbrella yesterday.",
-    options:["a) a","b) an","c) the","d) no article"],
+    options:[
+        "a) a",
+        "b) an",
+        "c) the",
+        "d) × (no article)"
+    ],
     answer:"b"
 },
 
 {
     q:"1(e). He is ___ European.",
-    options:["a) a","b) an","c) the","d) no article"],
+    options:[
+        "a) a",
+        "b) an",
+        "c) the",
+        "d) × (no article)"
+    ],
     answer:"a"
 },
 
+
+/* =====================================================
+   Q2 — PREPOSITIONS
+===================================================== */
+
 {
     q:"2(a). He is good ___ English.",
-    options:["a) at","b) in","c) on","d) for"],
+    options:[
+        "a) at",
+        "b) in",
+        "c) on",
+        "d) for"
+    ],
     answer:"a"
 },
 
 {
     q:"2(b). She is interested ___ learning English.",
-    options:["a) at","b) in","c) on","d) for"],
+    options:[
+        "a) at",
+        "b) in",
+        "c) on",
+        "d) for"
+    ],
     answer:"b"
 },
 
 {
     q:"2(c). He has been absent ___ Monday.",
-    options:["a) for","b) from","c) since","d) by"],
+    options:[
+        "a) for",
+        "b) from",
+        "c) since",
+        "d) by"
+    ],
     answer:"c"
 },
 
 {
     q:"2(d). The man was accused ___ theft.",
-    options:["a) with","b) for","c) of","d) by"],
+    options:[
+        "a) with",
+        "b) for",
+        "c) of",
+        "d) by"
+    ],
     answer:"c"
 },
 
 {
     q:"2(e). We should not be indifferent ___ our duties.",
-    options:["a) to","b) at","c) for","d) with"],
+    options:[
+        "a) to",
+        "b) at",
+        "c) for",
+        "d) with"
+    ],
     answer:"a"
 },
 
+
+/* =====================================================
+   Q3 — SPECIAL USES
+===================================================== */
+
 {
     q:"3(a). I would rather ___ at home than go outside.",
-    options:["a) stayed","b) stay","c) staying","d) to stay"],
+    options:[
+        "a) stayed",
+        "b) stay",
+        "c) staying",
+        "d) to stay"
+    ],
     answer:"b"
 },
 
 {
     q:"3(b). You had better ___ the truth.",
-    options:["a) tell","b) told","c) telling","d) to tell"],
+    options:[
+        "a) tell",
+        "b) told",
+        "c) telling",
+        "d) to tell"
+    ],
     answer:"a"
 },
 
 {
     q:"3(c). He cannot buy a pen, let alone ___ a laptop.",
-    options:["a) bought","b) buying","c) buy","d) to buy"],
+    options:[
+        "a) bought",
+        "b) buying",
+        "c) buy",
+        "d) to buy"
+    ],
     answer:"c"
 },
 
 {
     q:"3(d). Walk carefully lest you ___ fall.",
-    options:["a) will","b) should","c) would","d) can"],
+    options:[
+        "a) will",
+        "b) should",
+        "c) would",
+        "d) can"
+    ],
     answer:"b"
 },
 
 {
     q:"3(e). No sooner had he reached home ___ it started raining.",
-    options:["a) when","b) than","c) then","d) and"],
+    options:[
+        "a) when",
+        "b) than",
+        "c) then",
+        "d) and"
+    ],
+    answer:"b"
+},
+
+
+/* =====================================================
+   Q4 — COMPLETING SENTENCES
+===================================================== */
+
+{
+    q:"4(a). It is high time we ___.",
+    options:[
+        "a) perform our duties",
+        "b) performed our duties",
+        "c) performing our duties",
+        "d) have performed our duties"
+    ],
     answer:"b"
 },
 
 {
-    q:"4(a). It is high time we ___ our duties.",
-    options:["a) perform","b) performed","c) performing","d) have performed"],
-    answer:"b"
-},
-
-{
-    q:"4(b). I wish I ___ a bird.",
-    options:["a) am","b) was","c) were","d) have been"],
+    q:"4(b). I wish I ___.",
+    options:[
+        "a) am a bird",
+        "b) was a bird",
+        "c) were a bird",
+        "d) have been a bird"
+    ],
     answer:"c"
 },
 
 {
-    q:"4(c). If I were a bird, I ___ in the sky.",
-    options:["a) fly","b) flew","c) would fly","d) will fly"],
+    q:"4(c). If I were a bird, I ___.",
+    options:[
+        "a) fly in the sky",
+        "b) flew in the sky",
+        "c) would fly in the sky",
+        "d) will fly in the sky"
+    ],
     answer:"c"
 },
 
 {
     q:"4(d). Unless you work hard, you ___.",
-    options:["a) will fail","b) would fail","c) failed","d) had failed"],
+    options:[
+        "a) will fail",
+        "b) would fail",
+        "c) failed",
+        "d) had failed"
+    ],
     answer:"a"
 },
 
 {
     q:"4(e). He talks as if he ___ everything.",
-    options:["a) knows","b) knew","c) had known","d) knowing"],
+    options:[
+        "a) knows",
+        "b) knew",
+        "c) had known",
+        "d) knowing"
+    ],
     answer:"b"
 },
 
+
+/* =====================================================
+   Q5 — RIGHT FORM OF VERBS
+===================================================== */
+
 {
     q:"5(a). The sun ___ in the east.",
-    options:["a) rise","b) rises","c) rose","d) rising"],
+    options:[
+        "a) rise",
+        "b) rises",
+        "c) rose",
+        "d) rising"
+    ],
     answer:"b"
 },
 
 {
     q:"5(b). He ___ a book now.",
-    options:["a) reads","b) read","c) is reading","d) has read"],
+    options:[
+        "a) reads",
+        "b) read",
+        "c) is reading",
+        "d) has read"
+    ],
     answer:"c"
 },
 
 {
     q:"5(c). He ___ here since 2020.",
-    options:["a) lives","b) lived","c) has been living","d) is living"],
+    options:[
+        "a) lives",
+        "b) lived",
+        "c) has been living",
+        "d) is living"
+    ],
     answer:"c"
 },
 
 {
     q:"5(d). When I reached the station, the train ___.",
-    options:["a) leaves","b) has left","c) had left","d) was leaving"],
+    options:[
+        "a) leaves",
+        "b) has left",
+        "c) had left",
+        "d) was leaving"
+    ],
     answer:"c"
 },
 
 {
     q:"5(e). Had I known the matter, I ___ him.",
-    options:["a) help","b) helped","c) would have helped","d) will help"],
+    options:[
+        "a) help",
+        "b) helped",
+        "c) would have helped",
+        "d) will help"
+    ],
     answer:"c"
 },
 
+
+/* =====================================================
+   Q6 — TRANSFORMATION
+===================================================== */
+
 {
-    q:"6(a). Everybody loves flowers. Which is the correct negative form?",
+    q:"6(a). Everybody loves flowers. Choose the correct negative sentence.",
     options:[
         "a) Nobody loves flowers.",
         "b) There is nobody who does not love flowers.",
@@ -791,7 +948,7 @@ const questions = [
 },
 
 {
-    q:"6(b). He is too weak to walk. Which is the correct complex form?",
+    q:"6(b). He is too weak to walk. Choose the correct complex sentence.",
     options:[
         "a) He is so weak that he cannot walk.",
         "b) He is weak and cannot walk.",
@@ -802,7 +959,7 @@ const questions = [
 },
 
 {
-    q:"6(c). Though he is poor, he is honest. Which is the correct compound form?",
+    q:"6(c). Though he is poor, he is honest. Choose the correct compound sentence.",
     options:[
         "a) He is poor because he is honest.",
         "b) He is poor but honest.",
@@ -813,7 +970,7 @@ const questions = [
 },
 
 {
-    q:"6(d). Dhaka is one of the largest cities in Bangladesh. Which is the positive form?",
+    q:"6(d). Dhaka is one of the largest cities in Bangladesh. Choose the positive form.",
     options:[
         "a) Very few cities in Bangladesh are as large as Dhaka.",
         "b) No city is larger than Dhaka.",
@@ -824,7 +981,7 @@ const questions = [
 },
 
 {
-    q:"6(e). He wrote a letter. Which is the correct passive form?",
+    q:"6(e). He wrote a letter. Choose the correct passive sentence.",
     options:[
         "a) A letter is written by him.",
         "b) A letter was written by him.",
@@ -833,6 +990,11 @@ const questions = [
     ],
     answer:"b"
 },
+
+
+/* =====================================================
+   Q7 — NARRATION
+===================================================== */
 
 {
     q:"7(a). He said, “I am busy.”",
@@ -889,154 +1051,310 @@ const questions = [
     answer:"b"
 },
 
+
+/* =====================================================
+   Q8 — PRONOUN REFERENCE
+===================================================== */
+
 {
-    q:"8(a). “They” in “They give us oxygen” refers to —",
-    options:["a) humans","b) trees","c) oxygen","d) environment"],
+    q:"8(a). What does “They” refer to in “They give us oxygen”?",
+    options:[
+        "a) humans",
+        "b) trees",
+        "c) oxygen",
+        "d) environment"
+    ],
     answer:"b"
 },
 
 {
-    q:"8(b). “them” in “Without them, human life would be impossible” refers to —",
-    options:["a) trees","b) humans","c) oxygen","d) duties"],
+    q:"8(b). What does “them” refer to in “Without them, human life would be impossible”?",
+    options:[
+        "a) trees",
+        "b) humans",
+        "c) oxygen",
+        "d) duties"
+    ],
     answer:"a"
 },
 
 {
-    q:"8(c). “We” refers to —",
-    options:["a) trees","b) human beings","c) animals","d) plants"],
+    q:"8(c). What does “We” refer to?",
+    options:[
+        "a) trees",
+        "b) human beings",
+        "c) animals",
+        "d) plants"
+    ],
     answer:"b"
 },
 
 {
-    q:"8(d). “them” in the last sentence refers to —",
-    options:["a) humans","b) environment","c) trees","d) oxygen"],
+    q:"8(d). What does “them” in the last sentence refer to?",
+    options:[
+        "a) humans",
+        "b) environment",
+        "c) trees",
+        "d) oxygen"
+    ],
     answer:"c"
 },
 
 {
-    q:"8(e). “Therefore” indicates —",
-    options:["a) contrast","b) reason/result","c) condition","d) time"],
+    q:"8(e). What does “therefore” indicate?",
+    options:[
+        "a) contrast",
+        "b) reason/result",
+        "c) condition",
+        "d) time"
+    ],
     answer:"b"
 },
 
+
+/* =====================================================
+   Q9 — MODIFIERS
+===================================================== */
+
 {
     q:"9(a). ___, he went to school. Choose the appropriate participial phrase.",
-    options:["a) Getting ready","b) To get ready","c) Ready was","d) He getting"],
+    options:[
+        "a) Getting ready",
+        "b) To get ready",
+        "c) Ready was",
+        "d) He getting"
+    ],
     answer:"a"
 },
 
 {
     q:"9(b). The man ___ is my uncle. Choose an adjective clause.",
-    options:["a) standing there","b) who is standing there","c) to stand there","d) stand there"],
+    options:[
+        "a) standing there",
+        "b) who is standing there",
+        "c) to stand there",
+        "d) stand there"
+    ],
     answer:"b"
 },
 
 {
     q:"9(c). ___, he went to Dhaka. Choose an infinitive phrase.",
-    options:["a) To attend the meeting","b) Attending the meeting","c) He attended the meeting","d) Attended the meeting"],
+    options:[
+        "a) To attend the meeting",
+        "b) Attending the meeting",
+        "c) He attended the meeting",
+        "d) Attended the meeting"
+    ],
     answer:"a"
 },
 
 {
     q:"9(d). The girl ___ is my sister. Choose a participial phrase.",
-    options:["a) who is singing","b) singing on the stage","c) to sing","d) she sings"],
+    options:[
+        "a) who is singing",
+        "b) singing on the stage",
+        "c) to sing",
+        "d) she sings"
+    ],
     answer:"b"
 },
 
 {
     q:"9(e). ___, he completed the work. Choose an adverbial phrase.",
-    options:["a) With great care","b) To complete","c) Completing","d) Who completed"],
+    options:[
+        "a) With great care",
+        "b) To complete",
+        "c) Completing",
+        "d) Who completed"
+    ],
+    answer:"a"
+},
+
+
+/* =====================================================
+   Q10 — SENTENCE CONNECTORS
+===================================================== */
+
+{
+    q:"10(a). He is poor. ___, he is honest.",
+    options:[
+        "a) However",
+        "b) Because",
+        "c) So"
+    ],
     answer:"a"
 },
 
 {
-    q:"10(a). He is poor. ___, he is honest.",
-    options:["a) Therefore","b) However","c) Because","d) So"],
-    answer:"b"
-},
-
-{
     q:"10(b). He worked hard. ___, he failed.",
-    options:["a) Therefore","b) However","c) Because","d) Thus"],
-    answer:"b"
+    options:[
+        "a) However",
+        "b) Therefore",
+        "c) So"
+    ],
+    answer:"a"
 },
 
 {
     q:"10(c). Study hard, ___ you will fail.",
-    options:["a) or","b) because","c) although","d) therefore"],
+    options:[
+        "a) otherwise",
+        "b) because",
+        "c) although"
+    ],
     answer:"a"
 },
 
 {
     q:"10(d). ___ he is rich, he is unhappy.",
-    options:["a) Because","b) Although","c) Therefore","d) So"],
-    answer:"b"
+    options:[
+        "a) Although",
+        "b) Because",
+        "c) So"
+    ],
+    answer:"a"
 },
 
 {
     q:"10(e). He could not go out ___ it was raining.",
-    options:["a) although","b) because","c) but","d) therefore"],
-    answer:"b"
+    options:[
+        "a) because",
+        "b) however",
+        "c) otherwise"
+    ],
+    answer:"a"
 },
+
+
+/* =====================================================
+   Q11 — SYNONYMS AND ANTONYMS
+===================================================== */
 
 {
     q:"11(a). Choose the synonym of “Brave”.",
-    options:["a) Coward","b) Courageous","c) Weak","d) Lazy"],
+    options:[
+        "a) Coward",
+        "b) Courageous",
+        "c) Weak",
+        "d) Lazy"
+    ],
     answer:"b"
 },
 
 {
     q:"11(b). Choose the synonym of “Rapid”.",
-    options:["a) Slow","b) Quick","c) Weak","d) Old"],
+    options:[
+        "a) Slow",
+        "b) Quick",
+        "c) Weak",
+        "d) Old"
+    ],
     answer:"b"
 },
 
 {
     q:"11(c). Choose the synonym of “Ancient”.",
-    options:["a) Modern","b) New","c) Old","d) Recent"],
+    options:[
+        "a) Modern",
+        "b) New",
+        "c) Old",
+        "d) Recent"
+    ],
     answer:"c"
 },
 
 {
     q:"11(d). Choose the synonym of “Honest”.",
-    options:["a) Truthful","b) False","c) Dishonest","d) Cruel"],
+    options:[
+        "a) Truthful",
+        "b) False",
+        "c) Dishonest",
+        "d) Cruel"
+    ],
     answer:"a"
 },
 
 {
     q:"11(e). Choose the synonym of “Difficult”.",
-    options:["a) Easy","b) Hard","c) Simple","d) Light"],
+    options:[
+        "a) Easy",
+        "b) Hard",
+        "c) Simple",
+        "d) Light"
+    ],
     answer:"b"
 },
 
 {
     q:"11(f). Choose the antonym of “Success”.",
-    options:["a) Victory","b) Failure","c) Achievement","d) Progress"],
+    options:[
+        "a) Victory",
+        "b) Failure",
+        "c) Achievement",
+        "d) Progress"
+    ],
     answer:"b"
 },
 
 {
     q:"11(g). Choose the antonym of “Increase”.",
-    options:["a) Grow","b) Rise","c) Decrease","d) Develop"],
+    options:[
+        "a) Grow",
+        "b) Rise",
+        "c) Decrease",
+        "d) Develop"
+    ],
     answer:"c"
 },
 
 {
     q:"11(h). Choose the antonym of “Strong”.",
-    options:["a) Powerful","b) Weak","c) Firm","d) Healthy"],
+    options:[
+        "a) Powerful",
+        "b) Weak",
+        "c) Firm",
+        "d) Healthy"
+    ],
     answer:"b"
 },
 
 {
     q:"11(i). Choose the antonym of “Accept”.",
-    options:["a) Receive","b) Take","c) Reject","d) Agree"],
+    options:[
+        "a) Receive",
+        "b) Take",
+        "c) Reject",
+        "d) Agree"
+    ],
     answer:"c"
 },
 
 {
     q:"11(j). Choose the antonym of “Beautiful”.",
-    options:["a) Attractive","b) Pretty","c) Ugly","d) Lovely"],
+    options:[
+        "a) Attractive",
+        "b) Pretty",
+        "c) Ugly",
+        "d) Lovely"
+    ],
     answer:"c"
+},
+
+
+/* =====================================================
+   Q12 — PUNCTUATION
+===================================================== */
+
+{
+    q:"12. Choose the correctly punctuated version of the passage: “rahim said to karim where are you going karim replied i am going to the market do you need anything”",
+    options:[
+        "a) Rahim said to Karim, “Where are you going?” Karim replied, “I am going to the market. Do you need anything?”",
+        "b) Rahim said to Karim “where are you going” Karim replied “I am going to the market do you need anything.”",
+        "c) Rahim said to Karim, where are you going? Karim replied I am going to the market, do you need anything.",
+        "d) Rahim said, to Karim “Where are you going?” Karim replied I am going to the market do you need anything?"
+    ],
+    answer:"a"
 }
 
 ];
@@ -1102,6 +1420,9 @@ let totalSeconds =
 let submitted =
     false;
 
+let timerStarted =
+    false;
+
 let timerInterval =
     null;
 
@@ -1118,6 +1439,12 @@ const submitButton =
 
 const result =
     document.getElementById("result");
+
+const studentNameInput =
+    document.getElementById("studentName");
+
+const studentIDInput =
+    document.getElementById("studentID");
 
 
 /* =====================================================
@@ -1148,14 +1475,24 @@ function displayTime(){
         String(seconds).padStart(2,"0");
 
 
-    timerElement.textContent =
-        "Time Remaining: " +
-        formattedHours + ":" +
-        formattedMinutes + ":" +
-        formattedSeconds;
+    if(timerStarted){
+
+        timerElement.textContent =
+            "Time Remaining: " +
+            formattedHours + ":" +
+            formattedMinutes + ":" +
+            formattedSeconds;
+
+    }else{
+
+        timerElement.textContent =
+            "Timer starts when you begin the test";
+
+    }
 
 
-    if(totalSeconds <= 600 &&
+    if(timerStarted &&
+       totalSeconds <= 600 &&
        totalSeconds > 0){
 
         timerElement.classList.add("warning");
@@ -1171,7 +1508,19 @@ function displayTime(){
 
 function startTimer(){
 
+    if(timerStarted || submitted){
+
+        return;
+
+    }
+
+
+    timerStarted = true;
+
+    timerElement.classList.add("running");
+
     displayTime();
+
 
     timerInterval =
         setInterval(function(){
@@ -1215,6 +1564,57 @@ function startTimer(){
 
 
 /* =====================================================
+   START TIMER AFTER STUDENT NAME
+===================================================== */
+
+studentNameInput.addEventListener(
+    "input",
+    function(){
+
+        saveProgress();
+
+        if(
+            !timerStarted &&
+            this.value.trim() !== ""
+        ){
+
+            startTimer();
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   START TIMER AFTER FIRST ANSWER
+===================================================== */
+
+document.addEventListener(
+    "change",
+    function(event){
+
+        if(
+            event.target.matches(
+                'input[type="radio"]'
+            )
+        ){
+
+            if(!timerStarted){
+
+                startTimer();
+
+            }
+
+            saveProgress();
+
+        }
+
+    }
+);
+
+
+/* =====================================================
    SAVE ANSWERS
 ===================================================== */
 
@@ -1224,21 +1624,24 @@ function saveProgress(){
         return;
     }
 
+
     const data = {
 
         name:
-            document
-            .getElementById("studentName")
-            .value,
+            studentNameInput.value,
 
         batch:
-            document
-            .getElementById("studentID")
-            .value,
+            studentIDInput.value,
 
         answers:{},
 
-        writing:{}
+        writing:{},
+
+        timerStarted:
+            timerStarted,
+
+        remainingTime:
+            totalSeconds
 
     };
 
@@ -1291,7 +1694,11 @@ function restoreProgress(){
 
 
     if(!saved){
+
+        displayTime();
+
         return;
+
     }
 
 
@@ -1303,18 +1710,16 @@ function restoreProgress(){
 
         if(data.name){
 
-            document
-            .getElementById("studentName")
-            .value = data.name;
+            studentNameInput.value =
+                data.name;
 
         }
 
 
         if(data.batch){
 
-            document
-            .getElementById("studentID")
-            .value = data.batch;
+            studentIDInput.value =
+                data.batch;
 
         }
 
@@ -1362,11 +1767,35 @@ function restoreProgress(){
 
         }
 
+
+        /*
+         * Restore timer only if the student
+         * had already started the test.
+         */
+
+        if(
+            data.timerStarted === true &&
+            Number(data.remainingTime) > 0
+        ){
+
+            totalSeconds =
+                Number(data.remainingTime);
+
+            startTimer();
+
+        }else{
+
+            displayTime();
+
+        }
+
     }catch(error){
 
         console.log(
             "Saved progress could not be restored."
         );
+
+        displayTime();
 
     }
 
@@ -1378,13 +1807,12 @@ function restoreProgress(){
 ===================================================== */
 
 document.addEventListener(
-    "change",
-    saveProgress
-);
-
-document.addEventListener(
     "input",
-    saveProgress
+    function(){
+
+        saveProgress();
+
+    }
 );
 
 
@@ -1402,8 +1830,7 @@ function submitQuiz(autoSubmit = false){
 
 
     let studentName =
-        document
-        .getElementById("studentName")
+        studentNameInput
         .value
         .trim();
 
@@ -1421,9 +1848,7 @@ function submitQuiz(autoSubmit = false){
                 "Please enter your name before submitting."
             );
 
-            document
-            .getElementById("studentName")
-            .focus();
+            studentNameInput.focus();
 
             return;
 
@@ -1433,8 +1858,7 @@ function submitQuiz(autoSubmit = false){
 
 
     const studentBatch =
-        document
-        .getElementById("studentID")
+        studentIDInput
         .value
         .trim() || "2027";
 
@@ -1443,7 +1867,7 @@ function submitQuiz(autoSubmit = false){
 
 
     /* ================================================
-       CHECK ALL 60 QUESTIONS
+       CHECK ALL OBJECTIVE QUESTIONS
     ================================================ */
 
     questions.forEach(function(item,index){
@@ -1490,8 +1914,6 @@ function submitQuiz(autoSubmit = false){
         }
 
 
-        /* Highlight correct answer */
-
         options.forEach(function(option){
 
             if(
@@ -1530,13 +1952,11 @@ function submitQuiz(autoSubmit = false){
        LOCK STUDENT INFO
     ================================================ */
 
-    document
-    .getElementById("studentName")
-    .disabled = true;
+    studentNameInput.disabled =
+        true;
 
-    document
-    .getElementById("studentID")
-    .disabled = true;
+    studentIDInput.disabled =
+        true;
 
 
     /* ================================================
@@ -1659,9 +2079,9 @@ window.addEventListener(
    INITIALIZE
 ===================================================== */
 
-restoreProgress();
+displayTime();
 
-startTimer();
+restoreProgress();
 
 </script>
 
