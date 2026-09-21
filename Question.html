@@ -1,0 +1,2240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>HSC English 1st Paper | Model Test</title>
+
+<meta name="description"
+content="HSC English 1st Paper Model Test with MCQ scoring, explanations and model answers">
+
+<style>
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   BODY
+========================= */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f1f5f9;
+    color: #172033;
+    line-height: 1.7;
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container {
+    max-width: 950px;
+    margin: auto;
+    padding: 20px;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    background: linear-gradient(135deg, #111827, #1e293b);
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+    border-radius: 16px;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    font-size: 29px;
+    margin-bottom: 6px;
+}
+
+.header h2 {
+    font-size: 19px;
+    font-weight: normal;
+    margin-bottom: 8px;
+}
+
+.header p {
+    opacity: 0.9;
+}
+
+
+/* =========================
+   TIMER
+========================= */
+
+.timer {
+    position: sticky;
+    top: 10px;
+    z-index: 1000;
+
+    background: white;
+    border: 2px solid #1e293b;
+
+    border-radius: 12px;
+
+    padding: 10px 15px;
+    margin-bottom: 20px;
+
+    text-align: center;
+
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#timer {
+    color: #dc2626;
+}
+
+
+/* =========================
+   SECTION
+========================= */
+
+.section {
+    background: white;
+
+    padding: 25px;
+    margin-bottom: 20px;
+
+    border-radius: 16px;
+
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+}
+
+.section-title {
+    font-size: 24px;
+    font-weight: bold;
+
+    color: #111827;
+
+    border-bottom: 3px solid #111827;
+
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+}
+
+
+/* =========================
+   PASSAGE
+========================= */
+
+.passage {
+    background: #f8fafc;
+
+    border-left: 5px solid #334155;
+
+    padding: 18px;
+
+    border-radius: 8px;
+
+    margin-bottom: 20px;
+}
+
+.passage p {
+    margin-bottom: 12px;
+}
+
+
+/* =========================
+   QUESTIONS
+========================= */
+
+.question {
+    margin-bottom: 25px;
+
+    padding: 18px;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 12px;
+
+    background: #ffffff;
+}
+
+.question h3 {
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+
+/* =========================
+   OPTIONS
+========================= */
+
+.options label {
+    display: block;
+
+    padding: 10px 12px;
+
+    margin: 7px 0;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.options label:hover {
+    background: #f1f5f9;
+}
+
+.options input {
+    margin-right: 8px;
+}
+
+
+/* =========================
+   RESULT
+========================= */
+
+.result {
+    display: none;
+
+    background: #ecfdf5;
+
+    border: 2px solid #10b981;
+
+    padding: 25px;
+
+    border-radius: 14px;
+
+    margin-bottom: 20px;
+}
+
+.result h2 {
+    margin-bottom: 10px;
+}
+
+.score {
+    font-size: 34px;
+    font-weight: bold;
+
+    color: #166534;
+
+    margin: 5px 0 10px;
+}
+
+
+/* =========================
+   REVIEW
+========================= */
+
+.review {
+    margin-top: 20px;
+}
+
+.review-item {
+    padding: 18px;
+
+    border-radius: 10px;
+
+    margin-bottom: 15px;
+}
+
+.correct {
+    background: #dcfce7;
+    border-left: 5px solid #16a34a;
+}
+
+.wrong {
+    background: #fee2e2;
+    border-left: 5px solid #dc2626;
+}
+
+.unanswered {
+    background: #fef3c7;
+    border-left: 5px solid #d97706;
+}
+
+.answer {
+    font-weight: bold;
+
+    color: #166534;
+
+    margin-top: 8px;
+}
+
+.your-answer {
+    color: #991b1b;
+
+    margin-top: 6px;
+}
+
+.explanation {
+    margin-top: 8px;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+button {
+    border: none;
+
+    border-radius: 10px;
+
+    padding: 13px 22px;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    margin: 5px;
+}
+
+.submit-btn {
+    background: #111827;
+    color: white;
+}
+
+.submit-btn:hover {
+    background: #334155;
+}
+
+.reset-btn {
+    background: #dc2626;
+    color: white;
+}
+
+.reset-btn:hover {
+    background: #b91c1c;
+}
+
+.answer-btn {
+    background: #475569;
+    color: white;
+}
+
+.answer-btn:hover {
+    background: #334155;
+}
+
+
+/* =========================
+   MODEL ANSWER
+========================= */
+
+.model-answer {
+    background: #f8fafc;
+
+    border-left: 4px solid #475569;
+
+    padding: 15px;
+
+    margin-top: 15px;
+
+    border-radius: 8px;
+}
+
+.hidden {
+    display: none;
+}
+
+
+/* =========================
+   TEXTAREA
+========================= */
+
+textarea {
+    width: 100%;
+
+    min-height: 140px;
+
+    padding: 12px;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 8px;
+
+    resize: vertical;
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    margin: 8px 0 20px;
+}
+
+
+/* =========================
+   SMALL TEXT
+========================= */
+
+.small {
+    font-size: 14px;
+    color: #64748b;
+}
+
+
+/* =========================
+   TABLE
+========================= */
+
+.data-table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    margin: 15px 0;
+}
+
+.data-table th,
+.data-table td {
+    border: 1px solid #cbd5e1;
+
+    padding: 10px;
+
+    text-align: center;
+}
+
+.data-table th {
+    background: #e2e8f0;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .container {
+        padding: 10px;
+    }
+
+    .header {
+        padding: 24px 15px;
+    }
+
+    .header h1 {
+        font-size: 23px;
+    }
+
+    .header h2 {
+        font-size: 16px;
+    }
+
+    .section {
+        padding: 16px;
+    }
+
+    .section-title {
+        font-size: 20px;
+    }
+
+    .question {
+        padding: 14px;
+    }
+
+    .question h3 {
+        font-size: 17px;
+    }
+
+    button {
+        width: 100%;
+        margin: 5px 0;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div class="container">
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header class="header">
+
+    <h1>HSC English 1st Paper</h1>
+
+    <h2>MODEL TEST</h2>
+
+    <p>
+        Full Marks: 100 | Time: 3 Hours
+    </p>
+
+    <p>
+        [N.B. — Answer all questions]
+    </p>
+
+</header>
+
+
+<!-- =========================
+     TIMER
+========================= -->
+
+<div class="timer">
+
+    ⏱️ Time Remaining:
+    <span id="timer">03:00:00</span>
+
+</div>
+
+
+<!-- =========================
+     RESULT
+========================= -->
+
+<div id="result" class="result">
+
+    <h2>🎉 Test Submitted</h2>
+
+    <p>MCQ Score:</p>
+
+    <div class="score">
+        <span id="score">0</span> / 10
+    </div>
+
+    <p id="percentage"></p>
+
+    <div id="review" class="review"></div>
+
+    <button
+        type="button"
+        class="reset-btn"
+        onclick="resetQuiz()">
+        🔄 Try Again
+    </button>
+
+</div>
+
+
+<!-- =========================
+     PART I
+========================= -->
+
+<div class="section">
+
+<div class="section-title">
+PART I — READING
+</div>
+
+
+<!-- PASSAGE 1 -->
+
+<div class="passage">
+
+<strong>
+Read the passage carefully and answer Questions 1 and 2.
+</strong>
+
+<br><br>
+
+<p>
+Aisha grew up in a small village where clean drinking water was hard to find.
+Every morning, she watched her mother walk nearly two kilometres to fetch water
+from a distant pond. The water was often muddy and unsafe to drink, and many
+children in the village suffered from waterborne diseases as a result.
+Aisha was only fourteen when she decided that she wanted to solve this problem.
+</p>
+
+<p>
+She began reading about simple filtration methods in old science magazines
+borrowed from her school library. With the help of her science teacher, she
+experimented with sand, charcoal, and gravel layered inside a plastic container.
+After several failed attempts, she finally built a small filter that could make
+muddy pond water clearer within minutes.
+</p>
+
+<p>
+Aisha’s invention did not require electricity or expensive materials, so almost
+any family in her village could build one. She demonstrated her filter at a
+school science fair, where it caught the attention of a local NGO. The
+organisation helped her distribute the design to more than fifty households
+during the following year.
+</p>
+
+<p>
+Because of Aisha’s simple invention, the rate of waterborne illness in her
+village dropped noticeably within two years. She later said that the biggest
+lesson she had learned was that a small idea, if pursued with patience, could
+bring real change to people’s lives. Today, she dreams of studying environmental
+engineering so that she can help more communities gain access to clean water.
+</p>
+
+</div>
+
+
+<!-- =========================
+     QUESTION 1
+========================= -->
+
+<h2>Question 1 — Multiple Choice Questions</h2>
+
+<p class="small">
+Choose the correct answer for each question.
+</p>
+
+
+<form id="quizForm">
+
+
+<!-- 1A -->
+
+<div class="question">
+
+<h3>1(a). Why did Aisha decide to build a water filter?</h3>
+
+<div class="options">
+
+<label>
+<input type="radio" name="q1" value="A">
+(i) To win a competition
+</label>
+
+<label>
+<input type="radio" name="q1" value="B">
+(ii) Because clean water was hard to find in her village
+</label>
+
+<label>
+<input type="radio" name="q1" value="C">
+(iii) Because her teacher asked her to
+</label>
+
+<label>
+<input type="radio" name="q1" value="D">
+(iv) To sell it for profit
+</label>
+
+</div>
+</div>
+
+
+<!-- 1B -->
+
+<div class="question">
+
+<h3>1(b). Which materials did Aisha use to make the filter?</h3>
+
+<div class="options">
+
+<label>
+<input type="radio" name="q2" value="A">
+(i) Plastic, iron, and cloth
+</label>
+
+<label>
+<input type="radio" name="q2" value="B">
+(ii) Sand, charcoal, and gravel
+</label>
+
+<label>
+<input type="radio" name="q2" value="C">
+(iii) Stone, cement, and wire
+</label>
+
+<label>
+<input type="radio" name="q2" value="D">
+(iv) Cotton, wood, and metal
+</label>
+
+</div>
+</div>
+
+
+<!-- 1C -->
+
+<div class="question">
+
+<h3>1(c). Who helped Aisha conduct her experiments?</h3>
+
+<div class="options">
+
+<label>
+<input type="radio" name="q3" value="A">
+(i) Her mother
+</label>
+
+<label>
+<input type="radio" name="q3" value="B">
+(ii) A local NGO
+</label>
+
+<label>
+<input type="radio" name="q3" value="C">
+(iii) Her science teacher
+</label>
+
+<label>
+<input type="radio" name="q3" value="D">
+(iv) Her classmates
+</label>
+
+</div>
+</div>
+
+
+<!-- 1D -->
+
+<div class="question">
+
+<h3>1(d). How far did Aisha’s mother walk to collect water?</h3>
+
+<div class="options">
+
+<label>
+<input type="radio" name="q4" value="A">
+(i) One kilometre
+</label>
+
+<label>
+<input type="radio" name="q4" value="B">
+(ii) Nearly two kilometres
+</label>
+
+<label>
+<input type="radio" name="q4" value="C">
+(iii) Five kilometres
+</label>
+
+<label>
+<input type="radio" name="q4" value="D">
+(iv) Half a kilometre
+</label>
+
+</div>
+</div>
+
+
+<!-- 1E -->
+
+<div class="question">
+
+<h3>1(e). Why could almost any family in the village use Aisha’s filter?</h3>
+
+<div class="options">
+
+<label>
+<input type="radio" name="q5" value="A">
+(i) It was very expensive.
+</label>
+
+<label>
+<input type="radio" name="q5" value="B">
+(ii) It required electricity.
+</label>
+
+<label>
+<input type="radio" name="q5" value="C">
+(iii) It did not require electricity or costly materials.
+</label>
+
+<label>
+<input type="radio" name="q5" value="D">
+(iv) It could be used only once.
+</label>
+
+</div>
+</div>
+
+
+<!-- 1F -->
+
+<div class="question">
+
+<h3>1(f). Where did Aisha first demonstrate her invention?</h3>
+
+<div class="options">
+
+<label>
+<input type="radio" name="q6" value="A">
+(i) At a village meeting
+</label>
+
+<label>
+<input type="radio" name="q6" value="B">
+(ii) At a school science fair
+</label>
+
+<label>
+<input type="radio" name="q6" value="C">
+(iii) On television
+</label>
+
+<label>
+<input type="radio" name="q6" value="D">
+(iv) At a government office
+</label>
+
+</div>
+</div>
+
+
+<!-- 1G -->
+
+<div class="question">
+
+<h3>1(g). How many households received the filter design during the following year?</h3>
+
+<div class="options">
+
+<label>
+<input type="radio" name="q7" value="A">
+(i) Fifteen
+</label>
+
+<label>
+<input type="radio" name="q7" value="B">
+(ii) Thirty
+</label>
+
+<label>
+<input type="radio" name="q7" value="C">
+(iii) More than fifty
+</label>
+
+<label>
+<input type="radio" name="q7" value="D">
+(iv) One hundred
+</label>
+
+</div>
+</div>
+
+
+<!-- 1H -->
+
+<div class="question">
+
+<h3>1(h). What happened to the rate of waterborne illness in the village?</h3>
+
+<div class="options">
+
+<label>
+<input type="radio" name="q8" value="A">
+(i) It increased.
+</label>
+
+<label>
+<input type="radio" name="q8" value="B">
+(ii) It remained unchanged.
+</label>
+
+<label>
+<input type="radio" name="q8" value="C">
+(iii) It dropped noticeably.
+</label>
+
+<label>
+<input type="radio" name="q8" value="D">
+(iv) It disappeared completely.
+</label>
+
+</div>
+</div>
+
+
+<!-- 1I -->
+
+<div class="question">
+
+<h3>1(i). What lesson did Aisha learn from her experience?</h3>
+
+<div class="options">
+
+<label>
+<input type="radio" name="q9" value="A">
+(i) Big ideas always need big money.
+</label>
+
+<label>
+<input type="radio" name="q9" value="B">
+(ii) A small idea pursued with patience can bring real change.
+</label>
+
+<label>
+<input type="radio" name="q9" value="C">
+(iii) Only scientists can invent useful things.
+</label>
+
+<label>
+<input type="radio" name="q9" value="D">
+(iv) Village life cannot be improved.
+</label>
+
+</div>
+</div>
+
+
+<!-- 1J -->
+
+<div class="question">
+
+<h3>1(j). What does Aisha want to study in the future?</h3>
+
+<div class="options">
+
+<label>
+<input type="radio" name="q10" value="A">
+(i) Medicine
+</label>
+
+<label>
+<input type="radio" name="q10" value="B">
+(ii) Environmental engineering
+</label>
+
+<label>
+<input type="radio" name="q10" value="C">
+(iii) Business
+</label>
+
+<label>
+<input type="radio" name="q10" value="D">
+(iv) Literature
+</label>
+
+</div>
+</div>
+
+
+</form>
+
+</div>
+
+
+<!-- =========================
+     QUESTION 2
+========================= -->
+
+<div class="section">
+
+<div class="section-title">
+Question 2 — Answer the Following Questions
+</div>
+
+<p>
+<strong>(a)</strong> Why did many children in Aisha’s village suffer from
+waterborne diseases?
+</p>
+
+<textarea placeholder="Write your answer here..."></textarea>
+
+
+<p>
+<strong>(b)</strong> How did Aisha learn about filtration methods?
+</p>
+
+<textarea placeholder="Write your answer here..."></textarea>
+
+
+<p>
+<strong>(c)</strong> Which materials did Aisha use to make her filter, and how
+did the filter improve the pond water?
+</p>
+
+<textarea placeholder="Write your answer here..."></textarea>
+
+
+<p>
+<strong>(d)</strong> What role did the NGO play in spreading Aisha’s invention?
+</p>
+
+<textarea placeholder="Write your answer here..."></textarea>
+
+
+<p>
+<strong>(e)</strong> What lesson does Aisha’s story teach us about solving
+problems?
+</p>
+
+<textarea placeholder="Write your answer here..."></textarea>
+
+
+<div id="q2Answers" class="model-answer hidden">
+
+<h3>Model Answers</h3>
+
+<p>
+<strong>(a)</strong>
+Many children suffered from waterborne diseases because they drank muddy and
+unsafe water from the pond.
+</p>
+
+<p>
+<strong>(b)</strong>
+Aisha learned about simple filtration methods by reading old science magazines
+borrowed from her school library.
+</p>
+
+<p>
+<strong>(c)</strong>
+Aisha used sand, charcoal and gravel layered inside a plastic container. Her
+filter made muddy pond water clearer within minutes.
+</p>
+
+<p>
+<strong>(d)</strong>
+The NGO helped Aisha distribute her filter design to more than fifty
+households during the following year.
+</p>
+
+<p>
+<strong>(e)</strong>
+Aisha’s story teaches us that a small idea, when pursued with patience and
+determination, can bring real change to people's lives.
+</p>
+
+</div>
+
+<button
+type="button"
+class="answer-btn"
+onclick="toggleAnswer('q2Answers', this)">
+Show Model Answers
+</button>
+
+</div>
+
+
+<!-- =========================
+     QUESTION 3
+========================= -->
+
+<div class="section">
+
+<div class="section-title">
+Question 3 — Flow Chart
+</div>
+
+<div class="passage">
+
+Rina always loved sewing, but for years she only made clothes for her own
+family. After her father lost his job, she decided to turn her hobby into a
+small business. First, she saved money for two months by selling vegetables
+from her garden. Next, she used those savings to buy a second-hand sewing
+machine from a local market. After that, she took a short tailoring course at
+a community centre to improve her skills. Once she felt confident, she began
+taking small orders from neighbours, starting with simple items such as school
+uniforms. Finally, as her reputation grew through word of mouth, she opened a
+tiny shop in the local market, where she now employs two other women from her
+neighbourhood.
+
+</div>
+
+<p>
+<strong>Saved money by selling vegetables →</strong>
+</p>
+
+<p>(a) ______________________________</p>
+
+<p>(b) ______________________________</p>
+
+<p>(c) ______________________________</p>
+
+<p>(d) ______________________________</p>
+
+<p>(e) ______________________________</p>
+
+
+<div id="q3Answers" class="model-answer hidden">
+
+<h3>Answer</h3>
+
+<p>
+<strong>(a)</strong> Bought a second-hand sewing machine from a local market
+</p>
+
+<p>
+<strong>(b)</strong> Took a short tailoring course at a community centre
+</p>
+
+<p>
+<strong>(c)</strong> Began taking small orders from neighbours
+</p>
+
+<p>
+<strong>(d)</strong> Started with simple items such as school uniforms
+</p>
+
+<p>
+<strong>(e)</strong> Opened a tiny shop in the local market
+</p>
+
+</div>
+
+<button
+type="button"
+class="answer-btn"
+onclick="toggleAnswer('q3Answers', this)">
+Show Answer
+</button>
+
+</div>
+
+
+<!-- =========================
+     QUESTION 4
+========================= -->
+
+<div class="section">
+
+<div class="section-title">
+Question 4 — Summary
+</div>
+
+<div class="passage">
+
+<p>
+Bees play a far more important role in our lives than most people realise.
+Although they are often seen only as producers of honey, their real
+contribution lies in pollination. As bees move from flower to flower collecting
+nectar, they transfer pollen grains, which allows plants to reproduce and
+produce fruits, vegetables, and seeds. Scientists estimate that nearly
+one-third of the food we eat depends, directly or indirectly, on pollination
+carried out by bees and other insects.
+</p>
+
+<p>
+In recent decades, bee populations across the world have been declining
+rapidly. Several factors are responsible for this decline, including the heavy
+use of pesticides in farming, the destruction of natural habitats due to
+urbanisation, and the effects of climate change on flowering patterns.
+</p>
+
+<p>
+When bee populations shrink, crop yields fall, food prices rise, and entire
+ecosystems become unstable, since many other creatures also depend on the
+plants that bees help pollinate.
+</p>
+
+<p>
+To protect bees, experts recommend several measures. Farmers can reduce the
+use of harmful pesticides and adopt more natural methods of pest control.
+Governments can create protected green spaces where wildflowers and bee
+colonies can thrive. Ordinary citizens can also help simply by planting
+flowering plants in their gardens or on their balconies.
+</p>
+
+</div>
+
+<p>
+<strong>
+Write a summary of the passage in about 100 words.
+</strong>
+</p>
+
+<textarea placeholder="Write your summary here..."></textarea>
+
+
+<div id="q4Answers" class="model-answer hidden">
+
+<h3>Model Summary</h3>
+
+<p>
+Bees are essential to human life because they play a major role in pollination.
+By transferring pollen from flower to flower, they help plants reproduce and
+produce fruits, vegetables and seeds. A significant part of the world's food
+supply depends on pollination. However, bee populations are declining because
+of pesticides, habitat destruction and climate change. Their decline can
+reduce crop production, increase food prices and disturb ecosystems. To
+protect bees, harmful pesticides should be reduced, natural habitats should
+be preserved and flowering plants should be grown. Protecting bees is therefore
+important for food security and the balance of nature.
+</p>
+
+</div>
+
+<button
+type="button"
+class="answer-btn"
+onclick="toggleAnswer('q4Answers', this)">
+Show Model Summary
+</button>
+
+</div>
+
+
+<!-- =========================
+     QUESTION 5
+========================= -->
+
+<div class="section">
+
+<div class="section-title">
+Question 5 — Completing with Words from the Box
+</div>
+
+<p>
+<strong>Box:</strong>
+essential, maintain, without, achieve, necessary, lead, success, order,
+develop, pass
+</p>
+
+<div class="passage">
+
+Discipline is (a) __________ for a successful life. It means to (b) __________
+rules and regulations in every sphere of life. (c) __________ discipline, no
+one can (d) __________ anything great in life. It is (e) __________ in schools,
+colleges, offices, and even at home. A disciplined life helps a person
+(f) __________ a well-organised life and brings (g) __________ in one’s career.
+It also helps to maintain peace and (h) __________ in society. Every person
+should (i) __________ this quality and (j) __________ it on to the next
+generation.
+
+</div>
+
+
+<div id="q5Answers" class="model-answer hidden">
+
+<h3>Correct Answers</h3>
+
+<p>
+<strong>(a)</strong> essential
+</p>
+
+<p>
+<strong>(b)</strong> maintain
+</p>
+
+<p>
+<strong>(c)</strong> without
+</p>
+
+<p>
+<strong>(d)</strong> achieve
+</p>
+
+<p>
+<strong>(e)</strong> necessary
+</p>
+
+<p>
+<strong>(f)</strong> lead
+</p>
+
+<p>
+<strong>(g)</strong> success
+</p>
+
+<p>
+<strong>(h)</strong> order
+</p>
+
+<p>
+<strong>(i)</strong> develop
+</p>
+
+<p>
+<strong>(j)</strong> pass
+</p>
+
+</div>
+
+
+<button
+type="button"
+class="answer-btn"
+onclick="toggleAnswer('q5Answers', this)">
+Show Answer
+</button>
+
+</div>
+
+
+<!-- =========================
+     QUESTION 6
+========================= -->
+
+<div class="section">
+
+<div class="section-title">
+Question 6 — Completing with Appropriate Words
+</div>
+
+<div class="passage">
+
+Time is very precious (a) __________ our life. It (b) __________ never come
+back once it (c) __________ gone. We should learn (d) __________ value of time
+(e) __________ our early life. A person (f) __________ wastes time can never
+(g) __________ success in life. (h) __________ we manage our time well, we
+(i) __________ achieve a lot (j) __________ our lifetime.
+
+</div>
+
+
+<div id="q6Answers" class="model-answer hidden">
+
+<h3>Possible Answers</h3>
+
+<p>
+<strong>(a)</strong> in
+</p>
+
+<p>
+<strong>(b)</strong> will
+</p>
+
+<p>
+<strong>(c)</strong> is
+</p>
+
+<p>
+<strong>(d)</strong> the
+</p>
+
+<p>
+<strong>(e)</strong> from
+</p>
+
+<p>
+<strong>(f)</strong> who
+</p>
+
+<p>
+<strong>(g)</strong> achieve
+</p>
+
+<p>
+<strong>(h)</strong> if
+</p>
+
+<p>
+<strong>(i)</strong> can
+</p>
+
+<p>
+<strong>(j)</strong> in
+</p>
+
+</div>
+
+<button
+type="button"
+class="answer-btn"
+onclick="toggleAnswer('q6Answers', this)">
+Show Answer
+</button>
+
+</div>
+
+
+<!-- =========================
+     QUESTION 7
+========================= -->
+
+<div class="section">
+
+<div class="section-title">
+Question 7 — Rearranging Sentences
+</div>
+
+<p>
+Rearrange the following sentences to make a meaningful paragraph.
+</p>
+
+<div class="passage">
+
+<p>
+<strong>(a)</strong> As a result, he became one of the most respected scientists
+of his time.
+</p>
+
+<p>
+<strong>(b)</strong> He was born into a poor family in a small village.
+</p>
+
+<p>
+<strong>(c)</strong> Despite many hardships, he continued his studies with
+determination.
+</p>
+
+<p>
+<strong>(d)</strong> A great scientist devoted his whole life to research.
+</p>
+
+<p>
+<strong>(e)</strong> His discoveries brought a revolutionary change in the field
+of science.
+</p>
+
+<p>
+<strong>(f)</strong> From childhood, he showed a keen interest in science.
+</p>
+
+<p>
+<strong>(g)</strong> Later, he got the chance to study at a reputed university.
+</p>
+
+</div>
+
+
+<div id="q7Answers" class="model-answer hidden">
+
+<h3>Correct Order</h3>
+
+<p>
+<strong>d → b → f → c → g → e → a</strong>
+</p>
+
+<p>
+<strong>Complete paragraph:</strong>
+</p>
+
+<p>
+A great scientist devoted his whole life to research. He was born into a poor
+family in a small village. From childhood, he showed a keen interest in
+science. Despite many hardships, he continued his studies with determination.
+Later, he got the chance to study at a reputed university. His discoveries
+brought a revolutionary change in the field of science. As a result, he became
+one of the most respected scientists of his time.
+</p>
+
+</div>
+
+<button
+type="button"
+class="answer-btn"
+onclick="toggleAnswer('q7Answers', this)">
+Show Answer
+</button>
+
+</div>
+
+
+<!-- =========================
+     PART II
+========================= -->
+
+<div class="section">
+
+<div class="section-title">
+PART II — WRITING
+</div>
+
+
+<!-- QUESTION 8 -->
+
+<h2>Question 8 — Data Description</h2>
+
+<p>
+The table below shows the number of internet users in Bangladesh over five
+years. Study the data and write a description of the trend in about 200 words.
+</p>
+
+
+<table class="data-table">
+
+<tr>
+<th>Year</th>
+<th>Internet Users</th>
+</tr>
+
+<tr>
+<td>2019</td>
+<td>50 million</td>
+</tr>
+
+<tr>
+<td>2020</td>
+<td>65 million</td>
+</tr>
+
+<tr>
+<td>2021</td>
+<td>80 million</td>
+</tr>
+
+<tr>
+<td>2022</td>
+<td>100 million</td>
+</tr>
+
+<tr>
+<td>2023</td>
+<td>130 million</td>
+</tr>
+
+</table>
+
+
+<textarea placeholder="Write your answer here..."></textarea>
+
+
+<div id="q8Answers" class="model-answer hidden">
+
+<h3>Model Answer</h3>
+
+<p>
+The table shows the number of internet users in Bangladesh over a period of
+five years from 2019 to 2023. The figures indicate a continuous upward trend
+in internet usage during the period.
+</p>
+
+<p>
+In 2019, there were 50 million internet users in Bangladesh. The number
+increased to 65 million in 2020 and then rose to 80 million in 2021. In 2022,
+the number reached 100 million. Finally, in 2023, the number increased sharply
+to 130 million.
+</p>
+
+<p>
+Overall, the number of internet users increased by 80 million over the
+five-year period. The largest increase occurred between 2022 and 2023, when
+the number rose by 30 million. The figures therefore show a steady expansion
+of internet use in Bangladesh.
+</p>
+
+<p>
+The increasing number of users may reflect wider access to smartphones,
+digital services and internet connections. Internet use has also become
+increasingly important for communication, education, business and entertainment.
+Thus, the data clearly demonstrates a significant growth in internet usage
+between 2019 and 2023.
+</p>
+
+</div>
+
+<button
+type="button"
+class="answer-btn"
+onclick="toggleAnswer('q8Answers', this)">
+Show Model Answer
+</button>
+
+
+<!-- QUESTION 9 -->
+
+<h2 style="margin-top:35px;">
+Question 9 — Story Completion
+</h2>
+
+<p>
+Complete the following story. Give it a suitable title and moral.
+</p>
+
+<div class="passage">
+
+“Once a poor farmer found a bag full of money on the road while returning
+home from the market…”
+</div>
+
+
+<textarea placeholder="Complete the story here..."></textarea>
+
+
+<div id="q9Answers" class="model-answer hidden">
+
+<h3>Title: Honesty Is the Best Policy</h3>
+
+<p>
+Once a poor farmer found a bag full of money on the road while returning home
+from the market. He picked it up and looked around, but there was nobody
+nearby. Although he was very poor and badly needed money, he decided not to
+keep it. He took the bag home and waited for its owner.
+</p>
+
+<p>
+The next morning, the farmer went to the local market and asked people whether
+anyone had lost a bag of money. After some time, a wealthy merchant came to
+him. He described the bag correctly and told the farmer that it contained a
+large amount of money.
+</p>
+
+<p>
+The farmer returned the bag without taking anything from it. The merchant was
+extremely happy and offered him a reward. At first, the farmer refused,
+saying that he had only done his duty. The merchant was impressed by his
+honesty and later helped him start a small business.
+</p>
+
+<p>
+The farmer's honest decision changed his life. He became respected by everyone
+in the village.
+</p>
+
+<p>
+<strong>Moral:</strong> Honesty is always rewarded.
+</p>
+
+</div>
+
+<button
+type="button"
+class="answer-btn"
+onclick="toggleAnswer('q9Answers', this)">
+Show Model Answer
+</button>
+
+
+<!-- QUESTION 10 -->
+
+<h2 style="margin-top:35px;">
+Question 10 — Email Writing
+</h2>
+
+<p>
+Write an email to your friend describing how you spent your last summer
+vacation.
+</p>
+
+
+<textarea placeholder="Write your email here..."></textarea>
+
+
+<div id="q10Answers" class="model-answer hidden">
+
+<h3>Model Email</h3>
+
+<p>
+<strong>Subject: My Last Summer Vacation</strong>
+</p>
+
+<p>
+Dear Friend,
+</p>
+
+<p>
+I hope you are doing well. I am writing to tell you how I spent my last
+summer vacation. After finishing my examinations, I went to my village with
+my family. I spent most of my time with my grandparents and relatives.
+</p>
+
+<p>
+During the vacation, I enjoyed the peaceful natural environment of the
+village. I visited nearby places, played with my cousins and went fishing in
+a local pond. I also helped my grandfather in his garden. In the evenings, we
+often sat together and talked about different things. Besides enjoying myself,
+I read a few books and prepared myself for the next academic session.
+</p>
+
+<p>
+The vacation was both enjoyable and refreshing. It helped me forget the
+pressure of studies and gave me many happy memories.
+</p>
+
+<p>
+No more today. Take care and write back soon.
+</p>
+
+<p>
+Yours lovingly,<br>
+Your friend
+</p>
+
+</div>
+
+<button
+type="button"
+class="answer-btn"
+onclick="toggleAnswer('q10Answers', this)">
+Show Model Email
+</button>
+
+</div>
+
+
+<!-- =========================
+     SUBMIT
+========================= -->
+
+<div class="section" style="text-align:center;">
+
+<button
+type="button"
+class="submit-btn"
+onclick="submitQuiz()">
+✅ Submit Test
+</button>
+
+<button
+type="button"
+class="reset-btn"
+onclick="resetQuiz()">
+🔄 Reset Test
+</button>
+
+</div>
+
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   ANSWER KEY
+===================================================== */
+
+const answers = {
+
+    q1: "B",
+
+    q2: "B",
+
+    q3: "C",
+
+    q4: "B",
+
+    q5: "C",
+
+    q6: "B",
+
+    q7: "C",
+
+    q8: "C",
+
+    q9: "B",
+
+    q10: "B"
+
+};
+
+
+/* =====================================================
+   ANSWERS + EXPLANATIONS
+===================================================== */
+
+const explanations = {
+
+    q1: {
+        answer:
+        "(ii) Because clean water was hard to find in her village.",
+
+        explanation:
+        "The passage says that clean drinking water was hard to find in Aisha's village. This problem motivated her to develop a filter."
+    },
+
+
+    q2: {
+        answer:
+        "(ii) Sand, charcoal, and gravel.",
+
+        explanation:
+        "Aisha experimented with sand, charcoal and gravel layered inside a plastic container."
+    },
+
+
+    q3: {
+        answer:
+        "(iii) Her science teacher.",
+
+        explanation:
+        "The passage directly states that Aisha experimented with the help of her science teacher."
+    },
+
+
+    q4: {
+        answer:
+        "(ii) Nearly two kilometres.",
+
+        explanation:
+        "The passage says that Aisha's mother walked nearly two kilometres every morning to fetch water."
+    },
+
+
+    q5: {
+        answer:
+        "(iii) It did not require electricity or costly materials.",
+
+        explanation:
+        "Aisha's invention did not require electricity or expensive materials, so almost any family could build one."
+    },
+
+
+    q6: {
+        answer:
+        "(ii) At a school science fair.",
+
+        explanation:
+        "Aisha demonstrated her filter at a school science fair, where it attracted the attention of a local NGO."
+    },
+
+
+    q7: {
+        answer:
+        "(iii) More than fifty.",
+
+        explanation:
+        "The NGO helped Aisha distribute the design to more than fifty households during the following year."
+    },
+
+
+    q8: {
+        answer:
+        "(iii) It dropped noticeably.",
+
+        explanation:
+        "The passage states that the rate of waterborne illness dropped noticeably within two years."
+    },
+
+
+    q9: {
+        answer:
+        "(ii) A small idea pursued with patience can bring real change.",
+
+        explanation:
+        "Aisha's biggest lesson was that a small idea, if pursued with patience, can bring real change to people's lives."
+    },
+
+
+    q10: {
+        answer:
+        "(ii) Environmental engineering.",
+
+        explanation:
+        "The final sentence says that Aisha dreams of studying environmental engineering."
+    }
+
+};
+
+
+/* =====================================================
+   SUBMIT STATE
+===================================================== */
+
+let submitted = false;
+
+
+/* =====================================================
+   SUBMIT QUIZ
+===================================================== */
+
+function submitQuiz() {
+
+    if (submitted) {
+
+        document.getElementById("result").scrollIntoView({
+            behavior: "smooth"
+        });
+
+        return;
+    }
+
+
+    let score = 0;
+
+    let reviewHTML = "";
+
+
+    for (let i = 1; i <= 10; i++) {
+
+        const questionName = "q" + i;
+
+        const selected =
+            document.querySelector(
+                'input[name="' +
+                questionName +
+                '"]:checked'
+            );
+
+
+        const correct =
+            answers[questionName];
+
+
+        /* =========================
+           CORRECT
+        ========================= */
+
+        if (selected && selected.value === correct) {
+
+            score++;
+
+
+            reviewHTML += `
+
+                <div class="review-item correct">
+
+                    <strong>
+                        Question ${i} — Correct ✅
+                    </strong>
+
+                    <div class="answer">
+
+                        Correct Answer:
+                        ${explanations[questionName].answer}
+
+                    </div>
+
+                    <div class="explanation">
+
+                        <strong>Explanation:</strong>
+                        ${explanations[questionName].explanation}
+
+                    </div>
+
+                </div>
+
+            `;
+
+        }
+
+
+        /* =========================
+           WRONG
+        ========================= */
+
+        else if (selected) {
+
+            const selectedText =
+                selected.parentElement
+                .textContent
+                .trim();
+
+
+            reviewHTML += `
+
+                <div class="review-item wrong">
+
+                    <strong>
+                        Question ${i} — Wrong ❌
+                    </strong>
+
+                    <div class="your-answer">
+
+                        Your Answer:
+                        <strong>
+                            ${selectedText}
+                        </strong>
+
+                    </div>
+
+                    <div class="answer">
+
+                        Correct Answer:
+                        ${explanations[questionName].answer}
+
+                    </div>
+
+                    <div class="explanation">
+
+                        <strong>Why?</strong>
+                        ${explanations[questionName].explanation}
+
+                    </div>
+
+                </div>
+
+            `;
+
+        }
+
+
+        /* =========================
+           UNANSWERED
+        ========================= */
+
+        else {
+
+            reviewHTML += `
+
+                <div class="review-item unanswered">
+
+                    <strong>
+                        Question ${i} — Not Answered ⚠️
+                    </strong>
+
+                    <div class="answer">
+
+                        Correct Answer:
+                        ${explanations[questionName].answer}
+
+                    </div>
+
+                    <div class="explanation">
+
+                        ${explanations[questionName].explanation}
+
+                    </div>
+
+                </div>
+
+            `;
+
+        }
+
+    }
+
+
+    const percentage =
+        Math.round((score / 10) * 100);
+
+
+    document.getElementById("score").textContent =
+        score;
+
+
+    document.getElementById("percentage").textContent =
+        "Percentage: " + percentage + "%";
+
+
+    document.getElementById("review").innerHTML =
+        reviewHTML;
+
+
+    document.getElementById("result").style.display =
+        "block";
+
+
+    submitted = true;
+
+
+    clearInterval(timerInterval);
+
+
+    /* Disable MCQ inputs after submission */
+
+    document
+        .querySelectorAll(
+            '#quizForm input[type="radio"]'
+        )
+        .forEach(function(input) {
+
+            input.disabled = true;
+
+        });
+
+
+    window.scrollTo({
+
+        top: 0,
+
+        behavior: "smooth"
+
+    });
+
+}
+
+
+/* =====================================================
+   SHOW / HIDE MODEL ANSWERS
+===================================================== */
+
+function toggleAnswer(id, button) {
+
+    const element =
+        document.getElementById(id);
+
+
+    if (element.classList.contains("hidden")) {
+
+        element.classList.remove("hidden");
+
+        button.textContent =
+            "Hide Answer";
+
+    }
+
+    else {
+
+        element.classList.add("hidden");
+
+        button.textContent =
+            "Show Answer";
+
+    }
+
+}
+
+
+/* =====================================================
+   TIMER
+===================================================== */
+
+let totalSeconds =
+    3 * 60 * 60;
+
+
+let timerInterval =
+    setInterval(updateTimer, 1000);
+
+
+function updateTimer() {
+
+    if (submitted) {
+
+        clearInterval(timerInterval);
+
+        return;
+
+    }
+
+
+    if (totalSeconds <= 0) {
+
+        clearInterval(timerInterval);
+
+
+        alert(
+            "Time is over! Your test will be submitted automatically."
+        );
+
+
+        submitQuiz();
+
+        return;
+
+    }
+
+
+    const hours =
+        Math.floor(
+            totalSeconds / 3600
+        );
+
+
+    const minutes =
+        Math.floor(
+            (totalSeconds % 3600) / 60
+        );
+
+
+    const seconds =
+        totalSeconds % 60;
+
+
+    document.getElementById("timer")
+        .textContent =
+
+        String(hours).padStart(2, "0")
+        + ":"
+        +
+        String(minutes).padStart(2, "0")
+        + ":"
+        +
+        String(seconds).padStart(2, "0");
+
+
+    totalSeconds--;
+
+}
+
+
+/* =====================================================
+   RESET
+===================================================== */
+
+function resetQuiz() {
+
+    const confirmReset =
+        confirm(
+            "Are you sure you want to reset the entire test?"
+        );
+
+
+    if (!confirmReset) {
+
+        return;
+
+    }
+
+
+    /* Reset MCQs */
+
+    document
+        .getElementById("quizForm")
+        .reset();
+
+
+    /* Enable inputs */
+
+    document
+        .querySelectorAll(
+            '#quizForm input[type="radio"]'
+        )
+        .forEach(function(input) {
+
+            input.disabled = false;
+
+        });
+
+
+    /* Hide result */
+
+    document.getElementById("result")
+        .style.display = "none";
+
+
+    /* Hide all model answers */
+
+    document
+        .querySelectorAll(".model-answer")
+        .forEach(function(element) {
+
+            element.classList.add("hidden");
+
+        });
+
+
+    /* Reset answer buttons */
+
+    document
+        .querySelectorAll(".answer-btn")
+        .forEach(function(button) {
+
+            button.textContent =
+                button.textContent
+                    .startsWith("Show")
+                    ? button.textContent
+                    : "Show Answer";
+
+        });
+
+
+    /* Reset timer */
+
+    totalSeconds =
+        3 * 60 * 60;
+
+
+    submitted = false;
+
+
+    clearInterval(timerInterval);
+
+
+    timerInterval =
+        setInterval(updateTimer, 1000);
+
+
+    document.getElementById("timer")
+        .textContent = "03:00:00";
+
+
+    /* Scroll to top */
+
+    window.scrollTo({
+
+        top: 0,
+
+        behavior: "smooth"
+
+    });
+
+}
+
+</script>
+
+</body>
+</html>
