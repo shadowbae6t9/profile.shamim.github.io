@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>HSC 2027 English 2nd Paper | Model Test</title>
 
-<style>
+<meta
+    name="description"
+    content="HSC 2027 English Second Paper Online Model Test"
+/>
 
-/* =========================
-   RESET
-========================= */
+<style>
 
 *{
     box-sizing:border-box;
@@ -19,10 +19,9 @@
     padding:0;
 }
 
-
-/* =========================
-   BODY
-========================= */
+html{
+    scroll-behavior:smooth;
+}
 
 body{
     font-family:Arial, Helvetica, sans-serif;
@@ -31,21 +30,11 @@ body{
     line-height:1.6;
 }
 
-
-/* =========================
-   CONTAINER
-========================= */
-
 .container{
     width:95%;
     max-width:1000px;
     margin:20px auto 50px;
 }
-
-
-/* =========================
-   HEADER
-========================= */
 
 .header{
     background:#111827;
@@ -71,11 +60,6 @@ body{
     opacity:.9;
     margin-top:3px;
 }
-
-
-/* =========================
-   STUDENT INFO
-========================= */
 
 .info-box{
     background:white;
@@ -105,11 +89,6 @@ body{
     border-color:#111827;
 }
 
-
-/* =========================
-   TIMER
-========================= */
-
 .timer{
     position:sticky;
     top:10px;
@@ -129,10 +108,9 @@ body{
     background:#b91c1c;
 }
 
-
-/* =========================
-   SECTION
-========================= */
+.timer.finished{
+    background:#111827;
+}
 
 .section{
     background:white;
@@ -149,11 +127,6 @@ body{
     font-size:19px;
     font-weight:bold;
 }
-
-
-/* =========================
-   MCQ QUESTIONS
-========================= */
 
 .question{
     padding:20px;
@@ -188,10 +161,15 @@ body{
     margin-right:8px;
 }
 
+.option.correct{
+    background:#dcfce7 !important;
+    border-color:#22c55e !important;
+}
 
-/* =========================
-   WRITING QUESTIONS
-========================= */
+.option.wrong{
+    background:#fee2e2 !important;
+    border-color:#ef4444 !important;
+}
 
 .writing-question{
     padding:20px;
@@ -232,11 +210,6 @@ textarea:disabled{
     color:#374151;
 }
 
-
-/* =========================
-   SUBMIT AREA
-========================= */
-
 .submit-area{
     background:white;
     padding:25px;
@@ -264,11 +237,6 @@ textarea:disabled{
 .submit-btn:active{
     transform:scale(.97);
 }
-
-
-/* =========================
-   RESULT
-========================= */
 
 .result{
     display:none;
@@ -304,28 +272,7 @@ textarea:disabled{
     color:#374151;
 }
 
-
-/* =========================
-   CORRECT / WRONG
-========================= */
-
-.correct{
-    background:#dcfce7 !important;
-    border-color:#22c55e !important;
-}
-
-.wrong{
-    background:#fee2e2 !important;
-    border-color:#ef4444 !important;
-}
-
-
-/* =========================
-   ANSWER KEY BUTTON
-========================= */
-
 .answer-key-box{
-    display:none;
     margin-top:20px;
     text-align:center;
 }
@@ -349,14 +296,16 @@ textarea:disabled{
     transform:translateY(-2px);
 }
 
-.answer-key-btn:active{
-    transform:scale(.97);
+.back-btn{
+    display:inline-block;
+    margin-top:10px;
+    padding:11px 20px;
+    background:#e5e7eb;
+    color:#111827;
+    text-decoration:none;
+    border-radius:9px;
+    font-weight:600;
 }
-
-
-/* =========================
-   FOOTER
-========================= */
 
 .footer{
     text-align:center;
@@ -364,11 +313,6 @@ textarea:disabled{
     color:#6b7280;
     font-size:13px;
 }
-
-
-/* =========================
-   MOBILE
-========================= */
 
 @media(max-width:600px){
 
@@ -410,22 +354,18 @@ textarea:disabled{
         width:100%;
     }
 
+    .answer-key-btn{
+        width:100%;
+    }
+
 }
 
 </style>
-
 </head>
-
 
 <body>
 
-
 <div class="container">
-
-
-    <!-- =========================
-         HEADER
-    ========================= -->
 
     <div class="header">
 
@@ -444,10 +384,6 @@ textarea:disabled{
     </div>
 
 
-    <!-- =========================
-         STUDENT INFORMATION
-    ========================= -->
-
     <div class="info-box">
 
         <label>
@@ -459,7 +395,6 @@ textarea:disabled{
             id="studentName"
             placeholder="Enter your name"
         >
-
 
         <label>
             <strong>HSC Batch</strong>
@@ -475,17 +410,13 @@ textarea:disabled{
     </div>
 
 
-    <!-- =========================
-         TIMER
-    ========================= -->
-
     <div class="timer" id="timer">
         Time Remaining: 03:00:00
     </div>
 
 
     <!-- =====================================================
-         PART A — GRAMMAR
+         PART A
     ====================================================== -->
 
     <div class="section">
@@ -494,1655 +425,13 @@ textarea:disabled{
             PART A — GRAMMAR | 60 MARKS
         </div>
 
-
-        <!-- ================= ARTICLES ================= -->
-
-        <div class="question">
-
-            <h3>1(a). Bangladesh is ___ independent country.</h3>
-
-            <label class="option">
-                <input type="radio" name="q1" value="a">
-                a) a
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q1" value="b">
-                b) an
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q1" value="c">
-                c) the
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q1" value="d">
-                d) no article
-            </label>
-
-        </div>
-
-
-        <div class="question">
-
-            <h3>1(b). He is ___ honest student.</h3>
-
-            <label class="option">
-                <input type="radio" name="q2" value="a">
-                a) a
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q2" value="b">
-                b) an
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q2" value="c">
-                c) the
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q2" value="d">
-                d) no article
-            </label>
-
-        </div>
-
-
-        <div class="question">
-
-            <h3>1(c). ___ sun rises in the east.</h3>
-
-            <label class="option">
-                <input type="radio" name="q3" value="a">
-                a) A
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q3" value="b">
-                b) An
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q3" value="c">
-                c) The
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q3" value="d">
-                d) No article
-            </label>
-
-        </div>
-
-
-        <div class="question">
-
-            <h3>1(d). She bought ___ umbrella yesterday.</h3>
-
-            <label class="option">
-                <input type="radio" name="q4" value="a">
-                a) a
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q4" value="b">
-                b) an
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q4" value="c">
-                c) the
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q4" value="d">
-                d) no article
-            </label>
-
-        </div>
-
-
-        <div class="question">
-
-            <h3>1(e). He is ___ European.</h3>
-
-            <label class="option">
-                <input type="radio" name="q5" value="a">
-                a) a
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q5" value="b">
-                b) an
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q5" value="c">
-                c) the
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q5" value="d">
-                d) no article
-            </label>
-
-        </div>
-
-
-        <!-- ================= PREPOSITIONS ================= -->
-
-        <div class="question">
-
-            <h3>2(a). He is good ___ English.</h3>
-
-            <label class="option">
-                <input type="radio" name="q6" value="a">
-                a) at
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q6" value="b">
-                b) in
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q6" value="c">
-                c) on
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q6" value="d">
-                d) for
-            </label>
-
-        </div>
-
-
-        <div class="question">
-
-            <h3>2(b). She is interested ___ learning English.</h3>
-
-            <label class="option">
-                <input type="radio" name="q7" value="a">
-                a) at
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q7" value="b">
-                b) in
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q7" value="c">
-                c) on
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q7" value="d">
-                d) for
-            </label>
-
-        </div>
-
-
-        <div class="question">
-
-            <h3>2(c). He has been absent ___ Monday.</h3>
-
-            <label class="option">
-                <input type="radio" name="q8" value="a">
-                a) for
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q8" value="b">
-                b) from
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q8" value="c">
-                c) since
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q8" value="d">
-                d) by
-            </label>
-
-        </div>
-
-
-        <div class="question">
-
-            <h3>2(d). The man was accused ___ theft.</h3>
-
-            <label class="option">
-                <input type="radio" name="q9" value="a">
-                a) with
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q9" value="b">
-                b) for
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q9" value="c">
-                c) of
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q9" value="d">
-                d) by
-            </label>
-
-        </div>
-
-
-        <div class="question">
-
-            <h3>2(e). We should not be indifferent ___ our duties.</h3>
-
-            <label class="option">
-                <input type="radio" name="q10" value="a">
-                a) to
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q10" value="b">
-                b) at
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q10" value="c">
-                c) for
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q10" value="d">
-                d) with
-            </label>
-
-        </div>
-
-
-        <!-- ================= SPECIAL USES ================= -->
-
-        <div class="question">
-
-            <h3>3(a). I would rather ___ at home than go outside.</h3>
-
-            <label class="option">
-                <input type="radio" name="q11" value="a">
-                a) stayed
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q11" value="b">
-                b) stay
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q11" value="c">
-                c) staying
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q11" value="d">
-                d) to stay
-            </label>
-
-        </div>
-
-
-        <div class="question">
-
-            <h3>3(b). You had better ___ the truth.</h3>
-
-            <label class="option">
-                <input type="radio" name="q12" value="a">
-                a) tell
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q12" value="b">
-                b) told
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q12" value="c">
-                c) telling
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q12" value="d">
-                d) to tell
-            </label>
-
-        </div>
-
-
-        <div class="question">
-
-            <h3>3(c). He cannot buy a pen, let alone ___ a laptop.</h3>
-
-            <label class="option">
-                <input type="radio" name="q13" value="a">
-                a) bought
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q13" value="b">
-                b) buying
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q13" value="c">
-                c) buy
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q13" value="d">
-                d) to buy
-            </label>
-
-        </div>
-
-
-        <div class="question">
-
-            <h3>3(d). Walk carefully lest you ___ fall.</h3>
-
-            <label class="option">
-                <input type="radio" name="q14" value="a">
-                a) will
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q14" value="b">
-                b) should
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q14" value="c">
-                c) would
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q14" value="d">
-                d) can
-            </label>
-
-        </div>
-
-
-        <div class="question">
-
-            <h3>3(e). No sooner had he reached home ___ it started raining.</h3>
-
-            <label class="option">
-                <input type="radio" name="q15" value="a">
-                a) when
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q15" value="b">
-                b) than
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q15" value="c">
-                c) then
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q15" value="d">
-                d) and
-            </label>
-
-        </div>
-
-
-        <!-- ================= COMPLETING SENTENCES ================= -->
-
-        <div class="question">
-
-            <h3>4(a). It is high time we ___ our duties.</h3>
-
-            <label class="option">
-                <input type="radio" name="q16" value="a">
-                a) perform
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q16" value="b">
-                b) performed
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q16" value="c">
-                c) performing
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q16" value="d">
-                d) have performed
-            </label>
-
-        </div>
-
-
-        <div class="question">
-
-            <h3>4(b). I wish I ___ a bird.</h3>
-
-            <label class="option">
-                <input type="radio" name="q17" value="a">
-                a) am
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q17" value="b">
-                b) was
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q17" value="c">
-                c) were
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q17" value="d">
-                d) have been
-            </label>
-
-        </div>
-
-
-        <div class="question">
-
-            <h3>4(c). If I were a bird, I ___ in the sky.</h3>
-
-            <label class="option">
-                <input type="radio" name="q18" value="a">
-                a) fly
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q18" value="b">
-                b) flew
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q18" value="c">
-                c) would fly
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q18" value="d">
-                d) will fly
-            </label>
-
-        </div>
-
-
-        <div class="question">
-
-            <h3>4(d). Unless you work hard, you ___.</h3>
-
-            <label class="option">
-                <input type="radio" name="q19" value="a">
-                a) will fail
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q19" value="b">
-                b) would fail
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q19" value="c">
-                c) failed
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q19" value="d">
-                d) had failed
-            </label>
-
-        </div>
-
-
-        <div class="question">
-
-            <h3>4(e). He talks as if he ___ everything.</h3>
-
-            <label class="option">
-                <input type="radio" name="q20" value="a">
-                a) knows
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q20" value="b">
-                b) knew
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q20" value="c">
-                c) had known
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q20" value="d">
-                d) knowing
-            </label>
-
-        </div>
-
-
-        <!-- ================= RIGHT FORM OF VERBS ================= -->
-
-        <div class="question">
-
-            <h3>5(a). The sun ___ in the east.</h3>
-
-            <label class="option">
-                <input type="radio" name="q21" value="a">
-                a) rise
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q21" value="b">
-                b) rises
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q21" value="c">
-                c) rose
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q21" value="d">
-                d) rising
-            </label>
-
-        </div>
-
-
-        <div class="question">
-
-            <h3>5(b). He ___ a book now.</h3>
-
-            <label class="option">
-                <input type="radio" name="q22" value="a">
-                a) reads
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q22" value="b">
-                b) read
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q22" value="c">
-                c) is reading
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q22" value="d">
-                d) has read
-            </label>
-
-        </div>
-
-
-        <div class="question">
-
-            <h3>5(c). He ___ here since 2020.</h3>
-
-            <label class="option">
-                <input type="radio" name="q23" value="a">
-                a) lives
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q23" value="b">
-                b) lived
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q23" value="c">
-                c) has been living
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q23" value="d">
-                d) is living
-            </label>
-
-        </div>
-
-
-        <div class="question">
-
-            <h3>5(d). When I reached the station, the train ___.</h3>
-
-            <label class="option">
-                <input type="radio" name="q24" value="a">
-                a) leaves
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q24" value="b">
-                b) has left
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q24" value="c">
-                c) had left
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q24" value="d">
-                d) was leaving
-            </label>
-
-        </div>
-
-
-        <div class="question">
-
-            <h3>5(e). Had I known the matter, I ___ him.</h3>
-
-            <label class="option">
-                <input type="radio" name="q25" value="a">
-                a) help
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q25" value="b">
-                b) helped
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q25" value="c">
-                c) would have helped
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q25" value="d">
-                d) will help
-            </label>
-
-        </div>
-
-
-        <!-- ================= TRANSFORMATION ================= -->
-
-        <div class="question">
-
-            <h3>6(a). Everybody loves flowers. Which is the correct negative form?</h3>
-
-            <label class="option">
-                <input type="radio" name="q26" value="a">
-                a) Nobody loves flowers.
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q26" value="b">
-                b) There is nobody who does not love flowers.
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q26" value="c">
-                c) Everybody does not love flowers.
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q26" value="d">
-                d) Nobody does not love flowers.
-            </label>
-
-        </div>
-
-
-        <div class="question">
-
-            <h3>6(b). He is too weak to walk. Which is the correct complex form?</h3>
-
-            <label class="option">
-                <input type="radio" name="q27" value="a">
-                a) He is so weak that he cannot walk.
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q27" value="b">
-                b) He is weak and cannot walk.
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q27" value="c">
-                c) He is very weak but walks.
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q27" value="d">
-                d) He was weak to walk.
-            </label>
-
-        </div>
-
-
-        <div class="question">
-
-            <h3>6(c). Though he is poor, he is honest. Which is the correct compound form?</h3>
-
-            <label class="option">
-                <input type="radio" name="q28" value="a">
-                a) He is poor because he is honest.
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q28" value="b">
-                b) He is poor but honest.
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q28" value="c">
-                c) He is honest although poor.
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q28" value="d">
-                d) Being poor, he is honest.
-            </label>
-
-        </div>
-
-
-        <div class="question">
-
-            <h3>6(d). Dhaka is one of the largest cities in Bangladesh. Which is the positive form?</h3>
-
-            <label class="option">
-                <input type="radio" name="q29" value="a">
-                a) Very few cities in Bangladesh are as large as Dhaka.
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q29" value="b">
-                b) No city is larger than Dhaka.
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q29" value="c">
-                c) Dhaka is larger than every city.
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q29" value="d">
-                d) Dhaka is the largest city.
-            </label>
-
-        </div>
-
-
-        <div class="question">
-
-            <h3>6(e). He wrote a letter. Which is the correct passive form?</h3>
-
-            <label class="option">
-                <input type="radio" name="q30" value="a">
-                a) A letter is written by him.
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q30" value="b">
-                b) A letter was written by him.
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q30" value="c">
-                c) A letter has written by him.
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q30" value="d">
-                d) A letter had written by him.
-            </label>
-
-        </div>
-
-
-        <!-- ================= NARRATION ================= -->
-
-        <div class="question">
-
-            <h3>7(a). He said, “I am busy.”</h3>
-
-            <label class="option">
-                <input type="radio" name="q31" value="a">
-                a) He said that I am busy.
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q31" value="b">
-                b) He said that he was busy.
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q31" value="c">
-                c) He says he was busy.
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q31" value="d">
-                d) He said he is busy.
-            </label>
-
-        </div>
-
-
-        <div class="question">
-
-            <h3>7(b). He said to me, “Are you happy?”</h3>
-
-            <label class="option">
-                <input type="radio" name="q32" value="a">
-                a) He asked me if I was happy.
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q32" value="b">
-                b) He told me that I was happy.
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q32" value="c">
-                c) He asked me are I happy.
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q32" value="d">
-                d) He said that I am happy.
-            </label>
-
-        </div>
-
-
-        <div class="question">
-
-            <h3>7(c). The teacher said to the students, “Do not make a noise.”</h3>
-
-            <label class="option">
-                <input type="radio" name="q33" value="a">
-                a) The teacher told the students not to make a noise.
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q33" value="b">
-                b) The teacher said the students do not make noise.
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q33" value="c">
-                c) The teacher asked that students made noise.
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q33" value="d">
-                d) The teacher told students do not make noise.
-            </label>
-
-        </div>
-
-
-        <div class="question">
-
-            <h3>7(d). Mother said to me, “May Allah bless you.”</h3>
-
-            <label class="option">
-                <input type="radio" name="q34" value="a">
-                a) Mother prayed that Allah might bless me.
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q34" value="b">
-                b) Mother said Allah bless you.
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q34" value="c">
-                c) Mother ordered Allah to bless me.
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q34" value="d">
-                d) Mother told me Allah blessed you.
-            </label>
-
-        </div>
-
-
-        <div class="question">
-
-            <h3>7(e). He said, “What a beautiful flower it is!”</h3>
-
-            <label class="option">
-                <input type="radio" name="q35" value="a">
-                a) He said that it is a beautiful flower.
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q35" value="b">
-                b) He exclaimed with wonder that it was a very beautiful flower.
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q35" value="c">
-                c) He asked if it was beautiful.
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q35" value="d">
-                d) He ordered that the flower was beautiful.
-            </label>
-
-        </div>
-
-
-        <!-- ================= PRONOUN REFERENCE ================= -->
-
-        <div class="question">
-
-            <h3>8(a). “They” in “They give us oxygen” refers to —</h3>
-
-            <label class="option">
-                <input type="radio" name="q36" value="a">
-                a) humans
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q36" value="b">
-                b) trees
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q36" value="c">
-                c) oxygen
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q36" value="d">
-                d) environment
-            </label>
-
-        </div>
-
-
-        <div class="question">
-
-            <h3>8(b). “them” in “Without them, human life would be impossible” refers to —</h3>
-
-            <label class="option">
-                <input type="radio" name="q37" value="a">
-                a) trees
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q37" value="b">
-                b) humans
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q37" value="c">
-                c) oxygen
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q37" value="d">
-                d) duties
-            </label>
-
-        </div>
-
-
-        <div class="question">
-
-            <h3>8(c). “We” refers to —</h3>
-
-            <label class="option">
-                <input type="radio" name="q38" value="a">
-                a) trees
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q38" value="b">
-                b) human beings
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q38" value="c">
-                c) animals
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q38" value="d">
-                d) plants
-            </label>
-
-        </div>
-
-
-        <div class="question">
-
-            <h3>8(d). “them” in the last sentence refers to —</h3>
-
-            <label class="option">
-                <input type="radio" name="q39" value="a">
-                a) humans
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q39" value="b">
-                b) environment
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q39" value="c">
-                c) trees
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q39" value="d">
-                d) oxygen
-            </label>
-
-        </div>
-
-
-        <div class="question">
-
-            <h3>8(e). “Therefore” indicates —</h3>
-
-            <label class="option">
-                <input type="radio" name="q40" value="a">
-                a) contrast
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q40" value="b">
-                b) reason/result
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q40" value="c">
-                c) condition
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q40" value="d">
-                d) time
-            </label>
-
-        </div>
-
-
-        <!-- ================= MODIFIERS ================= -->
-
-        <div class="question">
-
-            <h3>9(a). ___, he went to school. Choose the appropriate participial phrase.</h3>
-
-            <label class="option">
-                <input type="radio" name="q41" value="a">
-                a) Getting ready
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q41" value="b">
-                b) To get ready
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q41" value="c">
-                c) Ready was
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q41" value="d">
-                d) He getting
-            </label>
-
-        </div>
-
-
-        <div class="question">
-
-            <h3>9(b). The man ___ is my uncle. Choose an adjective clause.</h3>
-
-            <label class="option">
-                <input type="radio" name="q42" value="a">
-                a) standing there
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q42" value="b">
-                b) who is standing there
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q42" value="c">
-                c) to stand there
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q42" value="d">
-                d) stand there
-            </label>
-
-        </div>
-
-
-        <div class="question">
-
-            <h3>9(c). ___, he went to Dhaka. Choose an infinitive phrase.</h3>
-
-            <label class="option">
-                <input type="radio" name="q43" value="a">
-                a) To attend the meeting
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q43" value="b">
-                b) Attending the meeting
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q43" value="c">
-                c) He attended the meeting
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q43" value="d">
-                d) Attended the meeting
-            </label>
-
-        </div>
-
-
-        <div class="question">
-
-            <h3>9(d). The girl ___ is my sister. Choose a participial phrase.</h3>
-
-            <label class="option">
-                <input type="radio" name="q44" value="a">
-                a) who is singing
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q44" value="b">
-                b) singing on the stage
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q44" value="c">
-                c) to sing
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q44" value="d">
-                d) she sings
-            </label>
-
-        </div>
-
-
-        <div class="question">
-
-            <h3>9(e). ___, he completed the work. Choose an adverbial phrase.</h3>
-
-            <label class="option">
-                <input type="radio" name="q45" value="a">
-                a) With great care
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q45" value="b">
-                b) To complete
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q45" value="c">
-                c) Completing
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q45" value="d">
-                d) Who completed
-            </label>
-
-        </div>
-
-
-        <!-- ================= CONNECTORS ================= -->
-
-        <div class="question">
-
-            <h3>10(a). He is poor. ___, he is honest.</h3>
-
-            <label class="option">
-                <input type="radio" name="q46" value="a">
-                a) Therefore
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q46" value="b">
-                b) However
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q46" value="c">
-                c) Because
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q46" value="d">
-                d) So
-            </label>
-
-        </div>
-
-
-        <div class="question">
-
-            <h3>10(b). He worked hard. ___, he failed.</h3>
-
-            <label class="option">
-                <input type="radio" name="q47" value="a">
-                a) Therefore
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q47" value="b">
-                b) However
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q47" value="c">
-                c) Because
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q47" value="d">
-                d) Thus
-            </label>
-
-        </div>
-
-
-        <div class="question">
-
-            <h3>10(c). Study hard, ___ you will fail.</h3>
-
-            <label class="option">
-                <input type="radio" name="q48" value="a">
-                a) or
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q48" value="b">
-                b) because
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q48" value="c">
-                c) although
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q48" value="d">
-                d) therefore
-            </label>
-
-        </div>
-
-
-        <div class="question">
-
-            <h3>10(d). ___ he is rich, he is unhappy.</h3>
-
-            <label class="option">
-                <input type="radio" name="q49" value="a">
-                a) Because
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q49" value="b">
-                b) Although
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q49" value="c">
-                c) Therefore
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q49" value="d">
-                d) So
-            </label>
-
-        </div>
-
-
-        <div class="question">
-
-            <h3>10(e). He could not go out ___ it was raining.</h3>
-
-            <label class="option">
-                <input type="radio" name="q50" value="a">
-                a) although
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q50" value="b">
-                b) because
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q50" value="c">
-                c) but
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q50" value="d">
-                d) therefore
-            </label>
-
-        </div>
-
-
-        <!-- ================= SYNONYMS ================= -->
-
-        <div class="question">
-
-            <h3>11(a). Choose the synonym of “Brave”.</h3>
-
-            <label class="option">
-                <input type="radio" name="q51" value="a">
-                a) Coward
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q51" value="b">
-                b) Courageous
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q51" value="c">
-                c) Weak
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q51" value="d">
-                d) Lazy
-            </label>
-
-        </div>
-
-
-        <div class="question">
-
-            <h3>11(b). Choose the synonym of “Rapid”.</h3>
-
-            <label class="option">
-                <input type="radio" name="q52" value="a">
-                a) Slow
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q52" value="b">
-                b) Quick
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q52" value="c">
-                c) Weak
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q52" value="d">
-                d) Old
-            </label>
-
-        </div>
-
-
-        <div class="question">
-
-            <h3>11(c). Choose the synonym of “Ancient”.</h3>
-
-            <label class="option">
-                <input type="radio" name="q53" value="a">
-                a) Modern
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q53" value="b">
-                b) New
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q53" value="c">
-                c) Old
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q53" value="d">
-                d) Recent
-            </label>
-
-        </div>
-
-
-        <div class="question">
-
-            <h3>11(d). Choose the synonym of “Honest”.</h3>
-
-            <label class="option">
-                <input type="radio" name="q54" value="a">
-                a) Truthful
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q54" value="b">
-                b) False
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q54" value="c">
-                c) Dishonest
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q54" value="d">
-                d) Cruel
-            </label>
-
-        </div>
-
-
-        <div class="question">
-
-            <h3>11(e). Choose the synonym of “Difficult”.</h3>
-
-            <label class="option">
-                <input type="radio" name="q55" value="a">
-                a) Easy
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q55" value="b">
-                b) Hard
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q55" value="c">
-                c) Simple
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q55" value="d">
-                d) Light
-            </label>
-
-        </div>
-
-
-        <!-- ================= ANTONYMS ================= -->
-
-        <div class="question">
-
-            <h3>11(f). Choose the antonym of “Success”.</h3>
-
-            <label class="option">
-                <input type="radio" name="q56" value="a">
-                a) Victory
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q56" value="b">
-                b) Failure
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q56" value="c">
-                c) Achievement
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q56" value="d">
-                d) Progress
-            </label>
-
-        </div>
-
-
-        <div class="question">
-
-            <h3>11(g). Choose the antonym of “Increase”.</h3>
-
-            <label class="option">
-                <input type="radio" name="q57" value="a">
-                a) Grow
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q57" value="b">
-                b) Rise
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q57" value="c">
-                c) Decrease
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q57" value="d">
-                d) Develop
-            </label>
-
-        </div>
-
-
-        <div class="question">
-
-            <h3>11(h). Choose the antonym of “Strong”.</h3>
-
-            <label class="option">
-                <input type="radio" name="q58" value="a">
-                a) Powerful
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q58" value="b">
-                b) Weak
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q58" value="c">
-                c) Firm
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q58" value="d">
-                d) Healthy
-            </label>
-
-        </div>
-
-
-        <div class="question">
-
-            <h3>11(i). Choose the antonym of “Accept”.</h3>
-
-            <label class="option">
-                <input type="radio" name="q59" value="a">
-                a) Receive
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q59" value="b">
-                b) Take
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q59" value="c">
-                c) Reject
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q59" value="d">
-                d) Agree
-            </label>
-
-        </div>
-
-
-        <div class="question">
-
-            <h3>11(j). Choose the antonym of “Beautiful”.</h3>
-
-            <label class="option">
-                <input type="radio" name="q60" value="a">
-                a) Attractive
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q60" value="b">
-                b) Pretty
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q60" value="c">
-                c) Ugly
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q60" value="d">
-                d) Lovely
-            </label>
-
-        </div>
+        <div id="mcqContainer"></div>
 
     </div>
 
 
     <!-- =====================================================
-         PART B — COMPOSITION
+         PART B
     ====================================================== -->
 
     <div class="section">
@@ -2151,8 +440,6 @@ textarea:disabled{
             PART B — COMPOSITION | 40 MARKS
         </div>
 
-
-        <!-- APPLICATION -->
 
         <div class="writing-question">
 
@@ -2174,8 +461,6 @@ textarea:disabled{
         </div>
 
 
-        <!-- REPORT -->
-
         <div class="writing-question">
 
             <h3>
@@ -2184,7 +469,7 @@ textarea:disabled{
 
             <p>
                 Write a report for a national daily on
-                <strong>“A Road Accident in Your Area”.</strong>
+                <strong>"A Road Accident in Your Area".</strong>
                 Give a suitable headline and mention the place, date,
                 cause of the accident, casualties and response of the
                 authorities.
@@ -2198,8 +483,6 @@ textarea:disabled{
         </div>
 
 
-        <!-- PARAGRAPH -->
-
         <div class="writing-question">
 
             <h3>
@@ -2208,7 +491,7 @@ textarea:disabled{
 
             <p>
                 Write a paragraph on
-                <strong>“The Uses and Abuses of Social Media”.</strong>
+                <strong>"The Uses and Abuses of Social Media".</strong>
             </p>
 
             <textarea
@@ -2219,8 +502,6 @@ textarea:disabled{
         </div>
 
 
-        <!-- COMPOSITION -->
-
         <div class="writing-question">
 
             <h3>
@@ -2230,7 +511,7 @@ textarea:disabled{
             <p>
                 Write a composition on
                 <strong>
-                    “The Role of Students in Building the Nation”.
+                    "The Role of Students in Building the Nation".
                 </strong>
             </p>
 
@@ -2245,21 +526,19 @@ textarea:disabled{
 
 
     <!-- =====================================================
-         SUBMIT AREA
+         SUBMIT
     ====================================================== -->
 
     <div class="submit-area">
 
         <button
+            type="button"
             class="submit-btn"
             id="submitButton"
-            onclick="submitQuiz()"
         >
             SUBMIT TEST
         </button>
 
-
-        <!-- RESULT -->
 
         <div class="result" id="result">
 
@@ -2277,7 +556,7 @@ textarea:disabled{
 
             <p class="result-line">
                 Objective Score:
-                <span class="score" id="objectiveScore"></span>
+                <span class="score" id="objectiveScore">0</span>
                 / 60
             </p>
 
@@ -2288,10 +567,9 @@ textarea:disabled{
 
             <p class="result-line">
                 Current Total:
-                <strong id="currentTotal"></strong>
+                <strong id="currentTotal">0</strong>
                 / 100
             </p>
-
 
             <div class="note">
 
@@ -2305,20 +583,28 @@ textarea:disabled{
             </div>
 
 
-            <!-- ANSWER KEY -->
+            <!-- IMPORTANT:
+                 Your actual file is answer.html
+            -->
 
-            <div
-                class="answer-key-box"
-                id="answerKeyBox"
-            >
+            <div class="answer-key-box">
 
                 <a
-                    href="answer-key.html"
+                    href="./answer.html"
                     target="_blank"
                     rel="noopener noreferrer"
                     class="answer-key-btn"
                 >
                     📖 View Answer Key
+                </a>
+
+                <br>
+
+                <a
+                    href="./index.html"
+                    class="back-btn"
+                >
+                    ← Back to Test
                 </a>
 
             </div>
@@ -2328,16 +614,9 @@ textarea:disabled{
     </div>
 
 
-    <!-- =========================
-         FOOTER
-    ========================= -->
-
     <div class="footer">
-
         HSC 2027 English Second Paper — Model Test
-
     </div>
-
 
 </div>
 
@@ -2345,99 +624,507 @@ textarea:disabled{
 <script>
 
 /* =====================================================
-   ANSWER KEY
+   QUESTIONS + ANSWERS
 ===================================================== */
 
-const answers = {
+const questions = [
 
-    q1:"b",
-    q2:"b",
-    q3:"c",
-    q4:"b",
-    q5:"a",
+{
+    q:"1(a). Bangladesh is ___ independent country.",
+    options:["a) a","b) an","c) the","d) no article"],
+    answer:"b"
+},
 
-    q6:"a",
-    q7:"b",
-    q8:"c",
-    q9:"c",
-    q10:"a",
+{
+    q:"1(b). He is ___ honest student.",
+    options:["a) a","b) an","c) the","d) no article"],
+    answer:"b"
+},
 
-    q11:"b",
-    q12:"a",
-    q13:"c",
-    q14:"b",
-    q15:"b",
+{
+    q:"1(c). ___ sun rises in the east.",
+    options:["a) A","b) An","c) The","d) No article"],
+    answer:"c"
+},
 
-    q16:"b",
-    q17:"c",
-    q18:"c",
-    q19:"a",
-    q20:"b",
+{
+    q:"1(d). She bought ___ umbrella yesterday.",
+    options:["a) a","b) an","c) the","d) no article"],
+    answer:"b"
+},
 
-    q21:"b",
-    q22:"c",
-    q23:"c",
-    q24:"c",
-    q25:"c",
+{
+    q:"1(e). He is ___ European.",
+    options:["a) a","b) an","c) the","d) no article"],
+    answer:"a"
+},
 
-    q26:"b",
-    q27:"a",
-    q28:"b",
-    q29:"a",
-    q30:"b",
+{
+    q:"2(a). He is good ___ English.",
+    options:["a) at","b) in","c) on","d) for"],
+    answer:"a"
+},
 
-    q31:"b",
-    q32:"a",
-    q33:"a",
-    q34:"a",
-    q35:"b",
+{
+    q:"2(b). She is interested ___ learning English.",
+    options:["a) at","b) in","c) on","d) for"],
+    answer:"b"
+},
 
-    q36:"b",
-    q37:"a",
-    q38:"b",
-    q39:"c",
-    q40:"b",
+{
+    q:"2(c). He has been absent ___ Monday.",
+    options:["a) for","b) from","c) since","d) by"],
+    answer:"c"
+},
 
-    q41:"a",
-    q42:"b",
-    q43:"a",
-    q44:"b",
-    q45:"a",
+{
+    q:"2(d). The man was accused ___ theft.",
+    options:["a) with","b) for","c) of","d) by"],
+    answer:"c"
+},
 
-    q46:"b",
-    q47:"b",
-    q48:"a",
-    q49:"b",
-    q50:"b",
+{
+    q:"2(e). We should not be indifferent ___ our duties.",
+    options:["a) to","b) at","c) for","d) with"],
+    answer:"a"
+},
 
-    q51:"b",
-    q52:"b",
-    q53:"c",
-    q54:"a",
-    q55:"b",
+{
+    q:"3(a). I would rather ___ at home than go outside.",
+    options:["a) stayed","b) stay","c) staying","d) to stay"],
+    answer:"b"
+},
 
-    q56:"b",
-    q57:"c",
-    q58:"b",
-    q59:"c",
-    q60:"c"
+{
+    q:"3(b). You had better ___ the truth.",
+    options:["a) tell","b) told","c) telling","d) to tell"],
+    answer:"a"
+},
 
-};
+{
+    q:"3(c). He cannot buy a pen, let alone ___ a laptop.",
+    options:["a) bought","b) buying","c) buy","d) to buy"],
+    answer:"c"
+},
+
+{
+    q:"3(d). Walk carefully lest you ___ fall.",
+    options:["a) will","b) should","c) would","d) can"],
+    answer:"b"
+},
+
+{
+    q:"3(e). No sooner had he reached home ___ it started raining.",
+    options:["a) when","b) than","c) then","d) and"],
+    answer:"b"
+},
+
+{
+    q:"4(a). It is high time we ___ our duties.",
+    options:["a) perform","b) performed","c) performing","d) have performed"],
+    answer:"b"
+},
+
+{
+    q:"4(b). I wish I ___ a bird.",
+    options:["a) am","b) was","c) were","d) have been"],
+    answer:"c"
+},
+
+{
+    q:"4(c). If I were a bird, I ___ in the sky.",
+    options:["a) fly","b) flew","c) would fly","d) will fly"],
+    answer:"c"
+},
+
+{
+    q:"4(d). Unless you work hard, you ___.",
+    options:["a) will fail","b) would fail","c) failed","d) had failed"],
+    answer:"a"
+},
+
+{
+    q:"4(e). He talks as if he ___ everything.",
+    options:["a) knows","b) knew","c) had known","d) knowing"],
+    answer:"b"
+},
+
+{
+    q:"5(a). The sun ___ in the east.",
+    options:["a) rise","b) rises","c) rose","d) rising"],
+    answer:"b"
+},
+
+{
+    q:"5(b). He ___ a book now.",
+    options:["a) reads","b) read","c) is reading","d) has read"],
+    answer:"c"
+},
+
+{
+    q:"5(c). He ___ here since 2020.",
+    options:["a) lives","b) lived","c) has been living","d) is living"],
+    answer:"c"
+},
+
+{
+    q:"5(d). When I reached the station, the train ___.",
+    options:["a) leaves","b) has left","c) had left","d) was leaving"],
+    answer:"c"
+},
+
+{
+    q:"5(e). Had I known the matter, I ___ him.",
+    options:["a) help","b) helped","c) would have helped","d) will help"],
+    answer:"c"
+},
+
+{
+    q:"6(a). Everybody loves flowers. Which is the correct negative form?",
+    options:[
+        "a) Nobody loves flowers.",
+        "b) There is nobody who does not love flowers.",
+        "c) Everybody does not love flowers.",
+        "d) Nobody does not love flowers."
+    ],
+    answer:"b"
+},
+
+{
+    q:"6(b). He is too weak to walk. Which is the correct complex form?",
+    options:[
+        "a) He is so weak that he cannot walk.",
+        "b) He is weak and cannot walk.",
+        "c) He is very weak but walks.",
+        "d) He was weak to walk."
+    ],
+    answer:"a"
+},
+
+{
+    q:"6(c). Though he is poor, he is honest. Which is the correct compound form?",
+    options:[
+        "a) He is poor because he is honest.",
+        "b) He is poor but honest.",
+        "c) He is honest although poor.",
+        "d) Being poor, he is honest."
+    ],
+    answer:"b"
+},
+
+{
+    q:"6(d). Dhaka is one of the largest cities in Bangladesh. Which is the positive form?",
+    options:[
+        "a) Very few cities in Bangladesh are as large as Dhaka.",
+        "b) No city is larger than Dhaka.",
+        "c) Dhaka is larger than every city.",
+        "d) Dhaka is the largest city."
+    ],
+    answer:"a"
+},
+
+{
+    q:"6(e). He wrote a letter. Which is the correct passive form?",
+    options:[
+        "a) A letter is written by him.",
+        "b) A letter was written by him.",
+        "c) A letter has written by him.",
+        "d) A letter had written by him."
+    ],
+    answer:"b"
+},
+
+{
+    q:"7(a). He said, “I am busy.”",
+    options:[
+        "a) He said that I am busy.",
+        "b) He said that he was busy.",
+        "c) He says he was busy.",
+        "d) He said he is busy."
+    ],
+    answer:"b"
+},
+
+{
+    q:"7(b). He said to me, “Are you happy?”",
+    options:[
+        "a) He asked me if I was happy.",
+        "b) He told me that I was happy.",
+        "c) He asked me are I happy.",
+        "d) He said that I am happy."
+    ],
+    answer:"a"
+},
+
+{
+    q:"7(c). The teacher said to the students, “Do not make a noise.”",
+    options:[
+        "a) The teacher told the students not to make a noise.",
+        "b) The teacher said the students do not make noise.",
+        "c) The teacher asked that students made noise.",
+        "d) The teacher told students do not make noise."
+    ],
+    answer:"a"
+},
+
+{
+    q:"7(d). Mother said to me, “May Allah bless you.”",
+    options:[
+        "a) Mother prayed that Allah might bless me.",
+        "b) Mother said Allah bless you.",
+        "c) Mother ordered Allah to bless me.",
+        "d) Mother told me Allah blessed you."
+    ],
+    answer:"a"
+},
+
+{
+    q:"7(e). He said, “What a beautiful flower it is!”",
+    options:[
+        "a) He said that it is a beautiful flower.",
+        "b) He exclaimed with wonder that it was a very beautiful flower.",
+        "c) He asked if it was beautiful.",
+        "d) He ordered that the flower was beautiful."
+    ],
+    answer:"b"
+},
+
+{
+    q:"8(a). “They” in “They give us oxygen” refers to —",
+    options:["a) humans","b) trees","c) oxygen","d) environment"],
+    answer:"b"
+},
+
+{
+    q:"8(b). “them” in “Without them, human life would be impossible” refers to —",
+    options:["a) trees","b) humans","c) oxygen","d) duties"],
+    answer:"a"
+},
+
+{
+    q:"8(c). “We” refers to —",
+    options:["a) trees","b) human beings","c) animals","d) plants"],
+    answer:"b"
+},
+
+{
+    q:"8(d). “them” in the last sentence refers to —",
+    options:["a) humans","b) environment","c) trees","d) oxygen"],
+    answer:"c"
+},
+
+{
+    q:"8(e). “Therefore” indicates —",
+    options:["a) contrast","b) reason/result","c) condition","d) time"],
+    answer:"b"
+},
+
+{
+    q:"9(a). ___, he went to school. Choose the appropriate participial phrase.",
+    options:["a) Getting ready","b) To get ready","c) Ready was","d) He getting"],
+    answer:"a"
+},
+
+{
+    q:"9(b). The man ___ is my uncle. Choose an adjective clause.",
+    options:["a) standing there","b) who is standing there","c) to stand there","d) stand there"],
+    answer:"b"
+},
+
+{
+    q:"9(c). ___, he went to Dhaka. Choose an infinitive phrase.",
+    options:["a) To attend the meeting","b) Attending the meeting","c) He attended the meeting","d) Attended the meeting"],
+    answer:"a"
+},
+
+{
+    q:"9(d). The girl ___ is my sister. Choose a participial phrase.",
+    options:["a) who is singing","b) singing on the stage","c) to sing","d) she sings"],
+    answer:"b"
+},
+
+{
+    q:"9(e). ___, he completed the work. Choose an adverbial phrase.",
+    options:["a) With great care","b) To complete","c) Completing","d) Who completed"],
+    answer:"a"
+},
+
+{
+    q:"10(a). He is poor. ___, he is honest.",
+    options:["a) Therefore","b) However","c) Because","d) So"],
+    answer:"b"
+},
+
+{
+    q:"10(b). He worked hard. ___, he failed.",
+    options:["a) Therefore","b) However","c) Because","d) Thus"],
+    answer:"b"
+},
+
+{
+    q:"10(c). Study hard, ___ you will fail.",
+    options:["a) or","b) because","c) although","d) therefore"],
+    answer:"a"
+},
+
+{
+    q:"10(d). ___ he is rich, he is unhappy.",
+    options:["a) Because","b) Although","c) Therefore","d) So"],
+    answer:"b"
+},
+
+{
+    q:"10(e). He could not go out ___ it was raining.",
+    options:["a) although","b) because","c) but","d) therefore"],
+    answer:"b"
+},
+
+{
+    q:"11(a). Choose the synonym of “Brave”.",
+    options:["a) Coward","b) Courageous","c) Weak","d) Lazy"],
+    answer:"b"
+},
+
+{
+    q:"11(b). Choose the synonym of “Rapid”.",
+    options:["a) Slow","b) Quick","c) Weak","d) Old"],
+    answer:"b"
+},
+
+{
+    q:"11(c). Choose the synonym of “Ancient”.",
+    options:["a) Modern","b) New","c) Old","d) Recent"],
+    answer:"c"
+},
+
+{
+    q:"11(d). Choose the synonym of “Honest”.",
+    options:["a) Truthful","b) False","c) Dishonest","d) Cruel"],
+    answer:"a"
+},
+
+{
+    q:"11(e). Choose the synonym of “Difficult”.",
+    options:["a) Easy","b) Hard","c) Simple","d) Light"],
+    answer:"b"
+},
+
+{
+    q:"11(f). Choose the antonym of “Success”.",
+    options:["a) Victory","b) Failure","c) Achievement","d) Progress"],
+    answer:"b"
+},
+
+{
+    q:"11(g). Choose the antonym of “Increase”.",
+    options:["a) Grow","b) Rise","c) Decrease","d) Develop"],
+    answer:"c"
+},
+
+{
+    q:"11(h). Choose the antonym of “Strong”.",
+    options:["a) Powerful","b) Weak","c) Firm","d) Healthy"],
+    answer:"b"
+},
+
+{
+    q:"11(i). Choose the antonym of “Accept”.",
+    options:["a) Receive","b) Take","c) Reject","d) Agree"],
+    answer:"c"
+},
+
+{
+    q:"11(j). Choose the antonym of “Beautiful”.",
+    options:["a) Attractive","b) Pretty","c) Ugly","d) Lovely"],
+    answer:"c"
+}
+
+];
 
 
 /* =====================================================
-   TIMER
+   BUILD MCQ HTML
 ===================================================== */
 
-let totalSeconds = 3 * 60 * 60;
+const mcqContainer =
+    document.getElementById("mcqContainer");
 
-let submitted = false;
+
+questions.forEach(function(item,index){
+
+    const questionNumber = index + 1;
+
+    const questionDiv =
+        document.createElement("div");
+
+    questionDiv.className = "question";
+
+    let html =
+        "<h3>" +
+        item.q +
+        "</h3>";
+
+    item.options.forEach(function(option,index){
+
+        const letter =
+            String.fromCharCode(97 + index);
+
+        html += `
+            <label class="option">
+                <input
+                    type="radio"
+                    name="q${questionNumber}"
+                    value="${letter}"
+                >
+                ${option}
+            </label>
+        `;
+
+    });
+
+    questionDiv.innerHTML = html;
+
+    mcqContainer.appendChild(questionDiv);
+
+});
+
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+const TOTAL_TIME =
+    3 * 60 * 60;
+
+let totalSeconds =
+    TOTAL_TIME;
+
+let submitted =
+    false;
+
+let timerInterval =
+    null;
+
+
+/* =====================================================
+   DOM ELEMENTS
+===================================================== */
 
 const timerElement =
     document.getElementById("timer");
 
+const submitButton =
+    document.getElementById("submitButton");
 
-function updateTimer(){
+const result =
+    document.getElementById("result");
+
+
+/* =====================================================
+   TIMER DISPLAY
+===================================================== */
+
+function displayTime(){
 
     let hours =
         Math.floor(totalSeconds / 3600);
@@ -2451,58 +1138,254 @@ function updateTimer(){
         totalSeconds % 60;
 
 
-    hours =
+    const formattedHours =
         String(hours).padStart(2,"0");
 
-    minutes =
+    const formattedMinutes =
         String(minutes).padStart(2,"0");
 
-    seconds =
+    const formattedSeconds =
         String(seconds).padStart(2,"0");
 
 
-    timerElement.innerHTML =
+    timerElement.textContent =
         "Time Remaining: " +
-        hours + ":" +
-        minutes + ":" +
-        seconds;
+        formattedHours + ":" +
+        formattedMinutes + ":" +
+        formattedSeconds;
 
 
-    /* Warning when 10 minutes remain */
-
-    if(totalSeconds <= 600){
+    if(totalSeconds <= 600 &&
+       totalSeconds > 0){
 
         timerElement.classList.add("warning");
 
     }
 
-
-    if(totalSeconds <= 0){
-
-        clearInterval(timer);
-
-        timerElement.innerHTML =
-            "Time Over — Test Submitted";
-
-        submitQuiz(true);
-
-        return;
-
-    }
+}
 
 
-    totalSeconds--;
+/* =====================================================
+   START TIMER
+===================================================== */
+
+function startTimer(){
+
+    displayTime();
+
+    timerInterval =
+        setInterval(function(){
+
+            if(submitted){
+
+                clearInterval(timerInterval);
+
+                return;
+
+            }
+
+
+            totalSeconds--;
+
+            displayTime();
+
+
+            if(totalSeconds <= 0){
+
+                totalSeconds = 0;
+
+                displayTime();
+
+                clearInterval(timerInterval);
+
+                timerElement.textContent =
+                    "Time Over — Test Submitted";
+
+                timerElement.classList.remove("warning");
+
+                timerElement.classList.add("finished");
+
+                submitQuiz(true);
+
+            }
+
+        },1000);
 
 }
 
 
-/* Show initial timer immediately */
+/* =====================================================
+   SAVE ANSWERS
+===================================================== */
 
-updateTimer();
+function saveProgress(){
+
+    if(submitted){
+        return;
+    }
+
+    const data = {
+
+        name:
+            document
+            .getElementById("studentName")
+            .value,
+
+        batch:
+            document
+            .getElementById("studentID")
+            .value,
+
+        answers:{},
+
+        writing:{}
+
+    };
 
 
-const timer =
-    setInterval(updateTimer,1000);
+    for(let i=1;i<=questions.length;i++){
+
+        const selected =
+            document.querySelector(
+                `input[name="q${i}"]:checked`
+            );
+
+        if(selected){
+
+            data.answers[i] =
+                selected.value;
+
+        }
+
+    }
+
+
+    document
+    .querySelectorAll("textarea")
+    .forEach(function(textarea){
+
+        data.writing[textarea.id] =
+            textarea.value;
+
+    });
+
+
+    sessionStorage.setItem(
+        "hsc2027QuizProgress",
+        JSON.stringify(data)
+    );
+
+}
+
+
+/* =====================================================
+   RESTORE ANSWERS
+===================================================== */
+
+function restoreProgress(){
+
+    const saved =
+        sessionStorage.getItem(
+            "hsc2027QuizProgress"
+        );
+
+
+    if(!saved){
+        return;
+    }
+
+
+    try{
+
+        const data =
+            JSON.parse(saved);
+
+
+        if(data.name){
+
+            document
+            .getElementById("studentName")
+            .value = data.name;
+
+        }
+
+
+        if(data.batch){
+
+            document
+            .getElementById("studentID")
+            .value = data.batch;
+
+        }
+
+
+        if(data.answers){
+
+            Object.keys(data.answers)
+            .forEach(function(number){
+
+                const value =
+                    data.answers[number];
+
+                const radio =
+                    document.querySelector(
+                        `input[name="q${number}"][value="${value}"]`
+                    );
+
+                if(radio){
+
+                    radio.checked = true;
+
+                }
+
+            });
+
+        }
+
+
+        if(data.writing){
+
+            Object.keys(data.writing)
+            .forEach(function(id){
+
+                const textarea =
+                    document.getElementById(id);
+
+                if(textarea){
+
+                    textarea.value =
+                        data.writing[id];
+
+                }
+
+            });
+
+        }
+
+    }catch(error){
+
+        console.log(
+            "Saved progress could not be restored."
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   AUTO SAVE
+===================================================== */
+
+document.addEventListener(
+    "change",
+    saveProgress
+);
+
+document.addEventListener(
+    "input",
+    saveProgress
+);
 
 
 /* =====================================================
@@ -2512,13 +1395,11 @@ const timer =
 function submitQuiz(autoSubmit = false){
 
     if(submitted){
+
         return;
+
     }
 
-
-    /* =========================
-       STUDENT NAME
-    ========================= */
 
     let studentName =
         document
@@ -2527,16 +1408,12 @@ function submitQuiz(autoSubmit = false){
         .trim();
 
 
-    /*
-       If time finishes and no name
-       was entered, don't block submission.
-    */
-
     if(studentName === ""){
 
         if(autoSubmit){
 
-            studentName = "Not Provided";
+            studentName =
+                "Not Provided";
 
         }else{
 
@@ -2555,10 +1432,6 @@ function submitQuiz(autoSubmit = false){
     }
 
 
-    /* =========================
-       STUDENT BATCH
-    ========================= */
-
     const studentBatch =
         document
         .getElementById("studentID")
@@ -2566,34 +1439,36 @@ function submitQuiz(autoSubmit = false){
         .trim() || "2027";
 
 
-    /* =========================
-       CALCULATE SCORE
-    ========================= */
-
     let score = 0;
 
 
-    for(let i = 1; i <= 60; i++){
+    /* ================================================
+       CHECK ALL 60 QUESTIONS
+    ================================================ */
+
+    questions.forEach(function(item,index){
+
+        const questionNumber =
+            index + 1;
+
 
         const selected =
             document.querySelector(
-                'input[name="q' + i + '"]:checked'
+                `input[name="q${questionNumber}"]:checked`
             );
 
 
-        const questionOptions =
+        const options =
             document.querySelectorAll(
-                'input[name="q' + i + '"]'
+                `input[name="q${questionNumber}"]`
             );
 
-
-        /* Check student's answer */
 
         if(selected){
 
             if(
                 selected.value ===
-                answers["q" + i]
+                item.answer
             ){
 
                 score++;
@@ -2615,13 +1490,13 @@ function submitQuiz(autoSubmit = false){
         }
 
 
-        /* Show correct answer */
+        /* Highlight correct answer */
 
-        questionOptions.forEach(function(option){
+        options.forEach(function(option){
 
             if(
                 option.value ===
-                answers["q" + i]
+                item.answer
             ){
 
                 option
@@ -2631,98 +1506,105 @@ function submitQuiz(autoSubmit = false){
 
             }
 
-
             option.disabled = true;
 
         });
 
-    }
+    });
 
 
-    /* =========================
-       LOCK WRITING SECTION
-    ========================= */
+    /* ================================================
+       LOCK WRITING
+    ================================================ */
 
-    const textareas =
-        document.querySelectorAll("textarea");
-
-
-    textareas.forEach(function(textarea){
+    document
+    .querySelectorAll("textarea")
+    .forEach(function(textarea){
 
         textarea.disabled = true;
 
     });
 
 
-    /* =========================
+    /* ================================================
+       LOCK STUDENT INFO
+    ================================================ */
+
+    document
+    .getElementById("studentName")
+    .disabled = true;
+
+    document
+    .getElementById("studentID")
+    .disabled = true;
+
+
+    /* ================================================
        SUBMISSION STATE
-    ========================= */
+    ================================================ */
 
     submitted = true;
 
-    clearInterval(timer);
+
+    if(timerInterval !== null){
+
+        clearInterval(timerInterval);
+
+    }
 
 
-    /* =========================
-       DISPLAY RESULT
-    ========================= */
+    /* ================================================
+       RESULT
+    ================================================ */
 
     document
     .getElementById("resultName")
-    .innerText = studentName;
+    .textContent = studentName;
 
 
     document
     .getElementById("resultBatch")
-    .innerText = studentBatch;
+    .textContent = studentBatch;
 
 
     document
     .getElementById("objectiveScore")
-    .innerText = score;
+    .textContent = score;
 
-
-    /*
-       Objective score is out of 60.
-       Composition is manually evaluated
-       out of 40.
-    */
 
     document
     .getElementById("currentTotal")
-    .innerText = score;
+    .textContent = score;
 
 
-    document
-    .getElementById("result")
-    .style.display = "block";
+    result.style.display =
+        "block";
 
 
-    /* Hide submit button */
-
-    document
-    .getElementById("submitButton")
-    .style.display = "none";
+    submitButton.style.display =
+        "none";
 
 
-    /* Show Answer Key button */
+    /* Clear saved unfinished test */
 
-    document
-    .getElementById("answerKeyBox")
-    .style.display = "block";
-
-
-    /* Scroll to result */
-
-    document
-    .getElementById("result")
-    .scrollIntoView({
-        behavior:"smooth",
-        block:"center"
-    });
+    sessionStorage.removeItem(
+        "hsc2027QuizProgress"
+    );
 
 
-    /* Time-over message */
+    /* ================================================
+       SCROLL RESULT INTO VIEW
+    ================================================ */
+
+    setTimeout(function(){
+
+        result.scrollIntoView({
+            behavior:"smooth",
+            block:"center"
+        });
+
+    },100);
+
 
     if(autoSubmit){
 
@@ -2738,8 +1620,50 @@ function submitQuiz(autoSubmit = false){
 
 }
 
-</script>
 
+/* =====================================================
+   SUBMIT BUTTON
+===================================================== */
+
+submitButton.addEventListener(
+    "click",
+    function(){
+
+        submitQuiz(false);
+
+    }
+);
+
+
+/* =====================================================
+   PREVENT ACCIDENTAL PAGE LEAVE
+===================================================== */
+
+window.addEventListener(
+    "beforeunload",
+    function(event){
+
+        if(!submitted){
+
+            event.preventDefault();
+
+            event.returnValue = "";
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   INITIALIZE
+===================================================== */
+
+restoreProgress();
+
+startTimer();
+
+</script>
 
 </body>
 </html>
