@@ -4,374 +4,436 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>HSC 2027 English 2nd Paper | Model Test</title>
-
-<meta
-    name="description"
-    content="HSC 2027 English Second Paper Online Model Test"
-/>
+<title>HSC Completing Sentence | 150 Question Quiz</title>
 
 <style>
-
 *{
-    box-sizing:border-box;
     margin:0;
     padding:0;
+    box-sizing:border-box;
 }
 
-html{
-    scroll-behavior:smooth;
+:root{
+    --bg1:#0f172a;
+    --bg2:#312e81;
+    --card:rgba(255,255,255,.10);
+    --border:rgba(255,255,255,.18);
+    --text:#ffffff;
+    --muted:#cbd5e1;
+    --success:#22c55e;
+    --danger:#ef4444;
+    --accent:#8b5cf6;
+    --accent2:#06b6d4;
 }
 
 body{
-    font-family:Arial, Helvetica, sans-serif;
-    background:#f3f4f6;
-    color:#111827;
-    line-height:1.6;
+    font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    min-height:100vh;
+    color:var(--text);
+    background:
+        radial-gradient(circle at 10% 10%,#7c3aed55,transparent 30%),
+        radial-gradient(circle at 90% 20%,#06b6d455,transparent 30%),
+        radial-gradient(circle at 50% 90%,#ec489955,transparent 35%),
+        linear-gradient(135deg,var(--bg1),var(--bg2));
+    padding:20px;
 }
 
 .container{
-    width:95%;
-    max-width:1000px;
-    margin:20px auto 50px;
+    max-width:900px;
+    margin:auto;
 }
 
-.header{
-    background:#111827;
-    color:white;
-    padding:30px 20px;
+header{
     text-align:center;
-    border-radius:16px;
-    margin-bottom:20px;
+    margin:15px 0 25px;
 }
 
-.header h1{
-    font-size:28px;
-    margin-bottom:5px;
-}
-
-.header h2{
-    font-size:20px;
-    margin-bottom:15px;
-}
-
-.header p{
-    font-size:15px;
-    opacity:.9;
-    margin-top:3px;
-}
-
-.info-box{
-    background:white;
-    padding:20px;
-    border-radius:14px;
-    margin-bottom:20px;
-    box-shadow:0 3px 12px rgba(0,0,0,.07);
-}
-
-.info-box label{
-    display:block;
-    margin-bottom:5px;
-}
-
-.info-box input{
-    width:100%;
-    padding:12px;
-    margin-top:7px;
-    margin-bottom:15px;
-    border:1px solid #d1d5db;
-    border-radius:8px;
-    font-size:15px;
-    outline:none;
-}
-
-.info-box input:focus{
-    border-color:#111827;
-}
-
-.timer{
-    position:sticky;
-    top:10px;
-    z-index:100;
-    background:#6b7280;
-    color:white;
-    text-align:center;
-    padding:10px;
-    border-radius:10px;
-    font-size:18px;
-    font-weight:bold;
-    margin-bottom:20px;
-    box-shadow:0 3px 10px rgba(0,0,0,.15);
-}
-
-.timer.running{
-    background:#dc2626;
-}
-
-.timer.warning{
-    background:#b91c1c;
-}
-
-.timer.finished{
-    background:#111827;
-}
-
-.section{
-    background:white;
-    border-radius:14px;
-    margin-bottom:20px;
-    overflow:hidden;
-    box-shadow:0 3px 12px rgba(0,0,0,.07);
-}
-
-.section-title{
-    background:#1f2937;
-    color:white;
-    padding:16px 20px;
-    font-size:19px;
-    font-weight:bold;
-}
-
-.question{
-    padding:20px;
-    border-bottom:1px solid #e5e7eb;
-}
-
-.question:last-child{
-    border-bottom:none;
-}
-
-.question h3{
-    font-size:16px;
+.badge{
+    display:inline-block;
+    padding:7px 14px;
+    border-radius:999px;
+    background:rgba(255,255,255,.12);
+    border:1px solid var(--border);
+    font-size:13px;
     margin-bottom:12px;
 }
 
-.question-topic{
-    display:block;
+h1{
+    font-size:clamp(28px,6vw,48px);
+    line-height:1.1;
+    margin-bottom:10px;
+}
+
+.subtitle{
+    color:var(--muted);
+    font-size:15px;
+}
+
+.progress-wrap{
+    background:rgba(255,255,255,.10);
+    border:1px solid var(--border);
+    border-radius:20px;
+    padding:15px;
+    margin-bottom:18px;
+    backdrop-filter:blur(15px);
+}
+
+.progress-info{
+    display:flex;
+    justify-content:space-between;
+    gap:10px;
     font-size:13px;
-    color:#6b7280;
-    margin-bottom:8px;
-    font-weight:normal;
+    margin-bottom:9px;
+    color:var(--muted);
+}
+
+.progress-bar{
+    height:10px;
+    background:rgba(255,255,255,.12);
+    border-radius:99px;
+    overflow:hidden;
+}
+
+.progress-fill{
+    height:100%;
+    width:0%;
+    border-radius:99px;
+    background:linear-gradient(90deg,#8b5cf6,#06b6d4,#22c55e);
+    transition:width .5s ease;
+}
+
+.card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:28px;
+    padding:25px;
+    backdrop-filter:blur(20px);
+    box-shadow:0 20px 60px rgba(0,0,0,.25);
+}
+
+.round-title{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:10px;
+    margin-bottom:20px;
+}
+
+.round-title h2{
+    font-size:20px;
+}
+
+.question-count{
+    color:var(--muted);
+    font-size:13px;
+}
+
+.question-box{
+    animation:questionIn .45s ease;
+}
+
+@keyframes questionIn{
+    from{
+        opacity:0;
+        transform:translateX(25px);
+    }
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+}
+
+.question{
+    font-size:clamp(19px,4vw,26px);
+    line-height:1.55;
+    margin-bottom:25px;
+}
+
+.blank{
+    display:inline-block;
+    min-width:90px;
+    border-bottom:3px solid #fff;
+    color:transparent;
+    vertical-align:middle;
+}
+
+.options{
+    display:grid;
+    gap:12px;
 }
 
 .option{
-    display:block;
-    padding:10px 12px;
-    margin:7px 0;
-    background:#f9fafb;
-    border:1px solid #e5e7eb;
-    border-radius:8px;
+    width:100%;
+    text-align:left;
+    padding:17px;
+    border-radius:17px;
+    border:1px solid rgba(255,255,255,.18);
+    background:rgba(255,255,255,.07);
+    color:white;
     cursor:pointer;
-    transition:.2s;
+    font-size:16px;
+    transition:
+        transform .2s ease,
+        background .2s ease,
+        border .2s ease;
+    position:relative;
+    overflow:hidden;
 }
 
 .option:hover{
-    background:#eef2ff;
+    transform:translateY(-2px);
+    background:rgba(255,255,255,.13);
 }
 
-.option input{
-    margin-right:8px;
+.option.selected{
+    animation:selectPop .35s ease;
+    border-color:#fff;
+    background:linear-gradient(90deg,#8b5cf655,#06b6d455);
 }
 
-.option.correct{
-    background:#dcfce7 !important;
-    border-color:#22c55e !important;
+@keyframes selectPop{
+    0%{transform:scale(.97)}
+    60%{transform:scale(1.02)}
+    100%{transform:scale(1)}
 }
 
-.option.wrong{
-    background:#fee2e2 !important;
-    border-color:#ef4444 !important;
-}
-
-.writing-question{
-    padding:20px;
-    border-bottom:1px solid #e5e7eb;
-}
-
-.writing-question:last-child{
-    border-bottom:none;
-}
-
-.writing-question h3{
-    margin-bottom:10px;
-}
-
-.writing-question p{
-    margin-bottom:10px;
-}
-
-textarea{
-    width:100%;
-    min-height:180px;
-    margin-top:12px;
-    padding:12px;
-    border:1px solid #d1d5db;
-    border-radius:8px;
-    resize:vertical;
-    font-family:Arial, sans-serif;
-    font-size:15px;
-    outline:none;
-}
-
-textarea:focus{
-    border-color:#111827;
-}
-
-textarea:disabled{
-    background:#f3f4f6;
-    color:#374151;
-}
-
-.submit-area{
-    background:white;
-    padding:25px;
-    border-radius:14px;
-    text-align:center;
-    box-shadow:0 3px 12px rgba(0,0,0,.07);
-}
-
-.submit-btn{
-    border:none;
-    background:#111827;
-    color:white;
-    padding:14px 30px;
-    border-radius:10px;
-    font-size:17px;
+.option-letter{
+    display:inline-flex;
+    width:32px;
+    height:32px;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    background:rgba(255,255,255,.12);
+    margin-right:10px;
     font-weight:bold;
+}
+
+.next-btn,
+.start-btn,
+.restart-btn{
+    width:100%;
+    margin-top:20px;
+    padding:16px;
+    border:0;
+    border-radius:16px;
+    background:linear-gradient(135deg,#8b5cf6,#06b6d4);
+    color:white;
+    font-size:16px;
+    font-weight:700;
     cursor:pointer;
     transition:.2s;
 }
 
-.submit-btn:hover{
-    background:#374151;
+.next-btn:hover,
+.start-btn:hover,
+.restart-btn:hover{
+    transform:translateY(-2px);
+    filter:brightness(1.1);
 }
 
-.submit-btn:active{
-    transform:scale(.97);
+.next-btn:disabled{
+    opacity:.35;
+    cursor:not-allowed;
+    transform:none;
 }
+
+.hidden{
+    display:none!important;
+}
+
+/* Result */
 
 .result{
-    display:none;
-    margin-top:20px;
-    background:#ecfdf5;
-    border:1px solid #10b981;
-    border-radius:12px;
-    padding:20px;
-    text-align:left;
+    text-align:center;
+    animation:resultIn .6s ease;
 }
 
-.result h2{
+@keyframes resultIn{
+    from{
+        opacity:0;
+        transform:scale(.9);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+.result-icon{
+    font-size:70px;
     margin-bottom:10px;
-    color:#065f46;
 }
 
 .score{
-    font-size:28px;
-    font-weight:bold;
-    color:#065f46;
+    font-size:58px;
+    font-weight:900;
+    margin:10px 0;
 }
 
-.result-line{
-    margin:7px 0;
+.result-message{
+    color:var(--muted);
+    margin-bottom:20px;
 }
 
-.note{
-    margin-top:15px;
-    padding:12px;
-    background:#f9fafb;
-    border-radius:8px;
-    font-size:14px;
-    color:#374151;
+.perfect{
+    padding:18px;
+    border-radius:18px;
+    background:linear-gradient(135deg,#22c55e33,#06b6d433);
+    border:1px solid #22c55e66;
+    margin-bottom:20px;
 }
 
-.answer-key-box{
-    margin-top:20px;
-    text-align:center;
-}
-
-.answer-key-btn{
-    display:inline-block;
-    padding:13px 22px;
-    background:#111827;
-    color:#ffffff;
-    text-decoration:none;
-    text-align:center;
-    border-radius:10px;
-    font-size:15px;
-    font-weight:700;
-    border:1px solid #374151;
-    transition:.2s ease;
-}
-
-.answer-key-btn:hover{
-    background:#374151;
-    transform:translateY(-2px);
-}
-
-.back-btn{
-    display:inline-block;
-    margin-top:10px;
-    padding:11px 20px;
-    background:#e5e7eb;
-    color:#111827;
-    text-decoration:none;
-    border-radius:9px;
-    font-weight:600;
-}
-
-.footer{
-    text-align:center;
+.explanations{
+    text-align:left;
     margin-top:25px;
-    color:#6b7280;
-    font-size:13px;
+}
+
+.explanation{
+    background:rgba(255,255,255,.07);
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:18px;
+    padding:17px;
+    margin-bottom:13px;
+}
+
+.explanation.correct{
+    border-left:5px solid var(--success);
+}
+
+.explanation.wrong{
+    border-left:5px solid var(--danger);
+}
+
+.explanation-question{
+    font-weight:700;
+    line-height:1.5;
+    margin-bottom:8px;
+}
+
+.answer{
+    color:#86efac;
+    font-weight:700;
+    margin-bottom:7px;
+}
+
+.explain{
+    color:var(--muted);
+    line-height:1.55;
+    font-size:14px;
+}
+
+.progression{
+    margin-top:20px;
+    padding:18px;
+    border-radius:18px;
+    background:rgba(255,255,255,.07);
+}
+
+.level{
+    font-size:22px;
+    font-weight:800;
+}
+
+.stars{
+    font-size:25px;
+    margin-top:7px;
+}
+
+/* Start */
+
+.start-screen{
+    text-align:center;
+    animation:questionIn .5s ease;
+}
+
+.start-screen h2{
+    font-size:30px;
+    margin-bottom:15px;
+}
+
+.features{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+    margin:25px 0;
+}
+
+.feature{
+    padding:15px;
+    border-radius:16px;
+    background:rgba(255,255,255,.07);
+    border:1px solid var(--border);
+    color:var(--muted);
+}
+
+.feature strong{
+    display:block;
+    color:white;
+    font-size:20px;
+    margin-bottom:4px;
+}
+
+.celebration{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:999;
+}
+
+.celebration-text{
+    font-size:clamp(32px,8vw,72px);
+    font-weight:900;
+    text-align:center;
+    opacity:0;
+    transform:scale(.5);
+}
+
+.celebration.show .celebration-text{
+    animation:celebrate 1.5s ease forwards;
+}
+
+@keyframes celebrate{
+    0%{
+        opacity:0;
+        transform:scale(.5) rotate(-5deg);
+    }
+    20%{
+        opacity:1;
+        transform:scale(1.1) rotate(2deg);
+    }
+    70%{
+        opacity:1;
+        transform:scale(1);
+    }
+    100%{
+        opacity:0;
+        transform:scale(1.3);
+    }
 }
 
 @media(max-width:600px){
-
-    .container{
-        width:94%;
+    body{
+        padding:12px;
     }
 
-    .header{
-        padding:25px 15px;
+    .card{
+        padding:18px;
+        border-radius:22px;
     }
 
-    .header h1{
-        font-size:23px;
+    .features{
+        grid-template-columns:1fr;
     }
 
-    .header h2{
-        font-size:17px;
+    .option{
+        padding:14px;
+        font-size:15px;
     }
-
-    .header p{
-        font-size:13px;
-    }
-
-    .question,
-    .writing-question{
-        padding:15px;
-    }
-
-    .section-title{
-        font-size:17px;
-        padding:14px 15px;
-    }
-
-    .timer{
-        font-size:16px;
-    }
-
-    .submit-btn{
-        width:100%;
-    }
-
-    .answer-key-btn{
-        width:100%;
-    }
-
 }
-
 </style>
 </head>
 
@@ -379,1709 +441,1751 @@ textarea:disabled{
 
 <div class="container">
 
-    <div class="header">
-
-        <h1>HSC 2027</h1>
-
-        <h2>ENGLISH SECOND PAPER</h2>
-
-        <p>MODEL TEST PAPER — ONLINE QUIZ</p>
-
-        <p>
-            Full Marks: 100
-            &nbsp; | &nbsp;
-            Time: 3 Hours
-        </p>
-
-    </div>
-
-
-    <div class="info-box">
-
-        <label>
-            <strong>Student Name</strong>
-        </label>
-
-        <input
-            type="text"
-            id="studentName"
-            placeholder="Enter your name"
-        >
-
-        <label>
-            <strong>HSC Batch</strong>
-        </label>
-
-        <input
-            type="text"
-            id="studentID"
-            value="2027"
-            placeholder="HSC 2027"
-        >
-
-    </div>
-
-
-    <div class="timer" id="timer">
-        Time Remaining: 03:00:00
-    </div>
-
-
-    <!-- =====================================================
-         PART A
-    ====================================================== -->
-
-    <div class="section">
-
-        <div class="section-title">
-            PART A — GRAMMAR | 60 MARKS
-        </div>
-
-        <div id="mcqContainer"></div>
-
-    </div>
-
-
-    <!-- =====================================================
-         PART B
-    ====================================================== -->
-
-    <div class="section">
-
-        <div class="section-title">
-            PART B — WRITING | 40 MARKS
-        </div>
-
-
-        <div class="writing-question">
-
-            <h3>
-                13. APPLICATION
-            </h3>
-
-            <p>
-                Write an application to the Principal of your college
-                requesting an increase in library facilities.
-            </p>
-
-            <textarea
-                id="writing13"
-                placeholder="Write your application here..."
-            ></textarea>
-
-        </div>
-
-
-        <div class="writing-question">
-
-            <h3>
-                14. REPORT WRITING
-            </h3>
-
-            <p>
-                Write a report for a national daily on the following topic:
-                <strong>"A Road Accident in Your Area"</strong>.
-                Give your report a suitable headline.
-            </p>
-
-            <textarea
-                id="writing14"
-                placeholder="Write your report here..."
-            ></textarea>
-
-        </div>
-
-
-        <div class="writing-question">
-
-            <h3>
-                15. PARAGRAPH WRITING
-            </h3>
-
-            <p>
-                Write a paragraph on the following topic:
-                <strong>"The Uses and Abuses of Social Media"</strong>.
-            </p>
-
-            <textarea
-                id="writing15"
-                placeholder="Write your paragraph here..."
-            ></textarea>
-
-        </div>
-
-
-        <div class="writing-question">
-
-            <h3>
-                16. COMPOSITION
-            </h3>
-
-            <p>
-                Write a composition on the following topic:
-                <strong>"The Role of Students in Building the Nation"</strong>.
-            </p>
-
-            <textarea
-                id="writing16"
-                placeholder="Write your composition here..."
-            ></textarea>
-
-        </div>
-
-    </div>
-
-
-    <!-- =====================================================
-         SUBMIT
-    ====================================================== -->
-
-    <div class="submit-area">
-
-        <button
-            type="button"
-            class="submit-btn"
-            id="submitButton"
-        >
-            SUBMIT TEST
-        </button>
-
-
-        <div class="result" id="result">
-
-            <h2>✓ Test Submitted</h2>
-
-            <p class="result-line">
-                Student:
-                <strong id="resultName"></strong>
-            </p>
-
-            <p class="result-line">
-                HSC Batch:
-                <strong id="resultBatch"></strong>
-            </p>
-
-            <p class="result-line">
-                Objective Score:
-                <span class="score" id="objectiveScore">0</span>
-                / 60
-            </p>
-
-            <p class="result-line">
-                Composition:
-                <strong>40 marks — Manual Evaluation</strong>
-            </p>
-
-            <p class="result-line">
-                Current Total:
-                <strong id="currentTotal">0</strong>
-                / 100
-            </p>
-
-            <div class="note">
-
-                <strong>Note:</strong>
-
-                The 40-mark writing section must be evaluated
-                manually. The final score should be calculated after
-                checking the application, report, paragraph and
-                composition.
-
-            </div>
-
-
-            <div class="answer-key-box">
-
-                <a
-                    href="./answer.html"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="answer-key-btn"
-                >
-                    📖 View Answer Key
-                </a>
-
-                <br>
-
-                <a
-                    href="./index.html"
-                    class="back-btn"
-                >
-                    ← Back to Test
-                </a>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <div class="footer">
-        HSC 2027 English Second Paper — Model Test
-    </div>
+<header>
+    <div class="badge">HSC English 2nd Paper</div>
+    <h1>Completing Sentence</h1>
+    <p class="subtitle">
+        Master the structures. Complete 150 questions. Grow your level.
+    </p>
+</header>
+
+<div id="app"></div>
 
 </div>
 
+<div id="celebration" class="celebration">
+    <div class="celebration-text">🎉 PERFECT! 🎉</div>
+</div>
 
 <script>
 
-/* =====================================================
-   QUESTIONS + ANSWERS
-===================================================== */
+/* ============================================================
+   QUESTION BANK
+   150 QUESTIONS
+   ============================================================ */
 
 const questions = [
 
-/* =====================================================
-   Q1 — ARTICLES
-===================================================== */
+/* HIGH TIME */
 
 {
-    q:"1(a). Bangladesh is ___ independent country.",
-    options:[
-        "a) a",
-        "b) an",
-        "c) the",
-        "d) × (no article)"
-    ],
-    answer:"b"
+q:"It is high time we □□□□□.",
+answer:"took action",
+rule:"It is high time + subject + past tense.",
+explain:"After 'It is high time', the following subject normally takes a past-tense verb."
 },
 
 {
-    q:"1(b). He is ___ honest student.",
-    options:[
-        "a) a",
-        "b) an",
-        "c) the",
-        "d) × (no article)"
-    ],
-    answer:"b"
+q:"It is high time you □□□□□ to bed.",
+answer:"went",
+rule:"It is high time + subject + past tense.",
+explain:"The expression 'It is high time' is followed by a past-tense verb."
 },
 
 {
-    q:"1(c). ___ sun rises in the east.",
-    options:[
-        "a) A",
-        "b) An",
-        "c) The",
-        "d) × (no article)"
-    ],
-    answer:"c"
+q:"It is high time Bangladesh □□□□□ effective measures.",
+answer:"took",
+rule:"It is high time + subject + past tense.",
+explain:"The verb after the subject is in the past form."
 },
 
 {
-    q:"1(d). She bought ___ umbrella yesterday.",
-    options:[
-        "a) a",
-        "b) an",
-        "c) the",
-        "d) × (no article)"
-    ],
-    answer:"b"
+q:"It is high time we □□□□□ our mistakes.",
+answer:"corrected",
+rule:"It is high time + subject + past tense.",
+explain:"'Corrected' is the past form required after 'It is high time'."
 },
 
 {
-    q:"1(e). He is ___ European.",
-    options:[
-        "a) a",
-        "b) an",
-        "c) the",
-        "d) × (no article)"
-    ],
-    answer:"a"
-},
-
-
-/* =====================================================
-   Q2 — PREPOSITIONS
-===================================================== */
-
-{
-    q:"2(a). He is good ___ English.",
-    options:[
-        "a) at",
-        "b) in",
-        "c) on",
-        "d) for"
-    ],
-    answer:"a"
+q:"It is high time the government □□□□□ action.",
+answer:"took",
+rule:"It is high time + subject + past tense.",
+explain:"The structure requires a past-tense verb after the subject."
 },
 
 {
-    q:"2(b). She is interested ___ learning English.",
-    options:[
-        "a) at",
-        "b) in",
-        "c) on",
-        "d) for"
-    ],
-    answer:"b"
+q:"It is high time students □□□□□ more attentive.",
+answer:"became",
+rule:"It is high time + subject + past tense.",
+explain:"'Became' is the correct past form in this structure."
 },
 
 {
-    q:"2(c). He has been absent ___ Monday.",
-    options:[
-        "a) for",
-        "b) from",
-        "c) since",
-        "d) by"
-    ],
-    answer:"c"
+q:"It is high time you □□□□□ your lesson.",
+answer:"learned",
+rule:"It is high time + subject + past tense.",
+explain:"A past-tense verb follows the subject."
 },
 
 {
-    q:"2(d). The man was accused ___ theft.",
-    options:[
-        "a) with",
-        "b) for",
-        "c) of",
-        "d) by"
-    ],
-    answer:"c"
+q:"It is high time we □□□□□ our environment.",
+answer:"protected",
+rule:"It is high time + subject + past tense.",
+explain:"'Protected' correctly follows the high-time structure."
 },
 
 {
-    q:"2(e). We should not be indifferent ___ our duties.",
-    options:[
-        "a) to",
-        "b) at",
-        "c) for",
-        "d) with"
-    ],
-    answer:"a"
-},
-
-
-/* =====================================================
-   Q3 — SPECIAL USES
-===================================================== */
-
-{
-    q:"3(a). I would rather ___ at home than go outside.",
-    options:[
-        "a) stayed",
-        "b) stay",
-        "c) staying",
-        "d) to stay"
-    ],
-    answer:"b"
+q:"It is high time he □□□□□ his bad habits.",
+answer:"changed",
+rule:"It is high time + subject + past tense.",
+explain:"The verb is used in the past form after 'It is high time'."
 },
 
 {
-    q:"3(b). You had better ___ the truth.",
-    options:[
-        "a) tell",
-        "b) told",
-        "c) telling",
-        "d) to tell"
-    ],
-    answer:"a"
+q:"It is high time they □□□□□ the truth.",
+answer:"realized",
+rule:"It is high time + subject + past tense.",
+explain:"'Realized' is the appropriate past-tense completion."
+},
+
+/* I WISH */
+
+{
+q:"I wish I □□□□□ a bird.",
+answer:"were",
+rule:"Wish + subject + past tense for an unreal present situation.",
+explain:"'Were' is conventionally used after 'I wish' for an unreal present condition."
 },
 
 {
-    q:"3(c). He cannot buy a pen, let alone ___ a laptop.",
-    options:[
-        "a) bought",
-        "b) buying",
-        "c) buy",
-        "d) to buy"
-    ],
-    answer:"c"
+q:"I wish I □□□□□ rich.",
+answer:"were",
+rule:"Wish + subject + past tense.",
+explain:"The sentence expresses an unreal present condition, so 'were' is used."
 },
 
 {
-    q:"3(d). Walk carefully lest you ___ fall.",
-    options:[
-        "a) will",
-        "b) should",
-        "c) would",
-        "d) can"
-    ],
-    answer:"b"
+q:"I wish I □□□□□ the answer.",
+answer:"knew",
+rule:"Wish + subject + past tense.",
+explain:"'Knew' expresses something the speaker does not know now."
 },
 
 {
-    q:"3(e). No sooner had he reached home ___ it started raining.",
-    options:[
-        "a) when",
-        "b) than",
-        "c) then",
-        "d) and"
-    ],
-    answer:"b"
-},
-
-
-/* =====================================================
-   Q4 — COMPLETING SENTENCES
-===================================================== */
-
-{
-    q:"4(a). It is high time we ___.",
-    options:[
-        "a) perform our duties",
-        "b) performed our duties",
-        "c) performing our duties",
-        "d) have performed our duties"
-    ],
-    answer:"b"
+q:"I wish I □□□□□ more time.",
+answer:"had",
+rule:"Wish + subject + past tense.",
+explain:"The unreal present idea requires the past form 'had'."
 },
 
 {
-    q:"4(b). I wish I ___.",
-    options:[
-        "a) am a bird",
-        "b) was a bird",
-        "c) were a bird",
-        "d) have been a bird"
-    ],
-    answer:"c"
+q:"I wish I □□□□□ English better.",
+answer:"spoke",
+rule:"Wish + subject + past tense.",
+explain:"'Spoke' is the past form used for an unreal present wish."
 },
 
 {
-    q:"4(c). If I were a bird, I ___.",
-    options:[
-        "a) fly in the sky",
-        "b) flew in the sky",
-        "c) would fly in the sky",
-        "d) will fly in the sky"
-    ],
-    answer:"c"
+q:"I wish I □□□□□ a car.",
+answer:"had",
+rule:"Wish + subject + past tense.",
+explain:"The wish concerns a present situation, so the past form is used."
 },
 
 {
-    q:"4(d). Unless you work hard, you ___.",
-    options:[
-        "a) will fail",
-        "b) would fail",
-        "c) failed",
-        "d) had failed"
-    ],
-    answer:"a"
+q:"I wish I □□□□□ taller.",
+answer:"were",
+rule:"Wish + subject + past tense.",
+explain:"'Were' is used for an unreal present state."
 },
 
 {
-    q:"4(e). He talks as if he ___ everything.",
-    options:[
-        "a) knows",
-        "b) knew",
-        "c) had known",
-        "d) knowing"
-    ],
-    answer:"b"
-},
-
-
-/* =====================================================
-   Q5 — RIGHT FORM OF VERBS
-===================================================== */
-
-{
-    q:"5(a). The sun ___ in the east.",
-    options:[
-        "a) rise",
-        "b) rises",
-        "c) rose",
-        "d) rising"
-    ],
-    answer:"b"
+q:"I wish I □□□□□ how to swim.",
+answer:"knew",
+rule:"Wish + subject + past tense.",
+explain:"'Knew' expresses a present situation contrary to fact."
 },
 
 {
-    q:"5(b). He ___ a book now.",
-    options:[
-        "a) reads",
-        "b) read",
-        "c) is reading",
-        "d) has read"
-    ],
-    answer:"c"
+q:"I wish I □□□□□ more confident.",
+answer:"were",
+rule:"Wish + subject + past tense.",
+explain:"The unreal present condition takes the past form."
 },
 
 {
-    q:"5(c). He ___ here since 2020.",
-    options:[
-        "a) lives",
-        "b) lived",
-        "c) has been living",
-        "d) is living"
-    ],
-    answer:"c"
+q:"I wish I □□□□□ enough money.",
+answer:"had",
+rule:"Wish + subject + past tense.",
+explain:"'Had' is the correct past form for an unreal present possession."
+},
+
+/* IF */
+
+{
+q:"If I were rich, I □□□□□ the poor.",
+answer:"would help",
+rule:"If + subject + were + would + V1.",
+explain:"This is a second conditional sentence expressing an unreal or hypothetical situation."
 },
 
 {
-    q:"5(d). When I reached the station, the train ___.",
-    options:[
-        "a) leaves",
-        "b) has left",
-        "c) had left",
-        "d) was leaving"
-    ],
-    answer:"c"
+q:"If I were a bird, I □□□□□ in the sky.",
+answer:"would fly",
+rule:"If + subject + were + would + V1.",
+explain:"The result clause uses 'would + base verb'."
 },
 
 {
-    q:"5(e). Had I known the matter, I ___ him.",
-    options:[
-        "a) help",
-        "b) helped",
-        "c) would have helped",
-        "d) will help"
-    ],
-    answer:"c"
-},
-
-
-/* =====================================================
-   Q6 — TRANSFORMATION
-===================================================== */
-
-{
-    q:"6(a). Everybody loves flowers. Choose the correct negative sentence.",
-    options:[
-        "a) Nobody loves flowers.",
-        "b) There is nobody who does not love flowers.",
-        "c) Everybody does not love flowers.",
-        "d) Nobody does not love flowers."
-    ],
-    answer:"b"
+q:"If I were you, I □□□□□ harder.",
+answer:"would work",
+rule:"If I were + subject, subject + would + V1.",
+explain:"The hypothetical result is formed with 'would + V1'."
 },
 
 {
-    q:"6(b). He is too weak to walk. Choose the correct complex sentence.",
-    options:[
-        "a) He is so weak that he cannot walk.",
-        "b) He is weak and cannot walk.",
-        "c) He is very weak but walks.",
-        "d) He was weak to walk."
-    ],
-    answer:"a"
+q:"If he were rich, he □□□□□ a school.",
+answer:"would establish",
+rule:"If + past/were + would + V1.",
+explain:"The imaginary result takes 'would establish'."
 },
 
 {
-    q:"6(c). Though he is poor, he is honest. Choose the correct compound sentence.",
-    options:[
-        "a) He is poor because he is honest.",
-        "b) He is poor but honest.",
-        "c) He is honest although poor.",
-        "d) Being poor, he is honest."
-    ],
-    answer:"b"
+q:"If she were here, she □□□□□ us.",
+answer:"would help",
+rule:"If + were + would + V1.",
+explain:"The result of the hypothetical condition takes 'would + V1'."
 },
 
 {
-    q:"6(d). Dhaka is one of the largest cities in Bangladesh. Choose the positive form.",
-    options:[
-        "a) Very few cities in Bangladesh are as large as Dhaka.",
-        "b) No city is larger than Dhaka.",
-        "c) Dhaka is larger than every city.",
-        "d) Dhaka is the largest city."
-    ],
-    answer:"a"
+q:"If I were a king, I □□□□□ my people.",
+answer:"would serve",
+rule:"If + were + would + V1.",
+explain:"'Would serve' correctly expresses the hypothetical result."
 },
 
 {
-    q:"6(e). He wrote a letter. Choose the correct passive sentence.",
-    options:[
-        "a) A letter is written by him.",
-        "b) A letter was written by him.",
-        "c) A letter has written by him.",
-        "d) A letter had written by him."
-    ],
-    answer:"b"
-},
-
-
-/* =====================================================
-   Q7 — NARRATION
-===================================================== */
-
-{
-    q:"7(a). He said, “I am busy.”",
-    options:[
-        "a) He said that I am busy.",
-        "b) He said that he was busy.",
-        "c) He says he was busy.",
-        "d) He said he is busy."
-    ],
-    answer:"b"
+q:"If they were careful, they □□□□□ the accident.",
+answer:"would avoid",
+rule:"If + past + would + V1.",
+explain:"The second conditional uses 'would + base verb' in the result."
 },
 
 {
-    q:"7(b). He said to me, “Are you happy?”",
-    options:[
-        "a) He asked me if I was happy.",
-        "b) He told me that I was happy.",
-        "c) He asked me are I happy.",
-        "d) He said that I am happy."
-    ],
-    answer:"a"
+q:"If he were honest, people □□□□□ him.",
+answer:"would trust",
+rule:"If + were + would + V1.",
+explain:"The result clause requires 'would trust'."
 },
 
 {
-    q:"7(c). The teacher said to the students, “Do not make a noise.”",
-    options:[
-        "a) The teacher told the students not to make a noise.",
-        "b) The teacher said the students do not make noise.",
-        "c) The teacher asked that students made noise.",
-        "d) The teacher told students do not make noise."
-    ],
-    answer:"a"
+q:"If I were free, I □□□□□ you.",
+answer:"would visit",
+rule:"If + were + would + V1.",
+explain:"'Would visit' correctly completes the hypothetical result."
 },
 
 {
-    q:"7(d). Mother said to me, “May Allah bless you.”",
-    options:[
-        "a) Mother prayed that Allah might bless me.",
-        "b) Mother said Allah bless you.",
-        "c) Mother ordered Allah to bless me.",
-        "d) Mother told me Allah blessed you."
-    ],
-    answer:"a"
+q:"If she were a doctor, she □□□□□ many people.",
+answer:"would help",
+rule:"If + were + would + V1.",
+explain:"The imaginary result uses 'would + V1'."
+},
+
+/* UNLESS */
+
+{
+q:"Unless you work hard, □□□□□.",
+answer:"you will fail",
+rule:"Unless = if...not.",
+explain:"'Unless you work hard' means 'if you do not work hard', so the result is naturally 'you will fail'."
 },
 
 {
-    q:"7(e). He said, “What a beautiful flower it is!”",
-    options:[
-        "a) He said that it is a beautiful flower.",
-        "b) He exclaimed with wonder that it was a very beautiful flower.",
-        "c) He asked if it was beautiful.",
-        "d) He ordered that the flower was beautiful."
-    ],
-    answer:"b"
-},
-
-
-/* =====================================================
-   Q8 — PRONOUN REFERENCE
-===================================================== */
-
-{
-    q:"8(a). What does “They” refer to in “They give us oxygen”?",
-    options:[
-        "a) humans",
-        "b) trees",
-        "c) oxygen",
-        "d) environment"
-    ],
-    answer:"b"
+q:"Unless you hurry, □□□□□.",
+answer:"you will miss the bus",
+rule:"Unless = if...not.",
+explain:"The sentence means that if you do not hurry, you will miss the bus."
 },
 
 {
-    q:"8(b). What does “them” refer to in “Without them, human life would be impossible”?",
-    options:[
-        "a) trees",
-        "b) humans",
-        "c) oxygen",
-        "d) duties"
-    ],
-    answer:"a"
+q:"Unless you study regularly, □□□□□.",
+answer:"you will not succeed",
+rule:"Unless = if...not.",
+explain:"The unless-clause gives a negative condition."
 },
 
 {
-    q:"8(c). What does “We” refer to?",
-    options:[
-        "a) trees",
-        "b) human beings",
-        "c) animals",
-        "d) plants"
-    ],
-    answer:"b"
+q:"Unless it rains, □□□□□.",
+answer:"we will play outside",
+rule:"Unless = if...not.",
+explain:"The sentence means that if it does not rain, the activity will happen."
 },
 
 {
-    q:"8(d). What does “them” in the last sentence refer to?",
-    options:[
-        "a) humans",
-        "b) environment",
-        "c) trees",
-        "d) oxygen"
-    ],
-    answer:"c"
+q:"Unless he apologizes, □□□□□.",
+answer:"I will not forgive him",
+rule:"Unless = if...not.",
+explain:"The unless clause expresses the condition necessary for forgiveness."
 },
 
 {
-    q:"8(e). What does “therefore” indicate?",
-    options:[
-        "a) contrast",
-        "b) reason/result",
-        "c) condition",
-        "d) time"
-    ],
-    answer:"b"
-},
-
-
-/* =====================================================
-   Q9 — MODIFIERS
-===================================================== */
-
-{
-    q:"9(a). ___, he went to school. Choose the appropriate participial phrase.",
-    options:[
-        "a) Getting ready",
-        "b) To get ready",
-        "c) Ready was",
-        "d) He getting"
-    ],
-    answer:"a"
+q:"Unless you obey the rules, □□□□□.",
+answer:"you will be punished",
+rule:"Unless = if...not.",
+explain:"The result follows if the condition is not fulfilled."
 },
 
 {
-    q:"9(b). The man ___ is my uncle. Choose an adjective clause.",
-    options:[
-        "a) standing there",
-        "b) who is standing there",
-        "c) to stand there",
-        "d) stand there"
-    ],
-    answer:"b"
+q:"Unless she comes early, □□□□□.",
+answer:"she will miss the class",
+rule:"Unless = if...not.",
+explain:"The sentence means that if she does not come early, she will miss the class."
 },
 
 {
-    q:"9(c). ___, he went to Dhaka. Choose an infinitive phrase.",
-    options:[
-        "a) To attend the meeting",
-        "b) Attending the meeting",
-        "c) He attended the meeting",
-        "d) Attended the meeting"
-    ],
-    answer:"a"
+q:"Unless we protect nature, □□□□□.",
+answer:"the environment will suffer",
+rule:"Unless = if...not.",
+explain:"The unless clause introduces a negative condition."
 },
 
 {
-    q:"9(d). The girl ___ is my sister. Choose a participial phrase.",
-    options:[
-        "a) who is singing",
-        "b) singing on the stage",
-        "c) to sing",
-        "d) she sings"
-    ],
-    answer:"b"
+q:"Unless you save money, □□□□□.",
+answer:"you may face difficulties",
+rule:"Unless = if...not.",
+explain:"The result describes what may happen if saving does not occur."
 },
 
 {
-    q:"9(e). ___, he completed the work. Choose an adverbial phrase.",
-    options:[
-        "a) With great care",
-        "b) To complete",
-        "c) Completing",
-        "d) Who completed"
-    ],
-    answer:"a"
+q:"Unless they arrive soon, □□□□□.",
+answer:"we will leave",
+rule:"Unless = if...not.",
+explain:"The sentence means that if they do not arrive soon, we will leave."
 },
 
-
-/* =====================================================
-   Q10 — SENTENCE CONNECTORS
-===================================================== */
+/* LEST */
 
 {
-    q:"10(a). He is poor. ___, he is honest.",
-    options:[
-        "a) However",
-        "b) Because",
-        "c) So"
-    ],
-    answer:"a"
+q:"Study hard lest □□□□□.",
+answer:"you should fail",
+rule:"Lest + subject + should + V1.",
+explain:"'Lest' means 'so that...not' or 'for fear that'. In standard HSC structure, it is followed by subject + should + base verb."
 },
 
 {
-    q:"10(b). He worked hard. ___, he failed.",
-    options:[
-        "a) However",
-        "b) Therefore",
-        "c) So"
-    ],
-    answer:"a"
+q:"Walk carefully lest □□□□□.",
+answer:"you should fall",
+rule:"Lest + subject + should + V1.",
+explain:"After 'lest', the standard structure is subject + should + V1."
 },
 
 {
-    q:"10(c). Study hard, ___ you will fail.",
-    options:[
-        "a) otherwise",
-        "b) because",
-        "c) although"
-    ],
-    answer:"a"
+q:"Run fast lest □□□□□.",
+answer:"you should miss the train",
+rule:"Lest + subject + should + V1.",
+explain:"'Should miss' correctly follows the subject after 'lest'."
 },
 
 {
-    q:"10(d). ___ he is rich, he is unhappy.",
-    options:[
-        "a) Although",
-        "b) Because",
-        "c) So"
-    ],
-    answer:"a"
+q:"Take an umbrella lest □□□□□.",
+answer:"it should rain",
+rule:"Lest + subject + should + V1.",
+explain:"The clause after 'lest' uses 'should + base verb'."
 },
 
 {
-    q:"10(e). He could not go out ___ it was raining.",
-    options:[
-        "a) because",
-        "b) however",
-        "c) otherwise"
-    ],
-    answer:"a"
-},
-
-
-/* =====================================================
-   Q11 — SYNONYMS AND ANTONYMS
-===================================================== */
-
-{
-    q:"11(a). Choose the synonym of “Brave”.",
-    options:[
-        "a) Coward",
-        "b) Courageous",
-        "c) Weak",
-        "d) Lazy"
-    ],
-    answer:"b"
+q:"Speak softly lest □□□□□.",
+answer:"you should disturb others",
+rule:"Lest + subject + should + V1.",
+explain:"'Should disturb' follows the required lest structure."
 },
 
 {
-    q:"11(b). Choose the synonym of “Rapid”.",
-    options:[
-        "a) Slow",
-        "b) Quick",
-        "c) Weak",
-        "d) Old"
-    ],
-    answer:"b"
+q:"Keep the door locked lest □□□□□.",
+answer:"someone should enter",
+rule:"Lest + subject + should + V1.",
+explain:"The subject 'someone' is followed by 'should + enter'."
 },
 
 {
-    q:"11(c). Choose the synonym of “Ancient”.",
-    options:[
-        "a) Modern",
-        "b) New",
-        "c) Old",
-        "d) Recent"
-    ],
-    answer:"c"
+q:"Drive carefully lest □□□□□.",
+answer:"you should meet with an accident",
+rule:"Lest + subject + should + V1.",
+explain:"The base verb follows 'should' after the subject."
 },
 
 {
-    q:"11(d). Choose the synonym of “Honest”.",
-    options:[
-        "a) Truthful",
-        "b) False",
-        "c) Dishonest",
-        "d) Cruel"
-    ],
-    answer:"a"
+q:"Save some money lest □□□□□.",
+answer:"you should need it later",
+rule:"Lest + subject + should + V1.",
+explain:"The construction expresses precaution against a possible future problem."
 },
 
 {
-    q:"11(e). Choose the synonym of “Difficult”.",
-    options:[
-        "a) Easy",
-        "b) Hard",
-        "c) Simple",
-        "d) Light"
-    ],
-    answer:"b"
+q:"He left early lest □□□□□.",
+answer:"he should miss the train",
+rule:"Lest + subject + should + V1.",
+explain:"'Should miss' completes the standard structure."
 },
 
 {
-    q:"11(f). Choose the antonym of “Success”.",
-    options:[
-        "a) Victory",
-        "b) Failure",
-        "c) Achievement",
-        "d) Progress"
-    ],
-    answer:"b"
+q:"Be careful lest □□□□□.",
+answer:"you should hurt yourself",
+rule:"Lest + subject + should + V1.",
+explain:"The clause after 'lest' takes subject + should + base verb."
+},
+
+/* WOULD RATHER */
+
+{
+q:"I would rather you □□□□□ here.",
+answer:"stayed",
+rule:"Would rather + subject + past tense.",
+explain:"When the subject changes after 'would rather', a past-tense verb is used."
 },
 
 {
-    q:"11(g). Choose the antonym of “Increase”.",
-    options:[
-        "a) Grow",
-        "b) Rise",
-        "c) Decrease",
-        "d) Develop"
-    ],
-    answer:"c"
+q:"I would rather you □□□□□ at home.",
+answer:"stayed",
+rule:"Would rather + subject + past.",
+explain:"'Stayed' is the past form required after the new subject."
 },
 
 {
-    q:"11(h). Choose the antonym of “Strong”.",
-    options:[
-        "a) Powerful",
-        "b) Weak",
-        "c) Firm",
-        "d) Healthy"
-    ],
-    answer:"b"
+q:"She would rather he □□□□□ the truth.",
+answer:"told",
+rule:"Would rather + subject + past.",
+explain:"The structure takes the past form after the subject."
 },
 
 {
-    q:"11(i). Choose the antonym of “Accept”.",
-    options:[
-        "a) Receive",
-        "b) Take",
-        "c) Reject",
-        "d) Agree"
-    ],
-    answer:"c"
+q:"We would rather they □□□□□ with us.",
+answer:"came",
+rule:"Would rather + subject + past.",
+explain:"'Came' is the correct past form."
 },
 
 {
-    q:"11(j). Choose the antonym of “Beautiful”.",
-    options:[
-        "a) Attractive",
-        "b) Pretty",
-        "c) Ugly",
-        "d) Lovely"
-    ],
-    answer:"c"
+q:"I would rather you □□□□□ quiet.",
+answer:"kept",
+rule:"Would rather + subject + past.",
+explain:"The preferred action after a different subject uses the past form."
 },
 
-
-/* =====================================================
-   Q12 — PUNCTUATION
-===================================================== */
+{
+q:"He would rather she □□□□□ the matter.",
+answer:"explained",
+rule:"Would rather + subject + past.",
+explain:"'Explained' correctly follows the would-rather structure."
+},
 
 {
-    q:"12. Choose the correctly punctuated version of the passage: “rahim said to karim where are you going karim replied i am going to the market do you need anything”",
-    options:[
-        "a) Rahim said to Karim, “Where are you going?” Karim replied, “I am going to the market. Do you need anything?”",
-        "b) Rahim said to Karim “where are you going” Karim replied “I am going to the market do you need anything.”",
-        "c) Rahim said to Karim, where are you going? Karim replied I am going to the market, do you need anything.",
-        "d) Rahim said, to Karim “Where are you going?” Karim replied I am going to the market do you need anything?"
-    ],
-    answer:"a"
+q:"They would rather we □□□□□ tomorrow.",
+answer:"went",
+rule:"Would rather + subject + past.",
+explain:"The verb after the changed subject is in the past form."
+},
+
+{
+q:"I would rather you □□□□□ this book.",
+answer:"read",
+rule:"Would rather + subject + past.",
+explain:"'Read' has the same spelling in present and past, but here it is the past form."
+},
+
+{
+q:"She would rather he □□□□□ alone.",
+answer:"worked",
+rule:"Would rather + subject + past.",
+explain:"The past form is used after the subject."
+},
+
+{
+q:"We would rather you □□□□□ us.",
+answer:"helped",
+rule:"Would rather + subject + past.",
+explain:"'Helped' completes the required structure."
+},
+
+/* HAD BETTER */
+
+{
+q:"You had better □□□□□ now.",
+answer:"go",
+rule:"Had better + V1.",
+explain:"The expression 'had better' is followed directly by the base form of the verb."
+},
+
+{
+q:"You had better □□□□□ the truth.",
+answer:"tell",
+rule:"Had better + V1.",
+explain:"No 'to' is used after 'had better'."
+},
+
+{
+q:"We had better □□□□□ early.",
+answer:"leave",
+rule:"Had better + V1.",
+explain:"The base form 'leave' follows 'had better'."
+},
+
+{
+q:"He had better □□□□□ carefully.",
+answer:"drive",
+rule:"Had better + V1.",
+explain:"'Had better' is followed by V1."
+},
+
+{
+q:"She had better □□□□□ a doctor.",
+answer:"consult",
+rule:"Had better + V1.",
+explain:"The base verb 'consult' follows the expression."
+},
+
+{
+q:"They had better □□□□□ the rules.",
+answer:"follow",
+rule:"Had better + V1.",
+explain:"The base form is required after 'had better'."
+},
+
+{
+q:"You had better □□□□□ your homework.",
+answer:"finish",
+rule:"Had better + V1.",
+explain:"'Finish' is the base form required after 'had better'."
+},
+
+{
+q:"I had better □□□□□ home.",
+answer:"return",
+rule:"Had better + V1.",
+explain:"The construction is 'had better + base verb'."
+},
+
+{
+q:"He had better □□□□□ carefully.",
+answer:"listen",
+rule:"Had better + V1.",
+explain:"'Listen' is the base form following 'had better'."
+},
+
+{
+q:"We had better □□□□□ the problem.",
+answer:"solve",
+rule:"Had better + V1.",
+explain:"The verb remains in its base form."
+},
+
+/* AS IF */
+
+{
+q:"He talks as if he □□□□□ everything.",
+answer:"knew",
+rule:"As if/as though + past for an unreal present situation.",
+explain:"The speaker presents the knowledge as unreal or unlikely, so the past form is used."
+},
+
+{
+q:"He behaves as if he □□□□□ a king.",
+answer:"were",
+rule:"As if/as though + past.",
+explain:"'Were' is used for an unreal present comparison."
+},
+
+{
+q:"She speaks as though she □□□□□ the owner.",
+answer:"were",
+rule:"As though + past.",
+explain:"The comparison is unreal, so the past form is appropriate."
+},
+
+{
+q:"He acts as if he □□□□□ rich.",
+answer:"were",
+rule:"As if + past.",
+explain:"The unreal present situation takes the past form."
+},
+
+{
+q:"She talks as though she □□□□□ the answer.",
+answer:"knew",
+rule:"As though + past.",
+explain:"'Knew' expresses an unreal present assumption."
+},
+
+{
+q:"He walks as if he □□□□□ tired.",
+answer:"were",
+rule:"As if + past.",
+explain:"The past form is used for an unreal comparison."
+},
+
+{
+q:"They behave as though they □□□□□ everything.",
+answer:"knew",
+rule:"As though + past.",
+explain:"The verb is shifted into the past because the situation is presented as unreal."
+},
+
+{
+q:"He speaks as if he □□□□□ the leader.",
+answer:"were",
+rule:"As if + past.",
+explain:"'Were' is the standard form for this unreal present comparison."
+},
+
+{
+q:"She looks as though she □□□□□ sick.",
+answer:"were",
+rule:"As though + past.",
+explain:"The past form is used to express an unreal or tentative comparison."
+},
+
+{
+q:"He acts as if he □□□□□ nothing.",
+answer:"knew",
+rule:"As if + past.",
+explain:"'Knew' correctly expresses the unreal present situation."
+},
+
+/* NO SOONER */
+
+{
+q:"No sooner had I reached the station than □□□□□.",
+answer:"the train left",
+rule:"No sooner had + subject + V3 + than + past clause.",
+explain:"'No sooner' is followed by 'had + past participle' and paired with 'than'."
+},
+
+{
+q:"No sooner had he arrived than □□□□□.",
+answer:"the meeting began",
+rule:"No sooner had + V3 + than.",
+explain:"The second event follows immediately after the first."
+},
+
+{
+q:"No sooner had the bell rung than □□□□□.",
+answer:"the students left",
+rule:"No sooner + had + V3 + than.",
+explain:"'Than' is the correct conjunction after 'No sooner'."
+},
+
+{
+q:"No sooner had we entered the room than □□□□□.",
+answer:"the lights went out",
+rule:"No sooner had + V3 + than.",
+explain:"The structure uses 'had + past participle' before 'than'."
+},
+
+{
+q:"No sooner had she opened the door than □□□□□.",
+answer:"the dog ran out",
+rule:"No sooner had + V3 + than.",
+explain:"The construction describes two nearly simultaneous past actions."
+},
+
+{
+q:"No sooner had the teacher arrived than □□□□□.",
+answer:"the class became silent",
+rule:"No sooner had + V3 + than.",
+explain:"The paired conjunction is 'than'."
+},
+
+{
+q:"No sooner had he finished dinner than □□□□□.",
+answer:"he went to bed",
+rule:"No sooner had + V3 + than.",
+explain:"The first clause uses past perfect and the second clause follows with 'than'."
+},
+
+{
+q:"No sooner had the match started than □□□□□.",
+answer:"it began to rain",
+rule:"No sooner had + V3 + than.",
+explain:"The structure connects the two immediate past events."
+},
+
+{
+q:"No sooner had I sat down than □□□□□.",
+answer:"the phone rang",
+rule:"No sooner had + V3 + than.",
+explain:"'Than' correctly introduces the second event."
+},
+
+{
+q:"No sooner had they reached home than □□□□□.",
+answer:"the storm began",
+rule:"No sooner had + V3 + than.",
+explain:"Past perfect follows 'No sooner', and 'than' introduces the next event."
+},
+
+/* HARDLY */
+
+{
+q:"Hardly had I reached the station when □□□□□.",
+answer:"the train arrived",
+rule:"Hardly had + subject + V3 + when.",
+explain:"'Hardly' is paired with 'when' and takes past perfect in the first clause."
+},
+
+{
+q:"Hardly had he arrived when □□□□□.",
+answer:"the meeting started",
+rule:"Hardly had + V3 + when.",
+explain:"The structure requires 'when' after the first event."
+},
+
+{
+q:"Hardly had she entered the room when □□□□□.",
+answer:"the lights went out",
+rule:"Hardly had + V3 + when.",
+explain:"'When' is the correct conjunction after 'Hardly'."
+},
+
+{
+q:"Hardly had we begun the work when □□□□□.",
+answer:"it started raining",
+rule:"Hardly had + V3 + when.",
+explain:"The first action uses past perfect and the second follows with 'when'."
+},
+
+{
+q:"Hardly had the teacher entered when □□□□□.",
+answer:"the students stood up",
+rule:"Hardly had + V3 + when.",
+explain:"'When' pairs with 'hardly' in this structure."
+},
+
+{
+q:"Hardly had I closed my eyes when □□□□□.",
+answer:"the baby cried",
+rule:"Hardly had + V3 + when.",
+explain:"The construction connects two immediately successive past events."
+},
+
+{
+q:"Hardly had they reached the field when □□□□□.",
+answer:"the match began",
+rule:"Hardly had + V3 + when.",
+explain:"Past perfect follows 'hardly', while 'when' introduces the next event."
+},
+
+{
+q:"Hardly had he finished speaking when □□□□□.",
+answer:"the audience applauded",
+rule:"Hardly had + V3 + when.",
+explain:"The paired conjunction is 'when'."
+},
+
+{
+q:"Hardly had the train stopped when □□□□□.",
+answer:"the passengers got down",
+rule:"Hardly had + V3 + when.",
+explain:"The first clause is past perfect and the second follows with 'when'."
+},
+
+{
+q:"Hardly had I opened the book when □□□□□.",
+answer:"the electricity went out",
+rule:"Hardly had + V3 + when.",
+explain:"'When' correctly completes the hardly structure."
+},
+
+/* WITHOUT / BY */
+
+{
+q:"You cannot succeed without □□□□□ hard.",
+answer:"working",
+rule:"Without + V-ing.",
+explain:"'Without' is a preposition, so it is followed by a gerund in this structure."
+},
+
+{
+q:"He left without □□□□□ goodbye.",
+answer:"saying",
+rule:"Without + V-ing.",
+explain:"The verb after 'without' takes the -ing form."
+},
+
+{
+q:"She passed the exam without □□□□□ much.",
+answer:"studying",
+rule:"Without + V-ing.",
+explain:"'Studying' is the gerund required after 'without'."
+},
+
+{
+q:"He went away without □□□□□ anyone.",
+answer:"telling",
+rule:"Without + V-ing.",
+explain:"The -ing form follows the preposition 'without'."
+},
+
+{
+q:"You can improve by □□□□□ regularly.",
+answer:"practising",
+rule:"By + V-ing.",
+explain:"'By' is followed by a gerund when describing the method of doing something."
+},
+
+{
+q:"He learned English by □□□□□ every day.",
+answer:"reading",
+rule:"By + V-ing.",
+explain:"The method is expressed with 'by + V-ing'."
+},
+
+{
+q:"She became successful by □□□□□ hard.",
+answer:"working",
+rule:"By + V-ing.",
+explain:"'Working' correctly follows 'by' in this structure."
+},
+
+{
+q:"You can stay healthy by □□□□□ regularly.",
+answer:"exercising",
+rule:"By + V-ing.",
+explain:"The gerund describes the method of staying healthy."
+},
+
+{
+q:"He solved the problem without □□□□□ anyone.",
+answer:"asking",
+rule:"Without + V-ing.",
+explain:"'Asking' is the correct gerund after 'without'."
+},
+
+{
+q:"She improved her writing by □□□□□ more books.",
+answer:"reading",
+rule:"By + V-ing.",
+explain:"'Reading' describes the method used to improve writing."
+},
+
+/* DESPITE / IN SPITE */
+
+{
+q:"Despite □□□□□ ill, he attended the class.",
+answer:"being",
+rule:"Despite + noun/V-ing.",
+explain:"Despite is followed by a noun or gerund, not a finite clause."
+},
+
+{
+q:"Despite □□□□□ poor, he is honest.",
+answer:"being",
+rule:"Despite + V-ing.",
+explain:"'Being' turns the adjective phrase into a gerund construction."
+},
+
+{
+q:"Despite the heavy rain, □□□□□.",
+answer:"we continued our journey",
+rule:"Despite + noun phrase.",
+explain:"'The heavy rain' is a noun phrase functioning after despite."
+},
+
+{
+q:"Despite □□□□□ hard, he failed.",
+answer:"working",
+rule:"Despite + V-ing.",
+explain:"The gerund 'working' correctly follows 'despite'."
+},
+
+{
+q:"In spite of □□□□□ tired, she continued working.",
+answer:"being",
+rule:"In spite of + noun/V-ing.",
+explain:"'Being tired' is a gerund phrase following the preposition."
+},
+
+{
+q:"In spite of the difficulties, □□□□□.",
+answer:"he continued his work",
+rule:"In spite of + noun phrase.",
+explain:"'The difficulties' is a noun phrase after 'in spite of'."
+},
+
+{
+q:"Despite □□□□□ late, he finished the task.",
+answer:"arriving",
+rule:"Despite + V-ing.",
+explain:"The action is expressed with a gerund after 'despite'."
+},
+
+{
+q:"In spite of □□□□□ poor, he helped others.",
+answer:"being",
+rule:"In spite of + V-ing.",
+explain:"'Being poor' is the appropriate gerund phrase."
+},
+
+{
+q:"Despite his illness, □□□□□.",
+answer:"he attended the meeting",
+rule:"Despite + noun phrase.",
+explain:"'His illness' is a noun phrase following 'despite'."
+},
+
+{
+q:"In spite of □□□□□ hard, she could not win.",
+answer:"trying",
+rule:"In spite of + V-ing.",
+explain:"The gerund 'trying' follows the prepositional expression."
+},
+
+/* TOO TO */
+
+{
+q:"The box is too heavy □□□□□.",
+answer:"to carry",
+rule:"Too + adjective + to + V1.",
+explain:"The infinitive 'to carry' completes the too-to structure."
+},
+
+{
+q:"He is too weak □□□□□.",
+answer:"to walk",
+rule:"Too + adjective + to + V1.",
+explain:"The infinitive follows the adjective 'weak'."
+},
+
+{
+q:"The water is too hot □□□□□.",
+answer:"to drink",
+rule:"Too + adjective + to + V1.",
+explain:"The structure is 'too + adjective + to + base verb'."
+},
+
+{
+q:"She is too young □□□□□ alone.",
+answer:"to travel",
+rule:"Too + adjective + to + V1.",
+explain:"'To travel' is the required infinitive."
+},
+
+{
+q:"The question is too difficult □□□□□.",
+answer:"to answer",
+rule:"Too + adjective + to + V1.",
+explain:"The infinitive completes the meaning of the adjective."
+},
+
+{
+q:"He was too tired □□□□□.",
+answer:"to work",
+rule:"Too + adjective + to + V1.",
+explain:"The base verb follows 'to'."
+},
+
+{
+q:"The road is too narrow □□□□□ safely.",
+answer:"to drive",
+rule:"Too + adjective + to + V1.",
+explain:"The infinitive 'to drive' follows the adjective."
+},
+
+{
+q:"The child is too small □□□□□ the bag.",
+answer:"to carry",
+rule:"Too + adjective + to + V1.",
+explain:"The standard structure is 'too + adjective + to + V1'."
+},
+
+{
+q:"The problem is too complicated □□□□□ quickly.",
+answer:"to solve",
+rule:"Too + adjective + to + V1.",
+explain:"'To solve' is the appropriate infinitive."
+},
+
+{
+q:"The coffee is too hot □□□□□ now.",
+answer:"to drink",
+rule:"Too + adjective + to + V1.",
+explain:"The infinitive completes the too-to construction."
+},
+
+/* SO THAT */
+
+{
+q:"He was so tired that □□□□□.",
+answer:"he could not walk",
+rule:"So + adjective/adverb + that + clause.",
+explain:"'That' introduces a complete clause after 'so tired'."
+},
+
+{
+q:"She was so happy that □□□□□.",
+answer:"she could not stop smiling",
+rule:"So + adjective + that + clause.",
+explain:"A complete clause follows 'that'."
+},
+
+{
+q:"The river was so deep that □□□□□.",
+answer:"we could not cross it",
+rule:"So + adjective + that + clause.",
+explain:"The result is expressed with a complete clause."
+},
+
+{
+q:"He ran so fast that □□□□□.",
+answer:"nobody could catch him",
+rule:"So + adverb + that + clause.",
+explain:"The 'that' clause expresses the result of running fast."
+},
+
+{
+q:"She spoke so softly that □□□□□.",
+answer:"I could not hear her",
+rule:"So + adverb + that + clause.",
+explain:"The result clause follows 'that'."
+},
+
+{
+q:"The boy was so hungry that □□□□□.",
+answer:"he ate everything",
+rule:"So + adjective + that + clause.",
+explain:"A complete clause follows 'that'."
+},
+
+{
+q:"The movie was so interesting that □□□□□.",
+answer:"we watched it twice",
+rule:"So + adjective + that + clause.",
+explain:"The result is given as a complete clause."
+},
+
+{
+q:"He was so ill that □□□□□.",
+answer:"he could not attend class",
+rule:"So + adjective + that + clause.",
+explain:"The clause after 'that' expresses the result."
+},
+
+{
+q:"The road was so slippery that □□□□□.",
+answer:"the car could not move",
+rule:"So + adjective + that + clause.",
+explain:"The result requires a complete subject-verb clause."
+},
+
+{
+q:"The question was so easy that □□□□□.",
+answer:"everyone could answer it",
+rule:"So + adjective + that + clause.",
+explain:"A complete clause follows the conjunction 'that'."
+},
+
+/* SINCE */
+
+{
+q:"It has been five years since I □□□□□ him.",
+answer:"met",
+rule:"Since + past event.",
+explain:"The event marking the beginning of the period is expressed in the past tense."
+},
+
+{
+q:"It is many years since he □□□□□ here.",
+answer:"left",
+rule:"Since + past tense.",
+explain:"The action after 'since' occurred in the past."
+},
+
+{
+q:"It has been two months since she □□□□□ the city.",
+answer:"left",
+rule:"Since + past event.",
+explain:"'Left' marks the past event from which the period is counted."
+},
+
+{
+q:"Ten years have passed since we □□□□□ school.",
+answer:"finished",
+rule:"Since + past tense.",
+explain:"The event after 'since' is a completed past event."
+},
+
+{
+q:"It has been a long time since I □□□□□ him.",
+answer:"saw",
+rule:"Since + past tense.",
+explain:"The past form 'saw' identifies the earlier event."
+},
+
+{
+q:"It is three years since they □□□□□ abroad.",
+answer:"went",
+rule:"Since + past tense.",
+explain:"'Went' refers to the past event that began the period."
+},
+
+{
+q:"It has been months since he □□□□□ us.",
+answer:"visited",
+rule:"Since + past tense.",
+explain:"The visit happened in the past."
+},
+
+{
+q:"Five years have passed since I □□□□□ this place.",
+answer:"visited",
+rule:"Since + past tense.",
+explain:"The completed past action follows 'since'."
+},
+
+{
+q:"It is a year since she □□□□□ her job.",
+answer:"lost",
+rule:"Since + past tense.",
+explain:"The job loss is the past event marking the beginning of the period."
+},
+
+{
+q:"It has been days since we □□□□□ rain.",
+answer:"had",
+rule:"Since + past tense.",
+explain:"The event after 'since' is expressed in the past."
+},
+
+/* UNTIL / TILL */
+
+{
+q:"Wait here until I □□□□□ back.",
+answer:"come",
+rule:"Until/till + appropriate tense.",
+explain:"After 'until' referring to a future event, the present simple is commonly used."
+},
+
+{
+q:"Stay here until the teacher □□□□□.",
+answer:"comes",
+rule:"Until + present simple for future time.",
+explain:"The future meaning is expressed using the present simple after 'until'."
+},
+
+{
+q:"I will wait until he □□□□□.",
+answer:"arrives",
+rule:"Until + present simple.",
+explain:"The main clause contains 'will', but the until-clause uses present simple."
+},
+
+{
+q:"Do not leave until I □□□□□ you.",
+answer:"tell",
+rule:"Until + present simple.",
+explain:"The present simple 'tell' is used after 'until' for a future condition."
+},
+
+{
+q:"We will stay here until the rain □□□□□.",
+answer:"stops",
+rule:"Until + present simple.",
+explain:"The until-clause takes the present simple despite the future meaning."
+},
+
+{
+q:"Wait till the bus □□□□□.",
+answer:"comes",
+rule:"Till + present simple.",
+explain:"'Comes' is the appropriate present form after 'till'."
+},
+
+{
+q:"He will not go home until his father □□□□□.",
+answer:"returns",
+rule:"Until + present simple.",
+explain:"The future event is expressed using the present simple after 'until'."
+},
+
+{
+q:"Keep reading until the teacher □□□□□ you to stop.",
+answer:"tells",
+rule:"Until + present simple.",
+explain:"The present simple is used in the until-clause."
+},
+
+{
+q:"I will remain here until you □□□□□.",
+answer:"return",
+rule:"Until + present simple.",
+explain:"'Return' is the base present form after 'you'."
+},
+
+{
+q:"Do not open the door until I □□□□□.",
+answer:"come",
+rule:"Until + present simple.",
+explain:"The future meaning does not require 'will' inside the until-clause."
 }
 
 ];
 
+/* ============================================================
+   STATE
+   ============================================================ */
 
-/* =====================================================
-   BUILD MCQ HTML
-===================================================== */
+let currentRound = 0;
+let currentQuestion = 0;
+let roundQuestions = [];
+let roundAnswers = [];
+let totalCorrect = 0;
+let totalAnswered = 0;
+let roundScore = 0;
 
-const mcqContainer =
-    document.getElementById("mcqContainer");
+/* ============================================================
+   HELPERS
+   ============================================================ */
 
+function shuffle(array){
+    return [...array].sort(() => Math.random() - 0.5);
+}
 
-questions.forEach(function(item,index){
+function startQuiz(){
 
-    const questionNumber = index + 1;
+    currentRound = 0;
+    currentQuestion = 0;
+    totalCorrect = 0;
+    totalAnswered = 0;
 
-    const questionDiv =
-        document.createElement("div");
+    startRound();
+}
 
-    questionDiv.className = "question";
+function startRound(){
 
-    let html =
-        "<h3>" +
-        item.q +
-        "</h3>";
+    if(currentRound >= 10){
+        showFinalResult();
+        return;
+    }
 
-    item.options.forEach(function(option,index){
+    currentQuestion = 0;
+    roundScore = 0;
+    roundAnswers = [];
 
-        const letter =
-            String.fromCharCode(97 + index);
+    /*
+      Pick 15 random questions from the full 150 bank.
+      Questions are not repeated within the same round.
+    */
+    roundQuestions = shuffle(questions).slice(0,15);
 
-        html += `
-            <label class="option">
-                <input
-                    type="radio"
-                    name="q${questionNumber}"
-                    value="${letter}"
-                >
-                ${option}
-            </label>
-        `;
+    renderQuiz();
+}
 
+function renderQuiz(){
+
+    const app = document.getElementById("app");
+
+    const progress =
+        ((currentRound * 15 + currentQuestion) / 150) * 100;
+
+    app.innerHTML = `
+
+        <div class="progress-wrap">
+
+            <div class="progress-info">
+                <span>
+                    Overall Progress
+                </span>
+
+                <span>
+                    ${currentRound * 15 + currentQuestion} / 150
+                </span>
+            </div>
+
+            <div class="progress-bar">
+                <div
+                    class="progress-fill"
+                    style="width:${progress}%">
+                </div>
+            </div>
+
+        </div>
+
+        <div class="card">
+
+            <div class="round-title">
+
+                <h2>
+                    Round ${currentRound + 1}
+                </h2>
+
+                <div class="question-count">
+                    Question ${currentQuestion + 1} / 15
+                </div>
+
+            </div>
+
+            <div
+                id="questionBox"
+                class="question-box">
+            </div>
+
+        </div>
+    `;
+
+    renderQuestion();
+}
+
+function renderQuestion(){
+
+    const q = roundQuestions[currentQuestion];
+
+    const box = document.getElementById("questionBox");
+
+    /*
+      Create plausible distractors from other questions'
+      answers. They remain grammar-related.
+    */
+
+    let distractors = shuffle(
+        questions
+        .filter(item => item.answer !== q.answer)
+        .map(item => item.answer)
+    ).slice(0,3);
+
+    let options = shuffle([
+        q.answer,
+        ...distractors
+    ]);
+
+    box.innerHTML = `
+
+        <div class="question">
+            ${q.q}
+        </div>
+
+        <div class="options">
+
+            ${options.map((option,index)=>`
+
+                <button
+                    class="option"
+                    onclick="selectAnswer(this, '${escapeQuotes(option)}')">
+
+                    <span class="option-letter">
+                        ${String.fromCharCode(65+index)}
+                    </span>
+
+                    ${option}
+
+                </button>
+
+            `).join("")}
+
+        </div>
+
+        <button
+            id="nextBtn"
+            class="next-btn"
+            disabled
+            onclick="nextQuestion()">
+
+            ${currentQuestion === 14
+                ? "Finish 15 Questions →"
+                : "Next Question →"}
+
+        </button>
+    `;
+}
+
+function escapeQuotes(text){
+    return text
+        .replace(/\\/g,"\\\\")
+        .replace(/'/g,"\\'");
+}
+
+function selectAnswer(button, selected){
+
+    const buttons =
+        document.querySelectorAll(".option");
+
+    buttons.forEach(btn=>{
+        btn.disabled = true;
     });
 
-    questionDiv.innerHTML = html;
+    button.classList.add("selected");
 
-    mcqContainer.appendChild(questionDiv);
+    const q = roundQuestions[currentQuestion];
 
-});
+    const correct =
+        selected === q.answer;
 
+    if(correct){
+        roundScore++;
+        totalCorrect++;
+    }
 
-/* =====================================================
-   VARIABLES
-===================================================== */
+    totalAnswered++;
 
-const TOTAL_TIME =
-    3 * 60 * 60;
+    roundAnswers.push({
+        question:q,
+        selected:selected,
+        correct:correct
+    });
 
-let totalSeconds =
-    TOTAL_TIME;
+    document.getElementById("nextBtn").disabled = false;
+}
 
-let submitted =
-    false;
+function nextQuestion(){
 
-let timerStarted =
-    false;
+    if(currentQuestion < 14){
 
-let timerInterval =
-    null;
+        currentQuestion++;
 
-
-/* =====================================================
-   DOM ELEMENTS
-===================================================== */
-
-const timerElement =
-    document.getElementById("timer");
-
-const submitButton =
-    document.getElementById("submitButton");
-
-const result =
-    document.getElementById("result");
-
-const studentNameInput =
-    document.getElementById("studentName");
-
-const studentIDInput =
-    document.getElementById("studentID");
-
-
-/* =====================================================
-   TIMER DISPLAY
-===================================================== */
-
-function displayTime(){
-
-    let hours =
-        Math.floor(totalSeconds / 3600);
-
-    let minutes =
-        Math.floor(
-            (totalSeconds % 3600) / 60
-        );
-
-    let seconds =
-        totalSeconds % 60;
-
-
-    const formattedHours =
-        String(hours).padStart(2,"0");
-
-    const formattedMinutes =
-        String(minutes).padStart(2,"0");
-
-    const formattedSeconds =
-        String(seconds).padStart(2,"0");
-
-
-    if(timerStarted){
-
-        timerElement.textContent =
-            "Time Remaining: " +
-            formattedHours + ":" +
-            formattedMinutes + ":" +
-            formattedSeconds;
+        renderQuestion();
 
     }else{
 
-        timerElement.textContent =
-            "Timer starts when you begin the test";
+        showRoundResult();
 
     }
-
-
-    if(timerStarted &&
-       totalSeconds <= 600 &&
-       totalSeconds > 0){
-
-        timerElement.classList.add("warning");
-
-    }
-
 }
 
+/* ============================================================
+   ROUND RESULT
+   ============================================================ */
 
-/* =====================================================
-   START TIMER
-===================================================== */
+function showRoundResult(){
 
-function startTimer(){
+    const app = document.getElementById("app");
 
-    if(timerStarted || submitted){
+    const perfect = roundScore >= 12;
 
-        return;
-
+    if(perfect){
+        celebrate();
     }
 
+    const percentage =
+        Math.round((roundScore / 15) * 100);
 
-    timerStarted = true;
+    app.innerHTML = `
 
-    timerElement.classList.add("running");
+        <div class="card result">
 
-    displayTime();
+            <div class="result-icon">
+                ${perfect ? "🏆" : "📚"}
+            </div>
 
+            <h2>
+                ${perfect
+                    ? "Perfect Progress!"
+                    : "Round Complete!"}
+            </h2>
 
-    timerInterval =
-        setInterval(function(){
+            <div class="score">
+                ${roundScore}/15
+            </div>
 
-            if(submitted){
+            <p class="result-message">
+                ${percentage}% correct
+            </p>
 
-                clearInterval(timerInterval);
+            ${
+                perfect
+                ?
+                `
+                <div class="perfect">
 
-                return;
+                    <div class="level">
+                        🌟 PERFECT GROWING!
+                    </div>
 
+                    <p>
+                        You scored 12 or more correct answers.
+                        Your level has progressed!
+                    </p>
+
+                    <div class="stars">
+                        ⭐ ⭐ ⭐ ⭐ ⭐
+                    </div>
+
+                </div>
+                `
+                :
+                `
+                <div class="perfect">
+
+                    Keep practising!
+                    You need <strong>12+</strong> correct answers
+                    for Perfect Progression.
+
+                </div>
+                `
             }
 
+            <button
+                class="next-btn"
+                onclick="showAnswers()">
 
-            totalSeconds--;
+                View Answers & Explanations →
 
-            displayTime();
+            </button>
 
-
-            if(totalSeconds <= 0){
-
-                totalSeconds = 0;
-
-                displayTime();
-
-                clearInterval(timerInterval);
-
-                timerElement.textContent =
-                    "Time Over — Test Submitted";
-
-                timerElement.classList.remove("warning");
-
-                timerElement.classList.add("finished");
-
-                submitQuiz(true);
-
-            }
-
-        },1000);
-
+        </div>
+    `;
 }
 
+/* ============================================================
+   ANSWERS + EXPLANATIONS
+   ============================================================ */
 
-/* =====================================================
-   START TIMER AFTER STUDENT NAME
-===================================================== */
+function showAnswers(){
 
-studentNameInput.addEventListener(
-    "input",
-    function(){
+    const app = document.getElementById("app");
 
-        saveProgress();
+    const perfect = roundScore >= 12;
 
-        if(
-            !timerStarted &&
-            this.value.trim() !== ""
-        ){
+    app.innerHTML = `
 
-            startTimer();
+        <div class="card">
 
-        }
+            <div class="result">
 
-    }
-);
+                <div class="result-icon">
+                    ${perfect ? "🎉" : "📝"}
+                </div>
 
+                <h2>
+                    Round ${currentRound + 1} —
+                    Answers & Explanations
+                </h2>
 
-/* =====================================================
-   START TIMER AFTER FIRST ANSWER
-===================================================== */
+                <div class="score">
+                    ${roundScore}/15
+                </div>
 
-document.addEventListener(
-    "change",
-    function(event){
+            </div>
 
-        if(
-            event.target.matches(
-                'input[type="radio"]'
-            )
-        ){
+            <div class="explanations">
 
-            if(!timerStarted){
+                ${roundAnswers.map((item,index)=>`
 
-                startTimer();
+                    <div class="
+                        explanation
+                        ${item.correct ? "correct" : "wrong"}
+                    ">
 
-            }
+                        <div class="explanation-question">
 
-            saveProgress();
+                            ${index+1}.
+                            ${item.question.q}
 
-        }
+                        </div>
 
-    }
-);
+                        <div class="answer">
 
+                            Correct Answer:
+                            ${item.question.answer}
 
-/* =====================================================
-   SAVE ANSWERS
-===================================================== */
+                        </div>
 
-function saveProgress(){
+                        <div class="explain">
 
-    if(submitted){
-        return;
-    }
+                            <strong>Rule:</strong>
+                            ${item.question.rule}
 
+                            <br><br>
 
-    const data = {
+                            <strong>Explanation:</strong>
+                            ${item.question.explain}
 
-        name:
-            studentNameInput.value,
+                            <br><br>
 
-        batch:
-            studentIDInput.value,
+                            <strong>Your Answer:</strong>
+                            ${item.selected}
 
-        answers:{},
+                        </div>
 
-        writing:{},
+                    </div>
 
-        timerStarted:
-            timerStarted,
+                `).join("")}
 
-        remainingTime:
-            totalSeconds
+            </div>
 
-    };
+            <button
+                class="next-btn"
+                onclick="nextRound()">
 
-
-    for(let i=1;i<=questions.length;i++){
-
-        const selected =
-            document.querySelector(
-                `input[name="q${i}"]:checked`
-            );
-
-        if(selected){
-
-            data.answers[i] =
-                selected.value;
-
-        }
-
-    }
-
-
-    document
-    .querySelectorAll("textarea")
-    .forEach(function(textarea){
-
-        data.writing[textarea.id] =
-            textarea.value;
-
-    });
-
-
-    sessionStorage.setItem(
-        "hsc2027QuizProgress",
-        JSON.stringify(data)
-    );
-
-}
-
-
-/* =====================================================
-   RESTORE ANSWERS
-===================================================== */
-
-function restoreProgress(){
-
-    const saved =
-        sessionStorage.getItem(
-            "hsc2027QuizProgress"
-        );
-
-
-    if(!saved){
-
-        displayTime();
-
-        return;
-
-    }
-
-
-    try{
-
-        const data =
-            JSON.parse(saved);
-
-
-        if(data.name){
-
-            studentNameInput.value =
-                data.name;
-
-        }
-
-
-        if(data.batch){
-
-            studentIDInput.value =
-                data.batch;
-
-        }
-
-
-        if(data.answers){
-
-            Object.keys(data.answers)
-            .forEach(function(number){
-
-                const value =
-                    data.answers[number];
-
-                const radio =
-                    document.querySelector(
-                        `input[name="q${number}"][value="${value}"]`
-                    );
-
-                if(radio){
-
-                    radio.checked = true;
-
+                ${
+                    currentRound === 9
+                    ? "Complete All 150 Questions →"
+                    : "Start Next 15 Questions →"
                 }
 
-            });
+            </button>
 
-        }
-
-
-        if(data.writing){
-
-            Object.keys(data.writing)
-            .forEach(function(id){
-
-                const textarea =
-                    document.getElementById(id);
-
-                if(textarea){
-
-                    textarea.value =
-                        data.writing[id];
-
-                }
-
-            });
-
-        }
-
-
-        /*
-         * Restore timer only if the student
-         * had already started the test.
-         */
-
-        if(
-            data.timerStarted === true &&
-            Number(data.remainingTime) > 0
-        ){
-
-            totalSeconds =
-                Number(data.remainingTime);
-
-            startTimer();
-
-        }else{
-
-            displayTime();
-
-        }
-
-    }catch(error){
-
-        console.log(
-            "Saved progress could not be restored."
-        );
-
-        displayTime();
-
-    }
-
+        </div>
+    `;
 }
 
+function nextRound(){
 
-/* =====================================================
-   AUTO SAVE
-===================================================== */
+    currentRound++;
 
-document.addEventListener(
-    "input",
-    function(){
+    if(currentRound >= 10){
 
-        saveProgress();
+        showFinalResult();
 
-    }
-);
+    }else{
 
-
-/* =====================================================
-   SUBMIT QUIZ
-===================================================== */
-
-function submitQuiz(autoSubmit = false){
-
-    if(submitted){
-
-        return;
+        startRound();
 
     }
-
-
-    let studentName =
-        studentNameInput
-        .value
-        .trim();
-
-
-    if(studentName === ""){
-
-        if(autoSubmit){
-
-            studentName =
-                "Not Provided";
-
-        }else{
-
-            alert(
-                "Please enter your name before submitting."
-            );
-
-            studentNameInput.focus();
-
-            return;
-
-        }
-
-    }
-
-
-    const studentBatch =
-        studentIDInput
-        .value
-        .trim() || "2027";
-
-
-    let score = 0;
-
-
-    /* ================================================
-       CHECK ALL OBJECTIVE QUESTIONS
-    ================================================ */
-
-    questions.forEach(function(item,index){
-
-        const questionNumber =
-            index + 1;
-
-
-        const selected =
-            document.querySelector(
-                `input[name="q${questionNumber}"]:checked`
-            );
-
-
-        const options =
-            document.querySelectorAll(
-                `input[name="q${questionNumber}"]`
-            );
-
-
-        if(selected){
-
-            if(
-                selected.value ===
-                item.answer
-            ){
-
-                score++;
-
-                selected
-                .parentElement
-                .classList
-                .add("correct");
-
-            }else{
-
-                selected
-                .parentElement
-                .classList
-                .add("wrong");
-
-            }
-
-        }
-
-
-        options.forEach(function(option){
-
-            if(
-                option.value ===
-                item.answer
-            ){
-
-                option
-                .parentElement
-                .classList
-                .add("correct");
-
-            }
-
-            option.disabled = true;
-
-        });
-
-    });
-
-
-    /* ================================================
-       LOCK WRITING
-    ================================================ */
-
-    document
-    .querySelectorAll("textarea")
-    .forEach(function(textarea){
-
-        textarea.disabled = true;
-
-    });
-
-
-    /* ================================================
-       LOCK STUDENT INFO
-    ================================================ */
-
-    studentNameInput.disabled =
-        true;
-
-    studentIDInput.disabled =
-        true;
-
-
-    /* ================================================
-       SUBMISSION STATE
-    ================================================ */
-
-    submitted = true;
-
-
-    if(timerInterval !== null){
-
-        clearInterval(timerInterval);
-
-    }
-
-
-    /* ================================================
-       RESULT
-    ================================================ */
-
-    document
-    .getElementById("resultName")
-    .textContent = studentName;
-
-
-    document
-    .getElementById("resultBatch")
-    .textContent = studentBatch;
-
-
-    document
-    .getElementById("objectiveScore")
-    .textContent = score;
-
-
-    document
-    .getElementById("currentTotal")
-    .textContent = score;
-
-
-    result.style.display =
-        "block";
-
-
-    submitButton.style.display =
-        "none";
-
-
-    /* Clear saved unfinished test */
-
-    sessionStorage.removeItem(
-        "hsc2027QuizProgress"
-    );
-
-
-    /* ================================================
-       SCROLL RESULT INTO VIEW
-    ================================================ */
-
-    setTimeout(function(){
-
-        result.scrollIntoView({
-            behavior:"smooth",
-            block:"center"
-        });
-
-    },100);
-
-
-    if(autoSubmit){
-
-        setTimeout(function(){
-
-            alert(
-                "Time is over. Your test has been submitted automatically."
-            );
-
-        },300);
-
-    }
-
 }
 
+/* ============================================================
+   FINAL RESULT
+   ============================================================ */
 
-/* =====================================================
-   SUBMIT BUTTON
-===================================================== */
+function showFinalResult(){
 
-submitButton.addEventListener(
-    "click",
-    function(){
+    const app = document.getElementById("app");
 
-        submitQuiz(false);
+    const percentage =
+        Math.round((totalCorrect / totalAnswered) * 100);
 
+    let level;
+
+    if(totalCorrect >= 135){
+        level = "Master";
+    }else if(totalCorrect >= 120){
+        level = "Advanced";
+    }else if(totalCorrect >= 105){
+        level = "Strong";
+    }else if(totalCorrect >= 90){
+        level = "Growing";
+    }else{
+        level = "Keep Practising";
     }
-);
 
+    app.innerHTML = `
 
-/* =====================================================
-   PREVENT ACCIDENTAL PAGE LEAVE
-===================================================== */
+        <div class="card result">
 
-window.addEventListener(
-    "beforeunload",
-    function(event){
+            <div class="result-icon">
+                🏆
+            </div>
 
-        if(!submitted){
+            <h2>
+                150 Questions Completed!
+            </h2>
 
-            event.preventDefault();
+            <div class="score">
+                ${totalCorrect}/150
+            </div>
 
-            event.returnValue = "";
+            <p class="result-message">
+                Overall Accuracy: ${percentage}%
+            </p>
 
-        }
+            <div class="progression">
 
-    }
-);
+                <div class="level">
+                    Level: ${level}
+                </div>
 
+                <div class="stars">
+                    ${
+                        totalCorrect >= 135
+                        ? "⭐⭐⭐⭐⭐"
+                        : totalCorrect >= 120
+                        ? "⭐⭐⭐⭐"
+                        : totalCorrect >= 105
+                        ? "⭐⭐⭐"
+                        : totalCorrect >= 90
+                        ? "⭐⭐"
+                        : "⭐"
+                    }
+                </div>
 
-/* =====================================================
-   INITIALIZE
-===================================================== */
+            </div>
 
-displayTime();
+            <button
+                class="restart-btn"
+                onclick="startQuiz()">
 
-restoreProgress();
+                🔄 Start Again — New Question Order
+
+            </button>
+
+        </div>
+    `;
+}
+
+/* ============================================================
+   START SCREEN
+   ============================================================ */
+
+function renderStart(){
+
+    document.getElementById("app").innerHTML = `
+
+        <div class="card start-screen">
+
+            <h2>
+                Ready to Master Completing Sentence?
+            </h2>
+
+            <p class="subtitle">
+                150 questions • 10 rounds • 15 questions each
+            </p>
+
+            <div class="features">
+
+                <div class="feature">
+                    <strong>150</strong>
+                    Questions
+                </div>
+
+                <div class="feature">
+                    <strong>15</strong>
+                    Questions / Round
+                </div>
+
+                <div class="feature">
+                    <strong>12+</strong>
+                    Perfect Progression
+                </div>
+
+                <div class="feature">
+                    <strong>100%</strong>
+                    Explanation Coverage
+                </div>
+
+            </div>
+
+            <button
+                class="start-btn"
+                onclick="startQuiz()">
+
+                🚀 Start Quiz
+
+            </button>
+
+        </div>
+    `;
+}
+
+function celebrate(){
+
+    const box =
+        document.getElementById("celebration");
+
+    box.classList.remove("show");
+
+    void box.offsetWidth;
+
+    box.classList.add("show");
+
+    setTimeout(()=>{
+        box.classList.remove("show");
+    },1600);
+}
+
+/* ============================================================
+   INIT
+   ============================================================ */
+
+renderStart();
 
 </script>
 
