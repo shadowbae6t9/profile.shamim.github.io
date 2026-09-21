@@ -1,14 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Profiles of Shamim Alif</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Shamim Alif | Profile & English Practice</title>
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    >
 
     <style>
+
+        /* =========================================================
+           RESET
+        ========================================================= */
 
         * {
             box-sizing: border-box;
@@ -16,27 +29,25 @@
             padding: 0;
         }
 
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-
-            background: linear-gradient(
-                135deg,
-                #FFFB00,
-                #FF007A,
-                #6C008A
-            );
-
-            background-attachment: fixed;
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Roboto,
+                Helvetica,
+                Arial,
+                sans-serif;
 
             min-height: 100vh;
 
             color: #fff;
-
-            display: flex;
-            flex-direction: column;
-
-            justify-content: center;
-            align-items: center;
 
             line-height: 1.5;
 
@@ -44,127 +55,434 @@
         }
 
 
-        /* --- SPLASH SCREEN --- */
+        button,
+        a {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+
+        /* =========================================================
+           HOME / SPLASH SCREEN
+        ========================================================= */
 
         .splash-screen {
+
             position: fixed;
 
-            top: 0;
-            left: 0;
+            inset: 0;
 
             width: 100%;
             height: 100vh;
 
-            background: radial-gradient(
-                circle at center,
-                #141419 0%,
-                #08080a 100%
-            );
+            background:
+                radial-gradient(
+                    circle at 20% 20%,
+                    rgba(0, 240, 255, 0.16),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 80% 80%,
+                    rgba(255, 0, 153, 0.20),
+                    transparent 35%
+                ),
+                linear-gradient(
+                    135deg,
+                    #050509,
+                    #0d0d17,
+                    #12051c
+                );
 
             display: flex;
+
             flex-direction: column;
 
             justify-content: center;
+
             align-items: center;
 
             z-index: 9999;
 
             transition:
-                transform 0.8s cubic-bezier(0.77, 0, 0.175, 1),
-                opacity 0.8s ease;
+                opacity 0.5s ease,
+                visibility 0.5s ease;
         }
 
+
         .splash-screen.hidden {
-            transform: translateY(-100%);
 
             opacity: 0;
+
+            visibility: hidden;
 
             pointer-events: none;
         }
 
+
+        /* Background glow */
+
+        .splash-screen::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 280px;
+            height: 280px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(0, 240, 255, 0.08);
+
+            filter: blur(60px);
+
+            top: 15%;
+            left: 10%;
+        }
+
+
+        .splash-screen::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 300px;
+            height: 300px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(255, 0, 170, 0.08);
+
+            filter: blur(70px);
+
+            bottom: 10%;
+            right: 5%;
+        }
+
+
+        .welcome-icon {
+
+            position: relative;
+
+            z-index: 2;
+
+            width: 80px;
+            height: 80px;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            margin-bottom: 18px;
+
+            font-size: 2rem;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #00f0ff,
+                    #7c00ff,
+                    #ff0099
+                );
+
+            box-shadow:
+                0 0 30px rgba(0, 240, 255, 0.25),
+                0 0 50px rgba(255, 0, 153, 0.15);
+        }
+
+
         .splash-subtitle {
-            font-size: 1rem;
+
+            position: relative;
+
+            z-index: 2;
+
+            font-size: 0.85rem;
 
             letter-spacing: 6px;
 
-            color: #8a8a93;
+            color: #9da0ae;
 
             margin-bottom: 8px;
 
             text-transform: uppercase;
         }
 
+
         .splash-title {
+
+            position: relative;
+
+            z-index: 2;
+
             font-size: 2.5rem;
 
             font-weight: 900;
 
             letter-spacing: 2px;
 
-            margin-bottom: 40px;
+            margin-bottom: 35px;
 
             text-align: center;
 
-            background: linear-gradient(
-                45deg,
-                #ffffff,
-                #a0a0aa
-            );
+            background:
+                linear-gradient(
+                    90deg,
+                    #ffffff,
+                    #00f0ff,
+                    #ff00aa
+                );
 
             -webkit-background-clip: text;
 
             -webkit-text-fill-color: transparent;
         }
 
-        .start-btn {
-            padding: 16px 40px;
 
-            font-size: 1.1rem;
+        /* =========================================================
+           SPLASH BUTTON AREA
+        ========================================================= */
 
-            font-weight: bold;
+        .home-options {
 
-            letter-spacing: 3px;
+            position: relative;
 
-            color: #00f0ff;
+            z-index: 3;
 
-            text-decoration: none;
+            width: min(340px, 90vw);
 
-            text-transform: uppercase;
+            display: flex;
 
-            border: 2px solid #00f0ff;
+            flex-direction: column;
 
-            background: transparent;
-
-            border-radius: 4px;
-
-            cursor: pointer;
-
-            transition: all 0.3s ease;
-
-            box-shadow:
-                0 0 15px rgba(0, 240, 255, 0.1);
-        }
-
-        .start-btn:hover {
-            color: #08080a;
-
-            background-color: #00f0ff;
-
-            box-shadow:
-                0 0 30px rgba(0, 240, 255, 0.4);
-
-            transform: scale(1.05);
+            gap: 14px;
         }
 
 
-        /* --- MAIN CONTAINER --- */
-
-        .container {
-            max-width: 480px;
+        .home-btn {
 
             width: 100%;
 
-            background: rgba(0, 0, 0, 0.3);
+            min-height: 58px;
+
+            border-radius: 16px;
+
+            border: 1px solid
+                rgba(255, 255, 255, 0.18);
+
+            color: #fff;
+
+            background:
+                rgba(255, 255, 255, 0.06);
+
+            backdrop-filter: blur(15px);
+
+            -webkit-backdrop-filter: blur(15px);
+
+            cursor: pointer;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 15px;
+
+            padding: 12px 18px;
+
+            text-align: left;
+
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease,
+                border-color 0.25s ease;
+        }
+
+
+        .home-btn:hover {
+
+            transform:
+                translateY(-3px);
+
+            border-color:
+                rgba(255, 255, 255, 0.5);
+
+            box-shadow:
+                0 10px 35px
+                rgba(0, 0, 0, 0.35);
+        }
+
+
+        .home-btn:active {
+
+            transform:
+                scale(0.97);
+        }
+
+
+        .home-btn-icon {
+
+            width: 40px;
+            height: 40px;
+
+            flex-shrink: 0;
+
+            border-radius: 12px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            font-size: 1.15rem;
+
+            background:
+                rgba(255, 255, 255, 0.12);
+        }
+
+
+        .home-btn-text {
+
+            display: flex;
+
+            flex-direction: column;
+        }
+
+
+        .home-btn-text strong {
+
+            font-size: 1rem;
+
+            letter-spacing: 0.5px;
+        }
+
+
+        .home-btn-text small {
+
+            color:
+                rgba(255, 255, 255, 0.58);
+
+            font-size: 0.76rem;
+
+            margin-top: 2px;
+        }
+
+
+        /* Profile button */
+
+        .profile-home-btn {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(0, 240, 255, 0.18),
+                    rgba(100, 0, 255, 0.20)
+                );
+        }
+
+
+        /* English button */
+
+        .english-home-btn {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(255, 0, 153, 0.22),
+                    rgba(119, 0, 255, 0.25)
+                );
+
+            border-color:
+                rgba(255, 0, 170, 0.35);
+
+            box-shadow:
+                0 0 25px
+                rgba(255, 0, 170, 0.10);
+        }
+
+
+        .english-home-btn:hover {
+
+            box-shadow:
+                0 0 35px
+                rgba(255, 0, 170, 0.25);
+        }
+
+
+        /* =========================================================
+           PAGE SYSTEM
+        ========================================================= */
+
+        .page {
+
+            min-height: 100vh;
+
+            width: 100%;
+
+            display: none;
+
+            animation:
+                pageIn 0.45s ease;
+        }
+
+
+        .page.active {
+
+            display: flex;
+        }
+
+
+        @keyframes pageIn {
+
+            from {
+                opacity: 0;
+                transform: translateY(12px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+
+
+        /* =========================================================
+           PROFILE PAGE
+        ========================================================= */
+
+        #profilePage {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #fffb00,
+                    #ff007a,
+                    #6c008a
+                );
+
+            background-attachment: fixed;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            padding-top: 40px;
+        }
+
+
+        .profile-container {
+
+            max-width: 480px;
+
+            width: calc(100% - 40px);
+
+            background:
+                rgba(0, 0, 0, 0.30);
 
             border-radius: 24px;
 
@@ -173,20 +491,23 @@
             padding-bottom: 25px;
 
             box-shadow:
-                0 10px 30px rgba(0, 0, 0, 0.25);
+                0 10px 30px
+                rgba(0, 0, 0, 0.25);
 
             backdrop-filter: blur(10px);
 
             -webkit-backdrop-filter: blur(10px);
 
             border:
-                1px solid rgba(255, 255, 255, 0.1);
+                1px solid
+                rgba(255, 255, 255, 0.1);
 
-            margin: 40px 20px 20px 20px;
+            margin-bottom: 20px;
         }
 
 
         .cover-photo {
+
             width: 100%;
 
             height: 160px;
@@ -196,6 +517,7 @@
 
 
         .profile-section {
+
             text-align: center;
 
             margin-top: -75px;
@@ -207,6 +529,7 @@
 
 
         .avatar {
+
             width: 140px;
 
             height: 140px;
@@ -216,18 +539,21 @@
             object-fit: cover;
 
             border:
-                5px solid rgba(0, 0, 0, 0.3);
+                5px solid
+                rgba(0, 0, 0, 0.3);
 
             margin-bottom: 12px;
 
             background: #222;
 
             box-shadow:
-                0 4px 10px rgba(0, 0, 0, 0.2);
+                0 4px 10px
+                rgba(0, 0, 0, 0.2);
         }
 
 
         .profile-section h1 {
+
             font-size: 1.6rem;
 
             font-weight: 700;
@@ -235,11 +561,13 @@
             margin-bottom: 4px;
 
             text-shadow:
-                0 2px 4px rgba(0, 0, 0, 0.2);
+                0 2px 4px
+                rgba(0, 0, 0, 0.2);
         }
 
 
         .profile-section p {
+
             font-size: 0.95rem;
 
             opacity: 0.85;
@@ -250,14 +578,18 @@
         }
 
 
-        /* --- LINKS --- */
+        /* =========================================================
+           PROFILE LINKS
+        ========================================================= */
 
         .link-card {
+
             background:
                 rgba(255, 255, 255, 0.08);
 
             border:
-                1px solid rgba(255, 255, 255, 0.15);
+                1px solid
+                rgba(255, 255, 255, 0.15);
 
             margin:
                 0 20px 12px 20px;
@@ -270,6 +602,7 @@
 
 
         .link-card:hover {
+
             background:
                 rgba(255, 255, 255, 0.18);
 
@@ -282,6 +615,7 @@
 
 
         .link-card a {
+
             text-decoration: none;
 
             color: #fff;
@@ -297,6 +631,7 @@
 
 
         .link-icon {
+
             font-size: 1.4rem;
 
             width: 35px;
@@ -308,6 +643,7 @@
 
 
         .link-text {
+
             display: flex;
 
             flex-direction: column;
@@ -317,6 +653,7 @@
 
 
         .link-text span {
+
             font-weight: 600;
 
             font-size: 1rem;
@@ -326,6 +663,7 @@
 
 
         .link-text small {
+
             color:
                 rgba(255, 255, 255, 0.65);
 
@@ -335,320 +673,64 @@
         }
 
 
-        /* ========================================================= */
-        /*                    QUIZ TEST BUTTON                       */
-        /* ========================================================= */
+        /* =========================================================
+           PROFILE TOP NAV
+        ========================================================= */
 
-        .quiz-test-card {
+        .profile-topbar {
 
-            position: relative;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    rgba(255, 255, 255, 0.16),
-                    rgba(255, 0, 140, 0.30),
-                    rgba(110, 0, 255, 0.26)
-                );
-
-            border:
-                1px solid rgba(255, 255, 255, 0.42);
-
-            /* Extra gap after WhatsApp */
-
-            margin:
-                25px 20px 12px 20px;
-
-            border-radius: 16px;
-
-            overflow: hidden;
-
-            transition:
-                transform 0.25s cubic-bezier(.2,.8,.2,1),
-                box-shadow 0.25s ease,
-                border-color 0.25s ease;
-
-            box-shadow:
-                0 0 18px rgba(255, 0, 170, 0.30),
-                0 8px 25px rgba(0, 0, 0, 0.18);
-
-            /* Gentle floating animation */
-
-            animation:
-                quizFloat 3s ease-in-out infinite;
-        }
-
-
-        /* Floating */
-
-        @keyframes quizFloat {
-
-            0%, 100% {
-                transform:
-                    translateY(0);
-            }
-
-            50% {
-                transform:
-                    translateY(-3px);
-            }
-
-        }
-
-
-        /* Moving shine */
-
-        .quiz-test-card::before {
-
-            content: "";
-
-            position: absolute;
-
-            top: 0;
-
-            left: -120%;
-
-            width: 75%;
-
-            height: 100%;
-
-            background:
-                linear-gradient(
-                    90deg,
-                    transparent,
-                    rgba(255,255,255,0.38),
-                    transparent
-                );
-
-            transform:
-                skewX(-20deg);
-
-            animation:
-                quizShine 4s ease-in-out infinite;
-
-            pointer-events: none;
-        }
-
-
-        @keyframes quizShine {
-
-            0% {
-                left: -120%;
-            }
-
-            45% {
-                left: 140%;
-            }
-
-            100% {
-                left: 140%;
-            }
-
-        }
-
-
-        /* Hover */
-
-        .quiz-test-card:hover {
-
-            animation-play-state: paused;
-
-            transform:
-                translateY(-5px)
-                scale(1.015);
-
-            border-color:
-                rgba(255, 255, 255, 0.75);
-
-            box-shadow:
-                0 0 28px rgba(255, 0, 170, 0.48),
-                0 14px 35px rgba(0, 0, 0, 0.28);
-        }
-
-
-        /* ========================================================= */
-        /*                     TOUCH ANIMATION                        */
-        /* ========================================================= */
-
-        .quiz-test-card:active {
-
-            animation: none;
-
-            transform:
-                translateY(-8px)
-                scale(0.96);
-
-            border-color:
-                rgba(255, 255, 255, 0.9);
-
-            box-shadow:
-                0 0 35px rgba(255, 0, 200, 0.75),
-                0 0 65px rgba(120, 0, 255, 0.45);
-
-            transition:
-                transform 0.08s ease;
-        }
-
-
-        /* Quiz link */
-
-        .quiz-test-card a {
-
-            position: relative;
-
-            z-index: 2;
-
-            text-decoration: none;
-
-            color: #fff;
-
-            padding:
-                16px 20px;
+            width: min(480px, calc(100% - 40px));
 
             display: flex;
 
+            justify-content: space-between;
+
             align-items: center;
 
-            width: 100%;
-
-            -webkit-tap-highlight-color:
-                transparent;
+            margin-bottom: 15px;
         }
 
 
-        /* Quiz icon */
+        .nav-small-btn {
 
-        .quiz-icon {
+            border: 1px solid
+                rgba(255, 255, 255, 0.25);
 
-            font-size: 1.5rem;
+            background:
+                rgba(0, 0, 0, 0.25);
 
-            width: 35px;
+            color: #fff;
 
-            text-align: left;
+            border-radius: 50px;
 
-            opacity: 1;
+            padding: 9px 15px;
 
-            filter:
-                drop-shadow(
-                    0 0 7px
-                    rgba(255,255,255,0.8)
-                );
-
-            transition:
-                transform 0.25s ease;
-        }
-
-
-        /* Icon hover */
-
-        .quiz-test-card:hover
-        .quiz-icon {
-
-            transform:
-                rotate(-8deg)
-                scale(1.12);
-        }
-
-
-        /* Icon touch */
-
-        .quiz-test-card:active
-        .quiz-icon {
-
-            transform:
-                translateY(-5px)
-                rotate(8deg)
-                scale(1.2);
-        }
-
-
-        /* Quiz title */
-
-        .quiz-test-card
-        .link-text span {
-
-            font-weight: 800;
-
-            font-size: 1.02rem;
-
-            letter-spacing: 1px;
-
-            text-shadow:
-                0 0 8px
-                rgba(255,255,255,0.3);
-        }
-
-
-        /* Quiz subtitle */
-
-        .quiz-test-card
-        .link-text small {
-
-            color:
-                rgba(255, 255, 255, 0.80);
+            cursor: pointer;
 
             font-size: 0.8rem;
 
-            margin-top: 2px;
+            backdrop-filter: blur(10px);
+
+            transition: 0.25s ease;
         }
 
 
-        /* Glowing indicator */
+        .nav-small-btn:hover {
 
-        .quiz-test-card
-        .link-text::after {
-
-            content: "●";
-
-            position: absolute;
-
-            right: 17px;
-
-            top: 50%;
+            background:
+                rgba(0, 0, 0, 0.45);
 
             transform:
-                translateY(-50%);
-
-            font-size: 9px;
-
-            color: #ffffff;
-
-            text-shadow:
-                0 0 6px #ffffff,
-                0 0 12px #ff00b7,
-                0 0 20px #8b00ff;
-
-            animation:
-                quizDotPulse 1.5s ease-in-out infinite;
+                translateY(-2px);
         }
 
 
-        @keyframes quizDotPulse {
-
-            0%, 100% {
-
-                opacity: .4;
-
-                transform:
-                    translateY(-50%)
-                    scale(.8);
-            }
-
-            50% {
-
-                opacity: 1;
-
-                transform:
-                    translateY(-50%)
-                    scale(1.35);
-            }
-
-        }
-
-
-        /* --- MAIL ME BUTTON --- */
+        /* =========================================================
+           MAIL
+        ========================================================= */
 
         .mail-btn-container {
+
             text-align: center;
 
             margin: 15px 0;
@@ -656,6 +738,7 @@
 
 
         .mail-btn {
+
             display: inline-flex;
 
             align-items: center;
@@ -672,7 +755,8 @@
             color: #fff;
 
             border:
-                1px solid rgba(255, 255, 255, 0.2);
+                1px solid
+                rgba(255, 255, 255, 0.2);
 
             transition:
                 all 0.3s ease;
@@ -682,21 +766,27 @@
 
 
         .mail-btn:hover {
+
             background:
                 rgba(255, 255, 255, 0.2);
 
-            transform: scale(1.05);
+            transform:
+                scale(1.05);
         }
 
 
         .mail-btn i {
+
             margin-right: 8px;
         }
 
 
-        /* --- FOOTER --- */
+        /* =========================================================
+           FOOTER
+        ========================================================= */
 
         .footer {
+
             text-align: center;
 
             padding:
@@ -712,11 +802,573 @@
 
 
         .footer p {
+
             margin: 5px 0;
         }
 
 
-        /* --- MOBILE --- */
+        /* =========================================================
+           ENGLISH PRACTICE PAGE
+        ========================================================= */
+
+        #englishPage {
+
+            position: relative;
+
+            min-height: 100vh;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            padding:
+                25px 0 50px;
+
+            overflow: hidden;
+
+            background:
+                radial-gradient(
+                    circle at 10% 10%,
+                    rgba(0, 255, 204, 0.16),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 90% 20%,
+                    rgba(255, 0, 153, 0.18),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 50% 100%,
+                    rgba(102, 0, 255, 0.22),
+                    transparent 40%
+                ),
+                linear-gradient(
+                    145deg,
+                    #03030a,
+                    #09051a,
+                    #13051d,
+                    #05050b
+                );
+        }
+
+
+        /* Decorative blobs */
+
+        #englishPage::before {
+
+            content: "";
+
+            position: fixed;
+
+            width: 220px;
+            height: 220px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(0, 255, 204, 0.08);
+
+            filter: blur(70px);
+
+            top: 15%;
+            left: -80px;
+
+            pointer-events: none;
+        }
+
+
+        #englishPage::after {
+
+            content: "";
+
+            position: fixed;
+
+            width: 250px;
+            height: 250px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(255, 0, 153, 0.09);
+
+            filter: blur(75px);
+
+            right: -90px;
+            bottom: 10%;
+
+            pointer-events: none;
+        }
+
+
+        .english-wrapper {
+
+            position: relative;
+
+            z-index: 2;
+
+            width: min(520px, calc(100% - 30px));
+
+            margin: auto;
+        }
+
+
+        /* =========================================================
+           ENGLISH HEADER
+        ========================================================= */
+
+        .english-header {
+
+            text-align: center;
+
+            padding: 15px 10px 25px;
+        }
+
+
+        .english-badge {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 7px;
+
+            padding:
+                7px 13px;
+
+            border-radius: 50px;
+
+            font-size: 0.72rem;
+
+            letter-spacing: 1.5px;
+
+            text-transform: uppercase;
+
+            color: #bafff3;
+
+            background:
+                rgba(0, 255, 204, 0.08);
+
+            border:
+                1px solid
+                rgba(0, 255, 204, 0.25);
+
+            margin-bottom: 15px;
+        }
+
+
+        .english-header h1 {
+
+            font-size: clamp(2rem, 8vw, 3rem);
+
+            line-height: 1.05;
+
+            font-weight: 900;
+
+            letter-spacing: -1px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #ffffff,
+                    #65ffe2,
+                    #bf72ff,
+                    #ff62c0
+                );
+
+            -webkit-background-clip: text;
+
+            -webkit-text-fill-color: transparent;
+        }
+
+
+        .english-header p {
+
+            color:
+                rgba(255, 255, 255, 0.58);
+
+            font-size: 0.9rem;
+
+            margin-top: 10px;
+
+            max-width: 390px;
+
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+
+        /* =========================================================
+           ENGLISH CARDS
+        ========================================================= */
+
+        .practice-grid {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 13px;
+        }
+
+
+        .practice-card {
+
+            position: relative;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 15px;
+
+            min-height: 76px;
+
+            padding: 14px 17px;
+
+            text-decoration: none;
+
+            color: #fff;
+
+            border-radius: 20px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(255, 255, 255, 0.09),
+                    rgba(255, 255, 255, 0.035)
+                );
+
+            border:
+                1px solid
+                rgba(255, 255, 255, 0.12);
+
+            backdrop-filter: blur(18px);
+
+            -webkit-backdrop-filter: blur(18px);
+
+            box-shadow:
+                0 10px 30px
+                rgba(0, 0, 0, 0.18);
+
+            overflow: hidden;
+
+            transition:
+                transform 0.25s ease,
+                border-color 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+
+        .practice-card::before {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    120deg,
+                    transparent 20%,
+                    rgba(255,255,255,0.08),
+                    transparent 80%
+                );
+
+            transform:
+                translateX(-100%);
+
+            transition:
+                transform 0.6s ease;
+        }
+
+
+        .practice-card:hover {
+
+            transform:
+                translateY(-4px);
+
+            border-color:
+                rgba(255, 255, 255, 0.30);
+
+            box-shadow:
+                0 15px 40px
+                rgba(0, 0, 0, 0.35);
+        }
+
+
+        .practice-card:hover::before {
+
+            transform:
+                translateX(100%);
+        }
+
+
+        .practice-icon {
+
+            width: 46px;
+            height: 46px;
+
+            flex-shrink: 0;
+
+            border-radius: 15px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            font-size: 1.15rem;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(0,255,204,0.18),
+                    rgba(120,0,255,0.20)
+                );
+
+            border:
+                1px solid
+                rgba(255,255,255,0.12);
+        }
+
+
+        .practice-content {
+
+            flex: 1;
+
+            min-width: 0;
+        }
+
+
+        .practice-content strong {
+
+            display: block;
+
+            font-size: 1rem;
+
+            font-weight: 750;
+
+            letter-spacing: 0.2px;
+        }
+
+
+        .practice-content small {
+
+            display: block;
+
+            color:
+                rgba(255,255,255,0.52);
+
+            font-size: 0.76rem;
+
+            margin-top: 3px;
+        }
+
+
+        .practice-arrow {
+
+            color:
+                rgba(255,255,255,0.55);
+
+            font-size: 0.85rem;
+        }
+
+
+        /* =========================================================
+           LIVE TEST CARDS
+        ========================================================= */
+
+        .live-test {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(0, 255, 204, 0.12),
+                    rgba(0, 160, 255, 0.08),
+                    rgba(124, 0, 255, 0.12)
+                );
+
+            border-color:
+                rgba(0, 255, 204, 0.25);
+
+            box-shadow:
+                0 0 30px
+                rgba(0, 255, 204, 0.08);
+        }
+
+
+        .live-test .practice-icon {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #00cfa7,
+                    #006eff
+                );
+
+            box-shadow:
+                0 0 20px
+                rgba(0, 255, 204, 0.25);
+        }
+
+
+        /* =========================================================
+           COMING SOON
+        ========================================================= */
+
+        .coming-soon {
+
+            cursor: default;
+
+            opacity: 0.68;
+
+            background:
+                rgba(255,255,255,0.035);
+        }
+
+
+        .coming-soon:hover {
+
+            transform: none;
+
+            border-color:
+                rgba(255,255,255,0.12);
+
+            box-shadow:
+                0 10px 30px
+                rgba(0,0,0,0.18);
+        }
+
+
+        .coming-soon .practice-icon {
+
+            background:
+                rgba(255,255,255,0.06);
+        }
+
+
+        .soon-badge {
+
+            font-size: 0.62rem;
+
+            letter-spacing: 1px;
+
+            text-transform: uppercase;
+
+            padding:
+                5px 8px;
+
+            border-radius: 50px;
+
+            color:
+                rgba(255,255,255,0.58);
+
+            background:
+                rgba(255,255,255,0.07);
+
+            border:
+                1px solid
+                rgba(255,255,255,0.10);
+        }
+
+
+        /* =========================================================
+           SECTION LABEL
+        ========================================================= */
+
+        .section-label {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            margin:
+                25px 3px 12px;
+
+            color:
+                rgba(255,255,255,0.48);
+
+            font-size: 0.72rem;
+
+            font-weight: 700;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+        }
+
+
+        .section-label::after {
+
+            content: "";
+
+            height: 1px;
+
+            flex: 1;
+
+            background:
+                rgba(255,255,255,0.10);
+        }
+
+
+        /* =========================================================
+           ENGLISH BOTTOM
+        ========================================================= */
+
+        .english-footer {
+
+            text-align: center;
+
+            margin-top: 28px;
+
+            color:
+                rgba(255,255,255,0.38);
+
+            font-size: 0.72rem;
+        }
+
+
+        .english-back {
+
+            margin-top: 18px;
+
+            width: 100%;
+
+            padding: 12px;
+
+            border-radius: 14px;
+
+            border:
+                1px solid
+                rgba(255,255,255,0.12);
+
+            background:
+                rgba(255,255,255,0.045);
+
+            color:
+                rgba(255,255,255,0.72);
+
+            cursor: pointer;
+
+            transition: 0.25s ease;
+        }
+
+
+        .english-back:hover {
+
+            background:
+                rgba(255,255,255,0.09);
+
+            color: #fff;
+        }
+
+
+        /* =========================================================
+           RESPONSIVE
+        ========================================================= */
 
         @media (max-width: 480px) {
 
@@ -724,10 +1376,20 @@
                 font-size: 2rem;
             }
 
-            .start-btn {
-                padding: 14px 32px;
+            .profile-container {
+                width: calc(100% - 24px);
+            }
 
-                font-size: 1rem;
+            .profile-topbar {
+                width: calc(100% - 24px);
+            }
+
+            .english-wrapper {
+                width: calc(100% - 24px);
+            }
+
+            #profilePage {
+                padding-top: 20px;
             }
 
         }
@@ -740,428 +1402,1026 @@
 <body>
 
 
-    <!-- SPLASH SCREEN -->
+    <!-- =========================================================
+         HOME SCREEN
+    ========================================================= -->
 
-    <div id="splash" class="splash-screen">
+    <section
+        id="homePage"
+        class="splash-screen"
+    >
+
+        <div class="welcome-icon">
+            <i class="fas fa-user-astronaut"></i>
+        </div>
+
 
         <p class="splash-subtitle">
             Welcome
         </p>
 
+
         <h1 class="splash-title">
             SHAMIM Alif
         </h1>
 
-        <button
-            class="start-btn"
-            onclick="revealContent()"
-        >
-            Touch Here
-        </button>
 
-    </div>
+        <div class="home-options">
 
 
-    <!-- MAIN PROFILE CONTAINER -->
+            <!-- PROFILE -->
 
-    <div class="container">
-
-
-        <!-- COVER PHOTO -->
-
-        <img
-            src="cover.jpg"
-            alt="Cover"
-            class="cover-photo"
-        >
-
-
-        <!-- PROFILE -->
-
-        <div class="profile-section">
-
-            <img
-                src="profile.jpg"
-                alt="Profile"
-                class="avatar"
+            <button
+                class="home-btn profile-home-btn"
+                onclick="openProfile()"
             >
 
-            <h1>
-                Shamim Alif
-            </h1>
+                <div class="home-btn-icon">
+                    <i class="fas fa-user"></i>
+                </div>
+
+                <div class="home-btn-text">
+
+                    <strong>
+                        Profile
+                    </strong>
+
+                    <small>
+                        View Shamim Alif's profile
+                    </small>
+
+                </div>
+
+            </button>
+
+
+            <!-- ENGLISH PRACTICE -->
+
+            <button
+                class="home-btn english-home-btn"
+                onclick="openEnglish()"
+            >
+
+                <div class="home-btn-icon">
+                    <i class="fas fa-book-open"></i>
+                </div>
+
+                <div class="home-btn-text">
+
+                    <strong>
+                        English Practice
+                    </strong>
+
+                    <small>
+                        Tests, grammar & practice
+                    </small>
+
+                </div>
+
+            </button>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         PROFILE PAGE
+    ========================================================= -->
+
+    <section
+        id="profilePage"
+        class="page"
+    >
+
+
+        <!-- TOP NAV -->
+
+        <div class="profile-topbar">
+
+            <button
+                class="nav-small-btn"
+                onclick="goHome()"
+            >
+                <i class="fas fa-arrow-left"></i>
+                Home
+            </button>
+
+
+            <button
+                class="nav-small-btn"
+                onclick="openEnglish()"
+            >
+                <i class="fas fa-book-open"></i>
+                English Practice
+            </button>
+
+        </div>
+
+
+
+        <!-- PROFILE CONTAINER -->
+
+        <div class="profile-container">
+
+
+            <!-- COVER PHOTO -->
+
+            <img
+                src="cover.jpg"
+                alt="Cover"
+                class="cover-photo"
+            >
+
+
+            <!-- PROFILE -->
+
+            <div class="profile-section">
+
+                <img
+                    src="profile.jpg"
+                    alt="Profile"
+                    class="avatar"
+                >
+
+
+                <h1>
+                    Shamim Alif
+                </h1>
+
+
+                <p>
+                    <b>
+                        <i>
+                            OWNER OF MASTER OF TORQUE 150
+                        </i>
+                    </b>
+                </p>
+
+            </div>
+
+
+
+            <!-- TEXT ME -->
+
+            <div class="link-card">
+
+                <a
+                    href="sms:+8809658755846?body=Can%20we%20talk%3F"
+                >
+
+                    <i
+                        class="fas fa-comment-dots link-icon"
+                    ></i>
+
+                    <div class="link-text">
+
+                        <span>
+                            Text Me
+                        </span>
+
+                        <small>
+                            Send a direct message
+                        </small>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+
+
+            <!-- FACEBOOK -->
+
+            <div class="link-card">
+
+                <a
+                    href="https://m.facebook.com/Shamimbrat/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+
+                    <i
+                        class="fab fa-facebook-f link-icon"
+                    ></i>
+
+                    <div class="link-text">
+
+                        <span>
+                            Facebook
+                        </span>
+
+                        <small>
+                            Shamim Alif (Personal)
+                        </small>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+
+
+            <!-- FACEBOOK 2 -->
+
+            <div class="link-card">
+
+                <a
+                    href="https://www.facebook.com/ownerofhersoull"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+
+                    <i
+                        class="fab fa-facebook-f link-icon"
+                    ></i>
+
+                    <div class="link-text">
+
+                        <span>
+                            Facebook
+                        </span>
+
+                        <small>
+                            Shamim Alif
+                        </small>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+
+
+            <!-- YOUTUBE -->
+
+            <div class="link-card">
+
+                <a
+                    href="https://www.youtube.com/channel/UCTlLmy33UqCgkGuee7wOvMA"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+
+                    <i
+                        class="fab fa-youtube link-icon"
+                    ></i>
+
+                    <div class="link-text">
+
+                        <span>
+                            YouTube
+                        </span>
+
+                        <small>
+                            Stellar Arc MT15
+                        </small>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+
+
+            <!-- INSTAGRAM -->
+
+            <div class="link-card">
+
+                <a
+                    href="https://www.instagram.com/_stellar_x_arc_"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+
+                    <i
+                        class="fab fa-instagram link-icon"
+                    ></i>
+
+                    <div class="link-text">
+
+                        <span>
+                            Instagram
+                        </span>
+
+                        <small>
+                            Stellar Arc
+                        </small>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+
+
+            <!-- TIKTOK -->
+
+            <div class="link-card">
+
+                <a
+                    href="https://www.tiktok.com/@_stellar_arc_"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+
+                    <i
+                        class="fab fa-tiktok link-icon"
+                    ></i>
+
+                    <div class="link-text">
+
+                        <span>
+                            TikTok
+                        </span>
+
+                        <small>
+                            Titan Stream
+                        </small>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+
+
+            <!-- PINTEREST -->
+
+            <div class="link-card">
+
+                <a
+                    href="https://pin.it/4o6td7g3j"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+
+                    <i
+                        class="fab fa-pinterest-p link-icon"
+                    ></i>
+
+                    <div class="link-text">
+
+                        <span>
+                            Pinterest
+                        </span>
+
+                        <small>
+                            GOKU
+                        </small>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+
+
+            <!-- THREADS -->
+
+            <div class="link-card">
+
+                <a
+                    href="https://threads.net/@_soulless_brat_"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+
+                    <i
+                        class="fab fa-threads link-icon"
+                    ></i>
+
+                    <div class="link-text">
+
+                        <span>
+                            Threads
+                        </span>
+
+                        <small>
+                            @_soulless_brat_
+                        </small>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+
+
+            <!-- GITHUB -->
+
+            <div class="link-card">
+
+                <a
+                    href="https://github.com/shadowbae6t9"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+
+                    <i
+                        class="fab fa-github link-icon"
+                    ></i>
+
+                    <div class="link-text">
+
+                        <span>
+                            GitHub
+                        </span>
+
+                        <small>
+                            shadowbae6t9
+                        </small>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+
+
+            <!-- WHATSAPP -->
+
+            <div class="link-card">
+
+                <a
+                    href="https://wa.me/qr/GQWWEFCEQUOYH1"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+
+                    <i
+                        class="fab fa-whatsapp link-icon"
+                    ></i>
+
+                    <div class="link-text">
+
+                        <span>
+                            WhatsApp
+                        </span>
+
+                        <small>
+                            Message Me
+                        </small>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+
+
+            <!-- MAIL ME -->
+
+            <div class="mail-btn-container">
+
+                <a
+                    href="mailto:shamimalip99@gmail.com"
+                    class="mail-btn"
+                >
+
+                    <i class="fas fa-envelope"></i>
+
+                    Mail Me
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- FOOTER -->
+
+        <div class="footer">
 
             <p>
-                <b><i> OWNER OF MASTER OF TORQUE 150</i></b>
-                
+                &copy; 2026 Stellar Arc. All Rights Reserved.
+            </p>
+
+            <p>
+                Created with hope and code.
             </p>
 
         </div>
 
-
-        <!-- TEXT ME -->
-
-        <div class="link-card">
-
-            <a
-                href="sms:+8809658755846?body=Can%20we%20talk%3F"
-                class="fas fa-comment-dots link-icon"
-            >
-                <b> Text Me </b>
-            </a>
-
-        </div>
+    </section>
 
 
-        <!-- FACEBOOK -->
 
-        <div class="link-card">
+    <!-- =========================================================
+         ENGLISH PRACTICE PAGE
+    ========================================================= -->
 
-            <a
-                href="https://m.facebook.com/Shamimbrat/"
-                target="_blank"
-            >
+    <section
+        id="englishPage"
+        class="page"
+    >
 
-                <i class="fab fa-facebook-f link-icon"></i>
 
-                <div class="link-text">
+        <div class="english-wrapper">
 
-                    <span>
-                        Facebook
-                    </span>
 
-                    <small>
-                        Shamim Alif(Personal)
-                    </small>
+            <!-- HEADER -->
+
+            <header class="english-header">
+
+                <div class="english-badge">
+
+                    <i class="fas fa-graduation-cap"></i>
+
+                    English Learning Hub
 
                 </div>
 
-            </a>
 
-        </div>
+                <h1>
+                    English<br>
+                    Practice
+                </h1>
 
 
-        <!-- FACEBOOK 2 -->
+                <p>
+                    Practice your English, test your knowledge
+                    and improve step by step.
+                </p>
 
-        <div class="link-card">
+            </header>
 
-            <a
-                href="https://www.facebook.com/ownerofhersoull"
-                target="_blank"
+
+
+            <!-- =================================================
+                 AVAILABLE TESTS
+            ================================================= -->
+
+            <div class="section-label">
+                Available Now
+            </div>
+
+
+            <div class="practice-grid">
+
+
+                <!-- QUIZ TEST -->
+
+                <a
+                    href="quiz-test.html"
+                    class="practice-card live-test"
+                >
+
+                    <div class="practice-icon">
+
+                        <i class="fas fa-circle-question"></i>
+
+                    </div>
+
+
+                    <div class="practice-content">
+
+                        <strong>
+                            Quiz Test
+                        </strong>
+
+                        <small>
+                            Test your English knowledge
+                        </small>
+
+                    </div>
+
+
+                    <i
+                        class="fas fa-chevron-right practice-arrow"
+                    ></i>
+
+                </a>
+
+
+
+                <!-- MODEL TEST -->
+
+                <a
+                    href="qs.html"
+                    class="practice-card live-test"
+                >
+
+                    <div class="practice-icon">
+
+                        <i class="fas fa-file-circle-check"></i>
+
+                    </div>
+
+
+                    <div class="practice-content">
+
+                        <strong>
+                            Model Test
+                        </strong>
+
+                        <small>
+                            Complete an HSC-style practice test
+                        </small>
+
+                    </div>
+
+
+                    <i
+                        class="fas fa-chevron-right practice-arrow"
+                    ></i>
+
+                </a>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 COMING SOON
+            ================================================= -->
+
+            <div class="section-label">
+                Coming Soon
+            </div>
+
+
+            <div class="practice-grid">
+
+
+                <!-- GRAMMAR -->
+
+                <div class="practice-card coming-soon">
+
+                    <div class="practice-icon">
+
+                        <i class="fas fa-spell-check"></i>
+
+                    </div>
+
+
+                    <div class="practice-content">
+
+                        <strong>
+                            Grammar Practice
+                        </strong>
+
+                        <small>
+                            Articles, prepositions, verbs & more
+                        </small>
+
+                    </div>
+
+
+                    <span class="soon-badge">
+                        Coming Soon
+                    </span>
+
+                </div>
+
+
+
+                <!-- COMPLETING SENTENCE -->
+
+                <div class="practice-card coming-soon">
+
+                    <div class="practice-icon">
+
+                        <i class="fas fa-pen-nib"></i>
+
+                    </div>
+
+
+                    <div class="practice-content">
+
+                        <strong>
+                            Completing Sentence
+                        </strong>
+
+                        <small>
+                            Practice sentence completion
+                        </small>
+
+                    </div>
+
+
+                    <span class="soon-badge">
+                        Coming Soon
+                    </span>
+
+                </div>
+
+
+
+                <!-- CHANGING SENTENCE -->
+
+                <div class="practice-card coming-soon">
+
+                    <div class="practice-icon">
+
+                        <i class="fas fa-repeat"></i>
+
+                    </div>
+
+
+                    <div class="practice-content">
+
+                        <strong>
+                            Changing Sentence
+                        </strong>
+
+                        <small>
+                            Transform sentences correctly
+                        </small>
+
+                    </div>
+
+
+                    <span class="soon-badge">
+                        Coming Soon
+                    </span>
+
+                </div>
+
+
+
+                <!-- NARRATION -->
+
+                <div class="practice-card coming-soon">
+
+                    <div class="practice-icon">
+
+                        <i class="fas fa-comments"></i>
+
+                    </div>
+
+
+                    <div class="practice-content">
+
+                        <strong>
+                            Narration
+                        </strong>
+
+                        <small>
+                            Direct & indirect speech practice
+                        </small>
+
+                    </div>
+
+
+                    <span class="soon-badge">
+                        Coming Soon
+                    </span>
+
+                </div>
+
+
+
+                <!-- VOCABULARY -->
+
+                <div class="practice-card coming-soon">
+
+                    <div class="practice-icon">
+
+                        <i class="fas fa-language"></i>
+
+                    </div>
+
+
+                    <div class="practice-content">
+
+                        <strong>
+                            Vocabulary Builder
+                        </strong>
+
+                        <small>
+                            Improve your English vocabulary
+                        </small>
+
+                    </div>
+
+
+                    <span class="soon-badge">
+                        Coming Soon
+                    </span>
+
+                </div>
+
+
+
+                <!-- READING -->
+
+                <div class="practice-card coming-soon">
+
+                    <div class="practice-icon">
+
+                        <i class="fas fa-book-reader"></i>
+
+                    </div>
+
+
+                    <div class="practice-content">
+
+                        <strong>
+                            Reading Practice
+                        </strong>
+
+                        <small>
+                            Read passages and answer questions
+                        </small>
+
+                    </div>
+
+
+                    <span class="soon-badge">
+                        Coming Soon
+                    </span>
+
+                </div>
+
+
+
+                <!-- WRITING -->
+
+                <div class="practice-card coming-soon">
+
+                    <div class="practice-icon">
+
+                        <i class="fas fa-pen"></i>
+
+                    </div>
+
+
+                    <div class="practice-content">
+
+                        <strong>
+                            Writing Practice
+                        </strong>
+
+                        <small>
+                            Paragraph, email, report & composition
+                        </small>
+
+                    </div>
+
+
+                    <span class="soon-badge">
+                        Coming Soon
+                    </span>
+
+                </div>
+
+
+
+                <!-- FULL MOCK TEST -->
+
+                <div class="practice-card coming-soon">
+
+                    <div class="practice-icon">
+
+                        <i class="fas fa-trophy"></i>
+
+                    </div>
+
+
+                    <div class="practice-content">
+
+                        <strong>
+                            Full HSC Mock Test
+                        </strong>
+
+                        <small>
+                            Complete English examination simulation
+                        </small>
+
+                    </div>
+
+
+                    <span class="soon-badge">
+                        Coming Soon
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- BACK -->
+
+            <button
+                class="english-back"
+                onclick="openProfile()"
             >
 
-                <i class="fab fa-facebook-f link-icon"></i>
+                <i class="fas fa-arrow-left"></i>
 
-                <div class="link-text">
+                &nbsp;
 
-                    <span>
-                        Facebook
-                    </span>
+                Back to Profile
 
-                    <small>
-                        Shamim Alif
-                    </small>
+            </button>
 
-                </div>
 
-            </a>
+            <div class="english-footer">
+
+                English Practice Hub • 2026
+
+            </div>
+
 
         </div>
 
+    </section>
 
-        <!-- YOUTUBE -->
 
-        <div class="link-card">
 
-            <a
-                href="https://www.youtube.com/channel/UCTlLmy33UqCgkGuee7wOvMA"
-                target="_blank"
-            >
-
-                <i class="fab fa-youtube-play link-icon"></i>
-
-                <div class="link-text">
-
-                    <span>
-                        Youtube
-                    </span>
-
-                    <small>
-                        Stellar Arc MT15
-                    </small>
-
-                </div>
-
-            </a>
-
-        </div>
-
-
-        <!-- INSTAGRAM -->
-
-        <div class="link-card">
-
-            <a
-                href="https://www.instagram.com/_stellar_x_arc_"
-                target="_blank"
-            >
-
-                <i class="fab fa-instagram link-icon"></i>
-
-                <div class="link-text">
-
-                    <span>
-                        Instagram
-                    </span>
-
-                    <small>
-                        Stellar Arc
-                    </small>
-
-                </div>
-
-            </a>
-
-        </div>
-
-
-        <!-- TIKTOK -->
-
-        <div class="link-card">
-
-            <a
-                href="https://www.tiktok.com/@_stellar_arc_"
-                target="_blank"
-            >
-
-                <i class="fab fa-tiktok link-icon"></i>
-
-                <div class="link-text">
-
-                    <span>
-                        TikTok
-                    </span>
-
-                    <small>
-                        Titan Stream
-                    </small>
-
-                </div>
-
-            </a>
-
-        </div>
-
-
-        <!-- PINTEREST -->
-
-        <div class="link-card">
-
-            <a
-                href="https://pin.it/4o6td7g3j"
-                target="_blank"
-            >
-
-                <i class="fab fa-pinterest-p link-icon"></i>
-
-                <div class="link-text">
-
-                    <span>
-                        Pinterest
-                    </span>
-
-                    <small>
-                        GOKU
-                    </small>
-
-                </div>
-
-            </a>
-
-        </div>
-
-
-        <!-- THREADS -->
-
-        <div class="link-card">
-
-            <a
-                href="https://threads.net/@_soulless_brat_"
-                target="_blank"
-            >
-
-                <i class="bi bi-threads link-icon"></i>
-
-                <div class="link-text">
-
-                    <span>
-                        Threads
-                    </span>
-
-                    <small>
-                        @_soulless_brat_
-                    </small>
-
-                </div>
-
-            </a>
-
-        </div>
-
-
-        <!-- GITHUB -->
-
-        <div class="link-card">
-
-            <a
-                href="https://github.com/shadowbae6t9"
-                target="_blank"
-            >
-
-                <i class="fab fa-github link-icon"></i>
-
-                <div class="link-text">
-
-                    <span>
-                        GitHub
-                    </span>
-
-                    <small>
-                        shadowbae6t9
-                    </small>
-
-                </div>
-
-            </a>
-
-        </div>
-
-
-        <!-- WHATSAPP -->
-
-        <div class="link-card">
-
-            <a
-                href="https://wa.me/qr/GQWWEFCEQUOYH1"
-                target="_blank"
-            >
-
-                <i class="fab fa-whatsapp link-icon"></i>
-
-                <div class="link-text">
-
-                    <span>
-                        WhatsApp
-                    </span>
-
-                    <small>
-                        Message Me
-                    </small>
-
-                </div>
-
-            </a>
-
-        </div>
-
-
-        <!-- ================================================= -->
-        <!--                 QUIZ TEST BUTTON                  -->
-        <!-- ================================================= -->
-
-        <div class="quiz-test-card">
-
-            <a href="quiz-test.html">
-
-                <i class="fas fa-circle-question quiz-icon"></i>
-
-                <div class="link-text">
-
-                    <span>
-                        QUIZ TEST
-                    </span>
-
-                    <small>
-                        Test Your Knowledge
-                    </small>
-
-                </div>
-
-            </a>
-
-        </div>
-
-        <div class="quiz-test-card">
-
-            <a href="qs.html">
-
-                <i class="fas fa-circle-question quiz-icon"></i>
-
-                <div class="link-text">
-
-                    <span>
-                        Model Test
-                    </span>
-
-                    <small>
-                        Test your progression
-                    </small>
-
-                </div>
-
-            </a>
-
-        </div>
-
-        <!-- MAIL ME -->
-
-        <div class="mail-btn-container">
-
-            <a
-                href="mailto:shamimalip99@gmail.com"
-                class="mail-btn"
-            >
-
-                <i class="fas fa-envelope"></i>
-
-                Mail Me
-
-            </a>
-
-        </div>
-
-    </div>
-
-
-    <!-- FOOTER -->
-
-    <div class="footer">
-
-        <p>
-            &copy; 2026 Stellar Arc. All Rights Reserved.
-        </p>
-
-        <p>
-            Created with hope and code.
-        </p>
-
-    </div>
-
-
-    <!-- JAVASCRIPT -->
+    <!-- =========================================================
+         JAVASCRIPT
+    ========================================================= -->
 
     <script>
 
-        function revealContent() {
 
-            document
-                .getElementById('splash')
-                .classList
-                .add('hidden');
+        const homePage =
+            document.getElementById("homePage");
 
+        const profilePage =
+            document.getElementById("profilePage");
+
+        const englishPage =
+            document.getElementById("englishPage");
+
+
+        /* =====================================================
+           OPEN PROFILE
+        ===================================================== */
+
+        function openProfile() {
+
+            homePage.classList.add("hidden");
+
+            englishPage.classList.remove("active");
+
+            profilePage.classList.add("active");
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
         }
+
+
+        /* =====================================================
+           OPEN ENGLISH PRACTICE
+        ===================================================== */
+
+        function openEnglish() {
+
+            homePage.classList.add("hidden");
+
+            profilePage.classList.remove("active");
+
+            englishPage.classList.add("active");
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        }
+
+
+        /* =====================================================
+           GO HOME
+        ===================================================== */
+
+        function goHome() {
+
+            profilePage.classList.remove("active");
+
+            englishPage.classList.remove("active");
+
+            homePage.classList.remove("hidden");
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        }
+
 
     </script>
 
 
 </body>
+
 </html>
