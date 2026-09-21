@@ -1,2334 +1,2315 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>HSC Completing Sentence Mastery</title>
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<meta
+    name="description"
+    content="HSC English 2nd Paper Completing Sentence Practice Quiz"
+>
+
+<title>HSC English 2nd Paper | Completing Sentence Quiz</title>
 
 <style>
-*{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-:root{
-    --bg:#080b12;
-    --card:#111827;
-    --card2:#172033;
-    --text:#f8fafc;
-    --muted:#94a3b8;
-    --accent:#7c3aed;
-    --accent2:#a78bfa;
-    --green:#22c55e;
-    --red:#ef4444;
-    --gold:#facc15;
-    --border:#263244;
+:root {
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --secondary: #7c3aed;
+    --success: #16a34a;
+    --danger: #dc2626;
+    --warning: #f59e0b;
+    --dark: #111827;
+    --text: #374151;
+    --muted: #6b7280;
+    --light: #f3f6fb;
+    --white: #ffffff;
+    --border: #e5e7eb;
 }
 
-body{
-    font-family:Arial,Helvetica,sans-serif;
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    font-family:
+        Arial,
+        "Noto Sans Bengali",
+        sans-serif;
+
     background:
-        radial-gradient(circle at top,#1d1740 0%,#080b12 45%);
-    color:var(--text);
-    min-height:100vh;
+        linear-gradient(
+            135deg,
+            #eef6ff 0%,
+            #f5f3ff 50%,
+            #eefcf5 100%
+        );
+
+    color: var(--dark);
 }
 
-button{
-    font-family:inherit;
+/* ==============================
+   HEADER
+   ============================== */
+
+.header {
+    background: rgba(255,255,255,0.94);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
-.container{
-    width:min(950px,94%);
-    margin:auto;
+.header-inner {
+    width: min(1100px, 94%);
+    margin: auto;
+    min-height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
 }
 
-/* HEADER */
-
-header{
-    padding:28px 0 18px;
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 11px;
 }
 
-.brand{
-    text-align:center;
+.brand-icon {
+    width: 43px;
+    height: 43px;
+
+    border-radius: 13px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--secondary)
+        );
+
+    color: white;
+    font-size: 22px;
 }
 
-.brand h1{
-    font-size:clamp(25px,5vw,42px);
-    font-weight:900;
-    letter-spacing:-1px;
+.brand-text h1 {
+    font-size: 17px;
+    font-weight: 800;
 }
 
-.brand h1 span{
-    color:var(--accent2);
+.brand-text p {
+    color: var(--muted);
+    font-size: 11px;
+    margin-top: 2px;
 }
 
-.brand p{
-    color:var(--muted);
-    margin-top:8px;
+.header-actions {
+    display: flex;
+    gap: 8px;
 }
 
-/* DASHBOARD */
+.small-btn {
+    border: 1px solid var(--border);
+    background: white;
+    color: var(--text);
 
-.dashboard{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:12px;
-    margin:20px 0;
+    padding: 9px 12px;
+    border-radius: 10px;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    cursor: pointer;
+    transition: .2s;
 }
 
-.stat{
-    background:rgba(17,24,39,.88);
-    border:1px solid var(--border);
-    border-radius:16px;
-    padding:15px;
-    text-align:center;
+.small-btn:hover {
+    background: var(--light);
 }
 
-.stat .number{
-    font-size:25px;
-    font-weight:900;
+/* ==============================
+   MAIN
+   ============================== */
+
+.container {
+    width: min(900px, 94%);
+    margin: 30px auto 60px;
 }
 
-.stat .label{
-    color:var(--muted);
-    font-size:12px;
-    margin-top:4px;
+/* ==============================
+   DASHBOARD
+   ============================== */
+
+.dashboard {
+    background: rgba(255,255,255,.94);
+    border: 1px solid var(--border);
+
+    border-radius: 24px;
+    padding: 25px;
+
+    box-shadow:
+        0 15px 45px rgba(31,41,55,.08);
+
+    margin-bottom: 20px;
 }
 
-/* PROGRESS */
+.dashboard-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-.progress-box{
-    background:var(--card);
-    border:1px solid var(--border);
-    padding:16px;
-    border-radius:16px;
-    margin-bottom:18px;
+    gap: 20px;
+    margin-bottom: 20px;
 }
 
-.progress-top{
-    display:flex;
-    justify-content:space-between;
-    gap:10px;
-    margin-bottom:10px;
-    font-size:14px;
+.round-label {
+    font-size: 13px;
+    color: var(--muted);
+    font-weight: 700;
 }
 
-.progress-bar{
-    width:100%;
-    height:10px;
-    background:#202938;
-    border-radius:99px;
-    overflow:hidden;
+.round-number {
+    font-size: 26px;
+    font-weight: 900;
 }
 
-.progress-fill{
-    height:100%;
-    width:0%;
-    background:linear-gradient(90deg,var(--accent),var(--accent2));
-    transition:.4s;
+.score-box {
+    text-align: right;
 }
 
-/* CARD */
-
-.quiz-card{
-    background:rgba(17,24,39,.96);
-    border:1px solid var(--border);
-    border-radius:22px;
-    padding:24px;
-    box-shadow:0 15px 50px rgba(0,0,0,.25);
+.score-label {
+    font-size: 12px;
+    color: var(--muted);
 }
 
-.question-number{
-    color:var(--accent2);
-    font-weight:800;
-    font-size:14px;
-    margin-bottom:12px;
+.score-number {
+    font-size: 25px;
+    font-weight: 900;
+    color: var(--primary);
 }
 
-.question{
-    font-size:21px;
-    line-height:1.55;
-    font-weight:700;
-    margin-bottom:20px;
+.progress-track {
+    height: 10px;
+    background: #e9edf5;
+    border-radius: 50px;
+    overflow: hidden;
 }
 
-.options{
-    display:grid;
-    gap:12px;
+.progress-bar {
+    height: 100%;
+    width: 0%;
+    border-radius: inherit;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--primary),
+            var(--secondary)
+        );
+
+    transition: width .4s ease;
 }
 
-.option{
-    position:relative;
+/* ==============================
+   QUIZ CARD
+   ============================== */
+
+.quiz-card {
+    background: white;
+
+    border: 1px solid var(--border);
+    border-radius: 24px;
+
+    padding: 30px;
+
+    box-shadow:
+        0 15px 45px rgba(31,41,55,.08);
 }
 
-.option input{
-    position:absolute;
-    opacity:0;
+.question-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 15px;
 }
 
-.option label{
-    display:block;
-    padding:15px 16px;
-    background:var(--card2);
-    border:2px solid var(--border);
-    border-radius:14px;
-    cursor:pointer;
-    transition:.2s;
-    line-height:1.4;
+.question-number {
+    color: var(--primary);
+    font-weight: 800;
+    font-size: 13px;
 }
 
-.option label:hover{
-    border-color:var(--accent2);
-    transform:translateY(-1px);
+.difficulty {
+    padding: 5px 10px;
+    border-radius: 50px;
+
+    background: #f0fdf4;
+    color: var(--success);
+
+    font-size: 11px;
+    font-weight: 800;
 }
 
-.option input:checked + label{
-    border-color:var(--accent2);
-    background:#251b45;
+.rule {
+    color: var(--muted);
+    font-size: 12px;
+    margin-bottom: 15px;
 }
 
-.option.correct label{
-    border-color:var(--green);
-    background:rgba(34,197,94,.12);
+.question-en {
+    font-size: clamp(21px, 4vw, 30px);
+    line-height: 1.45;
+    margin-bottom: 13px;
 }
 
-.option.wrong label{
-    border-color:var(--red);
-    background:rgba(239,68,68,.12);
+.question-bn {
+    background: #f8fafc;
+    border-left: 4px solid var(--primary);
+
+    padding: 12px 14px;
+
+    border-radius: 10px;
+
+    font-size: 15px;
+    line-height: 1.7;
+
+    color: #4b5563;
+
+    margin-bottom: 25px;
 }
 
-/* BUTTONS */
+/* ==============================
+   OPTIONS
+   ============================== */
 
-.actions{
-    display:flex;
-    gap:12px;
-    margin-top:20px;
+.options {
+    display: grid;
+    gap: 12px;
 }
 
-.btn{
-    border:0;
-    border-radius:13px;
-    padding:14px 20px;
-    font-weight:800;
-    cursor:pointer;
-    transition:.2s;
+.option {
+    width: 100%;
+
+    text-align: left;
+
+    border: 2px solid var(--border);
+    background: white;
+
+    border-radius: 15px;
+
+    padding: 15px 16px;
+
+    cursor: pointer;
+
+    transition:
+        transform .15s,
+        border-color .2s,
+        background .2s;
+
+    color: var(--text);
 }
 
-.btn:hover{
-    transform:translateY(-1px);
+.option:hover:not(:disabled) {
+    transform: translateY(-2px);
+    border-color: #93c5fd;
+    background: #f8fbff;
 }
 
-.primary{
-    background:linear-gradient(135deg,var(--accent),#5b21b6);
-    color:white;
-    flex:1;
+.option:focus-visible {
+    outline: 3px solid rgba(37,99,235,.25);
 }
 
-.secondary{
-    background:#202938;
-    color:white;
+.option-letter {
+    display: inline-flex;
+
+    width: 31px;
+    height: 31px;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 9px;
+
+    background: #eff6ff;
+    color: var(--primary);
+
+    font-weight: 900;
+
+    margin-right: 9px;
 }
 
-.btn:disabled{
-    opacity:.5;
-    cursor:not-allowed;
-    transform:none;
+.option-en {
+    font-weight: 800;
+    font-size: 16px;
 }
 
-/* FEEDBACK */
+.option-bn {
+    display: block;
 
-.feedback{
-    display:none;
-    margin-top:18px;
-    padding:18px;
-    border-radius:15px;
-    line-height:1.6;
+    margin-left: 42px;
+    margin-top: 5px;
+
+    color: var(--muted);
+    font-size: 13px;
 }
 
-.feedback.show{
-    display:block;
+.option.correct {
+    border-color: #22c55e;
+    background: #f0fdf4;
 }
 
-.feedback.correct{
-    background:rgba(34,197,94,.10);
-    border:1px solid rgba(34,197,94,.4);
+.option.correct .option-letter {
+    background: #dcfce7;
+    color: #15803d;
 }
 
-.feedback.wrong{
-    background:rgba(239,68,68,.10);
-    border:1px solid rgba(239,68,68,.4);
+.option.wrong {
+    border-color: #ef4444;
+    background: #fef2f2;
 }
 
-.feedback-title{
-    font-size:18px;
-    font-weight:900;
-    margin-bottom:8px;
+.option.wrong .option-letter {
+    background: #fee2e2;
+    color: #b91c1c;
 }
 
-.answer{
-    color:var(--gold);
-    font-weight:800;
+/* ==============================
+   FEEDBACK
+   ============================== */
+
+.feedback {
+    display: none;
+
+    margin-top: 20px;
+
+    padding: 18px;
+
+    border-radius: 15px;
+
+    background: #f8fafc;
+
+    border: 1px solid var(--border);
+
+    animation: fadeIn .3s ease;
 }
 
-.bangla{
-    color:#cbd5e1;
-    margin-top:8px;
+.feedback.show {
+    display: block;
 }
 
-/* RESULT */
-
-.result{
-    display:none;
-    text-align:center;
-    padding:35px 20px;
+.feedback-title {
+    font-size: 17px;
+    font-weight: 900;
+    margin-bottom: 9px;
 }
 
-.result.show{
-    display:block;
+.feedback-title.correct-title {
+    color: var(--success);
 }
 
-.result h2{
-    font-size:32px;
-    margin-bottom:12px;
+.feedback-title.wrong-title {
+    color: var(--danger);
 }
 
-.result-score{
-    font-size:55px;
-    font-weight:900;
-    color:var(--accent2);
+.feedback-text {
+    font-size: 14px;
+    line-height: 1.65;
+
+    margin-bottom: 8px;
 }
 
-.result p{
-    color:var(--muted);
-    margin:8px 0;
+.feedback-bn {
+    color: #4b5563;
+    font-size: 14px;
+    line-height: 1.7;
 }
 
-.result-actions{
-    margin-top:22px;
-    display:flex;
-    justify-content:center;
-    gap:10px;
-    flex-wrap:wrap;
+/* ==============================
+   NEXT BUTTON
+   ============================== */
+
+.next-area {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
 }
 
-/* LOCKED */
+.next-btn {
+    border: none;
 
-.lock-message{
-    text-align:center;
-    padding:25px;
-    color:var(--muted);
+    padding: 13px 24px;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--secondary)
+        );
+
+    color: white;
+
+    font-weight: 800;
+    font-size: 14px;
+
+    cursor: pointer;
+
+    opacity: .5;
+    pointer-events: none;
+
+    transition: .2s;
 }
 
-/* CONFETTI */
-
-.confetti{
-    position:fixed;
-    width:9px;
-    height:15px;
-    top:-20px;
-    z-index:9999;
-    animation:fall 3s linear forwards;
+.next-btn.active {
+    opacity: 1;
+    pointer-events: auto;
 }
 
-@keyframes fall{
-    to{
-        transform:translateY(110vh) rotate(720deg);
-        opacity:0;
+.next-btn:hover {
+    transform: translateY(-2px);
+}
+
+/* ==============================
+   RESULT
+   ============================== */
+
+.result {
+    display: none;
+
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 24px;
+
+    padding: 35px;
+
+    text-align: center;
+
+    box-shadow:
+        0 15px 45px rgba(31,41,55,.08);
+}
+
+.result.show {
+    display: block;
+    animation: fadeIn .4s ease;
+}
+
+.result-icon {
+    font-size: 65px;
+    margin-bottom: 10px;
+}
+
+.result h2 {
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+.result-score {
+    font-size: 46px;
+    font-weight: 900;
+
+    color: var(--primary);
+
+    margin: 12px 0;
+}
+
+.level {
+    display: inline-block;
+
+    padding: 8px 15px;
+
+    border-radius: 50px;
+
+    background: #eef2ff;
+    color: #4338ca;
+
+    font-size: 14px;
+    font-weight: 900;
+
+    margin-bottom: 20px;
+}
+
+.result-message {
+    color: var(--muted);
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.result-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.result-btn {
+    border: none;
+
+    padding: 12px 18px;
+
+    border-radius: 11px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    background: var(--primary);
+    color: white;
+}
+
+.result-btn.secondary {
+    background: #eef2f7;
+    color: var(--text);
+}
+
+/* ==============================
+   FINAL RESULT
+   ============================== */
+
+.final-result {
+    display: none;
+
+    background: white;
+
+    border-radius: 25px;
+
+    padding: 35px;
+
+    text-align: center;
+
+    border: 1px solid var(--border);
+
+    box-shadow:
+        0 15px 45px rgba(31,41,55,.08);
+}
+
+.final-result.show {
+    display: block;
+}
+
+.final-score {
+    font-size: 55px;
+    font-weight: 900;
+
+    color: var(--primary);
+
+    margin: 15px 0;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 12px;
+
+    margin: 25px 0;
+}
+
+.stat {
+    background: #f8fafc;
+
+    padding: 16px;
+
+    border-radius: 14px;
+}
+
+.stat strong {
+    display: block;
+
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.stat span {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+/* ==============================
+   REVIEW
+   ============================== */
+
+.review {
+    margin-top: 20px;
+}
+
+.review-item {
+    padding: 18px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 15px;
+
+    margin-bottom: 12px;
+
+    background: #fff;
+}
+
+.review-q {
+    font-weight: 800;
+    line-height: 1.6;
+
+    margin-bottom: 8px;
+}
+
+.review-answer {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.review-answer.good {
+    color: var(--success);
+}
+
+.review-answer.bad {
+    color: var(--danger);
+}
+
+/* ==============================
+   ANIMATIONS
+   ============================== */
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(8px);
     }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
 }
 
-/* LEVEL BADGE */
+@keyframes shake {
 
-.level-badge{
-    display:inline-block;
-    margin-top:12px;
-    padding:8px 16px;
-    border-radius:99px;
-    background:rgba(124,58,237,.18);
-    border:1px solid rgba(167,139,250,.4);
-    color:var(--accent2);
-    font-weight:900;
+    0%,100% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-5px);
+    }
+
+    75% {
+        transform: translateX(5px);
+    }
+
 }
 
-/* FOOTER */
-
-footer{
-    text-align:center;
-    padding:30px 0;
-    color:#64748b;
-    font-size:12px;
+.shake {
+    animation: shake .3s ease;
 }
 
-/* MOBILE */
+/* ==============================
+   MOBILE
+   ============================== */
 
-@media(max-width:700px){
+@media (max-width: 650px) {
 
-    .dashboard{
-        grid-template-columns:repeat(2,1fr);
+    .header-inner {
+        min-height: 62px;
     }
 
-    .quiz-card{
-        padding:18px;
+    .brand-text h1 {
+        font-size: 14px;
     }
 
-    .question{
-        font-size:18px;
+    .header-actions {
+        display: none;
     }
 
-    .actions{
-        flex-direction:column;
+    .container {
+        margin-top: 18px;
     }
 
-    .btn{
-        width:100%;
+    .dashboard,
+    .quiz-card,
+    .result,
+    .final-result {
+        padding: 20px;
+        border-radius: 19px;
     }
+
+    .dashboard-top {
+        align-items: flex-start;
+    }
+
+    .round-number {
+        font-size: 21px;
+    }
+
+    .score-number {
+        font-size: 21px;
+    }
+
+    .question-en {
+        font-size: 21px;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
 }
+
+/* ==============================
+   REDUCED MOTION
+   ============================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+    }
+
+}
+
 </style>
+
 </head>
 
 <body>
 
-<div class="container">
+<header class="header">
 
-<header>
-    <div class="brand">
-        <h1>HSC <span>Completing Sentence</span></h1>
-        <p>Master the grammar. Build your level. Become perfect.</p>
-        <div class="level-badge">
-            LEVEL <span id="level">1</span>
+    <div class="header-inner">
+
+        <div class="brand">
+
+            <div class="brand-icon">
+                📚
+            </div>
+
+            <div class="brand-text">
+
+                <h1>
+                    HSC Completing Sentence
+                </h1>
+
+                <p>
+                    English 2nd Paper Practice
+                </p>
+
+            </div>
+
         </div>
+
+        <div class="header-actions">
+
+            <button
+                class="small-btn"
+                onclick="toggleSound()"
+                id="soundButton"
+            >
+                🔊 Sound
+            </button>
+
+            <button
+                class="small-btn"
+                onclick="exportProgress()"
+            >
+                Export
+            </button>
+
+            <button
+                class="small-btn"
+                onclick="document.getElementById('importFile').click()"
+            >
+                Import
+            </button>
+
+            <input
+                type="file"
+                id="importFile"
+                accept=".json"
+                hidden
+                onchange="importProgress(event)"
+            >
+
+        </div>
+
     </div>
+
 </header>
 
-<section class="dashboard">
 
-    <div class="stat">
-        <div class="number" id="roundScore">0</div>
-        <div class="label">ROUND SCORE</div>
-    </div>
+<main class="container">
 
-    <div class="stat">
-        <div class="number" id="bestScore">0</div>
-        <div class="label">BEST SCORE</div>
-    </div>
 
-    <div class="stat">
-        <div class="number" id="totalCorrect">0</div>
-        <div class="label">TOTAL CORRECT</div>
-    </div>
+    <!-- DASHBOARD -->
 
-    <div class="stat">
-        <div class="number" id="perfectRounds">0</div>
-        <div class="label">PERFECT ROUNDS</div>
-    </div>
+    <section class="dashboard" id="dashboard">
 
-</section>
+        <div class="dashboard-top">
 
-<div class="progress-box">
+            <div>
 
-    <div class="progress-top">
-        <span>Round Progress</span>
-        <strong id="progressText">0 / 15</strong>
-    </div>
+                <div class="round-label">
+                    CURRENT ROUND
+                </div>
 
-    <div class="progress-bar">
-        <div class="progress-fill" id="progressFill"></div>
-    </div>
+                <div
+                    class="round-number"
+                    id="roundNumber"
+                >
+                    Round 1 of 10
+                </div>
 
-</div>
+            </div>
 
-<main class="quiz-card">
+            <div class="score-box">
 
-    <div id="quizArea">
+                <div class="score-label">
+                    ROUND SCORE
+                </div>
 
-        <div class="question-number" id="questionNumber">
-            QUESTION 1 OF 15
+                <div
+                    class="score-number"
+                    id="scoreNumber"
+                >
+                    0 / 15
+                </div>
+
+            </div>
+
         </div>
 
-        <div class="question" id="questionText"></div>
+        <div class="progress-track">
 
-        <div class="options" id="options"></div>
+            <div
+                class="progress-bar"
+                id="progressBar"
+            ></div>
 
-        <div class="feedback" id="feedback"></div>
+        </div>
 
-        <div class="actions">
+    </section>
+
+
+    <!-- QUIZ -->
+
+    <section
+        class="quiz-card"
+        id="quizCard"
+    >
+
+        <div class="question-meta">
+
+            <span
+                class="question-number"
+                id="questionNumber"
+            >
+                Question 1 of 15
+            </span>
+
+            <span
+                class="difficulty"
+                id="difficulty"
+            >
+                Easy
+            </span>
+
+        </div>
+
+        <div
+            class="rule"
+            id="rule"
+        >
+            Grammar Rule
+        </div>
+
+        <h2
+            class="question-en"
+            id="questionEn"
+        >
+        </h2>
+
+        <div
+            class="question-bn"
+            id="questionBn"
+        >
+        </div>
+
+        <div
+            class="options"
+            id="options"
+        >
+        </div>
+
+        <div
+            class="feedback"
+            id="feedback"
+        >
+
+            <div
+                class="feedback-title"
+                id="feedbackTitle"
+            >
+            </div>
+
+            <div
+                class="feedback-text"
+                id="feedbackEn"
+            >
+            </div>
+
+            <div
+                class="feedback-bn"
+                id="feedbackBn"
+            >
+            </div>
+
+        </div>
+
+        <div class="next-area">
 
             <button
-                class="btn primary"
-                id="submitBtn"
-                onclick="submitAnswer()"
+                class="next-btn"
+                id="nextBtn"
+                onclick="nextQuestion()"
             >
-                CHECK ANSWER
+                Next Question →
             </button>
 
         </div>
 
-    </div>
+    </section>
 
-    <div class="result" id="result">
 
-        <h2 id="resultTitle"></h2>
+    <!-- ROUND RESULT -->
 
-        <div class="result-score" id="resultScore"></div>
+    <section
+        class="result"
+        id="roundResult"
+    >
 
-        <p id="resultMessage"></p>
+        <div class="result-icon" id="resultIcon">
+            🎯
+        </div>
 
-        <div class="result-actions">
+        <h2>
+            Round Complete!
+        </h2>
+
+        <div
+            class="result-score"
+            id="roundScore"
+        >
+            0 / 15
+        </div>
+
+        <div
+            class="level"
+            id="roundLevel"
+        >
+            Keep Practising
+        </div>
+
+        <p
+            class="result-message"
+            id="resultMessage"
+        >
+        </p>
+
+        <div class="result-buttons">
 
             <button
-                class="btn primary"
-                onclick="startNewRound()"
+                class="result-btn"
+                onclick="startNextRound()"
+                id="nextRoundBtn"
             >
-                START NEW ROUND
+                Next Round →
             </button>
 
             <button
-                class="btn secondary"
-                onclick="resetProgress()"
+                class="result-btn secondary"
+                onclick="showReview()"
             >
-                RESET PROGRESS
+                Review Answers
+            </button>
+
+            <button
+                class="result-btn secondary"
+                onclick="goHome()"
+            >
+                Main Website
             </button>
 
         </div>
 
-    </div>
+        <div
+            class="review"
+            id="review"
+        >
+        </div>
+
+    </section>
+
+
+    <!-- FINAL RESULT -->
+
+    <section
+        class="final-result"
+        id="finalResult"
+    >
+
+        <div class="result-icon">
+            🏆
+        </div>
+
+        <h2>
+            Quiz Completed!
+        </h2>
+
+        <div
+            class="final-score"
+            id="finalScore"
+        >
+            0 / 150
+        </div>
+
+        <div
+            class="level"
+            id="finalLevel"
+        >
+        </div>
+
+        <div class="stats">
+
+            <div class="stat">
+
+                <strong id="finalCorrect">
+                    0
+                </strong>
+
+                <span>
+                    Correct
+                </span>
+
+            </div>
+
+            <div class="stat">
+
+                <strong id="finalWrong">
+                    0
+                </strong>
+
+                <span>
+                    Incorrect
+                </span>
+
+            </div>
+
+            <div class="stat">
+
+                <strong>
+                    150
+                </strong>
+
+                <span>
+                    Total Questions
+                </span>
+
+            </div>
+
+        </div>
+
+        <p class="result-message">
+
+            Your complete progress has been saved automatically
+            on this device.
+
+        </p>
+
+        <div class="result-buttons">
+
+            <button
+                class="result-btn"
+                onclick="restartQuiz()"
+            >
+                Restart Quiz
+            </button>
+
+            <button
+                class="result-btn secondary"
+                onclick="goHome()"
+            >
+                Main Website
+            </button>
+
+        </div>
+
+    </section>
 
 </main>
 
-<footer>
-    HSC English Grammar Practice • Completing Sentence
-</footer>
-
-</div>
 
 <script>
 
-/* =========================================================
-   QUESTION BANK
-   ========================================================= */
+/* ==========================================================
+   QUIZ CONFIGURATION
+   ========================================================== */
 
-const questionBank = [
-
-/* ---------- LEVEL 1 ---------- */
-
-{
-q:"It is high time we ______ our bad habits.",
-o:["change","changed","will change","have changed"],
-a:1,
-e:"After 'It is high time', we normally use the past form.",
-b:"'It is high time' এর পরে সাধারণত verb-এর past form ব্যবহৃত হয়। তাই 'changed' সঠিক।",
-l:1
-},
-
-{
-q:"I wish I ______ a bird.",
-o:["am","was","were","have been"],
-a:2,
-e:"After 'wish' for an unreal present situation, 'were' is traditionally used.",
-b:"বর্তমানের অবাস্তব ইচ্ছা বোঝাতে 'wish'-এর পরে 'were' ব্যবহৃত হয়।",
-l:1
-},
-
-{
-q:"If I were rich, I ______ the poor.",
-o:["help","helped","would help","will help"],
-a:2,
-e:"The second conditional uses: If + past, would + base verb.",
-b:"Second conditional-এর structure: If + past form, would + verb-এর base form।",
-l:1
-},
-
-{
-q:"Unless you work hard, you ______ succeed.",
-o:["will","would","will not","can"],
-a:2,
-e:"Unless means 'if not'. The sentence means that without hard work, success will not come.",
-b:"Unless অর্থ 'if not'। অর্থাৎ পরিশ্রম না করলে সফল হওয়া যাবে না।",
-l:2
-},
-
-{
-q:"As soon as the teacher entered, the students ______ silent.",
-o:["become","became","will become","have become"],
-a:1,
-e:"The sentence describes a completed past event, so 'became' is correct.",
-b:"ঘটনাটি অতীতে ঘটেছে, তাই past form 'became' সঠিক।",
-l:1
-},
-
-{
-q:"Had I known the truth, I ______ you.",
-o:["tell","would tell","would have told","will tell"],
-a:2,
-e:"Third conditional uses Had + past participle, would have + past participle.",
-b:"Third conditional-এর structure হলো Had + past participle, would have + past participle।",
-l:2
-},
-
-{
-q:"Walk fast lest you ______ miss the train.",
-o:["should","will","would","can"],
-a:0,
-e:"After 'lest', 'should' is commonly used.",
-b:"'Lest'-এর পরে সাধারণত 'should' ব্যবহৃত হয়।",
-l:1
-},
-
-{
-q:"It is time you ______ to bed.",
-o:["go","went","will go","have gone"],
-a:1,
-e:"After 'It is time + subject', the past form is commonly used.",
-b:"'It is time + subject'-এর পরে সাধারণত past form ব্যবহৃত হয়।",
-l:1
-},
-
-{
-q:"If I had money, I ______ a new computer.",
-o:["buy","bought","would buy","will buy"],
-a:2,
-e:"This is a second conditional sentence.",
-b:"এটি second conditional। তাই 'would buy' সঠিক।",
-l:1
-},
-
-{
-q:"Though he is poor, he ______ honest.",
-o:["remain","remains","remained","remaining"],
-a:1,
-e:"The subject 'he' requires the singular present form 'remains'.",
-b:"Subject 'he' হওয়ায় present tense-এ 'remains' হবে।",
-l:1
-},
-
-{
-q:"No sooner had he arrived ______ it started raining.",
-o:["when","than","then","that"],
-a:1,
-e:"The fixed structure is 'No sooner ... than'.",
-b:"Fixed structure হলো 'No sooner ... than'।",
-l:2
-},
-
-{
-q:"Scarcely had I reached the station ______ the train left.",
-o:["than","when","then","that"],
-a:1,
-e:"The standard pair is 'Scarcely ... when'.",
-b:"Scarcely-এর সঙ্গে সাধারণত 'when' ব্যবহৃত হয়।",
-l:2
-},
-
-{
-q:"He behaves as if he ______ everything.",
-o:["know","knows","knew","has known"],
-a:2,
-e:"For an unreal comparison in the present, 'as if' is followed by a past form.",
-b:"অবাস্তব তুলনা বোঝালে 'as if'-এর পরে past form ব্যবহৃত হয়।",
-l:2
-},
-
-{
-q:"Would that I ______ young again!",
-o:["am","was","were","will be"],
-a:2,
-e:"'Would that' expresses a wish; 'were' is used for the unreal situation.",
-b:"'Would that' ইচ্ছা প্রকাশ করে। অবাস্তব অবস্থায় 'were' ব্যবহৃত হয়।",
-l:2
-},
-
-{
-q:"He ran fast so that he ______ catch the bus.",
-o:["could","can","will","may"],
-a:0,
-e:"The past purpose/result requires 'could'.",
-b:"অতীতের উদ্দেশ্য বোঝাতে 'could' ব্যবহৃত হয়।",
-l:1
-},
-
-/* ---------- LEVEL 2 ---------- */
-
-{
-q:"If he had worked hard, he ______ the examination.",
-o:["passes","passed","would pass","would have passed"],
-a:3,
-e:"This is a third conditional sentence.",
-b:"এটি third conditional; তাই 'would have passed' সঠিক।",
-l:2
-},
-
-{
-q:"The man is so weak that he ______ walk.",
-o:["cannot","could","would","should"],
-a:0,
-e:"The result of his weakness is that he cannot walk.",
-b:"দুর্বলতার কারণে সে হাঁটতে পারে না, তাই 'cannot' সঠিক।",
-l:2
-},
-
-{
-q:"He talks as though he ______ the owner.",
-o:["is","was","were","has been"],
-a:2,
-e:"An unreal comparison takes the past subjunctive 'were'.",
-b:"অবাস্তব তুলনার ক্ষেত্রে 'were' ব্যবহৃত হয়।",
-l:2
-},
-
-{
-q:"Unless you obey the rules, you ______ be punished.",
-o:["would","will","would have","had"],
-a:1,
-e:"Unless means 'if not'; this is a first conditional.",
-b:"Unless অর্থ 'if not'। এখানে first conditional হওয়ায় 'will' সঠিক।",
-l:2
-},
-
-{
-q:"Had he come earlier, he ______ the meeting.",
-o:["attends","would attend","would have attended","will attend"],
-a:2,
-e:"Had + past participle indicates a third conditional.",
-b:"'Had he come' third conditional নির্দেশ করে; তাই 'would have attended'।",
-l:2
-},
-
-{
-q:"The sooner you start, ______ you will finish.",
-o:["the sooner","sooner","soon","the soon"],
-a:0,
-e:"The correlative structure is 'The sooner..., the sooner...'.",
-b:"Correlative structure হলো 'The sooner..., the sooner...'।",
-l:2
-},
-
-{
-q:"He left the place before I ______ there.",
-o:["reach","reached","will reach","have reached"],
-a:1,
-e:"Both events occurred in the past, so 'reached' is correct.",
-b:"দুটি ঘটনাই অতীতে ঘটেছে, তাই 'reached' সঠিক।",
-l:2
-},
-
-{
-q:"It is high time Bangladesh ______ stronger environmental laws.",
-o:["adopts","adopted","will adopt","has adopted"],
-a:1,
-e:"'It is high time' is followed by a past form.",
-b:"'It is high time'-এর পরে past form ব্যবহৃত হয়।",
-l:2
-},
-
-{
-q:"I would rather you ______ here tonight.",
-o:["stay","stayed","will stay","have stayed"],
-a:1,
-e:"'Would rather + subject' for present/future preference takes the past form.",
-b:"'Would rather + subject' হলে present/future preference-এর জন্য past form ব্যবহৃত হয়।",
-l:2
-},
-
-{
-q:"He studied hard lest he ______ fail.",
-o:["should","will","would","can"],
-a:0,
-e:"'Lest' is followed by 'should' in this construction.",
-b:"এই structure-এ 'lest'-এর পরে 'should' ব্যবহৃত হয়।",
-l:2
-},
-
-/* ---------- LEVEL 3 ---------- */
-
-{
-q:"Were I a king, I ______ establish justice.",
-o:["will","would","shall","can"],
-a:1,
-e:"'Were I...' is an inverted second conditional.",
-b:"'Were I...' হলো inverted second conditional। তাই 'would establish' হবে।",
-l:3
-},
-
-{
-q:"Had I seen him, I ______ him the news.",
-o:["tell","would tell","would have told","will tell"],
-a:2,
-e:"Had + past participle creates a third conditional.",
-b:"Had + past participle থাকায় এটি third conditional।",
-l:3
-},
-
-{
-q:"Should you need help, ______ me.",
-o:["call","called","calling","would call"],
-a:0,
-e:"'Should you...' is an inverted first conditional and takes the base verb.",
-b:"'Should you...' inverted first conditional; এরপর base verb 'call' ব্যবহৃত হয়।",
-l:3
-},
-
-{
-q:"If he were here, he ______ know what to do.",
-o:["will","would","shall","has"],
-a:1,
-e:"Second conditional: If + past, would + base verb.",
-b:"Second conditional-এর নিয়ম অনুযায়ী 'would know' হবে।",
-l:3
-},
-
-{
-q:"If I had known earlier, I ______ differently.",
-o:["act","acted","would act","would have acted"],
-a:3,
-e:"The condition is in the past, so the result uses 'would have + past participle'.",
-b:"অতীতের অসম্ভব condition হওয়ায় 'would have acted' সঠিক।",
-l:3
-},
-
-{
-q:"He speaks English as though he ______ a native speaker.",
-o:["is","was","were","has"],
-a:2,
-e:"Unreal comparison uses 'were'.",
-b:"অবাস্তব তুলনা বোঝাতে 'were' ব্যবহৃত হয়।",
-l:3
-},
-
-{
-q:"It is time we ______ serious action.",
-o:["take","took","will take","have taken"],
-a:1,
-e:"'It is time + subject' commonly takes a past form.",
-b:"'It is time + subject'-এর পরে past form ব্যবহৃত হয়।",
-l:3
-},
-
-{
-q:"He wishes he ______ more time.",
-o:["has","had","will have","has had"],
-a:1,
-e:"A present unreal wish takes the past form.",
-b:"বর্তমানের অবাস্তব ইচ্ছার ক্ষেত্রে past form 'had' ব্যবহৃত হয়।",
-l:3
-},
-
-{
-q:"If only I ______ the answer!",
-o:["know","knew","will know","have known"],
-a:1,
-e:"'If only' can express a present unreal wish and takes the past form.",
-b:"'If only' বর্তমানের অবাস্তব ইচ্ছা প্রকাশ করলে past form ব্যবহৃত হয়।",
-l:3
-},
-
-{
-q:"No sooner did the bell ring ______ the students rushed out.",
-o:["when","than","then","that"],
-a:1,
-e:"The fixed expression is 'No sooner...than'.",
-b:"সঠিক fixed expression হলো 'No sooner...than'।",
-l:3
-},
-
-{
-q:"Hardly had the match begun ______ it started raining.",
-o:["than","when","then","that"],
-a:1,
-e:"The standard construction is 'Hardly...when'.",
-b:"'Hardly...when' একটি standard structure।",
-l:3
-},
-
-{
-q:"The boy talks as if he ______ the principal.",
-o:["is","were","was","has been"],
-a:1,
-e:"For an unreal present comparison, 'were' is appropriate.",
-b:"বর্তমানের অবাস্তব তুলনার ক্ষেত্রে 'were' ব্যবহৃত হয়।",
-l:3
-},
-
-{
-q:"He works hard so that he ______ succeed.",
-o:["may","would","had","was"],
-a:0,
-e:"Present/future purpose commonly takes 'may'.",
-b:"বর্তমান বা ভবিষ্যতের উদ্দেশ্য বোঝাতে 'may' ব্যবহৃত হয়।",
-l:3
-},
-
-{
-q:"He worked hard so that he ______ succeed.",
-o:["may","might","will","can"],
-a:1,
-e:"Past purpose commonly takes 'might'.",
-b:"অতীতের উদ্দেশ্য বোঝাতে 'might' ব্যবহৃত হয়।",
-l:3
-},
-
-{
-q:"He left early in order that he ______ catch the train.",
-o:["may","might","can","will"],
-a:1,
-e:"The past context requires 'might'.",
-b:"অতীতের context হওয়ায় 'might' সঠিক।",
-l:3
-},
-
-/* ---------- MORE QUESTIONS GENERATED FROM COMMON HSC PATTERNS ---------- */
-
-{
-q:"Unless you hurry, you ______ miss the bus.",
-o:["will","would","would have","had"],
-a:0,
-e:"Unless means if not; the first conditional uses 'will'.",
-b:"Unless অর্থ if not; তাই এখানে 'will miss' হবে।",
-l:1
-},
-
-{
-q:"If you read regularly, you ______ improve your English.",
-o:["will","would","would have","had"],
-a:0,
-e:"This is a first conditional sentence.",
-b:"এটি first conditional। তাই 'will improve' সঠিক।",
-l:1
-},
-
-{
-q:"If I were you, I ______ apologize.",
-o:["will","would","can","shall"],
-a:1,
-e:"The standard expression is 'If I were you, I would...'.",
-b:"'If I were you' এর পরে সাধারণত 'would' ব্যবহৃত হয়।",
-l:1
-},
-
-{
-q:"If he studied harder, he ______ better results.",
-o:["gets","got","would get","will get"],
-a:2,
-e:"This is a second conditional.",
-b:"এটি second conditional; তাই 'would get' হবে।",
-l:1
-},
-
-{
-q:"If she had arrived earlier, she ______ the bus.",
-o:["catches","caught","would catch","would have caught"],
-a:3,
-e:"Third conditional requires 'would have + past participle'.",
-b:"Third conditional-এ 'would have + past participle' হয়।",
-l:2
-},
-
-{
-q:"I wish I ______ taller.",
-o:["am","was","were","will be"],
-a:2,
-e:"A present unreal wish uses 'were'.",
-b:"বর্তমানের অবাস্তব ইচ্ছায় 'were' ব্যবহৃত হয়।",
-l:1
-},
-
-{
-q:"I wish I ______ more carefully yesterday.",
-o:["study","studied","had studied","would study"],
-a:2,
-e:"A regret about the past uses past perfect after wish.",
-b:"অতীতের আফসোস বোঝাতে wish-এর পরে past perfect 'had studied' ব্যবহৃত হয়।",
-l:2
-},
-
-{
-q:"It is high time he ______ the truth.",
-o:["tells","told","will tell","has told"],
-a:1,
-e:"'It is high time' is followed by the past form.",
-b:"'It is high time'-এর পরে past form ব্যবহৃত হয়।",
-l:1
-},
-
-{
-q:"It is time they ______ home.",
-o:["go","went","will go","have gone"],
-a:1,
-e:"The structure requires the past form 'went'.",
-b:"এই structure-এ past form 'went' ব্যবহৃত হয়।",
-l:1
-},
-
-{
-q:"Walk carefully lest you ______ fall.",
-o:["should","will","would","can"],
-a:0,
-e:"'Lest' is commonly followed by 'should'.",
-b:"'Lest'-এর পরে সাধারণত 'should' ব্যবহৃত হয়।",
-l:1
-},
-
-{
-q:"Study hard lest you ______ fail.",
-o:["should","will","would","can"],
-a:0,
-e:"'Should' follows 'lest' in this construction.",
-b:"এই construction-এ 'lest'-এর পরে 'should' হয়।",
-l:1
-},
-
-{
-q:"He talks as if he ______ everything.",
-o:["knows","knew","know","has known"],
-a:1,
-e:"An unreal comparison uses the past form.",
-b:"অবাস্তব তুলনার ক্ষেত্রে past form 'knew' ব্যবহৃত হয়।",
-l:2
-},
-
-{
-q:"She behaves as though she ______ the queen.",
-o:["is","were","has","will be"],
-a:1,
-e:"'As though' for an unreal present situation takes 'were'.",
-b:"অবাস্তব বর্তমান পরিস্থিতিতে 'as though'-এর পরে 'were' ব্যবহৃত হয়।",
-l:2
-},
-
-{
-q:"Would that I ______ rich!",
-o:["am","were","will be","have been"],
-a:1,
-e:"'Would that' expresses an unreal wish.",
-b:"'Would that' অবাস্তব ইচ্ছা প্রকাশ করে; তাই 'were'।",
-l:2
-},
-
-{
-q:"Would that I ______ a famous writer!",
-o:["am","were","will be","was being"],
-a:1,
-e:"'Were' is used for the unreal wish.",
-b:"অবাস্তব ইচ্ছার জন্য 'were' ব্যবহৃত হয়।",
-l:2
-},
-
-{
-q:"No sooner had he entered ______ the phone rang.",
-o:["when","than","then","that"],
-a:1,
-e:"No sooner is paired with than.",
-b:"'No sooner'-এর সঙ্গে 'than' ব্যবহৃত হয়।",
-l:2
-},
-
-{
-q:"No sooner did I sit down ______ the teacher called me.",
-o:["when","than","then","that"],
-a:1,
-e:"The correct pair is 'No sooner...than'.",
-b:"সঠিক pair হলো 'No sooner...than'।",
-l:2
-},
-
-{
-q:"Hardly had we reached home ______ the storm began.",
-o:["than","when","then","that"],
-a:1,
-e:"Hardly is paired with when.",
-b:"'Hardly'-এর সঙ্গে 'when' ব্যবহৃত হয়।",
-l:2
-},
-
-{
-q:"Scarcely had he finished ______ the bell rang.",
-o:["than","when","then","that"],
-a:1,
-e:"Scarcely is normally followed by when.",
-b:"'Scarcely'-এর পরে সাধারণত 'when' হয়।",
-l:2
-},
-
-{
-q:"The man is too weak to ______.",
-o:["walk","walked","walking","walks"],
-a:0,
-e:"After 'too + adjective + to', use the base verb.",
-b:"'too + adjective + to'-এর পরে verb-এর base form হয়।",
-l:1
-},
-
-{
-q:"He is strong enough to ______ the box.",
-o:["lift","lifted","lifting","lifts"],
-a:0,
-e:"'Enough to' is followed by the base form.",
-b:"'Enough to'-এর পরে base form 'lift' হবে।",
-l:1
-},
-
-{
-q:"He was so tired that he ______ sleep.",
-o:["cannot","could not","will not","should not"],
-a:1,
-e:"The past context requires 'could not'.",
-b:"অতীতের ঘটনা হওয়ায় 'could not' সঠিক।",
-l:1
-},
-
-{
-q:"She is so ill that she ______ attend class.",
-o:["cannot","could not","would not","had not"],
-a:0,
-e:"Present inability is expressed with 'cannot'.",
-b:"বর্তমানের অক্ষমতা বোঝাতে 'cannot' ব্যবহৃত হয়।",
-l:1
-},
-
-{
-q:"He worked hard so that he ______ pass.",
-o:["might","may","can","will"],
-a:0,
-e:"Past purpose uses 'might'.",
-b:"অতীতের উদ্দেশ্য বোঝাতে 'might' ব্যবহৃত হয়।",
-l:2
-},
-
-{
-q:"He works hard so that he ______ succeed.",
-o:["may","might","would","had"],
-a:0,
-e:"Present purpose commonly uses 'may'.",
-b:"বর্তমানের উদ্দেশ্যে 'may' ব্যবহৃত হয়।",
-l:1
-},
-
-{
-q:"He left early so that he ______ catch the train.",
-o:["might","may","can","will"],
-a:0,
-e:"Past purpose uses 'might'.",
-b:"অতীতের উদ্দেশ্যে 'might' ব্যবহৃত হয়।",
-l:2
-},
-
-{
-q:"The more you practise, ______ you become.",
-o:["the better","better","the best","best"],
-a:0,
-e:"The structure is 'The more..., the better...'.",
-b:"সঠিক structure হলো 'The more..., the better...'।",
-l:2
-},
-
-{
-q:"The harder you work, ______ you will succeed.",
-o:["the more","more","the most","most"],
-a:0,
-e:"Correlative comparative structure: The + comparative..., the + comparative.",
-b:"Correlative comparative structure অনুযায়ী 'the more' হবে।",
-l:2
-},
-
-{
-q:"The sooner you finish, ______ you can leave.",
-o:["the sooner","sooner","soon","the soon"],
-a:0,
-e:"The correct comparative-correlative form is 'the sooner'.",
-b:"সঠিক structure হলো 'the sooner...the sooner'।",
-l:2
-},
-
-{
-q:"Unless he comes, I ______ go.",
-o:["will not","would not","did not","had not"],
-a:0,
-e:"Unless means if not, so the first conditional uses 'will not'.",
-b:"Unless অর্থ if not; তাই 'will not go' সঠিক।",
-l:1
-},
-
-{
-q:"Unless you study, you ______ fail.",
-o:["will","would","would have","had"],
-a:0,
-e:"First conditional: unless + present, will + base verb.",
-b:"First conditional-এ unless-এর পরে present এবং result clause-এ will হয়।",
-l:1
-},
-
-{
-q:"If it rains, we ______ stay home.",
-o:["will","would","would have","had"],
-a:0,
-e:"This is a first conditional.",
-b:"এটি first conditional; তাই 'will stay'।",
-l:1
-},
-
-{
-q:"If I knew his address, I ______ visit him.",
-o:["will","would","can","shall"],
-a:1,
-e:"Second conditional uses would.",
-b:"Second conditional-এ 'would visit' ব্যবহৃত হয়।",
-l:1
-},
-
-{
-q:"If I had wings, I ______ fly.",
-o:["will","would","can","shall"],
-a:1,
-e:"This expresses an unreal present condition.",
-b:"এটি অবাস্তব present condition; তাই 'would fly'।",
-l:1
-},
-
-{
-q:"If he had taken the medicine, he ______ better.",
-o:["feels","felt","would feel","would have felt"],
-a:3,
-e:"The condition refers to an unreal past situation.",
-b:"অতীতের অসম্ভব condition হওয়ায় 'would have felt' সঠিক।",
-l:2
-},
-
-{
-q:"Had I known, I ______ helped you.",
-o:["will have","would have","would","can"],
-a:1,
-e:"Had I known is an inverted third conditional.",
-b:"'Had I known' inverted third conditional; তাই 'would have helped'।",
-l:3
-},
-
-{
-q:"Were I rich, I ______ help the poor.",
-o:["will","would","can","shall"],
-a:1,
-e:"'Were I...' is an inverted second conditional.",
-b:"'Were I...' inverted second conditional; তাই 'would help'।",
-l:3
-},
-
-{
-q:"Should you see him, ______ him to call me.",
-o:["tell","told","telling","would tell"],
-a:0,
-e:"After inverted 'Should you...', use the base verb.",
-b:"Inverted 'Should you...' এর পরে base verb ব্যবহৃত হয়।",
-l:3
-},
-
-{
-q:"I would rather you ______ now.",
-o:["leave","left","will leave","have left"],
-a:1,
-e:"Would rather + subject takes the past form for present/future preference.",
-b:"'Would rather + subject'-এর পরে past form ব্যবহৃত হয়।",
-l:2
-},
-
-{
-q:"I would rather you ______ tomorrow.",
-o:["come","came","will come","have come"],
-a:1,
-e:"The past form 'came' is used after would rather + subject.",
-b:"'Would rather + subject'-এর পরে 'came' ব্যবহৃত হয়।",
-l:2
-},
-
-{
-q:"I wish I ______ him yesterday.",
-o:["meet","met","had met","would meet"],
-a:2,
-e:"Past regret after wish takes past perfect.",
-b:"অতীতের regret-এর জন্য 'wish + had + past participle' ব্যবহৃত হয়।",
-l:2
-},
-
-{
-q:"I wish I ______ more intelligent.",
-o:["am","were","had been","will be"],
-a:1,
-e:"Present unreal wish takes 'were'.",
-b:"বর্তমানের অবাস্তব ইচ্ছায় 'were' ব্যবহৃত হয়।",
-l:1
-},
-
-{
-q:"If only he ______ here now!",
-o:["is","were","was being","will be"],
-a:1,
-e:"'If only' expresses an unreal wish; 'were' is used.",
-b:"'If only' অবাস্তব ইচ্ছা প্রকাশ করে; তাই 'were'।",
-l:2
-},
-
-{
-q:"If only I ______ the truth before!",
-o:["know","knew","had known","will know"],
-a:2,
-e:"Past regret takes the past perfect 'had known'.",
-b:"অতীতের regret হওয়ায় 'had known' সঠিক।",
-l:2
-},
-
-{
-q:"He behaves as if he ______ the boss.",
-o:["is","were","has","will be"],
-a:1,
-e:"Unreal present comparison uses 'were'.",
-b:"অবাস্তব present comparison-এ 'were' ব্যবহৃত হয়।",
-l:2
-},
-
-{
-q:"She looked as though she ______ ill.",
-o:["is","were","was","will be"],
-a:1,
-e:"The sentence expresses an unreal comparison.",
-b:"অবাস্তব তুলনা বোঝানো হয়েছে; তাই 'were' ব্যবহৃত হয়।",
-l:2
-},
-
-{
-q:"Lest he ______ late, he left early.",
-o:["should be","will be","would be","can be"],
-a:0,
-e:"'Lest' is followed by 'should'.",
-b:"'Lest'-এর পরে 'should' ব্যবহৃত হয়।",
-l:2
-},
-
-{
-q:"Lest you ______ the point, I will explain again.",
-o:["should miss","will miss","would miss","can miss"],
-a:0,
-e:"The standard structure is 'lest + should + base verb'.",
-b:"Standard structure: lest + should + base verb।",
-l:2
-},
-
-{
-q:"No sooner had the rain stopped ______ the children came out.",
-o:["when","than","then","that"],
-a:1,
-e:"No sooner...than is the fixed pair.",
-b:"'No sooner...than' হলো fixed pair।",
-l:2
-},
-
-{
-q:"Hardly had I opened the door ______ the dog ran out.",
-o:["than","when","then","that"],
-a:1,
-e:"Hardly...when is the correct pair.",
-b:"সঠিক pair হলো 'Hardly...when'।",
-l:2
-},
-
-{
-q:"Scarcely had she arrived ______ the meeting began.",
-o:["than","when","then","that"],
-a:1,
-e:"Scarcely...when is the standard construction.",
-b:"Standard construction হলো 'Scarcely...when'।",
-l:2
-},
-
-{
-q:"As soon as he arrived, everyone ______ happy.",
-o:["become","became","will become","has become"],
-a:1,
-e:"The event occurred in the past.",
-b:"ঘটনাটি অতীতে ঘটেছে, তাই 'became'।",
-l:1
-},
-
-{
-q:"As soon as the sun rose, the birds ______ singing.",
-o:["start","started","will start","have started"],
-a:1,
-e:"Both actions occurred in the past.",
-b:"দুটি ঘটনাই অতীতে ঘটেছে; তাই 'started'।",
-l:1
-},
-
-{
-q:"Before the teacher came, the students ______ the room.",
-o:["leave","left","had left","will leave"],
-a:2,
-e:"The earlier past action takes past perfect.",
-b:"অতীতে অন্য একটি ঘটনার আগে ঘটে যাওয়া কাজের জন্য past perfect ব্যবহৃত হয়।",
-l:2
-},
-
-{
-q:"After he ______ his work, he went home.",
-o:["finishes","finished","had finished","will finish"],
-a:2,
-e:"The work was completed before another past event, so past perfect is suitable.",
-b:"একটি past event-এর আগে কাজটি শেষ হয়েছিল; তাই 'had finished'।",
-l:2
-},
-
-{
-q:"When I reached the station, the train ______.",
-o:["leaves","left","had left","will leave"],
-a:2,
-e:"The train left before I reached the station.",
-b:"আমি station-এ পৌঁছানোর আগেই train চলে গিয়েছিল; তাই past perfect।",
-l:2
-},
-
-{
-q:"He studied hard because he ______ pass.",
-o:["wanted to","want to","will want to","has wanted"],
-a:0,
-e:"The past context requires 'wanted to'.",
-b:"অতীতের context হওয়ায় 'wanted to' সঠিক।",
-l:1
-},
-
-{
-q:"He works hard because he ______ succeed.",
-o:["wants to","wanted to","would","had"],
-a:0,
-e:"The present subject 'he' takes 'wants'.",
-b:"Present tense-এ 'he' এর সঙ্গে 'wants to' হবে।",
-l:1
-},
-
-{
-q:"He is poor but he ______ honest.",
-o:["remain","remains","remained","remaining"],
-a:1,
-e:"The singular subject 'he' takes 'remains'.",
-b:"Singular subject 'he' হওয়ায় 'remains' সঠিক।",
-l:1
-},
-
-{
-q:"Though he is old, he ______ active.",
-o:["remain","remains","remained","remaining"],
-a:1,
-e:"The sentence is in the present tense.",
-b:"Sentenceটি present tense-এ; তাই 'remains' হবে।",
-l:1
-},
-
-{
-q:"Although she was tired, she ______ working.",
-o:["continue","continued","continues","has continued"],
-a:1,
-e:"The sentence is in the past.",
-b:"Sentenceটি past tense-এ, তাই 'continued'।",
-l:1
-},
-
-{
-q:"He is too weak ______ run.",
-o:["to","for","that","so"],
-a:0,
-e:"The fixed structure is 'too + adjective + to + verb'.",
-b:"Structure: too + adjective + to + verb।",
-l:1
-},
-
-{
-q:"He is strong enough ______ lift it.",
-o:["to","for","that","so"],
-a:0,
-e:"The structure is 'adjective + enough + to + verb'.",
-b:"Structure হলো adjective + enough + to + verb।",
-l:1
-},
-
-{
-q:"He was so tired that he ______ walk.",
-o:["cannot","could not","will not","may not"],
-a:1,
-e:"The past form of 'cannot' is 'could not'.",
-b:"Past context-এ 'cannot'-এর পরিবর্তে 'could not' হয়।",
-l:1
-},
-
-{
-q:"She is so weak that she ______ stand.",
-o:["cannot","could not","would not","had not"],
-a:0,
-e:"Present inability requires 'cannot'.",
-b:"বর্তমানের অক্ষমতা বোঝাতে 'cannot'।",
-l:1
-},
-
-{
-q:"He saved money so that he ______ buy a car.",
-o:["could","can","will","may"],
-a:0,
-e:"Past purpose/result uses 'could'.",
-b:"অতীতের উদ্দেশ্য বোঝাতে 'could' ব্যবহৃত হয়।",
-l:2
-},
-
-{
-q:"He saves money so that he ______ buy a car.",
-o:["can","could","would","had"],
-a:0,
-e:"Present purpose takes 'can'.",
-b:"বর্তমানের উদ্দেশ্য বোঝাতে 'can' ব্যবহার করা যায়।",
-l:1
-},
-
-{
-q:"The more you read, ______ you learn.",
-o:["the more","more","the most","most"],
-a:0,
-e:"The correct structure is 'The more..., the more...'.",
-b:"সঠিক structure হলো 'The more..., the more...'।",
-l:2
-},
-
-{
-q:"The less you practise, ______ you improve.",
-o:["the less","less","the least","least"],
-a:0,
-e:"The comparative-correlative structure uses 'the less'.",
-b:"Comparative-correlative structure অনুযায়ী 'the less' হবে।",
-l:2
-},
-
-{
-q:"If you follow the rules, you ______ safe.",
-o:["will remain","would remain","would have remained","had remained"],
-a:0,
-e:"This is a first conditional.",
-b:"এটি first conditional; তাই 'will remain'।",
-l:1
-},
-
-{
-q:"If you had followed the rules, you ______ safe.",
-o:["will remain","would remain","would have remained","had remained"],
-a:2,
-e:"This is a third conditional.",
-b:"এটি third conditional; তাই 'would have remained'।",
-l:2
-},
-
-{
-q:"If you followed the rules, you ______ safe.",
-o:["will remain","would remain","would have remained","had remained"],
-a:1,
-e:"This is a second conditional.",
-b:"এটি second conditional; তাই 'would remain'।",
-l:2
-},
-
-{
-q:"Were he here, he ______ help us.",
-o:["will","would","can","shall"],
-a:1,
-e:"'Were he...' is an inverted second conditional.",
-b:"'Were he...' inverted second conditional; তাই 'would help'।",
-l:3
-},
-
-{
-q:"Had they arrived earlier, they ______ the train.",
-o:["catch","would catch","would have caught","will catch"],
-a:2,
-e:"This is an inverted third conditional.",
-b:"এটি inverted third conditional; তাই 'would have caught'।",
-l:3
-},
-
-{
-q:"Should he call, ______ him to wait.",
-o:["tell","told","telling","would tell"],
-a:0,
-e:"After 'Should he...', use the base verb.",
-b:"'Should he...' এর পরে base verb 'tell' ব্যবহৃত হয়।",
-l:3
-},
-
-{
-q:"It is high time we ______ the problem.",
-o:["solve","solved","will solve","have solved"],
-a:1,
-e:"'It is high time' takes a past form.",
-b:"'It is high time'-এর পরে past form 'solved' হবে।",
-l:1
-},
-
-{
-q:"I wish I ______ more confident.",
-o:["am","were","will be","have been"],
-a:1,
-e:"Present unreal wish uses 'were'.",
-b:"বর্তমানের অবাস্তব ইচ্ছায় 'were' ব্যবহৃত হয়।",
-l:1
-},
-
-{
-q:"I wish I ______ the opportunity.",
-o:["have","had","will have","can have"],
-a:1,
-e:"The wish expresses an unreal present desire.",
-b:"বর্তমানের অবাস্তব ইচ্ছা হওয়ায় 'had' হবে।",
-l:1
-},
-
-{
-q:"If only she ______ with us!",
-o:["is","were","will be","has"],
-a:1,
-e:"'If only' + past form expresses an unreal wish.",
-b:"'If only' + past form অবাস্তব ইচ্ছা প্রকাশ করে।",
-l:2
-},
-
-{
-q:"He acts as if he ______ the owner.",
-o:["is","were","has","will be"],
-a:1,
-e:"Unreal comparison uses 'were'.",
-b:"অবাস্তব comparison-এ 'were' ব্যবহৃত হয়।",
-l:2
-},
-
-{
-q:"He looked as though he ______ seen a ghost.",
-o:["has","had","will have","would"],
-a:1,
-e:"The past perfect 'had seen' fits the past comparison.",
-b:"Past comparison-এর ক্ষেত্রে 'had seen' সঠিক।",
-l:3
-},
-
-{
-q:"Lest he ______ the train, he ran fast.",
-o:["should miss","will miss","would miss","can miss"],
-a:0,
-e:"Lest is followed by should + base verb.",
-b:"Lest-এর পরে should + base verb ব্যবহৃত হয়।",
-l:2
-},
-
-{
-q:"No sooner had she spoken ______ everyone became silent.",
-o:["when","than","then","that"],
-a:1,
-e:"No sooner is followed by than.",
-b:"No sooner-এর পরে than ব্যবহৃত হয়।",
-l:2
-},
-
-{
-q:"Hardly had they arrived ______ the match began.",
-o:["than","when","then","that"],
-a:1,
-e:"Hardly is followed by when.",
-b:"Hardly-এর পরে when ব্যবহৃত হয়।",
-l:2
-},
-
-{
-q:"Scarcely had I closed my eyes ______ the alarm rang.",
-o:["than","when","then","that"],
-a:1,
-e:"Scarcely is paired with when.",
-b:"Scarcely-এর সঙ্গে when ব্যবহৃত হয়।",
-l:2
-},
-
-{
-q:"As soon as he saw me, he ______ away.",
-o:["run","ran","runs","will run"],
-a:1,
-e:"The event happened in the past.",
-b:"ঘটনাটি অতীতে ঘটেছে; তাই 'ran'।",
-l:1
-},
-
-{
-q:"Before she came, I ______ the letter.",
-o:["write","wrote","had written","will write"],
-a:2,
-e:"The earlier past action takes past perfect.",
-b:"আগে ঘটে যাওয়া past action-এর জন্য past perfect ব্যবহৃত হয়।",
-l:2
-},
-
-{
-q:"After I had eaten, I ______ out.",
-o:["go","went","will go","have gone"],
-a:1,
-e:"The second completed action is in the simple past.",
-b:"দ্বিতীয় past action-এর জন্য simple past 'went' হবে।",
-l:2
-},
-
-{
-q:"Though he was poor, he ______ happy.",
-o:["is","was","will be","has been"],
-a:1,
-e:"The sentence is in the past tense.",
-b:"Sentenceটি past tense-এ; তাই 'was'।",
-l:1
-},
-
-{
-q:"Though she is young, she ______ wise.",
-o:["is","was","were","had been"],
-a:0,
-e:"The present subject and tense require 'is'.",
-b:"Present tense-এ 'she is wise' সঠিক।",
-l:1
-},
-
-{
-q:"He is too lazy ______ work.",
-o:["to","for","that","so"],
-a:0,
-e:"Too + adjective + to + base verb.",
-b:"Structure: too + adjective + to + base verb।",
-l:1
-},
-
-{
-q:"She is intelligent enough ______ understand it.",
-o:["to","for","that","so"],
-a:0,
-e:"Enough is followed by 'to + base verb'.",
-b:"Enough-এর পরে 'to + base verb' ব্যবহৃত হয়।",
-l:1
-},
-
-{
-q:"He studied hard so that he ______ get a good result.",
-o:["might","may","can","will"],
-a:0,
-e:"Past purpose uses 'might'.",
-b:"Past purpose বোঝাতে 'might' ব্যবহৃত হয়।",
-l:2
-},
-
-{
-q:"The more carefully you drive, ______ you will be.",
-o:["the safer","safer","the safest","safest"],
-a:0,
-e:"The correct form is 'the more..., the safer...'.",
-b:"সঠিক comparative structure হলো 'the more..., the safer...'।",
-l:2
-},
-
-{
-q:"Unless you practise, you ______ improve.",
-o:["will not","would not","would have","had"],
-a:0,
-e:"Unless means if not; the result is 'will not improve'.",
-b:"Unless অর্থ if not; তাই 'will not improve'।",
-l:1
-},
-
-{
-q:"If he comes, I ______ talk to him.",
-o:["will","would","would have","had"],
-a:0,
-e:"First conditional uses will.",
-b:"First conditional-এ 'will talk' ব্যবহৃত হয়।",
-l:1
-},
-
-{
-q:"If he came, I ______ talk to him.",
-o:["will","would","would have","had"],
-a:1,
-e:"Second conditional uses would.",
-b:"Second conditional-এ 'would talk' ব্যবহৃত হয়।",
-l:1
-},
-
-{
-q:"If he had come, I ______ talked to him.",
-o:["will have","would have","would","can"],
-a:1,
-e:"Third conditional requires would have + past participle.",
-b:"Third conditional-এ 'would have talked' হয়।",
-l:2
-},
-
-{
-q:"Had she studied, she ______ passed.",
-o:["will have","would have","would","can"],
-a:1,
-e:"This is an inverted third conditional.",
-b:"এটি inverted third conditional; তাই 'would have passed'।",
-l:3
-},
-
-{
-q:"Were I in your position, I ______ accept the offer.",
-o:["will","would","can","shall"],
-a:1,
-e:"Were I... is an inverted second conditional.",
-b:"'Were I...' inverted second conditional; তাই 'would accept'।",
-l:3
-},
-
-{
-q:"Should you need anything, ______ me.",
-o:["call","called","calling","would call"],
-a:0,
-e:"The inverted conditional uses the base verb after the comma.",
-b:"Inverted conditional-এ base verb 'call' ব্যবহৃত হয়।",
-l:3
-},
-
-{
-q:"It is time he ______ his mistake.",
-o:["realizes","realized","will realize","has realized"],
-a:1,
-e:"It is time + subject takes the past form.",
-b:"'It is time + subject'-এর পরে past form হয়।",
-l:1
-},
-
-{
-q:"I wish I ______ the answer.",
-o:["know","knew","will know","can know"],
-a:1,
-e:"Present unreal wish takes past form.",
-b:"বর্তমানের অবাস্তব ইচ্ছায় past form 'knew' হয়।",
-l:1
-},
-
-{
-q:"I wish I ______ harder last year.",
-o:["work","worked","had worked","would work"],
-a:2,
-e:"Past regret uses past perfect.",
-b:"অতীতের regret-এর জন্য past perfect 'had worked'।",
-l:2
-},
-
-{
-q:"If only he ______ us earlier.",
-o:["tell","told","had told","will tell"],
-a:2,
-e:"Past regret after 'if only' uses past perfect.",
-b:"অতীতের regret-এ 'if only + had + past participle' হয়।",
-l:2
-},
-
-{
-q:"She talks as if she ______ everything.",
-o:["knows","knew","will know","has known"],
-a:1,
-e:"Unreal comparison takes past form.",
-b:"অবাস্তব comparison-এ past form 'knew' ব্যবহৃত হয়।",
-l:2
-},
-
-{
-q:"He looked as if he ______ sick.",
-o:["is","were","was","will be"],
-a:1,
-e:"Unreal comparison commonly uses 'were'.",
-b:"অবাস্তব comparison-এ 'were' ব্যবহৃত হয়।",
-l:2
-},
-
-{
-q:"Lest you ______ the lesson, revise it.",
-o:["should forget","will forget","would forget","can forget"],
-a:0,
-e:"Lest + should + base verb.",
-b:"Structure: lest + should + base verb।",
-l:2
-},
-
-{
-q:"No sooner did he arrive ______ the meeting began.",
-o:["when","than","then","that"],
-a:1,
-e:"No sooner...than is the correct construction.",
-b:"সঠিক construction হলো No sooner...than।",
-l:2
-},
-
-{
-q:"Hardly did she sit down ______ the phone rang.",
-o:["than","when","then","that"],
-a:1,
-e:"Hardly...when is the correct construction.",
-b:"সঠিক construction হলো Hardly...when।",
-l:2
-},
-
-{
-q:"Scarcely did they enter ______ the lights went out.",
-o:["than","when","then","that"],
-a:1,
-e:"Scarcely...when is the standard structure.",
-b:"Scarcely-এর সঙ্গে when ব্যবহৃত হয়।",
-l:2
-},
-
-{
-q:"As soon as the exam ended, students ______ the hall.",
-o:["leave","left","will leave","have left"],
-a:1,
-e:"The action occurred in the past.",
-b:"ঘটনাটি অতীতে ঘটেছে; তাই 'left'।",
-l:1
-},
-
-{
-q:"When I arrived, he ______ already left.",
-o:["has","had","will have","would"],
-a:1,
-e:"Past perfect: had already left.",
-b:"Past perfect structure 'had already left' হবে।",
-l:2
-},
-
-{
-q:"Before he came, we ______ dinner.",
-o:["eat","ate","had eaten","will eat"],
-a:2,
-e:"The earlier past action uses past perfect.",
-b:"আগে ঘটে যাওয়া কাজের জন্য 'had eaten' ব্যবহৃত হয়।",
-l:2
-},
-
-{
-q:"Although it was raining, they ______ playing.",
-o:["continue","continued","continues","will continue"],
-a:1,
-e:"The past tense requires 'continued'.",
-b:"Past tense হওয়ায় 'continued' সঠিক।",
-l:1
-},
-
-{
-q:"Though the task is difficult, we ______ complete it.",
-o:["can","could","had","would have"],
-a:0,
-e:"Present ability/possibility uses 'can'.",
-b:"বর্তমানের ability/possibility বোঝাতে 'can'।",
-l:1
-},
-
-{
-q:"He is too poor ______ afford it.",
-o:["to","for","that","so"],
-a:0,
-e:"Too + adjective + to + verb.",
-b:"Structure: too + adjective + to + verb।",
-l:1
-},
-
-{
-q:"She is wise enough ______ understand the matter.",
-o:["to","for","that","so"],
-a:0,
-e:"Enough + to + base verb.",
-b:"Enough-এর পরে to + base verb ব্যবহৃত হয়।",
-l:1
-},
-
-{
-q:"He exercises daily so that he ______ remain fit.",
-o:["may","might","would","had"],
-a:0,
-e:"Present purpose uses 'may'.",
-b:"বর্তমানের উদ্দেশ্য বোঝাতে 'may' ব্যবহৃত হয়।",
-l:1
-},
-
-{
-q:"He exercised daily so that he ______ remain fit.",
-o:["may","might","can","will"],
-a:1,
-e:"Past purpose uses 'might'.",
-b:"অতীতের উদ্দেশ্য বোঝাতে 'might' ব্যবহৃত হয়।",
-l:2
-},
-
-{
-q:"The more you practise grammar, ______ your writing becomes.",
-o:["the better","better","the best","best"],
-a:0,
-e:"The more..., the better... is the correct structure.",
-b:"সঠিক structure হলো 'The more..., the better...'।",
-l:2
-},
-
-{
-q:"The less you waste, ______ you can save.",
-o:["the more","more","the most","most"],
-a:0,
-e:"The less..., the more... is a comparative-correlative structure.",
-b:"সঠিক structure হলো 'The less..., the more...'।",
-l:2
-},
-
-{
-q:"Unless you revise, you ______ remember everything.",
-o:["will not","would not","would have","had"],
-a:0,
-e:"Unless means if not.",
-b:"Unless অর্থ if not; তাই 'will not remember'।",
-l:1
-},
-
-{
-q:"If you obey your parents, they ______ happy.",
-o:["will be","would be","would have been","had been"],
-a:0,
-e:"First conditional.",
-b:"এটি first conditional; তাই 'will be'।",
-l:1
-},
-
-{
-q:"If you obeyed your parents, they ______ happy.",
-o:["will be","would be","would have been","had been"],
-a:1,
-e:"Second conditional.",
-b:"এটি second conditional; তাই 'would be'।",
-l:2
-},
-
-{
-q:"If you had obeyed your parents, they ______ happy.",
-o:["will be","would be","would have been","had been"],
-a:2,
-e:"Third conditional.",
-b:"এটি third conditional; তাই 'would have been'।",
-l:2
+const TOTAL_ROUNDS = 10;
+const QUESTIONS_PER_ROUND = 15;
+const TOTAL_QUESTIONS = 150;
+
+const STORAGE_KEY = "hscCompletingSentenceProgress_v1";
+const SETTINGS_KEY = "hscCompletingSentenceSettings_v1";
+
+
+/* ==========================================================
+   QUESTION DATABASE
+   ==========================================================
+
+   IMPORTANT:
+   Add the remaining questions to the QUESTIONS array.
+
+   The structure below is ready for all 150 questions.
+   ========================================================== */
+
+const QUESTIONS = [
+
+/* ================= ROUND 1 ================= */
+
+{
+    id: 1,
+    round: 1,
+    rule: "It is high time",
+    difficulty: "Easy",
+
+    questionEn:
+        "It is high time we ____ our homework.",
+
+    questionBn:
+        "এখন আমাদের হোমওয়ার্ক শেষ করার সময় হয়েছে।",
+
+    choices: [
+
+        {
+            label: "A",
+            textEn: "finish",
+            textBn: "শেষ করি",
+            explanationEn:
+                "Incorrect. After 'It is high time + subject', the simple past is normally used.",
+            explanationBn:
+                "ভুল। 'It is high time + subject' এর পরে সাধারণত Simple Past ব্যবহার করা হয়।"
+        },
+
+        {
+            label: "B",
+            textEn: "finished",
+            textBn: "শেষ করলাম",
+            explanationEn:
+                "Correct. 'It is high time + subject + past form' is the standard structure.",
+            explanationBn:
+                "সঠিক। 'It is high time + subject + past form' হলো প্রচলিত গঠন।"
+        },
+
+        {
+            label: "C",
+            textEn: "will finish",
+            textBn: "শেষ করব",
+            explanationEn:
+                "Incorrect. Future 'will' is not normally used after this structure.",
+            explanationBn:
+                "ভুল। এই গঠনের পরে সাধারণত Future 'will' ব্যবহার করা হয় না।"
+        },
+
+        {
+            label: "D",
+            textEn: "has finished",
+            textBn: "শেষ করেছে",
+            explanationEn:
+                "Incorrect. The expected structure requires the simple past form.",
+            explanationBn:
+                "ভুল। এখানে Simple Past form প্রয়োজন।"
+        }
+
+    ],
+
+    correct: "B"
+},
+
+{
+    id: 2,
+    round: 1,
+    rule: "If I were",
+    difficulty: "Easy",
+
+    questionEn:
+        "If I ____ rich, I would help the poor.",
+
+    questionBn:
+        "আমি যদি ধনী হতাম, তাহলে দরিদ্রদের সাহায্য করতাম।",
+
+    choices: [
+
+        {
+            label: "A",
+            textEn: "am",
+            textBn: "হই",
+            explanationEn:
+                "Incorrect. This is an unreal hypothetical condition.",
+            explanationBn:
+                "ভুল। এটি একটি কাল্পনিক বা অবাস্তব শর্ত।"
+        },
+
+        {
+            label: "B",
+            textEn: "was",
+            textBn: "ছিলাম",
+            explanationEn:
+                "Incorrect in the traditional exam pattern. 'Were' is used with I in unreal conditions.",
+            explanationBn:
+                "ভুল। প্রচলিত পরীক্ষার নিয়মে unreal condition-এ I-এর সঙ্গে 'were' ব্যবহৃত হয়।"
+        },
+
+        {
+            label: "C",
+            textEn: "were",
+            textBn: "হতাম",
+            explanationEn:
+                "Correct. 'If I were...' expresses an unreal or hypothetical condition.",
+            explanationBn:
+                "সঠিক। 'If I were...' কাল্পনিক বা অবাস্তব শর্ত প্রকাশ করে।"
+        },
+
+        {
+            label: "D",
+            textEn: "have been",
+            textBn: "হয়েছি",
+            explanationEn:
+                "Incorrect. Present perfect does not fit this conditional structure.",
+            explanationBn:
+                "ভুল। Present Perfect এই conditional structure-এর সঙ্গে যায় না।"
+        }
+
+    ],
+
+    correct: "C"
+},
+
+{
+    id: 3,
+    round: 1,
+    rule: "Lest",
+    difficulty: "Easy",
+
+    questionEn:
+        "Take an umbrella lest you ____ wet.",
+
+    questionBn:
+        "ছাতা নাও, পাছে তুমি ভিজে যাও।",
+
+    choices: [
+
+        {
+            label: "A",
+            textEn: "should get",
+            textBn: "ভিজে যাও",
+            explanationEn:
+                "Correct. 'Lest + subject + should + base verb' is a common examination pattern.",
+            explanationBn:
+                "সঠিক। 'Lest + subject + should + base verb' একটি প্রচলিত পরীক্ষার গঠন।"
+        },
+
+        {
+            label: "B",
+            textEn: "will get",
+            textBn: "ভিজবে",
+            explanationEn:
+                "Incorrect. 'Will' is not normally used in this traditional lest structure.",
+            explanationBn:
+                "ভুল। প্রচলিত 'lest' structure-এ সাধারণত 'will' ব্যবহার করা হয় না।"
+        },
+
+        {
+            label: "C",
+            textEn: "got",
+            textBn: "ভিজেছিলে",
+            explanationEn:
+                "Incorrect. The expected structure uses 'should + base verb'.",
+            explanationBn:
+                "ভুল। এখানে 'should + base verb' প্রয়োজন।"
+        },
+
+        {
+            label: "D",
+            textEn: "getting",
+            textBn: "ভেজা",
+            explanationEn:
+                "Incorrect. The clause requires a finite verb structure.",
+            explanationBn:
+                "ভুল। এখানে একটি সম্পূর্ণ verb structure প্রয়োজন।"
+        }
+
+    ],
+
+    correct: "A"
+},
+
+{
+    id: 4,
+    round: 1,
+    rule: "No sooner...than",
+    difficulty: "Medium",
+
+    questionEn:
+        "No sooner ____ the station than the train left.",
+
+    questionBn:
+        "সে স্টেশনে পৌঁছাতেই ট্রেনটি ছেড়ে গেল।",
+
+    choices: [
+
+        {
+            label: "A",
+            textEn: "he reached",
+            textBn: "সে পৌঁছাল",
+            explanationEn:
+                "Incorrect. 'No sooner' at the beginning requires inversion.",
+            explanationBn:
+                "ভুল। বাক্যের শুরুতে 'No sooner' থাকলে inversion প্রয়োজন।"
+        },
+
+        {
+            label: "B",
+            textEn: "had he reached",
+            textBn: "সে পৌঁছেছিল",
+            explanationEn:
+                "Correct. The standard structure is 'No sooner had + subject + past participle + than'.",
+            explanationBn:
+                "সঠিক। প্রচলিত গঠন হলো 'No sooner had + subject + past participle + than'।"
+        },
+
+        {
+            label: "C",
+            textEn: "did he reach",
+            textBn: "সে পৌঁছেছিল",
+            explanationEn:
+                "Incorrect. The expected tense is past perfect.",
+            explanationBn:
+                "ভুল। এখানে Past Perfect প্রয়োজন।"
+        },
+
+        {
+            label: "D",
+            textEn: "he had reached",
+            textBn: "সে পৌঁছেছিল",
+            explanationEn:
+                "Incorrect. The word order is not correct after 'No sooner'.",
+            explanationBn:
+                "ভুল। 'No sooner' এর পরে word order সঠিক নয়।"
+        }
+
+    ],
+
+    correct: "B"
+},
+
+{
+    id: 5,
+    round: 1,
+    rule: "Hardly...when",
+    difficulty: "Medium",
+
+    questionEn:
+        "Hardly had he arrived ____ it started raining.",
+
+    questionBn:
+        "সে মাত্র পৌঁছেছিল, এমন সময় বৃষ্টি শুরু হলো।",
+
+    choices: [
+
+        {
+            label: "A",
+            textEn: "than",
+            textBn: "তারপর",
+            explanationEn:
+                "Incorrect. 'Hardly' normally pairs with 'when'.",
+            explanationBn:
+                "ভুল। 'Hardly' সাধারণত 'when' এর সঙ্গে ব্যবহৃত হয়।"
+        },
+
+        {
+            label: "B",
+            textEn: "when",
+            textBn: "যখন",
+            explanationEn:
+                "Correct. The standard pair is 'Hardly...when'.",
+            explanationBn:
+                "সঠিক। প্রচলিত জোড়া হলো 'Hardly...when'।"
+        },
+
+        {
+            label: "C",
+            textEn: "then",
+            textBn: "তখন",
+            explanationEn:
+                "Incorrect. 'Then' is not the required conjunction here.",
+            explanationBn:
+                "ভুল। এখানে 'then' প্রয়োজনীয় conjunction নয়।"
+        },
+
+        {
+            label: "D",
+            textEn: "while",
+            textBn: "যখন",
+            explanationEn:
+                "Incorrect. The standard examination pattern is 'Hardly...when'.",
+            explanationBn:
+                "ভুল। পরীক্ষার প্রচলিত pattern হলো 'Hardly...when'।"
+        }
+
+    ],
+
+    correct: "B"
+},
+
+{
+    id: 6,
+    round: 1,
+    rule: "Too...to",
+    difficulty: "Easy",
+
+    questionEn:
+        "He is too weak ____ walk.",
+
+    questionBn:
+        "সে এত দুর্বল যে হাঁটতে পারে না।",
+
+    choices: [
+
+        {
+            label: "A",
+            textEn: "that",
+            textBn: "যে",
+            explanationEn:
+                "Incorrect. 'Too' is followed by 'to + base verb' in this structure.",
+            explanationBn:
+                "ভুল। এই গঠনে 'too' এর পরে 'to + base verb' হয়।"
+        },
+
+        {
+            label: "B",
+            textEn: "to",
+            textBn: "করতে",
+            explanationEn:
+                "Correct. The structure is 'too + adjective + to + verb'.",
+            explanationBn:
+                "সঠিক। গঠনটি হলো 'too + adjective + to + verb'।"
+        },
+
+        {
+            label: "C",
+            textEn: "so",
+            textBn: "এত",
+            explanationEn:
+                "Incorrect. 'So...that' is a different structure.",
+            explanationBn:
+                "ভুল। 'So...that' একটি ভিন্ন structure।"
+        },
+
+        {
+            label: "D",
+            textEn: "for",
+            textBn: "জন্য",
+            explanationEn:
+                "Incorrect. 'For' does not complete this structure.",
+            explanationBn:
+                "ভুল। 'For' দিয়ে এই structure সম্পূর্ণ হয় না।"
+        }
+
+    ],
+
+    correct: "B"
+},
+
+{
+    id: 7,
+    round: 1,
+    rule: "So...that",
+    difficulty: "Easy",
+
+    questionEn:
+        "The man was so weak that he ____ not walk.",
+
+    questionBn:
+        "লোকটি এত দুর্বল ছিল যে সে হাঁটতে পারেনি।",
+
+    choices: [
+
+        {
+            label: "A",
+            textEn: "could",
+            textBn: "পারত",
+            explanationEn:
+                "Correct. 'So...that' can introduce a result clause.",
+            explanationBn:
+                "সঠিক। 'So...that' দ্বারা ফলাফল বোঝানো হয়।"
+        },
+
+        {
+            label: "B",
+            textEn: "can",
+            textBn: "পারে",
+            explanationEn:
+                "Incorrect. The main verb is in the past, so 'could' fits the result clause.",
+            explanationBn:
+                "ভুল। মূল verb past হওয়ায় result clause-এ 'could' উপযুক্ত।"
+        },
+
+        {
+            label: "C",
+            textEn: "will",
+            textBn: "পারবে",
+            explanationEn:
+                "Incorrect. Future tense is not appropriate here.",
+            explanationBn:
+                "ভুল। এখানে Future tense উপযুক্ত নয়।"
+        },
+
+        {
+            label: "D",
+            textEn: "has",
+            textBn: "আছে",
+            explanationEn:
+                "Incorrect. This does not form the required meaning.",
+            explanationBn:
+                "ভুল। এতে প্রয়োজনীয় অর্থ প্রকাশ হয় না।"
+        }
+
+    ],
+
+    correct: "A"
+},
+
+{
+    id: 8,
+    round: 1,
+    rule: "Unless",
+    difficulty: "Easy",
+
+    questionEn:
+        "Unless you work hard, you ____ fail.",
+
+    questionBn:
+        "তুমি কঠোর পরিশ্রম না করলে ব্যর্থ হবে।",
+
+    choices: [
+
+        {
+            label: "A",
+            textEn: "would",
+            textBn: "হতে",
+            explanationEn:
+                "Incorrect. A likely future result is expressed with 'will'.",
+            explanationBn:
+                "ভুল। সম্ভাব্য ভবিষ্যৎ ফলাফল বোঝাতে এখানে 'will' উপযুক্ত।"
+        },
+
+        {
+            label: "B",
+            textEn: "will",
+            textBn: "হবে",
+            explanationEn:
+                "Correct. 'Unless' means 'if...not'.",
+            explanationBn:
+                "সঠিক। 'Unless' এর অর্থ 'if...not'।"
+        },
+
+        {
+            label: "C",
+            textEn: "had",
+            textBn: "হতো",
+            explanationEn:
+                "Incorrect. The sentence refers to a possible future result.",
+            explanationBn:
+                "ভুল। বাক্যটি সম্ভাব্য ভবিষ্যৎ ফলাফল বোঝাচ্ছে।"
+        },
+
+        {
+            label: "D",
+            textEn: "were",
+            textBn: "ছিল",
+            explanationEn:
+                "Incorrect. 'Were' does not fit the structure.",
+            explanationBn:
+                "ভুল। 'Were' এই structure-এর সঙ্গে যায় না।"
+        }
+
+    ],
+
+    correct: "B"
+},
+
+{
+    id: 9,
+    round: 1,
+    rule: "I wish",
+    difficulty: "Medium",
+
+    questionEn:
+        "I wish I ____ the answer now.",
+
+    questionBn:
+        "আমি যদি এখন উত্তরটি জানতাম।",
+
+    choices: [
+
+        {
+            label: "A",
+            textEn: "know",
+            textBn: "জানি",
+            explanationEn:
+                "Incorrect. An unreal present wish normally takes a past form.",
+            explanationBn:
+                "ভুল। বর্তমানের unreal wish-এর পরে সাধারণত past form হয়।"
+        },
+
+        {
+            label: "B",
+            textEn: "knew",
+            textBn: "জানতাম",
+            explanationEn:
+                "Correct. 'I wish + past' expresses an unreal present situation.",
+            explanationBn:
+                "সঠিক। 'I wish + past' বর্তমানের অবাস্তব ইচ্ছা প্রকাশ করে।"
+        },
+
+        {
+            label: "C",
+            textEn: "had known",
+            textBn: "জেনেছিলাম",
+            explanationEn:
+                "Incorrect for this present-time wish.",
+            explanationBn:
+                "ভুল। বর্তমান সময়ের wish-এর জন্য এটি উপযুক্ত নয়।"
+        },
+
+        {
+            label: "D",
+            textEn: "will know",
+            textBn: "জানব",
+            explanationEn:
+                "Incorrect. 'Will know' does not express the intended unreal present wish.",
+            explanationBn:
+                "ভুল। 'Will know' বর্তমানের unreal wish প্রকাশ করে না।"
+        }
+
+    ],
+
+    correct: "B"
+},
+
+{
+    id: 10,
+    round: 1,
+    rule: "Since",
+    difficulty: "Easy",
+
+    questionEn:
+        "It has been five years since he ____ here.",
+
+    questionBn:
+        "সে এখানে আসার পর পাঁচ বছর হয়ে গেছে।",
+
+    choices: [
+
+        {
+            label: "A",
+            textEn: "came",
+            textBn: "এসেছিল",
+            explanationEn:
+                "Correct. After 'It has been...since', a past event is commonly expressed in simple past.",
+            explanationBn:
+                "সঠিক। 'It has been...since' এর পরে অতীতের ঘটনা সাধারণত Simple Past-এ হয়।"
+        },
+
+        {
+            label: "B",
+            textEn: "comes",
+            textBn: "আসে",
+            explanationEn:
+                "Incorrect. The reference is to a past event.",
+            explanationBn:
+                "ভুল। এখানে অতীতের ঘটনা বোঝানো হয়েছে।"
+        },
+
+        {
+            label: "C",
+            textEn: "will come",
+            textBn: "আসবে",
+            explanationEn:
+                "Incorrect. Future tense is not appropriate.",
+            explanationBn:
+                "ভুল। Future tense এখানে উপযুক্ত নয়।"
+        },
+
+        {
+            label: "D",
+            textEn: "has come",
+            textBn: "এসেছে",
+            explanationEn:
+                "Incorrect. The expected pattern uses simple past after 'since'.",
+            explanationBn:
+                "ভুল। 'since' এর পরে এখানে Simple Past প্রয়োজন।"
+        }
+
+    ],
+
+    correct: "A"
+},
+
+{
+    id: 11,
+    round: 1,
+    rule: "Until",
+    difficulty: "Easy",
+
+    questionEn:
+        "Wait here until I ____ back.",
+
+    questionBn:
+        "আমি ফিরে না আসা পর্যন্ত এখানে অপেক্ষা করো।",
+
+    choices: [
+
+        {
+            label: "A",
+            textEn: "come",
+            textBn: "আসি",
+            explanationEn:
+                "Correct. After 'until' referring to the future, present simple is commonly used.",
+            explanationBn:
+                "সঠিক। ভবিষ্যৎ সময় বোঝাতে 'until' এর পরে Present Simple ব্যবহৃত হয়।"
+        },
+
+        {
+            label: "B",
+            textEn: "will come",
+            textBn: "আসব",
+            explanationEn:
+                "Incorrect. Future 'will' is generally avoided in this time clause.",
+            explanationBn:
+                "ভুল। এই time clause-এ সাধারণত 'will' ব্যবহার করা হয় না।"
+        },
+
+        {
+            label: "C",
+            textEn: "came",
+            textBn: "এসেছিলাম",
+            explanationEn:
+                "Incorrect. The sentence refers to a future event.",
+            explanationBn:
+                "ভুল। বাক্যটি ভবিষ্যৎ ঘটনা বোঝাচ্ছে।"
+        },
+
+        {
+            label: "D",
+            textEn: "coming",
+            textBn: "আসছি",
+            explanationEn:
+                "Incorrect. A finite verb is needed after the subject.",
+            explanationBn:
+                "ভুল। subject-এর পরে একটি finite verb প্রয়োজন।"
+        }
+
+    ],
+
+    correct: "A"
+},
+
+{
+    id: 12,
+    round: 1,
+    rule: "Would rather",
+    difficulty: "Medium",
+
+    questionEn:
+        "I would rather you ____ tomorrow.",
+
+    questionBn:
+        "আমি চাই তুমি বরং আগামীকাল আসো।",
+
+    choices: [
+
+        {
+            label: "A",
+            textEn: "come",
+            textBn: "আসো",
+            explanationEn:
+                "Incorrect for the traditional 'would rather + subject' pattern.",
+            explanationBn:
+                "ভুল। প্রচলিত 'would rather + subject' pattern-এ past form ব্যবহৃত হয়।"
+        },
+
+        {
+            label: "B",
+            textEn: "came",
+            textBn: "আসতে",
+            explanationEn:
+                "Correct. 'Would rather + subject + past verb' expresses a preference.",
+            explanationBn:
+                "সঠিক। 'Would rather + subject + past verb' পছন্দ বা ইচ্ছা প্রকাশ করে।"
+        },
+
+        {
+            label: "C",
+            textEn: "will come",
+            textBn: "আসবে",
+            explanationEn:
+                "Incorrect. 'Would rather' does not normally take this form here.",
+            explanationBn:
+                "ভুল। এখানে 'would rather' এর পরে এই form ব্যবহৃত হয় না।"
+        },
+
+        {
+            label: "D",
+            textEn: "has come",
+            textBn: "এসেছে",
+            explanationEn:
+                "Incorrect. Present perfect does not fit the structure.",
+            explanationBn:
+                "ভুল। Present Perfect এই structure-এর সঙ্গে যায় না।"
+        }
+
+    ],
+
+    correct: "B"
+},
+
+{
+    id: 13,
+    round: 1,
+    rule: "Without",
+    difficulty: "Easy",
+
+    questionEn:
+        "Without ____ hard, you cannot succeed.",
+
+    questionBn:
+        "কঠোর পরিশ্রম না করে তুমি সফল হতে পারবে না।",
+
+    choices: [
+
+        {
+            label: "A",
+            textEn: "work",
+            textBn: "পরিশ্রম করা",
+            explanationEn:
+                "Incorrect. After a preposition such as 'without', a gerund is normally used.",
+            explanationBn:
+                "ভুল। 'without' একটি preposition হওয়ায় এর পরে সাধারণত gerund ব্যবহৃত হয়।"
+        },
+
+        {
+            label: "B",
+            textEn: "working",
+            textBn: "পরিশ্রম করা",
+            explanationEn:
+                "Correct. 'Without + verb-ing' is the standard structure.",
+            explanationBn:
+                "সঠিক। 'Without + verb-ing' হলো প্রচলিত গঠন।"
+        },
+
+        {
+            label: "C",
+            textEn: "worked",
+            textBn: "পরিশ্রম করেছিল",
+            explanationEn:
+                "Incorrect. A past form cannot directly follow 'without' in this structure.",
+            explanationBn:
+                "ভুল। এই structure-এ 'without' এর পরে সরাসরি past form বসে না।"
+        },
+
+        {
+            label: "D",
+            textEn: "to work",
+            textBn: "পরিশ্রম করতে",
+            explanationEn:
+                "Incorrect. 'Without' is normally followed by a gerund.",
+            explanationBn:
+                "ভুল। 'Without' এর পরে সাধারণত gerund ব্যবহৃত হয়।"
+        }
+
+    ],
+
+    correct: "B"
+},
+
+{
+    id: 14,
+    round: 1,
+    rule: "By",
+    difficulty: "Easy",
+
+    questionEn:
+        "You can improve your English by ____ regularly.",
+
+    questionBn:
+        "নিয়মিত অনুশীলন করে তুমি তোমার ইংরেজি উন্নত করতে পারো।",
+
+    choices: [
+
+        {
+            label: "A",
+            textEn: "practice",
+            textBn: "অনুশীলন করা",
+            explanationEn:
+                "Incorrect. 'By' is a preposition and is followed by a gerund here.",
+            explanationBn:
+                "ভুল। 'By' একটি preposition এবং এখানে এর পরে gerund প্রয়োজন।"
+        },
+
+        {
+            label: "B",
+            textEn: "practising",
+            textBn: "অনুশীলন করে",
+            explanationEn:
+                "Correct. 'By + verb-ing' expresses the method of doing something.",
+            explanationBn:
+                "সঠিক। 'By + verb-ing' কোনো কাজ করার পদ্ধতি বোঝায়।"
+        },
+
+        {
+            label: "C",
+            textEn: "practised",
+            textBn: "অনুশীলন করেছিল",
+            explanationEn:
+                "Incorrect. Past form does not fit after 'by' here.",
+            explanationBn:
+                "ভুল। এখানে 'by' এর পরে past form বসবে না।"
+        },
+
+        {
+            label: "D",
+            textEn: "to practise",
+            textBn: "অনুশীলন করতে",
+            explanationEn:
+                "Incorrect. The expected structure is 'by + gerund'.",
+            explanationBn:
+                "ভুল। এখানে 'by + gerund' প্রয়োজন।"
+        }
+
+    ],
+
+    correct: "B"
+},
+
+{
+    id: 15,
+    round: 1,
+    rule: "As if",
+    difficulty: "Medium",
+
+    questionEn:
+        "He talks as if he ____ everything.",
+
+    questionBn:
+        "সে এমনভাবে কথা বলে যেন সে সবকিছু জানে।",
+
+    choices: [
+
+        {
+            label: "A",
+            textEn: "knows",
+            textBn: "জানে",
+            explanationEn:
+                "Correct when the situation is considered possible or factual.",
+            explanationBn:
+                "সঠিক। পরিস্থিতিটি সম্ভব বা বাস্তব হিসেবে বিবেচিত হলে এটি ব্যবহার করা যায়।"
+        },
+
+        {
+            label: "B",
+            textEn: "knew",
+            textBn: "জানত",
+            explanationEn:
+                "This can be used when the knowledge is unreal or contrary to fact.",
+            explanationBn:
+                "অবাস্তব বা বাস্তবতার বিপরীত পরিস্থিতিতে 'knew' ব্যবহার করা যায়।"
+        },
+
+        {
+            label: "C",
+            textEn: "will know",
+            textBn: "জানবে",
+            explanationEn:
+                "Incorrect for the intended present comparison.",
+            explanationBn:
+                "ভুল। এখানে বর্তমানের তুলনামূলক অর্থ বোঝানো হয়েছে।"
+        },
+
+        {
+            label: "D",
+            textEn: "had known",
+            textBn: "জেনেছিল",
+            explanationEn:
+                "Incorrect because the sentence is not referring to a prior past situation.",
+            explanationBn:
+                "ভুল। বাক্যটি অতীতের পূর্ববর্তী পরিস্থিতি বোঝাচ্ছে না।"
+        }
+
+    ],
+
+    correct: "A"
 }
 
 ];
 
 
-/* =========================================================
-   CREATE ADDITIONAL VALID QUESTION VARIATIONS
-   ========================================================= */
+/* ==========================================================
+   STATE
+   ========================================================== */
 
-const generated = [];
+let currentRound = 1;
+let currentQuestionIndex = 0;
+let roundScore = 0;
+let selected = false;
 
-const patterns = [
+let roundQuestions = [];
+let roundAnswers = [];
 
-{
-q:"If you work hard, you ______ successful.",
-o:["will become","would become","would have become","had become"],
-a:0,e:"This is a first conditional: If + present, will + base verb.",
-b:"এটি first conditional: If + present, will + base verb।",l:1
-},
+let soundOn = true;
 
-{
-q:"If you worked hard, you ______ successful.",
-o:["will become","would become","would have become","had become"],
-a:1,e:"This is a second conditional.",
-b:"এটি second conditional; তাই 'would become'।",l:2
-},
-
-{
-q:"If you had worked hard, you ______ successful.",
-o:["will become","would become","would have become","had become"],
-a:2,e:"This is a third conditional.",
-b:"এটি third conditional; তাই 'would have become'।",l:2
-},
-
-{
-q:"It is high time we ______ action.",
-o:["take","took","will take","have taken"],
-a:1,e:"It is high time + subject takes the past form.",
-b:"'It is high time + subject'-এর পরে past form হয়।",l:1
-},
-
-{
-q:"I wish I ______ more careful.",
-o:["am","were","will be","have been"],
-a:1,e:"Present unreal wish takes 'were'.",
-b:"বর্তমানের অবাস্তব ইচ্ছায় 'were' ব্যবহৃত হয়।",l:1
-},
-
-{
-q:"He talks as if he ______ the owner.",
-o:["is","were","has","will be"],
-a:1,e:"Unreal comparison takes 'were'.",
-b:"অবাস্তব comparison-এ 'were' ব্যবহৃত হয়।",l:2
-},
-
-{
-q:"Walk quickly lest you ______ late.",
-o:["should be","will be","would be","can be"],
-a:0,e:"Lest is followed by should + base verb.",
-b:"Lest-এর পরে should + base verb হয়।",l:2
-},
-
-{
-q:"No sooner had he arrived ______ it began to rain.",
-o:["when","than","then","that"],
-a:1,e:"No sooner...than is the fixed construction.",
-b:"No sooner-এর সঙ্গে than ব্যবহৃত হয়।",l:2
-},
-
-{
-q:"Hardly had he arrived ______ it began to rain.",
-o:["than","when","then","that"],
-a:1,e:"Hardly...when is the fixed construction.",
-b:"Hardly-এর সঙ্গে when ব্যবহৃত হয়।",l:2
-},
-
-{
-q:"The more you practise, ______ you become.",
-o:["the better","better","the best","best"],
-a:0,e:"The more..., the better... is the correct pattern.",
-b:"সঠিক pattern হলো The more..., the better...।",l:2
-}
-
-];
-
-/*
-   Generate contextual versions.
-   This gives the application a large practice bank while
-   preserving validated grammar structures.
-*/
-
-const subjects = [
-    ["study regularly","will improve","would improve","would have improved"],
-    ["read books","will learn","would learn","would have learned"],
-    ["practise daily","will progress","would progress","would have progressed"],
-    ["work honestly","will succeed","would succeed","would have succeeded"],
-    ["follow the rules","will remain safe","would remain safe","would have remained safe"]
-];
-
-subjects.forEach((s,index)=>{
-
-    generated.push({
-        q:`If you ${s[0]}, you ______.`,
-        o:[s[1],s[2],s[3],"had succeeded"],
-        a:0,
-        e:"This is a first conditional: If + present simple, will + base verb.",
-        b:"এটি first conditional। If-clause-এ present simple এবং result clause-এ will + base verb ব্যবহৃত হয়।",
-        l:1
-    });
-
-    generated.push({
-        q:`If you ${s[0]}, you ______.`,
-        o:["will succeed",s[2],s[3],"had succeeded"],
-        a:1,
-        e:"This is a second conditional: If + past simple, would + base verb.",
-        b:"এটি second conditional। If-clause-এ past form এবং result clause-এ would + base verb ব্যবহৃত হয়।",
-        l:2
-    });
-
-    generated.push({
-        q:`If you had ${s[0]}, you ______.`,
-        o:["will succeed","would succeed",s[3],"had succeeded"],
-        a:2,
-        e:"This is a third conditional: If + past perfect, would have + past participle.",
-        b:"এটি third conditional। If-clause-এ past perfect এবং result clause-এ would have + past participle ব্যবহৃত হয়।",
-        l:2
-    });
-
-});
-
-
-/*
-   Add generated pattern questions repeatedly with different
-   contexts so the bank exceeds 200 questions.
-*/
-
-const contexts = [
-    ["It is high time we ______ our education system.","changed","change","will change","have changed"],
-    ["I wish I ______ more time.","had","have","will have","can have"],
-    ["If I were rich, I ______ the poor.","would help","will help","help","had helped"],
-    ["Unless you work hard, you ______ succeed.","will not","would not","would have","had"],
-    ["He behaves as if he ______ everything.","knew","knows","know","has known"],
-    ["Walk carefully lest you ______.","should fall","will fall","would fall","can fall"],
-    ["No sooner had he arrived ______ the bell rang.","than","when","then","that"],
-    ["Hardly had she arrived ______ the meeting began.","when","than","then","that"],
-    ["Scarcely had they entered ______ the lights went out.","when","than","then","that"],
-    ["The more you practise, ______ you become.","the better","better","the best","best"]
-];
-
-for(let cycle=0;cycle<15;cycle++){
-
-    contexts.forEach((c,i)=>{
-
-        let correctIndex=0;
-
-        generated.push({
-            q:c[0],
-            o:[
-                c[1],
-                c[2],
-                c[3],
-                c[4]
-            ],
-            a:correctIndex,
-            e:
-                i===0
-                ?"After 'It is high time', use the past form."
-                :
-                i===1
-                ?"A present unreal wish uses the past form."
-                :
-                i===2
-                ?"Second conditional: If + past, would + base verb."
-                :
-                i===3
-                ?"Unless means 'if not'."
-                :
-                i===4
-                ?"An unreal comparison uses the past form."
-                :
-                i===5
-                ?"Lest is followed by should + base verb."
-                :
-                i===6
-                ?"No sooner is followed by than."
-                :
-                i===7
-                ?"Hardly is followed by when."
-                :
-                i===8
-                ?"Scarcely is followed by when."
-                :
-                "The correct comparative-correlative structure is 'the more..., the better...'.",
-
-            b:
-                i===0
-                ?"It is high time-এর পরে past form ব্যবহৃত হয়।"
-                :
-                i===1
-                ?"বর্তমানের অবাস্তব ইচ্ছায় past form ব্যবহৃত হয়।"
-                :
-                i===2
-                ?"Second conditional-এ would + base verb ব্যবহৃত হয়।"
-                :
-                i===3
-                ?"Unless অর্থ if not।"
-                :
-                i===4
-                ?"অবাস্তব comparison-এ past form ব্যবহৃত হয়।"
-                :
-                i===5
-                ?"Lest-এর পরে should + base verb হয়।"
-                :
-                i===6
-                ?"No sooner-এর পরে than হয়।"
-                :
-                i===7
-                ?"Hardly-এর পরে when হয়।"
-                :
-                i===8
-                ?"Scarcely-এর পরে when হয়।"
-                :
-                "The more-এর সঙ্গে the better ব্যবহৃত হয়।",
-
-            l:i>=5 ? 2 : 1
-        });
-
-    });
-}
-
-const questions = [...questionBank,...generated];
-
-
-/* =========================================================
-   GAME STATE
-   ========================================================= */
-
-const STORAGE_KEY="hscCompletingSentenceMastery_v1";
-
-let saved=JSON.parse(
-    localStorage.getItem(STORAGE_KEY) || "{}"
-);
-
-let state={
-    level:saved.level || 1,
-    bestScore:saved.bestScore || 0,
-    totalCorrect:saved.totalCorrect || 0,
-    perfectRounds:saved.perfectRounds || 0,
-    totalRounds:saved.totalRounds || 0
+let progress = {
+    version: 1,
+    completedRounds: [],
+    totalCorrect: 0,
+    currentRound: 1
 };
 
-let roundQuestions=[];
-let currentIndex=0;
-let score=0;
-let answered=false;
+
+/* ==========================================================
+   LOAD PROGRESS
+   ========================================================== */
+
+function loadProgress() {
+
+    try {
+
+        const saved =
+            localStorage.getItem(STORAGE_KEY);
+
+        if (saved) {
+
+            const parsed =
+                JSON.parse(saved);
+
+            if (parsed && typeof parsed === "object") {
+
+                progress = {
+                    version: 1,
+                    completedRounds:
+                        Array.isArray(parsed.completedRounds)
+                            ? parsed.completedRounds
+                            : [],
+                    totalCorrect:
+                        Number(parsed.totalCorrect) || 0,
+                    currentRound:
+                        Number(parsed.currentRound) || 1
+                };
+
+                currentRound =
+                    Math.min(
+                        Math.max(progress.currentRound, 1),
+                        TOTAL_ROUNDS
+                    );
+            }
+
+        }
+
+        const settings =
+            JSON.parse(
+                localStorage.getItem(SETTINGS_KEY) || "{}"
+            );
+
+        if (
+            typeof settings.soundOn === "boolean"
+        ) {
+            soundOn = settings.soundOn;
+        }
+
+    } catch (error) {
+
+        console.warn(
+            "Progress could not be loaded.",
+            error
+        );
+
+    }
+
+}
 
 
-/* =========================================================
-   SAVE
-   ========================================================= */
+/* ==========================================================
+   SAVE PROGRESS
+   ========================================================== */
 
-function saveProgress(){
+function saveProgress() {
+
+    progress.currentRound = currentRound;
 
     localStorage.setItem(
         STORAGE_KEY,
-        JSON.stringify(state)
+        JSON.stringify(progress)
     );
 
 }
 
 
-/* =========================================================
-   UPDATE DASHBOARD
-   ========================================================= */
+/* ==========================================================
+   SETTINGS
+   ========================================================== */
 
-function updateDashboard(){
+function toggleSound() {
 
-    document.getElementById("level").textContent=state.level;
+    soundOn = !soundOn;
 
-    document.getElementById("roundScore").textContent=score;
+    localStorage.setItem(
+        SETTINGS_KEY,
+        JSON.stringify({
+            soundOn
+        })
+    );
 
-    document.getElementById("bestScore").textContent=state.bestScore;
+    updateSoundButton();
 
-    document.getElementById("totalCorrect").textContent=
-        state.totalCorrect;
+}
 
-    document.getElementById("perfectRounds").textContent=
-        state.perfectRounds;
+function updateSoundButton() {
 
-    const progress=
-        Math.round(
-            (currentIndex/15)*100
-        );
-
-    document.getElementById("progressFill")
-        .style.width=progress+"%";
-
-    document.getElementById("progressText")
-        .textContent=`${currentIndex} / 15`;
+    document.getElementById(
+        "soundButton"
+    ).textContent =
+        soundOn
+            ? "🔊 Sound"
+            : "🔇 Muted";
 
 }
 
 
-/* =========================================================
-   SHUFFLE
-   ========================================================= */
+/* ==========================================================
+   SIMPLE WEB AUDIO
+   No external audio files required.
+   ========================================================== */
 
-function shuffle(array){
+let audioContext = null;
 
-    const copy=[...array];
+function beep(
+    frequency = 600,
+    duration = 100,
+    type = "sine"
+) {
 
-    for(let i=copy.length-1;i>0;i--){
+    if (!soundOn) return;
 
-        const j=Math.floor(
-            Math.random()*(i+1)
+    try {
+
+        if (!audioContext) {
+
+            audioContext =
+                new (
+                    window.AudioContext ||
+                    window.webkitAudioContext
+                )();
+
+        }
+
+        const oscillator =
+            audioContext.createOscillator();
+
+        const gain =
+            audioContext.createGain();
+
+        oscillator.type = type;
+
+        oscillator.frequency.value =
+            frequency;
+
+        gain.gain.setValueAtTime(
+            0.05,
+            audioContext.currentTime
         );
 
-        [copy[i],copy[j]]=[
+        gain.gain.exponentialRampToValueAtTime(
+            0.001,
+            audioContext.currentTime +
+            duration / 1000
+        );
+
+        oscillator.connect(gain);
+        gain.connect(audioContext.destination);
+
+        oscillator.start();
+
+        oscillator.stop(
+            audioContext.currentTime +
+            duration / 1000
+        );
+
+    } catch (error) {}
+
+}
+
+
+/* ==========================================================
+   SHUFFLE
+   ========================================================== */
+
+function shuffle(array) {
+
+    const copy = [...array];
+
+    for (
+        let i = copy.length - 1;
+        i > 0;
+        i--
+    ) {
+
+        const j =
+            Math.floor(
+                Math.random() * (i + 1)
+            );
+
+        [
+            copy[i],
+            copy[j]
+        ] =
+        [
             copy[j],
             copy[i]
         ];
@@ -2336,507 +2317,1343 @@ function shuffle(array){
     }
 
     return copy;
+
 }
 
 
-/* =========================================================
-   START ROUND
-   ========================================================= */
+/* ==========================================================
+   GET ROUND QUESTIONS
+   ========================================================== */
 
-function startNewRound(){
+function getRoundQuestions(round) {
 
-    /*
-       Unlock questions up to current level.
-       Once level increases, more difficult questions become
-       available.
-    */
-
-    let available=questions.filter(
-        q=>q.l<=Math.min(state.level,3)
+    return shuffle(
+        QUESTIONS.filter(
+            q => q.round === round
+        )
+    ).slice(
+        0,
+        QUESTIONS_PER_ROUND
     );
 
-    if(available.length<15){
-        available=questions;
-    }
-
-    roundQuestions=
-        shuffle(available)
-        .slice(0,15);
-
-    currentIndex=0;
-    score=0;
-    answered=false;
-
-    document.getElementById("quizArea")
-        .style.display="block";
-
-    document.getElementById("result")
-        .classList.remove("show");
-
-    updateDashboard();
-
-    renderQuestion();
-
 }
 
 
-/* =========================================================
-   RENDER QUESTION
-   ========================================================= */
+/* ==========================================================
+   START ROUND
+   ========================================================== */
 
-function renderQuestion(){
+function startRound(round) {
 
-    const q=roundQuestions[currentIndex];
+    if (round > TOTAL_ROUNDS) {
 
-    answered=false;
-
-    document.getElementById("questionNumber")
-        .textContent=
-        `QUESTION ${currentIndex+1} OF 15`;
-
-    document.getElementById("questionText")
-        .textContent=q.q;
-
-    const options=
-        document.getElementById("options");
-
-    options.innerHTML="";
-
-    q.o.forEach((option,index)=>{
-
-        const div=document.createElement("div");
-
-        div.className="option";
-
-        div.innerHTML=`
-            <input
-                type="radio"
-                name="answer"
-                id="option${index}"
-                value="${index}"
-            >
-
-            <label for="option${index}">
-                <strong>${String.fromCharCode(65+index)}.</strong>
-                ${option}
-            </label>
-        `;
-
-        options.appendChild(div);
-
-    });
-
-    const feedback=
-        document.getElementById("feedback");
-
-    feedback.className="feedback";
-    feedback.innerHTML="";
-
-    document.getElementById("submitBtn")
-        .disabled=false;
-
-    updateDashboard();
-
-}
-
-
-/* =========================================================
-   SUBMIT ANSWER
-   ========================================================= */
-
-function submitAnswer(){
-
-    if(answered) return;
-
-    const selected=
-        document.querySelector(
-            'input[name="answer"]:checked'
-        );
-
-    if(!selected){
-
-        alert("Please select an answer first.");
+        showFinalResult();
 
         return;
-    }
-
-    answered=true;
-
-    const selectedIndex=
-        Number(selected.value);
-
-    const q=
-        roundQuestions[currentIndex];
-
-    const feedback=
-        document.getElementById("feedback");
-
-    const optionElements=
-        document.querySelectorAll(".option");
-
-    optionElements.forEach((el,index)=>{
-
-        if(index===q.a){
-
-            el.classList.add("correct");
-
-        }
-
-        if(index===selectedIndex &&
-           selectedIndex!==q.a){
-
-            el.classList.add("wrong");
-
-        }
-
-    });
-
-    if(selectedIndex===q.a){
-
-        score++;
-
-        state.totalCorrect++;
-
-        feedback.className=
-            "feedback show correct";
-
-        feedback.innerHTML=`
-            <div class="feedback-title">
-                ✓ Correct!
-            </div>
-
-            <div>
-                <strong>Answer:</strong>
-                <span class="answer">
-                    ${q.o[q.a]}
-                </span>
-            </div>
-
-            <div>
-                <strong>Explanation:</strong>
-                ${q.e}
-            </div>
-
-            <div class="bangla">
-                🇧🇩 ${q.b}
-            </div>
-        `;
-
-        playCorrectSound();
-
-    }else{
-
-        feedback.className=
-            "feedback show wrong";
-
-        feedback.innerHTML=`
-            <div class="feedback-title">
-                ✗ Incorrect
-            </div>
-
-            <div>
-                <strong>Your answer:</strong>
-                ${q.o[selectedIndex]}
-            </div>
-
-            <div>
-                <strong>Correct answer:</strong>
-                <span class="answer">
-                    ${q.o[q.a]}
-                </span>
-            </div>
-
-            <div>
-                <strong>Explanation:</strong>
-                ${q.e}
-            </div>
-
-            <div class="bangla">
-                🇧🇩 ${q.b}
-            </div>
-        `;
-
-        playWrongSound();
 
     }
 
-    document.getElementById("submitBtn")
-        .disabled=true;
+    currentRound = round;
 
-    currentIndex++;
+    currentQuestionIndex = 0;
+
+    roundScore = 0;
+
+    selected = false;
+
+    roundAnswers = [];
+
+    roundQuestions =
+        getRoundQuestions(currentRound);
+
+    /*
+       The included database has Round 1.
+       If a round has fewer than 15 questions,
+       the page creates practice placeholders
+       so the interface remains functional.
+    */
+
+    if (
+        roundQuestions.length <
+        QUESTIONS_PER_ROUND
+    ) {
+
+        roundQuestions =
+            buildFallbackQuestions(
+                currentRound,
+                roundQuestions
+            );
+
+    }
+
+    document.getElementById(
+        "quizCard"
+    ).style.display = "block";
+
+    document.getElementById(
+        "roundResult"
+    ).classList.remove("show");
+
+    document.getElementById(
+        "finalResult"
+    ).classList.remove("show");
 
     updateDashboard();
 
-    setTimeout(()=>{
-
-        if(currentIndex<15){
-
-            renderQuestion();
-
-            window.scrollTo({
-                top:0,
-                behavior:"smooth"
-            });
-
-        }else{
-
-            finishRound();
-
-        }
-
-    },1200);
+    showQuestion();
 
 }
 
 
-/* =========================================================
-   FINISH ROUND
-   ========================================================= */
+/* ==========================================================
+   FALLBACK QUESTIONS
+   ========================================================== */
 
-function finishRound(){
+function buildFallbackQuestions(
+    round,
+    existing
+) {
 
-    state.totalRounds++;
+    const result = [...existing];
 
-    if(score>state.bestScore){
+    while (
+        result.length <
+        QUESTIONS_PER_ROUND
+    ) {
 
-        state.bestScore=score;
+        const number =
+            result.length + 1;
+
+        result.push({
+
+            id:
+                round * 100 + number,
+
+            round,
+
+            rule:
+                "Completing Sentence Practice",
+
+            difficulty:
+                number % 3 === 0
+                    ? "Hard"
+                    : number % 2 === 0
+                        ? "Medium"
+                        : "Easy",
+
+            questionEn:
+                "Choose the grammatically appropriate completion for this sentence.",
+
+            questionBn:
+                "এই বাক্যের জন্য সঠিক ব্যাকরণগত completion নির্বাচন করো।",
+
+            choices: [
+
+                {
+                    label: "A",
+                    textEn: "the appropriate form",
+                    textBn: "উপযুক্ত form",
+                    explanationEn:
+                        "This is a temporary practice item. Replace the question database with the validated question set for this round.",
+                    explanationBn:
+                        "এটি একটি temporary practice item। এই round-এর জন্য validated question database দিয়ে এটি প্রতিস্থাপন করুন।"
+                },
+
+                {
+                    label: "B",
+                    textEn: "an incorrect form",
+                    textBn: "ভুল form",
+                    explanationEn:
+                        "This option does not fit the intended grammatical structure.",
+                    explanationBn:
+                        "এই option-টি প্রয়োজনীয় grammatical structure-এর সঙ্গে যায় না।"
+                },
+
+                {
+                    label: "C",
+                    textEn: "another incorrect form",
+                    textBn: "আরেকটি ভুল form",
+                    explanationEn:
+                        "This option does not fit the intended sentence.",
+                    explanationBn:
+                        "এই option-টি বাক্যের সঙ্গে উপযুক্ত নয়।"
+                },
+
+                {
+                    label: "D",
+                    textEn: "an unsuitable form",
+                    textBn: "অনুপযুক্ত form",
+                    explanationEn:
+                        "This option does not fit the intended structure.",
+                    explanationBn:
+                        "এই option-টি প্রয়োজনীয় structure-এর সঙ্গে যায় না।"
+                }
+
+            ],
+
+            correct: "A"
+
+        });
 
     }
 
-    document.getElementById("quizArea")
-        .style.display="none";
+    return result;
 
-    const result=
-        document.getElementById("result");
+}
 
-    result.classList.add("show");
 
-    document.getElementById("resultScore")
-        .textContent=`${score} / 15`;
+/* ==========================================================
+   SHOW QUESTION
+   ========================================================== */
 
-    if(score===15){
+function showQuestion() {
 
-        state.perfectRounds++;
+    selected = false;
 
-        state.level++;
+    const q =
+        roundQuestions[
+            currentQuestionIndex
+        ];
 
-        saveProgress();
+    document.getElementById(
+        "questionNumber"
+    ).textContent =
+        `Question ${
+            currentQuestionIndex + 1
+        } of ${QUESTIONS_PER_ROUND}`;
 
-        document.getElementById("resultTitle")
-            .textContent=
-            "🎉 PERFECT ROUND! 🎉";
+    document.getElementById(
+        "questionEn"
+    ).textContent =
+        q.questionEn;
 
-        document.getElementById("resultMessage")
-            .innerHTML=
-            `
-            <strong>
-            15/15 — 100% CORRECT!
-            </strong>
-            <br><br>
-            🔓 LEVEL ${state.level} UNLOCKED!
-            <br>
-            You have mastered this round.
-            `;
+    document.getElementById(
+        "questionBn"
+    ).textContent =
+        q.questionBn;
+
+    document.getElementById(
+        "difficulty"
+    ).textContent =
+        q.difficulty;
+
+    document.getElementById(
+        "rule"
+    ).textContent =
+        "Rule: " + q.rule;
+
+    const options =
+        document.getElementById(
+            "options"
+        );
+
+    options.innerHTML = "";
+
+    const shuffledChoices =
+        shuffle(q.choices);
+
+    shuffledChoices.forEach(choice => {
+
+        const button =
+            document.createElement("button");
+
+        button.className =
+            "option";
+
+        button.type =
+            "button";
+
+        button.dataset.label =
+            choice.label;
+
+        button.innerHTML = `
+
+            <span class="option-letter">
+                ${choice.label}
+            </span>
+
+            <span class="option-en">
+                ${escapeHTML(choice.textEn)}
+            </span>
+
+            <span class="option-bn">
+                ${escapeHTML(choice.textBn)}
+            </span>
+
+        `;
+
+        button.addEventListener(
+            "click",
+            () =>
+                selectAnswer(
+                    choice.label,
+                    button
+                )
+        );
+
+        options.appendChild(button);
+
+    });
+
+    document.getElementById(
+        "feedback"
+    ).classList.remove("show");
+
+    document.getElementById(
+        "nextBtn"
+    ).classList.remove("active");
+
+    updateDashboard();
+
+}
+
+
+/* ==========================================================
+   ANSWER
+   ========================================================== */
+
+function selectAnswer(
+    label,
+    clickedButton
+) {
+
+    if (selected) return;
+
+    selected = true;
+
+    const q =
+        roundQuestions[
+            currentQuestionIndex
+        ];
+
+    const correct =
+        label === q.correct;
+
+    if (correct) {
+
+        roundScore++;
+
+        clickedButton.classList.add(
+            "correct"
+        );
+
+        beep(
+            800,
+            140,
+            "sine"
+        );
+
+    } else {
+
+        clickedButton.classList.add(
+            "wrong"
+        );
+
+        const correctButton =
+            document.querySelector(
+                `.option[data-label="${q.correct}"]`
+            );
+
+        if (correctButton) {
+
+            correctButton.classList.add(
+                "correct"
+            );
+
+        }
+
+        document.getElementById(
+            "quizCard"
+        ).classList.add("shake");
+
+        setTimeout(() => {
+
+            document.getElementById(
+                "quizCard"
+            ).classList.remove("shake");
+
+        }, 350);
+
+        beep(
+            220,
+            180,
+            "sawtooth"
+        );
+
+    }
+
+    document
+        .querySelectorAll(".option")
+        .forEach(
+            btn =>
+                btn.disabled = true
+        );
+
+    roundAnswers.push({
+
+        questionId: q.id,
+
+        selected: label,
+
+        correct: q.correct,
+
+        isCorrect: correct
+
+    });
+
+    showFeedback(
+        q,
+        label,
+        correct
+    );
+
+    updateDashboard();
+
+}
+
+
+/* ==========================================================
+   FEEDBACK
+   ========================================================== */
+
+function showFeedback(
+    q,
+    selectedLabel,
+    correct
+) {
+
+    const choice =
+        q.choices.find(
+            c =>
+                c.label ===
+                selectedLabel
+        );
+
+    const feedback =
+        document.getElementById(
+            "feedback"
+        );
+
+    const title =
+        document.getElementById(
+            "feedbackTitle"
+        );
+
+    if (correct) {
+
+        title.textContent =
+            "✓ Correct Answer";
+
+        title.className =
+            "feedback-title correct-title";
+
+    } else {
+
+        title.textContent =
+            `✗ Incorrect — Correct answer: ${q.correct}`;
+
+        title.className =
+            "feedback-title wrong-title";
+
+    }
+
+    document.getElementById(
+        "feedbackEn"
+    ).textContent =
+        choice.explanationEn;
+
+    document.getElementById(
+        "feedbackBn"
+    ).textContent =
+        choice.explanationBn;
+
+    feedback.classList.add("show");
+
+    document.getElementById(
+        "nextBtn"
+    ).classList.add("active");
+
+}
+
+
+/* ==========================================================
+   NEXT QUESTION
+   ========================================================== */
+
+function nextQuestion() {
+
+    if (!selected) return;
+
+    currentQuestionIndex++;
+
+    if (
+        currentQuestionIndex >=
+        QUESTIONS_PER_ROUND
+    ) {
+
+        endRound();
+
+        return;
+
+    }
+
+    showQuestion();
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+}
+
+
+/* ==========================================================
+   END ROUND
+   ========================================================== */
+
+function endRound() {
+
+    const previous =
+        progress.completedRounds.find(
+            r =>
+                r.round ===
+                currentRound
+        );
+
+    if (previous) {
+
+        progress.totalCorrect -=
+            previous.correct;
+
+        previous.correct =
+            roundScore;
+
+        previous.total =
+            QUESTIONS_PER_ROUND;
+
+        previous.date =
+            Date.now();
+
+    } else {
+
+        progress.completedRounds.push({
+
+            round: currentRound,
+
+            correct: roundScore,
+
+            total: QUESTIONS_PER_ROUND,
+
+            date: Date.now()
+
+        });
+
+    }
+
+    progress.totalCorrect =
+        progress.completedRounds.reduce(
+            (sum, item) =>
+                sum + item.correct,
+            0
+        );
+
+    progress.currentRound =
+        Math.min(
+            currentRound + 1,
+            TOTAL_ROUNDS
+        );
+
+    saveProgress();
+
+    document.getElementById(
+        "quizCard"
+    ).style.display = "none";
+
+    document.getElementById(
+        "roundResult"
+    ).classList.add("show");
+
+    document.getElementById(
+        "roundScore"
+    ).textContent =
+        `${roundScore} / ${QUESTIONS_PER_ROUND}`;
+
+    const level =
+        getLevel(roundScore);
+
+    document.getElementById(
+        "roundLevel"
+    ).textContent =
+        level;
+
+    document.getElementById(
+        "resultMessage"
+    ).textContent =
+        getResultMessage(
+            roundScore
+        );
+
+    if (roundScore >= 12) {
 
         celebrate();
 
-        playLevelUpSound();
+    }
 
-    }else{
+    if (
+        currentRound >=
+        TOTAL_ROUNDS
+    ) {
 
-        saveProgress();
+        document.getElementById(
+            "nextRoundBtn"
+        ).textContent =
+            "View Final Result 🏆";
 
-        document.getElementById("resultTitle")
-            .textContent=
-            "Round Complete";
+    } else {
 
-        document.getElementById("resultMessage")
-            .innerHTML=
-            `
-            You scored <strong>${score}/15</strong>.
-            <br><br>
-            Get <strong>15/15</strong> in a round
-            to unlock the next level.
+        document.getElementById(
+            "nextRoundBtn"
+        ).textContent =
+            "Next Round →";
+
+    }
+
+}
+
+
+/* ==========================================================
+   LEVEL
+   ========================================================== */
+
+function getLevel(score) {
+
+    if (score === 15)
+        return "Master";
+
+    if (score >= 12)
+        return "Advanced";
+
+    if (score >= 9)
+        return "Strong";
+
+    if (score >= 6)
+        return "Growing";
+
+    return "Keep Practising";
+
+}
+
+
+/* ==========================================================
+   RESULT MESSAGE
+   ========================================================== */
+
+function getResultMessage(score) {
+
+    if (score === 15)
+        return "Perfect round! Excellent command of the grammar patterns.";
+
+    if (score >= 12)
+        return "Excellent performance! You are showing strong command of the patterns.";
+
+    if (score >= 9)
+        return "Good work! Keep practising the patterns where you made mistakes.";
+
+    if (score >= 6)
+        return "You are improving. Review the explanations and practise again.";
+
+    return "Keep practising. Focus on the grammar rules and try the round again.";
+
+}
+
+
+/* ==========================================================
+   DASHBOARD
+   ========================================================== */
+
+function updateDashboard() {
+
+    document.getElementById(
+        "roundNumber"
+    ).textContent =
+        `Round ${currentRound} of ${TOTAL_ROUNDS}`;
+
+    document.getElementById(
+        "scoreNumber"
+    ).textContent =
+        `${roundScore} / ${QUESTIONS_PER_ROUND}`;
+
+    const progressPercent =
+        (
+            currentQuestionIndex /
+            QUESTIONS_PER_ROUND
+        ) * 100;
+
+    document.getElementById(
+        "progressBar"
+    ).style.width =
+        `${progressPercent}%`;
+
+}
+
+
+/* ==========================================================
+   REVIEW
+   ========================================================== */
+
+function showReview() {
+
+    const review =
+        document.getElementById(
+            "review"
+        );
+
+    review.innerHTML = "";
+
+    roundAnswers.forEach(
+        (answer, index) => {
+
+            const q =
+                roundQuestions.find(
+                    item =>
+                        item.id ===
+                        answer.questionId
+                );
+
+            if (!q) return;
+
+            const correctChoice =
+                q.choices.find(
+                    c =>
+                        c.label ===
+                        q.correct
+                );
+
+            const item =
+                document.createElement(
+                    "div"
+                );
+
+            item.className =
+                "review-item";
+
+            item.innerHTML = `
+
+                <div class="review-q">
+
+                    ${index + 1}.
+                    ${escapeHTML(
+                        q.questionEn
+                    )}
+
+                </div>
+
+                <div class="review-answer ${
+                    answer.isCorrect
+                        ? "good"
+                        : "bad"
+                }">
+
+                    Your answer:
+                    <strong>
+                        ${answer.selected}
+                    </strong>
+
+                    ${
+                        answer.isCorrect
+                            ? "✓ Correct"
+                            : `✗ Correct answer: ${q.correct}`
+                    }
+
+                </div>
+
+                <div class="review-answer">
+
+                    Correct option:
+                    <strong>
+                        ${escapeHTML(
+                            correctChoice.textEn
+                        )}
+                    </strong>
+
+                    <br>
+
+                    ${escapeHTML(
+                        correctChoice.explanationEn
+                    )}
+
+                    <br>
+
+                    ${escapeHTML(
+                        correctChoice.explanationBn
+                    )}
+
+                </div>
+
             `;
 
-    }
+            review.appendChild(item);
 
-    updateDashboard();
-
-}
-
-
-/* =========================================================
-   RESET
-   ========================================================= */
-
-function resetProgress(){
-
-    const yes=
-        confirm(
-            "Reset ALL level and quiz progress?"
-        );
-
-    if(!yes) return;
-
-    localStorage.removeItem(STORAGE_KEY);
-
-    state={
-        level:1,
-        bestScore:0,
-        totalCorrect:0,
-        perfectRounds:0,
-        totalRounds:0
-    };
-
-    startNewRound();
-
-}
-
-
-/* =========================================================
-   CONFETTI
-   ========================================================= */
-
-function celebrate(){
-
-    for(let i=0;i<120;i++){
-
-        const piece=
-            document.createElement("div");
-
-        piece.className="confetti";
-
-        piece.style.left=
-            Math.random()*100+"vw";
-
-        piece.style.animationDelay=
-            Math.random()*1.5+"s";
-
-        piece.style.background=
-            [
-                "#7c3aed",
-                "#22c55e",
-                "#facc15",
-                "#ef4444",
-                "#38bdf8",
-                "#f97316"
-            ][
-                Math.floor(Math.random()*6)
-            ];
-
-        piece.style.transform=
-            `rotate(${Math.random()*360}deg)`;
-
-        document.body.appendChild(piece);
-
-        setTimeout(
-            ()=>piece.remove(),
-            4500
-        );
-
-    }
-
-}
-
-
-/* =========================================================
-   SOUND EFFECTS
-   ========================================================= */
-
-function audioContext(){
-
-    return new (
-        window.AudioContext ||
-        window.webkitAudioContext
-    )();
-
-}
-
-function tone(
-    frequency,
-    duration,
-    type="sine"
-){
-
-    try{
-
-        const ctx=audioContext();
-
-        const oscillator=
-            ctx.createOscillator();
-
-        const gain=
-            ctx.createGain();
-
-        oscillator.type=type;
-
-        oscillator.frequency.value=
-            frequency;
-
-        oscillator.connect(gain);
-
-        gain.connect(ctx.destination);
-
-        gain.gain.setValueAtTime(
-            .12,
-            ctx.currentTime
-        );
-
-        gain.gain.exponentialRampToValueAtTime(
-            .001,
-            ctx.currentTime+duration
-        );
-
-        oscillator.start();
-
-        oscillator.stop(
-            ctx.currentTime+duration
-        );
-
-    }catch(e){}
-
-}
-
-function playCorrectSound(){
-
-    tone(650,.12);
-
-    setTimeout(
-        ()=>tone(850,.15),
-        100
+        }
     );
 
 }
 
-function playWrongSound(){
 
-    tone(180,.25,"square");
+/* ==========================================================
+   NEXT ROUND
+   ========================================================== */
+
+function startNextRound() {
+
+    if (
+        currentRound >=
+        TOTAL_ROUNDS
+    ) {
+
+        showFinalResult();
+
+        return;
+
+    }
+
+    startRound(
+        currentRound + 1
+    );
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
 
 }
 
-function playLevelUpSound(){
 
-    tone(500,.15);
+/* ==========================================================
+   FINAL RESULT
+   ========================================================== */
+
+function showFinalResult() {
+
+    document.getElementById(
+        "quizCard"
+    ).style.display = "none";
+
+    document.getElementById(
+        "roundResult"
+    ).classList.remove("show");
+
+    document.getElementById(
+        "dashboard"
+    ).style.display = "none";
+
+    document.getElementById(
+        "finalResult"
+    ).classList.add("show");
+
+    const correct =
+        progress.totalCorrect;
+
+    const wrong =
+        TOTAL_QUESTIONS -
+        correct;
+
+    document.getElementById(
+        "finalScore"
+    ).textContent =
+        `${correct} / ${TOTAL_QUESTIONS}`;
+
+    document.getElementById(
+        "finalCorrect"
+    ).textContent =
+        correct;
+
+    document.getElementById(
+        "finalWrong"
+    ).textContent =
+        wrong;
+
+    document.getElementById(
+        "finalLevel"
+    ).textContent =
+        getFinalLevel(correct);
+
+    celebrate();
+
+}
+
+
+/* ==========================================================
+   FINAL LEVEL
+   ========================================================== */
+
+function getFinalLevel(score) {
+
+    const percentage =
+        (score / TOTAL_QUESTIONS) * 100;
+
+    if (percentage >= 90)
+        return "Master";
+
+    if (percentage >= 80)
+        return "Advanced";
+
+    if (percentage >= 60)
+        return "Strong";
+
+    if (percentage >= 40)
+        return "Growing";
+
+    return "Keep Practising";
+
+}
+
+
+/* ==========================================================
+   CELEBRATION
+   ========================================================== */
+
+function celebrate() {
+
+    beep(
+        900,
+        120,
+        "sine"
+    );
 
     setTimeout(
-        ()=>tone(700,.15),
+        () =>
+            beep(
+                1200,
+                180,
+                "sine"
+            ),
         130
     );
 
-    setTimeout(
-        ()=>tone(900,.25),
-        260
-    );
+    createConfetti();
 
 }
 
 
-/* =========================================================
-   START
-   ========================================================= */
+/* ==========================================================
+   CONFETTI
+   ========================================================== */
 
-startNewRound();
+function createConfetti() {
+
+    const canvas =
+        document.createElement(
+            "canvas"
+        );
+
+    canvas.style.position =
+        "fixed";
+
+    canvas.style.left = "0";
+    canvas.style.top = "0";
+
+    canvas.style.width = "100%";
+    canvas.style.height = "100%";
+
+    canvas.style.pointerEvents =
+        "none";
+
+    canvas.style.zIndex =
+        "9999";
+
+    document.body.appendChild(
+        canvas
+    );
+
+    const ctx =
+        canvas.getContext("2d");
+
+    canvas.width =
+        window.innerWidth;
+
+    canvas.height =
+        window.innerHeight;
+
+    const pieces = [];
+
+    for (
+        let i = 0;
+        i < 100;
+        i++
+    ) {
+
+        pieces.push({
+
+            x:
+                Math.random() *
+                canvas.width,
+
+            y:
+                -20 -
+                Math.random() *
+                200,
+
+            size:
+                5 +
+                Math.random() * 8,
+
+            speed:
+                2 +
+                Math.random() * 4,
+
+            drift:
+                (Math.random() - .5) * 2,
+
+            rotation:
+                Math.random() * 360
+
+        });
+
+    }
+
+    let frame = 0;
+
+    function animate() {
+
+        ctx.clearRect(
+            0,
+            0,
+            canvas.width,
+            canvas.height
+        );
+
+        pieces.forEach(
+            piece => {
+
+                piece.y +=
+                    piece.speed;
+
+                piece.x +=
+                    piece.drift;
+
+                piece.rotation += 4;
+
+                ctx.save();
+
+                ctx.translate(
+                    piece.x,
+                    piece.y
+                );
+
+                ctx.rotate(
+                    piece.rotation *
+                    Math.PI /
+                    180
+                );
+
+                ctx.fillStyle =
+                    [
+                        "#2563eb",
+                        "#7c3aed",
+                        "#16a34a",
+                        "#f59e0b",
+                        "#dc2626"
+                    ][
+                        Math.floor(
+                            Math.random() * 5
+                        )
+                    ];
+
+                ctx.fillRect(
+                    -piece.size / 2,
+                    -piece.size / 2,
+                    piece.size,
+                    piece.size
+                );
+
+                ctx.restore();
+
+            }
+        );
+
+        frame++;
+
+        if (frame < 150) {
+
+            requestAnimationFrame(
+                animate
+            );
+
+        } else {
+
+            canvas.remove();
+
+        }
+
+    }
+
+    animate();
+
+}
+
+
+/* ==========================================================
+   EXPORT PROGRESS
+   ========================================================== */
+
+function exportProgress() {
+
+    const data = {
+
+        exportedAt:
+            new Date().toISOString(),
+
+        quiz:
+            "HSC English 2nd Paper Completing Sentence",
+
+        progress
+
+    };
+
+    const blob =
+        new Blob(
+            [
+                JSON.stringify(
+                    data,
+                    null,
+                    2
+                )
+            ],
+            {
+                type:
+                    "application/json"
+            }
+        );
+
+    const url =
+        URL.createObjectURL(
+            blob
+        );
+
+    const link =
+        document.createElement(
+            "a"
+        );
+
+    link.href = url;
+
+    link.download =
+        "hsc-completing-sentence-progress.json";
+
+    document.body.appendChild(
+        link
+    );
+
+    link.click();
+
+    link.remove();
+
+    URL.revokeObjectURL(url);
+
+}
+
+
+/* ==========================================================
+   IMPORT PROGRESS
+   ========================================================== */
+
+function importProgress(event) {
+
+    const file =
+        event.target.files[0];
+
+    if (!file) return;
+
+    const reader =
+        new FileReader();
+
+    reader.onload =
+        function () {
+
+            try {
+
+                const data =
+                    JSON.parse(
+                        reader.result
+                    );
+
+                const imported =
+                    data.progress ||
+                    data;
+
+                if (
+                    !imported ||
+                    typeof imported !==
+                    "object"
+                ) {
+
+                    throw new Error(
+                        "Invalid progress file."
+                    );
+
+                }
+
+                progress = {
+
+                    version: 1,
+
+                    completedRounds:
+                        Array.isArray(
+                            imported.completedRounds
+                        )
+                            ? imported.completedRounds
+                            : [],
+
+                    totalCorrect:
+                        Number(
+                            imported.totalCorrect
+                        ) || 0,
+
+                    currentRound:
+                        Number(
+                            imported.currentRound
+                        ) || 1
+
+                };
+
+                progress.currentRound =
+                    Math.min(
+                        Math.max(
+                            progress.currentRound,
+                            1
+                        ),
+                        TOTAL_ROUNDS
+                    );
+
+                currentRound =
+                    progress.currentRound;
+
+                saveProgress();
+
+                alert(
+                    "Progress imported successfully!"
+                );
+
+                startRound(
+                    currentRound
+                );
+
+            } catch (error) {
+
+                alert(
+                    "Invalid progress file."
+                );
+
+            }
+
+        };
+
+    reader.readAsText(file);
+
+}
+
+
+/* ==========================================================
+   RESET / RESTART
+   ========================================================== */
+
+function restartQuiz() {
+
+    const confirmed =
+        confirm(
+            "Restart the entire quiz? Your saved progress will be cleared."
+        );
+
+    if (!confirmed) return;
+
+    localStorage.removeItem(
+        STORAGE_KEY
+    );
+
+    progress = {
+
+        version: 1,
+        completedRounds: [],
+        totalCorrect: 0,
+        currentRound: 1
+
+    };
+
+    currentRound = 1;
+
+    document.getElementById(
+        "dashboard"
+    ).style.display = "block";
+
+    document.getElementById(
+        "finalResult"
+    ).classList.remove("show");
+
+    startRound(1);
+
+}
+
+
+/* ==========================================================
+   HOME
+   ========================================================== */
+
+function goHome() {
+
+    window.location.href =
+        "index.html";
+
+}
+
+
+/* ==========================================================
+   SECURITY / HTML ESCAPE
+   ========================================================== */
+
+function escapeHTML(value) {
+
+    return String(value)
+
+        .replace(
+            /&/g,
+            "&amp;"
+        )
+
+        .replace(
+            /</g,
+            "&lt;"
+        )
+
+        .replace(
+            />/g,
+            "&gt;"
+        )
+
+        .replace(
+            /"/g,
+            "&quot;"
+        )
+
+        .replace(
+            /'/g,
+            "&#039;"
+        );
+
+}
+
+
+/* ==========================================================
+   INITIALIZE
+   ========================================================== */
+
+loadProgress();
+
+updateSoundButton();
+
+startRound(
+    currentRound
+);
 
 </script>
 
