@@ -1,17 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>HSC 2027 English 2nd Paper | Model Test</title>
 
 <style>
+
+/* =========================
+   RESET
+========================= */
+
 *{
     box-sizing:border-box;
     margin:0;
     padding:0;
 }
+
+
+/* =========================
+   BODY
+========================= */
 
 body{
     font-family:Arial, Helvetica, sans-serif;
@@ -20,11 +31,21 @@ body{
     line-height:1.6;
 }
 
+
+/* =========================
+   CONTAINER
+========================= */
+
 .container{
     width:95%;
     max-width:1000px;
     margin:20px auto 50px;
 }
+
+
+/* =========================
+   HEADER
+========================= */
 
 .header{
     background:#111827;
@@ -48,7 +69,13 @@ body{
 .header p{
     font-size:15px;
     opacity:.9;
+    margin-top:3px;
 }
+
+
+/* =========================
+   STUDENT INFO
+========================= */
 
 .info-box{
     background:white;
@@ -56,6 +83,11 @@ body{
     border-radius:14px;
     margin-bottom:20px;
     box-shadow:0 3px 12px rgba(0,0,0,.07);
+}
+
+.info-box label{
+    display:block;
+    margin-bottom:5px;
 }
 
 .info-box input{
@@ -66,7 +98,17 @@ body{
     border:1px solid #d1d5db;
     border-radius:8px;
     font-size:15px;
+    outline:none;
 }
+
+.info-box input:focus{
+    border-color:#111827;
+}
+
+
+/* =========================
+   TIMER
+========================= */
 
 .timer{
     position:sticky;
@@ -80,7 +122,17 @@ body{
     font-size:18px;
     font-weight:bold;
     margin-bottom:20px;
+    box-shadow:0 3px 10px rgba(0,0,0,.15);
 }
+
+.timer.warning{
+    background:#b91c1c;
+}
+
+
+/* =========================
+   SECTION
+========================= */
 
 .section{
     background:white;
@@ -97,6 +149,11 @@ body{
     font-size:19px;
     font-weight:bold;
 }
+
+
+/* =========================
+   MCQ QUESTIONS
+========================= */
 
 .question{
     padding:20px;
@@ -131,6 +188,11 @@ body{
     margin-right:8px;
 }
 
+
+/* =========================
+   WRITING QUESTIONS
+========================= */
+
 .writing-question{
     padding:20px;
     border-bottom:1px solid #e5e7eb;
@@ -138,6 +200,14 @@ body{
 
 .writing-question:last-child{
     border-bottom:none;
+}
+
+.writing-question h3{
+    margin-bottom:10px;
+}
+
+.writing-question p{
+    margin-bottom:10px;
 }
 
 textarea{
@@ -150,7 +220,22 @@ textarea{
     resize:vertical;
     font-family:Arial, sans-serif;
     font-size:15px;
+    outline:none;
 }
+
+textarea:focus{
+    border-color:#111827;
+}
+
+textarea:disabled{
+    background:#f3f4f6;
+    color:#374151;
+}
+
+
+/* =========================
+   SUBMIT AREA
+========================= */
 
 .submit-area{
     background:white;
@@ -169,11 +254,21 @@ textarea{
     font-size:17px;
     font-weight:bold;
     cursor:pointer;
+    transition:.2s;
 }
 
 .submit-btn:hover{
     background:#374151;
 }
+
+.submit-btn:active{
+    transform:scale(.97);
+}
+
+
+/* =========================
+   RESULT
+========================= */
 
 .result{
     display:none;
@@ -182,22 +277,37 @@ textarea{
     border:1px solid #10b981;
     border-radius:12px;
     padding:20px;
+    text-align:left;
 }
 
 .result h2{
     margin-bottom:10px;
+    color:#065f46;
 }
 
 .score{
     font-size:28px;
     font-weight:bold;
+    color:#065f46;
+}
+
+.result-line{
+    margin:7px 0;
 }
 
 .note{
-    margin-top:10px;
+    margin-top:15px;
+    padding:12px;
+    background:#f9fafb;
+    border-radius:8px;
     font-size:14px;
     color:#374151;
 }
+
+
+/* =========================
+   CORRECT / WRONG
+========================= */
 
 .correct{
     background:#dcfce7 !important;
@@ -209,6 +319,45 @@ textarea{
     border-color:#ef4444 !important;
 }
 
+
+/* =========================
+   ANSWER KEY BUTTON
+========================= */
+
+.answer-key-box{
+    display:none;
+    margin-top:20px;
+    text-align:center;
+}
+
+.answer-key-btn{
+    display:inline-block;
+    padding:13px 22px;
+    background:#111827;
+    color:#ffffff;
+    text-decoration:none;
+    text-align:center;
+    border-radius:10px;
+    font-size:15px;
+    font-weight:700;
+    border:1px solid #374151;
+    transition:.2s ease;
+}
+
+.answer-key-btn:hover{
+    background:#374151;
+    transform:translateY(-2px);
+}
+
+.answer-key-btn:active{
+    transform:scale(.97);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
 .footer{
     text-align:center;
     margin-top:25px;
@@ -216,7 +365,20 @@ textarea{
     font-size:13px;
 }
 
+
+/* =========================
+   MOBILE
+========================= */
+
 @media(max-width:600px){
+
+    .container{
+        width:94%;
+    }
+
+    .header{
+        padding:25px 15px;
+    }
 
     .header h1{
         font-size:23px;
@@ -226,6 +388,10 @@ textarea{
         font-size:17px;
     }
 
+    .header p{
+        font-size:13px;
+    }
+
     .question,
     .writing-question{
         padding:15px;
@@ -233,38 +399,94 @@ textarea{
 
     .section-title{
         font-size:17px;
+        padding:14px 15px;
     }
+
+    .timer{
+        font-size:16px;
+    }
+
+    .submit-btn{
+        width:100%;
+    }
+
 }
+
 </style>
+
 </head>
+
 
 <body>
 
+
 <div class="container">
 
+
+    <!-- =========================
+         HEADER
+    ========================= -->
+
     <div class="header">
+
         <h1>HSC 2027</h1>
+
         <h2>ENGLISH SECOND PAPER</h2>
+
         <p>MODEL TEST PAPER — ONLINE QUIZ</p>
-        <p>Full Marks: 100 &nbsp; | &nbsp; Time: 3 Hours</p>
+
+        <p>
+            Full Marks: 100
+            &nbsp; | &nbsp;
+            Time: 3 Hours
+        </p>
+
     </div>
+
+
+    <!-- =========================
+         STUDENT INFORMATION
+    ========================= -->
 
     <div class="info-box">
 
-        <label><strong>Student Name</strong></label>
-        <input type="text" id="studentName" placeholder="Enter your name">
+        <label>
+            <strong>Student Name</strong>
+        </label>
 
-        <label><strong> Hsc Batch </strong></label>
-        <input type="text" id="studentID" placeholder="">
+        <input
+            type="text"
+            id="studentName"
+            placeholder="Enter your name"
+        >
+
+
+        <label>
+            <strong>HSC Batch</strong>
+        </label>
+
+        <input
+            type="text"
+            id="studentID"
+            value="2027"
+            placeholder="HSC 2027"
+        >
 
     </div>
+
+
+    <!-- =========================
+         TIMER
+    ========================= -->
 
     <div class="timer" id="timer">
         Time Remaining: 03:00:00
     </div>
 
 
-    <!-- ================= PART A ================= -->
+    <!-- =====================================================
+         PART A — GRAMMAR
+    ====================================================== -->
 
     <div class="section">
 
@@ -273,7 +495,7 @@ textarea{
         </div>
 
 
-        <!-- ARTICLES -->
+        <!-- ================= ARTICLES ================= -->
 
         <div class="question">
 
@@ -307,19 +529,23 @@ textarea{
             <h3>1(b). He is ___ honest student.</h3>
 
             <label class="option">
-                <input type="radio" name="q2" value="a"> a) a
+                <input type="radio" name="q2" value="a">
+                a) a
             </label>
 
             <label class="option">
-                <input type="radio" name="q2" value="b"> b) an
+                <input type="radio" name="q2" value="b">
+                b) an
             </label>
 
             <label class="option">
-                <input type="radio" name="q2" value="c"> c) the
+                <input type="radio" name="q2" value="c">
+                c) the
             </label>
 
             <label class="option">
-                <input type="radio" name="q2" value="d"> d) no article
+                <input type="radio" name="q2" value="d">
+                d) no article
             </label>
 
         </div>
@@ -330,19 +556,23 @@ textarea{
             <h3>1(c). ___ sun rises in the east.</h3>
 
             <label class="option">
-                <input type="radio" name="q3" value="a"> a) A
+                <input type="radio" name="q3" value="a">
+                a) A
             </label>
 
             <label class="option">
-                <input type="radio" name="q3" value="b"> b) An
+                <input type="radio" name="q3" value="b">
+                b) An
             </label>
 
             <label class="option">
-                <input type="radio" name="q3" value="c"> c) The
+                <input type="radio" name="q3" value="c">
+                c) The
             </label>
 
             <label class="option">
-                <input type="radio" name="q3" value="d"> d) No article
+                <input type="radio" name="q3" value="d">
+                d) No article
             </label>
 
         </div>
@@ -353,19 +583,23 @@ textarea{
             <h3>1(d). She bought ___ umbrella yesterday.</h3>
 
             <label class="option">
-                <input type="radio" name="q4" value="a"> a) a
+                <input type="radio" name="q4" value="a">
+                a) a
             </label>
 
             <label class="option">
-                <input type="radio" name="q4" value="b"> b) an
+                <input type="radio" name="q4" value="b">
+                b) an
             </label>
 
             <label class="option">
-                <input type="radio" name="q4" value="c"> c) the
+                <input type="radio" name="q4" value="c">
+                c) the
             </label>
 
             <label class="option">
-                <input type="radio" name="q4" value="d"> d) no article
+                <input type="radio" name="q4" value="d">
+                d) no article
             </label>
 
         </div>
@@ -376,34 +610,53 @@ textarea{
             <h3>1(e). He is ___ European.</h3>
 
             <label class="option">
-                <input type="radio" name="q5" value="a"> a) a
+                <input type="radio" name="q5" value="a">
+                a) a
             </label>
 
             <label class="option">
-                <input type="radio" name="q5" value="b"> b) an
+                <input type="radio" name="q5" value="b">
+                b) an
             </label>
 
             <label class="option">
-                <input type="radio" name="q5" value="c"> c) the
+                <input type="radio" name="q5" value="c">
+                c) the
             </label>
 
             <label class="option">
-                <input type="radio" name="q5" value="d"> d) no article
+                <input type="radio" name="q5" value="d">
+                d) no article
             </label>
 
         </div>
 
 
-        <!-- PREPOSITIONS -->
+        <!-- ================= PREPOSITIONS ================= -->
 
         <div class="question">
 
             <h3>2(a). He is good ___ English.</h3>
 
-            <label class="option"><input type="radio" name="q6" value="a"> a) at</label>
-            <label class="option"><input type="radio" name="q6" value="b"> b) in</label>
-            <label class="option"><input type="radio" name="q6" value="c"> c) on</label>
-            <label class="option"><input type="radio" name="q6" value="d"> d) for</label>
+            <label class="option">
+                <input type="radio" name="q6" value="a">
+                a) at
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q6" value="b">
+                b) in
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q6" value="c">
+                c) on
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q6" value="d">
+                d) for
+            </label>
 
         </div>
 
@@ -412,10 +665,25 @@ textarea{
 
             <h3>2(b). She is interested ___ learning English.</h3>
 
-            <label class="option"><input type="radio" name="q7" value="a"> a) at</label>
-            <label class="option"><input type="radio" name="q7" value="b"> b) in</label>
-            <label class="option"><input type="radio" name="q7" value="c"> c) on</label>
-            <label class="option"><input type="radio" name="q7" value="d"> d) for</label>
+            <label class="option">
+                <input type="radio" name="q7" value="a">
+                a) at
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q7" value="b">
+                b) in
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q7" value="c">
+                c) on
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q7" value="d">
+                d) for
+            </label>
 
         </div>
 
@@ -424,10 +692,25 @@ textarea{
 
             <h3>2(c). He has been absent ___ Monday.</h3>
 
-            <label class="option"><input type="radio" name="q8" value="a"> a) for</label>
-            <label class="option"><input type="radio" name="q8" value="b"> b) from</label>
-            <label class="option"><input type="radio" name="q8" value="c"> c) since</label>
-            <label class="option"><input type="radio" name="q8" value="d"> d) by</label>
+            <label class="option">
+                <input type="radio" name="q8" value="a">
+                a) for
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q8" value="b">
+                b) from
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q8" value="c">
+                c) since
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q8" value="d">
+                d) by
+            </label>
 
         </div>
 
@@ -436,10 +719,25 @@ textarea{
 
             <h3>2(d). The man was accused ___ theft.</h3>
 
-            <label class="option"><input type="radio" name="q9" value="a"> a) with</label>
-            <label class="option"><input type="radio" name="q9" value="b"> b) for</label>
-            <label class="option"><input type="radio" name="q9" value="c"> c) of</label>
-            <label class="option"><input type="radio" name="q9" value="d"> d) by</label>
+            <label class="option">
+                <input type="radio" name="q9" value="a">
+                a) with
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q9" value="b">
+                b) for
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q9" value="c">
+                c) of
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q9" value="d">
+                d) by
+            </label>
 
         </div>
 
@@ -448,24 +746,54 @@ textarea{
 
             <h3>2(e). We should not be indifferent ___ our duties.</h3>
 
-            <label class="option"><input type="radio" name="q10" value="a"> a) to</label>
-            <label class="option"><input type="radio" name="q10" value="b"> b) at</label>
-            <label class="option"><input type="radio" name="q10" value="c"> c) for</label>
-            <label class="option"><input type="radio" name="q10" value="d"> d) with</label>
+            <label class="option">
+                <input type="radio" name="q10" value="a">
+                a) to
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q10" value="b">
+                b) at
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q10" value="c">
+                c) for
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q10" value="d">
+                d) with
+            </label>
 
         </div>
 
 
-        <!-- SPECIAL USES -->
+        <!-- ================= SPECIAL USES ================= -->
 
         <div class="question">
 
             <h3>3(a). I would rather ___ at home than go outside.</h3>
 
-            <label class="option"><input type="radio" name="q11" value="a"> a) stayed</label>
-            <label class="option"><input type="radio" name="q11" value="b"> b) stay</label>
-            <label class="option"><input type="radio" name="q11" value="c"> c) staying</label>
-            <label class="option"><input type="radio" name="q11" value="d"> d) to stay</label>
+            <label class="option">
+                <input type="radio" name="q11" value="a">
+                a) stayed
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q11" value="b">
+                b) stay
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q11" value="c">
+                c) staying
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q11" value="d">
+                d) to stay
+            </label>
 
         </div>
 
@@ -474,10 +802,25 @@ textarea{
 
             <h3>3(b). You had better ___ the truth.</h3>
 
-            <label class="option"><input type="radio" name="q12" value="a"> a) tell</label>
-            <label class="option"><input type="radio" name="q12" value="b"> b) told</label>
-            <label class="option"><input type="radio" name="q12" value="c"> c) telling</label>
-            <label class="option"><input type="radio" name="q12" value="d"> d) to tell</label>
+            <label class="option">
+                <input type="radio" name="q12" value="a">
+                a) tell
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q12" value="b">
+                b) told
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q12" value="c">
+                c) telling
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q12" value="d">
+                d) to tell
+            </label>
 
         </div>
 
@@ -486,10 +829,25 @@ textarea{
 
             <h3>3(c). He cannot buy a pen, let alone ___ a laptop.</h3>
 
-            <label class="option"><input type="radio" name="q13" value="a"> a) bought</label>
-            <label class="option"><input type="radio" name="q13" value="b"> b) buying</label>
-            <label class="option"><input type="radio" name="q13" value="c"> c) buy</label>
-            <label class="option"><input type="radio" name="q13" value="d"> d) to buy</label>
+            <label class="option">
+                <input type="radio" name="q13" value="a">
+                a) bought
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q13" value="b">
+                b) buying
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q13" value="c">
+                c) buy
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q13" value="d">
+                d) to buy
+            </label>
 
         </div>
 
@@ -498,10 +856,25 @@ textarea{
 
             <h3>3(d). Walk carefully lest you ___ fall.</h3>
 
-            <label class="option"><input type="radio" name="q14" value="a"> a) will</label>
-            <label class="option"><input type="radio" name="q14" value="b"> b) should</label>
-            <label class="option"><input type="radio" name="q14" value="c"> c) would</label>
-            <label class="option"><input type="radio" name="q14" value="d"> d) can</label>
+            <label class="option">
+                <input type="radio" name="q14" value="a">
+                a) will
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q14" value="b">
+                b) should
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q14" value="c">
+                c) would
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q14" value="d">
+                d) can
+            </label>
 
         </div>
 
@@ -510,24 +883,54 @@ textarea{
 
             <h3>3(e). No sooner had he reached home ___ it started raining.</h3>
 
-            <label class="option"><input type="radio" name="q15" value="a"> a) when</label>
-            <label class="option"><input type="radio" name="q15" value="b"> b) than</label>
-            <label class="option"><input type="radio" name="q15" value="c"> c) then</label>
-            <label class="option"><input type="radio" name="q15" value="d"> d) and</label>
+            <label class="option">
+                <input type="radio" name="q15" value="a">
+                a) when
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q15" value="b">
+                b) than
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q15" value="c">
+                c) then
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q15" value="d">
+                d) and
+            </label>
 
         </div>
 
 
-        <!-- COMPLETING SENTENCES -->
+        <!-- ================= COMPLETING SENTENCES ================= -->
 
         <div class="question">
 
             <h3>4(a). It is high time we ___ our duties.</h3>
 
-            <label class="option"><input type="radio" name="q16" value="a"> a) perform</label>
-            <label class="option"><input type="radio" name="q16" value="b"> b) performed</label>
-            <label class="option"><input type="radio" name="q16" value="c"> c) performing</label>
-            <label class="option"><input type="radio" name="q16" value="d"> d) have performed</label>
+            <label class="option">
+                <input type="radio" name="q16" value="a">
+                a) perform
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q16" value="b">
+                b) performed
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q16" value="c">
+                c) performing
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q16" value="d">
+                d) have performed
+            </label>
 
         </div>
 
@@ -536,10 +939,25 @@ textarea{
 
             <h3>4(b). I wish I ___ a bird.</h3>
 
-            <label class="option"><input type="radio" name="q17" value="a"> a) am</label>
-            <label class="option"><input type="radio" name="q17" value="b"> b) was</label>
-            <label class="option"><input type="radio" name="q17" value="c"> c) were</label>
-            <label class="option"><input type="radio" name="q17" value="d"> d) have been</label>
+            <label class="option">
+                <input type="radio" name="q17" value="a">
+                a) am
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q17" value="b">
+                b) was
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q17" value="c">
+                c) were
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q17" value="d">
+                d) have been
+            </label>
 
         </div>
 
@@ -548,10 +966,25 @@ textarea{
 
             <h3>4(c). If I were a bird, I ___ in the sky.</h3>
 
-            <label class="option"><input type="radio" name="q18" value="a"> a) fly</label>
-            <label class="option"><input type="radio" name="q18" value="b"> b) flew</label>
-            <label class="option"><input type="radio" name="q18" value="c"> c) would fly</label>
-            <label class="option"><input type="radio" name="q18" value="d"> d) will fly</label>
+            <label class="option">
+                <input type="radio" name="q18" value="a">
+                a) fly
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q18" value="b">
+                b) flew
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q18" value="c">
+                c) would fly
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q18" value="d">
+                d) will fly
+            </label>
 
         </div>
 
@@ -560,10 +993,25 @@ textarea{
 
             <h3>4(d). Unless you work hard, you ___.</h3>
 
-            <label class="option"><input type="radio" name="q19" value="a"> a) will fail</label>
-            <label class="option"><input type="radio" name="q19" value="b"> b) would fail</label>
-            <label class="option"><input type="radio" name="q19" value="c"> c) failed</label>
-            <label class="option"><input type="radio" name="q19" value="d"> d) had failed</label>
+            <label class="option">
+                <input type="radio" name="q19" value="a">
+                a) will fail
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q19" value="b">
+                b) would fail
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q19" value="c">
+                c) failed
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q19" value="d">
+                d) had failed
+            </label>
 
         </div>
 
@@ -572,24 +1020,54 @@ textarea{
 
             <h3>4(e). He talks as if he ___ everything.</h3>
 
-            <label class="option"><input type="radio" name="q20" value="a"> a) knows</label>
-            <label class="option"><input type="radio" name="q20" value="b"> b) knew</label>
-            <label class="option"><input type="radio" name="q20" value="c"> c) had known</label>
-            <label class="option"><input type="radio" name="q20" value="d"> d) knowing</label>
+            <label class="option">
+                <input type="radio" name="q20" value="a">
+                a) knows
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q20" value="b">
+                b) knew
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q20" value="c">
+                c) had known
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q20" value="d">
+                d) knowing
+            </label>
 
         </div>
 
 
-        <!-- RIGHT FORM OF VERBS -->
+        <!-- ================= RIGHT FORM OF VERBS ================= -->
 
         <div class="question">
 
             <h3>5(a). The sun ___ in the east.</h3>
 
-            <label class="option"><input type="radio" name="q21" value="a"> a) rise</label>
-            <label class="option"><input type="radio" name="q21" value="b"> b) rises</label>
-            <label class="option"><input type="radio" name="q21" value="c"> c) rose</label>
-            <label class="option"><input type="radio" name="q21" value="d"> d) rising</label>
+            <label class="option">
+                <input type="radio" name="q21" value="a">
+                a) rise
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q21" value="b">
+                b) rises
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q21" value="c">
+                c) rose
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q21" value="d">
+                d) rising
+            </label>
 
         </div>
 
@@ -598,10 +1076,25 @@ textarea{
 
             <h3>5(b). He ___ a book now.</h3>
 
-            <label class="option"><input type="radio" name="q22" value="a"> a) reads</label>
-            <label class="option"><input type="radio" name="q22" value="b"> b) read</label>
-            <label class="option"><input type="radio" name="q22" value="c"> c) is reading</label>
-            <label class="option"><input type="radio" name="q22" value="d"> d) has read</label>
+            <label class="option">
+                <input type="radio" name="q22" value="a">
+                a) reads
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q22" value="b">
+                b) read
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q22" value="c">
+                c) is reading
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q22" value="d">
+                d) has read
+            </label>
 
         </div>
 
@@ -610,10 +1103,25 @@ textarea{
 
             <h3>5(c). He ___ here since 2020.</h3>
 
-            <label class="option"><input type="radio" name="q23" value="a"> a) lives</label>
-            <label class="option"><input type="radio" name="q23" value="b"> b) lived</label>
-            <label class="option"><input type="radio" name="q23" value="c"> c) has been living</label>
-            <label class="option"><input type="radio" name="q23" value="d"> d) is living</label>
+            <label class="option">
+                <input type="radio" name="q23" value="a">
+                a) lives
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q23" value="b">
+                b) lived
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q23" value="c">
+                c) has been living
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q23" value="d">
+                d) is living
+            </label>
 
         </div>
 
@@ -622,10 +1130,25 @@ textarea{
 
             <h3>5(d). When I reached the station, the train ___.</h3>
 
-            <label class="option"><input type="radio" name="q24" value="a"> a) leaves</label>
-            <label class="option"><input type="radio" name="q24" value="b"> b) has left</label>
-            <label class="option"><input type="radio" name="q24" value="c"> c) had left</label>
-            <label class="option"><input type="radio" name="q24" value="d"> d) was leaving</label>
+            <label class="option">
+                <input type="radio" name="q24" value="a">
+                a) leaves
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q24" value="b">
+                b) has left
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q24" value="c">
+                c) had left
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q24" value="d">
+                d) was leaving
+            </label>
 
         </div>
 
@@ -634,24 +1157,54 @@ textarea{
 
             <h3>5(e). Had I known the matter, I ___ him.</h3>
 
-            <label class="option"><input type="radio" name="q25" value="a"> a) help</label>
-            <label class="option"><input type="radio" name="q25" value="b"> b) helped</label>
-            <label class="option"><input type="radio" name="q25" value="c"> c) would have helped</label>
-            <label class="option"><input type="radio" name="q25" value="d"> d) will help</label>
+            <label class="option">
+                <input type="radio" name="q25" value="a">
+                a) help
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q25" value="b">
+                b) helped
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q25" value="c">
+                c) would have helped
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q25" value="d">
+                d) will help
+            </label>
 
         </div>
 
 
-        <!-- TRANSFORMATION -->
+        <!-- ================= TRANSFORMATION ================= -->
 
         <div class="question">
 
             <h3>6(a). Everybody loves flowers. Which is the correct negative form?</h3>
 
-            <label class="option"><input type="radio" name="q26" value="a"> a) Nobody loves flowers.</label>
-            <label class="option"><input type="radio" name="q26" value="b"> b) There is nobody who does not love flowers.</label>
-            <label class="option"><input type="radio" name="q26" value="c"> c) Everybody does not love flowers.</label>
-            <label class="option"><input type="radio" name="q26" value="d"> d) Nobody does not love flowers.</label>
+            <label class="option">
+                <input type="radio" name="q26" value="a">
+                a) Nobody loves flowers.
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q26" value="b">
+                b) There is nobody who does not love flowers.
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q26" value="c">
+                c) Everybody does not love flowers.
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q26" value="d">
+                d) Nobody does not love flowers.
+            </label>
 
         </div>
 
@@ -660,10 +1213,25 @@ textarea{
 
             <h3>6(b). He is too weak to walk. Which is the correct complex form?</h3>
 
-            <label class="option"><input type="radio" name="q27" value="a"> a) He is so weak that he cannot walk.</label>
-            <label class="option"><input type="radio" name="q27" value="b"> b) He is weak and cannot walk.</label>
-            <label class="option"><input type="radio" name="q27" value="c"> c) He is very weak but walks.</label>
-            <label class="option"><input type="radio" name="q27" value="d"> d) He was weak to walk.</label>
+            <label class="option">
+                <input type="radio" name="q27" value="a">
+                a) He is so weak that he cannot walk.
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q27" value="b">
+                b) He is weak and cannot walk.
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q27" value="c">
+                c) He is very weak but walks.
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q27" value="d">
+                d) He was weak to walk.
+            </label>
 
         </div>
 
@@ -672,10 +1240,25 @@ textarea{
 
             <h3>6(c). Though he is poor, he is honest. Which is the correct compound form?</h3>
 
-            <label class="option"><input type="radio" name="q28" value="a"> a) He is poor because he is honest.</label>
-            <label class="option"><input type="radio" name="q28" value="b"> b) He is poor but honest.</label>
-            <label class="option"><input type="radio" name="q28" value="c"> c) He is honest although poor.</label>
-            <label class="option"><input type="radio" name="q28" value="d"> d) Being poor, he is honest.</label>
+            <label class="option">
+                <input type="radio" name="q28" value="a">
+                a) He is poor because he is honest.
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q28" value="b">
+                b) He is poor but honest.
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q28" value="c">
+                c) He is honest although poor.
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q28" value="d">
+                d) Being poor, he is honest.
+            </label>
 
         </div>
 
@@ -684,10 +1267,25 @@ textarea{
 
             <h3>6(d). Dhaka is one of the largest cities in Bangladesh. Which is the positive form?</h3>
 
-            <label class="option"><input type="radio" name="q29" value="a"> a) Very few cities in Bangladesh are as large as Dhaka.</label>
-            <label class="option"><input type="radio" name="q29" value="b"> b) No city is larger than Dhaka.</label>
-            <label class="option"><input type="radio" name="q29" value="c"> c) Dhaka is larger than every city.</label>
-            <label class="option"><input type="radio" name="q29" value="d"> d) Dhaka is the largest city.</label>
+            <label class="option">
+                <input type="radio" name="q29" value="a">
+                a) Very few cities in Bangladesh are as large as Dhaka.
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q29" value="b">
+                b) No city is larger than Dhaka.
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q29" value="c">
+                c) Dhaka is larger than every city.
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q29" value="d">
+                d) Dhaka is the largest city.
+            </label>
 
         </div>
 
@@ -696,24 +1294,54 @@ textarea{
 
             <h3>6(e). He wrote a letter. Which is the correct passive form?</h3>
 
-            <label class="option"><input type="radio" name="q30" value="a"> a) A letter is written by him.</label>
-            <label class="option"><input type="radio" name="q30" value="b"> b) A letter was written by him.</label>
-            <label class="option"><input type="radio" name="q30" value="c"> c) A letter has written by him.</label>
-            <label class="option"><input type="radio" name="q30" value="d"> d) A letter had written by him.</label>
+            <label class="option">
+                <input type="radio" name="q30" value="a">
+                a) A letter is written by him.
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q30" value="b">
+                b) A letter was written by him.
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q30" value="c">
+                c) A letter has written by him.
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q30" value="d">
+                d) A letter had written by him.
+            </label>
 
         </div>
 
 
-        <!-- NARRATION -->
+        <!-- ================= NARRATION ================= -->
 
         <div class="question">
 
             <h3>7(a). He said, “I am busy.”</h3>
 
-            <label class="option"><input type="radio" name="q31" value="a"> a) He said that I am busy.</label>
-            <label class="option"><input type="radio" name="q31" value="b"> b) He said that he was busy.</label>
-            <label class="option"><input type="radio" name="q31" value="c"> c) He says he was busy.</label>
-            <label class="option"><input type="radio" name="q31" value="d"> d) He said he is busy.</label>
+            <label class="option">
+                <input type="radio" name="q31" value="a">
+                a) He said that I am busy.
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q31" value="b">
+                b) He said that he was busy.
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q31" value="c">
+                c) He says he was busy.
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q31" value="d">
+                d) He said he is busy.
+            </label>
 
         </div>
 
@@ -722,10 +1350,25 @@ textarea{
 
             <h3>7(b). He said to me, “Are you happy?”</h3>
 
-            <label class="option"><input type="radio" name="q32" value="a"> a) He asked me if I was happy.</label>
-            <label class="option"><input type="radio" name="q32" value="b"> b) He told me that I was happy.</label>
-            <label class="option"><input type="radio" name="q32" value="c"> c) He asked me are I happy.</label>
-            <label class="option"><input type="radio" name="q32" value="d"> d) He said that I am happy.</label>
+            <label class="option">
+                <input type="radio" name="q32" value="a">
+                a) He asked me if I was happy.
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q32" value="b">
+                b) He told me that I was happy.
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q32" value="c">
+                c) He asked me are I happy.
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q32" value="d">
+                d) He said that I am happy.
+            </label>
 
         </div>
 
@@ -734,10 +1377,25 @@ textarea{
 
             <h3>7(c). The teacher said to the students, “Do not make a noise.”</h3>
 
-            <label class="option"><input type="radio" name="q33" value="a"> a) The teacher told the students not to make a noise.</label>
-            <label class="option"><input type="radio" name="q33" value="b"> b) The teacher said the students do not make noise.</label>
-            <label class="option"><input type="radio" name="q33" value="c"> c) The teacher asked that students made noise.</label>
-            <label class="option"><input type="radio" name="q33" value="d"> d) The teacher told students do not make noise.</label>
+            <label class="option">
+                <input type="radio" name="q33" value="a">
+                a) The teacher told the students not to make a noise.
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q33" value="b">
+                b) The teacher said the students do not make noise.
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q33" value="c">
+                c) The teacher asked that students made noise.
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q33" value="d">
+                d) The teacher told students do not make noise.
+            </label>
 
         </div>
 
@@ -746,10 +1404,25 @@ textarea{
 
             <h3>7(d). Mother said to me, “May Allah bless you.”</h3>
 
-            <label class="option"><input type="radio" name="q34" value="a"> a) Mother prayed that Allah might bless me.</label>
-            <label class="option"><input type="radio" name="q34" value="b"> b) Mother said Allah bless you.</label>
-            <label class="option"><input type="radio" name="q34" value="c"> c) Mother ordered Allah to bless me.</label>
-            <label class="option"><input type="radio" name="q34" value="d"> d) Mother told me Allah blessed you.</label>
+            <label class="option">
+                <input type="radio" name="q34" value="a">
+                a) Mother prayed that Allah might bless me.
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q34" value="b">
+                b) Mother said Allah bless you.
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q34" value="c">
+                c) Mother ordered Allah to bless me.
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q34" value="d">
+                d) Mother told me Allah blessed you.
+            </label>
 
         </div>
 
@@ -758,24 +1431,54 @@ textarea{
 
             <h3>7(e). He said, “What a beautiful flower it is!”</h3>
 
-            <label class="option"><input type="radio" name="q35" value="a"> a) He said that it is a beautiful flower.</label>
-            <label class="option"><input type="radio" name="q35" value="b"> b) He exclaimed with wonder that it was a very beautiful flower.</label>
-            <label class="option"><input type="radio" name="q35" value="c"> c) He asked if it was beautiful.</label>
-            <label class="option"><input type="radio" name="q35" value="d"> d) He ordered that the flower was beautiful.</label>
+            <label class="option">
+                <input type="radio" name="q35" value="a">
+                a) He said that it is a beautiful flower.
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q35" value="b">
+                b) He exclaimed with wonder that it was a very beautiful flower.
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q35" value="c">
+                c) He asked if it was beautiful.
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q35" value="d">
+                d) He ordered that the flower was beautiful.
+            </label>
 
         </div>
 
 
-        <!-- PRONOUN REFERENCE -->
+        <!-- ================= PRONOUN REFERENCE ================= -->
 
         <div class="question">
 
             <h3>8(a). “They” in “They give us oxygen” refers to —</h3>
 
-            <label class="option"><input type="radio" name="q36" value="a"> a) humans</label>
-            <label class="option"><input type="radio" name="q36" value="b"> b) trees</label>
-            <label class="option"><input type="radio" name="q36" value="c"> c) oxygen</label>
-            <label class="option"><input type="radio" name="q36" value="d"> d) environment</label>
+            <label class="option">
+                <input type="radio" name="q36" value="a">
+                a) humans
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q36" value="b">
+                b) trees
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q36" value="c">
+                c) oxygen
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q36" value="d">
+                d) environment
+            </label>
 
         </div>
 
@@ -784,10 +1487,25 @@ textarea{
 
             <h3>8(b). “them” in “Without them, human life would be impossible” refers to —</h3>
 
-            <label class="option"><input type="radio" name="q37" value="a"> a) trees</label>
-            <label class="option"><input type="radio" name="q37" value="b"> b) humans</label>
-            <label class="option"><input type="radio" name="q37" value="c"> c) oxygen</label>
-            <label class="option"><input type="radio" name="q37" value="d"> d) duties</label>
+            <label class="option">
+                <input type="radio" name="q37" value="a">
+                a) trees
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q37" value="b">
+                b) humans
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q37" value="c">
+                c) oxygen
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q37" value="d">
+                d) duties
+            </label>
 
         </div>
 
@@ -796,10 +1514,25 @@ textarea{
 
             <h3>8(c). “We” refers to —</h3>
 
-            <label class="option"><input type="radio" name="q38" value="a"> a) trees</label>
-            <label class="option"><input type="radio" name="q38" value="b"> b) human beings</label>
-            <label class="option"><input type="radio" name="q38" value="c"> c) animals</label>
-            <label class="option"><input type="radio" name="q38" value="d"> d) plants</label>
+            <label class="option">
+                <input type="radio" name="q38" value="a">
+                a) trees
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q38" value="b">
+                b) human beings
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q38" value="c">
+                c) animals
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q38" value="d">
+                d) plants
+            </label>
 
         </div>
 
@@ -808,10 +1541,25 @@ textarea{
 
             <h3>8(d). “them” in the last sentence refers to —</h3>
 
-            <label class="option"><input type="radio" name="q39" value="a"> a) humans</label>
-            <label class="option"><input type="radio" name="q39" value="b"> b) environment</label>
-            <label class="option"><input type="radio" name="q39" value="c"> c) trees</label>
-            <label class="option"><input type="radio" name="q39" value="d"> d) oxygen</label>
+            <label class="option">
+                <input type="radio" name="q39" value="a">
+                a) humans
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q39" value="b">
+                b) environment
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q39" value="c">
+                c) trees
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q39" value="d">
+                d) oxygen
+            </label>
 
         </div>
 
@@ -820,24 +1568,54 @@ textarea{
 
             <h3>8(e). “Therefore” indicates —</h3>
 
-            <label class="option"><input type="radio" name="q40" value="a"> a) contrast</label>
-            <label class="option"><input type="radio" name="q40" value="b"> b) reason/result</label>
-            <label class="option"><input type="radio" name="q40" value="c"> c) condition</label>
-            <label class="option"><input type="radio" name="q40" value="d"> d) time</label>
+            <label class="option">
+                <input type="radio" name="q40" value="a">
+                a) contrast
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q40" value="b">
+                b) reason/result
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q40" value="c">
+                c) condition
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q40" value="d">
+                d) time
+            </label>
 
         </div>
 
 
-        <!-- MODIFIERS -->
+        <!-- ================= MODIFIERS ================= -->
 
         <div class="question">
 
             <h3>9(a). ___, he went to school. Choose the appropriate participial phrase.</h3>
 
-            <label class="option"><input type="radio" name="q41" value="a"> a) Getting ready</label>
-            <label class="option"><input type="radio" name="q41" value="b"> b) To get ready</label>
-            <label class="option"><input type="radio" name="q41" value="c"> c) Ready was</label>
-            <label class="option"><input type="radio" name="q41" value="d"> d) He getting</label>
+            <label class="option">
+                <input type="radio" name="q41" value="a">
+                a) Getting ready
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q41" value="b">
+                b) To get ready
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q41" value="c">
+                c) Ready was
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q41" value="d">
+                d) He getting
+            </label>
 
         </div>
 
@@ -846,10 +1624,25 @@ textarea{
 
             <h3>9(b). The man ___ is my uncle. Choose an adjective clause.</h3>
 
-            <label class="option"><input type="radio" name="q42" value="a"> a) standing there</label>
-            <label class="option"><input type="radio" name="q42" value="b"> b) who is standing there</label>
-            <label class="option"><input type="radio" name="q42" value="c"> c) to stand there</label>
-            <label class="option"><input type="radio" name="q42" value="d"> d) stand there</label>
+            <label class="option">
+                <input type="radio" name="q42" value="a">
+                a) standing there
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q42" value="b">
+                b) who is standing there
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q42" value="c">
+                c) to stand there
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q42" value="d">
+                d) stand there
+            </label>
 
         </div>
 
@@ -858,10 +1651,25 @@ textarea{
 
             <h3>9(c). ___, he went to Dhaka. Choose an infinitive phrase.</h3>
 
-            <label class="option"><input type="radio" name="q43" value="a"> a) To attend the meeting</label>
-            <label class="option"><input type="radio" name="q43" value="b"> b) Attending the meeting</label>
-            <label class="option"><input type="radio" name="q43" value="c"> c) He attended the meeting</label>
-            <label class="option"><input type="radio" name="q43" value="d"> d) Attended the meeting</label>
+            <label class="option">
+                <input type="radio" name="q43" value="a">
+                a) To attend the meeting
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q43" value="b">
+                b) Attending the meeting
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q43" value="c">
+                c) He attended the meeting
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q43" value="d">
+                d) Attended the meeting
+            </label>
 
         </div>
 
@@ -870,10 +1678,25 @@ textarea{
 
             <h3>9(d). The girl ___ is my sister. Choose a participial phrase.</h3>
 
-            <label class="option"><input type="radio" name="q44" value="a"> a) who is singing</label>
-            <label class="option"><input type="radio" name="q44" value="b"> b) singing on the stage</label>
-            <label class="option"><input type="radio" name="q44" value="c"> c) to sing</label>
-            <label class="option"><input type="radio" name="q44" value="d"> d) she sings</label>
+            <label class="option">
+                <input type="radio" name="q44" value="a">
+                a) who is singing
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q44" value="b">
+                b) singing on the stage
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q44" value="c">
+                c) to sing
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q44" value="d">
+                d) she sings
+            </label>
 
         </div>
 
@@ -882,24 +1705,54 @@ textarea{
 
             <h3>9(e). ___, he completed the work. Choose an adverbial phrase.</h3>
 
-            <label class="option"><input type="radio" name="q45" value="a"> a) With great care</label>
-            <label class="option"><input type="radio" name="q45" value="b"> b) To complete</label>
-            <label class="option"><input type="radio" name="q45" value="c"> c) Completing</label>
-            <label class="option"><input type="radio" name="q45" value="d"> d) Who completed</label>
+            <label class="option">
+                <input type="radio" name="q45" value="a">
+                a) With great care
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q45" value="b">
+                b) To complete
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q45" value="c">
+                c) Completing
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q45" value="d">
+                d) Who completed
+            </label>
 
         </div>
 
 
-        <!-- CONNECTORS -->
+        <!-- ================= CONNECTORS ================= -->
 
         <div class="question">
 
             <h3>10(a). He is poor. ___, he is honest.</h3>
 
-            <label class="option"><input type="radio" name="q46" value="a"> a) Therefore</label>
-            <label class="option"><input type="radio" name="q46" value="b"> b) However</label>
-            <label class="option"><input type="radio" name="q46" value="c"> c) Because</label>
-            <label class="option"><input type="radio" name="q46" value="d"> d) So</label>
+            <label class="option">
+                <input type="radio" name="q46" value="a">
+                a) Therefore
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q46" value="b">
+                b) However
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q46" value="c">
+                c) Because
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q46" value="d">
+                d) So
+            </label>
 
         </div>
 
@@ -908,10 +1761,25 @@ textarea{
 
             <h3>10(b). He worked hard. ___, he failed.</h3>
 
-            <label class="option"><input type="radio" name="q47" value="a"> a) Therefore</label>
-            <label class="option"><input type="radio" name="q47" value="b"> b) However</label>
-            <label class="option"><input type="radio" name="q47" value="c"> c) Because</label>
-            <label class="option"><input type="radio" name="q47" value="d"> d) Thus</label>
+            <label class="option">
+                <input type="radio" name="q47" value="a">
+                a) Therefore
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q47" value="b">
+                b) However
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q47" value="c">
+                c) Because
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q47" value="d">
+                d) Thus
+            </label>
 
         </div>
 
@@ -920,10 +1788,25 @@ textarea{
 
             <h3>10(c). Study hard, ___ you will fail.</h3>
 
-            <label class="option"><input type="radio" name="q48" value="a"> a) or</label>
-            <label class="option"><input type="radio" name="q48" value="b"> b) because</label>
-            <label class="option"><input type="radio" name="q48" value="c"> c) although</label>
-            <label class="option"><input type="radio" name="q48" value="d"> d) therefore</label>
+            <label class="option">
+                <input type="radio" name="q48" value="a">
+                a) or
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q48" value="b">
+                b) because
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q48" value="c">
+                c) although
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q48" value="d">
+                d) therefore
+            </label>
 
         </div>
 
@@ -932,10 +1815,25 @@ textarea{
 
             <h3>10(d). ___ he is rich, he is unhappy.</h3>
 
-            <label class="option"><input type="radio" name="q49" value="a"> a) Because</label>
-            <label class="option"><input type="radio" name="q49" value="b"> b) Although</label>
-            <label class="option"><input type="radio" name="q49" value="c"> c) Therefore</label>
-            <label class="option"><input type="radio" name="q49" value="d"> d) So</label>
+            <label class="option">
+                <input type="radio" name="q49" value="a">
+                a) Because
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q49" value="b">
+                b) Although
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q49" value="c">
+                c) Therefore
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q49" value="d">
+                d) So
+            </label>
 
         </div>
 
@@ -944,24 +1842,54 @@ textarea{
 
             <h3>10(e). He could not go out ___ it was raining.</h3>
 
-            <label class="option"><input type="radio" name="q50" value="a"> a) although</label>
-            <label class="option"><input type="radio" name="q50" value="b"> b) because</label>
-            <label class="option"><input type="radio" name="q50" value="c"> c) but</label>
-            <label class="option"><input type="radio" name="q50" value="d"> d) therefore</label>
+            <label class="option">
+                <input type="radio" name="q50" value="a">
+                a) although
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q50" value="b">
+                b) because
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q50" value="c">
+                c) but
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q50" value="d">
+                d) therefore
+            </label>
 
         </div>
 
 
-        <!-- SYNONYMS -->
+        <!-- ================= SYNONYMS ================= -->
 
         <div class="question">
 
             <h3>11(a). Choose the synonym of “Brave”.</h3>
 
-            <label class="option"><input type="radio" name="q51" value="a"> a) Coward</label>
-            <label class="option"><input type="radio" name="q51" value="b"> b) Courageous</label>
-            <label class="option"><input type="radio" name="q51" value="c"> c) Weak</label>
-            <label class="option"><input type="radio" name="q51" value="d"> d) Lazy</label>
+            <label class="option">
+                <input type="radio" name="q51" value="a">
+                a) Coward
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q51" value="b">
+                b) Courageous
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q51" value="c">
+                c) Weak
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q51" value="d">
+                d) Lazy
+            </label>
 
         </div>
 
@@ -970,10 +1898,25 @@ textarea{
 
             <h3>11(b). Choose the synonym of “Rapid”.</h3>
 
-            <label class="option"><input type="radio" name="q52" value="a"> a) Slow</label>
-            <label class="option"><input type="radio" name="q52" value="b"> b) Quick</label>
-            <label class="option"><input type="radio" name="q52" value="c"> c) Weak</label>
-            <label class="option"><input type="radio" name="q52" value="d"> d) Old</label>
+            <label class="option">
+                <input type="radio" name="q52" value="a">
+                a) Slow
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q52" value="b">
+                b) Quick
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q52" value="c">
+                c) Weak
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q52" value="d">
+                d) Old
+            </label>
 
         </div>
 
@@ -982,10 +1925,25 @@ textarea{
 
             <h3>11(c). Choose the synonym of “Ancient”.</h3>
 
-            <label class="option"><input type="radio" name="q53" value="a"> a) Modern</label>
-            <label class="option"><input type="radio" name="q53" value="b"> b) New</label>
-            <label class="option"><input type="radio" name="q53" value="c"> c) Old</label>
-            <label class="option"><input type="radio" name="q53" value="d"> d) Recent</label>
+            <label class="option">
+                <input type="radio" name="q53" value="a">
+                a) Modern
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q53" value="b">
+                b) New
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q53" value="c">
+                c) Old
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q53" value="d">
+                d) Recent
+            </label>
 
         </div>
 
@@ -994,10 +1952,25 @@ textarea{
 
             <h3>11(d). Choose the synonym of “Honest”.</h3>
 
-            <label class="option"><input type="radio" name="q54" value="a"> a) Truthful</label>
-            <label class="option"><input type="radio" name="q54" value="b"> b) False</label>
-            <label class="option"><input type="radio" name="q54" value="c"> c) Dishonest</label>
-            <label class="option"><input type="radio" name="q54" value="d"> d) Cruel</label>
+            <label class="option">
+                <input type="radio" name="q54" value="a">
+                a) Truthful
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q54" value="b">
+                b) False
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q54" value="c">
+                c) Dishonest
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q54" value="d">
+                d) Cruel
+            </label>
 
         </div>
 
@@ -1006,24 +1979,54 @@ textarea{
 
             <h3>11(e). Choose the synonym of “Difficult”.</h3>
 
-            <label class="option"><input type="radio" name="q55" value="a"> a) Easy</label>
-            <label class="option"><input type="radio" name="q55" value="b"> b) Hard</label>
-            <label class="option"><input type="radio" name="q55" value="c"> c) Simple</label>
-            <label class="option"><input type="radio" name="q55" value="d"> d) Light</label>
+            <label class="option">
+                <input type="radio" name="q55" value="a">
+                a) Easy
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q55" value="b">
+                b) Hard
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q55" value="c">
+                c) Simple
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q55" value="d">
+                d) Light
+            </label>
 
         </div>
 
 
-        <!-- ANTONYMS -->
+        <!-- ================= ANTONYMS ================= -->
 
         <div class="question">
 
             <h3>11(f). Choose the antonym of “Success”.</h3>
 
-            <label class="option"><input type="radio" name="q56" value="a"> a) Victory</label>
-            <label class="option"><input type="radio" name="q56" value="b"> b) Failure</label>
-            <label class="option"><input type="radio" name="q56" value="c"> c) Achievement</label>
-            <label class="option"><input type="radio" name="q56" value="d"> d) Progress</label>
+            <label class="option">
+                <input type="radio" name="q56" value="a">
+                a) Victory
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q56" value="b">
+                b) Failure
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q56" value="c">
+                c) Achievement
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q56" value="d">
+                d) Progress
+            </label>
 
         </div>
 
@@ -1032,10 +2035,25 @@ textarea{
 
             <h3>11(g). Choose the antonym of “Increase”.</h3>
 
-            <label class="option"><input type="radio" name="q57" value="a"> a) Grow</label>
-            <label class="option"><input type="radio" name="q57" value="b"> b) Rise</label>
-            <label class="option"><input type="radio" name="q57" value="c"> c) Decrease</label>
-            <label class="option"><input type="radio" name="q57" value="d"> d) Develop</label>
+            <label class="option">
+                <input type="radio" name="q57" value="a">
+                a) Grow
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q57" value="b">
+                b) Rise
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q57" value="c">
+                c) Decrease
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q57" value="d">
+                d) Develop
+            </label>
 
         </div>
 
@@ -1044,10 +2062,25 @@ textarea{
 
             <h3>11(h). Choose the antonym of “Strong”.</h3>
 
-            <label class="option"><input type="radio" name="q58" value="a"> a) Powerful</label>
-            <label class="option"><input type="radio" name="q58" value="b"> b) Weak</label>
-            <label class="option"><input type="radio" name="q58" value="c"> c) Firm</label>
-            <label class="option"><input type="radio" name="q58" value="d"> d) Healthy</label>
+            <label class="option">
+                <input type="radio" name="q58" value="a">
+                a) Powerful
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q58" value="b">
+                b) Weak
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q58" value="c">
+                c) Firm
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q58" value="d">
+                d) Healthy
+            </label>
 
         </div>
 
@@ -1056,10 +2089,25 @@ textarea{
 
             <h3>11(i). Choose the antonym of “Accept”.</h3>
 
-            <label class="option"><input type="radio" name="q59" value="a"> a) Receive</label>
-            <label class="option"><input type="radio" name="q59" value="b"> b) Take</label>
-            <label class="option"><input type="radio" name="q59" value="c"> c) Reject</label>
-            <label class="option"><input type="radio" name="q59" value="d"> d) Agree</label>
+            <label class="option">
+                <input type="radio" name="q59" value="a">
+                a) Receive
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q59" value="b">
+                b) Take
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q59" value="c">
+                c) Reject
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q59" value="d">
+                d) Agree
+            </label>
 
         </div>
 
@@ -1068,18 +2116,34 @@ textarea{
 
             <h3>11(j). Choose the antonym of “Beautiful”.</h3>
 
-            <label class="option"><input type="radio" name="q60" value="a"> a) Attractive</label>
-            <label class="option"><input type="radio" name="q60" value="b"> b) Pretty</label>
-            <label class="option"><input type="radio" name="q60" value="c"> c) Ugly</label>
-            <label class="option"><input type="radio" name="q60" value="d"> d) Lovely</label>
+            <label class="option">
+                <input type="radio" name="q60" value="a">
+                a) Attractive
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q60" value="b">
+                b) Pretty
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q60" value="c">
+                c) Ugly
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q60" value="d">
+                d) Lovely
+            </label>
 
         </div>
-
 
     </div>
 
 
-    <!-- ================= PART B ================= -->
+    <!-- =====================================================
+         PART B — COMPOSITION
+    ====================================================== -->
 
     <div class="section">
 
@@ -1088,45 +2152,59 @@ textarea{
         </div>
 
 
+        <!-- APPLICATION -->
+
         <div class="writing-question">
 
-            <h3>13. FORMAL LETTER / APPLICATION — 8 MARKS</h3>
+            <h3>
+                13. FORMAL LETTER / APPLICATION — 8 MARKS
+            </h3>
 
             <p>
-                Write an application to the Principal of your college requesting
-                him/her to increase the facilities in the college library.
+                Write an application to the Principal of your college
+                requesting him/her to increase the facilities in the
+                college library.
             </p>
 
             <textarea
                 id="writing13"
-                placeholder="Write your application here...">
-            </textarea>
+                placeholder="Write your application here..."
+            ></textarea>
 
         </div>
 
 
+        <!-- REPORT -->
+
         <div class="writing-question">
 
-            <h3>14. REPORT WRITING — 8 MARKS</h3>
+            <h3>
+                14. REPORT WRITING — 8 MARKS
+            </h3>
 
             <p>
                 Write a report for a national daily on
                 <strong>“A Road Accident in Your Area”.</strong>
                 Give a suitable headline and mention the place, date,
-                cause of the accident, casualties and response of the authorities.
+                cause of the accident, casualties and response of the
+                authorities.
             </p>
 
             <textarea
                 id="writing14"
-                placeholder="Write your report here...">
-            </textarea>
+                placeholder="Write your report here..."
+            ></textarea>
 
         </div>
 
 
+        <!-- PARAGRAPH -->
+
         <div class="writing-question">
 
-            <h3>15. PARAGRAPH WRITING — 10 MARKS</h3>
+            <h3>
+                15. PARAGRAPH WRITING — 10 MARKS
+            </h3>
 
             <p>
                 Write a paragraph on
@@ -1135,69 +2213,114 @@ textarea{
 
             <textarea
                 id="writing15"
-                placeholder="Write your paragraph here...">
-            </textarea>
+                placeholder="Write your paragraph here..."
+            ></textarea>
 
         </div>
 
 
+        <!-- COMPOSITION -->
+
         <div class="writing-question">
 
-            <h3>16. COMPOSITION / FREE WRITING — 14 MARKS</h3>
+            <h3>
+                16. COMPOSITION / FREE WRITING — 14 MARKS
+            </h3>
 
             <p>
                 Write a composition on
-                <strong>“The Role of Students in Building the Nation”.</strong>
+                <strong>
+                    “The Role of Students in Building the Nation”.
+                </strong>
             </p>
 
             <textarea
                 id="writing16"
-                placeholder="Write your composition here...">
-            </textarea>
+                placeholder="Write your composition here..."
+            ></textarea>
 
         </div>
 
     </div>
 
 
-    <!-- SUBMIT -->
+    <!-- =====================================================
+         SUBMIT AREA
+    ====================================================== -->
 
     <div class="submit-area">
 
-        <button class="submit-btn" onclick="submitQuiz()">
+        <button
+            class="submit-btn"
+            id="submitButton"
+            onclick="submitQuiz()"
+        >
             SUBMIT TEST
         </button>
 
+
+        <!-- RESULT -->
+
         <div class="result" id="result">
 
-            <h2>Test Submitted</h2>
+            <h2>✓ Test Submitted</h2>
 
-            <p>
+            <p class="result-line">
                 Student:
                 <strong id="resultName"></strong>
             </p>
 
-            <p>
+            <p class="result-line">
+                HSC Batch:
+                <strong id="resultBatch"></strong>
+            </p>
+
+            <p class="result-line">
                 Objective Score:
                 <span class="score" id="objectiveScore"></span>
                 / 60
             </p>
 
-            <p>
+            <p class="result-line">
                 Composition:
                 <strong>40 marks — Manual Evaluation</strong>
             </p>
 
-            <p>
+            <p class="result-line">
                 Current Total:
                 <strong id="currentTotal"></strong>
                 / 100
             </p>
 
+
             <div class="note">
-                The 40-mark composition section must be evaluated manually.
-                The final score should be calculated after checking the
-                application, report, paragraph and composition.
+
+                <strong>Note:</strong>
+
+                The 40-mark composition section must be evaluated
+                manually. The final score should be calculated after
+                checking the application, report, paragraph and
+                composition.
+
+            </div>
+
+
+            <!-- ANSWER KEY -->
+
+            <div
+                class="answer-key-box"
+                id="answerKeyBox"
+            >
+
+                <a
+                    href="answer-key.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="answer-key-btn"
+                >
+                    📖 View Answer Key
+                </a>
+
             </div>
 
         </div>
@@ -1205,27 +2328,25 @@ textarea{
     </div>
 
 
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
     <div class="footer">
+
         HSC 2027 English Second Paper — Model Test
-    </div>
-    <div id="answerKeyBox" style="display:none;">
-
-    <a href="answer-key.html"
-       target="_blank"
-       rel="noopener"
-       class="answer-key-btn">
-        📖 View Answer Key
-    </a>
 
     </div>
-    </div>
+
+
+</div>
 
 
 <script>
 
-/* =========================
+/* =====================================================
    ANSWER KEY
-========================= */
+===================================================== */
 
 const answers = {
 
@@ -1304,27 +2425,41 @@ const answers = {
 };
 
 
-/* =========================
+/* =====================================================
    TIMER
-========================= */
+===================================================== */
 
 let totalSeconds = 3 * 60 * 60;
 
-const timerElement = document.getElementById("timer");
+let submitted = false;
 
-const timer = setInterval(function(){
+const timerElement =
+    document.getElementById("timer");
 
-    let hours = Math.floor(totalSeconds / 3600);
 
-    let minutes = Math.floor(
-        (totalSeconds % 3600) / 60
-    );
+function updateTimer(){
 
-    let seconds = totalSeconds % 60;
+    let hours =
+        Math.floor(totalSeconds / 3600);
 
-    hours = String(hours).padStart(2,"0");
-    minutes = String(minutes).padStart(2,"0");
-    seconds = String(seconds).padStart(2,"0");
+    let minutes =
+        Math.floor(
+            (totalSeconds % 3600) / 60
+        );
+
+    let seconds =
+        totalSeconds % 60;
+
+
+    hours =
+        String(hours).padStart(2,"0");
+
+    minutes =
+        String(minutes).padStart(2,"0");
+
+    seconds =
+        String(seconds).padStart(2,"0");
+
 
     timerElement.innerHTML =
         "Time Remaining: " +
@@ -1332,47 +2467,108 @@ const timer = setInterval(function(){
         minutes + ":" +
         seconds;
 
-    totalSeconds--;
 
-    if(totalSeconds < 0){
+    /* Warning when 10 minutes remain */
 
-        clearInterval(timer);
+    if(totalSeconds <= 600){
 
-        alert(
-            "Time is over. Your test will be submitted automatically."
-        );
-
-        submitQuiz();
+        timerElement.classList.add("warning");
 
     }
 
-},1000);
+
+    if(totalSeconds <= 0){
+
+        clearInterval(timer);
+
+        timerElement.innerHTML =
+            "Time Over — Test Submitted";
+
+        submitQuiz(true);
+
+        return;
+
+    }
 
 
-/* =========================
+    totalSeconds--;
+
+}
+
+
+/* Show initial timer immediately */
+
+updateTimer();
+
+
+const timer =
+    setInterval(updateTimer,1000);
+
+
+/* =====================================================
    SUBMIT QUIZ
-========================= */
+===================================================== */
 
-let submitted = false;
-
-function submitQuiz(){
+function submitQuiz(autoSubmit = false){
 
     if(submitted){
         return;
     }
 
-    const studentName =
-        document.getElementById("studentName").value.trim();
+
+    /* =========================
+       STUDENT NAME
+    ========================= */
+
+    let studentName =
+        document
+        .getElementById("studentName")
+        .value
+        .trim();
+
+
+    /*
+       If time finishes and no name
+       was entered, don't block submission.
+    */
 
     if(studentName === ""){
 
-        alert("Please enter your name before submitting.");
+        if(autoSubmit){
 
-        document.getElementById("studentName").focus();
+            studentName = "Not Provided";
 
-        return;
+        }else{
+
+            alert(
+                "Please enter your name before submitting."
+            );
+
+            document
+            .getElementById("studentName")
+            .focus();
+
+            return;
+
+        }
+
     }
 
+
+    /* =========================
+       STUDENT BATCH
+    ========================= */
+
+    const studentBatch =
+        document
+        .getElementById("studentID")
+        .value
+        .trim() || "2027";
+
+
+    /* =========================
+       CALCULATE SCORE
+    ========================= */
 
     let score = 0;
 
@@ -1384,23 +2580,35 @@ function submitQuiz(){
                 'input[name="q' + i + '"]:checked'
             );
 
+
         const questionOptions =
             document.querySelectorAll(
                 'input[name="q' + i + '"]'
             );
 
 
+        /* Check student's answer */
+
         if(selected){
 
-            if(selected.value === answers["q" + i]){
+            if(
+                selected.value ===
+                answers["q" + i]
+            ){
 
                 score++;
 
-                selected.parentElement.classList.add("correct");
+                selected
+                .parentElement
+                .classList
+                .add("correct");
 
             }else{
 
-                selected.parentElement.classList.add("wrong");
+                selected
+                .parentElement
+                .classList
+                .add("wrong");
 
             }
 
@@ -1411,11 +2619,18 @@ function submitQuiz(){
 
         questionOptions.forEach(function(option){
 
-            if(option.value === answers["q" + i]){
+            if(
+                option.value ===
+                answers["q" + i]
+            ){
 
-                option.parentElement.classList.add("correct");
+                option
+                .parentElement
+                .classList
+                .add("correct");
 
             }
+
 
             option.disabled = true;
 
@@ -1424,36 +2639,107 @@ function submitQuiz(){
     }
 
 
+    /* =========================
+       LOCK WRITING SECTION
+    ========================= */
+
+    const textareas =
+        document.querySelectorAll("textarea");
+
+
+    textareas.forEach(function(textarea){
+
+        textarea.disabled = true;
+
+    });
+
+
+    /* =========================
+       SUBMISSION STATE
+    ========================= */
+
     submitted = true;
 
     clearInterval(timer);
 
 
-    document.getElementById("resultName").innerText =
-        studentName;
+    /* =========================
+       DISPLAY RESULT
+    ========================= */
 
-    document.getElementById("objectiveScore").innerText =
-        score;
-
-    document.getElementById("currentTotal").innerText =
-        score;
-
-
-    document.getElementById("result").style.display =
-        "block";
+    document
+    .getElementById("resultName")
+    .innerText = studentName;
 
 
-    document.querySelector(".submit-btn").style.display =
-        "none";
+    document
+    .getElementById("resultBatch")
+    .innerText = studentBatch;
 
 
-    document.getElementById("result").scrollIntoView({
-        behavior:"smooth"
+    document
+    .getElementById("objectiveScore")
+    .innerText = score;
+
+
+    /*
+       Objective score is out of 60.
+       Composition is manually evaluated
+       out of 40.
+    */
+
+    document
+    .getElementById("currentTotal")
+    .innerText = score;
+
+
+    document
+    .getElementById("result")
+    .style.display = "block";
+
+
+    /* Hide submit button */
+
+    document
+    .getElementById("submitButton")
+    .style.display = "none";
+
+
+    /* Show Answer Key button */
+
+    document
+    .getElementById("answerKeyBox")
+    .style.display = "block";
+
+
+    /* Scroll to result */
+
+    document
+    .getElementById("result")
+    .scrollIntoView({
+        behavior:"smooth",
+        block:"center"
     });
+
+
+    /* Time-over message */
+
+    if(autoSubmit){
+
+        setTimeout(function(){
+
+            alert(
+                "Time is over. Your test has been submitted automatically."
+            );
+
+        },300);
+
+    }
 
 }
 
 </script>
+
 
 </body>
 </html>
