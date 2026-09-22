@@ -3,8 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#070b14">
+<meta name="description" content="HSC English 2nd Paper Completing Sentence Practice Quiz">
 
-<title>HSC Completing Sentence | 150 Question Quiz</title>
+<title>HSC Completing Sentence Quiz | English 2nd Paper</title>
 
 <style>
 *{
@@ -14,215 +16,237 @@
 }
 
 :root{
-    --bg:#07080d;
-    --card:rgba(18,20,30,.88);
-    --card2:rgba(25,28,40,.94);
-    --text:#f5f7ff;
-    --muted:#9da5ba;
-    --accent:#7c5cff;
-    --accent2:#00d9ff;
-    --green:#25d98f;
-    --red:#ff5577;
-    --yellow:#ffd166;
-    --border:rgba(255,255,255,.09);
+    --bg:#070b14;
+    --bg2:#0b1020;
+    --card:rgba(15,23,42,.82);
+    --card2:rgba(20,30,52,.72);
+    --border:rgba(255,255,255,.10);
+    --text:#f4f7ff;
+    --muted:#9ba8c2;
+    --primary:#6c63ff;
+    --primary2:#8b5cf6;
+    --cyan:#22d3ee;
+    --green:#22c55e;
+    --red:#ef4444;
+    --yellow:#facc15;
+    --shadow:0 20px 60px rgba(0,0,0,.35);
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
     min-height:100vh;
     background:
-        radial-gradient(circle at 10% 0%,rgba(124,92,255,.16),transparent 32%),
-        radial-gradient(circle at 90% 20%,rgba(0,217,255,.10),transparent 30%),
-        var(--bg);
+        radial-gradient(circle at 15% 10%,rgba(108,99,255,.16),transparent 28%),
+        radial-gradient(circle at 85% 20%,rgba(34,211,238,.10),transparent 25%),
+        linear-gradient(135deg,var(--bg),var(--bg2));
     color:var(--text);
-    font-family:Inter,Arial,Helvetica,sans-serif;
-    line-height:1.55;
-}
-
-button,
-input{
-    font:inherit;
+    font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    padding:18px;
 }
 
 button{
-    cursor:pointer;
-}
-
-.hidden{
-    display:none!important;
+    font:inherit;
 }
 
 .app{
-    width:min(100%,1000px);
+    width:min(100%,1050px);
     margin:auto;
-    padding:18px;
 }
 
 header{
+    position:relative;
     display:flex;
-    align-items:center;
     justify-content:space-between;
-    gap:12px;
-    padding:18px;
-    margin-bottom:16px;
+    align-items:center;
+    gap:15px;
+    padding:18px 20px;
+    margin-bottom:18px;
     border:1px solid var(--border);
-    background:rgba(10,11,18,.78);
-    backdrop-filter:blur(18px);
     border-radius:22px;
-    position:sticky;
-    top:10px;
-    z-index:20;
+    background:rgba(10,15,28,.82);
+    backdrop-filter:blur(18px);
+    box-shadow:var(--shadow);
+}
+
+.brand{
+    min-width:0;
 }
 
 .brand h1{
-    font-size:clamp(18px,4vw,26px);
-    line-height:1.15;
+    font-size:clamp(20px,4vw,29px);
+    font-weight:800;
+    letter-spacing:-.5px;
 }
 
 .brand p{
-    color:var(--muted);
-    font-size:12px;
     margin-top:4px;
+    color:var(--muted);
+    font-size:13px;
 }
 
 .header-actions{
     display:flex;
-    gap:7px;
+    gap:8px;
     flex-wrap:wrap;
     justify-content:flex-end;
 }
 
-.small-btn{
+.btn{
     border:1px solid var(--border);
-    background:rgba(255,255,255,.06);
     color:var(--text);
-    padding:9px 11px;
-    border-radius:11px;
-    font-size:12px;
-    font-weight:700;
+    background:rgba(255,255,255,.06);
+    border-radius:12px;
+    padding:9px 12px;
+    cursor:pointer;
+    transition:.2s ease;
+    font-size:13px;
 }
 
-.small-btn:hover{
-    background:rgba(255,255,255,.12);
+.btn:hover{
+    transform:translateY(-1px);
+    background:rgba(255,255,255,.10);
+}
+
+.btn.primary{
+    border-color:transparent;
+    background:linear-gradient(135deg,var(--primary),var(--primary2));
+}
+
+.btn.danger{
+    background:rgba(239,68,68,.12);
+    border-color:rgba(239,68,68,.28);
 }
 
 .dashboard{
     display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:10px;
-    margin-bottom:14px;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+    margin-bottom:18px;
 }
 
-.stat{
-    background:var(--card);
+.stat-card{
     border:1px solid var(--border);
-    border-radius:17px;
-    padding:13px;
+    background:var(--card);
+    border-radius:20px;
+    padding:18px;
+    box-shadow:var(--shadow);
 }
 
-.stat small{
-    display:block;
+.stat-label{
     color:var(--muted);
-    font-size:10px;
+    font-size:12px;
     text-transform:uppercase;
-    letter-spacing:.7px;
+    letter-spacing:1px;
 }
 
-.stat strong{
-    display:block;
-    margin-top:2px;
-    font-size:19px;
+.stat-value{
+    margin-top:5px;
+    font-size:24px;
+    font-weight:800;
 }
 
 .progress-wrap{
-    margin-bottom:14px;
-    background:var(--card);
+    grid-column:1/-1;
     border:1px solid var(--border);
-    border-radius:17px;
-    padding:12px;
+    background:var(--card);
+    border-radius:20px;
+    padding:15px 18px;
 }
 
-.progress-top{
+.progress-info{
     display:flex;
     justify-content:space-between;
     gap:10px;
+    margin-bottom:9px;
     color:var(--muted);
     font-size:12px;
-    margin-bottom:7px;
-}
-
-.progress{
-    height:9px;
-    background:#171a25;
-    border-radius:999px;
-    overflow:hidden;
 }
 
 .progress-bar{
-    width:0%;
-    height:100%;
-    background:linear-gradient(90deg,var(--accent),var(--accent2));
+    width:100%;
+    height:9px;
+    overflow:hidden;
+    background:rgba(255,255,255,.08);
     border-radius:999px;
-    transition:width .35s ease;
+}
+
+.progress-fill{
+    width:0;
+    height:100%;
+    background:linear-gradient(90deg,var(--primary),var(--cyan));
+    border-radius:inherit;
+    transition:.35s ease;
 }
 
 .card{
-    background:var(--card);
     border:1px solid var(--border);
+    background:var(--card);
     border-radius:24px;
-    padding:20px;
-    box-shadow:0 20px 70px rgba(0,0,0,.24);
+    padding:22px;
+    box-shadow:var(--shadow);
 }
 
-.question-head{
+.question-top{
     display:flex;
     justify-content:space-between;
-    gap:12px;
-    align-items:flex-start;
-    margin-bottom:15px;
+    align-items:center;
+    gap:10px;
+    margin-bottom:18px;
+}
+
+.badges{
+    display:flex;
+    flex-wrap:wrap;
+    gap:7px;
+}
+
+.badge{
+    display:inline-flex;
+    align-items:center;
+    border:1px solid var(--border);
+    border-radius:999px;
+    padding:6px 10px;
+    font-size:11px;
+    color:var(--muted);
+    background:rgba(255,255,255,.04);
+}
+
+.badge.level{
+    color:#fff;
+    border-color:rgba(108,99,255,.4);
+    background:rgba(108,99,255,.14);
 }
 
 .question-number{
-    color:var(--accent2);
-    font-size:13px;
-    font-weight:800;
-}
-
-.difficulty{
-    display:inline-block;
-    margin-top:4px;
     color:var(--muted);
-    font-size:11px;
-}
-
-.rule{
-    padding:7px 10px;
-    border:1px solid rgba(124,92,255,.28);
-    background:rgba(124,92,255,.09);
-    color:#c9c0ff;
-    border-radius:10px;
-    font-size:11px;
-    font-weight:700;
-    text-align:right;
+    font-size:13px;
+    white-space:nowrap;
 }
 
 .question{
-    font-size:clamp(18px,4vw,26px);
-    font-weight:800;
-    line-height:1.5;
-    margin-bottom:9px;
+    font-size:clamp(19px,3vw,25px);
+    line-height:1.55;
+    font-weight:700;
+    margin-bottom:13px;
 }
 
 .translation{
-    color:var(--muted);
+    border-left:3px solid var(--cyan);
+    padding:10px 13px;
+    margin-bottom:18px;
+    background:rgba(34,211,238,.06);
+    color:#cbd5e1;
+    border-radius:0 12px 12px 0;
+    line-height:1.55;
     font-size:14px;
-    border-left:3px solid var(--accent);
-    padding-left:10px;
-    margin-bottom:19px;
 }
 
 .options{
     display:grid;
-    gap:10px;
+    gap:11px;
 }
 
 .option{
@@ -230,294 +254,287 @@ header{
     display:flex;
     align-items:flex-start;
     gap:12px;
-    text-align:left;
-    color:var(--text);
-    background:rgba(255,255,255,.035);
+    padding:14px;
+    border-radius:16px;
     border:1px solid var(--border);
-    border-radius:15px;
-    padding:13px;
-    transition:.18s ease;
+    background:rgba(255,255,255,.035);
+    color:var(--text);
+    text-align:left;
+    cursor:pointer;
+    transition:.2s ease;
 }
 
-.option:hover:not(:disabled){
+.option:hover:not(.locked){
+    border-color:rgba(108,99,255,.55);
+    background:rgba(108,99,255,.08);
     transform:translateY(-1px);
-    border-color:rgba(124,92,255,.6);
-    background:rgba(124,92,255,.08);
+}
+
+.option.locked{
+    cursor:default;
 }
 
 .option-letter{
-    min-width:30px;
-    width:30px;
-    height:30px;
+    flex:0 0 31px;
+    width:31px;
+    height:31px;
     display:grid;
     place-items:center;
-    border-radius:9px;
+    border-radius:10px;
     background:rgba(255,255,255,.08);
-    color:#dfe4f7;
-    font-weight:900;
+    font-size:12px;
+    font-weight:800;
 }
 
 .option-text{
     flex:1;
-    font-size:14px;
     line-height:1.5;
+    padding-top:3px;
 }
 
 .option.correct{
-    border-color:rgba(37,217,143,.7);
-    background:rgba(37,217,143,.10);
+    border-color:rgba(34,197,94,.6);
+    background:rgba(34,197,94,.10);
 }
 
 .option.correct .option-letter{
     background:var(--green);
-    color:#03120c;
+    color:#03120a;
 }
 
 .option.wrong{
-    border-color:rgba(255,85,119,.7);
-    background:rgba(255,85,119,.10);
+    border-color:rgba(239,68,68,.6);
+    background:rgba(239,68,68,.09);
 }
 
 .option.wrong .option-letter{
     background:var(--red);
-    color:white;
+    color:#fff;
 }
 
 .feedback{
-    margin-top:15px;
+    display:none;
+    margin-top:17px;
     padding:15px;
-    border-radius:15px;
-    border:1px solid var(--border);
-    background:rgba(255,255,255,.035);
-}
-
-.feedback-title{
-    font-weight:900;
-    margin-bottom:5px;
-}
-
-.feedback.correct-feedback{
-    border-color:rgba(37,217,143,.3);
-}
-
-.feedback.wrong-feedback{
-    border-color:rgba(255,85,119,.3);
-}
-
-.feedback p{
-    color:#d5d9e7;
-    font-size:13px;
-}
-
-.feedback .bn{
-    margin-top:7px;
-    color:#aeb7cc;
-}
-
-.controls{
-    display:flex;
-    justify-content:space-between;
-    gap:10px;
-    margin-top:18px;
-}
-
-.primary-btn{
-    border:0;
-    border-radius:13px;
-    padding:12px 18px;
-    color:white;
-    font-weight:900;
-    background:linear-gradient(135deg,var(--accent),#5b8cff);
-    box-shadow:0 10px 25px rgba(124,92,255,.18);
-}
-
-.primary-btn:hover{
-    filter:brightness(1.1);
-}
-
-.secondary-btn{
-    border:1px solid var(--border);
-    border-radius:13px;
-    padding:12px 18px;
-    color:var(--text);
-    background:rgba(255,255,255,.06);
-    font-weight:800;
-}
-
-.result{
-    text-align:center;
-}
-
-.result-icon{
-    font-size:55px;
-    margin-bottom:8px;
-}
-
-.result h2{
-    font-size:28px;
-    margin-bottom:5px;
-}
-
-.result-sub{
-    color:var(--muted);
-    margin-bottom:20px;
-}
-
-.result-score{
-    font-size:50px;
-    font-weight:1000;
-    color:var(--accent2);
-}
-
-.result-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:10px;
-    margin:20px 0;
-}
-
-.result-box{
-    padding:15px;
-    border-radius:15px;
+    border-radius:16px;
     background:rgba(255,255,255,.045);
     border:1px solid var(--border);
 }
 
-.result-box small{
-    color:var(--muted);
+.feedback.show{
     display:block;
 }
 
-.result-box strong{
+.feedback-title{
+    font-weight:800;
+    margin-bottom:6px;
+}
+
+.feedback-title.good{
+    color:#4ade80;
+}
+
+.feedback-title.bad{
+    color:#fb7185;
+}
+
+.feedback-rule{
+    color:var(--cyan);
+    font-size:12px;
+    margin-bottom:7px;
+}
+
+.feedback-text{
+    color:#d5dbea;
+    line-height:1.6;
+    font-size:14px;
+}
+
+.next-wrap{
+    display:flex;
+    justify-content:flex-end;
+    margin-top:16px;
+}
+
+.next-btn{
+    min-width:150px;
+}
+
+.screen{
+    display:none;
+}
+
+.screen.active{
     display:block;
-    font-size:21px;
-    margin-top:2px;
+}
+
+.result{
+    text-align:center;
+    padding:30px 20px;
+}
+
+.result-icon{
+    font-size:54px;
+    margin-bottom:10px;
+}
+
+.result h2{
+    font-size:30px;
+    margin-bottom:8px;
+}
+
+.result p{
+    color:var(--muted);
+    line-height:1.6;
+}
+
+.score-big{
+    font-size:58px;
+    font-weight:900;
+    margin:18px 0 4px;
+    background:linear-gradient(90deg,#fff,var(--cyan));
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+}
+
+.result-stats{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:10px;
+    margin:22px 0;
+}
+
+.result-stat{
+    border:1px solid var(--border);
+    background:rgba(255,255,255,.035);
+    border-radius:16px;
+    padding:15px 8px;
+}
+
+.result-stat strong{
+    display:block;
+    font-size:22px;
+}
+
+.result-stat span{
+    color:var(--muted);
+    font-size:11px;
 }
 
 .result-actions{
     display:flex;
     justify-content:center;
     flex-wrap:wrap;
-    gap:9px;
+    gap:10px;
 }
 
-.warning{
-    margin-bottom:14px;
-    padding:15px;
-    background:rgba(255,85,119,.1);
-    border:1px solid rgba(255,85,119,.35);
-    border-radius:15px;
-    color:#ffd8e0;
-    font-size:13px;
-    white-space:pre-wrap;
+.error-box{
+    padding:20px;
+    border-radius:18px;
+    border:1px solid rgba(239,68,68,.45);
+    background:rgba(239,68,68,.09);
+    color:#fecaca;
+    line-height:1.6;
 }
 
-footer{
-    text-align:center;
-    color:#70788d;
-    font-size:11px;
-    padding:25px 5px 10px;
-}
-
-#confettiCanvas{
-    position:fixed;
-    inset:0;
-    pointer-events:none;
-    z-index:100;
+.error-box h3{
+    color:#f87171;
+    margin-bottom:8px;
 }
 
 .review-list{
     display:grid;
-    gap:10px;
-    margin-top:15px;
+    gap:12px;
+    margin-top:18px;
     text-align:left;
 }
 
 .review-item{
-    padding:14px;
     border:1px solid var(--border);
-    border-radius:14px;
+    border-radius:16px;
+    padding:15px;
     background:rgba(255,255,255,.035);
 }
 
-.review-item.correct-review{
-    border-color:rgba(37,217,143,.3);
-}
-
-.review-item.wrong-review{
-    border-color:rgba(255,85,119,.3);
-}
-
 .review-question{
-    font-weight:800;
-    margin-bottom:7px;
+    font-weight:700;
+    line-height:1.5;
 }
 
 .review-answer{
+    margin-top:7px;
+    color:#a7f3d0;
     font-size:13px;
-    color:var(--muted);
 }
 
-.bank-error-title{
-    color:#ff718e;
-    font-weight:900;
-    margin-bottom:7px;
+.review-answer.wrong{
+    color:#fecaca;
 }
 
-@media(max-width:700px){
+.hidden{
+    display:none!important;
+}
 
-    .app{
+footer{
+    text-align:center;
+    color:#66728b;
+    font-size:11px;
+    padding:25px 0 8px;
+}
+
+#confetti{
+    position:fixed;
+    inset:0;
+    width:100%;
+    height:100%;
+    pointer-events:none;
+    z-index:100;
+}
+
+@media(max-width:650px){
+    body{
         padding:10px;
     }
 
     header{
-        position:relative;
-        top:0;
-        padding:14px;
-        border-radius:17px;
-    }
-
-    .dashboard{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .card{
         padding:15px;
-        border-radius:19px;
-    }
-
-    .question-head{
+        align-items:flex-start;
         flex-direction:column;
-    }
-
-    .rule{
-        text-align:left;
-    }
-
-    .result-grid{
-        grid-template-columns:1fr;
-    }
-
-    .controls{
-        flex-direction:column;
-    }
-
-    .controls button{
-        width:100%;
     }
 
     .header-actions{
-        max-width:130px;
+        width:100%;
+        justify-content:flex-start;
     }
 
-    .small-btn{
-        padding:7px 8px;
-        font-size:10px;
+    .dashboard{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .stat-card{
+        padding:14px;
+    }
+
+    .stat-value{
+        font-size:20px;
+    }
+
+    .card{
+        padding:16px;
+        border-radius:20px;
+    }
+
+    .question-top{
+        align-items:flex-start;
+    }
+
+    .result-stats{
+        grid-template-columns:1fr;
     }
 }
 
 @media(prefers-reduced-motion:reduce){
-
     *,
     *::before,
     *::after{
@@ -531,2515 +548,2448 @@ footer{
 
 <body>
 
-<canvas id="confettiCanvas"></canvas>
+<canvas id="confetti"></canvas>
 
 <div class="app">
 
 <header>
-
     <div class="brand">
         <h1>HSC Completing Sentence</h1>
-        <p>English 2nd Paper • 150 MCQ Mastery Quiz</p>
+        <p>English 2nd Paper • 150 MCQ Practice</p>
     </div>
 
     <div class="header-actions">
-
-        <button
-            class="small-btn"
-            id="soundBtn"
-            type="button"
-            onclick="toggleSound()">
-            🔊 Sound
-        </button>
-
-        <button
-            class="small-btn"
-            type="button"
-            onclick="exportProgress()">
-            ⬇ Export
-        </button>
-
-        <button
-            class="small-btn"
-            type="button"
-            onclick="document.getElementById('importFile').click()">
-            ⬆ Import
-        </button>
-
-        <input
-            type="file"
-            id="importFile"
-            accept=".json,application/json"
-            hidden
-            onchange="importProgress(event)">
+        <button class="btn" id="soundBtn" type="button">🔊 Sound</button>
+        <button class="btn" id="exportBtn" type="button">⬇ Export</button>
+        <button class="btn" id="importBtn" type="button">⬆ Import</button>
+        <input id="importFile" type="file" accept=".json,application/json" hidden>
     </div>
-
 </header>
-
 
 <div id="warningArea"></div>
 
+<section id="quizScreen" class="screen">
 
-<section class="dashboard">
+    <div class="dashboard">
+        <div class="stat-card">
+            <div class="stat-label">Current Round</div>
+            <div class="stat-value" id="roundLabel">1 / 10</div>
+        </div>
 
-    <div class="stat">
-        <small>Current Round</small>
-        <strong id="roundStat">1 / 10</strong>
-    </div>
+        <div class="stat-card">
+            <div class="stat-label">Round Score</div>
+            <div class="stat-value" id="roundScoreLabel">0 / 15</div>
+        </div>
 
-    <div class="stat">
-        <small>Round Score</small>
-        <strong id="scoreStat">0 / 15</strong>
-    </div>
-
-    <div class="stat">
-        <small>Total Correct</small>
-        <strong id="totalStat">0 / 150</strong>
-    </div>
-
-    <div class="stat">
-        <small>XP</small>
-        <strong id="xpStat">0</strong>
-    </div>
-
-</section>
-
-
-<section class="progress-wrap">
-
-    <div class="progress-top">
-        <span id="progressText">Question 1 of 15</span>
-        <span id="percentText">0%</span>
-    </div>
-
-    <div class="progress">
-        <div
-            class="progress-bar"
-            id="progressBar">
+        <div class="progress-wrap">
+            <div class="progress-info">
+                <span id="progressText">Question 1 of 15</span>
+                <span id="overallProgress">0 / 150</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
         </div>
     </div>
 
-</section>
+    <div class="card">
 
-
-<main id="quizArea">
-
-    <section class="card">
-
-        <div class="question-head">
-
-            <div>
-                <div
-                    class="question-number"
-                    id="questionNumber">
-                    Question 1 / 15
-                </div>
-
-                <div
-                    class="difficulty"
-                    id="difficulty">
-                    Foundation
-                </div>
+        <div class="question-top">
+            <div class="badges">
+                <span class="badge level" id="difficultyBadge">Foundation</span>
+                <span class="badge" id="ruleBadge">Rule</span>
             </div>
 
-            <div
-                class="rule"
-                id="rule">
-                Completing Sentence
+            <span class="question-number" id="questionNumber">1 / 15</span>
+        </div>
+
+        <div class="question" id="questionText"></div>
+
+        <div class="translation" id="translationText"></div>
+
+        <div class="options" id="options"></div>
+
+        <div class="feedback" id="feedback">
+            <div class="feedback-title" id="feedbackTitle"></div>
+            <div class="feedback-rule" id="feedbackRule"></div>
+            <div class="feedback-text" id="feedbackText"></div>
+        </div>
+
+        <div class="next-wrap">
+            <button class="btn primary next-btn hidden" id="nextBtn" type="button">
+                Next Question →
+            </button>
+        </div>
+
+    </div>
+</section>
+
+<section id="roundResultScreen" class="screen">
+    <div class="card result">
+        <div class="result-icon">🎯</div>
+        <h2 id="roundResultTitle">Round Complete</h2>
+
+        <div class="score-big" id="roundResultScore">0 / 15</div>
+
+        <p id="roundResultMessage"></p>
+
+        <div class="result-stats">
+            <div class="result-stat">
+                <strong id="roundCorrect">0</strong>
+                <span>Correct</span>
             </div>
 
+            <div class="result-stat">
+                <strong id="roundWrong">0</strong>
+                <span>Incorrect</span>
+            </div>
+
+            <div class="result-stat">
+                <strong id="roundPercent">0%</strong>
+                <span>Accuracy</span>
+            </div>
         </div>
 
+        <div class="result-actions">
+            <button class="btn primary" id="nextRoundBtn" type="button">
+                Next Round →
+            </button>
 
-        <div
-            class="question"
-            id="question">
-            Loading question...
-        </div>
+            <button class="btn" id="reviewBtn" type="button">
+                Review Answers
+            </button>
 
-
-        <div
-            class="translation"
-            id="translation">
-        </div>
-
-
-        <div
-            class="options"
-            id="options">
-        </div>
-
-
-        <div
-            class="feedback hidden"
-            id="feedback">
-        </div>
-
-
-        <div class="controls">
-
-            <button
-                class="secondary-btn"
-                type="button"
-                onclick="goHome()">
+            <button class="btn" id="roundHomeBtn" type="button">
                 Main Website
             </button>
+        </div>
 
-            <button
-                class="primary-btn"
-                id="nextBtn"
-                type="button"
-                onclick="nextQuestion()"
-                disabled>
-                Next →
+        <div id="reviewArea" class="hidden"></div>
+    </div>
+</section>
+
+<section id="finalResultScreen" class="screen">
+    <div class="card result">
+        <div class="result-icon">🏆</div>
+        <h2>Quiz Completed!</h2>
+
+        <div class="score-big" id="finalScore">0 / 150</div>
+
+        <p>
+            You completed all 10 rounds of the HSC Completing Sentence practice.
+        </p>
+
+        <div class="result-stats">
+            <div class="result-stat">
+                <strong id="finalCorrect">0</strong>
+                <span>Correct</span>
+            </div>
+
+            <div class="result-stat">
+                <strong id="finalWrong">0</strong>
+                <span>Incorrect</span>
+            </div>
+
+            <div class="result-stat">
+                <strong id="finalPercent">0%</strong>
+                <span>Accuracy</span>
+            </div>
+        </div>
+
+        <div class="result-actions">
+            <button class="btn primary" id="restartBtn" type="button">
+                Restart Quiz
             </button>
 
+            <button class="btn" id="finalHomeBtn" type="button">
+                Main Website
+            </button>
         </div>
-
-    </section>
-
-</main>
-
-
-<section
-    class="card result hidden"
-    id="roundResult">
-
-    <div class="result-icon">🏆</div>
-
-    <h2 id="roundResultTitle">
-        Round Complete
-    </h2>
-
-    <p
-        class="result-sub"
-        id="roundResultMessage">
-    </p>
-
-    <div
-        class="result-score"
-        id="roundResultScore">
-        0 / 15
     </div>
-
-    <div class="result-grid">
-
-        <div class="result-box">
-            <small>Correct</small>
-            <strong id="roundCorrect">0</strong>
-        </div>
-
-        <div class="result-box">
-            <small>Wrong</small>
-            <strong id="roundWrong">0</strong>
-        </div>
-
-        <div class="result-box">
-            <small>Accuracy</small>
-            <strong id="roundAccuracy">0%</strong>
-        </div>
-
-    </div>
-
-    <div class="result-actions">
-
-        <button
-            class="primary-btn"
-            id="nextRoundBtn"
-            type="button"
-            onclick="nextRound()">
-            Next Round →
-        </button>
-
-        <button
-            class="secondary-btn"
-            type="button"
-            onclick="showReview(currentRound)">
-            Review Answers
-        </button>
-
-        <button
-            class="secondary-btn"
-            type="button"
-            onclick="goHome()">
-            Main Website
-        </button>
-
-    </div>
-
-    <div
-        class="review-list hidden"
-        id="reviewList">
-    </div>
-
 </section>
-
-
-<section
-    class="card result hidden"
-    id="finalResult">
-
-    <div class="result-icon">🎓</div>
-
-    <h2>Quiz Completed!</h2>
-
-    <p class="result-sub">
-        You have completed all 150 Completing Sentence MCQs.
-    </p>
-
-    <div
-        class="result-score"
-        id="finalScore">
-        0 / 150
-    </div>
-
-    <div class="result-grid">
-
-        <div class="result-box">
-            <small>Correct</small>
-            <strong id="finalCorrect">0</strong>
-        </div>
-
-        <div class="result-box">
-            <small>Incorrect</small>
-            <strong id="finalWrong">0</strong>
-        </div>
-
-        <div class="result-box">
-            <small>Accuracy</small>
-            <strong id="finalAccuracy">0%</strong>
-        </div>
-
-    </div>
-
-    <div class="result-actions">
-
-        <button
-            class="primary-btn"
-            type="button"
-            onclick="restartQuiz()">
-            🔄 Restart Quiz
-        </button>
-
-        <button
-            class="secondary-btn"
-            type="button"
-            onclick="goHome()">
-            Main Website
-        </button>
-
-    </div>
-
-</section>
-
 
 <footer>
     HSC English 2nd Paper • Completing Sentence Practice
-    <br>
-    Progress is saved automatically on this device.
 </footer>
 
 </div>
 
-
 <script>
+"use strict";
 
-/* =========================================================
+/* ============================================================
+   QUIZ CONFIGURATION
+============================================================ */
+
+const TOTAL_ROUNDS = 10;
+const QUESTIONS_PER_ROUND = 15;
+const TOTAL_QUESTIONS = 150;
+
+const STORAGE_KEY = "hscCompletingSentenceProgress_v4";
+const SETTINGS_KEY = "hscCompletingSentenceSettings_v4";
+
+const LETTERS = ["A","B","C","D"];
+
+
+/* ============================================================
    QUESTION BANK
-   150 QUESTIONS
-   10 ROUNDS × 15 QUESTIONS
-========================================================= */
+   EXACTLY 150 QUESTIONS
+   15 QUESTIONS × 10 ROUNDS
+============================================================ */
 
 const QUESTIONS = [
 
-/* =========================
+/* ============================================================
    ROUND 1 — FOUNDATION
-========================= */
+============================================================ */
 
-{r:1,rule:"It is high time + past tense",d:"Foundation",q:"It is high time we ____ our bad habits.",bn:"আমাদের বদ অভ্যাস ত্যাগ করার এখনই উপযুক্ত সময়।",c:["change","changed","will change","have changed"],a:1,e:"After 'It is high time', a past-tense verb is traditionally used."},
+{id:1,r:1,rule:"It is high time + past simple",d:"Foundation",
+q:"It is high time we ____ the matter seriously.",
+bn:"এখনই সময় আমাদের বিষয়টি গুরুত্বের সঙ্গে ____।",
+c:["take","took","will take","have taken"],a:1,
+e:"After 'It is high time', a past simple verb is normally used to express that something should happen now."},
 
-{r:1,rule:"If + present, future",d:"Foundation",q:"If you work hard, you ____ succeed.",bn:"তুমি কঠোর পরিশ্রম করলে সফল হবে।",c:["would","will","would have","had"],a:1,e:"A real future condition uses present tense in the if-clause and will + verb in the main clause."},
+{id:2,r:1,rule:"If-clause",d:"Foundation",
+q:"If I ____ rich, I would help the poor.",
+bn:"আমি ধনী হলে গরিবদের সাহায্য করতাম।",
+c:["am","was","were","have been"],a:2,
+e:"For an unreal present condition, 'were' is traditionally used with all persons, especially in formal English."},
 
-{r:1,rule:"Unless + affirmative clause",d:"Foundation",q:"Unless you hurry, you ____ the train.",bn:"তুমি তাড়াতাড়ি না করলে ট্রেনটি মিস করবে।",c:["missed","would miss","will miss","had missed"],a:2,e:"Unless means 'if not'. With a future result, 'will miss' is appropriate."},
+{id:3,r:1,rule:"Unless",d:"Foundation",
+q:"Unless you work hard, you ____ fail.",
+bn:"তুমি কঠোর পরিশ্রম না করলে ব্যর্থ হবে।",
+c:["would","will","would have","had"],a:1,
+e:"'Unless' means 'if not'. A present simple condition can take 'will' in the main clause."},
 
-{r:1,rule:"Lest + should",d:"Foundation",q:"Study carefully lest you ____ fail.",bn:"মনোযোগ দিয়ে পড়ো, পাছে তুমি ব্যর্থ হও।",c:["should","will","would","had"],a:0,e:"In traditional formal grammar, 'lest' is commonly followed by 'should'."},
+{id:4,r:1,rule:"Lest",d:"Foundation",
+q:"Walk carefully lest you ____ fall.",
+bn:"সাবধানে হাঁটো, পাছে তুমি পড়ে যাও।",
+c:["should","would","will","could have"],a:0,
+e:"After 'lest', 'should' is commonly used in formal English."},
 
-{r:1,rule:"Since + past, present perfect",d:"Foundation",q:"Since he ____ here, he has made many friends.",bn:"সে এখানে আসার পর অনেক বন্ধু করেছে।",c:["came","comes","has come","will come"],a:0,e:"After 'since', a completed past event is followed by a present-perfect result."},
+{id:5,r:1,rule:"Since",d:"Foundation",
+q:"It has been five years since I ____ here.",
+bn:"আমি এখানে আসার পর পাঁচ বছর হয়ে গেছে।",
+c:["come","came","have come","will come"],a:1,
+e:"After 'It has been ... since', the clause referring to the starting event normally uses the past simple."},
 
-{r:1,rule:"Until + present for future",d:"Foundation",q:"Wait here until I ____ back.",bn:"আমি ফিরে না আসা পর্যন্ত এখানে অপেক্ষা করো।",c:["will come","came","come","would come"],a:2,e:"After 'until' referring to the future, use the present simple, not 'will'."},
+{id:6,r:1,rule:"Until",d:"Foundation",
+q:"Wait here until I ____ back.",
+bn:"আমি ফিরে না আসা পর্যন্ত এখানে অপেক্ষা করো।",
+c:["will come","came","come","had come"],a:2,
+e:"In a time clause beginning with 'until', the present simple can refer to a future event."},
 
-{r:1,rule:"Would rather + base verb",d:"Foundation",q:"I would rather ____ at home tonight.",bn:"আমি আজ রাতে বরং বাড়িতে থাকতে চাই।",c:["stay","stayed","staying","to stay"],a:0,e:"Would rather is followed by the base form when the subject is the same."},
+{id:7,r:1,rule:"Would rather",d:"Foundation",
+q:"I would rather ____ at home tonight.",
+bn:"আমি আজ রাতে বরং বাড়িতে থাকতে চাই।",
+c:["stay","stayed","to stay","staying"],a:0,
+e:"'Would rather' is followed by the base form when expressing the speaker's own preference."},
 
-{r:1,rule:"Too + adjective + to",d:"Foundation",q:"The box is too heavy for me ____.",bn:"বাক্সটি আমার বহন করার জন্য খুব ভারী।",c:["carry","carried","carrying","to carry"],a:3,e:"The structure is too + adjective + for + object + to-infinitive."},
+{id:8,r:1,rule:"Too + adjective + to",d:"Foundation",
+q:"The box is too heavy for me ____.",
+bn:"বাক্সটি আমার জন্য এত ভারী যে আমি এটি বহন করতে পারি না।",
+c:["carry","carrying","to carry","carried"],a:2,
+e:"The pattern is 'too + adjective + to + base verb'."},
 
-{r:1,rule:"So + adjective + that",d:"Foundation",q:"He was so tired that he ____ asleep immediately.",bn:"সে এত ক্লান্ত ছিল যে সঙ্গে সঙ্গে ঘুমিয়ে পড়েছিল।",c:["falls","fell","will fall","has fallen"],a:1,e:"The sentence is in the past, so 'fell' is required."},
+{id:9,r:1,rule:"So...that",d:"Foundation",
+q:"He was so tired that he ____ asleep immediately.",
+bn:"সে এত ক্লান্ত ছিল যে সঙ্গে সঙ্গে ঘুমিয়ে পড়েছিল।",
+c:["fall","falls","fell","falling"],a:2,
+e:"The sentence describes a completed past event, so the past simple 'fell' is appropriate."},
 
-{r:1,rule:"No sooner + past perfect + than",d:"Foundation",q:"No sooner had the teacher entered ____ the students became silent.",bn:"শিক্ষক প্রবেশ করতেই শিক্ষার্থীরা নীরব হয়ে গেল।",c:["when","than","then","that"],a:1,e:"The fixed correlative structure is 'no sooner ... than'."},
+{id:10,r:1,rule:"No sooner...than",d:"Foundation",
+q:"No sooner had he arrived ____ it started raining.",
+bn:"সে আসতে না আসতেই বৃষ্টি শুরু হলো।",
+c:["when","than","then","as"],a:1,
+e:"The fixed correlative structure is 'no sooner ... than'."},
 
-{r:1,rule:"Hardly + past perfect + when",d:"Foundation",q:"Hardly had I reached home ____ it started raining.",bn:"আমি বাড়ি পৌঁছাতেই বৃষ্টি শুরু হলো।",c:["than","when","then","that"],a:1,e:"The fixed structure is 'hardly ... when'."},
+{id:11,r:1,rule:"Hardly...when",d:"Foundation",
+q:"Hardly had I reached home ____ the phone rang.",
+bn:"আমি বাড়িতে পৌঁছাতেই ফোন বেজে উঠল।",
+c:["than","when","then","as"],a:1,
+e:"The fixed structure is 'hardly/scarcely ... when'."},
 
-{r:1,rule:"Wish + past for present unreal",d:"Foundation",q:"I wish I ____ taller.",bn:"আমি যদি আরও লম্বা হতাম! (বর্তমানের অপূর্ণ ইচ্ছা)",c:["am","were","will be","have been"],a:1,e:"For an unreal present wish, 'were' is traditionally used."},
+{id:12,r:1,rule:"Wish",d:"Foundation",
+q:"I wish I ____ a car.",
+bn:"ইশ, যদি আমার একটি গাড়ি থাকত।",
+c:["have","had","will have","have had"],a:1,
+e:"A wish about an unreal present situation commonly takes the past simple."},
 
-{r:1,rule:"Without + gerund",d:"Foundation",q:"He left without ____ goodbye.",bn:"সে বিদায় না বলে চলে গেল।",c:["say","said","saying","to say"],a:2,e:"A preposition such as 'without' is followed by a gerund."},
+{id:13,r:1,rule:"Without",d:"Foundation",
+q:"Without your help, I ____ have succeeded.",
+bn:"তোমার সাহায্য ছাড়া আমি সফল হতে পারতাম না।",
+c:["will","would not","am not","did not"],a:1,
+e:"'Without' can introduce a condition equivalent to 'if it were not for'; 'would not have succeeded' expresses the unreal past result."},
 
-{r:1,rule:"As if + past for unreal present",d:"Foundation",q:"He behaves as if he ____ the owner.",bn:"সে এমন আচরণ করে যেন সে মালিক।",c:["is","were","will be","has been"],a:1,e:"An unreal present comparison after 'as if' can take the past form 'were'."},
+{id:14,r:1,rule:"By",d:"Foundation",
+q:"By the time we arrived, the train ____.",
+bn:"আমরা পৌঁছানোর আগেই ট্রেনটি চলে গিয়েছিল।",
+c:["leaves","left","had left","has left"],a:2,
+e:"The earlier of two past events takes the past perfect."},
 
-{r:1,rule:"As if + past perfect for unreal past",d:"Foundation",q:"He looked as if he ____ the news before.",bn:"তাকে দেখে মনে হচ্ছিল যেন সে আগে থেকেই খবরটি জানত।",c:["knows","knew","had known","will know"],a:2,e:"For an unreal earlier past situation, 'as if + past perfect' is appropriate."},
+{id:15,r:1,rule:"As if",d:"Foundation",
+q:"He talks as if he ____ everything.",
+bn:"সে এমনভাবে কথা বলে যেন সে সবকিছু জানত।",
+c:["knows","knew","will know","has known"],a:1,
+e:"After 'as if' for an unreal or contrary-to-fact present idea, the past simple 'knew' is used."},
 
 
-/* =========================
+/* ============================================================
    ROUND 2 — CONDITIONALS
-========================= */
+============================================================ */
 
-{r:2,rule:"First conditional",d:"Intermediate",q:"If it rains tomorrow, we ____ at home.",bn:"আগামীকাল বৃষ্টি হলে আমরা বাড়িতে থাকব।",c:["stay","stayed","will stay","would stay"],a:2,e:"A likely future condition uses present simple after if and will + verb in the result."},
+{id:16,r:2,rule:"First conditional",d:"Intermediate",
+q:"If it rains tomorrow, we ____ at home.",
+bn:"আগামীকাল বৃষ্টি হলে আমরা বাড়িতে থাকব।",
+c:["stay","stayed","will stay","would stay"],a:2,
+e:"The first conditional uses present simple in the if-clause and 'will + base verb' in the main clause."},
 
-{r:2,rule:"Second conditional",d:"Intermediate",q:"If I ____ rich, I would help the poor.",bn:"আমি ধনী হলে দরিদ্রদের সাহায্য করতাম।",c:["am","were","will be","have been"],a:1,e:"The second conditional uses a past form in the if-clause; 'were' is standard with 'I'."},
+{id:17,r:2,rule:"Second conditional",d:"Intermediate",
+q:"If I had enough money, I ____ a new laptop.",
+bn:"আমার যথেষ্ট টাকা থাকলে আমি একটি নতুন ল্যাপটপ কিনতাম।",
+c:["buy","will buy","would buy","bought"],a:2,
+e:"The second conditional uses 'would + base verb' for an unreal or hypothetical present situation."},
 
-{r:2,rule:"Third conditional",d:"Intermediate",q:"If he had studied harder, he ____ the exam.",bn:"সে আরও মনোযোগ দিয়ে পড়লে পরীক্ষায় পাস করত।",c:["passes","would pass","would have passed","will pass"],a:2,e:"The third conditional uses had + past participle and would have + past participle."},
+{id:18,r:2,rule:"Third conditional",d:"Intermediate",
+q:"If he had studied harder, he ____ the examination.",
+bn:"সে আরও কঠোরভাবে পড়লে পরীক্ষায় পাস করত।",
+c:["passes","would pass","would have passed","will have passed"],a:2,
+e:"The third conditional expresses an unreal past condition with 'would have + past participle'."},
 
-{r:2,rule:"Unless",d:"Intermediate",q:"Unless you obey the rules, you ____ punished.",bn:"তুমি নিয়ম না মানলে শাস্তি পাবে।",c:["will be","would be","were","had been"],a:0,e:"Unless means if not. A future result takes 'will be punished'."},
+{id:19,r:2,rule:"Unless",d:"Intermediate",
+q:"Unless you hurry, you ____ the bus.",
+bn:"তুমি তাড়াতাড়ি না করলে বাসটি মিস করবে।",
+c:["missed","will miss","would miss","had missed"],a:1,
+e:"'Unless' means 'if not', so the likely future result is expressed with 'will miss'."},
 
-{r:2,rule:"Provided that",d:"Intermediate",q:"You may go out provided that you ____ your homework first.",bn:"তুমি আগে বাড়ির কাজ করলে বাইরে যেতে পারো।",c:["finish","finished","will finish","had finished"],a:0,e:"After 'provided that' for a real condition, use present simple."},
+{id:20,r:2,rule:"Provided that",d:"Intermediate",
+q:"You may go out provided that you ____ your homework.",
+bn:"তুমি বাড়ির কাজ শেষ করলে বাইরে যেতে পারো।",
+c:["finish","finished","will finish","had finished"],a:0,
+e:"After 'provided that' in a future condition, the present simple is normally used."},
 
-{r:2,rule:"In case",d:"Intermediate",q:"Take an umbrella in case it ____.",bn:"বৃষ্টি হতে পারে বলে ছাতা সঙ্গে নাও।",c:["rains","rained","will rain","would rain"],a:0,e:"After 'in case' referring to a possible future event, present simple is used."},
+{id:21,r:2,rule:"In case",d:"Intermediate",
+q:"Take an umbrella in case it ____.",
+bn:"বৃষ্টি হতে পারে বলে একটি ছাতা নাও।",
+c:["rains","rained","will rain","would rain"],a:0,
+e:"'In case' introduces a possible future condition, normally using the present simple."},
 
-{r:2,rule:"Inversion: Were I",d:"Advanced",q:"Were I you, I ____ the offer.",bn:"আমি তোমার জায়গায় হলে প্রস্তাবটি গ্রহণ করতাম।",c:["accept","would accept","will accept","accepted"],a:1,e:"'Were I you' is an inverted second conditional and takes 'would + verb'."},
+{id:22,r:2,rule:"Were I",d:"Intermediate",
+q:"Were I you, I ____ the offer.",
+bn:"আমি তোমার জায়গায় হলে প্রস্তাবটি গ্রহণ করতাম।",
+c:["accept","will accept","would accept","accepted"],a:2,
+e:"'Were I you' is an inverted form of 'If I were you' and takes 'would + base verb'."},
 
-{r:2,rule:"Inversion: Had I known",d:"Advanced",q:"Had I known the truth, I ____ you.",bn:"আমি সত্যটি জানলে তোমাকে বলতাম।",c:["would tell","would have told","will tell","told"],a:1,e:"Had I known = If I had known. The result takes would have + past participle."},
+{id:23,r:2,rule:"Had I known",d:"Intermediate",
+q:"Had I known the truth, I ____ you.",
+bn:"আমি সত্যটি জানলে তোমাকে বলতাম।",
+c:["tell","would tell","would have told","had told"],a:2,
+e:"'Had I known' is an inverted third conditional, so the result takes 'would have + past participle'."},
 
-{r:2,rule:"Inversion: Should you",d:"Advanced",q:"Should you need any help, ____ me.",bn:"তোমার কোনো সাহায্যের প্রয়োজন হলে আমাকে জানিও।",c:["contact","contacted","will contact","would contact"],a:0,e:"'Should you...' is an inverted formal conditional; the main clause uses the base verb in an instruction."},
+{id:24,r:2,rule:"Should you",d:"Intermediate",
+q:"Should you need any help, I ____ you.",
+bn:"তোমার কোনো সাহায্য দরকার হলে আমি তোমাকে সাহায্য করব।",
+c:["help","will help","would help","helped"],a:1,
+e:"'Should you...' is a formal conditional equivalent to 'If you should...'; 'will help' gives the future result."},
 
-{r:2,rule:"Mixed conditional",d:"Advanced",q:"If he had taken the medicine, he ____ better now.",bn:"সে ওষুধটি নিলে এখন ভালো থাকত।",c:["would feel","will feel","would have felt","felt"],a:0,e:"A past condition with a present result forms a mixed conditional: had + past participle / would + base verb."},
+{id:25,r:2,rule:"Mixed conditional",d:"Intermediate",
+q:"If I had taken the job, I ____ in Dhaka now.",
+bn:"আমি চাকরিটি নিলে এখন ঢাকায় থাকতাম।",
+c:["live","would live","would have lived","lived"],a:1,
+e:"A past unreal condition with a present result forms a mixed conditional: 'had taken' + 'would live'."},
 
-{r:2,rule:"If only + past",d:"Advanced",q:"If only I ____ more free time!",bn:"ইশ! আমার যদি আরও অবসর সময় থাকত!",c:["have","had","will have","have had"],a:1,e:"'If only' expressing an unreal present wish takes a past form."},
+{id:26,r:2,rule:"If only",d:"Intermediate",
+q:"If only I ____ more time!",
+bn:"ইশ, যদি আমার আরও সময় থাকত!",
+c:["have","had","will have","am having"],a:1,
+e:"'If only' expressing a present unreal wish is followed by the past simple."},
 
-{r:2,rule:"But for",d:"Advanced",q:"But for your help, I ____ the work.",bn:"তোমার সাহায্য না থাকলে আমি কাজটি শেষ করতে পারতাম না।",c:["could not have completed","cannot complete","will not complete","did not complete"],a:0,e:"'But for' means 'if it were not for'. With a past situation, 'could not have completed' is appropriate."},
+{id:27,r:2,rule:"But for",d:"Intermediate",
+q:"But for your support, I ____ failed.",
+bn:"তোমার সমর্থন না থাকলে আমি ব্যর্থ হতাম।",
+c:["will have","would have","would","had"],a:1,
+e:"'But for' means 'if it were not for'; for an unreal past result, use 'would have + past participle'."},
 
-{r:2,rule:"Otherwise",d:"Intermediate",q:"Hurry up; otherwise, you ____ the bus.",bn:"তাড়াতাড়ি করো; অন্যথায় তুমি বাসটি মিস করবে।",c:["missed","will miss","would have missed","had missed"],a:1,e:"'Otherwise' introduces a likely consequence, so 'will miss' fits."},
+{id:28,r:2,rule:"Otherwise",d:"Intermediate",
+q:"Hurry up; otherwise, we ____ late.",
+bn:"তাড়াতাড়ি করো; নইলে আমরা দেরি করব।",
+c:["are","were","will be","would be"],a:2,
+e:"'Otherwise' introduces the negative consequence of failing to do what was requested, so 'will be' fits the future context."},
 
-{r:2,rule:"As long as",d:"Intermediate",q:"You can stay here as long as you ____ quiet.",bn:"তুমি চুপচাপ থাকলে এখানে থাকতে পারো।",c:["remain","remained","will remain","had remained"],a:0,e:"As long as expresses a real condition and is followed by present simple."},
+{id:29,r:2,rule:"As long as",d:"Intermediate",
+q:"You can stay here as long as you ____ the rules.",
+bn:"তুমি নিয়ম মেনে চললে এখানে থাকতে পারো।",
+c:["follow","followed","will follow","had followed"],a:0,
+e:"'As long as' introduces a condition, and the present simple is used for a future/general condition."},
 
-{r:2,rule:"If + past perfect",d:"Advanced",q:"If she had arrived earlier, she ____ the meeting.",bn:"সে আগে এলে সভায় যোগ দিতে পারত।",c:["could join","could have joined","can join","will join"],a:1,e:"A past unreal condition takes could have + past participle for a possible past result."},
+{id:30,r:2,rule:"Conditional inversion",d:"Intermediate",
+q:"Were he more careful, he ____ fewer mistakes.",
+bn:"সে আরও সতর্ক হলে কম ভুল করত।",
+c:["makes","will make","would make","made"],a:2,
+e:"'Were he...' is an inverted second conditional and takes 'would + base verb' in the result clause."},
 
 
-/* =========================
+/* ============================================================
    ROUND 3 — TIME & SEQUENCE
-========================= */
+============================================================ */
 
-{r:3,rule:"Before + past",d:"Intermediate",q:"Before he ____ to school, he had breakfast.",bn:"স্কুলে যাওয়ার আগে সে নাশতা করেছিল।",c:["went","goes","will go","has gone"],a:0,e:"The sentence describes past events, so 'went' is suitable."},
+{id:31,r:3,rule:"Before",d:"Intermediate",
+q:"Finish your work before you ____ home.",
+bn:"বাড়ি যাওয়ার আগে কাজ শেষ করো।",
+c:["go","went","will go","had gone"],a:0,
+e:"A present simple form is used in a future time clause introduced by 'before'."},
 
-{r:3,rule:"After + past perfect",d:"Intermediate",q:"After she ____ the letter, she posted it.",bn:"চিঠিটি লেখার পর সে তা ডাকযোগে পাঠিয়েছিল।",c:["writes","had written","has written","will write"],a:1,e:"The earlier past action is expressed with past perfect."},
+{id:32,r:3,rule:"After",d:"Intermediate",
+q:"After he ____ the letter, he posted it.",
+bn:"চিঠিটি লেখার পর সে তা ডাকযোগে পাঠিয়েছিল।",
+c:["writes","had written","will write","has written"],a:1,
+e:"The earlier past action can be expressed with the past perfect: 'had written'."},
 
-{r:3,rule:"As soon as",d:"Foundation",q:"As soon as the bell rings, the students ____ the room.",bn:"ঘণ্টা বাজামাত্র শিক্ষার্থীরা কক্ষ ত্যাগ করবে।",c:["left","will leave","had left","would leave"],a:1,e:"For a future event after 'as soon as', the result clause can take 'will + verb'."},
+{id:33,r:3,rule:"As soon as",d:"Intermediate",
+q:"As soon as she ____ home, she will call me.",
+bn:"সে বাড়ি পৌঁছামাত্র আমাকে ফোন করবে।",
+c:["reaches","reached","will reach","had reached"],a:0,
+e:"The present simple is used in the time clause even though it refers to the future."},
 
-{r:3,rule:"Scarcely + past perfect + when",d:"Advanced",q:"Scarcely had the match started ____ it began to rain.",bn:"খেলা শুরু হতেই বৃষ্টি শুরু হলো।",c:["than","when","that","then"],a:1,e:"The fixed pattern is 'scarcely ... when'."},
+{id:34,r:3,rule:"Scarcely...when",d:"Intermediate",
+q:"Scarcely had the match started ____ it began to rain.",
+bn:"খেলা শুরু হতে না হতেই বৃষ্টি শুরু হলো।",
+c:["than","when","then","while"],a:1,
+e:"The fixed structure is 'scarcely ... when'."},
 
-{r:3,rule:"No sooner + than",d:"Advanced",q:"No sooner did he arrive ____ the meeting began.",bn:"সে আসতেই সভা শুরু হলো।",c:["when","than","that","while"],a:1,e:"'No sooner ... than' is a fixed correlative construction."},
+{id:35,r:3,rule:"No sooner...than",d:"Intermediate",
+q:"No sooner had she sat down ____ the bell rang.",
+bn:"সে বসতে না বসতেই ঘণ্টা বেজে উঠল।",
+c:["when","than","as","while"],a:1,
+e:"The fixed pair is 'no sooner ... than'."},
 
-{r:3,rule:"Until",d:"Foundation",q:"Do not leave until the teacher ____ you.",bn:"শিক্ষক অনুমতি না দেওয়া পর্যন্ত বের হয়ো না।",c:["allows","allowed","will allow","would allow"],a:0,e:"After 'until' referring to a future condition, present simple is used."},
+{id:36,r:3,rule:"Until",d:"Intermediate",
+q:"I will wait until he ____.",
+bn:"সে না আসা পর্যন্ত আমি অপেক্ষা করব।",
+c:["comes","will come","came","had come"],a:0,
+e:"The future meaning in an 'until' time clause is normally expressed with the present simple."},
 
-{r:3,rule:"Since",d:"Intermediate",q:"It has been five years since I ____ him.",bn:"আমি তার সঙ্গে দেখা করার পাঁচ বছর হয়ে গেছে।",c:["meet","met","have met","will meet"],a:1,e:"After 'since' with a finished past event, use the simple past."},
+{id:37,r:3,rule:"Since",d:"Intermediate",
+q:"She has lived here since she ____ married.",
+bn:"বিয়ের পর থেকে সে এখানে বসবাস করছে।",
+c:["gets","got","has got","will get"],a:1,
+e:"The event that began the period is in the past simple: 'got married'."},
 
-{r:3,rule:"While + continuous",d:"Intermediate",q:"While I ____ TV, my brother was studying.",bn:"আমি টিভি দেখার সময় আমার ভাই পড়ছিল।",c:["watch","was watching","have watched","will watch"],a:1,e:"A simultaneous past action uses past continuous."},
+{id:38,r:3,rule:"While",d:"Intermediate",
+q:"While I ____ dinner, the lights went out.",
+bn:"আমি রাতের খাবার খাওয়ার সময় বিদ্যুৎ চলে গেল।",
+c:["have","was having","am having","had"],a:1,
+e:"An ongoing past action takes the past continuous."},
 
-{r:3,rule:"When + past",d:"Foundation",q:"When I saw him, he ____ across the road.",bn:"আমি যখন তাকে দেখলাম, সে রাস্তা পার হচ্ছিল।",c:["walks","was walking","has walked","will walk"],a:1,e:"The ongoing action in the past is expressed by past continuous."},
+{id:39,r:3,rule:"When",d:"Intermediate",
+q:"When the teacher entered, the students ____ quietly.",
+bn:"শিক্ষক প্রবেশ করার সময় শিক্ষার্থীরা নীরবে বসেছিল।",
+c:["sit","were sitting","have sat","will sit"],a:1,
+e:"The students were in the middle of the action, so the past continuous is appropriate."},
 
-{r:3,rule:"By the time",d:"Intermediate",q:"By the time we arrived, the train ____.",bn:"আমরা পৌঁছানোর আগেই ট্রেনটি চলে গিয়েছিল।",c:["leaves","left","had left","will leave"],a:2,e:"The earlier completed past action takes past perfect."},
+{id:40,r:3,rule:"By the time",d:"Intermediate",
+q:"By the time I reached the station, the train ____.",
+bn:"আমি স্টেশনে পৌঁছানোর আগেই ট্রেন চলে গিয়েছিল।",
+c:["leaves","has left","had left","will leave"],a:2,
+e:"The train left before the other past event, so the past perfect is used."},
 
-{r:3,rule:"Whenever",d:"Foundation",q:"Whenever he visits us, he ____ a gift.",bn:"সে যখনই আমাদের দেখতে আসে, একটি উপহার নিয়ে আসে।",c:["brings","brought","will bring","had brought"],a:0,e:"A repeated present action uses the present simple."},
+{id:41,r:3,rule:"Whenever",d:"Intermediate",
+q:"Whenever he visits us, he ____ a book.",
+bn:"সে যখনই আমাদের দেখতে আসে, একটি বই নিয়ে আসে।",
+c:["brings","brought","will bring","had brought"],a:0,
+e:"A repeated present habit is expressed with the present simple."},
 
-{r:3,rule:"The moment",d:"Intermediate",q:"The moment she arrives, I ____ her the news.",bn:"সে আসামাত্র আমি তাকে খবরটি জানাব।",c:["told","will tell","had told","would tell"],a:1,e:"For a future event introduced by 'the moment', use present simple in the time clause and will in the main clause."},
+{id:42,r:3,rule:"The moment",d:"Intermediate",
+q:"The moment she arrives, I ____ her the news.",
+bn:"সে আসামাত্র আমি তাকে খবরটি জানাব।",
+c:["tell","told","will tell","had told"],a:2,
+e:"The main clause can use 'will' for a future event triggered by the time clause."},
 
-{r:3,rule:"Inversion after scarcely",d:"Advanced",q:"Scarcely ____ I reached the station when the train left.",bn:"আমি স্টেশনে পৌঁছাতেই ট্রেন চলে গেল।",c:["had","did","have","was"],a:0,e:"The inverted structure is 'Scarcely had I reached ... when ...'."},
+{id:43,r:3,rule:"Past perfect",d:"Intermediate",
+q:"He was tired because he ____ all day.",
+bn:"সে ক্লান্ত ছিল কারণ সে সারাদিন কাজ করেছিল।",
+c:["works","worked","had worked","has worked"],a:2,
+e:"The work occurred before the past state of being tired, so past perfect is appropriate."},
 
-{r:3,rule:"Barely + when",d:"Advanced",q:"Barely had she finished speaking ____ the audience applauded.",bn:"সে কথা শেষ করতেই দর্শকরা হাততালি দিল।",c:["than","when","that","and"],a:1,e:"'Barely ... when' is a standard sequence structure."},
+{id:44,r:3,rule:"Future time clause",d:"Intermediate",
+q:"I will call you when I ____ there.",
+bn:"আমি সেখানে পৌঁছালে তোমাকে ফোন করব।",
+c:["arrive","will arrive","arrived","had arrived"],a:0,
+e:"A future time clause introduced by 'when' takes the present simple."},
 
-{r:3,rule:"Until + past",d:"Intermediate",q:"He waited until his father ____ home.",bn:"বাবা বাড়ি না আসা পর্যন্ত সে অপেক্ষা করেছিল।",c:["comes","came","will come","has come"],a:1,e:"The whole sentence is in the past, so the time clause takes 'came'."},
-
-
-/* =========================
-   ROUND 4 — WISH / AS IF / RATHER
-========================= */
-
-{r:4,rule:"Wish + past",d:"Intermediate",q:"I wish I ____ a car.",bn:"ইশ! আমার যদি একটি গাড়ি থাকত।",c:["have","had","will have","am having"],a:1,e:"A present unreal wish uses the simple past."},
-
-{r:4,rule:"Wish + past perfect",d:"Advanced",q:"I wish I ____ harder for the exam.",bn:"ইশ! আমি যদি পরীক্ষার জন্য আরও কঠোরভাবে পড়তাম।",c:["study","studied","had studied","would study"],a:2,e:"A regret about the past takes past perfect after 'wish'."},
-
-{r:4,rule:"Wish + would",d:"Intermediate",q:"I wish you ____ stop making noise.",bn:"ইশ! তুমি যদি শব্দ করা বন্ধ করতে।",c:["will","would","had","were"],a:1,e:"Wish + would is commonly used for a desired change in someone's repeated behavior."},
-
-{r:4,rule:"As if + past",d:"Intermediate",q:"She speaks as if she ____ everything.",bn:"সে এমনভাবে কথা বলে যেন সে সবকিছু জানে।",c:["knows","knew","has known","will know"],a:1,e:"For an unreal present comparison, past form is traditionally used."},
-
-{r:4,rule:"As though + past perfect",d:"Advanced",q:"He looked as though he ____ a ghost.",bn:"তাকে দেখে মনে হচ্ছিল যেন সে ভূত দেখেছিল।",c:["sees","saw","had seen","will see"],a:2,e:"The earlier unreal event is expressed with past perfect."},
-
-{r:4,rule:"Would rather + base verb",d:"Foundation",q:"She would rather ____ tea than coffee.",bn:"সে কফির চেয়ে চা পছন্দ করবে।",c:["drink","drank","drinking","to drink"],a:0,e:"Would rather is followed by the base form for the same subject."},
-
-{r:4,rule:"Would rather + past for another subject",d:"Advanced",q:"I would rather you ____ tomorrow.",bn:"আমি চাই তুমি আগামীকাল আসো।",c:["come","came","will come","have come"],a:1,e:"Would rather + another subject is traditionally followed by a past form."},
-
-{r:4,rule:"Prefer ... to",d:"Intermediate",q:"I prefer reading ____ watching television.",bn:"আমি টেলিভিশন দেখার চেয়ে পড়তে বেশি পছন্দ করি।",c:["than","to","over than","from"],a:1,e:"The standard structure is 'prefer X to Y'."},
-
-{r:4,rule:"Had better + base verb",d:"Foundation",q:"You had better ____ a doctor.",bn:"তোমার বরং একজন ডাক্তারের কাছে যাওয়া উচিত।",c:["see","saw","seeing","to see"],a:0,e:"Had better is followed by the base form."},
-
-{r:4,rule:"It is time + past",d:"Intermediate",q:"It is time you ____ home.",bn:"তোমার এখন বাড়ি যাওয়ার সময় হয়েছে।",c:["go","went","will go","have gone"],a:1,e:"'It is time + subject' is traditionally followed by the past form."},
-
-{r:4,rule:"It is about time + past",d:"Intermediate",q:"It is about time we ____ the truth.",bn:"এখন আমাদের সত্য বলার সময় হয়েছে।",c:["tell","told","will tell","have told"],a:1,e:"'It is about time' is followed by a past form when expressing present urgency."},
-
-{r:4,rule:"Would rather not",d:"Foundation",q:"I would rather not ____ there.",bn:"আমি বরং সেখানে যেতে চাই না।",c:["go","went","going","to go"],a:0,e:"Would rather not is followed by the base verb."},
-
-{r:4,rule:"Wish + were",d:"Intermediate",q:"I wish it ____ sunny today.",bn:"ইশ! আজ যদি রৌদ্রোজ্জ্বল দিন হতো।",c:["is","were","will be","has been"],a:1,e:"A present unreal wish takes a past form; 'were' is standard."},
-
-{r:4,rule:"As if + were",d:"Advanced",q:"He acts as if he ____ the king.",bn:"সে এমন আচরণ করে যেন সে রাজা।",c:["is","were","has been","will be"],a:1,e:"Unreal present comparison uses the past subjunctive 'were'."},
-
-{r:4,rule:"Rather than + base verb",d:"Intermediate",q:"He chose to walk rather than ____ the bus.",bn:"সে বাসে ওঠার পরিবর্তে হেঁটে যাওয়া বেছে নিল।",c:["take","took","taking","to take"],a:0,e:"When parallel with 'to walk', the base form 'take' is used after 'rather than'."},
+{id:45,r:3,rule:"Inversion after negative adverbial",d:"Challenge",
+q:"Rarely ____ such a beautiful sunset.",
+bn:"খুব কমই এমন সুন্দর সূর্যাস্ত দেখা যায়।",
+c:["I have seen","have I seen","I saw","did I seeing"],a:1,
+e:"After a negative or restrictive adverbial such as 'rarely', subject-auxiliary inversion is used."},
 
 
-/* =========================
+/* ============================================================
+   ROUND 4 — WISH / PREFERENCE / AS IF
+============================================================ */
+
+{id:46,r:4,rule:"Wish — present",d:"Intermediate",
+q:"I wish I ____ taller.",
+bn:"ইশ, যদি আমি আরও লম্বা হতাম।",
+c:["am","were","will be","have been"],a:1,
+e:"A present unreal wish commonly takes the past form; 'were' is used in formal English."},
+
+{id:47,r:4,rule:"Wish — past",d:"Intermediate",
+q:"I wish I ____ harder for the test yesterday.",
+bn:"ইশ, গতকাল পরীক্ষার জন্য যদি আরও কঠোরভাবে পড়তাম।",
+c:["study","studied","had studied","have studied"],a:2,
+e:"A regret about a past event takes the past perfect after 'wish'."},
+
+{id:48,r:4,rule:"Wish — future",d:"Intermediate",
+q:"I wish you ____ making so much noise.",
+bn:"ইশ, তুমি যদি এত শব্দ করা বন্ধ করতে।",
+c:["stop","would stop","stopped","had stopped"],a:1,
+e:"'Wish + would' can express a desire for a change in another person's repeated or annoying behaviour."},
+
+{id:49,r:4,rule:"As if",d:"Intermediate",
+q:"She behaves as if she ____ the owner.",
+bn:"সে এমন আচরণ করে যেন সে মালিক।",
+c:["is","were","will be","has been"],a:1,
+e:"For an unreal present comparison, 'as if + were' is appropriate in formal English."},
+
+{id:50,r:4,rule:"As though",d:"Intermediate",
+q:"He looked as though he ____ seen a ghost.",
+bn:"তাকে এমন লাগছিল যেন সে ভূত দেখেছে।",
+c:["has","had","will have","would"],a:1,
+e:"The past perfect 'had seen' fits an action imagined as occurring before the past appearance."},
+
+{id:51,r:4,rule:"Would rather",d:"Intermediate",
+q:"I would rather ____ tea than coffee.",
+bn:"আমি কফির চেয়ে চা পছন্দ করি।",
+c:["drink","drank","to drink","drinking"],a:0,
+e:"When expressing the speaker's own preference, 'would rather' is followed by the base verb."},
+
+{id:52,r:4,rule:"Would rather — another person",d:"Intermediate",
+q:"I would rather you ____ tomorrow.",
+bn:"আমি চাই তুমি বরং আগামীকাল আসো।",
+c:["come","came","will come","have come"],a:1,
+e:"'Would rather + subject' for a present or future preference normally takes the past simple."},
+
+{id:53,r:4,rule:"Had better",d:"Intermediate",
+q:"You had better ____ now.",
+bn:"তোমার এখনই যাওয়া ভালো।",
+c:["go","went","to go","going"],a:0,
+e:"'Had better' is followed by the base form of the verb."},
+
+{id:54,r:4,rule:"Prefer",d:"Intermediate",
+q:"I prefer walking ____ taking a bus.",
+bn:"আমি বাসে যাওয়ার চেয়ে হাঁটা পছন্দ করি।",
+c:["than","to","from","over than"],a:1,
+e:"The standard structure is 'prefer A to B'."},
+
+{id:55,r:4,rule:"Rather than",d:"Intermediate",
+q:"He chose to walk rather than ____ the bus.",
+bn:"সে বাসে ওঠার পরিবর্তে হেঁটে যাওয়া বেছে নিল।",
+c:["take","took","taking","to take"],a:0,
+e:"After 'rather than' in this parallel verb structure, the base form 'take' is used."},
+
+{id:56,r:4,rule:"It's time",d:"Intermediate",
+q:"It's time we ____ home.",
+bn:"এখন আমাদের বাড়ি যাওয়ার সময়।",
+c:["go","went","will go","have gone"],a:1,
+e:"'It's time + subject' is commonly followed by the past simple for a present recommendation."},
+
+{id:57,r:4,rule:"It's about time",d:"Intermediate",
+q:"It's about time you ____ your mistake.",
+bn:"এখন তোমার ভুলটি স্বীকার করার সময় হয়েছে।",
+c:["admit","admitted","will admit","have admit"],a:1,
+e:"'It's about time' is normally followed by a past simple form."},
+
+{id:58,r:4,rule:"If only — past regret",d:"Intermediate",
+q:"If only I ____ the warning!",
+bn:"ইশ, যদি আমি সতর্কবার্তাটি শুনতাম!",
+c:["heed","heeded","had heeded","have heeded"],a:2,
+e:"A regret about a completed past action takes the past perfect."},
+
+{id:59,r:4,rule:"Wish + could",d:"Intermediate",
+q:"I wish I ____ speak French fluently.",
+bn:"ইশ, যদি আমি সাবলীলভাবে ফরাসি বলতে পারতাম।",
+c:["can","could","will","have"],a:1,
+e:"'Wish + could' expresses an unreal or unavailable ability."},
+
+{id:60,r:4,rule:"Wish + past perfect",d:"Intermediate",
+q:"She wishes she ____ the opportunity.",
+bn:"সে ইশ করছে যে সে সুযোগটি কাজে লাগিয়েছিল।",
+c:["takes","took","had taken","has taken"],a:2,
+e:"A wish concerning a past opportunity takes the past perfect."},
+
+
+/* ============================================================
    ROUND 5 — TOO / ENOUGH / SO / SUCH
-========================= */
-
-{r:5,rule:"Too ... to",d:"Foundation",q:"The water is too cold for us ____.",bn:"পানিটি আমাদের পান করার জন্য অতিরিক্ত ঠান্ডা।",c:["drink","drinking","to drink","drank"],a:2,e:"The structure is too + adjective + for + object + to-infinitive."},
-
-{r:5,rule:"Enough to",d:"Foundation",q:"He is strong enough ____ the box.",bn:"সে বাক্সটি তোলার মতো যথেষ্ট শক্তিশালী।",c:["lift","lifting","lifted","to lift"],a:3,e:"Adjective + enough is followed by to-infinitive."},
-
-{r:5,rule:"Enough + noun",d:"Foundation",q:"We have enough money ____ the books.",bn:"বইগুলো কেনার মতো আমাদের যথেষ্ট টাকা আছে।",c:["buy","buying","to buy","bought"],a:2,e:"Enough + noun can be followed by to-infinitive."},
-
-{r:5,rule:"So ... that",d:"Foundation",q:"The movie was so interesting that we ____ until midnight.",bn:"সিনেমাটি এত আকর্ষণীয় ছিল যে আমরা মধ্যরাত পর্যন্ত জেগে ছিলাম।",c:["stay","stayed","will stay","have stayed"],a:1,e:"The past context requires 'stayed'."},
-
-{r:5,rule:"Such ... that",d:"Intermediate",q:"It was such a difficult problem that nobody ____ solve it.",bn:"এটি এত কঠিন সমস্যা ছিল যে কেউ সমাধান করতে পারেনি।",c:["could","can","will","has"],a:0,e:"A past result uses 'could not solve'."},
-
-{r:5,rule:"Such + adjective + plural noun",d:"Intermediate",q:"They are such talented players that everyone ____ them.",bn:"তারা এত প্রতিভাবান খেলোয়াড় যে সবাই তাদের প্রশংসা করে।",c:["admire","admires","admired","will admire"],a:0,e:"The plural subject 'everyone' is singular, but here the subject of the verb is everyone; 'admires' would actually agree with everyone."},
-
-{r:5,rule:"So ... that",d:"Intermediate",q:"She was so tired that she could not ____ awake.",bn:"সে এত ক্লান্ত ছিল যে জেগে থাকতে পারেনি।",c:["remain","remained","remaining","to remain"],a:0,e:"After 'could not', use the base verb."},
-
-{r:5,rule:"Too ... to",d:"Foundation",q:"He is too weak ____ the heavy bag.",bn:"সে ভারী ব্যাগটি বহন করার জন্য খুব দুর্বল।",c:["carry","to carry","carrying","carried"],a:1,e:"Too + adjective + to-infinitive."},
-
-{r:5,rule:"Enough to",d:"Foundation",q:"The room is large enough ____ fifty people.",bn:"কক্ষটি পঞ্চাশজন মানুষ থাকার মতো যথেষ্ট বড়।",c:["accommodate","accommodating","accommodated","to accommodate"],a:3,e:"Large enough + to-infinitive."},
-
-{r:5,rule:"So ... that",d:"Intermediate",q:"The road was so slippery that the driver ____ control.",bn:"রাস্তাটি এত পিচ্ছিল ছিল যে চালক নিয়ন্ত্রণ হারিয়েছিল।",c:["loses","lost","will lose","has lost"],a:1,e:"The sentence is in the past, so 'lost' is correct."},
-
-{r:5,rule:"Such ... that",d:"Intermediate",q:"It was such a beautiful scene that we ____ several photographs.",bn:"দৃশ্যটি এত সুন্দর ছিল যে আমরা কয়েকটি ছবি তুলেছিলাম।",c:["take","took","will take","have taken"],a:1,e:"Past narration requires 'took'."},
-
-{r:5,rule:"Too ... to",d:"Intermediate",q:"The child is too young ____ alone.",bn:"শিশুটি একা যাওয়ার জন্য খুব ছোট।",c:["go","going","to go","went"],a:2,e:"Too + adjective + to-infinitive."},
-
-{r:5,rule:"Enough to",d:"Intermediate",q:"She is wise enough ____ the danger.",bn:"সে বিপদটি বোঝার মতো যথেষ্ট বুদ্ধিমতী।",c:["understand","understood","understanding","to understand"],a:3,e:"Enough after an adjective is followed by to-infinitive."},
-
-{r:5,rule:"So ... that",d:"Advanced",q:"He spoke so quietly that nobody could ____ him.",bn:"সে এত আস্তে কথা বলেছিল যে কেউ তাকে শুনতে পারেনি।",c:["hear","heard","hearing","to hear"],a:0,e:"After modal 'could', use the base form."},
-
-{r:5,rule:"Such ... that",d:"Advanced",q:"It was such heavy rain that the roads ____ flooded.",bn:"এত ভারী বৃষ্টি হয়েছিল যে রাস্তাগুলো প্লাবিত হয়েছিল।",c:["become","became","had become","will become"],a:1,e:"The result happened in the past, so 'became' fits."},
-
-
-/* =========================
-   ROUND 6 — GERUND / INFINITIVE
-========================= */
-
-{r:6,rule:"Enjoy + gerund",d:"Foundation",q:"I enjoy ____ books in my free time.",bn:"আমি অবসর সময়ে বই পড়তে উপভোগ করি।",c:["read","reading","to read","readed"],a:1,e:"Enjoy is followed by a gerund."},
-
-{r:6,rule:"Avoid + gerund",d:"Foundation",q:"Avoid ____ unnecessary arguments.",bn:"অপ্রয়োজনীয় তর্ক এড়িয়ে চলো।",c:["start","starting","to start","started"],a:1,e:"Avoid is followed by a gerund."},
-
-{r:6,rule:"Finish + gerund",d:"Foundation",q:"She finished ____ the assignment.",bn:"সে অ্যাসাইনমেন্টটি লেখা শেষ করল।",c:["write","writing","to write","wrote"],a:1,e:"Finish is followed by a gerund."},
-
-{r:6,rule:"Look forward to + gerund",d:"Intermediate",q:"I look forward to ____ you.",bn:"আমি তোমার সঙ্গে দেখা করার অপেক্ষায় আছি।",c:["meet","meeting","to meet","met"],a:1,e:"Here 'to' is a preposition, so it is followed by a gerund."},
-
-{r:6,rule:"Be used to + gerund",d:"Intermediate",q:"He is used to ____ early.",bn:"সে ভোরে ওঠায় অভ্যস্ত।",c:["wake","waking","to wake","woke"],a:1,e:"Be used to contains a preposition 'to', so a gerund follows."},
-
-{r:6,rule:"Used to + base verb",d:"Intermediate",q:"I used to ____ football when I was young.",bn:"ছোটবেলায় আমি ফুটবল খেলতাম।",c:["play","playing","played","to play"],a:0,e:"Used to + base verb expresses a past habit."},
-
-{r:6,rule:"Would like + infinitive",d:"Foundation",q:"I would like ____ a cup of tea.",bn:"আমি এক কাপ চা চাই।",c:["have","having","had","to have"],a:3,e:"Would like is followed by a to-infinitive."},
-
-{r:6,rule:"Want + infinitive",d:"Foundation",q:"They want ____ abroad.",bn:"তারা বিদেশে যেতে চায়।",c:["go","going","to go","went"],a:2,e:"Want is followed by to-infinitive."},
-
-{r:6,rule:"Let + object + base verb",d:"Intermediate",q:"Let me ____ the problem.",bn:"আমাকে সমস্যাটি সমাধান করতে দাও।",c:["solve","to solve","solving","solved"],a:0,e:"Let + object + base verb."},
-
-{r:6,rule:"Make + object + base verb",d:"Intermediate",q:"The teacher made the students ____ quietly.",bn:"শিক্ষক শিক্ষার্থীদের নীরবে বসতে বাধ্য করলেন।",c:["sit","to sit","sitting","sat"],a:0,e:"In active voice, make + object + base verb."},
-
-{r:6,rule:"Help + object + infinitive/base",d:"Intermediate",q:"She helped me ____ the work.",bn:"সে আমাকে কাজটি করতে সাহায্য করেছিল।",c:["complete","completed","completing","completes"],a:0,e:"Help can be followed by the base verb or to-infinitive; 'complete' is correct."},
-
-{r:6,rule:"Prevent + object + from + gerund",d:"Advanced",q:"The rain prevented us from ____ outside.",bn:"বৃষ্টি আমাদের বাইরে যেতে বাধা দিয়েছিল।",c:["go","going","to go","went"],a:1,e:"Prevent is followed by object + from + gerund."},
-
-{r:6,rule:"Be busy + gerund",d:"Foundation",q:"She is busy ____ dinner.",bn:"সে রাতের খাবার রান্নায় ব্যস্ত।",c:["cook","cooked","cooking","to cook"],a:2,e:"Be busy is commonly followed by a gerund."},
-
-{r:6,rule:"Without + gerund",d:"Foundation",q:"He left without ____ anyone.",bn:"সে কাউকে কিছু না বলে চলে গেল।",c:["tell","telling","to tell","told"],a:1,e:"Without is a preposition and takes a gerund."},
-
-{r:6,rule:"Practice + gerund",d:"Foundation",q:"You should practice ____ English every day.",bn:"তোমার প্রতিদিন ইংরেজি বলার অনুশীলন করা উচিত।",c:["speak","speaking","to speak","spoke"],a:1,e:"Practice is followed by a gerund."},
-
-
-/* =========================
-   ROUND 7 — CONNECTORS
-========================= */
-
-{r:7,rule:"Although",d:"Foundation",q:"Although he is poor, he ____ honest.",bn:"যদিও সে দরিদ্র, সে সৎ।",c:["is","was","will be","has been"],a:0,e:"The sentence describes a present condition, so 'is' is correct."},
-
-{r:7,rule:"Though",d:"Foundation",q:"Though it was raining, they ____ playing.",bn:"বৃষ্টি হলেও তারা খেলছিল।",c:["continue","continued","will continue","had continued"],a:1,e:"Past narration requires 'continued'."},
-
-{r:7,rule:"Because",d:"Foundation",q:"He stayed home because he ____ sick.",bn:"সে অসুস্থ হওয়ায় বাড়িতে ছিল।",c:["is","was","will be","has been"],a:1,e:"The sentence is in the past."},
-
-{r:7,rule:"Since = because",d:"Foundation",q:"Since you are tired, you ____ take some rest.",bn:"তুমি ক্লান্ত যেহেতু, তোমার কিছু বিশ্রাম নেওয়া উচিত।",c:["should","would","had","were"],a:0,e:"'Should take' expresses advice based on the reason."},
-
-{r:7,rule:"As = because",d:"Intermediate",q:"As it was late, we ____ home.",bn:"দেরি হয়ে যাওয়ায় আমরা বাড়ি ফিরেছিলাম।",c:["return","returned","will return","have returned"],a:1,e:"The past context requires 'returned'."},
-
-{r:7,rule:"Though ... yet",d:"Foundation",q:"Though he is poor, ____ he is happy.",bn:"যদিও সে দরিদ্র, তবুও সে সুখী।",c:["but","yet","and","so"],a:1,e:"The traditional correlative pattern is 'though ... yet'."},
-
-{r:7,rule:"Either ... or",d:"Foundation",q:"Either Rahim or Karim ____ responsible.",bn:"রহিম অথবা করিম দায়ী।",c:["are","is","were","have"],a:1,e:"With either...or, the verb agrees with the nearer subject; Karim is singular."},
-
-{r:7,rule:"Neither ... nor",d:"Foundation",q:"Neither the teacher nor the students ____ ready.",bn:"শিক্ষক এবং শিক্ষার্থীদের কেউই প্রস্তুত নয়।",c:["is","was","are","has"],a:2,e:"The nearer subject 'students' is plural, so 'are' is used."},
-
-{r:7,rule:"Both ... and",d:"Foundation",q:"Both the teacher and the student ____ present.",bn:"শিক্ষক ও শিক্ষার্থী উভয়েই উপস্থিত।",c:["is","are","was","has"],a:1,e:"Both...and joins two subjects and takes a plural verb."},
-
-{r:7,rule:"Not only ... but also",d:"Intermediate",q:"Not only Rahim but also his friends ____ invited.",bn:"শুধু রহিম নয়, তার বন্ধুরাও আমন্ত্রিত।",c:["was","is","were","has"],a:2,e:"The nearer subject 'friends' is plural, so 'were' is correct."},
-
-{r:7,rule:"Unless",d:"Foundation",q:"You cannot succeed unless you ____ hard.",bn:"তুমি কঠোর পরিশ্রম না করলে সফল হতে পারবে না।",c:["work","worked","will work","had worked"],a:0,e:"Unless introduces a real condition and takes present simple."},
-
-{r:7,rule:"Even though",d:"Intermediate",q:"Even though he was tired, he ____ working.",bn:"ক্লান্ত হলেও সে কাজ চালিয়ে যাচ্ছিল।",c:["continues","continued","will continue","has continued"],a:1,e:"Past narration requires 'continued'."},
-
-{r:7,rule:"So that",d:"Intermediate",q:"He works hard so that he ____ support his family.",bn:"সে কঠোর পরিশ্রম করে যাতে পরিবারকে সহায়তা করতে পারে।",c:["can","could have","had","was"],a:0,e:"So that + can expresses present/future purpose."},
-
-{r:7,rule:"In order that",d:"Intermediate",q:"She saved money in order that she ____ buy a laptop.",bn:"সে ল্যাপটপ কিনতে পারে বলে টাকা জমিয়েছিল।",c:["could","can","will","has"],a:0,e:"For a past purpose, 'could' is suitable."},
-
-{r:7,rule:"Whereas",d:"Intermediate",q:"My brother likes cricket, whereas I ____ football.",bn:"আমার ভাই ক্রিকেট পছন্দ করে, যেখানে আমি ফুটবল পছন্দ করি।",c:["prefer","preferred","will prefer","had preferred"],a:0,e:"The comparison describes present preferences, so 'prefer' is correct."},
-
-
-/* =========================
-   ROUND 8 — CLAUSES
-========================= */
-
-{r:8,rule:"Who",d:"Foundation",q:"The man ____ lives next door is a doctor.",bn:"যে ব্যক্তি পাশের বাড়িতে থাকেন তিনি একজন ডাক্তার।",c:["which","who","whom","whose"],a:1,e:"Who is used as the subject relative pronoun for people."},
-
-{r:8,rule:"Whom",d:"Intermediate",q:"The man ____ I met yesterday is a teacher.",bn:"যে ব্যক্তির সঙ্গে গতকাল দেখা হয়েছিল তিনি একজন শিক্ষক।",c:["who","whom","whose","which"],a:1,e:"Whom can be used as the object relative pronoun for people."},
-
-{r:8,rule:"Whose",d:"Foundation",q:"The girl ____ father is a doctor won the prize.",bn:"যে মেয়েটির বাবা ডাক্তার সে পুরস্কার জিতেছে।",c:["who","whom","whose","which"],a:2,e:"Whose expresses possession."},
-
-{r:8,rule:"Which",d:"Foundation",q:"This is the book ____ I bought yesterday.",bn:"এটি সেই বই যা আমি গতকাল কিনেছিলাম।",c:["who","whose","which","whom"],a:2,e:"Which refers to things."},
-
-{r:8,rule:"That",d:"Foundation",q:"This is the best book ____ I have ever read.",bn:"এটি আমার পড়া সেরা বই।",c:["who","whom","that","whose"],a:2,e:"That is commonly used in defining relative clauses after superlatives."},
-
-{r:8,rule:"Whoever",d:"Intermediate",q:"Whoever ____ first will receive the prize.",bn:"যে প্রথমে আসবে সে পুরস্কার পাবে।",c:["comes","come","came","will come"],a:0,e:"Whoever is singular in this construction, so 'comes' is used."},
-
-{r:8,rule:"Whatever",d:"Intermediate",q:"Whatever he ____, I will support him.",bn:"সে যা-ই করুক, আমি তাকে সমর্থন করব।",c:["does","do","did","will do"],a:0,e:"The subordinate clause takes present simple for a future/general condition."},
-
-{r:8,rule:"Wherever",d:"Intermediate",q:"Wherever you ____, I will follow you.",bn:"তুমি যেখানেই যাও, আমি তোমাকে অনুসরণ করব।",c:["go","goes","went","will go"],a:0,e:"You is plural/second person, so 'go' is correct."},
-
-{r:8,rule:"Whenever",d:"Foundation",q:"Whenever I ____ him, he smiles.",bn:"আমি যখনই তাকে দেখি, সে হাসে।",c:["see","saw","will see","have seen"],a:0,e:"A repeated present situation uses present simple."},
-
-{r:8,rule:"Participial clause",d:"Intermediate",q:"____ the work, he went home.",bn:"কাজটি শেষ করে সে বাড়ি গেল।",c:["Finishing","Finished","Having finished","Finish"],a:2,e:"Having + past participle indicates an action completed before the main action."},
-
-{r:8,rule:"Being + adjective",d:"Intermediate",q:"____ tired, he went to bed early.",bn:"ক্লান্ত হওয়ায় সে তাড়াতাড়ি ঘুমাতে গেল।",c:["Being","Been","Be","To be"],a:0,e:"Being + adjective forms a participial reason clause."},
-
-{r:8,rule:"Having + past participle",d:"Advanced",q:"____ the letter, she posted it.",bn:"চিঠিটি লেখার পর সে তা ডাকযোগে পাঠাল।",c:["Having written","Writing","Written","Write"],a:0,e:"Having written shows the writing happened before posting."},
-
-{r:8,rule:"Relative clause",d:"Intermediate",q:"I know the place ____ he lives.",bn:"আমি সেই জায়গাটি জানি যেখানে সে থাকে।",c:["where","who","whose","whom"],a:0,e:"Where is used for a place."},
-
-{r:8,rule:"Relative clause",d:"Intermediate",q:"I remember the day ____ we first met.",bn:"যেদিন আমরা প্রথম দেখা করেছিলাম তা আমার মনে আছে।",c:["where","when","who","whose"],a:1,e:"When is used for time."},
-
-{r:8,rule:"Relative clause",d:"Intermediate",q:"That is the reason ____ he left.",bn:"এটাই সেই কারণ যার জন্য সে চলে গিয়েছিল।",c:["where","when","why","who"],a:2,e:"Why is used to refer to a reason."},
-
-
-/* =========================
-   ROUND 9 — INVERSION / ADVANCED
-========================= */
-
-{r:9,rule:"Under no circumstances + inversion",d:"Advanced",q:"Under no circumstances ____ you reveal the password.",bn:"কোনো অবস্থাতেই তুমি পাসওয়ার্ড প্রকাশ করবে না।",c:["should","you should","do","are"],a:0,e:"Negative introductory expressions require subject-auxiliary inversion: should you reveal."},
-
-{r:9,rule:"Never + inversion",d:"Advanced",q:"Never ____ I seen such a beautiful place.",bn:"আমি কখনো এত সুন্দর জায়গা দেখিনি।",c:["have","did","was","had"],a:0,e:"After 'never' at the beginning, inversion gives 'Never have I seen...'."},
-
-{r:9,rule:"Rarely + inversion",d:"Advanced",q:"Rarely ____ he complain about his problems.",bn:"সে খুব কমই তার সমস্যার ব্যাপারে অভিযোগ করে।",c:["does","do","is","has"],a:0,e:"With singular subject he, present simple inversion uses 'does'."},
-
-{r:9,rule:"Seldom + inversion",d:"Advanced",q:"Seldom ____ we see such dedication.",bn:"আমরা খুব কমই এমন নিষ্ঠা দেখি।",c:["do","does","are","have"],a:0,e:"With 'we', the auxiliary is 'do'."},
-
-{r:9,rule:"Not until + inversion",d:"Advanced",q:"Not until midnight ____ the work completed.",bn:"মধ্যরাত পর্যন্ত কাজটি সম্পন্ন হয়নি।",c:["was","did","has","were"],a:0,e:"The passive construction is 'was the work completed' after the negative introductory phrase."},
-
-{r:9,rule:"Only then + inversion",d:"Advanced",q:"Only then ____ I realize my mistake.",bn:"তখনই আমি আমার ভুল বুঝতে পারলাম।",c:["did","do","was","have"],a:0,e:"Only then at the beginning triggers inversion: did I realize."},
-
-{r:9,rule:"No sooner + inversion",d:"Advanced",q:"No sooner ____ the bell rung than the students left.",bn:"ঘণ্টা বাজতেই শিক্ষার্থীরা চলে গেল।",c:["had","has","did","was"],a:0,e:"No sooner takes past perfect in the inverted clause: had the bell rung."},
-
-{r:9,rule:"Hardly + inversion",d:"Advanced",q:"Hardly ____ I entered the room when everyone became silent.",bn:"আমি কক্ষে প্রবেশ করতেই সবাই নীরব হয়ে গেল।",c:["had","have","did","was"],a:0,e:"Hardly at the beginning is followed by inversion with past perfect."},
-
-{r:9,rule:"Scarcely + inversion",d:"Advanced",q:"Scarcely ____ they arrived when the meeting began.",bn:"তারা আসতেই সভা শুরু হলো।",c:["had","have","did","were"],a:0,e:"Scarcely + past perfect inversion is followed by 'when'."},
-
-{r:9,rule:"Such was",d:"Advanced",q:"Such ____ his anger that nobody dared to speak.",bn:"তার রাগ এত বেশি ছিল যে কেউ কথা বলার সাহস করেনি।",c:["was","were","is","has"],a:0,e:"The fixed inverted structure is 'Such was his anger that...'."},
-
-{r:9,rule:"So + inversion",d:"Advanced",q:"So difficult ____ the question that nobody could answer it.",bn:"প্রশ্নটি এত কঠিন ছিল যে কেউ উত্তর দিতে পারেনি।",c:["was","were","did","had"],a:0,e:"With singular subject 'the question', the inverted verb is 'was'."},
-
-{r:9,rule:"Little + inversion",d:"Advanced",q:"Little ____ he know what was going to happen.",bn:"কী ঘটতে যাচ্ছে সে তা খুব কমই জানত।",c:["did","does","was","has"],a:0,e:"Little at the beginning triggers auxiliary inversion: little did he know."},
-
-{r:9,rule:"Not only + inversion",d:"Advanced",q:"Not only ____ he work hard, but he also helped others.",bn:"সে শুধু কঠোর পরিশ্রমই করেনি, অন্যদেরও সাহায্য করেছে।",c:["did","does","was","has"],a:0,e:"Not only at the beginning requires inversion: did he work."},
-
-{r:9,rule:"Only after + inversion",d:"Advanced",q:"Only after the meeting ____ we understand the problem.",bn:"সভা শেষ হওয়ার পরই আমরা সমস্যাটি বুঝতে পারলাম।",c:["did","do","were","have"],a:0,e:"Only after at the beginning triggers inversion: did we understand."},
-
-{r:9,rule:"Never before + inversion",d:"Advanced",q:"Never before ____ I experienced such difficulty.",bn:"এর আগে কখনো আমি এমন অসুবিধার সম্মুখীন হইনি।",c:["have","has","did","was"],a:0,e:"Never before takes present perfect inversion here: have I experienced."},
-
-
-/* =========================
+============================================================ */
+
+{id:61,r:5,rule:"Too...to",d:"Intermediate",
+q:"The water is too hot for me ____.",
+bn:"পানিটি আমার পান করার জন্য অতিরিক্ত গরম।",
+c:["drink","drinking","to drink","drank"],a:2,
+e:"The standard pattern is 'too + adjective + for + object + to + verb'."},
+
+{id:62,r:5,rule:"Enough + noun",d:"Intermediate",
+q:"We have ____ food for everyone.",
+bn:"সবার জন্য আমাদের যথেষ্ট খাবার আছে।",
+c:["enough","too","so","such"],a:0,
+e:"'Enough' comes before a noun: 'enough food'."},
+
+{id:63,r:5,rule:"Adjective + enough",d:"Intermediate",
+q:"The child is old enough ____ himself.",
+bn:"শিশুটি নিজে নিজে কাজ করার মতো যথেষ্ট বড়।",
+c:["dress","to dress","dressing","dressed"],a:1,
+e:"The structure is 'adjective + enough + to + base verb'."},
+
+{id:64,r:5,rule:"So...that",d:"Intermediate",
+q:"The movie was so interesting that I ____ it twice.",
+bn:"সিনেমাটি এত আকর্ষণীয় ছিল যে আমি এটি দুবার দেখেছি।",
+c:["watch","watched","watching","had watch"],a:1,
+e:"The completed action is expressed with the past simple 'watched'."},
+
+{id:65,r:5,rule:"Such + noun",d:"Intermediate",
+q:"It was such a beautiful day that we ____ outside.",
+bn:"দিনটি এত সুন্দর ছিল যে আমরা বাইরে ছিলাম।",
+c:["stay","stayed","staying","had stayed"],a:1,
+e:"'Such a + adjective + noun + that' is followed here by the past result 'stayed'."},
+
+{id:66,r:5,rule:"So + adjective",d:"Intermediate",
+q:"The problem was so difficult that nobody ____ it.",
+bn:"সমস্যাটি এত কঠিন ছিল যে কেউ এটি সমাধান করতে পারেনি।",
+c:["can solve","could solve","will solve","has solved"],a:1,
+e:"The past context requires 'could solve' for the ability that was absent."},
+
+{id:67,r:5,rule:"Too...for",d:"Intermediate",
+q:"The shirt is too small for him ____.",
+bn:"শার্টটি তার পরার জন্য খুব ছোট।",
+c:["wear","to wear","wearing","wore"],a:1,
+e:"The correct pattern is 'too + adjective + for + object + to + verb'."},
+
+{id:68,r:5,rule:"Enough to",d:"Intermediate",
+q:"She is clever enough ____ the problem.",
+bn:"সে সমস্যাটি সমাধান করার মতো যথেষ্ট বুদ্ধিমান।",
+c:["solve","solving","to solve","solved"],a:2,
+e:"After 'adjective + enough', use 'to + base verb'."},
+
+{id:69,r:5,rule:"Such...that",d:"Intermediate",
+q:"They made such a loud noise that the baby ____ up.",
+bn:"তারা এত জোরে শব্দ করেছিল যে শিশুটি জেগে উঠেছিল।",
+c:["wake","wakes","woke","waking"],a:2,
+e:"The result happened in the past, so 'woke' is correct."},
+
+{id:70,r:5,rule:"So...that",d:"Intermediate",
+q:"He ran so fast that nobody ____ him.",
+bn:"সে এত দ্রুত দৌড়েছিল যে কেউ তাকে ধরতে পারেনি।",
+c:["can catch","could catch","will catch","has caught"],a:1,
+e:"The past context requires the modal 'could'."},
+
+{id:71,r:5,rule:"Too...to meaning",d:"Intermediate",
+q:"The question is too difficult for a beginner ____.",
+bn:"প্রশ্নটি একজন শিক্ষানবিশের উত্তর দেওয়ার জন্য খুব কঠিন।",
+c:["answer","to answer","answering","answered"],a:1,
+e:"'Too difficult for a beginner to answer' is the correct construction."},
+
+{id:72,r:5,rule:"Enough",d:"Intermediate",
+q:"There is enough time for us ____ the work.",
+bn:"কাজটি করার জন্য আমাদের যথেষ্ট সময় আছে।",
+c:["finish","finishing","to finish","finished"],a:2,
+e:"'Enough + noun + for + object + to + verb' is the required structure."},
+
+{id:73,r:5,rule:"So that",d:"Intermediate",
+q:"He spoke loudly so that everyone ____ hear him.",
+bn:"সে জোরে কথা বলেছিল যাতে সবাই তাকে শুনতে পারে।",
+c:["could","would have","had","was"],a:0,
+e:"In a past purpose clause, 'could' expresses the intended ability."},
+
+{id:74,r:5,rule:"Such a",d:"Intermediate",
+q:"It was such an exciting match that everyone ____ cheering.",
+bn:"ম্যাচটি এত উত্তেজনাপূর্ণ ছিল যে সবাই উল্লাস করছিল।",
+c:["is","was","has","will"],a:1,
+e:"The sentence is in the past, so the past continuous auxiliary 'was' is required."},
+
+{id:75,r:5,rule:"Too much",d:"Intermediate",
+q:"He spends too much money ____ unnecessary things.",
+bn:"সে অপ্রয়োজনীয় জিনিসে অতিরিক্ত টাকা খরচ করে।",
+c:["buy","to buy","buying","bought"],a:2,
+e:"After 'spend money', the gerund is used: 'spends money buying'."},
+
+
+/* ============================================================
+   ROUND 6 — GERUND / INFINITIVE / PREPOSITION
+============================================================ */
+
+{id:76,r:6,rule:"Enjoy + gerund",d:"Intermediate",
+q:"I enjoy ____ books in my free time.",
+bn:"আমি অবসর সময়ে বই পড়তে উপভোগ করি।",
+c:["read","to read","reading","readed"],a:2,
+e:"'Enjoy' is followed by a gerund."},
+
+{id:77,r:6,rule:"Avoid + gerund",d:"Intermediate",
+q:"Avoid ____ unnecessary mistakes.",
+bn:"অপ্রয়োজনীয় ভুল করা এড়িয়ে চলো।",
+c:["make","to make","making","made"],a:2,
+e:"'Avoid' is followed by a gerund."},
+
+{id:78,r:6,rule:"Look forward to",d:"Intermediate",
+q:"I look forward to ____ you again.",
+bn:"আমি আবার তোমার সঙ্গে দেখা করার অপেক্ষায় আছি।",
+c:["meet","to meet","meeting","met"],a:2,
+e:"In 'look forward to', 'to' is a preposition, so it is followed by a gerund."},
+
+{id:79,r:6,rule:"Interested in",d:"Intermediate",
+q:"She is interested in ____ English.",
+bn:"সে ইংরেজি শেখার প্রতি আগ্রহী।",
+c:["learn","to learn","learning","learned"],a:2,
+e:"The preposition 'in' is followed by a gerund."},
+
+{id:80,r:6,rule:"Good at",d:"Intermediate",
+q:"He is good at ____ mathematical problems.",
+bn:"সে গাণিতিক সমস্যা সমাধানে দক্ষ।",
+c:["solve","to solve","solving","solved"],a:2,
+e:"The preposition 'at' is followed by a gerund."},
+
+{id:81,r:6,rule:"Without + gerund",d:"Intermediate",
+q:"He left without ____ goodbye.",
+bn:"সে বিদায় না জানিয়ে চলে গেল।",
+c:["say","to say","saying","said"],a:2,
+e:"'Without' is a preposition and is followed by a gerund."},
+
+{id:82,r:6,rule:"Instead of + gerund",d:"Intermediate",
+q:"Instead of ____ TV, he studied.",
+bn:"টিভি দেখার পরিবর্তে সে পড়াশোনা করেছিল।",
+c:["watch","to watch","watching","watched"],a:2,
+e:"'Instead of' is followed by a gerund."},
+
+{id:83,r:6,rule:"Want + infinitive",d:"Intermediate",
+q:"I want ____ English well.",
+bn:"আমি ভালোভাবে ইংরেজি শিখতে চাই।",
+c:["learn","learning","to learn","learned"],a:2,
+e:"'Want' is followed by an infinitive."},
+
+{id:84,r:6,rule:"Decide + infinitive",d:"Intermediate",
+q:"They decided ____ the project.",
+bn:"তারা প্রকল্পটি শুরু করার সিদ্ধান্ত নিল।",
+c:["start","starting","to start","started"],a:2,
+e:"'Decide' is followed by 'to + base verb'."},
+
+{id:85,r:6,rule:"Make + object + base verb",d:"Intermediate",
+q:"The teacher made the students ____ quietly.",
+bn:"শিক্ষক শিক্ষার্থীদের নীরবে বসতে বাধ্য করলেন।",
+c:["sit","to sit","sitting","sat"],a:0,
+e:"After 'make + object', the bare infinitive is used."},
+
+{id:86,r:6,rule:"Let + object + base verb",d:"Intermediate",
+q:"Let me ____ the question.",
+bn:"আমাকে প্রশ্নটির উত্তর দিতে দাও।",
+c:["answer","to answer","answering","answered"],a:0,
+e:"'Let + object' is followed by the base form."},
+
+{id:87,r:6,rule:"Help + infinitive",d:"Intermediate",
+q:"Can you help me ____ this box?",
+bn:"তুমি কি আমাকে এই বাক্সটি বহন করতে সাহায্য করতে পারবে?",
+c:["carry","carrying","carried","carries"],a:0,
+e:"After 'help + object', the base verb is standard; 'to carry' is also possible in many contexts, so the base form is the intended answer here."},
+
+{id:88,r:6,rule:"Mind + gerund",d:"Intermediate",
+q:"Would you mind ____ the door?",
+bn:"তুমি কি দরজাটি বন্ধ করতে আপত্তি করবে?",
+c:["close","to close","closing","closed"],a:2,
+e:"'Would you mind' is followed by a gerund."},
+
+{id:89,r:6,rule:"Prevent from",d:"Intermediate",
+q:"The rain prevented us from ____ outside.",
+bn:"বৃষ্টি আমাদের বাইরে যেতে বাধা দিয়েছিল।",
+c:["go","to go","going","went"],a:2,
+e:"The preposition 'from' is followed by a gerund."},
+
+{id:90,r:6,rule:"Used to + gerund",d:"Intermediate",
+q:"He is used to ____ early.",
+bn:"সে ভোরে ওঠার সঙ্গে অভ্যস্ত।",
+c:["get","to get","getting","got"],a:2,
+e:"In 'be used to', 'to' is a preposition and is followed by a gerund."},
+
+
+/* ============================================================
+   ROUND 7 — CONNECTORS / CONTRAST / CAUSE
+============================================================ */
+
+{id:91,r:7,rule:"Although",d:"Intermediate",
+q:"Although he was poor, he ____ honest.",
+bn:"সে দরিদ্র হলেও সৎ ছিল।",
+c:["is","was","has","will"],a:1,
+e:"The past context requires the past form 'was'."},
+
+{id:92,r:7,rule:"Though",d:"Intermediate",
+q:"Though the road was difficult, we ____ the journey.",
+bn:"রাস্তা কঠিন হলেও আমরা যাত্রাটি চালিয়ে গিয়েছিলাম।",
+c:["continue","continued","will continue","had continue"],a:1,
+e:"The completed past action takes the past simple 'continued'."},
+
+{id:93,r:7,rule:"Because",d:"Intermediate",
+q:"He stayed home because he ____ sick.",
+bn:"সে বাড়িতে ছিল কারণ সে অসুস্থ ছিল।",
+c:["is","was","will be","has"],a:1,
+e:"The reason refers to a past state, so 'was' is correct."},
+
+{id:94,r:7,rule:"Since = because",d:"Intermediate",
+q:"Since you are tired, you ____ take some rest.",
+bn:"যেহেতু তুমি ক্লান্ত, তোমার কিছুক্ষণ বিশ্রাম নেওয়া উচিত।",
+c:["should","would have","had","could have"],a:0,
+e:"'Since' can mean 'because'; 'should take' gives appropriate advice."},
+
+{id:95,r:7,rule:"As = because",d:"Intermediate",
+q:"As it was raining, we ____ indoors.",
+bn:"যেহেতু বৃষ্টি হচ্ছিল, আমরা ঘরের ভিতরে ছিলাম।",
+c:["stay","stayed","will stay","had stay"],a:1,
+e:"The sentence describes a past result, so 'stayed' is appropriate."},
+
+{id:96,r:7,rule:"Despite",d:"Intermediate",
+q:"Despite ____ hard, he failed.",
+bn:"কঠোর পরিশ্রম করা সত্ত্বেও সে ব্যর্থ হলো।",
+c:["work","to work","working","worked"],a:2,
+e:"'Despite' is a preposition and is followed by a noun or gerund."},
+
+{id:97,r:7,rule:"In spite of",d:"Intermediate",
+q:"In spite of ____ ill, she attended the class.",
+bn:"অসুস্থ থাকা সত্ত্বেও সে ক্লাসে উপস্থিত ছিল।",
+c:["be","to be","being","was"],a:2,
+e:"'In spite of' is followed by a noun, pronoun, or gerund phrase."},
+
+{id:98,r:7,rule:"However",d:"Intermediate",
+q:"He is poor; however, he ____ happy.",
+bn:"সে দরিদ্র; তবুও সে সুখী।",
+c:["is","was","will","has"],a:0,
+e:"The sentence describes a present state, so 'is' is appropriate."},
+
+{id:99,r:7,rule:"Therefore",d:"Intermediate",
+q:"He worked hard; therefore, he ____ successful.",
+bn:"সে কঠোর পরিশ্রম করেছে; তাই সে সফল হয়েছে।",
+c:["becomes","became","has become","will became"],a:2,
+e:"The present perfect connects the completed effort with its present result."},
+
+{id:100,r:7,rule:"So that",d:"Intermediate",
+q:"He saved money so that he ____ buy a computer.",
+bn:"সে টাকা জমিয়েছিল যাতে একটি কম্পিউটার কিনতে পারে।",
+c:["can","could","will","has"],a:1,
+e:"Because the saving happened in the past, 'could buy' expresses the intended ability."},
+
+{id:101,r:7,rule:"Even though",d:"Intermediate",
+q:"Even though he was tired, he ____ working.",
+bn:"সে ক্লান্ত হলেও কাজ করতে থাকল।",
+c:["continues","continued","will continue","has continue"],a:1,
+e:"The main event occurred in the past, so 'continued' is correct."},
+
+{id:102,r:7,rule:"Whereas",d:"Intermediate",
+q:"My brother likes tea, whereas I ____ coffee.",
+bn:"আমার ভাই চা পছন্দ করে, আর আমি কফি পছন্দ করি।",
+c:["like","liked","will like","had liked"],a:0,
+e:"The sentence compares two present preferences, so the present simple is used."},
+
+{id:103,r:7,rule:"As a result",d:"Intermediate",
+q:"The road was blocked; as a result, we ____ late.",
+bn:"রাস্তা বন্ধ ছিল; ফলে আমরা দেরিতে পৌঁছেছিলাম।",
+c:["arrive","arrived","will arrive","had arrive"],a:1,
+e:"The result occurred in the past, so the past simple is used."},
+
+{id:104,r:7,rule:"Unless",d:"Intermediate",
+q:"You cannot enter unless you ____ your identity.",
+bn:"পরিচয় যাচাই না করলে তুমি প্রবেশ করতে পারবে না।",
+c:["prove","proved","will prove","had proved"],a:0,
+e:"The condition after 'unless' uses the present simple."},
+
+{id:105,r:7,rule:"Provided that",d:"Intermediate",
+q:"We will go out provided that the weather ____ fine.",
+bn:"আবহাওয়া ভালো থাকলে আমরা বাইরে যাব।",
+c:["remains","remained","will remain","had remained"],a:0,
+e:"The future condition after 'provided that' takes the present simple."},
+
+
+/* ============================================================
+   ROUND 8 — RELATIVE / PARTICIPIAL / COMPLEX CLAUSES
+============================================================ */
+
+{id:106,r:8,rule:"Who",d:"Advanced",
+q:"The man ____ lives next door is a doctor.",
+bn:"যে লোকটি পাশের বাড়িতে থাকেন তিনি একজন ডাক্তার।",
+c:["which","who","whom","whose"],a:1,
+e:"'Who' is used as the subject relative pronoun for people."},
+
+{id:107,r:8,rule:"Which",d:"Advanced",
+q:"This is the book ____ I bought yesterday.",
+bn:"এটি সেই বই যা আমি গতকাল কিনেছি।",
+c:["who","which","whom","whose"],a:1,
+e:"'Which' is used as a relative pronoun for things."},
+
+{id:108,r:8,rule:"Whom",d:"Advanced",
+q:"The person ____ you met was my teacher.",
+bn:"তুমি যার সঙ্গে দেখা করেছিলে তিনি আমার শিক্ষক ছিলেন।",
+c:["who","which","whom","whose"],a:2,
+e:"'Whom' can be used as the object relative pronoun for a person in formal English."},
+
+{id:109,r:8,rule:"Whose",d:"Advanced",
+q:"The student ____ book was lost complained to the teacher.",
+bn:"যে শিক্ষার্থীর বই হারিয়েছিল সে শিক্ষকের কাছে অভিযোগ করল।",
+c:["who","whom","whose","which"],a:2,
+e:"'Whose' expresses possession."},
+
+{id:110,r:8,rule:"That",d:"Advanced",
+q:"The car ____ he bought is very expensive.",
+bn:"সে যে গাড়িটি কিনেছে সেটি খুব দামি।",
+c:["who","whose","that","whom"],a:2,
+e:"'That' can function as a relative pronoun for things in a defining relative clause."},
+
+{id:111,r:8,rule:"Whatever",d:"Advanced",
+q:"Whatever he ____ , I will support him.",
+bn:"সে যা-ই করুক, আমি তাকে সমর্থন করব।",
+c:["does","did","will do","has did"],a:0,
+e:"The sentence refers generally to whatever he does, so the present simple is appropriate."},
+
+{id:112,r:8,rule:"Whoever",d:"Advanced",
+q:"Whoever ____ first will receive the prize.",
+bn:"যে-ই প্রথম আসবে সে পুরস্কার পাবে।",
+c:["come","comes","came","will come"],a:1,
+e:"'Whoever' functions as the subject of the clause, so the singular present 'comes' agrees with the meaning."},
+
+{id:113,r:8,rule:"Participle clause",d:"Advanced",
+q:"____ the work, he went home.",
+bn:"কাজ শেষ করে সে বাড়ি গেল।",
+c:["Finish","Finished","Having finished","Finishing"],a:2,
+e:"'Having finished' shows that the work was completed before he went home."},
+
+{id:114,r:8,rule:"Present participle",d:"Advanced",
+q:"____ along the road, I saw an old friend.",
+bn:"রাস্তা দিয়ে হাঁটার সময় আমি এক পুরোনো বন্ধুকে দেখলাম।",
+c:["Walk","Walking","Walked","Having walk"],a:1,
+e:"'Walking' forms a participial clause describing an action happening at the same time as 'saw'."},
+
+{id:115,r:8,rule:"Past participle",d:"Advanced",
+q:"____ by the news, she could not speak.",
+bn:"খবরে হতবাক হয়ে সে কথা বলতে পারল না।",
+c:["Shock","Shocking","Shocked","Having shock"],a:2,
+e:"'Shocked' is the past participle functioning adjectivally to describe her state."},
+
+{id:116,r:8,rule:"Relative clause reduction",d:"Advanced",
+q:"The boy ____ by the police was released.",
+bn:"পুলিশের দ্বারা গ্রেপ্তার হওয়া ছেলেটিকে ছেড়ে দেওয়া হয়েছিল।",
+c:["arrest","arresting","arrested","has arrest"],a:2,
+e:"The reduced relative clause is 'who was arrested', shortened to the past participle 'arrested'."},
+
+{id:117,r:8,rule:"Noun clause",d:"Advanced",
+q:"I know ____ he is honest.",
+bn:"আমি জানি যে সে সৎ।",
+c:["what","that","who","which"],a:1,
+e:"'That' introduces a noun clause functioning as the object of 'know'."},
+
+{id:118,r:8,rule:"What",d:"Advanced",
+q:"I do not understand ____ he wants.",
+bn:"সে কী চায় আমি বুঝতে পারছি না।",
+c:["that","what","which one that","whose"],a:1,
+e:"'What' means 'the thing that' and introduces the noun clause."},
+
+{id:119,r:8,rule:"Where",d:"Advanced",
+q:"This is the place ____ we first met.",
+bn:"এটি সেই জায়গা যেখানে আমাদের প্রথম দেখা হয়েছিল।",
+c:["who","where","whose","what"],a:1,
+e:"'Where' is used as the relative adverb referring to a place."},
+
+{id:120,r:8,rule:"When",d:"Advanced",
+q:"I remember the day ____ we first met.",
+bn:"যেদিন আমাদের প্রথম দেখা হয়েছিল সেই দিনটি আমার মনে আছে।",
+c:["when","where","which place","who"],a:0,
+e:"'When' is used as the relative adverb referring to a time."},
+
+
+/* ============================================================
+   ROUND 9 — INVERSION / HSC CHALLENGE
+============================================================ */
+
+{id:121,r:9,rule:"Under no circumstances",d:"Challenge",
+q:"Under no circumstances ____ you reveal the password.",
+bn:"কোনো অবস্থাতেই তোমার পাসওয়ার্ড প্রকাশ করা উচিত নয়।",
+c:["you should","should you","you will","will you should"],a:1,
+e:"A negative fronted adverbial requires subject-auxiliary inversion: 'should you reveal'."},
+
+{id:122,r:9,rule:"Never",d:"Challenge",
+q:"Never ____ such a beautiful place before.",
+bn:"এর আগে কখনো এমন সুন্দর জায়গা দেখিনি।",
+c:["I have seen","have I seen","I saw","did I seen"],a:1,
+e:"After 'never' at the beginning, inversion is used: 'have I seen'."},
+
+{id:123,r:9,rule:"Seldom",d:"Challenge",
+q:"Seldom ____ such kindness.",
+bn:"খুব কমই এমন দয়া দেখা যায়।",
+c:["we see","do we see","we saw","did we seeing"],a:1,
+e:"The fronted negative adverb 'seldom' triggers auxiliary inversion."},
+
+{id:124,r:9,rule:"Only then",d:"Challenge",
+q:"Only then ____ the truth.",
+bn:"শুধুমাত্র তখনই আমি সত্যটি বুঝতে পেরেছিলাম।",
+c:["I understood","did I understand","I understand","understood I"],a:1,
+e:"'Only then' at the beginning requires inversion with the auxiliary 'did'."},
+
+{id:125,r:9,rule:"Only after",d:"Challenge",
+q:"Only after the meeting ____ what had happened.",
+bn:"মিটিংয়ের পরেই আমি বুঝেছিলাম কী ঘটেছিল।",
+c:["I understood","did I understand","I understand","understood I"],a:1,
+e:"An initial 'only after' phrase triggers subject-auxiliary inversion in the main clause."},
+
+{id:126,r:9,rule:"Not until",d:"Challenge",
+q:"Not until midnight ____ home.",
+bn:"মধ্যরাত পর্যন্ত আমি বাড়ি ফিরিনি।",
+c:["I returned","did I return","I return","returned I"],a:1,
+e:"'Not until' at the beginning requires inversion with 'did'."},
+
+{id:127,r:9,rule:"No sooner",d:"Challenge",
+q:"No sooner had he arrived ____ the meeting began.",
+bn:"সে আসতে না আসতেই সভা শুরু হলো।",
+c:["when","than","then","as"],a:1,
+e:"The fixed correlative structure is 'no sooner ... than'."},
+
+{id:128,r:9,rule:"Hardly",d:"Challenge",
+q:"Hardly had she entered ____ everyone stood up.",
+bn:"সে প্রবেশ করতে না করতেই সবাই দাঁড়িয়ে গেল।",
+c:["than","when","then","while"],a:1,
+e:"The fixed structure is 'hardly ... when'."},
+
+{id:129,r:9,rule:"Such was",d:"Challenge",
+q:"Such ____ his anger that nobody dared to speak.",
+bn:"তার রাগ এত প্রবল ছিল যে কেউ কথা বলার সাহস করেনি।",
+c:["was","were","is being","have been"],a:0,
+e:"The inversion structure is 'Such was + noun + that'."},
+
+{id:130,r:9,rule:"So + adjective inversion",d:"Challenge",
+q:"So difficult ____ the question that nobody answered it.",
+bn:"প্রশ্নটি এত কঠিন ছিল যে কেউ উত্তর দিতে পারেনি।",
+c:["was","were","did","had"],a:0,
+e:"With fronted 'so + adjective', inversion can occur: 'So difficult was the question...'."},
+
+{id:131,r:9,rule:"Little did",d:"Challenge",
+q:"Little ____ that he would become famous.",
+bn:"সে খুব কমই জানত যে সে বিখ্যাত হবে।",
+c:["he knew","did he know","he knows","knew he"],a:1,
+e:"The negative adverb 'little' at the beginning causes inversion: 'did he know'."},
+
+{id:132,r:9,rule:"Neither",d:"Challenge",
+q:"He did not attend the meeting, and neither ____ I.",
+bn:"সে সভায় উপস্থিত ছিল না, আমিও ছিলাম না।",
+c:["did","was","have","do"],a:0,
+e:"The preceding verb is in the simple past with 'did not', so 'neither did I' is correct."},
+
+{id:133,r:9,rule:"Nor",d:"Challenge",
+q:"She cannot swim, nor ____ her brother.",
+bn:"সে সাঁতার কাটতে পারে না, তার ভাইও পারে না।",
+c:["can","does","is","has"],a:0,
+e:"The modal 'can' is repeated with inversion after 'nor'."},
+
+{id:134,r:9,rule:"Not only...but also",d:"Challenge",
+q:"Not only ____ intelligent, but he is also hardworking.",
+bn:"সে শুধু বুদ্ধিমানই নয়, পরিশ্রমীও।",
+c:["he is","is he","he was","does he"],a:1,
+e:"When 'not only' begins the clause, subject-auxiliary inversion is required."},
+
+{id:135,r:9,rule:"Had inversion",d:"Challenge",
+q:"Had I known the truth, I ____ differently.",
+bn:"আমি সত্যটি জানলে ভিন্নভাবে কাজ করতাম।",
+c:["act","would act","would have acted","acted"],a:2,
+e:"'Had I known' is an inverted third conditional, so the result takes 'would have acted'."},
+
+
+/* ============================================================
    ROUND 10 — MASTER MIX
-========================= */
+============================================================ */
 
-{r:10,rule:"It is high time",d:"Master",q:"It is high time the authorities ____ action.",bn:"কর্তৃপক্ষের এখনই ব্যবস্থা নেওয়ার সময় হয়েছে।",c:["take","took","will take","have taken"],a:1,e:"It is high time + subject is traditionally followed by the past form."},
+{id:136,r:10,rule:"High time",d:"Master",
+q:"It is high time the authorities ____ action.",
+bn:"এখনই সময় কর্তৃপক্ষ ব্যবস্থা গ্রহণ করুক।",
+c:["take","took","will take","have taken"],a:1,
+e:"After 'It is high time', the past simple is traditionally used for a present demand."},
 
-{r:10,rule:"Third conditional",d:"Master",q:"Had he followed my advice, he ____ the trouble.",bn:"সে আমার পরামর্শ মানলে এই সমস্যায় পড়ত না।",c:["would avoid","would have avoided","will avoid","avoided"],a:1,e:"Had he followed = If he had followed. The result takes would have + past participle."},
+{id:137,r:10,rule:"Unless",d:"Master",
+q:"Unless the government takes action, the problem ____ worse.",
+bn:"সরকার ব্যবস্থা না নিলে সমস্যাটি আরও খারাপ হবে।",
+c:["becomes","became","will become","would become"],a:2,
+e:"The condition is introduced by 'unless', and the future result takes 'will become'."},
 
-{r:10,rule:"Lest",d:"Master",q:"He ran fast lest he ____ miss the train.",bn:"ট্রেনটি মিস করার আশঙ্কায় সে দ্রুত দৌড়াল।",c:["should","would","could","might"],a:0,e:"Traditional HSC grammar commonly uses 'lest + should + base verb'."},
+{id:138,r:10,rule:"Lest",d:"Master",
+q:"He spoke softly lest anyone ____ hear him.",
+bn:"কেউ যেন তাকে শুনতে না পায় সে আস্তে কথা বলল।",
+c:["should","would","will","could have"],a:0,
+e:"'Lest' commonly takes 'should' in formal English."},
 
-{r:10,rule:"No sooner",d:"Master",q:"No sooner had the result been published ____ the students started celebrating.",bn:"ফল প্রকাশিত হতেই শিক্ষার্থীরা উদযাপন শুরু করল।",c:["when","than","that","and"],a:1,e:"The fixed structure is no sooner ... than."},
+{id:139,r:10,rule:"Wish",d:"Master",
+q:"I wish I ____ about the meeting earlier.",
+bn:"ইশ, যদি আমি মিটিং সম্পর্কে আগে জানতাম।",
+c:["know","knew","had known","have known"],a:2,
+e:"The wish concerns a past situation, so the past perfect is required."},
 
-{r:10,rule:"Wish + past perfect",d:"Master",q:"She wishes she ____ the opportunity earlier.",bn:"সে চায় সে সুযোগটি আগে পেয়েছিল।",c:["takes","took","had taken","would take"],a:2,e:"A wish/regret concerning an earlier past event uses past perfect."},
+{id:140,r:10,rule:"Conditional",d:"Master",
+q:"If he had followed the advice, he ____ the problem now.",
+bn:"সে পরামর্শটি মানলে এখন সমস্যায় থাকত না।",
+c:["will not have","would not have","would not be facing","did not face"],a:2,
+e:"This is a mixed conditional: an unreal past condition produces a present result."},
 
-{r:10,rule:"Too ... to",d:"Master",q:"The problem is too complicated for a beginner ____.",bn:"সমস্যাটি একজন শিক্ষানবিশের সমাধান করার জন্য অতিরিক্ত জটিল।",c:["solve","solving","to solve","solved"],a:2,e:"Too + adjective + for + object + to-infinitive."},
+{id:141,r:10,rule:"No sooner",d:"Master",
+q:"No sooner had the train stopped ____ the passengers rushed out.",
+bn:"ট্রেন থামতে না থামতেই যাত্রীরা বেরিয়ে এল।",
+c:["when","than","then","while"],a:1,
+e:"The fixed structure is 'no sooner ... than'."},
 
-{r:10,rule:"Enough to",d:"Master",q:"The evidence is strong enough ____ the case.",bn:"প্রমাণটি মামলাটি সমর্থন করার জন্য যথেষ্ট শক্তিশালী।",c:["support","supporting","supported","to support"],a:3,e:"Adjective + enough is followed by to-infinitive."},
+{id:142,r:10,rule:"Too...to",d:"Master",
+q:"The problem was too complicated for us ____ without help.",
+bn:"সমস্যাটি সাহায্য ছাড়া আমাদের সমাধান করার জন্য খুব জটিল ছিল।",
+c:["solve","solving","to solve","solved"],a:2,
+e:"The pattern is 'too + adjective + for + object + to + verb'."},
 
-{r:10,rule:"As if",d:"Master",q:"He talks as if he ____ the answer already.",bn:"সে এমনভাবে কথা বলে যেন সে ইতিমধ্যে উত্তরটি জানে।",c:["knows","knew","had known","will know"],a:1,e:"For an unreal present comparison, past form 'knew' is used."},
+{id:143,r:10,rule:"Gerund after preposition",d:"Master",
+q:"He left without ____ anyone about his decision.",
+bn:"সে তার সিদ্ধান্ত সম্পর্কে কাউকে না জানিয়ে চলে গেল।",
+c:["tell","to tell","telling","told"],a:2,
+e:"The preposition 'without' is followed by a gerund."},
 
-{r:10,rule:"Mixed conditional",d:"Master",q:"If I had gone to bed earlier, I ____ so tired now.",bn:"আমি আগে ঘুমাতে গেলে এখন এত ক্লান্ত থাকতাম না।",c:["would not be","would not have been","will not be","am not"],a:0,e:"A past condition with a present result forms a mixed conditional: had gone / would not be."},
+{id:144,r:10,rule:"Despite",d:"Master",
+q:"Despite ____ very tired, she continued working.",
+bn:"খুব ক্লান্ত থাকা সত্ত্বেও সে কাজ চালিয়ে গেল।",
+c:["be","to be","being","was"],a:2,
+e:"'Despite' is followed by a noun or gerund phrase, so 'being' is correct."},
 
-{r:10,rule:"Participial clause",d:"Master",q:"Having ____ the work, he submitted the report.",bn:"কাজটি শেষ করে সে প্রতিবেদন জমা দিল।",c:["complete","completed","completing","completes"],a:1,e:"Having is followed by the past participle: having completed."},
+{id:145,r:10,rule:"Relative pronoun",d:"Master",
+q:"The candidate ____ application was accepted received a message.",
+bn:"যে প্রার্থীর আবেদন গৃহীত হয়েছিল সে একটি বার্তা পেল।",
+c:["who","whom","whose","which"],a:2,
+e:"'Whose' expresses possession and connects the candidate with the application."},
 
-{r:10,rule:"Unless",d:"Master",q:"Unless you ____ now, you will be late.",bn:"তুমি এখন না বের হলে দেরি হয়ে যাবে।",c:["leave","left","will leave","had left"],a:0,e:"Unless means if not and takes present simple in a future condition."},
+{id:146,r:10,rule:"Participle",d:"Master",
+q:"____ all the evidence, the judge announced the decision.",
+bn:"সব প্রমাণ পরীক্ষা করে বিচারক সিদ্ধান্ত ঘোষণা করলেন।",
+c:["Consider","Considering","Having considered","Considered"],a:2,
+e:"'Having considered' shows that examining the evidence happened before announcing the decision."},
 
-{r:10,rule:"Provided that",d:"Master",q:"You can use my computer provided that you ____ careful.",bn:"তুমি সাবধান থাকলে আমার কম্পিউটার ব্যবহার করতে পারো।",c:["are","were","will be","have been"],a:0,e:"Provided that introduces a real condition and takes present simple."},
+{id:147,r:10,rule:"Inversion",d:"Master",
+q:"Only after reading the report ____ the mistake.",
+bn:"রিপোর্ট পড়ার পরেই আমি ভুলটি বুঝতে পেরেছিলাম।",
+c:["I noticed","did I notice","I notice","noticed I"],a:1,
+e:"An initial 'only after' expression requires inversion in the main clause."},
 
-{r:10,rule:"Would rather",d:"Master",q:"I would rather you ____ this matter confidential.",bn:"আমি চাই তুমি বিষয়টি গোপন রাখো।",c:["keep","kept","will keep","have kept"],a:1,e:"Would rather + another subject traditionally takes the past form."},
+{id:148,r:10,rule:"Mixed conditional",d:"Master",
+q:"If she had accepted the offer, she ____ abroad now.",
+bn:"সে প্রস্তাবটি গ্রহণ করলে এখন বিদেশে থাকত।",
+c:["lives","would live","would have lived","lived"],a:1,
+e:"A past unreal condition with a present result forms a mixed conditional: 'had accepted' + 'would live'."},
 
-{r:10,rule:"Inversion",d:"Master",q:"Only after reading the instructions ____ I understand the task.",bn:"নির্দেশনাগুলো পড়ার পরই আমি কাজটি বুঝলাম।",c:["did","do","was","have"],a:0,e:"Only after at the beginning requires inversion: did I understand."},
+/*
+   THIS WAS THE MISSING QUESTION IN THE ORIGINAL BANK.
+   ROUND 10 NOW HAS 15 QUESTIONS.
+*/
+{id:149,r:10,rule:"As if",d:"Master",
+q:"He spends money as if he ____ a millionaire.",
+bn:"সে এমনভাবে টাকা খরচ করে যেন সে কোটিপতি।",
+c:["is","were","will be","has been"],a:1,
+e:"For an unreal present comparison after 'as if', the past form 'were' is traditionally used."},
 
-{r:10,rule:"By the time",d:"Master",q:"By the time the police arrived, the thief ____ away.",bn:"পুলিশ আসার আগেই চোর পালিয়ে গিয়েছিল।",c:["runs","ran","had run","will run"],a:2,e:"The earlier completed past action takes past perfect."}
+{id:150,r:10,rule:"Would rather",d:"Master",
+q:"I would rather you ____ the matter tomorrow.",
+bn:"আমি চাই তুমি বরং বিষয়টি আগামীকাল আলোচনা করো।",
+c:["discuss","discussed","will discuss","had discussed"],a:1,
+e:"'Would rather + subject' for a present or future preference is followed by the past simple."}
 
 ];
 
 
-/* =========================================================
-   QUESTION IDs
-========================================================= */
-
-QUESTIONS.forEach((q,index)=>{
-    q.id = `q-${index + 1}`;
-});
-
-
-/* =========================================================
-   QUESTION BANK VALIDATION
-========================================================= */
+/* ============================================================
+   VALIDATE QUESTION BANK
+============================================================ */
 
 function validateBank(){
 
-    const errors = [];
+    const errors=[];
+    const ids=new Set();
+    const texts=new Set();
 
-    if(!Array.isArray(QUESTIONS)){
-        return ["Question bank is not an array."];
-    }
-
-    if(QUESTIONS.length !== TOTAL_QUESTIONS){
+    if(QUESTIONS.length!==TOTAL_QUESTIONS){
         errors.push(
             `Question bank contains ${QUESTIONS.length} questions instead of ${TOTAL_QUESTIONS}.`
         );
     }
 
-    const ids = new Set();
-    const texts = new Set();
-
     QUESTIONS.forEach((q,index)=>{
 
-        const n = index + 1;
+        const number=index+1;
 
-        if(!q || typeof q !== "object"){
-            errors.push(`Question ${n}: invalid object.`);
+        if(!q || typeof q!=="object"){
+            errors.push(`Question ${number}: invalid question object.`);
             return;
         }
 
-        if(q.id !== `q-${n}`){
-            errors.push(`Question ${n}: invalid ID.`);
+        if(!Number.isInteger(q.id)){
+            errors.push(`Question ${number}: missing or invalid question ID.`);
+        }else if(ids.has(q.id)){
+            errors.push(`Duplicate question ID: ${q.id}.`);
+        }else{
+            ids.add(q.id);
         }
 
-        if(ids.has(q.id)){
-            errors.push(`Question ${n}: duplicate ID.`);
+        if(!q.q || !q.bn || !q.rule || !q.d){
+            errors.push(`Question ${number}: missing required text.`);
         }
 
-        ids.add(q.id);
+        const normalizedText=String(q.q || "").trim().toLowerCase();
 
-        if(!q.q){
-            errors.push(`Question ${n}: missing question.`);
+        if(normalizedText && texts.has(normalizedText)){
+            errors.push(`Question ${number}: duplicate question text.`);
+        }else if(normalizedText){
+            texts.add(normalizedText);
         }
 
-        if(!q.bn){
-            errors.push(`Question ${n}: missing Bengali translation.`);
+        if(!Array.isArray(q.c) || q.c.length!==4){
+            errors.push(`Question ${number}: must have exactly 4 choices.`);
+        }else{
+
+            const choices=q.c.map(x=>String(x).trim().toLowerCase());
+
+            if(new Set(choices).size!==4){
+                errors.push(`Question ${number}: choices must be unique.`);
+            }
+
+            q.c.forEach((choice,i)=>{
+                if(!String(choice).trim()){
+                    errors.push(
+                        `Question ${number}: choice ${LETTERS[i]} is empty.`
+                    );
+                }
+            });
         }
 
-        if(!q.rule){
-            errors.push(`Question ${n}: missing rule.`);
-        }
-
-        if(!q.d){
-            errors.push(`Question ${n}: missing difficulty.`);
+        if(!Number.isInteger(q.a) || q.a<0 || q.a>3){
+            errors.push(`Question ${number}: invalid correct answer index.`);
         }
 
         if(!q.e){
-            errors.push(`Question ${n}: missing explanation.`);
+            errors.push(`Question ${number}: missing explanation.`);
         }
 
-        if(!Array.isArray(q.c) || q.c.length !== 4){
-            errors.push(
-                `Question ${n}: must contain exactly 4 choices.`
-            );
-        }else{
-
-            const normalized =
-                q.c.map(x =>
-                    String(x).trim().toLowerCase()
-                );
-
-            if(
-                new Set(normalized).size !== 4
-            ){
-                errors.push(
-                    `Question ${n}: choices are not unique.`
-                );
-            }
-        }
-
-        if(
-            !Number.isInteger(q.a) ||
-            q.a < 0 ||
-            q.a > 3
-        ){
-            errors.push(
-                `Question ${n}: invalid correct answer index.`
-            );
-        }
-
-        const text =
-            String(q.q)
-            .trim()
-            .toLowerCase();
-
-        if(texts.has(text)){
-            errors.push(
-                `Question ${n}: duplicate question text.`
-            );
-        }
-
-        texts.add(text);
-
-        if(
-            !Number.isInteger(q.r) ||
-            q.r < 1 ||
-            q.r > TOTAL_ROUNDS
-        ){
-            errors.push(
-                `Question ${n}: invalid round number.`
-            );
+        if(!Number.isInteger(q.r) || q.r<1 || q.r>TOTAL_ROUNDS){
+            errors.push(`Question ${number}: invalid round.`);
         }
     });
 
+    for(let r=1;r<=TOTAL_ROUNDS;r++){
 
-    for(
-        let round = 1;
-        round <= TOTAL_ROUNDS;
-        round++
-    ){
+        const roundQuestions=QUESTIONS.filter(q=>q.r===r);
 
-        const count =
-            QUESTIONS.filter(
-                q => q.r === round
-            ).length;
-
-        if(count !== QUESTIONS_PER_ROUND){
-
+        if(roundQuestions.length!==QUESTIONS_PER_ROUND){
             errors.push(
-                `Round ${round}: ${count} questions found; expected ${QUESTIONS_PER_ROUND}.`
+                `Round ${r} contains ${roundQuestions.length} questions instead of ${QUESTIONS_PER_ROUND}.`
             );
         }
+    }
+
+    if(ids.size!==TOTAL_QUESTIONS){
+        errors.push(
+            `There must be ${TOTAL_QUESTIONS} unique question IDs; found ${ids.size}.`
+        );
     }
 
     return errors;
 }
 
 
-/* =========================================================
-   STORAGE
-========================================================= */
+/* ============================================================
+   STATE
+============================================================ */
 
-const DEFAULT_PROGRESS = {
-
+const DEFAULT_PROGRESS={
     version:4,
-
     completedRounds:[],
-
     totalCorrect:0,
-
     currentRound:1,
 
     activeRound:null,
-
-    activeRoundSeed:null,
-
     activeQuestionIndex:0,
-
     activeRoundScore:0,
 
-    activeRoundQuestions:[],
-
+    activeRoundQuestionIds:[],
     activeRoundOptionOrders:[],
-
     activeRoundAnswers:[],
 
+    roundResults:{},
+
     xp:0,
-
     streak:0,
-
     bestStreak:0,
 
     quizCompleted:false,
-
     lastSaved:null
 };
 
+let progress=structuredClone(DEFAULT_PROGRESS);
 
-let progress = {
-    ...DEFAULT_PROGRESS
-};
+let currentRound=1;
+let currentQuestionIndex=0;
+let roundScore=0;
 
-let currentRound = 1;
+let roundQuestions=[];
+let roundAnswers=[];
 
-let roundQuestions = [];
+let soundEnabled=true;
+let bankErrors=[];
 
-let roundAnswers = [];
-
-let currentQuestionIndex = 0;
-
-let roundScore = 0;
-
-let roundSeed = null;
-
-let selected = null;
-
-let soundEnabled = true;
+let audioContext=null;
 
 
-/* =========================================================
-   STORAGE HELPERS
-========================================================= */
-
-function saveJSON(key,value){
-
-    try{
-        localStorage.setItem(
-            key,
-            JSON.stringify(value)
-        );
-
-        return true;
-
-    }catch(error){
-
-        console.warn(
-            "Storage error:",
-            error
-        );
-
-        return false;
-    }
-}
-
-
-function loadJSON(key,fallback){
-
-    try{
-
-        const raw =
-            localStorage.getItem(key);
-
-        if(!raw){
-            return fallback;
-        }
-
-        return JSON.parse(raw);
-
-    }catch(error){
-
-        console.warn(
-            "Invalid saved data:",
-            error
-        );
-
-        return fallback;
-    }
-}
-
-
-/* =========================================================
-   LOAD PROGRESS
-========================================================= */
-
-function loadProgress(){
-
-    const saved =
-        loadJSON(
-            STORAGE_KEY,
-            null
-        );
-
-    if(saved && typeof saved === "object"){
-
-        progress = {
-            ...DEFAULT_PROGRESS,
-            ...saved
-        };
-
-        if(
-            !Array.isArray(progress.completedRounds)
-        ){
-            progress.completedRounds = [];
-        }
-
-        if(
-            !Array.isArray(progress.activeRoundQuestions)
-        ){
-            progress.activeRoundQuestions = [];
-        }
-
-        if(
-            !Array.isArray(progress.activeRoundOptionOrders)
-        ){
-            progress.activeRoundOptionOrders = [];
-        }
-
-        if(
-            !Array.isArray(progress.activeRoundAnswers)
-        ){
-            progress.activeRoundAnswers = [];
-        }
-
-    }else{
-
-        progress = {
-            ...DEFAULT_PROGRESS
-        };
-    }
-
-
-    const settings =
-        loadJSON(
-            SETTINGS_KEY,
-            null
-        );
-
-    if(settings){
-
-        soundEnabled =
-            settings.sound !== false;
-    }
-}
-
-
-/* =========================================================
-   SAVE PROGRESS
-========================================================= */
-
-function saveProgress(){
-
-    /*
-     * NEVER save object references.
-     *
-     * We save:
-     *
-     * question IDs
-     * exact option orders
-     * selected answers
-     *
-     * This completely fixes the previous resume bug.
-     */
-
-    progress.currentRound =
-        currentRound;
-
-    progress.activeRound =
-        roundQuestions.length
-            ? currentRound
-            : null;
-
-    progress.activeRoundSeed =
-        roundSeed;
-
-    progress.activeQuestionIndex =
-        currentQuestionIndex;
-
-    progress.activeRoundScore =
-        roundScore;
-
-    progress.activeRoundQuestions =
-        roundQuestions.map(
-            q => q.id
-        );
-
-    progress.activeRoundOptionOrders =
-        roundQuestions.map(
-            q => Array.isArray(q.order)
-                ? [...q.order]
-                : []
-        );
-
-    progress.activeRoundAnswers =
-        roundAnswers.map(
-            value =>
-                Number.isInteger(value)
-                    ? value
-                    : null
-        );
-
-    progress.lastSaved =
-        new Date().toISOString();
-
-    saveJSON(
-        STORAGE_KEY,
-        progress
-    );
-}
-
-
-/* =========================================================
+/* ============================================================
    RANDOM HELPERS
-========================================================= */
+============================================================ */
 
-function randomUint(){
+function randomInt(max){
+    if(window.crypto && crypto.getRandomValues){
 
-    try{
+        const array=new Uint32Array(1);
+        crypto.getRandomValues(array);
 
-        if(
-            window.crypto &&
-            crypto.getRandomValues
-        ){
+        return array[0]%max;
+    }
 
-            const array =
-                new Uint32Array(1);
-
-            crypto.getRandomValues(array);
-
-            return array[0];
-        }
-
-    }catch(error){}
-
-    return Math.floor(
-        Math.random() * 4294967295
-    );
+    return Math.floor(Math.random()*max);
 }
-
 
 function shuffle(array){
 
-    const result = [...array];
+    const arr=[...array];
 
-    for(
-        let i = result.length - 1;
-        i > 0;
-        i--
-    ){
+    for(let i=arr.length-1;i>0;i--){
 
-        const j =
-            randomUint() %
-            (i + 1);
+        const j=randomInt(i+1);
 
-        [
-            result[i],
-            result[j]
-        ] = [
-            result[j],
-            result[i]
-        ];
+        [arr[i],arr[j]]=[arr[j],arr[i]];
     }
 
-    return result;
+    return arr;
 }
 
 
-/* =========================================================
+/* ============================================================
    BALANCED ANSWER POSITIONS
-========================================================= */
+============================================================ */
 
 function createBalancedPositions(){
 
     /*
-     * 15 questions:
-     *
-     * A = 4
-     * B = 4
-     * C = 4
-     * D = 3
-     *
-     * The sequence is shuffled.
-     *
-     * Therefore the correct answers remain randomized,
-     * but one letter cannot dominate the whole round.
-     */
+       15 questions:
+       A = 4
+       B = 4
+       C = 4
+       D = 3
 
-    const positions = [
+       Then the positions are shuffled.
 
+       This prevents the correct answer from repeatedly
+       appearing in the same position.
+    */
+
+    const positions=[
         0,0,0,0,
-
         1,1,1,1,
-
         2,2,2,2,
-
         3,3,3
-
     ];
 
     return shuffle(positions);
 }
 
 
-/* =========================================================
-   CREATE DISPLAY QUESTION
-========================================================= */
+/* ============================================================
+   PREPARE QUESTION
+============================================================ */
 
-function buildQuestion(
-    original,
-    desiredCorrectPosition
-){
+function prepareQuestion(original,targetCorrectPosition){
 
-    let order =
-        shuffle([0,1,2,3]);
+    const items=original.c.map((text,index)=>({
+        originalIndex:index,
+        text,
+        correct:index===original.a
+    }));
 
-    /*
-     * Move the original correct answer
-     * to the desired displayed position.
-     */
+    const correctItem=items.find(item=>item.correct);
 
-    const currentPosition =
-        order.indexOf(
-            original.a
-        );
+    const wrongItems=shuffle(
+        items.filter(item=>!item.correct)
+    );
 
-    [
-        order[currentPosition],
-        order[desiredCorrectPosition]
-    ] = [
-        order[desiredCorrectPosition],
-        order[currentPosition]
-    ];
+    const result=[];
+
+    let wrongIndex=0;
+
+    for(let position=0;position<4;position++){
+
+        if(position===targetCorrectPosition){
+
+            result.push(correctItem);
+
+        }else{
+
+            result.push(wrongItems[wrongIndex++]);
+        }
+    }
 
     return {
-
-        id:original.id,
-
-        r:original.r,
-
-        rule:original.rule,
-
-        d:original.d,
-
-        q:original.q,
-
-        bn:original.bn,
-
-        c:[...original.c],
-
-        a:original.a,
-
-        e:original.e,
-
-        order:order,
-
-        correctPosition:
-            desiredCorrectPosition
+        ...original,
+        choices:result
     };
 }
 
 
-/* =========================================================
+/* ============================================================
+   SAVE PROGRESS
+============================================================ */
+
+function saveProgress(){
+
+    try{
+
+        progress.activeRound=currentRound;
+        progress.activeQuestionIndex=currentQuestionIndex;
+        progress.activeRoundScore=roundScore;
+
+        /*
+           IMPORTANT:
+           Save explicit question IDs.
+           Do NOT use QUESTIONS.indexOf(clonedObject).
+        */
+
+        progress.activeRoundQuestionIds=
+            roundQuestions.map(q=>q.id);
+
+        /*
+           Save exact displayed option order.
+           This makes resume completely consistent.
+        */
+
+        progress.activeRoundOptionOrders=
+            roundQuestions.map(q=>
+                q.choices.map(choice=>choice.originalIndex)
+            );
+
+        progress.activeRoundAnswers=
+            roundAnswers.map(answer=>
+                answer===undefined ? null : answer
+            );
+
+        progress.lastSaved=new Date().toISOString();
+
+        localStorage.setItem(
+            STORAGE_KEY,
+            JSON.stringify(progress)
+        );
+
+    }catch(error){
+
+        console.error("Could not save progress:",error);
+    }
+}
+
+
+/* ============================================================
+   LOAD PROGRESS
+============================================================ */
+
+function loadProgress(){
+
+    try{
+
+        const saved=localStorage.getItem(STORAGE_KEY);
+
+        if(saved){
+
+            const parsed=JSON.parse(saved);
+
+            progress={
+                ...structuredClone(DEFAULT_PROGRESS),
+                ...parsed
+            };
+
+            if(!Array.isArray(progress.completedRounds)){
+                progress.completedRounds=[];
+            }
+
+            if(!Array.isArray(progress.activeRoundQuestionIds)){
+                progress.activeRoundQuestionIds=[];
+            }
+
+            if(!Array.isArray(progress.activeRoundOptionOrders)){
+                progress.activeRoundOptionOrders=[];
+            }
+
+            if(!Array.isArray(progress.activeRoundAnswers)){
+                progress.activeRoundAnswers=[];
+            }
+
+            if(!progress.roundResults ||
+               typeof progress.roundResults!=="object"){
+                progress.roundResults={};
+            }
+        }
+
+        const setting=localStorage.getItem(SETTINGS_KEY);
+
+        if(setting){
+
+            const parsedSetting=JSON.parse(setting);
+
+            if(typeof parsedSetting.soundEnabled==="boolean"){
+                soundEnabled=parsedSetting.soundEnabled;
+            }
+        }
+
+    }catch(error){
+
+        console.warn("Saved progress was invalid. Starting safely.",error);
+
+        progress=structuredClone(DEFAULT_PROGRESS);
+
+        try{
+            localStorage.removeItem(STORAGE_KEY);
+        }catch(e){}
+    }
+}
+
+
+/* ============================================================
+   SAVE SETTINGS
+============================================================ */
+
+function saveSettings(){
+
+    localStorage.setItem(
+        SETTINGS_KEY,
+        JSON.stringify({
+            soundEnabled
+        })
+    );
+}
+
+
+/* ============================================================
    CREATE NEW ROUND
-========================================================= */
+============================================================ */
 
 function createNewRound(round){
 
-    const bank =
-        QUESTIONS
-        .filter(q => q.r === round);
+    const bankRound=QUESTIONS
+        .filter(q=>q.r===round);
 
-    if(
-        bank.length !==
-        QUESTIONS_PER_ROUND
-    ){
+    if(bankRound.length!==QUESTIONS_PER_ROUND){
         throw new Error(
-            `Round ${round} does not contain ${QUESTIONS_PER_ROUND} questions.`
+            `Round ${round} has ${bankRound.length} questions.`
         );
     }
 
-    /*
-     * Randomize question order.
-     */
+    const questionOrder=shuffle(bankRound);
 
-    const randomizedQuestions =
-        shuffle(bank);
+    const positions=createBalancedPositions();
 
-    /*
-     * Balanced A/B/C/D answer positions.
-     */
+    roundQuestions=questionOrder.map(
+        (question,index)=>
+            prepareQuestion(
+                question,
+                positions[index]
+            )
+    );
 
-    const answerPositions =
-        createBalancedPositions();
+    roundAnswers=new Array(QUESTIONS_PER_ROUND).fill(null);
 
-    roundSeed =
-        randomUint();
-
-    roundQuestions =
-        randomizedQuestions.map(
-            (question,index) =>
-                buildQuestion(
-                    question,
-                    answerPositions[index]
-                )
-        );
-
-    roundAnswers =
-        new Array(
-            QUESTIONS_PER_ROUND
-        ).fill(null);
-
-    currentQuestionIndex = 0;
-
-    roundScore = 0;
-
-    selected = null;
+    currentQuestionIndex=0;
+    roundScore=0;
 
     saveProgress();
 }
 
 
-/* =========================================================
-   RESTORE ROUND
-========================================================= */
+/* ============================================================
+   RESTORE SAVED ROUND
+============================================================ */
 
-function restoreRound(){
+function restoreRound(round){
 
-    const ids =
-        progress.activeRoundQuestions;
+    const ids=progress.activeRoundQuestionIds;
 
-    const orders =
-        progress.activeRoundOptionOrders;
+    const orders=progress.activeRoundOptionOrders;
 
-    if(
-        !Array.isArray(ids) ||
-        ids.length !== QUESTIONS_PER_ROUND
-    ){
+    const answers=progress.activeRoundAnswers;
+
+    if(!Array.isArray(ids) ||
+       ids.length!==QUESTIONS_PER_ROUND){
+
         return false;
     }
 
-    if(
-        !Array.isArray(orders) ||
-        orders.length !== QUESTIONS_PER_ROUND
-    ){
+    if(!Array.isArray(orders) ||
+       orders.length!==QUESTIONS_PER_ROUND){
+
         return false;
     }
 
-    const restored = [];
+    const restored=[];
 
-    for(
-        let i = 0;
-        i < QUESTIONS_PER_ROUND;
-        i++
-    ){
+    for(let i=0;i<ids.length;i++){
 
-        const id = ids[i];
+        const question=QUESTIONS.find(
+            q=>q.id===Number(ids[i])
+        );
 
-        const original =
-            QUESTIONS.find(
-                q => q.id === id
-            );
-
-        if(!original){
+        if(!question){
             return false;
         }
 
-        const order =
-            orders[i];
+        const order=orders[i];
+
+        if(!Array.isArray(order) || order.length!==4){
+            return false;
+        }
+
+        const choices=[];
+
+        for(const originalIndex of order){
+
+            if(
+                !Number.isInteger(originalIndex) ||
+                originalIndex<0 ||
+                originalIndex>3
+            ){
+                return false;
+            }
+
+            choices.push({
+                originalIndex,
+                text:question.c[originalIndex],
+                correct:originalIndex===question.a
+            });
+        }
 
         if(
-            !Array.isArray(order) ||
-            order.length !== 4
+            new Set(
+                choices.map(choice=>choice.originalIndex)
+            ).size!==4
         ){
-            return false;
-        }
-
-        const validOrder =
-            order.every(
-                x =>
-                    Number.isInteger(x) &&
-                    x >= 0 &&
-                    x <= 3
-            ) &&
-            new Set(order).size === 4;
-
-        if(!validOrder){
-            return false;
-        }
-
-        const correctPosition =
-            order.indexOf(
-                original.a
-            );
-
-        if(correctPosition < 0){
             return false;
         }
 
         restored.push({
-
-            id:original.id,
-
-            r:original.r,
-
-            rule:original.rule,
-
-            d:original.d,
-
-            q:original.q,
-
-            bn:original.bn,
-
-            c:[...original.c],
-
-            a:original.a,
-
-            e:original.e,
-
-            order:[...order],
-
-            correctPosition:
-                correctPosition
+            ...question,
+            choices
         });
     }
 
-    roundQuestions =
-        restored;
+    roundQuestions=restored;
 
-    roundAnswers =
-        new Array(
-            QUESTIONS_PER_ROUND
-        ).fill(null);
+    roundAnswers=answers
+        .slice(0,QUESTIONS_PER_ROUND)
+        .map(answer=>
+            answer===null ||
+            answer===undefined
+                ? null
+                : Number(answer)
+        );
 
-    const savedAnswers =
-        progress.activeRoundAnswers;
-
-    if(Array.isArray(savedAnswers)){
-
-        for(
-            let i=0;
-            i<Math.min(
-                savedAnswers.length,
-                QUESTIONS_PER_ROUND
-            );
-            i++
-        ){
-
-            const value =
-                savedAnswers[i];
-
-            if(
-                value === null ||
-                (
-                    Number.isInteger(value) &&
-                    value >= 0 &&
-                    value <= 3
-                )
-            ){
-                roundAnswers[i] =
-                    value;
-            }
-        }
+    while(roundAnswers.length<QUESTIONS_PER_ROUND){
+        roundAnswers.push(null);
     }
 
-    currentQuestionIndex =
-        Number.isInteger(
-            progress.activeQuestionIndex
-        )
-        ? Math.max(
-            0,
-            Math.min(
-                progress.activeQuestionIndex,
-                QUESTIONS_PER_ROUND - 1
-            )
-        )
-        : 0;
+    currentQuestionIndex=Math.min(
+        Math.max(
+            Number(progress.activeQuestionIndex)||0,
+            0
+        ),
+        QUESTIONS_PER_ROUND-1
+    );
 
-    roundScore =
-        roundAnswers.filter(
-            (answer,index) =>
-                answer !== null &&
-                answer ===
-                roundQuestions[index]
-                    .correctPosition
-        ).length;
+    roundScore=roundAnswers.filter(
+        (answer,index)=>
+            answer!==null &&
+            roundQuestions[index] &&
+            roundQuestions[index].choices[answer] &&
+            roundQuestions[index].choices[answer].correct
+    ).length;
 
-    roundSeed =
-        progress.activeRoundSeed;
-
-    selected =
-        roundAnswers[currentQuestionIndex];
+    currentRound=round;
 
     return true;
 }
 
 
-/* =========================================================
+/* ============================================================
    START ROUND
-========================================================= */
+============================================================ */
 
 function startRound(round){
 
-    currentRound = round;
+    currentRound=round;
 
-    hideElement(
-        "roundResult"
-    );
+    const canResume=
+        Number(progress.activeRound)===round &&
+        Array.isArray(progress.activeRoundQuestionIds) &&
+        progress.activeRoundQuestionIds.length===QUESTIONS_PER_ROUND &&
+        Array.isArray(progress.activeRoundOptionOrders) &&
+        progress.activeRoundOptionOrders.length===QUESTIONS_PER_ROUND;
 
-    hideElement(
-        "finalResult"
-    );
-
-    showElement(
-        "quizArea"
-    );
-
-
-    const canResume =
-        progress.activeRound === round &&
-        Array.isArray(
-            progress.activeRoundQuestions
-        ) &&
-        progress.activeRoundQuestions.length ===
-            QUESTIONS_PER_ROUND &&
-        Array.isArray(
-            progress.activeRoundOptionOrders
-        ) &&
-        progress.activeRoundOptionOrders.length ===
-            QUESTIONS_PER_ROUND;
-
+    let restored=false;
 
     if(canResume){
+        restored=restoreRound(round);
+    }
 
-        const restored =
-            restoreRound();
+    if(!restored){
+        createNewRound(round);
+    }
 
-        if(!restored){
+    showScreen("quizScreen");
 
-            createNewRound(round);
+    showQuestion();
 
+    saveProgress();
+}
+
+
+/* ============================================================
+   SHOW SCREEN
+============================================================ */
+
+function showScreen(id){
+
+    document
+        .querySelectorAll(".screen")
+        .forEach(screen=>{
+            screen.classList.remove("active");
+        });
+
+    const target=document.getElementById(id);
+
+    if(target){
+        target.classList.add("active");
+    }
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+}
+
+
+/* ============================================================
+   UPDATE DASHBOARD
+============================================================ */
+
+function updateDashboard(){
+
+    document.getElementById("roundLabel").textContent=
+        `${currentRound} / ${TOTAL_ROUNDS}`;
+
+    document.getElementById("roundScoreLabel").textContent=
+        `${roundScore} / ${QUESTIONS_PER_ROUND}`;
+
+    document.getElementById("questionNumber").textContent=
+        `${currentQuestionIndex+1} / ${QUESTIONS_PER_ROUND}`;
+
+    document.getElementById("progressText").textContent=
+        `Question ${currentQuestionIndex+1} of ${QUESTIONS_PER_ROUND}`;
+
+    const completedBefore=
+        progress.completedRounds.reduce(
+            (total,roundNumber)=>{
+
+                const result=
+                    progress.roundResults?.[roundNumber];
+
+                return total+
+                    (result?.correct || 0);
+            },
+            0
+        );
+
+    const currentCorrect=roundScore;
+
+    const overallCorrect=
+        completedBefore+currentCorrect;
+
+    document.getElementById("overallProgress").textContent=
+        `${overallCorrect} / ${TOTAL_QUESTIONS}`;
+
+    const questionProgress=
+        (
+            (
+                (currentRound-1)*QUESTIONS_PER_ROUND+
+                currentQuestionIndex
+            )
+            /
+            TOTAL_QUESTIONS
+        )*100;
+
+    document.getElementById("progressFill").style.width=
+        `${Math.max(0,Math.min(100,questionProgress))}%`;
+}
+
+
+/* ============================================================
+   SHOW QUESTION
+============================================================ */
+
+function showQuestion(){
+
+    const question=roundQuestions[currentQuestionIndex];
+
+    if(!question){
+        showBankError([
+            "The current round could not load its question."
+        ]);
+        return;
+    }
+
+    updateDashboard();
+
+    document.getElementById("difficultyBadge").textContent=
+        question.d;
+
+    document.getElementById("ruleBadge").textContent=
+        question.rule;
+
+    document.getElementById("questionText").textContent=
+        question.q;
+
+    document.getElementById("translationText").textContent=
+        question.bn;
+
+    const options=document.getElementById("options");
+
+    options.innerHTML="";
+
+    const previousAnswer=
+        roundAnswers[currentQuestionIndex];
+
+    question.choices.forEach((choice,index)=>{
+
+        const button=document.createElement("button");
+
+        button.type="button";
+
+        button.className="option";
+
+        if(previousAnswer!==null &&
+           previousAnswer!==undefined){
+
+            button.classList.add("locked");
+
+            if(choice.correct){
+                button.classList.add("correct");
+            }
+
+            if(
+                index===previousAnswer &&
+                !choice.correct
+            ){
+                button.classList.add("wrong");
+            }
+
+        }else{
+
+            button.addEventListener(
+                "click",
+                ()=>selectAnswer(index)
+            );
+        }
+
+        button.innerHTML=`
+            <span class="option-letter">
+                ${LETTERS[index]}
+            </span>
+            <span class="option-text">
+                ${escapeHTML(choice.text)}
+            </span>
+        `;
+
+        options.appendChild(button);
+    });
+
+    const feedback=document.getElementById("feedback");
+
+    if(previousAnswer!==null &&
+       previousAnswer!==undefined){
+
+        buildFeedback(previousAnswer);
+
+    }else{
+
+        feedback.classList.remove("show");
+
+        document.getElementById("nextBtn")
+            .classList.add("hidden");
+    }
+
+    const nextBtn=document.getElementById("nextBtn");
+
+    nextBtn.textContent=
+        currentQuestionIndex===
+        QUESTIONS_PER_ROUND-1
+            ? "Finish Round →"
+            : "Next Question →";
+
+    if(previousAnswer!==null &&
+       previousAnswer!==undefined){
+
+        nextBtn.classList.remove("hidden");
+    }
+}
+
+
+/* ============================================================
+   SELECT ANSWER
+============================================================ */
+
+function selectAnswer(index){
+
+    if(roundAnswers[currentQuestionIndex]!==null){
+        return;
+    }
+
+    const question=roundQuestions[currentQuestionIndex];
+
+    const choice=question.choices[index];
+
+    if(!choice){
+        return;
+    }
+
+    roundAnswers[currentQuestionIndex]=index;
+
+    if(choice.correct){
+
+        roundScore++;
+
+        progress.streak++;
+
+        progress.bestStreak=Math.max(
+            progress.bestStreak,
+            progress.streak
+        );
+
+        progress.xp+=10;
+
+        playSound("correct");
+
+        if(roundScore>=12){
+            burstConfetti();
         }
 
     }else{
 
-        createNewRound(round);
+        progress.streak=0;
+
+        playSound("wrong");
     }
 
-
-    updateDashboard();
+    saveProgress();
 
     showQuestion();
 }
 
 
-/* =========================================================
-   SHOW QUESTION
-========================================================= */
+/* ============================================================
+   BUILD FEEDBACK
+============================================================ */
 
-function showQuestion(){
+function buildFeedback(selectedIndex){
 
-    const question =
-        roundQuestions[
-            currentQuestionIndex
-        ];
+    const question=roundQuestions[currentQuestionIndex];
 
-    if(!question){
+    const selected=question.choices[selectedIndex];
 
-        showBankError([
-            "Unable to load the current question.",
-            "The saved progress may be corrupted."
-        ]);
-
-        return;
-    }
-
-    selected =
-        roundAnswers[
-            currentQuestionIndex
-        ];
-
-
-    document.getElementById(
-        "questionNumber"
-    ).textContent =
-        `Question ${currentQuestionIndex + 1} / ${QUESTIONS_PER_ROUND}`;
-
-
-    document.getElementById(
-        "difficulty"
-    ).textContent =
-        question.d;
-
-
-    document.getElementById(
-        "rule"
-    ).textContent =
-        question.rule;
-
-
-    document.getElementById(
-        "question"
-    ).textContent =
-        question.q;
-
-
-    document.getElementById(
-        "translation"
-    ).textContent =
-        `বাংলা: ${question.bn}`;
-
-
-    const options =
-        document.getElementById(
-            "options"
+    const correctIndex=
+        question.choices.findIndex(
+            choice=>choice.correct
         );
 
-    options.innerHTML = "";
+    const correctChoice=
+        question.choices[correctIndex];
 
+    const title=
+        selected.correct
+            ? "✓ Correct!"
+            : "✗ Incorrect";
 
-    question.order.forEach(
-        (originalIndex,displayIndex)=>{
+    const titleElement=
+        document.getElementById("feedbackTitle");
 
-            const button =
-                document.createElement(
-                    "button"
-                );
+    titleElement.textContent=title;
 
-            button.type = "button";
+    titleElement.className=
+        "feedback-title "+
+        (selected.correct ? "good":"bad");
 
-            button.className =
-                "option";
+    document.getElementById("feedbackRule").textContent=
+        `Correct answer: ${LETTERS[correctIndex]} — ${correctChoice.text}`;
 
-            button.dataset.index =
-                displayIndex;
+    document.getElementById("feedbackText").textContent=
+        question.e;
 
-            const letter =
-                document.createElement(
-                    "span"
-                );
+    document.getElementById("feedback")
+        .classList.add("show");
 
-            letter.className =
-                "option-letter";
-
-            letter.textContent =
-                LETTERS[displayIndex];
-
-
-            const text =
-                document.createElement(
-                    "span"
-                );
-
-            text.className =
-                "option-text";
-
-            text.textContent =
-                question.c[
-                    originalIndex
-                ];
-
-
-            button.appendChild(
-                letter
-            );
-
-            button.appendChild(
-                text
-            );
-
-            button.onclick = () =>
-                selectAnswer(
-                    displayIndex
-                );
-
-            options.appendChild(
-                button
-            );
-        }
-    );
-
-
-    const feedback =
-        document.getElementById(
-            "feedback"
-        );
-
-    feedback.className =
-        "feedback hidden";
-
-    feedback.innerHTML = "";
-
-
-    const nextBtn =
-        document.getElementById(
-            "nextBtn"
-        );
-
-    nextBtn.disabled =
-        selected === null;
-
-    nextBtn.textContent =
-        currentQuestionIndex ===
-        QUESTIONS_PER_ROUND - 1
-            ? "Finish Round ✓"
-            : "Next →";
-
-
-    if(selected !== null){
-
-        showAnsweredState(
-            selected
-        );
-    }
-
-
-    updateDashboard();
+    document.getElementById("nextBtn")
+        .classList.remove("hidden");
 }
 
 
-/* =========================================================
-   SELECT ANSWER
-========================================================= */
-
-function selectAnswer(index){
-
-    if(
-        selected !== null
-    ){
-        return;
-    }
-
-    const question =
-        roundQuestions[
-            currentQuestionIndex
-        ];
-
-    if(!question){
-        return;
-    }
-
-    selected = index;
-
-    roundAnswers[
-        currentQuestionIndex
-    ] = index;
-
-
-    const correct =
-        index ===
-        question.correctPosition;
-
-
-    if(correct){
-
-        roundScore++;
-
-        progress.totalCorrect++;
-
-        progress.xp += 10;
-
-        progress.streak++;
-
-        if(
-            progress.streak >
-            progress.bestStreak
-        ){
-            progress.bestStreak =
-                progress.streak;
-        }
-
-        playSound(
-            "correct"
-        );
-
-    }else{
-
-        progress.streak = 0;
-
-        playSound(
-            "wrong"
-        );
-    }
-
-
-    showAnsweredState(
-        index
-    );
-
-    saveProgress();
-
-    updateDashboard();
-}
-
-
-/* =========================================================
-   SHOW ANSWERED STATE
-========================================================= */
-
-function showAnsweredState(selectedIndex){
-
-    const question =
-        roundQuestions[
-            currentQuestionIndex
-        ];
-
-    const buttons =
-        document.querySelectorAll(
-            ".option"
-        );
-
-    buttons.forEach(
-        (button,index)=>{
-
-            button.disabled = true;
-
-            if(
-                index ===
-                question.correctPosition
-            ){
-
-                button.classList.add(
-                    "correct"
-                );
-            }
-
-            if(
-                index === selectedIndex &&
-                index !==
-                question.correctPosition
-            ){
-
-                button.classList.add(
-                    "wrong"
-                );
-            }
-        }
-    );
-
-
-    const correctLetter =
-        LETTERS[
-            question.correctPosition
-        ];
-
-
-    const correctText =
-        question.c[
-            question.order[
-                question.correctPosition
-            ]
-        ];
-
-
-    const isCorrect =
-        selectedIndex ===
-        question.correctPosition;
-
-
-    const feedback =
-        document.getElementById(
-            "feedback"
-        );
-
-    feedback.className =
-        "feedback " +
-        (
-            isCorrect
-                ? "correct-feedback"
-                : "wrong-feedback"
-        );
-
-
-    feedback.innerHTML = `
-
-        <div class="feedback-title">
-            ${
-                isCorrect
-                    ? "✅ Correct!"
-                    : "❌ Incorrect"
-            }
-        </div>
-
-        <p>
-            Correct answer:
-            <strong>
-                ${correctLetter}. ${escapeHTML(correctText)}
-            </strong>
-        </p>
-
-        <p style="margin-top:7px">
-            ${escapeHTML(question.e)}
-        </p>
-
-        <p class="bn">
-            বাংলা ব্যাখ্যা: ${escapeHTML(question.bn)}
-        </p>
-    `;
-
-
-    feedback.classList.remove(
-        "hidden"
-    );
-
-
-    document.getElementById(
-        "nextBtn"
-    ).disabled = false;
-}
-
-
-/* =========================================================
+/* ============================================================
    NEXT QUESTION
-========================================================= */
+============================================================ */
 
 function nextQuestion(){
 
-    if(selected === null){
+    if(roundAnswers[currentQuestionIndex]===null){
         return;
     }
 
-    if(
-        currentQuestionIndex <
-        QUESTIONS_PER_ROUND - 1
-    ){
+    if(currentQuestionIndex<
+       QUESTIONS_PER_ROUND-1){
 
         currentQuestionIndex++;
-
-        selected =
-            roundAnswers[
-                currentQuestionIndex
-            ];
 
         saveProgress();
 
         showQuestion();
 
-    }else{
+        return;
+    }
 
-        endRound();
+    endRound();
+}
+
+
+/* ============================================================
+   END ROUND
+============================================================ */
+
+function endRound(){
+
+    const correct=roundScore;
+
+    const wrong=
+        QUESTIONS_PER_ROUND-correct;
+
+    const percent=
+        Math.round(
+            (correct/QUESTIONS_PER_ROUND)*100
+        );
+
+    progress.roundResults[currentRound]={
+        correct,
+        wrong,
+        percent
+    };
+
+    if(!progress.completedRounds.includes(currentRound)){
+
+        progress.completedRounds.push(currentRound);
+
+        progress.completedRounds=
+            [...new Set(progress.completedRounds)]
+            .sort((a,b)=>a-b);
+    }
+
+    progress.totalCorrect=
+        Object.values(progress.roundResults)
+            .reduce(
+                (sum,result)=>
+                    sum+(Number(result.correct)||0),
+                0
+            );
+
+    progress.activeRound=null;
+    progress.activeQuestionIndex=0;
+    progress.activeRoundScore=0;
+    progress.activeRoundQuestionIds=[];
+    progress.activeRoundOptionOrders=[];
+    progress.activeRoundAnswers=[];
+
+    progress.currentRound=
+        Math.min(
+            currentRound+1,
+            TOTAL_ROUNDS
+        );
+
+    saveProgress();
+
+    showRoundResult(
+        correct,
+        wrong,
+        percent
+    );
+
+    if(percent>=80){
+        burstConfetti();
+        playSound("complete");
+    }else{
+        playSound("round");
     }
 }
 
 
-/* =========================================================
-   END ROUND
-========================================================= */
+/* ============================================================
+   ROUND RESULT
+============================================================ */
 
-function endRound(){
+function showRoundResult(correct,wrong,percent){
 
-    const alreadyCompleted =
-        progress.completedRounds.includes(
-            currentRound
-        );
+    document.getElementById("roundResultTitle").textContent=
+        `Round ${currentRound} Complete`;
 
+    document.getElementById("roundResultScore").textContent=
+        `${correct} / ${QUESTIONS_PER_ROUND}`;
 
-    if(!alreadyCompleted){
+    document.getElementById("roundCorrect").textContent=
+        correct;
 
-        progress.completedRounds.push(
-            currentRound
-        );
+    document.getElementById("roundWrong").textContent=
+        wrong;
+
+    document.getElementById("roundPercent").textContent=
+        `${percent}%`;
+
+    let message="Keep practising and build your accuracy.";
+
+    if(percent===100){
+        message="Perfect round! Excellent command of the structures.";
+    }else if(percent>=80){
+        message="Excellent work! Your grammar accuracy is strong.";
+    }else if(percent>=60){
+        message="Good progress. Review the incorrect answers carefully.";
+    }else{
+        message="Keep practising. Review the rules and try the next round.";
     }
 
+    document.getElementById("roundResultMessage").textContent=
+        message;
 
-    progress.completedRounds =
-        [
-            ...new Set(
-                progress.completedRounds
-            )
-        ].sort(
-            (a,b)=>a-b
-        );
+    const nextBtn=
+        document.getElementById("nextRoundBtn");
+
+    if(currentRound>=TOTAL_ROUNDS){
+
+        nextBtn.textContent="View Final Result →";
+
+    }else{
+
+        nextBtn.textContent=
+            `Start Round ${currentRound+1} →`;
+    }
+
+    document.getElementById("reviewArea")
+        .classList.add("hidden");
+
+    document.getElementById("reviewArea").innerHTML="";
+
+    showScreen("roundResultScreen");
+}
 
 
-    progress.activeRound = null;
+/* ============================================================
+   NEXT ROUND
+============================================================ */
 
-    progress.activeRoundSeed = null;
+function nextRound(){
 
-    progress.activeRoundQuestions = [];
+    if(currentRound>=TOTAL_ROUNDS){
 
-    progress.activeRoundOptionOrders = [];
-
-    progress.activeRoundAnswers = [];
-
-    progress.activeQuestionIndex = 0;
-
-    progress.activeRoundScore = 0;
-
-
-    if(
-        currentRound >=
-        TOTAL_ROUNDS
-    ){
-
-        progress.quizCompleted = true;
-
-        progress.currentRound =
-            TOTAL_ROUNDS;
+        progress.quizCompleted=true;
 
         saveProgress();
 
         showFinalResult();
 
-        playSound(
-            "complete"
-        );
+        return;
+    }
 
-        launchConfetti();
+    startRound(currentRound+1);
+}
+
+
+/* ============================================================
+   REVIEW ANSWERS
+============================================================ */
+
+function showReview(){
+
+    const area=document.getElementById("reviewArea");
+
+    if(!area.classList.contains("hidden")){
+
+        area.classList.add("hidden");
 
         return;
     }
 
+    area.classList.remove("hidden");
 
-    progress.currentRound =
-        currentRound + 1;
+    area.innerHTML="";
 
-    saveProgress();
+    const list=document.createElement("div");
 
-    showRoundResult();
+    list.className="review-list";
 
-    playSound(
-        "complete"
-    );
+    roundQuestions.forEach((question,index)=>{
 
-    launchConfetti();
+        const selectedIndex=
+            roundAnswers[index];
+
+        const correctIndex=
+            question.choices.findIndex(
+                choice=>choice.correct
+            );
+
+        const selectedText=
+            selectedIndex!==null &&
+            selectedIndex!==undefined
+                ? question.choices[selectedIndex].text
+                : "Not answered";
+
+        const correctText=
+            question.choices[correctIndex].text;
+
+        const item=document.createElement("div");
+
+        item.className="review-item";
+
+        item.innerHTML=`
+            <div class="review-question">
+                ${index+1}. ${escapeHTML(question.q)}
+            </div>
+
+            <div class="review-answer ${
+                selectedIndex===correctIndex
+                    ? ""
+                    : "wrong"
+            }">
+                Your answer:
+                ${escapeHTML(selectedText)}
+            </div>
+
+            <div class="review-answer">
+                Correct answer:
+                ${escapeHTML(correctText)}
+            </div>
+        `;
+
+        list.appendChild(item);
+    });
+
+    area.appendChild(list);
 }
 
 
-/* =========================================================
-   ROUND RESULT
-========================================================= */
-
-function showRoundResult(){
-
-    hideElement(
-        "quizArea"
-    );
-
-    hideElement(
-        "finalResult"
-    );
-
-    showElement(
-        "roundResult"
-    );
-
-
-    const correct =
-        roundScore;
-
-    const wrong =
-        QUESTIONS_PER_ROUND -
-        correct;
-
-    const accuracy =
-        Math.round(
-            correct /
-            QUESTIONS_PER_ROUND *
-            100
-        );
-
-
-    document.getElementById(
-        "roundResultTitle"
-    ).textContent =
-        `Round ${currentRound} Complete`;
-
-
-    let message;
-
-    if(accuracy === 100){
-
-        message =
-            "Perfect score! Excellent command of the structures.";
-
-    }else if(accuracy >= 80){
-
-        message =
-            "Excellent work! Your grammar control is strong.";
-
-    }else if(accuracy >= 60){
-
-        message =
-            "Good progress. Review the explanations and keep practicing.";
-
-    }else{
-
-        message =
-            "Keep practicing. Review the rules before moving forward.";
-    }
-
-
-    document.getElementById(
-        "roundResultMessage"
-    ).textContent =
-        message;
-
-
-    document.getElementById(
-        "roundResultScore"
-    ).textContent =
-        `${correct} / ${QUESTIONS_PER_ROUND}`;
-
-
-    document.getElementById(
-        "roundCorrect"
-    ).textContent =
-        correct;
-
-
-    document.getElementById(
-        "roundWrong"
-    ).textContent =
-        wrong;
-
-
-    document.getElementById(
-        "roundAccuracy"
-    ).textContent =
-        `${accuracy}%`;
-
-
-    const next =
-        document.getElementById(
-            "nextRoundBtn"
-        );
-
-    next.textContent =
-        `Start Round ${currentRound + 1} →`;
-
-    next.style.display =
-        "inline-block";
-
-
-    document.getElementById(
-        "reviewList"
-    ).classList.add(
-        "hidden"
-    );
-
-    updateDashboard();
-}
-
-
-/* =========================================================
-   NEXT ROUND
-========================================================= */
-
-function nextRound(){
-
-    if(
-        currentRound >=
-        TOTAL_ROUNDS
-    ){
-        showFinalResult();
-        return;
-    }
-
-    currentRound++;
-
-    progress.currentRound =
-        currentRound;
-
-    saveProgress();
-
-    startRound(
-        currentRound
-    );
-}
-
-
-/* =========================================================
+/* ============================================================
    FINAL RESULT
-========================================================= */
+============================================================ */
 
 function showFinalResult(){
 
-    hideElement(
-        "quizArea"
-    );
+    const results=
+        Object.values(progress.roundResults);
 
-    hideElement(
-        "roundResult"
-    );
-
-    showElement(
-        "finalResult"
-    );
-
-
-    const correct =
-        calculateCompletedScore();
-
-    const wrong =
-        TOTAL_QUESTIONS -
-        correct;
-
-    const accuracy =
-        Math.round(
-            correct /
-            TOTAL_QUESTIONS *
-            100
+    const correct=
+        results.reduce(
+            (sum,result)=>
+                sum+(Number(result.correct)||0),
+            0
         );
 
+    const wrong=
+        TOTAL_QUESTIONS-correct;
 
-    document.getElementById(
-        "finalScore"
-    ).textContent =
+    const percent=
+        Math.round(
+            (correct/TOTAL_QUESTIONS)*100
+        );
+
+    progress.totalCorrect=correct;
+    progress.quizCompleted=true;
+
+    saveProgress();
+
+    document.getElementById("finalScore").textContent=
         `${correct} / ${TOTAL_QUESTIONS}`;
 
-
-    document.getElementById(
-        "finalCorrect"
-    ).textContent =
+    document.getElementById("finalCorrect").textContent=
         correct;
 
-
-    document.getElementById(
-        "finalWrong"
-    ).textContent =
+    document.getElementById("finalWrong").textContent=
         wrong;
 
-
-    document.getElementById(
-        "finalAccuracy"
-    ).textContent =
-        `${accuracy}%`;
-
-
-    updateDashboard();
-}
-
-
-/* =========================================================
-   CALCULATE COMPLETED SCORE
-========================================================= */
-
-function calculateCompletedScore(){
-
-    /*
-     * The most reliable score is the saved completed-round
-     * score plus the current active round if applicable.
-     *
-     * Since completed rounds are recorded only after completion,
-     * reconstruct their score from saved answer history isn't
-     * possible after clearing them. Therefore totalCorrect is
-     * maintained when each answer is selected.
-     *
-     * If quiz is complete, totalCorrect is the authoritative value.
-     */
-
-    return Math.max(
-        0,
-        Math.min(
-            TOTAL_QUESTIONS,
-            Number(progress.totalCorrect) || 0
-        )
-    );
-}
-
-
-/* =========================================================
-   REVIEW
-========================================================= */
-
-function showReview(round){
-
-    const list =
-        document.getElementById(
-            "reviewList"
-        );
-
-    list.innerHTML = "";
-
-    /*
-     * Current round is cleared from active state after completion,
-     * so use the original bank for the review if no active question
-     * data remains.
-     */
-
-    const bank =
-        QUESTIONS.filter(
-            q => q.r === round
-        );
-
-
-    bank.forEach(
-        (question,index)=>{
-
-            const item =
-                document.createElement(
-                    "div"
-                );
-
-            item.className =
-                "review-item";
-
-
-            item.innerHTML = `
-
-                <div class="review-question">
-                    ${index + 1}. ${escapeHTML(question.q)}
-                </div>
-
-                <div class="review-answer">
-                    <strong>
-                        Correct:
-                    </strong>
-                    ${LETTERS[question.a]}.
-                    ${escapeHTML(question.c[question.a])}
-                </div>
-
-                <div class="review-answer" style="margin-top:5px">
-                    ${escapeHTML(question.e)}
-                </div>
-            `;
-
-
-            list.appendChild(
-                item
-            );
-        }
-    );
-
-
-    list.classList.remove(
-        "hidden"
-    );
-}
-
-
-/* =========================================================
-   DASHBOARD
-========================================================= */
-
-function updateDashboard(){
-
-    document.getElementById(
-        "roundStat"
-    ).textContent =
-        `${currentRound} / ${TOTAL_ROUNDS}`;
-
-
-    document.getElementById(
-        "scoreStat"
-    ).textContent =
-        `${roundScore} / ${QUESTIONS_PER_ROUND}`;
-
-
-    document.getElementById(
-        "totalStat"
-    ).textContent =
-        `${progress.totalCorrect} / ${TOTAL_QUESTIONS}`;
-
-
-    document.getElementById(
-        "xpStat"
-    ).textContent =
-        progress.xp;
-
-
-    const position =
-        Math.min(
-            currentQuestionIndex + 1,
-            QUESTIONS_PER_ROUND
-        );
-
-
-    const percent =
-        Math.round(
-            currentQuestionIndex /
-            QUESTIONS_PER_ROUND *
-            100
-        );
-
-
-    document.getElementById(
-        "progressText"
-    ).textContent =
-        `Question ${position} of ${QUESTIONS_PER_ROUND}`;
-
-
-    document.getElementById(
-        "percentText"
-    ).textContent =
+    document.getElementById("finalPercent").textContent=
         `${percent}%`;
 
+    showScreen("finalResultScreen");
 
-    document.getElementById(
-        "progressBar"
-    ).style.width =
-        `${percent}%`;
+    if(percent>=80){
+        burstConfetti();
+        playSound("complete");
+    }
 }
 
 
-/* =========================================================
-   ERROR DISPLAY
-========================================================= */
+/* ============================================================
+   RESTART QUIZ
+============================================================ */
+
+function restartQuiz(){
+
+    const confirmed=
+        confirm(
+            "Restart the quiz?\n\nYour current saved progress will be deleted."
+        );
+
+    if(!confirmed){
+        return;
+    }
+
+    localStorage.removeItem(STORAGE_KEY);
+
+    progress=structuredClone(DEFAULT_PROGRESS);
+
+    currentRound=1;
+    currentQuestionIndex=0;
+    roundScore=0;
+    roundQuestions=[];
+    roundAnswers=[];
+
+    startRound(1);
+}
+
+
+/* ============================================================
+   BANK ERROR
+============================================================ */
 
 function showBankError(errors){
 
-    hideElement(
-        "quizArea"
-    );
+    document.getElementById("quizScreen")
+        .classList.remove("active");
 
-    hideElement(
-        "roundResult"
-    );
+    const area=document.getElementById("warningArea");
 
-    hideElement(
-        "finalResult"
-    );
+    const list=errors
+        .slice(0,20)
+        .map(error=>`<li>${escapeHTML(error)}</li>`)
+        .join("");
 
+    area.innerHTML=`
+        <div class="error-box">
+            <h3>Question Bank Error</h3>
 
-    document.getElementById(
-        "warningArea"
-    ).innerHTML = `
+            <p>
+                The quiz has stopped because the question bank
+                failed validation.
+            </p>
 
-        <div class="warning">
+            <p style="margin-top:10px">
+                The bank must contain exactly
+                ${TOTAL_QUESTIONS} questions with exactly
+                ${QUESTIONS_PER_ROUND} questions in every round.
+            </p>
 
-            <div class="bank-error-title">
-                ⚠️ Question Bank Error
-            </div>
-
-            ${errors
-                .slice(0,25)
-                .map(
-                    x => `• ${escapeHTML(x)}`
-                )
-                .join("<br>")}
-
-            ${
-                errors.length > 25
-                    ? `<br><br>...and ${
-                        errors.length - 25
-                    } more errors.`
-                    : ""
-            }
-
+            <ul style="margin-top:10px;padding-left:20px">
+                ${list}
+            </ul>
         </div>
     `;
 }
 
 
-/* =========================================================
+/* ============================================================
    HTML ESCAPE
-========================================================= */
+============================================================ */
 
 function escapeHTML(value){
 
     return String(value)
-        .replace(
-            /&/g,
-            "&amp;"
-        )
-        .replace(
-            /</g,
-            "&lt;"
-        )
-        .replace(
-            />/g,
-            "&gt;"
-        )
-        .replace(
-            /"/g,
-            "&quot;"
-        )
-        .replace(
-            /'/g,
-            "&#039;"
-        );
+        .replace(/&/g,"&amp;")
+        .replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;")
+        .replace(/"/g,"&quot;")
+        .replace(/'/g,"&#039;");
 }
 
 
-/* =========================================================
+/* ============================================================
    SOUND
-========================================================= */
-
-let audioContext = null;
+============================================================ */
 
 function getAudioContext(){
 
     if(!audioContext){
 
-        const AudioCtx =
+        const AudioCtx=
             window.AudioContext ||
             window.webkitAudioContext;
 
-        if(AudioCtx){
-            audioContext =
-                new AudioCtx();
+        if(!AudioCtx){
+            return null;
         }
+
+        audioContext=new AudioCtx();
+    }
+
+    if(audioContext.state==="suspended"){
+        audioContext.resume();
     }
 
     return audioContext;
 }
 
-
 function playTone(
     frequency,
     duration,
     type="sine",
-    volume=.045
+    volume=.05
 ){
 
     if(!soundEnabled){
         return;
     }
 
-    const ctx =
-        getAudioContext();
+    const ctx=getAudioContext();
 
     if(!ctx){
         return;
     }
 
-    try{
+    const oscillator=
+        ctx.createOscillator();
 
-        const oscillator =
-            ctx.createOscillator();
+    const gain=
+        ctx.createGain();
 
-        const gain =
-            ctx.createGain();
+    oscillator.type=type;
 
-        oscillator.type =
-            type;
+    oscillator.frequency.value=
+        frequency;
 
-        oscillator.frequency.value =
-            frequency;
+    gain.gain.setValueAtTime(
+        volume,
+        ctx.currentTime
+    );
 
-        gain.gain.setValueAtTime(
-            volume,
-            ctx.currentTime
-        );
+    gain.gain.exponentialRampToValueAtTime(
+        .001,
+        ctx.currentTime+duration
+    );
 
-        gain.gain.exponentialRampToValueAtTime(
-            .001,
-            ctx.currentTime +
-            duration
-        );
+    oscillator.connect(gain);
+    gain.connect(ctx.destination);
 
-        oscillator.connect(
-            gain
-        );
+    oscillator.start();
 
-        gain.connect(
-            ctx.destination
-        );
-
-        oscillator.start();
-
-        oscillator.stop(
-            ctx.currentTime +
-            duration
-        );
-
-    }catch(error){}
+    oscillator.stop(
+        ctx.currentTime+duration
+    );
 }
-
 
 function playSound(type){
 
@@ -3047,165 +2997,95 @@ function playSound(type){
         return;
     }
 
-    if(type === "correct"){
+    if(type==="correct"){
 
-        playTone(
-            660,
-            .09,
-            "sine",
-            .05
-        );
+        playTone(660,.09,"sine",.045);
 
         setTimeout(
-            () =>
-                playTone(
-                    880,
-                    .12,
-                    "sine",
-                    .05
-                ),
+            ()=>playTone(880,.12,"sine",.045),
             70
         );
 
-    }else if(type === "wrong"){
+    }else if(type==="wrong"){
 
-        playTone(
-            180,
-            .16,
-            "sawtooth",
-            .035
-        );
+        playTone(180,.14,"sawtooth",.035);
 
-    }else if(type === "complete"){
+    }else if(type==="round"){
 
-        playTone(
-            523,
-            .1,
-            "sine",
-            .045
-        );
+        playTone(523,.10,"sine",.04);
 
         setTimeout(
-            () =>
-                playTone(
-                    659,
-                    .1,
-                    "sine",
-                    .045
-                ),
+            ()=>playTone(659,.10,"sine",.04),
             100
         );
 
         setTimeout(
-            () =>
-                playTone(
-                    784,
-                    .18,
-                    "sine",
-                    .05
-                ),
+            ()=>playTone(784,.16,"sine",.04),
             200
         );
-    }
-}
 
+    }else if(type==="complete"){
 
-function toggleSound(){
-
-    soundEnabled =
-        !soundEnabled;
-
-    saveJSON(
-        SETTINGS_KEY,
-        {
-            sound:soundEnabled
-        }
-    );
-
-    document.getElementById(
-        "soundBtn"
-    ).textContent =
-        soundEnabled
-            ? "🔊 Sound"
-            : "🔇 Sound";
-
-    if(soundEnabled){
-        playTone(
-            700,
-            .08
+        [523,659,784,1047].forEach(
+            (frequency,index)=>{
+                setTimeout(
+                    ()=>playTone(
+                        frequency,
+                        .16,
+                        "sine",
+                        .045
+                    ),
+                    index*110
+                );
+            }
         );
     }
 }
 
 
-/* =========================================================
+/* ============================================================
    CONFETTI
-========================================================= */
+============================================================ */
 
-function launchConfetti(){
+function burstConfetti(){
 
-    const canvas =
-        document.getElementById(
-            "confettiCanvas"
-        );
+    const canvas=
+        document.getElementById("confetti");
 
-    const ctx =
-        canvas.getContext(
-            "2d"
-        );
+    const ctx=canvas.getContext("2d");
 
-    canvas.width =
-        window.innerWidth;
+    if(!ctx){
+        return;
+    }
 
-    canvas.height =
-        window.innerHeight;
+    canvas.width=window.innerWidth;
+    canvas.height=window.innerHeight;
 
+    const pieces=[];
 
-    const pieces =
-        [];
-
-    for(
-        let i=0;
-        i<120;
-        i++
-    ){
+    for(let i=0;i<100;i++){
 
         pieces.push({
-
-            x:
-                Math.random() *
-                canvas.width,
-
-            y:
-                -20 -
-                Math.random() *
-                canvas.height,
-
-            size:
-                4 +
-                Math.random()*7,
-
-            speed:
-                2 +
-                Math.random()*4,
-
-            rotation:
-                Math.random()*Math.PI,
-
-            rotationSpeed:
-                -.1 +
-                Math.random()*.2,
-
-            drift:
-                -.7 +
-                Math.random()*1.4
+            x:Math.random()*canvas.width,
+            y:-20-Math.random()*canvas.height*.25,
+            size:4+Math.random()*7,
+            speed:2+Math.random()*4,
+            drift:(Math.random()-.5)*2,
+            rotation:Math.random()*Math.PI,
+            rotationSpeed:(Math.random()-.5)*.2
         });
     }
 
+    let start=null;
 
-    let frame = 0;
+    function frame(timestamp){
 
-    function animate(){
+        if(!start){
+            start=timestamp;
+        }
+
+        const elapsed=
+            timestamp-start;
 
         ctx.clearRect(
             0,
@@ -3214,72 +3094,42 @@ function launchConfetti(){
             canvas.height
         );
 
+        pieces.forEach(piece=>{
 
-        pieces.forEach(
-            piece=>{
+            piece.y+=piece.speed;
 
-                piece.y +=
-                    piece.speed;
+            piece.x+=piece.drift;
 
-                piece.x +=
-                    piece.drift;
+            piece.rotation+=
+                piece.rotationSpeed;
 
-                piece.rotation +=
-                    piece.rotationSpeed;
+            ctx.save();
 
-
-                ctx.save();
-
-                ctx.translate(
-                    piece.x,
-                    piece.y
-                );
-
-                ctx.rotate(
-                    piece.rotation
-                );
-
-                /*
-                 * Deliberately use default canvas color cycling
-                 * rather than fixed site colors.
-                 */
-
-                const colors = [
-                    "#7c5cff",
-                    "#00d9ff",
-                    "#25d98f",
-                    "#ffd166",
-                    "#ff5577",
-                    "#ffffff"
-                ];
-
-                ctx.fillStyle =
-                    colors[
-                        Math.floor(
-                            Math.random() *
-                            colors.length
-                        )
-                    ];
-
-                ctx.fillRect(
-                    -piece.size/2,
-                    -piece.size/2,
-                    piece.size,
-                    piece.size*1.8
-                );
-
-                ctx.restore();
-            }
-        );
-
-
-        frame++;
-
-        if(frame < 180){
-
-            requestAnimationFrame(
-                animate
+            ctx.translate(
+                piece.x,
+                piece.y
             );
+
+            ctx.rotate(
+                piece.rotation
+            );
+
+            ctx.fillStyle=
+                `hsl(${Math.random()*360},80%,60%)`;
+
+            ctx.fillRect(
+                -piece.size/2,
+                -piece.size/2,
+                piece.size,
+                piece.size
+            );
+
+            ctx.restore();
+        });
+
+        if(elapsed<2600){
+
+            requestAnimationFrame(frame);
 
         }else{
 
@@ -3292,462 +3142,360 @@ function launchConfetti(){
         }
     }
 
-    animate();
+    requestAnimationFrame(frame);
 }
 
 
-/* =========================================================
-   VISIBILITY / AUTO SAVE
-========================================================= */
+/* ============================================================
+   EXPORT
+============================================================ */
+
+function exportProgress(){
+
+    saveProgress();
+
+    const data={
+        app:"HSC Completing Sentence Quiz",
+        version:4,
+        exportedAt:new Date().toISOString(),
+        progress
+    };
+
+    const blob=new Blob(
+        [JSON.stringify(data,null,2)],
+        {type:"application/json"}
+    );
+
+    const url=
+        URL.createObjectURL(blob);
+
+    const anchor=
+        document.createElement("a");
+
+    anchor.href=url;
+
+    anchor.download=
+        "hsc-completing-sentence-progress.json";
+
+    document.body.appendChild(anchor);
+
+    anchor.click();
+
+    anchor.remove();
+
+    URL.revokeObjectURL(url);
+}
+
+
+/* ============================================================
+   IMPORT
+============================================================ */
+
+function importProgress(file){
+
+    if(!file){
+        return;
+    }
+
+    const reader=new FileReader();
+
+    reader.onload=function(){
+
+        try{
+
+            const data=
+                JSON.parse(reader.result);
+
+            if(
+                !data ||
+                typeof data!=="object" ||
+                !data.progress
+            ){
+                throw new Error(
+                    "Invalid progress file."
+                );
+            }
+
+            const imported=data.progress;
+
+            if(
+                !Array.isArray(
+                    imported.completedRounds
+                )
+            ){
+                throw new Error(
+                    "Invalid completed-round data."
+                );
+            }
+
+            if(
+                imported.activeRoundQuestionIds &&
+                !Array.isArray(
+                    imported.activeRoundQuestionIds
+                )
+            ){
+                throw new Error(
+                    "Invalid active question data."
+                );
+            }
+
+            if(
+                imported.activeRoundOptionOrders &&
+                !Array.isArray(
+                    imported.activeRoundOptionOrders
+                )
+            ){
+                throw new Error(
+                    "Invalid option-order data."
+                );
+            }
+
+            progress={
+                ...structuredClone(DEFAULT_PROGRESS),
+                ...imported
+            };
+
+            localStorage.setItem(
+                STORAGE_KEY,
+                JSON.stringify(progress)
+            );
+
+            alert(
+                "Progress imported successfully."
+            );
+
+            location.reload();
+
+        }catch(error){
+
+            alert(
+                "Could not import progress:\n\n"+
+                error.message
+            );
+        }
+    };
+
+    reader.readAsText(file);
+}
+
+
+/* ============================================================
+   MAIN WEBSITE
+============================================================ */
+
+function goHome(){
+
+    saveProgress();
+
+    window.location.href="index.html";
+}
+
+
+/* ============================================================
+   EVENTS
+============================================================ */
+
+document
+    .getElementById("nextBtn")
+    .addEventListener(
+        "click",
+        nextQuestion
+    );
+
+document
+    .getElementById("nextRoundBtn")
+    .addEventListener(
+        "click",
+        nextRound
+    );
+
+document
+    .getElementById("reviewBtn")
+    .addEventListener(
+        "click",
+        showReview
+    );
+
+document
+    .getElementById("restartBtn")
+    .addEventListener(
+        "click",
+        restartQuiz
+    );
+
+document
+    .getElementById("roundHomeBtn")
+    .addEventListener(
+        "click",
+        goHome
+    );
+
+document
+    .getElementById("finalHomeBtn")
+    .addEventListener(
+        "click",
+        goHome
+    );
+
+document
+    .getElementById("soundBtn")
+    .addEventListener(
+        "click",
+        ()=>{
+            soundEnabled=!soundEnabled;
+
+            saveSettings();
+
+            document.getElementById(
+                "soundBtn"
+            ).textContent=
+                soundEnabled
+                    ? "🔊 Sound"
+                    : "🔇 Sound";
+
+            if(soundEnabled){
+                playTone(660,.08);
+            }
+        }
+    );
+
+document
+    .getElementById("exportBtn")
+    .addEventListener(
+        "click",
+        exportProgress
+    );
+
+document
+    .getElementById("importBtn")
+    .addEventListener(
+        "click",
+        ()=>{
+            document
+                .getElementById("importFile")
+                .click();
+        }
+    );
+
+document
+    .getElementById("importFile")
+    .addEventListener(
+        "change",
+        event=>{
+            const file=
+                event.target.files?.[0];
+
+            importProgress(file);
+
+            event.target.value="";
+        }
+    );
 
 window.addEventListener(
     "beforeunload",
-    ()=>{
-        saveProgress();
-    }
+    saveProgress
 );
-
 
 document.addEventListener(
     "visibilitychange",
     ()=>{
-        if(
-            document.visibilityState ===
-            "hidden"
-        ){
+        if(document.hidden){
             saveProgress();
         }
     }
 );
 
 
-/* =========================================================
-   EXPORT PROGRESS
-========================================================= */
+/* ============================================================
+   INITIALIZE
+============================================================ */
 
-function exportProgress(){
+function initialize(){
 
-    saveProgress();
+    bankErrors=validateBank();
 
-    const exportData = {
+    if(bankErrors.length){
 
-        app:
-            "HSC Completing Sentence Quiz",
-
-        version:4,
-
-        exportedAt:
-            new Date().toISOString(),
-
-        progress:
-            progress
-    };
-
-
-    const blob =
-        new Blob(
-            [
-                JSON.stringify(
-                    exportData,
-                    null,
-                    2
-                )
-            ],
-            {
-                type:
-                    "application/json"
-            }
+        console.error(
+            "Question bank validation errors:",
+            bankErrors
         );
 
+        showBankError(bankErrors);
 
-    const url =
-        URL.createObjectURL(
-            blob
-        );
-
-
-    const anchor =
-        document.createElement(
-            "a"
-        );
-
-    anchor.href =
-        url;
-
-    anchor.download =
-        "hsc-completing-sentence-progress.json";
-
-    document.body.appendChild(
-        anchor
-    );
-
-    anchor.click();
-
-    anchor.remove();
-
-    URL.revokeObjectURL(
-        url
-    );
-}
-
-
-/* =========================================================
-   IMPORT PROGRESS
-========================================================= */
-
-function importProgress(event){
-
-    const file =
-        event.target.files[0];
-
-    if(!file){
         return;
     }
-
-
-    const reader =
-        new FileReader();
-
-
-    reader.onload =
-        function(){
-
-            try{
-
-                const data =
-                    JSON.parse(
-                        reader.result
-                    );
-
-
-                const imported =
-                    data.progress ||
-                    data;
-
-
-                if(
-                    !imported ||
-                    typeof imported !==
-                    "object"
-                ){
-
-                    throw new Error(
-                        "Invalid progress file."
-                    );
-                }
-
-
-                if(
-                    imported.version !== 4
-                ){
-
-                    throw new Error(
-                        "This progress file is from an incompatible quiz version."
-                    );
-                }
-
-
-                if(
-                    !Array.isArray(
-                        imported.completedRounds
-                    )
-                ){
-
-                    throw new Error(
-                        "Invalid completed-round data."
-                    );
-                }
-
-
-                if(
-                    !Array.isArray(
-                        imported.activeRoundQuestions
-                    )
-                ){
-
-                    throw new Error(
-                        "Invalid active question data."
-                    );
-                }
-
-
-                if(
-                    !Array.isArray(
-                        imported.activeRoundOptionOrders
-                    )
-                ){
-
-                    throw new Error(
-                        "Invalid option-order data."
-                    );
-                }
-
-
-                /*
-                 * Validate every saved question ID.
-                 */
-
-                imported.activeRoundQuestions
-                    .forEach(id=>{
-
-                        if(
-                            !QUESTIONS.some(
-                                q => q.id === id
-                            )
-                        ){
-
-                            throw new Error(
-                                `Unknown question ID: ${id}`
-                            );
-                        }
-                    });
-
-
-                progress = {
-
-                    ...DEFAULT_PROGRESS,
-
-                    ...imported
-                };
-
-
-                saveProgress();
-
-                alert(
-                    "Progress imported successfully."
-                );
-
-
-                location.reload();
-
-
-            }catch(error){
-
-                alert(
-                    "Could not import progress:\n\n" +
-                    error.message
-                );
-            }
-        };
-
-
-    reader.readAsText(
-        file
-    );
-
-
-    event.target.value = "";
-}
-
-
-/* =========================================================
-   RESTART QUIZ
-========================================================= */
-
-function restartQuiz(){
-
-    const confirmed =
-        confirm(
-            "Restart the entire 150-question quiz?\n\nYour current progress will be deleted."
-        );
-
-    if(!confirmed){
-        return;
-    }
-
-
-    localStorage.removeItem(
-        STORAGE_KEY
-    );
-
-
-    progress = {
-        ...DEFAULT_PROGRESS
-    };
-
-    currentRound = 1;
-
-    roundQuestions = [];
-
-    roundAnswers = [];
-
-    currentQuestionIndex = 0;
-
-    roundScore = 0;
-
-    roundSeed = null;
-
-    selected = null;
-
-
-    hideElement(
-        "finalResult"
-    );
-
-    hideElement(
-        "roundResult"
-    );
-
-    showElement(
-        "quizArea"
-    );
-
-
-    startRound(1);
-}
-
-
-/* =========================================================
-   HOME
-========================================================= */
-
-function goHome(){
-
-    saveProgress();
-
-    /*
-     * Change this filename only if your main page has
-     * a different filename.
-     */
-
-    window.location.href =
-        "index.html";
-}
-
-
-/* =========================================================
-   DOM HELPERS
-========================================================= */
-
-function hideElement(id){
-
-    const element =
-        document.getElementById(id);
-
-    if(element){
-
-        element.classList.add(
-            "hidden"
-        );
-    }
-}
-
-
-function showElement(id){
-
-    const element =
-        document.getElementById(id);
-
-    if(element){
-
-        element.classList.remove(
-            "hidden"
-        );
-    }
-}
-
-
-/* =========================================================
-   INITIALIZATION
-========================================================= */
-
-(function init(){
-
-    /*
-     * Validate FIRST.
-     *
-     * This prevents corrupted/invalid question banks from
-     * silently running.
-     */
-
-    const errors =
-        validateBank();
-
 
     loadProgress();
 
-
     document.getElementById(
         "soundBtn"
-    ).textContent =
+    ).textContent=
         soundEnabled
             ? "🔊 Sound"
             : "🔇 Sound";
 
-
-    if(errors.length){
-
-        showBankError(
-            errors
-        );
-
-        return;
-    }
-
-
-    document.getElementById(
-        "warningArea"
-    ).innerHTML = "";
-
-
     /*
-     * If all 10 rounds have been completed,
-     * show the final result.
-     */
+       If all 10 rounds were completed,
+       show the final result.
+    */
 
     if(
         progress.quizCompleted &&
-        progress.completedRounds.length >=
-            TOTAL_ROUNDS
+        progress.completedRounds.length>=TOTAL_ROUNDS
     ){
-
-        currentRound =
-            TOTAL_ROUNDS;
 
         showFinalResult();
 
         return;
     }
 
-
     /*
-     * If an active round exists, resume it.
-     *
-     * Otherwise start the saved/current round.
-     */
+       Resume the exact saved round.
+    */
+
+    const savedRound=
+        Number(progress.activeRound);
 
     if(
-        progress.activeRound &&
-        progress.activeRoundQuestions.length ===
+        savedRound>=1 &&
+        savedRound<=TOTAL_ROUNDS &&
+        progress.activeRoundQuestionIds.length===
             QUESTIONS_PER_ROUND
     ){
 
-        currentRound =
-            progress.activeRound;
+        currentRound=savedRound;
 
-        startRound(
-            currentRound
-        );
+        startRound(currentRound);
 
-    }else{
-
-        currentRound =
-            Number(progress.currentRound) || 1;
-
-        if(
-            currentRound < 1 ||
-            currentRound > TOTAL_ROUNDS
-        ){
-
-            currentRound = 1;
-        }
-
-        startRound(
-            currentRound
-        );
+        return;
     }
 
-})();
+    /*
+       Otherwise continue with the next unfinished round.
+    */
+
+    let nextRoundNumber=1;
+
+    while(
+        progress.completedRounds.includes(
+            nextRoundNumber
+        ) &&
+        nextRoundNumber<=TOTAL_ROUNDS
+    ){
+        nextRoundNumber++;
+    }
+
+    currentRound=
+        Math.min(
+            nextRoundNumber,
+            TOTAL_ROUNDS
+        );
+
+    startRound(currentRound);
+}
+
+initialize();
 
 </script>
 
