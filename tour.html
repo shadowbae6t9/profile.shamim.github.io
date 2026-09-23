@@ -1,0 +1,2626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="theme-color" content="#07111f">
+<meta name="description" content="Our Tour — memories, photos, videos and road map.">
+
+<title>Our Tour | Memories & Road Map</title>
+
+<!-- Leaflet Map -->
+<link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    crossorigin=""
+>
+
+<style>
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+
+    background:#050b14;
+    color:#f8fafc;
+    line-height:1.6;
+    overflow-x:hidden;
+}
+
+button,
+input,
+select{
+    font:inherit;
+}
+
+button{
+    cursor:pointer;
+}
+
+img,
+video{
+    max-width:100%;
+}
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-2;
+
+    background:
+        radial-gradient(
+            circle at 15% 15%,
+            rgba(37,99,235,.20),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 85% 25%,
+            rgba(14,165,233,.14),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 50% 90%,
+            rgba(124,58,237,.13),
+            transparent 30%
+        ),
+        #050b14;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-1;
+    pointer-events:none;
+
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,.015) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.015) 1px,
+            transparent 1px
+        );
+
+    background-size:40px 40px;
+}
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.navbar{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    z-index:1000;
+
+    height:72px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 5%;
+
+    background:rgba(5,11,20,.72);
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    color:white;
+    text-decoration:none;
+    font-weight:800;
+    letter-spacing:.5px;
+}
+
+.logo-icon{
+    width:38px;
+    height:38px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:12px;
+
+    background:linear-gradient(
+        135deg,
+        #2563eb,
+        #7c3aed
+    );
+
+    box-shadow:
+        0 8px 30px rgba(37,99,235,.25);
+}
+
+.nav-links{
+    display:flex;
+    gap:25px;
+    list-style:none;
+}
+
+.nav-links a{
+    color:#cbd5e1;
+    text-decoration:none;
+    font-size:14px;
+    transition:.25s;
+}
+
+.nav-links a:hover{
+    color:white;
+}
+
+.menu-btn{
+    display:none;
+
+    background:none;
+    border:0;
+    color:white;
+    font-size:24px;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+    min-height:100vh;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    position:relative;
+    overflow:hidden;
+
+    padding:
+        110px 6%
+        70px;
+}
+
+.hero-content{
+    width:min(1100px,100%);
+    text-align:center;
+}
+
+.hero-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+
+    padding:8px 15px;
+
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:999px;
+
+    background:rgba(255,255,255,.05);
+
+    color:#cbd5e1;
+    font-size:13px;
+
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-size:
+        clamp(48px,9vw,105px);
+
+    line-height:.95;
+    letter-spacing:-5px;
+
+    margin-bottom:25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff 20%,
+            #93c5fd 50%,
+            #c4b5fd 80%
+        );
+
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+}
+
+.hero-subtitle{
+    max-width:680px;
+    margin:auto;
+
+    color:#94a3b8;
+    font-size:clamp(16px,2vw,20px);
+}
+
+.hero-buttons{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    flex-wrap:wrap;
+
+    margin-top:35px;
+}
+
+.btn{
+    border:0;
+    border-radius:14px;
+
+    padding:13px 20px;
+
+    font-weight:700;
+
+    transition:
+        transform .2s,
+        box-shadow .2s,
+        background .2s;
+}
+
+.btn:hover{
+    transform:translateY(-2px);
+}
+
+.btn-primary{
+    color:white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #7c3aed
+        );
+
+    box-shadow:
+        0 15px 40px rgba(37,99,235,.25);
+}
+
+.btn-secondary{
+    color:white;
+
+    background:rgba(255,255,255,.06);
+
+    border:1px solid rgba(255,255,255,.1);
+}
+
+.hero-stats{
+    display:flex;
+    justify-content:center;
+    gap:50px;
+
+    margin-top:60px;
+}
+
+.stat strong{
+    display:block;
+    font-size:27px;
+}
+
+.stat span{
+    color:#64748b;
+    font-size:12px;
+}
+
+/* Decorative circles */
+
+.hero-orb{
+    position:absolute;
+    border-radius:50%;
+    filter:blur(3px);
+    opacity:.5;
+    pointer-events:none;
+}
+
+.orb-1{
+    width:280px;
+    height:280px;
+
+    top:15%;
+    left:-140px;
+
+    background:#2563eb;
+    filter:blur(100px);
+}
+
+.orb-2{
+    width:250px;
+    height:250px;
+
+    bottom:10%;
+    right:-100px;
+
+    background:#7c3aed;
+    filter:blur(100px);
+}
+
+/* =========================================================
+   GENERAL SECTIONS
+========================================================= */
+
+section{
+    width:min(1200px,92%);
+    margin:0 auto;
+
+    padding:90px 0;
+}
+
+.section-heading{
+    margin-bottom:35px;
+}
+
+.eyebrow{
+    color:#60a5fa;
+    font-size:12px;
+    font-weight:800;
+
+    letter-spacing:2px;
+    text-transform:uppercase;
+
+    margin-bottom:8px;
+}
+
+.section-heading h2{
+    font-size:clamp(30px,5vw,48px);
+    letter-spacing:-1.5px;
+}
+
+.section-heading p{
+    color:#64748b;
+    margin-top:8px;
+}
+
+/* =========================================================
+   INFO CARD
+========================================================= */
+
+.info-grid{
+    display:grid;
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:14px;
+}
+
+.info-card{
+    padding:24px;
+
+    border-radius:20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.07),
+            rgba(255,255,255,.025)
+        );
+
+    border:1px solid rgba(255,255,255,.08);
+
+    transition:.25s;
+}
+
+.info-card:hover{
+    transform:translateY(-4px);
+    border-color:rgba(96,165,250,.3);
+}
+
+.info-icon{
+    font-size:25px;
+    margin-bottom:12px;
+}
+
+.info-card span{
+    display:block;
+    color:#64748b;
+    font-size:12px;
+}
+
+.info-card strong{
+    display:block;
+    margin-top:3px;
+}
+
+/* =========================================================
+   GALLERY
+========================================================= */
+
+.gallery-toolbar{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-bottom:25px;
+}
+
+.filter-btn{
+    padding:9px 15px;
+
+    border-radius:999px;
+
+    border:1px solid rgba(255,255,255,.1);
+
+    background:rgba(255,255,255,.04);
+
+    color:#94a3b8;
+}
+
+.filter-btn.active,
+.filter-btn:hover{
+    background:#2563eb;
+    color:white;
+    border-color:#2563eb;
+}
+
+.gallery{
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:15px;
+}
+
+.gallery-item{
+    position:relative;
+    overflow:hidden;
+
+    aspect-ratio:4/3;
+
+    border-radius:18px;
+
+    background:#0f172a;
+
+    border:1px solid rgba(255,255,255,.06);
+
+    cursor:pointer;
+}
+
+.gallery-item img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+
+    transition:
+        transform .5s;
+}
+
+.gallery-item:hover img{
+    transform:scale(1.07);
+}
+
+.gallery-overlay{
+    position:absolute;
+    inset:auto 0 0 0;
+
+    padding:35px 15px 15px;
+
+    background:
+        linear-gradient(
+            transparent,
+            rgba(0,0,0,.85)
+        );
+}
+
+.gallery-overlay strong{
+    font-size:14px;
+}
+
+.gallery-overlay span{
+    display:block;
+    color:#cbd5e1;
+    font-size:11px;
+}
+
+/* =========================================================
+   VIDEO
+========================================================= */
+
+.video-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:18px;
+}
+
+.video-card{
+    background:
+        rgba(255,255,255,.04);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.video-card video{
+    width:100%;
+    display:block;
+
+    aspect-ratio:16/9;
+    object-fit:cover;
+
+    background:#000;
+}
+
+.video-info{
+    padding:16px;
+}
+
+.video-info h3{
+    font-size:16px;
+}
+
+.video-info p{
+    color:#64748b;
+    font-size:13px;
+}
+
+/* =========================================================
+   MAP
+========================================================= */
+
+.map-wrapper{
+    overflow:hidden;
+
+    border-radius:22px;
+
+    border:1px solid rgba(255,255,255,.1);
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.25);
+}
+
+#map{
+    width:100%;
+    height:560px;
+}
+
+.map-controls{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+
+    padding:15px;
+
+    background:#0b1422;
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.map-controls button{
+    padding:10px 14px;
+
+    border-radius:10px;
+
+    border:1px solid rgba(255,255,255,.1);
+
+    background:#111c2d;
+    color:white;
+}
+
+.map-controls button:hover{
+    background:#1e293b;
+}
+
+.map-help{
+    color:#64748b;
+    font-size:12px;
+
+    display:flex;
+    align-items:center;
+
+    margin-left:auto;
+}
+
+.route-list{
+    margin-top:18px;
+
+    display:grid;
+    grid-template-columns:
+        repeat(auto-fit,minmax(220px,1fr));
+
+    gap:10px;
+}
+
+.route-point{
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    padding:13px;
+
+    border-radius:14px;
+
+    background:rgba(255,255,255,.04);
+
+    border:1px solid rgba(255,255,255,.07);
+}
+
+.route-number{
+    width:30px;
+    height:30px;
+
+    flex:none;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:50%;
+
+    background:#2563eb;
+
+    font-size:12px;
+    font-weight:800;
+}
+
+.route-name{
+    flex:1;
+
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+
+.route-remove{
+    border:0;
+    background:none;
+    color:#ef4444;
+    font-size:17px;
+}
+
+/* =========================================================
+   EMPTY STATES
+========================================================= */
+
+.empty{
+    padding:50px 20px;
+
+    text-align:center;
+
+    color:#64748b;
+
+    border:
+        1px dashed
+        rgba(255,255,255,.1);
+
+    border-radius:18px;
+}
+
+.empty strong{
+    display:block;
+    color:#cbd5e1;
+    margin-bottom:5px;
+}
+
+/* =========================================================
+   LIGHTBOX
+========================================================= */
+
+.lightbox{
+    position:fixed;
+    inset:0;
+    z-index:5000;
+
+    display:none;
+    align-items:center;
+    justify-content:center;
+
+    padding:20px;
+
+    background:
+        rgba(0,0,0,.94);
+
+    backdrop-filter:blur(10px);
+}
+
+.lightbox.active{
+    display:flex;
+}
+
+.lightbox img{
+    max-width:min(1100px,95vw);
+    max-height:85vh;
+
+    object-fit:contain;
+
+    border-radius:10px;
+}
+
+.lightbox-close{
+    position:absolute;
+
+    top:20px;
+    right:25px;
+
+    width:45px;
+    height:45px;
+
+    border:0;
+    border-radius:50%;
+
+    background:rgba(255,255,255,.1);
+    color:white;
+
+    font-size:24px;
+}
+
+.lightbox-arrow{
+    position:absolute;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:45px;
+    height:45px;
+
+    border:0;
+    border-radius:50%;
+
+    background:rgba(255,255,255,.1);
+    color:white;
+
+    font-size:22px;
+}
+
+.lightbox-prev{
+    left:20px;
+}
+
+.lightbox-next{
+    right:20px;
+}
+
+.lightbox-caption{
+    position:absolute;
+
+    bottom:25px;
+
+    color:white;
+    text-align:center;
+
+    left:20%;
+    right:20%;
+}
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+.modal{
+    position:fixed;
+    inset:0;
+    z-index:4000;
+
+    display:none;
+    align-items:center;
+    justify-content:center;
+
+    padding:20px;
+
+    background:rgba(0,0,0,.75);
+}
+
+.modal.active{
+    display:flex;
+}
+
+.modal-box{
+    width:min(480px,100%);
+
+    padding:25px;
+
+    border-radius:22px;
+
+    background:#0b1422;
+
+    border:1px solid rgba(255,255,255,.1);
+}
+
+.modal-box h3{
+    margin-bottom:15px;
+}
+
+.modal-box input{
+    width:100%;
+
+    padding:13px;
+
+    border-radius:12px;
+
+    border:1px solid rgba(255,255,255,.1);
+
+    background:#111c2d;
+    color:white;
+
+    outline:none;
+
+    margin-bottom:15px;
+}
+
+.modal-actions{
+    display:flex;
+    gap:10px;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+    width:min(1200px,92%);
+    margin:auto;
+
+    padding:35px 0 50px;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+    text-align:center;
+
+    color:#475569;
+
+    font-size:13px;
+}
+
+footer strong{
+    color:#94a3b8;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:800px){
+
+    .navbar{
+        height:64px;
+    }
+
+    .nav-links{
+        display:none;
+
+        position:absolute;
+
+        top:64px;
+        left:0;
+        right:0;
+
+        padding:15px 6%;
+
+        background:#07111f;
+
+        border-bottom:
+            1px solid
+            rgba(255,255,255,.08);
+
+        flex-direction:column;
+    }
+
+    .nav-links.open{
+        display:flex;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .hero{
+        min-height:90vh;
+    }
+
+    .hero h1{
+        letter-spacing:-3px;
+    }
+
+    .hero-stats{
+        gap:25px;
+    }
+
+    .info-grid{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .gallery{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .video-grid{
+        grid-template-columns:1fr;
+    }
+
+    #map{
+        height:450px;
+    }
+
+    .map-help{
+        width:100%;
+        margin-left:0;
+    }
+}
+
+@media(max-width:520px){
+
+    section{
+        padding:65px 0;
+    }
+
+    .hero{
+        padding-left:5%;
+        padding-right:5%;
+    }
+
+    .hero h1{
+        font-size:52px;
+    }
+
+    .hero-stats{
+        gap:15px;
+    }
+
+    .stat strong{
+        font-size:22px;
+    }
+
+    .info-grid{
+        grid-template-columns:1fr;
+    }
+
+    .gallery{
+        grid-template-columns:1fr;
+    }
+
+    #map{
+        height:390px;
+    }
+
+    .lightbox-arrow{
+        width:38px;
+        height:38px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<nav class="navbar">
+
+    <a href="#home" class="logo">
+        <span class="logo-icon">✦</span>
+        <span>OUR TOUR</span>
+    </a>
+
+    <ul class="nav-links" id="navLinks">
+        <li><a href="#memories">Memories</a></li>
+        <li><a href="#videos">Videos</a></li>
+        <li><a href="#map-section">Road Map</a></li>
+    </ul>
+
+    <button
+        class="menu-btn"
+        id="menuBtn"
+        aria-label="Open menu"
+    >
+        ☰
+    </button>
+
+</nav>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<header class="hero" id="home">
+
+    <div class="hero-orb orb-1"></div>
+    <div class="hero-orb orb-2"></div>
+
+    <div class="hero-content">
+
+        <div class="hero-badge">
+            ✈️ OUR JOURNEY • OUR MEMORIES
+        </div>
+
+        <h1 id="tourTitle">
+            THE JOURNEY
+        </h1>
+
+        <p class="hero-subtitle" id="tourSubtitle">
+            Every road had a story. Every stop became a memory.
+            This is our tour, captured in photographs, videos and
+            the road we travelled together.
+        </p>
+
+        <div class="hero-buttons">
+
+            <button
+                class="btn btn-primary"
+                onclick="scrollToSection('memories')"
+            >
+                📸 Explore Memories
+            </button>
+
+            <button
+                class="btn btn-secondary"
+                onclick="scrollToSection('map-section')"
+            >
+                🗺️ View Road Map
+            </button>
+
+        </div>
+
+        <div class="hero-stats">
+
+            <div class="stat">
+                <strong id="photoCount">0</strong>
+                <span>PHOTOS</span>
+            </div>
+
+            <div class="stat">
+                <strong id="videoCount">0</strong>
+                <span>VIDEOS</span>
+            </div>
+
+            <div class="stat">
+                <strong id="stopCount">0</strong>
+                <span>STOPS</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     TOUR INFORMATION
+===================================================== -->
+
+<section>
+
+    <div class="section-heading">
+
+        <div class="eyebrow">THE STORY</div>
+
+        <h2>Our Tour</h2>
+
+        <p>
+            A small collection of the places, people and moments
+            that made this journey special.
+        </p>
+
+    </div>
+
+    <div class="info-grid">
+
+        <div class="info-card">
+            <div class="info-icon">📅</div>
+            <span>DATE</span>
+            <strong id="tourDate">
+                Add your tour date
+            </strong>
+        </div>
+
+        <div class="info-card">
+            <div class="info-icon">📍</div>
+            <span>DESTINATION</span>
+            <strong id="tourDestination">
+                Add destination
+            </strong>
+        </div>
+
+        <div class="info-card">
+            <div class="info-icon">👥</div>
+            <span>TRAVELLERS</span>
+            <strong id="travellers">
+                Our Crew
+            </strong>
+        </div>
+
+        <div class="info-card">
+            <div class="info-icon">🛣️</div>
+            <span>JOURNEY</span>
+            <strong id="journeyDistance">
+                Mark your route
+            </strong>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     MEMORIES
+===================================================== -->
+
+<section id="memories">
+
+    <div class="section-heading">
+
+        <div class="eyebrow">PHOTO JOURNAL</div>
+
+        <h2>Our Memories</h2>
+
+        <p>
+            Keep your favourite moments organized by category.
+        </p>
+
+    </div>
+
+    <div class="gallery-toolbar">
+
+        <button
+            class="filter-btn active"
+            data-filter="all"
+        >
+            All
+        </button>
+
+        <button
+            class="filter-btn"
+            data-filter="friends"
+        >
+            Friends
+        </button>
+
+        <button
+            class="filter-btn"
+            data-filter="road"
+        >
+            Roads
+        </button>
+
+        <button
+            class="filter-btn"
+            data-filter="nature"
+        >
+            Nature
+        </button>
+
+        <button
+            class="filter-btn"
+            data-filter="food"
+        >
+            Food
+        </button>
+
+        <button
+            class="filter-btn"
+            data-filter="places"
+        >
+            Places
+        </button>
+
+    </div>
+
+    <!--
+        ===================================================
+        PHOTO AREA
+
+        Replace the example image URLs below with your
+        own GitHub image paths.
+
+        Example:
+
+        images/tour1.jpg
+        images/tour2.jpg
+
+        IMPORTANT:
+        Keep category names exactly as:
+        friends / road / nature / food / places
+        ===================================================
+    -->
+
+    <div class="gallery" id="gallery">
+
+        <div
+            class="gallery-item"
+            data-category="road"
+            data-title="The Road"
+        >
+            <img
+                src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1200&q=85"
+                alt="Road journey"
+                loading="lazy"
+            >
+
+            <div class="gallery-overlay">
+                <strong>The Road</strong>
+                <span>Where the journey began</span>
+            </div>
+        </div>
+
+
+        <div
+            class="gallery-item"
+            data-category="nature"
+            data-title="Into Nature"
+        >
+            <img
+                src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1200&q=85"
+                alt="Nature"
+                loading="lazy"
+            >
+
+            <div class="gallery-overlay">
+                <strong>Into Nature</strong>
+                <span>Quiet places</span>
+            </div>
+        </div>
+
+
+        <div
+            class="gallery-item"
+            data-category="friends"
+            data-title="The Crew"
+        >
+            <img
+                src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=85"
+                alt="Friends"
+                loading="lazy"
+            >
+
+            <div class="gallery-overlay">
+                <strong>The Crew</strong>
+                <span>People who made it memorable</span>
+            </div>
+        </div>
+
+
+        <div
+            class="gallery-item"
+            data-category="places"
+            data-title="New Places"
+        >
+            <img
+                src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1200&q=85"
+                alt="Travel destination"
+                loading="lazy"
+            >
+
+            <div class="gallery-overlay">
+                <strong>New Places</strong>
+                <span>Somewhere worth remembering</span>
+            </div>
+        </div>
+
+
+        <div
+            class="gallery-item"
+            data-category="food"
+            data-title="Food Stop"
+        >
+            <img
+                src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=85"
+                alt="Food"
+                loading="lazy"
+            >
+
+            <div class="gallery-overlay">
+                <strong>Food Stop</strong>
+                <span>A necessary part of every tour</span>
+            </div>
+        </div>
+
+
+        <div
+            class="gallery-item"
+            data-category="road"
+            data-title="On The Way"
+        >
+            <img
+                src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=85"
+                alt="Travel"
+                loading="lazy"
+            >
+
+            <div class="gallery-overlay">
+                <strong>On The Way</strong>
+                <span>Another chapter</span>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     VIDEOS
+===================================================== -->
+
+<section id="videos">
+
+    <div class="section-heading">
+
+        <div class="eyebrow">VIDEO JOURNAL</div>
+
+        <h2>Moments in Motion</h2>
+
+        <p>
+            Keep your tour videos beside the photographs.
+        </p>
+
+    </div>
+
+    <!--
+        Replace video/example.mp4 with your own file path.
+
+        Example:
+
+        videos/day1.mp4
+        videos/road.mp4
+
+        Upload those files to your GitHub repository.
+    -->
+
+    <div class="video-grid">
+
+        <div class="video-card">
+
+            <video
+                controls
+                preload="metadata"
+                poster=""
+            >
+                <source
+                    src="videos/tour-video-1.mp4"
+                    type="video/mp4"
+                >
+
+                Your browser does not support HTML5 video.
+            </video>
+
+            <div class="video-info">
+                <h3>Tour Day 01</h3>
+                <p>The beginning of our journey.</p>
+            </div>
+
+        </div>
+
+
+        <div class="video-card">
+
+            <video
+                controls
+                preload="metadata"
+            >
+                <source
+                    src="videos/tour-video-2.mp4"
+                    type="video/mp4"
+                >
+
+                Your browser does not support HTML5 video.
+            </video>
+
+            <div class="video-info">
+                <h3>The Road</h3>
+                <p>Moments from the journey.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     ROAD MAP
+===================================================== -->
+
+<section id="map-section">
+
+    <div class="section-heading">
+
+        <div class="eyebrow">OUR ROUTE</div>
+
+        <h2>The Road We Travelled</h2>
+
+        <p>
+            Add your tour stops directly on the map.
+            No coordinates or code editing required.
+        </p>
+
+    </div>
+
+
+    <div class="map-wrapper">
+
+        <div class="map-controls">
+
+            <button onclick="mapMode('add')">
+                📍 Add Stop
+            </button>
+
+            <button onclick="mapMode('drag')">
+                🖐️ Move Map
+            </button>
+
+            <button onclick="undoLastStop()">
+                ↩ Undo
+            </button>
+
+            <button onclick="clearRoute()">
+                🗑 Clear Route
+            </button>
+
+            <button onclick="exportRoute()">
+                📤 Export
+            </button>
+
+            <button onclick="document.getElementById('importFile').click()">
+                📥 Import
+            </button>
+
+            <input
+                type="file"
+                id="importFile"
+                accept=".json"
+                hidden
+            >
+
+            <div class="map-help">
+                Tap "Add Stop", then tap a location on the map.
+            </div>
+
+        </div>
+
+        <div id="map"></div>
+
+    </div>
+
+
+    <div class="route-list" id="routeList"></div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <p>
+        Made with ❤️ for <strong>our journey</strong>.
+    </p>
+
+    <p style="margin-top:5px;">
+        Every road ends, but the memories stay.
+    </p>
+
+</footer>
+
+
+<!-- =====================================================
+     LIGHTBOX
+===================================================== -->
+
+<div
+    class="lightbox"
+    id="lightbox"
+    aria-hidden="true"
+>
+
+    <button
+        class="lightbox-close"
+        onclick="closeLightbox()"
+        aria-label="Close"
+    >
+        ×
+    </button>
+
+    <button
+        class="lightbox-arrow lightbox-prev"
+        onclick="previousImage()"
+        aria-label="Previous image"
+    >
+        ‹
+    </button>
+
+    <img
+        id="lightboxImage"
+        src=""
+        alt="Gallery image"
+    >
+
+    <button
+        class="lightbox-arrow lightbox-next"
+        onclick="nextImage()"
+        aria-label="Next image"
+    >
+        ›
+    </button>
+
+    <div
+        class="lightbox-caption"
+        id="lightboxCaption"
+    ></div>
+
+</div>
+
+
+<!-- =====================================================
+     NAME MODAL
+===================================================== -->
+
+<div
+    class="modal"
+    id="nameModal"
+>
+
+    <div class="modal-box">
+
+        <h3>📍 Name this stop</h3>
+
+        <input
+            type="text"
+            id="stopName"
+            placeholder="Example: Cox's Bazar"
+            maxlength="80"
+        >
+
+        <div class="modal-actions">
+
+            <button
+                class="btn btn-primary"
+                onclick="confirmStop()"
+            >
+                Add Stop
+            </button>
+
+            <button
+                class="btn btn-secondary"
+                onclick="cancelStop()"
+            >
+                Cancel
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     LEAFLET
+===================================================== -->
+
+<script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    crossorigin=""
+></script>
+
+
+<script>
+/* =========================================================
+   TOUR INFORMATION
+   Change these values only if you want different text.
+========================================================= */
+
+const TOUR_INFO = {
+    title: "THE JOURNEY",
+    subtitle:
+        "Every road had a story. Every stop became a memory. This is our tour, captured in photographs, videos and the road we travelled together.",
+    date: "2026",
+    destination: "Our Destination",
+    travellers: "Our Crew"
+};
+
+
+/* =========================================================
+   BASIC PAGE SETUP
+========================================================= */
+
+document.getElementById("tourTitle").textContent =
+    TOUR_INFO.title;
+
+document.getElementById("tourSubtitle").textContent =
+    TOUR_INFO.subtitle;
+
+document.getElementById("tourDate").textContent =
+    TOUR_INFO.date;
+
+document.getElementById("tourDestination").textContent =
+    TOUR_INFO.destination;
+
+document.getElementById("travellers").textContent =
+    TOUR_INFO.travellers;
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+const menuBtn =
+    document.getElementById("menuBtn");
+
+const navLinks =
+    document.getElementById("navLinks");
+
+menuBtn.addEventListener("click", () => {
+    navLinks.classList.toggle("open");
+});
+
+document.querySelectorAll(".nav-links a")
+.forEach(link => {
+
+    link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+    });
+
+});
+
+
+function scrollToSection(id){
+
+    const element =
+        document.getElementById(id);
+
+    if(element){
+        element.scrollIntoView({
+            behavior:"smooth"
+        });
+    }
+}
+
+
+/* =========================================================
+   PHOTO GALLERY FILTER
+========================================================= */
+
+const filterButtons =
+    document.querySelectorAll(".filter-btn");
+
+const galleryItems =
+    document.querySelectorAll(".gallery-item");
+
+filterButtons.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        filterButtons.forEach(btn =>
+            btn.classList.remove("active")
+        );
+
+        button.classList.add("active");
+
+        const filter =
+            button.dataset.filter;
+
+        galleryItems.forEach(item => {
+
+            const category =
+                item.dataset.category;
+
+            if(
+                filter === "all" ||
+                category === filter
+            ){
+                item.style.display = "";
+            }else{
+                item.style.display = "none";
+            }
+
+        });
+
+    });
+
+});
+
+
+/* =========================================================
+   LIGHTBOX
+========================================================= */
+
+let visibleImages = [];
+let currentImageIndex = 0;
+
+function refreshLightboxImages(){
+
+    visibleImages =
+        Array.from(
+            document.querySelectorAll(
+                ".gallery-item:not([style*='display: none']) img"
+            )
+        );
+
+}
+
+
+galleryItems.forEach(item => {
+
+    item.addEventListener("click", () => {
+
+        refreshLightboxImages();
+
+        const image =
+            item.querySelector("img");
+
+        currentImageIndex =
+            visibleImages.indexOf(image);
+
+        if(currentImageIndex < 0){
+            currentImageIndex = 0;
+        }
+
+        showLightboxImage();
+
+    });
+
+});
+
+
+function showLightboxImage(){
+
+    if(!visibleImages.length){
+        return;
+    }
+
+    const image =
+        visibleImages[currentImageIndex];
+
+    const lightbox =
+        document.getElementById("lightbox");
+
+    const lightboxImage =
+        document.getElementById("lightboxImage");
+
+    const caption =
+        document.getElementById("lightboxCaption");
+
+    lightboxImage.src =
+        image.src;
+
+    lightboxImage.alt =
+        image.alt || "Tour memory";
+
+    const parent =
+        image.closest(".gallery-item");
+
+    caption.textContent =
+        parent
+        ? (parent.dataset.title || image.alt || "")
+        : "";
+
+    lightbox.classList.add("active");
+
+    lightbox.setAttribute(
+        "aria-hidden",
+        "false"
+    );
+
+}
+
+
+function closeLightbox(){
+
+    const lightbox =
+        document.getElementById("lightbox");
+
+    lightbox.classList.remove("active");
+
+    lightbox.setAttribute(
+        "aria-hidden",
+        "true"
+    );
+
+}
+
+
+function nextImage(){
+
+    refreshLightboxImages();
+
+    if(!visibleImages.length){
+        return;
+    }
+
+    currentImageIndex =
+        (currentImageIndex + 1)
+        % visibleImages.length;
+
+    showLightboxImage();
+
+}
+
+
+function previousImage(){
+
+    refreshLightboxImages();
+
+    if(!visibleImages.length){
+        return;
+    }
+
+    currentImageIndex =
+        (
+            currentImageIndex -
+            1 +
+            visibleImages.length
+        )
+        % visibleImages.length;
+
+    showLightboxImage();
+
+}
+
+
+/* Keyboard controls */
+
+document.addEventListener("keydown", event => {
+
+    const lightbox =
+        document.getElementById("lightbox");
+
+    if(!lightbox.classList.contains("active")){
+        return;
+    }
+
+    if(event.key === "Escape"){
+        closeLightbox();
+    }
+
+    if(event.key === "ArrowRight"){
+        nextImage();
+    }
+
+    if(event.key === "ArrowLeft"){
+        previousImage();
+    }
+
+});
+
+
+/* =========================================================
+   MAP
+========================================================= */
+
+/*
+    Default map starts around Bangladesh.
+
+    You can zoom and move anywhere in the world.
+*/
+
+const map =
+    L.map("map", {
+        zoomControl:true
+    }).setView(
+        [23.6850, 90.3563],
+        7
+    );
+
+
+L.tileLayer(
+    "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+    {
+        maxZoom:19,
+        attribution:
+            '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }
+).addTo(map);
+
+
+/* =========================================================
+   ROUTE DATA
+========================================================= */
+
+let routePoints = [];
+
+let temporaryPoint = null;
+
+let addMode = false;
+
+let markers = [];
+
+let routeLine = null;
+
+
+/* =========================================================
+   LOCAL STORAGE
+========================================================= */
+
+const STORAGE_KEY =
+    "ourTourRoute_v1";
+
+
+function saveRoute(){
+
+    localStorage.setItem(
+        STORAGE_KEY,
+        JSON.stringify(routePoints)
+    );
+
+}
+
+
+function loadRoute(){
+
+    try{
+
+        const saved =
+            localStorage.getItem(STORAGE_KEY);
+
+        if(!saved){
+            return;
+        }
+
+        const parsed =
+            JSON.parse(saved);
+
+        if(!Array.isArray(parsed)){
+            return;
+        }
+
+        routePoints =
+            parsed.filter(point =>
+                point &&
+                typeof point.lat === "number" &&
+                typeof point.lng === "number" &&
+                typeof point.name === "string"
+            );
+
+        redrawRoute();
+
+    }catch(error){
+
+        console.warn(
+            "Saved route could not be loaded.",
+            error
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   MAP MODE
+========================================================= */
+
+function mapMode(mode){
+
+    if(mode === "add"){
+
+        addMode = true;
+
+        document.getElementById("map")
+            .style.cursor = "crosshair";
+
+    }else{
+
+        addMode = false;
+
+        document.getElementById("map")
+            .style.cursor = "";
+
+    }
+
+}
+
+
+/* =========================================================
+   MAP CLICK
+========================================================= */
+
+map.on("click", event => {
+
+    if(!addMode){
+        return;
+    }
+
+    temporaryPoint = {
+        lat:event.latlng.lat,
+        lng:event.latlng.lng
+    };
+
+    document.getElementById("stopName").value =
+        "";
+
+    document.getElementById("nameModal")
+        .classList.add("active");
+
+    setTimeout(() => {
+
+        document.getElementById("stopName")
+            .focus();
+
+    },100);
+
+});
+
+
+/* =========================================================
+   CONFIRM MAP STOP
+========================================================= */
+
+function confirmStop(){
+
+    if(!temporaryPoint){
+        return;
+    }
+
+    let name =
+        document.getElementById("stopName")
+            .value
+            .trim();
+
+    if(!name){
+        name =
+            "Stop " +
+            (routePoints.length + 1);
+    }
+
+    routePoints.push({
+        name:name,
+        lat:temporaryPoint.lat,
+        lng:temporaryPoint.lng
+    });
+
+    temporaryPoint = null;
+
+    document.getElementById("nameModal")
+        .classList.remove("active");
+
+    mapMode("drag");
+
+    saveRoute();
+
+    redrawRoute();
+
+}
+
+
+function cancelStop(){
+
+    temporaryPoint = null;
+
+    document.getElementById("nameModal")
+        .classList.remove("active");
+
+}
+
+
+/* =========================================================
+   DRAW ROUTE
+========================================================= */
+
+function redrawRoute(){
+
+    markers.forEach(marker => {
+
+        map.removeLayer(marker);
+
+    });
+
+    markers = [];
+
+
+    if(routeLine){
+
+        map.removeLayer(routeLine);
+
+        routeLine = null;
+
+    }
+
+
+    routePoints.forEach((point,index) => {
+
+        const marker =
+            L.marker(
+                [point.lat,point.lng]
+            ).addTo(map);
+
+        marker.bindPopup(
+            `
+            <strong>${escapeHtml(point.name)}</strong>
+            <br>
+            Stop ${index + 1}
+            `
+        );
+
+        markers.push(marker);
+
+    });
+
+
+    if(routePoints.length >= 2){
+
+        routeLine =
+            L.polyline(
+                routePoints.map(point => [
+                    point.lat,
+                    point.lng
+                ]),
+                {
+                    weight:5,
+                    opacity:.85
+                }
+            ).addTo(map);
+
+    }
+
+
+    renderRouteList();
+
+    updateStats();
+
+}
+
+
+/* =========================================================
+   ROUTE LIST
+========================================================= */
+
+function renderRouteList(){
+
+    const container =
+        document.getElementById("routeList");
+
+    container.innerHTML = "";
+
+    if(!routePoints.length){
+
+        container.innerHTML =
+            `
+            <div class="empty">
+                <strong>No stops added yet.</strong>
+                Tap "Add Stop" and then tap the map.
+            </div>
+            `;
+
+        return;
+
+    }
+
+
+    routePoints.forEach((point,index) => {
+
+        const item =
+            document.createElement("div");
+
+        item.className =
+            "route-point";
+
+        item.innerHTML =
+            `
+            <div class="route-number">
+                ${index + 1}
+            </div>
+
+            <div class="route-name">
+                ${escapeHtml(point.name)}
+            </div>
+
+            <button
+                class="route-remove"
+                title="Remove stop"
+                aria-label="Remove ${escapeHtml(point.name)}"
+            >
+                ×
+            </button>
+            `;
+
+        item
+            .querySelector(".route-remove")
+            .addEventListener("click", () => {
+
+                removeStop(index);
+
+            });
+
+
+        item
+            .querySelector(".route-name")
+            .addEventListener("click", () => {
+
+                map.setView(
+                    [point.lat,point.lng],
+                    Math.max(map.getZoom(),12)
+                );
+
+            });
+
+
+        container.appendChild(item);
+
+    });
+
+}
+
+
+/* =========================================================
+   REMOVE STOP
+========================================================= */
+
+function removeStop(index){
+
+    if(
+        index < 0 ||
+        index >= routePoints.length
+    ){
+        return;
+    }
+
+    routePoints.splice(index,1);
+
+    saveRoute();
+
+    redrawRoute();
+
+}
+
+
+/* =========================================================
+   UNDO
+========================================================= */
+
+function undoLastStop(){
+
+    if(!routePoints.length){
+        return;
+    }
+
+    routePoints.pop();
+
+    saveRoute();
+
+    redrawRoute();
+
+}
+
+
+/* =========================================================
+   CLEAR ROUTE
+========================================================= */
+
+function clearRoute(){
+
+    if(!routePoints.length){
+        return;
+    }
+
+    const confirmed =
+        window.confirm(
+            "Remove all marked stops from this tour?"
+        );
+
+    if(!confirmed){
+        return;
+    }
+
+    routePoints = [];
+
+    saveRoute();
+
+    redrawRoute();
+
+}
+
+
+/* =========================================================
+   EXPORT ROUTE
+========================================================= */
+
+function exportRoute(){
+
+    const data =
+        JSON.stringify(
+            {
+                tour:
+                    TOUR_INFO.title,
+                exportedAt:
+                    new Date().toISOString(),
+                stops:
+                    routePoints
+            },
+            null,
+            2
+        );
+
+    const blob =
+        new Blob(
+            [data],
+            {
+                type:"application/json"
+            }
+        );
+
+    const url =
+        URL.createObjectURL(blob);
+
+    const link =
+        document.createElement("a");
+
+    link.href = url;
+
+    link.download =
+        "our-tour-route.json";
+
+    document.body.appendChild(link);
+
+    link.click();
+
+    link.remove();
+
+    URL.revokeObjectURL(url);
+
+}
+
+
+/* =========================================================
+   IMPORT ROUTE
+========================================================= */
+
+document
+    .getElementById("importFile")
+    .addEventListener("change", event => {
+
+        const file =
+            event.target.files[0];
+
+        if(!file){
+            return;
+        }
+
+        const reader =
+            new FileReader();
+
+        reader.onload = () => {
+
+            try{
+
+                const data =
+                    JSON.parse(reader.result);
+
+                let imported =
+                    Array.isArray(data)
+                    ? data
+                    : data.stops;
+
+                if(!Array.isArray(imported)){
+                    throw new Error(
+                        "Invalid route format."
+                    );
+                }
+
+                const clean =
+                    imported.filter(point =>
+                        point &&
+                        typeof point.lat === "number" &&
+                        typeof point.lng === "number"
+                    )
+                    .map((point,index) => ({
+                        name:
+                            typeof point.name === "string"
+                            && point.name.trim()
+                            ? point.name.trim()
+                            : `Stop ${index + 1}`,
+                        lat:point.lat,
+                        lng:point.lng
+                    }));
+
+                if(!clean.length){
+
+                    throw new Error(
+                        "No valid stops found."
+                    );
+
+                }
+
+                routePoints = clean;
+
+                saveRoute();
+
+                redrawRoute();
+
+                fitRoute();
+
+                alert(
+                    "Route imported successfully."
+                );
+
+            }catch(error){
+
+                alert(
+                    "Could not import this route file."
+                );
+
+                console.error(error);
+
+            }
+
+            event.target.value = "";
+
+        };
+
+        reader.readAsText(file);
+
+    });
+
+
+/* =========================================================
+   FIT MAP TO ROUTE
+========================================================= */
+
+function fitRoute(){
+
+    if(!routePoints.length){
+        return;
+    }
+
+    if(routePoints.length === 1){
+
+        map.setView(
+            [
+                routePoints[0].lat,
+                routePoints[0].lng
+            ],
+            12
+        );
+
+        return;
+
+    }
+
+    const bounds =
+        L.latLngBounds(
+            routePoints.map(point => [
+                point.lat,
+                point.lng
+            ])
+        );
+
+    map.fitBounds(
+        bounds,
+        {
+            padding:[40,40]
+        }
+    );
+
+}
+
+
+/* =========================================================
+   UPDATE COUNTERS
+========================================================= */
+
+function updateStats(){
+
+    const photos =
+        document.querySelectorAll(
+            ".gallery-item"
+        ).length;
+
+    const videos =
+        document.querySelectorAll(
+            ".video-card video"
+        ).length;
+
+    document.getElementById("photoCount")
+        .textContent = photos;
+
+    document.getElementById("videoCount")
+        .textContent = videos;
+
+    document.getElementById("stopCount")
+        .textContent = routePoints.length;
+
+    document.getElementById("journeyDistance")
+        .textContent =
+            routePoints.length
+            ? routePoints.length + " marked stops"
+            : "Mark your route";
+
+}
+
+
+/* =========================================================
+   ESCAPE HTML
+   Protects map popup/list text from HTML injection.
+========================================================= */
+
+function escapeHtml(value){
+
+    return String(value)
+        .replaceAll("&","&amp;")
+        .replaceAll("<","&lt;")
+        .replaceAll(">","&gt;")
+        .replaceAll('"',"&quot;")
+        .replaceAll("'","&#039;");
+
+}
+
+
+/* =========================================================
+   MODAL ENTER KEY
+========================================================= */
+
+document
+    .getElementById("stopName")
+    .addEventListener("keydown", event => {
+
+        if(event.key === "Enter"){
+            confirmStop();
+        }
+
+        if(event.key === "Escape"){
+            cancelStop();
+        }
+
+    });
+
+
+/* =========================================================
+   CLOSE MODAL WHEN CLICKING OUTSIDE
+========================================================= */
+
+document
+    .getElementById("nameModal")
+    .addEventListener("click", event => {
+
+        if(
+            event.target.id === "nameModal"
+        ){
+            cancelStop();
+        }
+
+    });
+
+
+/* =========================================================
+   INITIALIZE
+========================================================= */
+
+loadRoute();
+
+updateStats();
+
+</script>
+
+</body>
+</html>
